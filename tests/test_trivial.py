@@ -1,2 +1,2 @@
-def hello_world():
+def test_trivial():
     assert 1 == 1
