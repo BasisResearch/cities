@@ -6,7 +6,7 @@ import pytest
 import pandas as pd
 import numpy as np
 
-from cities.utils.cleaning_utils import standardize_and_scale
+from cities.utils import standardize_and_scale
 
 
 # set up gdp data
