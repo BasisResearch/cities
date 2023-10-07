@@ -1,1 +1,14 @@
 venv
+
+
+
+
+
+
+
+*.pyc
+**/*.pyc 
+tests/__pycache__/
+tests/__pycache__/test_data_grabber.cpython-310-pytest-7.2.0.pyc
+tests/__pycache__/test_cleaning_utils.cpython-310-pytest-7.2.0.pyc
+.vscode/settings.json
