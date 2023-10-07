@@ -84,7 +84,19 @@ def clean_gdp():
 
 
     gdp_wide = gdp.copy()
+    gdp_long = pd.melt(gdp.copy(),  id_vars=['GeoFIPS', 'GeoName'],
+    var_name='Year',
+    value_name='Value')
+
+
     gdp_std_wide = standardize_and_scale(gdp)
+    gdp_std_long = pd.melt(gdp_std_wide.copy(),  id_vars=['GeoFIPS', 'GeoName'],
+                    var_name='Year', 
+                    value_name='Value')
 
     gdp_wide.to_csv("../data/processed/gdp_wide.csv", index=False)
+    gdp_long.to_csv("../data/processed/gdp_long.csv", index=False)
     gdp_std_wide.to_csv("../data/processed/gdp_std_wide.csv", index=False)
+    gdp_std_long.to_csv("../data/processed/gdp_std_long.csv", index=False)
+
+

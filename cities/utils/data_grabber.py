@@ -11,3 +11,9 @@ class DataGrabber:
     
     def get_gpd_std_wide(self):
         self.gpd_std_wide =  pd.read_csv("../data/processed/gdp_std_wide.csv")
+
+    def get_gpd_long(self):
+        self.gpd_long = pd.read_csv("../data/processed/gdp_long.csv")
+
+    def get_gpd_std_long(self):
+        self.gpd_std_long = pd.read_csv("../data/processed/gdp_std_long.csv")
