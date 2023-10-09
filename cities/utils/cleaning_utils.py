@@ -1,6 +1,27 @@
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import os
+import sys
+
+
+def find_repo_root():
+    """
+    Finds the repo root (fodler containing .gitignore) and adds it to sys.path.
+    """
+    current_dir = os.getcwd()
+    while True:
+        marker_file_path = os.path.join(current_dir, '.gitignore') 
+        if os.path.isfile(marker_file_path):
+            return current_dir 
+            
+        parent_dir = os.path.dirname(current_dir)
+        if parent_dir == current_dir:
+            break
+        current_dir = parent_dir
+    return current_dir
+
+
 
 
 def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
@@ -41,7 +62,7 @@ def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
 
 
 def clean_gdp():
-    gdp = pd.read_csv("../data/raw/CAGDP1_2001_2021.csv", encoding='ISO-8859-1')
+    gdp = pd.read_csv("data/raw/CAGDP1_2001_2021.csv", encoding='ISO-8859-1')
 
     gdp = gdp.loc[:9533] #drop notes at the bottom
 
@@ -50,7 +71,7 @@ def clean_gdp():
 
 
     #remove large regions
-    gdp = gdp[gdp['GeoFIPS'] % 10 != 0]
+    gdp = gdp[gdp['GeoFIPS'] % 100 != 0]
 
     # focus on chain-type GDP
     mask = gdp['Description'].str.startswith('Chain')
@@ -66,7 +87,7 @@ def clean_gdp():
     gdp.replace('(NM)', np.nan, inplace=True)
 
 
-    nan_rows = gdp[gdp.isna().any(axis=1)]
+    #nan_rows = gdp[gdp.isna().any(axis=1)] #  if inspection is needed
     
     gdp.dropna(axis=0, inplace=True)
 
@@ -82,6 +103,7 @@ def clean_gdp():
         assert (gdp[column].isnull().sum() == 0), f"Null values in {column}"
         assert (gdp[column] < 3000).all(), f"Values suspiciously large in {column}"
 
+    #TODO_Nikodem investigate strange large values
 
     gdp_wide = gdp.copy()
     gdp_long = pd.melt(gdp.copy(),  id_vars=['GeoFIPS', 'GeoName'],
@@ -94,9 +116,9 @@ def clean_gdp():
                     var_name='Year', 
                     value_name='Value')
 
-    gdp_wide.to_csv("../data/processed/gdp_wide.csv", index=False)
-    gdp_long.to_csv("../data/processed/gdp_long.csv", index=False)
-    gdp_std_wide.to_csv("../data/processed/gdp_std_wide.csv", index=False)
-    gdp_std_long.to_csv("../data/processed/gdp_std_long.csv", index=False)
+    gdp_wide.to_csv("data/processed/gdp_wide.csv", index=False)
+    gdp_long.to_csv("data/processed/gdp_long.csv", index=False)
+    gdp_std_wide.to_csv("data/processed/gdp_std_wide.csv", index=False)
+    gdp_std_long.to_csv("data/processed/gdp_std_long.csv", index=False)
 
 

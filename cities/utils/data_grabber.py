@@ -2,23 +2,19 @@ import os
 import sys
 import pandas as pd
 
+
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))  
+sys.path.insert(0, parent_dir)
+
+
+from cities.utils.cleaning_utils import find_repo_root
+
+
 class DataGrabber:
     def __init__(self):
-        self.repo_root = self.find_repo_root()
+        self.repo_root = find_repo_root()
         sys.path.insert(0, self.repo_root)
 
-
-    def find_repo_root(self):
-            current_dir = os.getcwd()
-            while True:
-                marker_file_path = os.path.join(current_dir, '.gitignore') 
-                if os.path.isfile(marker_file_path):
-                    return current_dir 
-            
-                parent_dir = os.path.dirname(current_dir)
-                if parent_dir == current_dir:
-                    break
-                current_dir = parent_dir
 
     def get_gdp_wide(self):
         file_path = os.path.join(self.repo_root, "data/processed/gdp_wide.csv")

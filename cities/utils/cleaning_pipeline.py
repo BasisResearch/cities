@@ -1,6 +1,8 @@
 import sys
 import os
-sys.path.insert(0, os.path.dirname(os.getcwd()))
+
+from cleaning_utils import find_repo_root
+sys.path.insert(0, find_repo_root())
 
 from cleaning_utils import clean_gdp
 

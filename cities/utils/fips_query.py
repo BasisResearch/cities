@@ -1,15 +1,17 @@
-
-
 import os
 import sys
+
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))  
+sys.path.insert(0, parent_dir)
+
+
 import pandas as pd
 import numpy as np
 
 import plotly.graph_objects as go
-
 from scipy.spatial import distance
-
-from .data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber
+from cities.utils.similarity_utils import slice_with_lag
 
 
 class FipsQuery:
@@ -19,58 +21,51 @@ class FipsQuery:
         #TODO add weights rescaling to init
         #TODO with a non-trival example of feature groups
     
-
         assert outcome_var in ["gdp"], "outcome_var must be one of ['gdp']" #TODO expand to other outcome vars
-        
-
-
-
+       
         self.data = DataGrabber()
         self.repo_root = self.data.repo_root
         self.fips = fips
         self.lag = lag
         self.top = top
         self.outcome_var = outcome_var
+        self.weights = weights
         
         self.data.get_gdp_std_wide()
-
         self.name = self.data.gdp_std_wide['GeoName'][self.data.gdp_std_wide['GeoFIPS'] == self.fips].values[0]
 
-
-    def find_euclidean_kins(self, top = 5): ##TODO_Nikodem add a test for this function
-        
         assert self.lag >= 0 and self.lag < 6 and  isinstance(self.lag, int),  "lag must be  an iteger between 0 and 5"
         assert (self.top > 0 and isinstance(self.top, int) and 
-                    self.top < self.data.gdp_std_wide.shape[0]), "top must be a positive integer"
+                    self.top < self.data.gdp_std_wide.shape[0]), (
+                "top must be a positive integer smaller than the number of locations in the dataset"
+                    )
 
+
+    def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
+        
+        
         if self.outcome_var == "gdp":
-            df = self.data.gdp_std_wide
-            original_length = df.shape[0]
+            slices = slice_with_lag(self.data.gdp_std_wide, self.fips, self.lag)
+        
+        self.my_array = np.array(slices['my_array'])
+        self.other_arrays = np.array(slices['other_arrays'])
+        self.other_df = slices['other_df']
+        
+        #TODO add other features here
+        #TODO will need to have the same fips codes in the same order in all other datasets
+        #TODO for the feature addition to be introduced here to work smoothly
+        
+        distances = []
+        for vector in self.other_arrays:
+            distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
+        
+        assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
 
-            #TODO add other features here
-            
-            my_array = np.array(df[df['GeoFIPS'] == self.fips].values[0][2+self.lag:])
-            other_df = df[df['GeoFIPS'] != self.fips].copy()
-            if self.lag >0:
-                other_df_cut = other_df.iloc[:, 2:-self.lag]
-            else:
-                other_df_cut = other_df.iloc[:, 2:]
-            other_arrays = np.array(other_df_cut.values)
-            
-            assert other_arrays.shape[0] + 1 == original_length, "Dataset sizes don't match"
-            assert other_arrays.shape[1] == my_array.shape[0], "Lengths don't match"
+        self.other_df[f'distance to {self.fips}'] = distances
+        
+        self.euclidean_kins = self.other_df.sort_values(by=self.other_df.columns[-1])
+        #TODO_Nikodem make sure this returns df with the original variable values, prior to normalization and rescaling
 
-            distances = []
-            for vector in other_arrays:
-                distances.append(distance.euclidean(my_array, vector, w = None))
-
-            assert len(distances) == other_arrays.shape[0], "Something went wrong"
-
-            other_df[f'distance to {self.fips}'] = distances
-
-            other_df.sort_values(by=other_df.columns[-1], inplace=True)
-
-            self.euclidean_kins = other_df 
 
     def plot_kins(self):
         if self.outcome_var == "gdp":
@@ -80,7 +75,6 @@ class FipsQuery:
             fips_top = self.euclidean_kins['GeoFIPS'].iloc[:self.top].values
             
             others_outcome_long = self.data.gdp_long[self.data.gdp_long['GeoFIPS'].isin(fips_top)]
-
 
 
             fig = go.Figure()

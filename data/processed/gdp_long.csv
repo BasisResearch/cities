@@ -68,13 +68,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2001,100.254
 2013,"Aleutians East Borough, AK",2001,151.434
 2016,"Aleutians West Census Area, AK",2001,81.614
+2020,"Anchorage Municipality, AK",2001,77.86
+2050,"Bethel Census Area, AK",2001,75.171
+2060,"Bristol Bay Borough, AK",2001,76.758
 2068,"Denali Borough, AK",2001,88.736
+2070,"Dillingham Census Area, AK",2001,82.049
+2090,"Fairbanks North Star Borough, AK",2001,103.572
+2110,"Juneau City and Borough, AK",2001,81.588
 2122,"Kenai Peninsula Borough, AK",2001,94.882
+2130,"Ketchikan Gateway Borough, AK*",2001,84.133
+2150,"Kodiak Island Borough, AK",2001,80.794
 2158,"Kusilvak Census Area, AK*",2001,80.993
 2164,"Lake and Peninsula Borough, AK",2001,90.514
+2170,"Matanuska-Susitna Borough, AK",2001,59.132
+2180,"Nome Census Area, AK",2001,76.435
 2185,"North Slope Borough, AK",2001,45.205
 2188,"Northwest Arctic Borough, AK",2001,104.185
+2220,"Sitka City and Borough, AK",2001,81.403
+2240,"Southeast Fairbanks Census Area, AK",2001,67.734
 2282,"Yakutat City and Borough, AK*",2001,83.095
+2290,"Yukon-Koyukuk Census Area, AK",2001,111.162
 4001,"Apache, AZ",2001,76.718
 4003,"Cochise, AZ",2001,76.359
 4005,"Coconino, AZ",2001,77.858
@@ -1193,6 +1206,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2001,86.142
 24045,"Wicomico, MD",2001,79.307
 24047,"Worcester, MD",2001,93.272
+24510,"Baltimore (Independent City), MD",2001,99.38
 25001,"Barnstable, MA",2001,99.08
 25003,"Berkshire, MA",2001,88.328
 25005,"Bristol, MA",2001,93.125
@@ -1573,6 +1587,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2001,83.609
 29227,"Worth, MO",2001,73.811
 29229,"Wright, MO",2001,91.942
+29510,"St. Louis (Independent City), MO",2001,97.293
 30001,"Beaverhead, MT",2001,91.661
 30003,"Big Horn, MT",2001,72.281
 30005,"Blaine, MT",2001,84.556
@@ -1738,6 +1753,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2001,35.272
 32031,"Washoe, NV",2001,92.657
 32033,"White Pine, NV",2001,53.221
+32510,"Carson City (Independent City), NV",2001,93.973
 33001,"Belknap, NH",2001,101.106
 33003,"Carroll, NH",2001,93.462
 33005,"Cheshire, NH",2001,88.475
@@ -2866,6 +2882,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2001,87.221
 51193,"Westmoreland, VA",2001,82.222
 51197,"Wythe, VA",2001,67.049
+51510,"Alexandria (Independent City), VA",2001,78.521
+51550,"Chesapeake (Independent City), VA",2001,81.231
+51650,"Hampton (Independent City), VA",2001,102.675
+51710,"Norfolk (Independent City), VA",2001,95.855
+51740,"Portsmouth (Independent City), VA",2001,84.336
+51760,"Richmond (Independent City), VA",2001,112.266
+51770,"Roanoke (Independent City), VA",2001,109.055
+51810,"Virginia Beach (Independent City), VA",2001,83.818
 51901,"Albemarle + Charlottesville, VA*",2001,76.004
 51903,"Alleghany + Covington, VA*",2001,83.34
 51907,"Augusta, Staunton + Waynesboro, VA*",2001,100.057
@@ -3147,13 +3171,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2002,99.936
 2013,"Aleutians East Borough, AK",2002,115.204
 2016,"Aleutians West Census Area, AK",2002,82.706
+2020,"Anchorage Municipality, AK",2002,78.784
+2050,"Bethel Census Area, AK",2002,81.473
+2060,"Bristol Bay Borough, AK",2002,76.699
 2068,"Denali Borough, AK",2002,89.46
+2070,"Dillingham Census Area, AK",2002,81.7
+2090,"Fairbanks North Star Borough, AK",2002,90.558
+2110,"Juneau City and Borough, AK",2002,79.986
 2122,"Kenai Peninsula Borough, AK",2002,97.917
+2130,"Ketchikan Gateway Borough, AK*",2002,82.567
+2150,"Kodiak Island Borough, AK",2002,79.024
 2158,"Kusilvak Census Area, AK*",2002,83.404
 2164,"Lake and Peninsula Borough, AK",2002,93.564
+2170,"Matanuska-Susitna Borough, AK",2002,64.913
+2180,"Nome Census Area, AK",2002,81.929
 2185,"North Slope Borough, AK",2002,62.111
 2188,"Northwest Arctic Borough, AK",2002,89.882
+2220,"Sitka City and Borough, AK",2002,81.554
+2240,"Southeast Fairbanks Census Area, AK",2002,48.786
 2282,"Yakutat City and Borough, AK*",2002,83.708
+2290,"Yukon-Koyukuk Census Area, AK",2002,76.703
 4001,"Apache, AZ",2002,74.466
 4003,"Cochise, AZ",2002,77.258
 4005,"Coconino, AZ",2002,79.107
@@ -4272,6 +4309,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2002,87.478
 24045,"Wicomico, MD",2002,80.456
 24047,"Worcester, MD",2002,93.833
+24510,"Baltimore (Independent City), MD",2002,97.803
 25001,"Barnstable, MA",2002,100.035
 25003,"Berkshire, MA",2002,90.695
 25005,"Bristol, MA",2002,94.305
@@ -4652,6 +4690,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2002,86.541
 29227,"Worth, MO",2002,80.814
 29229,"Wright, MO",2002,93.065
+29510,"St. Louis (Independent City), MO",2002,97.972
 30001,"Beaverhead, MT",2002,82.854
 30003,"Big Horn, MT",2002,64.382
 30005,"Blaine, MT",2002,76.884
@@ -4817,6 +4856,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2002,36.32
 32031,"Washoe, NV",2002,93.852
 32033,"White Pine, NV",2002,54.425
+32510,"Carson City (Independent City), NV",2002,95.29
 33001,"Belknap, NH",2002,104.221
 33003,"Carroll, NH",2002,98.565
 33005,"Cheshire, NH",2002,89.908
@@ -5945,6 +5985,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2002,88.022
 51193,"Westmoreland, VA",2002,82.652
 51197,"Wythe, VA",2002,68.964
+51510,"Alexandria (Independent City), VA",2002,82.336
+51550,"Chesapeake (Independent City), VA",2002,84.019
+51650,"Hampton (Independent City), VA",2002,103.48
+51710,"Norfolk (Independent City), VA",2002,99.929
+51740,"Portsmouth (Independent City), VA",2002,86.489
+51760,"Richmond (Independent City), VA",2002,108.439
+51770,"Roanoke (Independent City), VA",2002,107.691
+51810,"Virginia Beach (Independent City), VA",2002,85.699
 51901,"Albemarle + Charlottesville, VA*",2002,76.767
 51903,"Alleghany + Covington, VA*",2002,91.84
 51907,"Augusta, Staunton + Waynesboro, VA*",2002,94.921
@@ -6226,13 +6274,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2003,96.451
 2013,"Aleutians East Borough, AK",2003,135.395
 2016,"Aleutians West Census Area, AK",2003,97.477
+2020,"Anchorage Municipality, AK",2003,80.386
+2050,"Bethel Census Area, AK",2003,85.34
+2060,"Bristol Bay Borough, AK",2003,88.561
 2068,"Denali Borough, AK",2003,87.089
+2070,"Dillingham Census Area, AK",2003,83.756
+2090,"Fairbanks North Star Borough, AK",2003,91.749
+2110,"Juneau City and Borough, AK",2003,82.222
 2122,"Kenai Peninsula Borough, AK",2003,101.853
+2130,"Ketchikan Gateway Borough, AK*",2003,83.095
+2150,"Kodiak Island Borough, AK",2003,83.559
 2158,"Kusilvak Census Area, AK*",2003,90.73
 2164,"Lake and Peninsula Borough, AK",2003,85.218
+2170,"Matanuska-Susitna Borough, AK",2003,69.523
+2180,"Nome Census Area, AK",2003,84.411
 2185,"North Slope Borough, AK",2003,48.355
 2188,"Northwest Arctic Borough, AK",2003,92.826
+2220,"Sitka City and Borough, AK",2003,84.832
+2240,"Southeast Fairbanks Census Area, AK",2003,54.32
 2282,"Yakutat City and Borough, AK*",2003,84.29
+2290,"Yukon-Koyukuk Census Area, AK",2003,76.963
 4001,"Apache, AZ",2003,76.833
 4003,"Cochise, AZ",2003,82.71
 4005,"Coconino, AZ",2003,80.127
@@ -7351,6 +7412,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2003,87.921
 24045,"Wicomico, MD",2003,85.114
 24047,"Worcester, MD",2003,97.071
+24510,"Baltimore (Independent City), MD",2003,97.354
 25001,"Barnstable, MA",2003,100.165
 25003,"Berkshire, MA",2003,88.618
 25005,"Bristol, MA",2003,95.494
@@ -7731,6 +7793,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2003,90.884
 29227,"Worth, MO",2003,75.615
 29229,"Wright, MO",2003,91.836
+29510,"St. Louis (Independent City), MO",2003,98.681
 30001,"Beaverhead, MT",2003,88.334
 30003,"Big Horn, MT",2003,74.765
 30005,"Blaine, MT",2003,80.493
@@ -7896,6 +7959,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2003,38.385
 32031,"Washoe, NV",2003,96.417
 32033,"White Pine, NV",2003,53.736
+32510,"Carson City (Independent City), NV",2003,96.655
 33001,"Belknap, NH",2003,105.033
 33003,"Carroll, NH",2003,99.632
 33005,"Cheshire, NH",2003,91.605
@@ -9024,6 +9088,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2003,104.02
 51193,"Westmoreland, VA",2003,86.492
 51197,"Wythe, VA",2003,73.634
+51510,"Alexandria (Independent City), VA",2003,83.546
+51550,"Chesapeake (Independent City), VA",2003,89.156
+51650,"Hampton (Independent City), VA",2003,108.305
+51710,"Norfolk (Independent City), VA",2003,104.131
+51740,"Portsmouth (Independent City), VA",2003,89.523
+51760,"Richmond (Independent City), VA",2003,108.976
+51770,"Roanoke (Independent City), VA",2003,104.648
+51810,"Virginia Beach (Independent City), VA",2003,90.447
 51901,"Albemarle + Charlottesville, VA*",2003,79.829
 51903,"Alleghany + Covington, VA*",2003,92.628
 51907,"Augusta, Staunton + Waynesboro, VA*",2003,93.745
@@ -9305,13 +9377,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2004,103.712
 2013,"Aleutians East Borough, AK",2004,166.356
 2016,"Aleutians West Census Area, AK",2004,102.831
+2020,"Anchorage Municipality, AK",2004,82.244
+2050,"Bethel Census Area, AK",2004,85.88
+2060,"Bristol Bay Borough, AK",2004,93.153
 2068,"Denali Borough, AK",2004,95.043
+2070,"Dillingham Census Area, AK",2004,84.077
+2090,"Fairbanks North Star Borough, AK",2004,92.494
+2110,"Juneau City and Borough, AK",2004,83.417
 2122,"Kenai Peninsula Borough, AK",2004,106.307
+2130,"Ketchikan Gateway Borough, AK*",2004,81.929
+2150,"Kodiak Island Borough, AK",2004,84.296
 2158,"Kusilvak Census Area, AK*",2004,90.469
 2164,"Lake and Peninsula Borough, AK",2004,86.279
+2170,"Matanuska-Susitna Borough, AK",2004,72.591
+2180,"Nome Census Area, AK",2004,86.319
 2185,"North Slope Borough, AK",2004,54.796
 2188,"Northwest Arctic Borough, AK",2004,97.309
+2220,"Sitka City and Borough, AK",2004,82.928
+2240,"Southeast Fairbanks Census Area, AK",2004,57.611
 2282,"Yakutat City and Borough, AK*",2004,91.222
+2290,"Yukon-Koyukuk Census Area, AK",2004,74.824
 4001,"Apache, AZ",2004,75.631
 4003,"Cochise, AZ",2004,85.541
 4005,"Coconino, AZ",2004,83.543
@@ -10430,6 +10515,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2004,92.742
 24045,"Wicomico, MD",2004,90.115
 24047,"Worcester, MD",2004,100.612
+24510,"Baltimore (Independent City), MD",2004,97.227
 25001,"Barnstable, MA",2004,102.879
 25003,"Berkshire, MA",2004,91.175
 25005,"Bristol, MA",2004,95.419
@@ -10810,6 +10896,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2004,98.332
 29227,"Worth, MO",2004,82.417
 29229,"Wright, MO",2004,97.352
+29510,"St. Louis (Independent City), MO",2004,100.826
 30001,"Beaverhead, MT",2004,95.518
 30003,"Big Horn, MT",2004,84.487
 30005,"Blaine, MT",2004,92.769
@@ -10975,6 +11062,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2004,38.859
 32031,"Washoe, NV",2004,103.943
 32033,"White Pine, NV",2004,59.577
+32510,"Carson City (Independent City), NV",2004,98.173
 33001,"Belknap, NH",2004,105.662
 33003,"Carroll, NH",2004,102.028
 33005,"Cheshire, NH",2004,96.749
@@ -12103,6 +12191,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2004,102.084
 51193,"Westmoreland, VA",2004,91.191
 51197,"Wythe, VA",2004,73.164
+51510,"Alexandria (Independent City), VA",2004,83.631
+51550,"Chesapeake (Independent City), VA",2004,95.703
+51650,"Hampton (Independent City), VA",2004,110.1
+51710,"Norfolk (Independent City), VA",2004,108.304
+51740,"Portsmouth (Independent City), VA",2004,92.418
+51760,"Richmond (Independent City), VA",2004,105.82
+51770,"Roanoke (Independent City), VA",2004,103.408
+51810,"Virginia Beach (Independent City), VA",2004,95.027
 51901,"Albemarle + Charlottesville, VA*",2004,83.643
 51903,"Alleghany + Covington, VA*",2004,93.69
 51907,"Augusta, Staunton + Waynesboro, VA*",2004,97.662
@@ -12384,13 +12480,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2005,110.807
 2013,"Aleutians East Borough, AK",2005,160.941
 2016,"Aleutians West Census Area, AK",2005,129.046
+2020,"Anchorage Municipality, AK",2005,85.531
+2050,"Bethel Census Area, AK",2005,86.712
+2060,"Bristol Bay Borough, AK",2005,107.989
 2068,"Denali Borough, AK",2005,98.603
+2070,"Dillingham Census Area, AK",2005,87.826
+2090,"Fairbanks North Star Borough, AK",2005,101.239
+2110,"Juneau City and Borough, AK",2005,85.932
 2122,"Kenai Peninsula Borough, AK",2005,91.035
+2130,"Ketchikan Gateway Borough, AK*",2005,86.412
+2150,"Kodiak Island Borough, AK",2005,85.77
 2158,"Kusilvak Census Area, AK*",2005,87.467
 2164,"Lake and Peninsula Borough, AK",2005,87.969
+2170,"Matanuska-Susitna Borough, AK",2005,78.33
+2180,"Nome Census Area, AK",2005,88.488
 2185,"North Slope Borough, AK",2005,58.113
 2188,"Northwest Arctic Borough, AK",2005,98.392
+2220,"Sitka City and Borough, AK",2005,85.6
+2240,"Southeast Fairbanks Census Area, AK",2005,80.4
 2282,"Yakutat City and Borough, AK*",2005,93.01
+2290,"Yukon-Koyukuk Census Area, AK",2005,73.008
 4001,"Apache, AZ",2005,77.074
 4003,"Cochise, AZ",2005,89.881
 4005,"Coconino, AZ",2005,87.554
@@ -13509,6 +13618,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2005,95.328
 24045,"Wicomico, MD",2005,96.242
 24047,"Worcester, MD",2005,101.883
+24510,"Baltimore (Independent City), MD",2005,99.182
 25001,"Barnstable, MA",2005,101.291
 25003,"Berkshire, MA",2005,93.625
 25005,"Bristol, MA",2005,95.636
@@ -13889,6 +13999,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2005,102.508
 29227,"Worth, MO",2005,81.046
 29229,"Wright, MO",2005,100.516
+29510,"St. Louis (Independent City), MO",2005,100.515
 30001,"Beaverhead, MT",2005,108.2
 30003,"Big Horn, MT",2005,93.216
 30005,"Blaine, MT",2005,99.845
@@ -14054,6 +14165,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2005,37.121
 32031,"Washoe, NV",2005,108.598
 32033,"White Pine, NV",2005,76.934
+32510,"Carson City (Independent City), NV",2005,100.431
 33001,"Belknap, NH",2005,107.125
 33003,"Carroll, NH",2005,101.271
 33005,"Cheshire, NH",2005,97.771
@@ -15182,6 +15294,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2005,107.805
 51193,"Westmoreland, VA",2005,97.384
 51197,"Wythe, VA",2005,77.292
+51510,"Alexandria (Independent City), VA",2005,93.108
+51550,"Chesapeake (Independent City), VA",2005,102.34
+51650,"Hampton (Independent City), VA",2005,110.836
+51710,"Norfolk (Independent City), VA",2005,110.585
+51740,"Portsmouth (Independent City), VA",2005,94.31
+51760,"Richmond (Independent City), VA",2005,108.195
+51770,"Roanoke (Independent City), VA",2005,101.337
+51810,"Virginia Beach (Independent City), VA",2005,98.663
 51901,"Albemarle + Charlottesville, VA*",2005,87.604
 51903,"Alleghany + Covington, VA*",2005,93.112
 51907,"Augusta, Staunton + Waynesboro, VA*",2005,100.621
@@ -15463,13 +15583,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2006,111.839
 2013,"Aleutians East Borough, AK",2006,156.689
 2016,"Aleutians West Census Area, AK",2006,114.685
+2020,"Anchorage Municipality, AK",2006,86.087
+2050,"Bethel Census Area, AK",2006,83.918
+2060,"Bristol Bay Borough, AK",2006,114.1
 2068,"Denali Borough, AK",2006,98.946
+2070,"Dillingham Census Area, AK",2006,90.341
+2090,"Fairbanks North Star Borough, AK",2006,105.57
+2110,"Juneau City and Borough, AK",2006,95.399
 2122,"Kenai Peninsula Borough, AK",2006,95.835
+2130,"Ketchikan Gateway Borough, AK*",2006,87.154
+2150,"Kodiak Island Borough, AK",2006,86.255
 2158,"Kusilvak Census Area, AK*",2006,83.098
 2164,"Lake and Peninsula Borough, AK",2006,97.085
+2170,"Matanuska-Susitna Borough, AK",2006,76.926
+2180,"Nome Census Area, AK",2006,89.022
 2185,"North Slope Borough, AK",2006,72.065
 2188,"Northwest Arctic Borough, AK",2006,128.794
+2220,"Sitka City and Borough, AK",2006,85.921
+2240,"Southeast Fairbanks Census Area, AK",2006,117.271
 2282,"Yakutat City and Borough, AK*",2006,99.202
+2290,"Yukon-Koyukuk Census Area, AK",2006,74.662
 4001,"Apache, AZ",2006,80.745
 4003,"Cochise, AZ",2006,91.443
 4005,"Coconino, AZ",2006,90.55
@@ -16588,6 +16721,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2006,100.742
 24045,"Wicomico, MD",2006,98.829
 24047,"Worcester, MD",2006,102.406
+24510,"Baltimore (Independent City), MD",2006,99.652
 25001,"Barnstable, MA",2006,96.809
 25003,"Berkshire, MA",2006,92.604
 25005,"Bristol, MA",2006,98.508
@@ -16968,6 +17102,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2006,105.112
 29227,"Worth, MO",2006,77.261
 29229,"Wright, MO",2006,97.421
+29510,"St. Louis (Independent City), MO",2006,101.283
 30001,"Beaverhead, MT",2006,101.133
 30003,"Big Horn, MT",2006,94.187
 30005,"Blaine, MT",2006,81.345
@@ -17133,6 +17268,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2006,46.394
 32031,"Washoe, NV",2006,108.579
 32033,"White Pine, NV",2006,85.171
+32510,"Carson City (Independent City), NV",2006,103.487
 33001,"Belknap, NH",2006,101.574
 33003,"Carroll, NH",2006,97.219
 33005,"Cheshire, NH",2006,101.99
@@ -18261,6 +18397,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2006,107.712
 51193,"Westmoreland, VA",2006,93.974
 51197,"Wythe, VA",2006,83.355
+51510,"Alexandria (Independent City), VA",2006,99.712
+51550,"Chesapeake (Independent City), VA",2006,102.588
+51650,"Hampton (Independent City), VA",2006,108.177
+51710,"Norfolk (Independent City), VA",2006,114.236
+51740,"Portsmouth (Independent City), VA",2006,97.969
+51760,"Richmond (Independent City), VA",2006,105.938
+51770,"Roanoke (Independent City), VA",2006,103.067
+51810,"Virginia Beach (Independent City), VA",2006,99.977
 51901,"Albemarle + Charlottesville, VA*",2006,91.091
 51903,"Alleghany + Covington, VA*",2006,91.935
 51907,"Augusta, Staunton + Waynesboro, VA*",2006,97.64
@@ -18542,13 +18686,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2007,105.871
 2013,"Aleutians East Borough, AK",2007,170.625
 2016,"Aleutians West Census Area, AK",2007,108.814
+2020,"Anchorage Municipality, AK",2007,87.429
+2050,"Bethel Census Area, AK",2007,82.086
+2060,"Bristol Bay Borough, AK",2007,121.686
 2068,"Denali Borough, AK",2007,100.327
+2070,"Dillingham Census Area, AK",2007,88.615
+2090,"Fairbanks North Star Borough, AK",2007,106.816
+2110,"Juneau City and Borough, AK",2007,100.0
 2122,"Kenai Peninsula Borough, AK",2007,97.635
+2130,"Ketchikan Gateway Borough, AK*",2007,94.334
+2150,"Kodiak Island Borough, AK",2007,86.1
 2158,"Kusilvak Census Area, AK*",2007,84.991
 2164,"Lake and Peninsula Borough, AK",2007,178.779
+2170,"Matanuska-Susitna Borough, AK",2007,78.3
+2180,"Nome Census Area, AK",2007,103.64
 2185,"North Slope Borough, AK",2007,80.186
 2188,"Northwest Arctic Borough, AK",2007,144.267
+2220,"Sitka City and Borough, AK",2007,85.937
+2240,"Southeast Fairbanks Census Area, AK",2007,147.483
 2282,"Yakutat City and Borough, AK*",2007,110.715
+2290,"Yukon-Koyukuk Census Area, AK",2007,87.611
 4001,"Apache, AZ",2007,81.498
 4003,"Cochise, AZ",2007,97.503
 4005,"Coconino, AZ",2007,98.747
@@ -19667,6 +19824,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2007,98.541
 24045,"Wicomico, MD",2007,99.376
 24047,"Worcester, MD",2007,99.506
+24510,"Baltimore (Independent City), MD",2007,97.845
 25001,"Barnstable, MA",2007,97.157
 25003,"Berkshire, MA",2007,92.844
 25005,"Bristol, MA",2007,97.745
@@ -20047,6 +20205,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2007,101.736
 29227,"Worth, MO",2007,64.734
 29229,"Wright, MO",2007,92.429
+29510,"St. Louis (Independent City), MO",2007,102.044
 30001,"Beaverhead, MT",2007,102.126
 30003,"Big Horn, MT",2007,99.697
 30005,"Blaine, MT",2007,101.636
@@ -20212,6 +20371,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2007,63.636
 32031,"Washoe, NV",2007,107.335
 32033,"White Pine, NV",2007,84.455
+32510,"Carson City (Independent City), NV",2007,106.072
 33001,"Belknap, NH",2007,102.472
 33003,"Carroll, NH",2007,96.124
 33005,"Cheshire, NH",2007,101.269
@@ -21340,6 +21500,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2007,110.232
 51193,"Westmoreland, VA",2007,88.7
 51197,"Wythe, VA",2007,88.729
+51510,"Alexandria (Independent City), VA",2007,98.328
+51550,"Chesapeake (Independent City), VA",2007,104.844
+51650,"Hampton (Independent City), VA",2007,109.021
+51710,"Norfolk (Independent City), VA",2007,113.821
+51740,"Portsmouth (Independent City), VA",2007,98.508
+51760,"Richmond (Independent City), VA",2007,103.849
+51770,"Roanoke (Independent City), VA",2007,102.543
+51810,"Virginia Beach (Independent City), VA",2007,102.604
 51901,"Albemarle + Charlottesville, VA*",2007,93.96
 51903,"Alleghany + Covington, VA*",2007,87.035
 51907,"Augusta, Staunton + Waynesboro, VA*",2007,101.752
@@ -21621,13 +21789,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2008,97.753
 2013,"Aleutians East Borough, AK",2008,180.881
 2016,"Aleutians West Census Area, AK",2008,99.293
+2020,"Anchorage Municipality, AK",2008,91.213
+2050,"Bethel Census Area, AK",2008,80.297
+2060,"Bristol Bay Borough, AK",2008,109.49
 2068,"Denali Borough, AK",2008,114.145
+2070,"Dillingham Census Area, AK",2008,88.027
+2090,"Fairbanks North Star Borough, AK",2008,114.719
+2110,"Juneau City and Borough, AK",2008,92.637
 2122,"Kenai Peninsula Borough, AK",2008,91.634
+2130,"Ketchikan Gateway Borough, AK*",2008,96.766
+2150,"Kodiak Island Borough, AK",2008,87.793
 2158,"Kusilvak Census Area, AK*",2008,86.644
 2164,"Lake and Peninsula Borough, AK",2008,114.377
+2170,"Matanuska-Susitna Borough, AK",2008,78.749
+2180,"Nome Census Area, AK",2008,110.354
 2185,"North Slope Borough, AK",2008,77.14
 2188,"Northwest Arctic Borough, AK",2008,112.229
+2220,"Sitka City and Borough, AK",2008,85.184
+2240,"Southeast Fairbanks Census Area, AK",2008,125.781
 2282,"Yakutat City and Borough, AK*",2008,98.332
+2290,"Yukon-Koyukuk Census Area, AK",2008,81.645
 4001,"Apache, AZ",2008,91.735
 4003,"Cochise, AZ",2008,99.594
 4005,"Coconino, AZ",2008,96.992
@@ -22746,6 +22927,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2008,97.771
 24045,"Wicomico, MD",2008,102.26
 24047,"Worcester, MD",2008,99.238
+24510,"Baltimore (Independent City), MD",2008,98.097
 25001,"Barnstable, MA",2008,101.203
 25003,"Berkshire, MA",2008,95.638
 25005,"Bristol, MA",2008,101.951
@@ -23126,6 +23308,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2008,100.292
 29227,"Worth, MO",2008,62.342
 29229,"Wright, MO",2008,94.273
+29510,"St. Louis (Independent City), MO",2008,109.541
 30001,"Beaverhead, MT",2008,99.819
 30003,"Big Horn, MT",2008,111.689
 30005,"Blaine, MT",2008,90.891
@@ -23291,6 +23474,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2008,64.885
 32031,"Washoe, NV",2008,102.288
 32033,"White Pine, NV",2008,86.804
+32510,"Carson City (Independent City), NV",2008,106.843
 33001,"Belknap, NH",2008,95.597
 33003,"Carroll, NH",2008,90.005
 33005,"Cheshire, NH",2008,99.747
@@ -24419,6 +24603,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2008,116.541
 51193,"Westmoreland, VA",2008,97.88
 51197,"Wythe, VA",2008,86.512
+51510,"Alexandria (Independent City), VA",2008,101.065
+51550,"Chesapeake (Independent City), VA",2008,104.471
+51650,"Hampton (Independent City), VA",2008,109.667
+51710,"Norfolk (Independent City), VA",2008,110.613
+51740,"Portsmouth (Independent City), VA",2008,98.669
+51760,"Richmond (Independent City), VA",2008,102.255
+51770,"Roanoke (Independent City), VA",2008,102.927
+51810,"Virginia Beach (Independent City), VA",2008,103.108
 51901,"Albemarle + Charlottesville, VA*",2008,97.454
 51903,"Alleghany + Covington, VA*",2008,88.796
 51907,"Augusta, Staunton + Waynesboro, VA*",2008,105.476
@@ -24700,13 +24892,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2009,91.446
 2013,"Aleutians East Borough, AK",2009,178.95
 2016,"Aleutians West Census Area, AK",2009,92.414
+2020,"Anchorage Municipality, AK",2009,95.428
+2050,"Bethel Census Area, AK",2009,83.974
+2060,"Bristol Bay Borough, AK",2009,107.076
 2068,"Denali Borough, AK",2009,108.644
+2070,"Dillingham Census Area, AK",2009,93.148
+2090,"Fairbanks North Star Borough, AK",2009,112.446
+2110,"Juneau City and Borough, AK",2009,94.51
 2122,"Kenai Peninsula Borough, AK",2009,98.786
+2130,"Ketchikan Gateway Borough, AK*",2009,99.959
+2150,"Kodiak Island Borough, AK",2009,89.745
 2158,"Kusilvak Census Area, AK*",2009,89.201
 2164,"Lake and Peninsula Borough, AK",2009,89.193
+2170,"Matanuska-Susitna Borough, AK",2009,82.656
+2180,"Nome Census Area, AK",2009,90.369
 2185,"North Slope Borough, AK",2009,100.854
 2188,"Northwest Arctic Borough, AK",2009,111.895
+2220,"Sitka City and Borough, AK",2009,88.753
+2240,"Southeast Fairbanks Census Area, AK",2009,127.653
 2282,"Yakutat City and Borough, AK*",2009,87.085
+2290,"Yukon-Koyukuk Census Area, AK",2009,80.503
 4001,"Apache, AZ",2009,92.5
 4003,"Cochise, AZ",2009,99.844
 4005,"Coconino, AZ",2009,92.067
@@ -25825,6 +26030,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2009,93.12
 24045,"Wicomico, MD",2009,97.088
 24047,"Worcester, MD",2009,93.686
+24510,"Baltimore (Independent City), MD",2009,96.372
 25001,"Barnstable, MA",2009,96.398
 25003,"Berkshire, MA",2009,92.834
 25005,"Bristol, MA",2009,96.629
@@ -26205,6 +26411,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2009,96.192
 29227,"Worth, MO",2009,89.158
 29229,"Wright, MO",2009,89.724
+29510,"St. Louis (Independent City), MO",2009,99.611
 30001,"Beaverhead, MT",2009,101.47
 30003,"Big Horn, MT",2009,100.823
 30005,"Blaine, MT",2009,126.986
@@ -26370,6 +26577,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2009,76.436
 32031,"Washoe, NV",2009,95.72
 32033,"White Pine, NV",2009,82.766
+32510,"Carson City (Independent City), NV",2009,104.59
 33001,"Belknap, NH",2009,93.947
 33003,"Carroll, NH",2009,91.642
 33005,"Cheshire, NH",2009,96.335
@@ -27498,6 +27706,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2009,116.389
 51193,"Westmoreland, VA",2009,101.368
 51197,"Wythe, VA",2009,84.845
+51510,"Alexandria (Independent City), VA",2009,101.349
+51550,"Chesapeake (Independent City), VA",2009,104.412
+51650,"Hampton (Independent City), VA",2009,109.419
+51710,"Norfolk (Independent City), VA",2009,105.989
+51740,"Portsmouth (Independent City), VA",2009,97.662
+51760,"Richmond (Independent City), VA",2009,99.019
+51770,"Roanoke (Independent City), VA",2009,99.696
+51810,"Virginia Beach (Independent City), VA",2009,97.576
 51901,"Albemarle + Charlottesville, VA*",2009,96.409
 51903,"Alleghany + Covington, VA*",2009,82.984
 51907,"Augusta, Staunton + Waynesboro, VA*",2009,106.276
@@ -27779,13 +27995,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2010,98.022
 2013,"Aleutians East Borough, AK",2010,110.048
 2016,"Aleutians West Census Area, AK",2010,87.184
+2020,"Anchorage Municipality, AK",2010,98.698
+2050,"Bethel Census Area, AK",2010,89.721
+2060,"Bristol Bay Borough, AK",2010,107.835
 2068,"Denali Borough, AK",2010,103.95
+2070,"Dillingham Census Area, AK",2010,100.88
+2090,"Fairbanks North Star Borough, AK",2010,113.437
+2110,"Juneau City and Borough, AK",2010,99.598
 2122,"Kenai Peninsula Borough, AK",2010,101.49
+2130,"Ketchikan Gateway Borough, AK*",2010,98.79
+2150,"Kodiak Island Borough, AK",2010,94.794
 2158,"Kusilvak Census Area, AK*",2010,90.582
 2164,"Lake and Peninsula Borough, AK",2010,93.595
+2170,"Matanuska-Susitna Borough, AK",2010,91.651
+2180,"Nome Census Area, AK",2010,105.518
 2185,"North Slope Borough, AK",2010,81.513
 2188,"Northwest Arctic Borough, AK",2010,124.412
+2220,"Sitka City and Borough, AK",2010,93.993
+2240,"Southeast Fairbanks Census Area, AK",2010,133.411
 2282,"Yakutat City and Borough, AK*",2010,92.737
+2290,"Yukon-Koyukuk Census Area, AK",2010,94.654
 4001,"Apache, AZ",2010,101.732
 4003,"Cochise, AZ",2010,103.397
 4005,"Coconino, AZ",2010,97.158
@@ -28904,6 +29133,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2010,96.705
 24045,"Wicomico, MD",2010,100.119
 24047,"Worcester, MD",2010,95.32
+24510,"Baltimore (Independent City), MD",2010,98.66
 25001,"Barnstable, MA",2010,98.972
 25003,"Berkshire, MA",2010,94.788
 25005,"Bristol, MA",2010,99.303
@@ -29284,6 +29514,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2010,103.472
 29227,"Worth, MO",2010,90.947
 29229,"Wright, MO",2010,99.543
+29510,"St. Louis (Independent City), MO",2010,98.539
 30001,"Beaverhead, MT",2010,96.292
 30003,"Big Horn, MT",2010,96.318
 30005,"Blaine, MT",2010,117.047
@@ -29449,6 +29680,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2010,83.763
 32031,"Washoe, NV",2010,99.618
 32033,"White Pine, NV",2010,94.655
+32510,"Carson City (Independent City), NV",2010,110.257
 33001,"Belknap, NH",2010,94.642
 33003,"Carroll, NH",2010,94.334
 33005,"Cheshire, NH",2010,97.291
@@ -30577,6 +30809,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2010,117.961
 51193,"Westmoreland, VA",2010,96.779
 51197,"Wythe, VA",2010,84.581
+51510,"Alexandria (Independent City), VA",2010,102.956
+51550,"Chesapeake (Independent City), VA",2010,105.339
+51650,"Hampton (Independent City), VA",2010,105.846
+51710,"Norfolk (Independent City), VA",2010,104.343
+51740,"Portsmouth (Independent City), VA",2010,99.136
+51760,"Richmond (Independent City), VA",2010,97.879
+51770,"Roanoke (Independent City), VA",2010,99.662
+51810,"Virginia Beach (Independent City), VA",2010,99.384
 51901,"Albemarle + Charlottesville, VA*",2010,100.348
 51903,"Alleghany + Covington, VA*",2010,86.917
 51907,"Augusta, Staunton + Waynesboro, VA*",2010,107.994
@@ -30858,13 +31098,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2011,101.453
 2013,"Aleutians East Borough, AK",2011,101.831
 2016,"Aleutians West Census Area, AK",2011,95.474
+2020,"Anchorage Municipality, AK",2011,100.107
+2050,"Bethel Census Area, AK",2011,98.404
+2060,"Bristol Bay Borough, AK",2011,105.711
 2068,"Denali Borough, AK",2011,98.968
+2070,"Dillingham Census Area, AK",2011,101.184
+2090,"Fairbanks North Star Borough, AK",2011,105.584
+2110,"Juneau City and Borough, AK",2011,101.593
 2122,"Kenai Peninsula Borough, AK",2011,102.319
+2130,"Ketchikan Gateway Borough, AK*",2011,101.393
+2150,"Kodiak Island Borough, AK",2011,99.315
 2158,"Kusilvak Census Area, AK*",2011,96.854
 2164,"Lake and Peninsula Borough, AK",2011,98.799
+2170,"Matanuska-Susitna Borough, AK",2011,97.316
+2180,"Nome Census Area, AK",2011,108.076
 2185,"North Slope Borough, AK",2011,84.29
 2188,"Northwest Arctic Borough, AK",2011,117.935
+2220,"Sitka City and Borough, AK",2011,99.302
+2240,"Southeast Fairbanks Census Area, AK",2011,125.205
 2282,"Yakutat City and Borough, AK*",2011,95.015
+2290,"Yukon-Koyukuk Census Area, AK",2011,108.03
 4001,"Apache, AZ",2011,104.899
 4003,"Cochise, AZ",2011,104.111
 4005,"Coconino, AZ",2011,103.759
@@ -31983,6 +32236,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2011,100.295
 24045,"Wicomico, MD",2011,101.957
 24047,"Worcester, MD",2011,101.365
+24510,"Baltimore (Independent City), MD",2011,99.157
 25001,"Barnstable, MA",2011,100.822
 25003,"Berkshire, MA",2011,95.821
 25005,"Bristol, MA",2011,100.459
@@ -32363,6 +32617,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2011,103.575
 29227,"Worth, MO",2011,78.269
 29229,"Wright, MO",2011,103.744
+29510,"St. Louis (Independent City), MO",2011,97.06
 30001,"Beaverhead, MT",2011,104.017
 30003,"Big Horn, MT",2011,99.239
 30005,"Blaine, MT",2011,102.262
@@ -32528,6 +32783,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2011,89.016
 32031,"Washoe, NV",2011,97.858
 32033,"White Pine, NV",2011,107.54
+32510,"Carson City (Independent City), NV",2011,101.28
 33001,"Belknap, NH",2011,97.643
 33003,"Carroll, NH",2011,98.222
 33005,"Cheshire, NH",2011,97.623
@@ -33656,6 +33912,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2011,117.583
 51193,"Westmoreland, VA",2011,102.562
 51197,"Wythe, VA",2011,96.316
+51510,"Alexandria (Independent City), VA",2011,99.515
+51550,"Chesapeake (Independent City), VA",2011,103.766
+51650,"Hampton (Independent City), VA",2011,103.155
+51710,"Norfolk (Independent City), VA",2011,102.087
+51740,"Portsmouth (Independent City), VA",2011,101.234
+51760,"Richmond (Independent City), VA",2011,98.523
+51770,"Roanoke (Independent City), VA",2011,99.628
+51810,"Virginia Beach (Independent City), VA",2011,99.902
 51901,"Albemarle + Charlottesville, VA*",2011,99.28
 51903,"Alleghany + Covington, VA*",2011,88.154
 51907,"Augusta, Staunton + Waynesboro, VA*",2011,104.556
@@ -33937,13 +34201,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2013,104.955
 2013,"Aleutians East Borough, AK",2013,112.401
 2016,"Aleutians West Census Area, AK",2013,104.277
+2020,"Anchorage Municipality, AK",2013,97.149
+2050,"Bethel Census Area, AK",2013,102.442
+2060,"Bristol Bay Borough, AK",2013,107.526
 2068,"Denali Borough, AK",2013,128.219
+2070,"Dillingham Census Area, AK",2013,101.264
+2090,"Fairbanks North Star Borough, AK",2013,98.196
+2110,"Juneau City and Borough, AK",2013,101.366
 2122,"Kenai Peninsula Borough, AK",2013,104.258
+2130,"Ketchikan Gateway Borough, AK*",2013,101.541
+2150,"Kodiak Island Borough, AK",2013,102.479
 2158,"Kusilvak Census Area, AK*",2013,97.878
 2164,"Lake and Peninsula Borough, AK",2013,102.844
+2170,"Matanuska-Susitna Borough, AK",2013,99.729
+2180,"Nome Census Area, AK",2013,101.229
 2185,"North Slope Borough, AK",2013,82.352
 2188,"Northwest Arctic Borough, AK",2013,105.599
+2220,"Sitka City and Borough, AK",2013,103.867
+2240,"Southeast Fairbanks Census Area, AK",2013,104.404
 2282,"Yakutat City and Borough, AK*",2013,131.706
+2290,"Yukon-Koyukuk Census Area, AK",2013,73.716
 4001,"Apache, AZ",2013,99.425
 4003,"Cochise, AZ",2013,96.799
 4005,"Coconino, AZ",2013,103.775
@@ -35062,6 +35339,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2013,100.782
 24045,"Wicomico, MD",2013,104.016
 24047,"Worcester, MD",2013,104.739
+24510,"Baltimore (Independent City), MD",2013,100.231
 25001,"Barnstable, MA",2013,100.528
 25003,"Berkshire, MA",2013,100.145
 25005,"Bristol, MA",2013,101.362
@@ -35442,6 +35720,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2013,95.647
 29227,"Worth, MO",2013,98.007
 29229,"Wright, MO",2013,95.873
+29510,"St. Louis (Independent City), MO",2013,98.293
 30001,"Beaverhead, MT",2013,110.69
 30003,"Big Horn, MT",2013,141.931
 30005,"Blaine, MT",2013,103.318
@@ -35607,6 +35886,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2013,107.554
 32031,"Washoe, NV",2013,98.496
 32033,"White Pine, NV",2013,89.15
+32510,"Carson City (Independent City), NV",2013,99.34
 33001,"Belknap, NH",2013,102.338
 33003,"Carroll, NH",2013,99.998
 33005,"Cheshire, NH",2013,99.253
@@ -36735,6 +37015,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2013,106.386
 51193,"Westmoreland, VA",2013,101.153
 51197,"Wythe, VA",2013,112.08
+51510,"Alexandria (Independent City), VA",2013,95.716
+51550,"Chesapeake (Independent City), VA",2013,101.301
+51650,"Hampton (Independent City), VA",2013,99.171
+51710,"Norfolk (Independent City), VA",2013,99.167
+51740,"Portsmouth (Independent City), VA",2013,101.202
+51760,"Richmond (Independent City), VA",2013,101.226
+51770,"Roanoke (Independent City), VA",2013,101.541
+51810,"Virginia Beach (Independent City), VA",2013,100.587
 51901,"Albemarle + Charlottesville, VA*",2013,100.731
 51903,"Alleghany + Covington, VA*",2013,91.903
 51907,"Augusta, Staunton + Waynesboro, VA*",2013,103.019
@@ -37016,13 +37304,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2014,98.273
 2013,"Aleutians East Borough, AK",2014,111.57
 2016,"Aleutians West Census Area, AK",2014,105.752
+2020,"Anchorage Municipality, AK",2014,97.077
+2050,"Bethel Census Area, AK",2014,102.707
+2060,"Bristol Bay Borough, AK",2014,108.318
 2068,"Denali Borough, AK",2014,132.44
+2070,"Dillingham Census Area, AK",2014,106.339
+2090,"Fairbanks North Star Borough, AK",2014,96.937
+2110,"Juneau City and Borough, AK",2014,101.375
 2122,"Kenai Peninsula Borough, AK",2014,115.269
+2130,"Ketchikan Gateway Borough, AK*",2014,99.28
+2150,"Kodiak Island Borough, AK",2014,102.628
 2158,"Kusilvak Census Area, AK*",2014,106.282
 2164,"Lake and Peninsula Borough, AK",2014,103.176
+2170,"Matanuska-Susitna Borough, AK",2014,104.071
+2180,"Nome Census Area, AK",2014,105.642
 2185,"North Slope Borough, AK",2014,72.778
 2188,"Northwest Arctic Borough, AK",2014,109.432
+2220,"Sitka City and Borough, AK",2014,100.532
+2240,"Southeast Fairbanks Census Area, AK",2014,103.066
 2282,"Yakutat City and Borough, AK*",2014,126.996
+2290,"Yukon-Koyukuk Census Area, AK",2014,61.426
 4001,"Apache, AZ",2014,90.59
 4003,"Cochise, AZ",2014,93.648
 4005,"Coconino, AZ",2014,101.789
@@ -38141,6 +38442,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2014,103.07
 24045,"Wicomico, MD",2014,108.306
 24047,"Worcester, MD",2014,107.033
+24510,"Baltimore (Independent City), MD",2014,101.907
 25001,"Barnstable, MA",2014,102.61
 25003,"Berkshire, MA",2014,100.66
 25005,"Bristol, MA",2014,103.92
@@ -38521,6 +38823,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2014,98.804
 29227,"Worth, MO",2014,113.738
 29229,"Wright, MO",2014,99.451
+29510,"St. Louis (Independent City), MO",2014,95.324
 30001,"Beaverhead, MT",2014,123.303
 30003,"Big Horn, MT",2014,145.115
 30005,"Blaine, MT",2014,107.818
@@ -38686,6 +38989,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2014,133.757
 32031,"Washoe, NV",2014,98.764
 32033,"White Pine, NV",2014,83.252
+32510,"Carson City (Independent City), NV",2014,94.229
 33001,"Belknap, NH",2014,98.236
 33003,"Carroll, NH",2014,94.32
 33005,"Cheshire, NH",2014,102.517
@@ -39814,6 +40118,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2014,105.535
 51193,"Westmoreland, VA",2014,98.54
 51197,"Wythe, VA",2014,114.029
+51510,"Alexandria (Independent City), VA",2014,95.147
+51550,"Chesapeake (Independent City), VA",2014,100.555
+51650,"Hampton (Independent City), VA",2014,98.363
+51710,"Norfolk (Independent City), VA",2014,99.299
+51740,"Portsmouth (Independent City), VA",2014,100.295
+51760,"Richmond (Independent City), VA",2014,103.605
+51770,"Roanoke (Independent City), VA",2014,102.188
+51810,"Virginia Beach (Independent City), VA",2014,100.856
 51901,"Albemarle + Charlottesville, VA*",2014,102.354
 51903,"Alleghany + Covington, VA*",2014,86.718
 51907,"Augusta, Staunton + Waynesboro, VA*",2014,101.949
@@ -40095,13 +40407,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2015,100.007
 2013,"Aleutians East Borough, AK",2015,162.363
 2016,"Aleutians West Census Area, AK",2015,105.883
+2020,"Anchorage Municipality, AK",2015,101.746
+2050,"Bethel Census Area, AK",2015,103.513
+2060,"Bristol Bay Borough, AK",2015,101.064
 2068,"Denali Borough, AK",2015,129.539
+2070,"Dillingham Census Area, AK",2015,103.274
+2090,"Fairbanks North Star Borough, AK",2015,96.161
+2110,"Juneau City and Borough, AK",2015,97.661
 2122,"Kenai Peninsula Borough, AK",2015,112.444
+2130,"Ketchikan Gateway Borough, AK*",2015,100.192
+2150,"Kodiak Island Borough, AK",2015,98.761
 2158,"Kusilvak Census Area, AK*",2015,99.644
 2164,"Lake and Peninsula Borough, AK",2015,102.277
+2170,"Matanuska-Susitna Borough, AK",2015,105.201
+2180,"Nome Census Area, AK",2015,105.19
 2185,"North Slope Borough, AK",2015,71.741
 2188,"Northwest Arctic Borough, AK",2015,96.653
+2220,"Sitka City and Borough, AK",2015,96.588
+2240,"Southeast Fairbanks Census Area, AK",2015,93.749
 2282,"Yakutat City and Borough, AK*",2015,107.711
+2290,"Yukon-Koyukuk Census Area, AK",2015,59.737
 4001,"Apache, AZ",2015,89.113
 4003,"Cochise, AZ",2015,95.343
 4005,"Coconino, AZ",2015,103.266
@@ -41220,6 +41545,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2015,102.87
 24045,"Wicomico, MD",2015,112.669
 24047,"Worcester, MD",2015,110.479
+24510,"Baltimore (Independent City), MD",2015,103.75
 25001,"Barnstable, MA",2015,103.445
 25003,"Berkshire, MA",2015,101.054
 25005,"Bristol, MA",2015,108.829
@@ -41600,6 +41926,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2015,98.611
 29227,"Worth, MO",2015,105.249
 29229,"Wright, MO",2015,95.8
+29510,"St. Louis (Independent City), MO",2015,93.501
 30001,"Beaverhead, MT",2015,131.844
 30003,"Big Horn, MT",2015,147.641
 30005,"Blaine, MT",2015,108.832
@@ -41765,6 +42092,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2015,189.457
 32031,"Washoe, NV",2015,105.467
 32033,"White Pine, NV",2015,76.893
+32510,"Carson City (Independent City), NV",2015,94.997
 33001,"Belknap, NH",2015,100.591
 33003,"Carroll, NH",2015,95.06
 33005,"Cheshire, NH",2015,106.51
@@ -42893,6 +43221,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2015,133.453
 51193,"Westmoreland, VA",2015,104.725
 51197,"Wythe, VA",2015,121.658
+51510,"Alexandria (Independent City), VA",2015,94.894
+51550,"Chesapeake (Independent City), VA",2015,102.359
+51650,"Hampton (Independent City), VA",2015,96.321
+51710,"Norfolk (Independent City), VA",2015,100.886
+51740,"Portsmouth (Independent City), VA",2015,101.099
+51760,"Richmond (Independent City), VA",2015,107.8
+51770,"Roanoke (Independent City), VA",2015,104.565
+51810,"Virginia Beach (Independent City), VA",2015,102.171
 51901,"Albemarle + Charlottesville, VA*",2015,105.079
 51903,"Alleghany + Covington, VA*",2015,91.086
 51907,"Augusta, Staunton + Waynesboro, VA*",2015,101.759
@@ -43174,13 +43510,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2016,98.484
 2013,"Aleutians East Borough, AK",2016,176.404
 2016,"Aleutians West Census Area, AK",2016,108.884
+2020,"Anchorage Municipality, AK",2016,102.077
+2050,"Bethel Census Area, AK",2016,103.635
+2060,"Bristol Bay Borough, AK",2016,105.14
 2068,"Denali Borough, AK",2016,125.328
+2070,"Dillingham Census Area, AK",2016,101.984
+2090,"Fairbanks North Star Borough, AK",2016,96.238
+2110,"Juneau City and Borough, AK",2016,97.687
 2122,"Kenai Peninsula Borough, AK",2016,106.143
+2130,"Ketchikan Gateway Borough, AK*",2016,96.98
+2150,"Kodiak Island Borough, AK",2016,92.095
 2158,"Kusilvak Census Area, AK*",2016,103.412
 2164,"Lake and Peninsula Borough, AK",2016,95.299
+2170,"Matanuska-Susitna Borough, AK",2016,107.132
+2180,"Nome Census Area, AK",2016,97.071
 2185,"North Slope Borough, AK",2016,69.413
 2188,"Northwest Arctic Borough, AK",2016,99.209
+2220,"Sitka City and Borough, AK",2016,87.724
+2240,"Southeast Fairbanks Census Area, AK",2016,99.444
 2282,"Yakutat City and Borough, AK*",2016,75.045
+2290,"Yukon-Koyukuk Census Area, AK",2016,63.712
 4001,"Apache, AZ",2016,90.096
 4003,"Cochise, AZ",2016,96.806
 4005,"Coconino, AZ",2016,103.567
@@ -44299,6 +44648,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2016,106.356
 24045,"Wicomico, MD",2016,114.486
 24047,"Worcester, MD",2016,112.051
+24510,"Baltimore (Independent City), MD",2016,106.874
 25001,"Barnstable, MA",2016,103.342
 25003,"Berkshire, MA",2016,100.133
 25005,"Bristol, MA",2016,108.436
@@ -44679,6 +45029,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2016,96.17
 29227,"Worth, MO",2016,70.856
 29229,"Wright, MO",2016,90.254
+29510,"St. Louis (Independent City), MO",2016,90.677
 30001,"Beaverhead, MT",2016,131.705
 30003,"Big Horn, MT",2016,119.575
 30005,"Blaine, MT",2016,88.285
@@ -44844,6 +45195,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2016,144.657
 32031,"Washoe, NV",2016,110.605
 32033,"White Pine, NV",2016,80.712
+32510,"Carson City (Independent City), NV",2016,94.526
 33001,"Belknap, NH",2016,104.662
 33003,"Carroll, NH",2016,98.005
 33005,"Cheshire, NH",2016,106.364
@@ -45972,6 +46324,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2016,141.801
 51193,"Westmoreland, VA",2016,113.628
 51197,"Wythe, VA",2016,124.722
+51510,"Alexandria (Independent City), VA",2016,94.5
+51550,"Chesapeake (Independent City), VA",2016,102.728
+51650,"Hampton (Independent City), VA",2016,96.651
+51710,"Norfolk (Independent City), VA",2016,102.901
+51740,"Portsmouth (Independent City), VA",2016,100.403
+51760,"Richmond (Independent City), VA",2016,109.991
+51770,"Roanoke (Independent City), VA",2016,106.256
+51810,"Virginia Beach (Independent City), VA",2016,103.805
 51901,"Albemarle + Charlottesville, VA*",2016,107.464
 51903,"Alleghany + Covington, VA*",2016,93.011
 51907,"Augusta, Staunton + Waynesboro, VA*",2016,101.213
@@ -46253,13 +46613,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2017,101.525
 2013,"Aleutians East Borough, AK",2017,185.635
 2016,"Aleutians West Census Area, AK",2017,106.433
+2020,"Anchorage Municipality, AK",2017,100.344
+2050,"Bethel Census Area, AK",2017,105.824
+2060,"Bristol Bay Borough, AK",2017,109.028
 2068,"Denali Borough, AK",2017,130.093
+2070,"Dillingham Census Area, AK",2017,104.591
+2090,"Fairbanks North Star Borough, AK",2017,95.348
+2110,"Juneau City and Borough, AK",2017,101.884
 2122,"Kenai Peninsula Borough, AK",2017,107.872
+2130,"Ketchikan Gateway Borough, AK*",2017,97.087
+2150,"Kodiak Island Borough, AK",2017,95.301
 2158,"Kusilvak Census Area, AK*",2017,101.089
 2164,"Lake and Peninsula Borough, AK",2017,103.653
+2170,"Matanuska-Susitna Borough, AK",2017,104.77
+2180,"Nome Census Area, AK",2017,106.39
 2185,"North Slope Borough, AK",2017,71.111
 2188,"Northwest Arctic Borough, AK",2017,117.368
+2220,"Sitka City and Borough, AK",2017,89.109
+2240,"Southeast Fairbanks Census Area, AK",2017,111.392
 2282,"Yakutat City and Borough, AK*",2017,73.343
+2290,"Yukon-Koyukuk Census Area, AK",2017,66.092
 4001,"Apache, AZ",2017,90.268
 4003,"Cochise, AZ",2017,95.376
 4005,"Coconino, AZ",2017,113.458
@@ -47378,6 +47751,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2017,107.885
 24045,"Wicomico, MD",2017,115.333
 24047,"Worcester, MD",2017,112.77
+24510,"Baltimore (Independent City), MD",2017,108.587
 25001,"Barnstable, MA",2017,102.726
 25003,"Berkshire, MA",2017,96.931
 25005,"Bristol, MA",2017,109.609
@@ -47758,6 +48132,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2017,101.895
 29227,"Worth, MO",2017,82.144
 29229,"Wright, MO",2017,91.112
+29510,"St. Louis (Independent City), MO",2017,89.587
 30001,"Beaverhead, MT",2017,117.271
 30003,"Big Horn, MT",2017,129.289
 30005,"Blaine, MT",2017,91.493
@@ -47923,6 +48298,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2017,242.216
 32031,"Washoe, NV",2017,115.789
 32033,"White Pine, NV",2017,93.556
+32510,"Carson City (Independent City), NV",2017,100.443
 33001,"Belknap, NH",2017,105.117
 33003,"Carroll, NH",2017,96.975
 33005,"Cheshire, NH",2017,109.364
@@ -49051,6 +49427,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2017,144.386
 51193,"Westmoreland, VA",2017,110.62
 51197,"Wythe, VA",2017,133.068
+51510,"Alexandria (Independent City), VA",2017,95.278
+51550,"Chesapeake (Independent City), VA",2017,103.445
+51650,"Hampton (Independent City), VA",2017,97.607
+51710,"Norfolk (Independent City), VA",2017,99.066
+51740,"Portsmouth (Independent City), VA",2017,101.66
+51760,"Richmond (Independent City), VA",2017,111.783
+51770,"Roanoke (Independent City), VA",2017,106.611
+51810,"Virginia Beach (Independent City), VA",2017,106.038
 51901,"Albemarle + Charlottesville, VA*",2017,112.861
 51903,"Alleghany + Covington, VA*",2017,82.857
 51907,"Augusta, Staunton + Waynesboro, VA*",2017,101.788
@@ -49332,13 +49716,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2018,101.906
 2013,"Aleutians East Borough, AK",2018,161.267
 2016,"Aleutians West Census Area, AK",2018,102.691
+2020,"Anchorage Municipality, AK",2018,101.121
+2050,"Bethel Census Area, AK",2018,106.973
+2060,"Bristol Bay Borough, AK",2018,117.799
 2068,"Denali Borough, AK",2018,130.913
+2070,"Dillingham Census Area, AK",2018,104.544
+2090,"Fairbanks North Star Borough, AK",2018,94.363
+2110,"Juneau City and Borough, AK",2018,100.622
 2122,"Kenai Peninsula Borough, AK",2018,96.789
+2130,"Ketchikan Gateway Borough, AK*",2018,96.753
+2150,"Kodiak Island Borough, AK",2018,93.255
 2158,"Kusilvak Census Area, AK*",2018,102.524
 2164,"Lake and Peninsula Borough, AK",2018,111.81
+2170,"Matanuska-Susitna Borough, AK",2018,106.58
+2180,"Nome Census Area, AK",2018,105.376
 2185,"North Slope Borough, AK",2018,63.839
 2188,"Northwest Arctic Borough, AK",2018,115.968
+2220,"Sitka City and Borough, AK",2018,90.769
+2240,"Southeast Fairbanks Census Area, AK",2018,106.659
 2282,"Yakutat City and Borough, AK*",2018,76.688
+2290,"Yukon-Koyukuk Census Area, AK",2018,69.578
 4001,"Apache, AZ",2018,91.729
 4003,"Cochise, AZ",2018,96.104
 4005,"Coconino, AZ",2018,112.549
@@ -50457,6 +50854,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2018,108.451
 24045,"Wicomico, MD",2018,114.342
 24047,"Worcester, MD",2018,112.8
+24510,"Baltimore (Independent City), MD",2018,108.833
 25001,"Barnstable, MA",2018,105.116
 25003,"Berkshire, MA",2018,98.656
 25005,"Bristol, MA",2018,110.617
@@ -50837,6 +51235,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2018,107.046
 29227,"Worth, MO",2018,84.323
 29229,"Wright, MO",2018,88.944
+29510,"St. Louis (Independent City), MO",2018,92.196
 30001,"Beaverhead, MT",2018,114.738
 30003,"Big Horn, MT",2018,135.402
 30005,"Blaine, MT",2018,99.187
@@ -51002,6 +51401,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2018,280.442
 32031,"Washoe, NV",2018,111.892
 32033,"White Pine, NV",2018,80.272
+32510,"Carson City (Independent City), NV",2018,104.246
 33001,"Belknap, NH",2018,106.916
 33003,"Carroll, NH",2018,97.115
 33005,"Cheshire, NH",2018,108.898
@@ -52130,6 +52530,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2018,140.805
 51193,"Westmoreland, VA",2018,115.439
 51197,"Wythe, VA",2018,125.943
+51510,"Alexandria (Independent City), VA",2018,96.062
+51550,"Chesapeake (Independent City), VA",2018,106.133
+51650,"Hampton (Independent City), VA",2018,96.269
+51710,"Norfolk (Independent City), VA",2018,91.005
+51740,"Portsmouth (Independent City), VA",2018,99.972
+51760,"Richmond (Independent City), VA",2018,113.836
+51770,"Roanoke (Independent City), VA",2018,106.883
+51810,"Virginia Beach (Independent City), VA",2018,103.895
 51901,"Albemarle + Charlottesville, VA*",2018,116.207
 51903,"Alleghany + Covington, VA*",2018,84.981
 51907,"Augusta, Staunton + Waynesboro, VA*",2018,102.659
@@ -52411,13 +52819,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2019,108.711
 2013,"Aleutians East Borough, AK",2019,168.091
 2016,"Aleutians West Census Area, AK",2019,101.02
+2020,"Anchorage Municipality, AK",2019,100.431
+2050,"Bethel Census Area, AK",2019,105.163
+2060,"Bristol Bay Borough, AK",2019,111.952
 2068,"Denali Borough, AK",2019,128.183
+2070,"Dillingham Census Area, AK",2019,101.734
+2090,"Fairbanks North Star Borough, AK",2019,93.411
+2110,"Juneau City and Borough, AK",2019,97.673
 2122,"Kenai Peninsula Borough, AK",2019,99.268
+2130,"Ketchikan Gateway Borough, AK*",2019,98.579
+2150,"Kodiak Island Borough, AK",2019,94.544
 2158,"Kusilvak Census Area, AK*",2019,103.699
 2164,"Lake and Peninsula Borough, AK",2019,100.691
+2170,"Matanuska-Susitna Borough, AK",2019,111.511
+2180,"Nome Census Area, AK",2019,104.909
 2185,"North Slope Borough, AK",2019,66.833
 2188,"Northwest Arctic Borough, AK",2019,109.562
+2220,"Sitka City and Borough, AK",2019,89.877
+2240,"Southeast Fairbanks Census Area, AK",2019,95.703
 2282,"Yakutat City and Borough, AK*",2019,82.141
+2290,"Yukon-Koyukuk Census Area, AK",2019,68.78
 4001,"Apache, AZ",2019,82.228
 4003,"Cochise, AZ",2019,97.306
 4005,"Coconino, AZ",2019,110.065
@@ -53536,6 +53957,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2019,105.075
 24045,"Wicomico, MD",2019,113.653
 24047,"Worcester, MD",2019,109.613
+24510,"Baltimore (Independent City), MD",2019,107.842
 25001,"Barnstable, MA",2019,108.121
 25003,"Berkshire, MA",2019,96.176
 25005,"Bristol, MA",2019,112.492
@@ -53916,6 +54338,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2019,112.7
 29227,"Worth, MO",2019,96.622
 29229,"Wright, MO",2019,87.056
+29510,"St. Louis (Independent City), MO",2019,94.343
 30001,"Beaverhead, MT",2019,127.6
 30003,"Big Horn, MT",2019,121.031
 30005,"Blaine, MT",2019,96.047
@@ -54081,6 +54504,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2019,293.396
 32031,"Washoe, NV",2019,116.11
 32033,"White Pine, NV",2019,83.001
+32510,"Carson City (Independent City), NV",2019,110.562
 33001,"Belknap, NH",2019,104.645
 33003,"Carroll, NH",2019,95.031
 33005,"Cheshire, NH",2019,110.475
@@ -55209,6 +55633,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2019,148.049
 51193,"Westmoreland, VA",2019,117.752
 51197,"Wythe, VA",2019,115.514
+51510,"Alexandria (Independent City), VA",2019,94.061
+51550,"Chesapeake (Independent City), VA",2019,107.879
+51650,"Hampton (Independent City), VA",2019,97.507
+51710,"Norfolk (Independent City), VA",2019,87.655
+51740,"Portsmouth (Independent City), VA",2019,105.71
+51760,"Richmond (Independent City), VA",2019,116.922
+51770,"Roanoke (Independent City), VA",2019,106.005
+51810,"Virginia Beach (Independent City), VA",2019,105.879
 51901,"Albemarle + Charlottesville, VA*",2019,117.12
 51903,"Alleghany + Covington, VA*",2019,87.867
 51907,"Augusta, Staunton + Waynesboro, VA*",2019,103.915
@@ -55490,13 +55922,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2020,114.385
 2013,"Aleutians East Borough, AK",2020,152.511
 2016,"Aleutians West Census Area, AK",2020,100.753
+2020,"Anchorage Municipality, AK",2020,95.911
+2050,"Bethel Census Area, AK",2020,100.307
+2060,"Bristol Bay Borough, AK",2020,98.238
 2068,"Denali Borough, AK",2020,96.345
+2070,"Dillingham Census Area, AK",2020,93.558
+2090,"Fairbanks North Star Borough, AK",2020,91.878
+2110,"Juneau City and Borough, AK",2020,93.651
 2122,"Kenai Peninsula Borough, AK",2020,96.801
+2130,"Ketchikan Gateway Borough, AK*",2020,85.611
+2150,"Kodiak Island Borough, AK",2020,91.44
 2158,"Kusilvak Census Area, AK*",2020,97.22
 2164,"Lake and Peninsula Borough, AK",2020,89.143
+2170,"Matanuska-Susitna Borough, AK",2020,111.388
+2180,"Nome Census Area, AK",2020,100.29
 2185,"North Slope Borough, AK",2020,61.653
 2188,"Northwest Arctic Borough, AK",2020,109.035
+2220,"Sitka City and Borough, AK",2020,77.676
+2240,"Southeast Fairbanks Census Area, AK",2020,106.195
 2282,"Yakutat City and Borough, AK*",2020,84.88
+2290,"Yukon-Koyukuk Census Area, AK",2020,68.703
 4001,"Apache, AZ",2020,82.847
 4003,"Cochise, AZ",2020,102.028
 4005,"Coconino, AZ",2020,103.766
@@ -56615,6 +57060,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2020,98.825
 24045,"Wicomico, MD",2020,110.606
 24047,"Worcester, MD",2020,97.493
+24510,"Baltimore (Independent City), MD",2020,103.585
 25001,"Barnstable, MA",2020,101.217
 25003,"Berkshire, MA",2020,91.079
 25005,"Bristol, MA",2020,109.807
@@ -56995,6 +57441,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2020,113.737
 29227,"Worth, MO",2020,83.09
 29229,"Wright, MO",2020,85.512
+29510,"St. Louis (Independent City), MO",2020,89.163
 30001,"Beaverhead, MT",2020,122.981
 30003,"Big Horn, MT",2020,114.597
 30005,"Blaine, MT",2020,95.968
@@ -57160,6 +57607,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2020,332.233
 32031,"Washoe, NV",2020,114.861
 32033,"White Pine, NV",2020,95.838
+32510,"Carson City (Independent City), NV",2020,107.272
 33001,"Belknap, NH",2020,101.844
 33003,"Carroll, NH",2020,93.36
 33005,"Cheshire, NH",2020,110.729
@@ -58288,6 +58736,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2020,145.62
 51193,"Westmoreland, VA",2020,122.419
 51197,"Wythe, VA",2020,113.913
+51510,"Alexandria (Independent City), VA",2020,90.199
+51550,"Chesapeake (Independent City), VA",2020,107.303
+51650,"Hampton (Independent City), VA",2020,95.599
+51710,"Norfolk (Independent City), VA",2020,85.289
+51740,"Portsmouth (Independent City), VA",2020,104.326
+51760,"Richmond (Independent City), VA",2020,116.018
+51770,"Roanoke (Independent City), VA",2020,105.292
+51810,"Virginia Beach (Independent City), VA",2020,103.469
 51901,"Albemarle + Charlottesville, VA*",2020,112.592
 51903,"Alleghany + Covington, VA*",2020,81.046
 51907,"Augusta, Staunton + Waynesboro, VA*",2020,100.413
@@ -58569,13 +59025,26 @@ GeoFIPS,GeoName,Year,Value
 1133,"Winston, AL",2021,115.033
 2013,"Aleutians East Borough, AK",2021,161.56
 2016,"Aleutians West Census Area, AK",2021,98.043
+2020,"Anchorage Municipality, AK",2021,96.978
+2050,"Bethel Census Area, AK",2021,96.266
+2060,"Bristol Bay Borough, AK",2021,110.151
 2068,"Denali Borough, AK",2021,118.118
+2070,"Dillingham Census Area, AK",2021,92.772
+2090,"Fairbanks North Star Borough, AK",2021,94.578
+2110,"Juneau City and Borough, AK",2021,95.353
 2122,"Kenai Peninsula Borough, AK",2021,97.943
+2130,"Ketchikan Gateway Borough, AK*",2021,89.519
+2150,"Kodiak Island Borough, AK",2021,91.622
 2158,"Kusilvak Census Area, AK*",2021,99.837
 2164,"Lake and Peninsula Borough, AK",2021,119.961
+2170,"Matanuska-Susitna Borough, AK",2021,117.186
+2180,"Nome Census Area, AK",2021,102.648
 2185,"North Slope Borough, AK",2021,53.967
 2188,"Northwest Arctic Borough, AK",2021,98.655
+2220,"Sitka City and Borough, AK",2021,83.495
+2240,"Southeast Fairbanks Census Area, AK",2021,110.756
 2282,"Yakutat City and Borough, AK*",2021,102.837
+2290,"Yukon-Koyukuk Census Area, AK",2021,70.292
 4001,"Apache, AZ",2021,83.476
 4003,"Cochise, AZ",2021,101.328
 4005,"Coconino, AZ",2021,108.756
@@ -59694,6 +60163,7 @@ GeoFIPS,GeoName,Year,Value
 24043,"Washington, MD",2021,104.927
 24045,"Wicomico, MD",2021,118.207
 24047,"Worcester, MD",2021,108.492
+24510,"Baltimore (Independent City), MD",2021,108.249
 25001,"Barnstable, MA",2021,108.069
 25003,"Berkshire, MA",2021,94.542
 25005,"Bristol, MA",2021,115.425
@@ -60074,6 +60544,7 @@ GeoFIPS,GeoName,Year,Value
 29225,"Webster, MO",2021,121.786
 29227,"Worth, MO",2021,73.728
 29229,"Wright, MO",2021,88.399
+29510,"St. Louis (Independent City), MO",2021,93.683
 30001,"Beaverhead, MT",2021,118.011
 30003,"Big Horn, MT",2021,96.921
 30005,"Blaine, MT",2021,99.341
@@ -60239,6 +60710,7 @@ GeoFIPS,GeoName,Year,Value
 32029,"Storey, NV",2021,393.444
 32031,"Washoe, NV",2021,124.175
 32033,"White Pine, NV",2021,100.343
+32510,"Carson City (Independent City), NV",2021,111.68
 33001,"Belknap, NH",2021,111.286
 33003,"Carroll, NH",2021,98.733
 33005,"Cheshire, NH",2021,124.132
@@ -61367,6 +61839,14 @@ GeoFIPS,GeoName,Year,Value
 51187,"Warren, VA",2021,148.122
 51193,"Westmoreland, VA",2021,113.409
 51197,"Wythe, VA",2021,120.806
+51510,"Alexandria (Independent City), VA",2021,92.421
+51550,"Chesapeake (Independent City), VA",2021,111.718
+51650,"Hampton (Independent City), VA",2021,98.296
+51710,"Norfolk (Independent City), VA",2021,90.163
+51740,"Portsmouth (Independent City), VA",2021,108.398
+51760,"Richmond (Independent City), VA",2021,120.826
+51770,"Roanoke (Independent City), VA",2021,111.491
+51810,"Virginia Beach (Independent City), VA",2021,109.877
 51901,"Albemarle + Charlottesville, VA*",2021,120.732
 51903,"Alleghany + Covington, VA*",2021,81.17
 51907,"Augusta, Staunton + Waynesboro, VA*",2021,105.483
