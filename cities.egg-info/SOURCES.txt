@@ -7,6 +7,8 @@ cities.egg-info/SOURCES.txt
 cities.egg-info/dependency_links.txt
 cities.egg-info/top_level.txt
 cities/utils/__init__.py
+cities/utils/clean_gdp.py
+cities/utils/clean_population.py
 cities/utils/cleaning_pipeline.py
 cities/utils/cleaning_utils.py
 cities/utils/data_grabber.py

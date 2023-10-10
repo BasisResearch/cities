@@ -14,6 +14,8 @@ from cities.utils.data_grabber import DataGrabber
 from cities.utils.similarity_utils import slice_with_lag
 
 
+
+
 class FipsQuery:
 
     def __init__(self, fips, outcome_var = "gdp", feature_groups = [], weights = None, lag = 0, top = 5): 
@@ -21,7 +23,9 @@ class FipsQuery:
         #TODO add weights rescaling to init
         #TODO with a non-trival example of feature groups
     
-        assert outcome_var in ["gdp"], "outcome_var must be one of ['gdp']" #TODO expand to other outcome vars
+        assert outcome_var in ["gdp", "population"], "outcome_var must be one of ['gdp', 'population']"
+        assert outcome_var not in feature_groups, "Outcome_var cannot be at the same time in background variables!"
+        #TODO keep expanding to other outcome vars
        
         self.data = DataGrabber()
         self.repo_root = self.data.repo_root
@@ -39,6 +43,14 @@ class FipsQuery:
                     self.top < self.data.gdp_std_wide.shape[0]), (
                 "top must be a positive integer smaller than the number of locations in the dataset"
                     )
+        
+        self.feature_groups = feature_groups           
+        for feature in self.feature_groups:
+            self.data.get_feature_std_wide(feature)
+        
+        
+            
+            
 
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
