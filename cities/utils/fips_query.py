@@ -27,52 +27,71 @@ class FipsQuery:
         assert outcome_var not in feature_groups, "Outcome_var cannot be at the same time in background variables!"
         #TODO keep expanding to other outcome vars
        
+            
+       
         self.data = DataGrabber()
         self.repo_root = self.data.repo_root
         self.fips = fips
         self.lag = lag
         self.top = top
         self.outcome_var = outcome_var
+        
+        weights = [4] * len(feature_groups) if weights is None and feature_groups else weights
+        assert len(weights) == len(feature_groups)
+        self.feature_groups = feature_groups
         self.weights = weights
         
-        self.data.get_gdp_std_wide()
-        self.name = self.data.gdp_std_wide['GeoName'][self.data.gdp_std_wide['GeoFIPS'] == self.fips].values[0]
+    
+        all_features = [outcome_var] + feature_groups
+        if "gdp" not in all_features:
+            all_features.append("gdp")
+    
+        self.data.get_features_std_wide(all_features)
+        
+        #TODO_Nikodem: here you need to implement testing if the features are a time series, and 
+        #TODO_Nikodem: dropping columns that are excluded by `how_far_back`
+        
+        self.name = self.data.std_wide["gdp"]['GeoName'][self.data.std_wide["gdp"]['GeoFIPS'] == self.fips].values[0]
 
         assert self.lag >= 0 and self.lag < 6 and  isinstance(self.lag, int),  "lag must be  an iteger between 0 and 5"
         assert (self.top > 0 and isinstance(self.top, int) and 
-                    self.top < self.data.gdp_std_wide.shape[0]), (
+                    self.top < self.data.std_wide[self.outcome_var].shape[0]), (
                 "top must be a positive integer smaller than the number of locations in the dataset"
                     )
         
-        self.feature_groups = feature_groups           
-        for feature in self.feature_groups:
-            self.data.get_feature_std_wide(feature)
-        
-        
-            
-            
-
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
         
         
-        if self.outcome_var == "gdp":
-            slices = slice_with_lag(self.data.gdp_std_wide, self.fips, self.lag)
+        #TODO_Nikodem, here you'll need to grab wide without std
+        #TODO_Nikodem, and slice as well, so that you can use
+        #TODO_Nikodem, the resulting df for user friendliness
         
-        self.my_array = np.array(slices['my_array'])
-        self.other_arrays = np.array(slices['other_arrays'])
-        self.other_df = slices['other_df']
+        self.outcome_slices = slice_with_lag(self.data.std_wide[self.outcome_var],
+                                             self.fips, self.lag)
         
-        #TODO add other features here
-        #TODO will need to have the same fips codes in the same order in all other datasets
-        #TODO for the feature addition to be introduced here to work smoothly
+        self.my_array = np.array(self.outcome_slices['my_array'])
+        self.other_arrays = np.array(self.outcome_slices['other_arrays'])
+        self.other_df = self.outcome_slices['other_df']
+        
+        features_arrays = np.array([])
+        for feature in self.feature_groups:
+            _extracted_array = np.array(self.data.std_wide[feature][:, 2:])
+            if features_arrays.size == 0:
+                features_arrays = _extracted_array
+            else:
+                features_arrays = np.hstack((features_arrays, _extracted_array))
+
+        self.comparison_arrays = np.hstack((self.other_arrays, features_arrays))
         
         distances = []
-        for vector in self.other_arrays:
+        for vector in self.comparison_arrays:
             distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
         
         assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
 
+        #TODO_Nikodem: this will have to be expanded to incorporate all features prior
+        #TODO_Nikodem: to normalization and rescaling
         self.other_df[f'distance to {self.fips}'] = distances
         
         self.euclidean_kins = self.other_df.sort_values(by=self.other_df.columns[-1])
