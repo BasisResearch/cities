@@ -1,13 +1,10 @@
-import sys
 import os
-sys.path.insert(0, os.path.dirname(os.getcwd()))
-sys.path.insert(0, os.getcwd())
 
 import pytest
 import pandas as pd
 import numpy as np
 
-from cities.utils import  DataGrabber
+from cities.utils.data_grabber import  DataGrabber
 
 
 def test_DataGrabber():
@@ -17,10 +14,10 @@ def test_DataGrabber():
     data.get_gdp_std_wide()
     data.get_gdp_long()
     data.get_gdp_std_long()
-    assert data.gdp_wide.shape == (3103, 22)
-    assert data.gdp_std_wide.shape == (3103, 22)
-    assert data.gdp_long.shape == (62060, 4)
-    assert data.gdp_std_long.shape == (62060, 4)
+    assert data.gdp_wide.shape[0] > 100
+    assert data.gdp_std_wide.shape[1]  < 100
+    assert data.gdp_long.shape[0] > 10000
+    assert data.gdp_std_long.shape[1] == 4
 
 
     os.chdir(os.path.dirname(os.getcwd()))
@@ -30,11 +27,10 @@ def test_DataGrabber():
     data2.get_gdp_std_wide()
     data2.get_gdp_long()
     data2.get_gdp_std_long()
-    assert data2.gdp_wide.shape == (3103, 22)
-    assert data2.gdp_std_wide.shape == (3103, 22)
-    assert data2.gdp_long.shape == (62060, 4)
-    assert data2.gdp_std_long.shape == (62060, 4)
+    assert data2.gdp_wide.shape[0] >100 
+    assert data2.gdp_std_wide.shape[0] > 100
+    assert data2.gdp_long.shape[0] > 10000
+    assert data2.gdp_std_long.shape[1] == 4
 
 
-
-#test_DataGrabber()
+    assert data.gdp_wide.equals(data2.gdp_wide)

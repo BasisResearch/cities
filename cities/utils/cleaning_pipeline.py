@@ -1,11 +1,14 @@
+from cities.utils.clean_gdp import clean_gdp
+from cities.utils.clean_population import  clean_population
+
+
 import sys
-import os
+# from cities.utils.cleaning_utils import find_repo_root
+# sys.path.insert(0, find_repo_root())
 
-from cleaning_utils import find_repo_root
-sys.path.insert(0, find_repo_root())
-
-from cleaning_utils import clean_gdp
 
 
 
 clean_gdp()
+
+clean_population()

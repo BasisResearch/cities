@@ -74,6 +74,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2001,88.736
 2070,"Dillingham Census Area, AK",2001,82.049
 2090,"Fairbanks North Star Borough, AK",2001,103.572
+2100,"Haines Borough, AK",2001,85.525
 2110,"Juneau City and Borough, AK",2001,81.588
 2122,"Kenai Peninsula Borough, AK",2001,94.882
 2130,"Ketchikan Gateway Borough, AK*",2001,84.133
@@ -2885,10 +2886,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2001,78.521
 51550,"Chesapeake (Independent City), VA",2001,81.231
 51650,"Hampton (Independent City), VA",2001,102.675
+51700,"Newport News (Independent City), VA",2001,76.478
 51710,"Norfolk (Independent City), VA",2001,95.855
 51740,"Portsmouth (Independent City), VA",2001,84.336
 51760,"Richmond (Independent City), VA",2001,112.266
 51770,"Roanoke (Independent City), VA",2001,109.055
+51800,"Suffolk (Independent City), VA",2001,69.927
 51810,"Virginia Beach (Independent City), VA",2001,83.818
 51901,"Albemarle + Charlottesville, VA*",2001,76.004
 51903,"Alleghany + Covington, VA*",2001,83.34
@@ -3177,6 +3180,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2002,89.46
 2070,"Dillingham Census Area, AK",2002,81.7
 2090,"Fairbanks North Star Borough, AK",2002,90.558
+2100,"Haines Borough, AK",2002,84.984
 2110,"Juneau City and Borough, AK",2002,79.986
 2122,"Kenai Peninsula Borough, AK",2002,97.917
 2130,"Ketchikan Gateway Borough, AK*",2002,82.567
@@ -5988,10 +5992,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2002,82.336
 51550,"Chesapeake (Independent City), VA",2002,84.019
 51650,"Hampton (Independent City), VA",2002,103.48
+51700,"Newport News (Independent City), VA",2002,77.684
 51710,"Norfolk (Independent City), VA",2002,99.929
 51740,"Portsmouth (Independent City), VA",2002,86.489
 51760,"Richmond (Independent City), VA",2002,108.439
 51770,"Roanoke (Independent City), VA",2002,107.691
+51800,"Suffolk (Independent City), VA",2002,66.319
 51810,"Virginia Beach (Independent City), VA",2002,85.699
 51901,"Albemarle + Charlottesville, VA*",2002,76.767
 51903,"Alleghany + Covington, VA*",2002,91.84
@@ -6280,6 +6286,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2003,87.089
 2070,"Dillingham Census Area, AK",2003,83.756
 2090,"Fairbanks North Star Borough, AK",2003,91.749
+2100,"Haines Borough, AK",2003,84.541
 2110,"Juneau City and Borough, AK",2003,82.222
 2122,"Kenai Peninsula Borough, AK",2003,101.853
 2130,"Ketchikan Gateway Borough, AK*",2003,83.095
@@ -9091,10 +9098,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2003,83.546
 51550,"Chesapeake (Independent City), VA",2003,89.156
 51650,"Hampton (Independent City), VA",2003,108.305
+51700,"Newport News (Independent City), VA",2003,80.815
 51710,"Norfolk (Independent City), VA",2003,104.131
 51740,"Portsmouth (Independent City), VA",2003,89.523
 51760,"Richmond (Independent City), VA",2003,108.976
 51770,"Roanoke (Independent City), VA",2003,104.648
+51800,"Suffolk (Independent City), VA",2003,66.914
 51810,"Virginia Beach (Independent City), VA",2003,90.447
 51901,"Albemarle + Charlottesville, VA*",2003,79.829
 51903,"Alleghany + Covington, VA*",2003,92.628
@@ -9383,6 +9392,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2004,95.043
 2070,"Dillingham Census Area, AK",2004,84.077
 2090,"Fairbanks North Star Borough, AK",2004,92.494
+2100,"Haines Borough, AK",2004,91.951
 2110,"Juneau City and Borough, AK",2004,83.417
 2122,"Kenai Peninsula Borough, AK",2004,106.307
 2130,"Ketchikan Gateway Borough, AK*",2004,81.929
@@ -12194,10 +12204,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2004,83.631
 51550,"Chesapeake (Independent City), VA",2004,95.703
 51650,"Hampton (Independent City), VA",2004,110.1
+51700,"Newport News (Independent City), VA",2004,83.906
 51710,"Norfolk (Independent City), VA",2004,108.304
 51740,"Portsmouth (Independent City), VA",2004,92.418
 51760,"Richmond (Independent City), VA",2004,105.82
 51770,"Roanoke (Independent City), VA",2004,103.408
+51800,"Suffolk (Independent City), VA",2004,68.871
 51810,"Virginia Beach (Independent City), VA",2004,95.027
 51901,"Albemarle + Charlottesville, VA*",2004,83.643
 51903,"Alleghany + Covington, VA*",2004,93.69
@@ -12486,6 +12498,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2005,98.603
 2070,"Dillingham Census Area, AK",2005,87.826
 2090,"Fairbanks North Star Borough, AK",2005,101.239
+2100,"Haines Borough, AK",2005,98.057
 2110,"Juneau City and Borough, AK",2005,85.932
 2122,"Kenai Peninsula Borough, AK",2005,91.035
 2130,"Ketchikan Gateway Borough, AK*",2005,86.412
@@ -15297,10 +15310,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2005,93.108
 51550,"Chesapeake (Independent City), VA",2005,102.34
 51650,"Hampton (Independent City), VA",2005,110.836
+51700,"Newport News (Independent City), VA",2005,88.389
 51710,"Norfolk (Independent City), VA",2005,110.585
 51740,"Portsmouth (Independent City), VA",2005,94.31
 51760,"Richmond (Independent City), VA",2005,108.195
 51770,"Roanoke (Independent City), VA",2005,101.337
+51800,"Suffolk (Independent City), VA",2005,72.213
 51810,"Virginia Beach (Independent City), VA",2005,98.663
 51901,"Albemarle + Charlottesville, VA*",2005,87.604
 51903,"Alleghany + Covington, VA*",2005,93.112
@@ -15589,6 +15604,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2006,98.946
 2070,"Dillingham Census Area, AK",2006,90.341
 2090,"Fairbanks North Star Borough, AK",2006,105.57
+2100,"Haines Borough, AK",2006,100.793
 2110,"Juneau City and Borough, AK",2006,95.399
 2122,"Kenai Peninsula Borough, AK",2006,95.835
 2130,"Ketchikan Gateway Borough, AK*",2006,87.154
@@ -18400,10 +18416,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2006,99.712
 51550,"Chesapeake (Independent City), VA",2006,102.588
 51650,"Hampton (Independent City), VA",2006,108.177
+51700,"Newport News (Independent City), VA",2006,86.716
 51710,"Norfolk (Independent City), VA",2006,114.236
 51740,"Portsmouth (Independent City), VA",2006,97.969
 51760,"Richmond (Independent City), VA",2006,105.938
 51770,"Roanoke (Independent City), VA",2006,103.067
+51800,"Suffolk (Independent City), VA",2006,72.601
 51810,"Virginia Beach (Independent City), VA",2006,99.977
 51901,"Albemarle + Charlottesville, VA*",2006,91.091
 51903,"Alleghany + Covington, VA*",2006,91.935
@@ -18692,6 +18710,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2007,100.327
 2070,"Dillingham Census Area, AK",2007,88.615
 2090,"Fairbanks North Star Borough, AK",2007,106.816
+2100,"Haines Borough, AK",2007,102.752
 2110,"Juneau City and Borough, AK",2007,100.0
 2122,"Kenai Peninsula Borough, AK",2007,97.635
 2130,"Ketchikan Gateway Borough, AK*",2007,94.334
@@ -21503,10 +21522,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2007,98.328
 51550,"Chesapeake (Independent City), VA",2007,104.844
 51650,"Hampton (Independent City), VA",2007,109.021
+51700,"Newport News (Independent City), VA",2007,90.66
 51710,"Norfolk (Independent City), VA",2007,113.821
 51740,"Portsmouth (Independent City), VA",2007,98.508
 51760,"Richmond (Independent City), VA",2007,103.849
 51770,"Roanoke (Independent City), VA",2007,102.543
+51800,"Suffolk (Independent City), VA",2007,71.184
 51810,"Virginia Beach (Independent City), VA",2007,102.604
 51901,"Albemarle + Charlottesville, VA*",2007,93.96
 51903,"Alleghany + Covington, VA*",2007,87.035
@@ -21795,6 +21816,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2008,114.145
 2070,"Dillingham Census Area, AK",2008,88.027
 2090,"Fairbanks North Star Borough, AK",2008,114.719
+2100,"Haines Borough, AK",2008,98.679
 2110,"Juneau City and Borough, AK",2008,92.637
 2122,"Kenai Peninsula Borough, AK",2008,91.634
 2130,"Ketchikan Gateway Borough, AK*",2008,96.766
@@ -24606,10 +24628,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2008,101.065
 51550,"Chesapeake (Independent City), VA",2008,104.471
 51650,"Hampton (Independent City), VA",2008,109.667
+51700,"Newport News (Independent City), VA",2008,94.129
 51710,"Norfolk (Independent City), VA",2008,110.613
 51740,"Portsmouth (Independent City), VA",2008,98.669
 51760,"Richmond (Independent City), VA",2008,102.255
 51770,"Roanoke (Independent City), VA",2008,102.927
+51800,"Suffolk (Independent City), VA",2008,76.272
 51810,"Virginia Beach (Independent City), VA",2008,103.108
 51901,"Albemarle + Charlottesville, VA*",2008,97.454
 51903,"Alleghany + Covington, VA*",2008,88.796
@@ -24898,6 +24922,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2009,108.644
 2070,"Dillingham Census Area, AK",2009,93.148
 2090,"Fairbanks North Star Borough, AK",2009,112.446
+2100,"Haines Borough, AK",2009,100.693
 2110,"Juneau City and Borough, AK",2009,94.51
 2122,"Kenai Peninsula Borough, AK",2009,98.786
 2130,"Ketchikan Gateway Borough, AK*",2009,99.959
@@ -27709,10 +27734,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2009,101.349
 51550,"Chesapeake (Independent City), VA",2009,104.412
 51650,"Hampton (Independent City), VA",2009,109.419
+51700,"Newport News (Independent City), VA",2009,94.821
 51710,"Norfolk (Independent City), VA",2009,105.989
 51740,"Portsmouth (Independent City), VA",2009,97.662
 51760,"Richmond (Independent City), VA",2009,99.019
 51770,"Roanoke (Independent City), VA",2009,99.696
+51800,"Suffolk (Independent City), VA",2009,89.108
 51810,"Virginia Beach (Independent City), VA",2009,97.576
 51901,"Albemarle + Charlottesville, VA*",2009,96.409
 51903,"Alleghany + Covington, VA*",2009,82.984
@@ -28001,6 +28028,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2010,103.95
 2070,"Dillingham Census Area, AK",2010,100.88
 2090,"Fairbanks North Star Borough, AK",2010,113.437
+2100,"Haines Borough, AK",2010,103.617
 2110,"Juneau City and Borough, AK",2010,99.598
 2122,"Kenai Peninsula Borough, AK",2010,101.49
 2130,"Ketchikan Gateway Borough, AK*",2010,98.79
@@ -30812,10 +30840,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2010,102.956
 51550,"Chesapeake (Independent City), VA",2010,105.339
 51650,"Hampton (Independent City), VA",2010,105.846
+51700,"Newport News (Independent City), VA",2010,95.781
 51710,"Norfolk (Independent City), VA",2010,104.343
 51740,"Portsmouth (Independent City), VA",2010,99.136
 51760,"Richmond (Independent City), VA",2010,97.879
 51770,"Roanoke (Independent City), VA",2010,99.662
+51800,"Suffolk (Independent City), VA",2010,94.87
 51810,"Virginia Beach (Independent City), VA",2010,99.384
 51901,"Albemarle + Charlottesville, VA*",2010,100.348
 51903,"Alleghany + Covington, VA*",2010,86.917
@@ -31104,6 +31134,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2011,98.968
 2070,"Dillingham Census Area, AK",2011,101.184
 2090,"Fairbanks North Star Borough, AK",2011,105.584
+2100,"Haines Borough, AK",2011,102.861
 2110,"Juneau City and Borough, AK",2011,101.593
 2122,"Kenai Peninsula Borough, AK",2011,102.319
 2130,"Ketchikan Gateway Borough, AK*",2011,101.393
@@ -33915,10 +33946,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2011,99.515
 51550,"Chesapeake (Independent City), VA",2011,103.766
 51650,"Hampton (Independent City), VA",2011,103.155
+51700,"Newport News (Independent City), VA",2011,98.757
 51710,"Norfolk (Independent City), VA",2011,102.087
 51740,"Portsmouth (Independent City), VA",2011,101.234
 51760,"Richmond (Independent City), VA",2011,98.523
 51770,"Roanoke (Independent City), VA",2011,99.628
+51800,"Suffolk (Independent City), VA",2011,96.609
 51810,"Virginia Beach (Independent City), VA",2011,99.902
 51901,"Albemarle + Charlottesville, VA*",2011,99.28
 51903,"Alleghany + Covington, VA*",2011,88.154
@@ -34207,6 +34240,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2013,128.219
 2070,"Dillingham Census Area, AK",2013,101.264
 2090,"Fairbanks North Star Borough, AK",2013,98.196
+2100,"Haines Borough, AK",2013,108.161
 2110,"Juneau City and Borough, AK",2013,101.366
 2122,"Kenai Peninsula Borough, AK",2013,104.258
 2130,"Ketchikan Gateway Borough, AK*",2013,101.541
@@ -37018,10 +37052,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2013,95.716
 51550,"Chesapeake (Independent City), VA",2013,101.301
 51650,"Hampton (Independent City), VA",2013,99.171
+51700,"Newport News (Independent City), VA",2013,104.435
 51710,"Norfolk (Independent City), VA",2013,99.167
 51740,"Portsmouth (Independent City), VA",2013,101.202
 51760,"Richmond (Independent City), VA",2013,101.226
 51770,"Roanoke (Independent City), VA",2013,101.541
+51800,"Suffolk (Independent City), VA",2013,96.985
 51810,"Virginia Beach (Independent City), VA",2013,100.587
 51901,"Albemarle + Charlottesville, VA*",2013,100.731
 51903,"Alleghany + Covington, VA*",2013,91.903
@@ -37310,6 +37346,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2014,132.44
 2070,"Dillingham Census Area, AK",2014,106.339
 2090,"Fairbanks North Star Borough, AK",2014,96.937
+2100,"Haines Borough, AK",2014,105.606
 2110,"Juneau City and Borough, AK",2014,101.375
 2122,"Kenai Peninsula Borough, AK",2014,115.269
 2130,"Ketchikan Gateway Borough, AK*",2014,99.28
@@ -40121,10 +40158,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2014,95.147
 51550,"Chesapeake (Independent City), VA",2014,100.555
 51650,"Hampton (Independent City), VA",2014,98.363
+51700,"Newport News (Independent City), VA",2014,100.874
 51710,"Norfolk (Independent City), VA",2014,99.299
 51740,"Portsmouth (Independent City), VA",2014,100.295
 51760,"Richmond (Independent City), VA",2014,103.605
 51770,"Roanoke (Independent City), VA",2014,102.188
+51800,"Suffolk (Independent City), VA",2014,89.943
 51810,"Virginia Beach (Independent City), VA",2014,100.856
 51901,"Albemarle + Charlottesville, VA*",2014,102.354
 51903,"Alleghany + Covington, VA*",2014,86.718
@@ -40413,6 +40452,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2015,129.539
 2070,"Dillingham Census Area, AK",2015,103.274
 2090,"Fairbanks North Star Borough, AK",2015,96.161
+2100,"Haines Borough, AK",2015,110.832
 2110,"Juneau City and Borough, AK",2015,97.661
 2122,"Kenai Peninsula Borough, AK",2015,112.444
 2130,"Ketchikan Gateway Borough, AK*",2015,100.192
@@ -43224,10 +43264,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2015,94.894
 51550,"Chesapeake (Independent City), VA",2015,102.359
 51650,"Hampton (Independent City), VA",2015,96.321
+51700,"Newport News (Independent City), VA",2015,104.499
 51710,"Norfolk (Independent City), VA",2015,100.886
 51740,"Portsmouth (Independent City), VA",2015,101.099
 51760,"Richmond (Independent City), VA",2015,107.8
 51770,"Roanoke (Independent City), VA",2015,104.565
+51800,"Suffolk (Independent City), VA",2015,88.597
 51810,"Virginia Beach (Independent City), VA",2015,102.171
 51901,"Albemarle + Charlottesville, VA*",2015,105.079
 51903,"Alleghany + Covington, VA*",2015,91.086
@@ -43516,6 +43558,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2016,125.328
 2070,"Dillingham Census Area, AK",2016,101.984
 2090,"Fairbanks North Star Borough, AK",2016,96.238
+2100,"Haines Borough, AK",2016,107.391
 2110,"Juneau City and Borough, AK",2016,97.687
 2122,"Kenai Peninsula Borough, AK",2016,106.143
 2130,"Ketchikan Gateway Borough, AK*",2016,96.98
@@ -46327,10 +46370,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2016,94.5
 51550,"Chesapeake (Independent City), VA",2016,102.728
 51650,"Hampton (Independent City), VA",2016,96.651
+51700,"Newport News (Independent City), VA",2016,103.293
 51710,"Norfolk (Independent City), VA",2016,102.901
 51740,"Portsmouth (Independent City), VA",2016,100.403
 51760,"Richmond (Independent City), VA",2016,109.991
 51770,"Roanoke (Independent City), VA",2016,106.256
+51800,"Suffolk (Independent City), VA",2016,87.93
 51810,"Virginia Beach (Independent City), VA",2016,103.805
 51901,"Albemarle + Charlottesville, VA*",2016,107.464
 51903,"Alleghany + Covington, VA*",2016,93.011
@@ -46619,6 +46664,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2017,130.093
 2070,"Dillingham Census Area, AK",2017,104.591
 2090,"Fairbanks North Star Borough, AK",2017,95.348
+2100,"Haines Borough, AK",2017,115.261
 2110,"Juneau City and Borough, AK",2017,101.884
 2122,"Kenai Peninsula Borough, AK",2017,107.872
 2130,"Ketchikan Gateway Borough, AK*",2017,97.087
@@ -49430,10 +49476,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2017,95.278
 51550,"Chesapeake (Independent City), VA",2017,103.445
 51650,"Hampton (Independent City), VA",2017,97.607
+51700,"Newport News (Independent City), VA",2017,102.144
 51710,"Norfolk (Independent City), VA",2017,99.066
 51740,"Portsmouth (Independent City), VA",2017,101.66
 51760,"Richmond (Independent City), VA",2017,111.783
 51770,"Roanoke (Independent City), VA",2017,106.611
+51800,"Suffolk (Independent City), VA",2017,85.258
 51810,"Virginia Beach (Independent City), VA",2017,106.038
 51901,"Albemarle + Charlottesville, VA*",2017,112.861
 51903,"Alleghany + Covington, VA*",2017,82.857
@@ -49722,6 +49770,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2018,130.913
 2070,"Dillingham Census Area, AK",2018,104.544
 2090,"Fairbanks North Star Borough, AK",2018,94.363
+2100,"Haines Borough, AK",2018,122.926
 2110,"Juneau City and Borough, AK",2018,100.622
 2122,"Kenai Peninsula Borough, AK",2018,96.789
 2130,"Ketchikan Gateway Borough, AK*",2018,96.753
@@ -52533,10 +52582,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2018,96.062
 51550,"Chesapeake (Independent City), VA",2018,106.133
 51650,"Hampton (Independent City), VA",2018,96.269
+51700,"Newport News (Independent City), VA",2018,107.877
 51710,"Norfolk (Independent City), VA",2018,91.005
 51740,"Portsmouth (Independent City), VA",2018,99.972
 51760,"Richmond (Independent City), VA",2018,113.836
 51770,"Roanoke (Independent City), VA",2018,106.883
+51800,"Suffolk (Independent City), VA",2018,87.17
 51810,"Virginia Beach (Independent City), VA",2018,103.895
 51901,"Albemarle + Charlottesville, VA*",2018,116.207
 51903,"Alleghany + Covington, VA*",2018,84.981
@@ -52825,6 +52876,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2019,128.183
 2070,"Dillingham Census Area, AK",2019,101.734
 2090,"Fairbanks North Star Borough, AK",2019,93.411
+2100,"Haines Borough, AK",2019,121.43
 2110,"Juneau City and Borough, AK",2019,97.673
 2122,"Kenai Peninsula Borough, AK",2019,99.268
 2130,"Ketchikan Gateway Borough, AK*",2019,98.579
@@ -55636,10 +55688,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2019,94.061
 51550,"Chesapeake (Independent City), VA",2019,107.879
 51650,"Hampton (Independent City), VA",2019,97.507
+51700,"Newport News (Independent City), VA",2019,113.287
 51710,"Norfolk (Independent City), VA",2019,87.655
 51740,"Portsmouth (Independent City), VA",2019,105.71
 51760,"Richmond (Independent City), VA",2019,116.922
 51770,"Roanoke (Independent City), VA",2019,106.005
+51800,"Suffolk (Independent City), VA",2019,91.562
 51810,"Virginia Beach (Independent City), VA",2019,105.879
 51901,"Albemarle + Charlottesville, VA*",2019,117.12
 51903,"Alleghany + Covington, VA*",2019,87.867
@@ -55928,6 +55982,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2020,96.345
 2070,"Dillingham Census Area, AK",2020,93.558
 2090,"Fairbanks North Star Borough, AK",2020,91.878
+2100,"Haines Borough, AK",2020,95.714
 2110,"Juneau City and Borough, AK",2020,93.651
 2122,"Kenai Peninsula Borough, AK",2020,96.801
 2130,"Ketchikan Gateway Borough, AK*",2020,85.611
@@ -58739,10 +58794,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2020,90.199
 51550,"Chesapeake (Independent City), VA",2020,107.303
 51650,"Hampton (Independent City), VA",2020,95.599
+51700,"Newport News (Independent City), VA",2020,105.901
 51710,"Norfolk (Independent City), VA",2020,85.289
 51740,"Portsmouth (Independent City), VA",2020,104.326
 51760,"Richmond (Independent City), VA",2020,116.018
 51770,"Roanoke (Independent City), VA",2020,105.292
+51800,"Suffolk (Independent City), VA",2020,94.606
 51810,"Virginia Beach (Independent City), VA",2020,103.469
 51901,"Albemarle + Charlottesville, VA*",2020,112.592
 51903,"Alleghany + Covington, VA*",2020,81.046
@@ -59031,6 +59088,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2021,118.118
 2070,"Dillingham Census Area, AK",2021,92.772
 2090,"Fairbanks North Star Borough, AK",2021,94.578
+2100,"Haines Borough, AK",2021,103.134
 2110,"Juneau City and Borough, AK",2021,95.353
 2122,"Kenai Peninsula Borough, AK",2021,97.943
 2130,"Ketchikan Gateway Borough, AK*",2021,89.519
@@ -61842,10 +61900,12 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2021,92.421
 51550,"Chesapeake (Independent City), VA",2021,111.718
 51650,"Hampton (Independent City), VA",2021,98.296
+51700,"Newport News (Independent City), VA",2021,118.209
 51710,"Norfolk (Independent City), VA",2021,90.163
 51740,"Portsmouth (Independent City), VA",2021,108.398
 51760,"Richmond (Independent City), VA",2021,120.826
 51770,"Roanoke (Independent City), VA",2021,111.491
+51800,"Suffolk (Independent City), VA",2021,100.487
 51810,"Virginia Beach (Independent City), VA",2021,109.877
 51901,"Albemarle + Charlottesville, VA*",2021,120.732
 51903,"Alleghany + Covington, VA*",2021,81.17

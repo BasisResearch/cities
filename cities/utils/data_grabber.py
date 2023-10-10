@@ -2,13 +2,7 @@ import os
 import sys
 import pandas as pd
 
-
-parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))  
-sys.path.insert(0, parent_dir)
-
-
 from cities.utils.cleaning_utils import find_repo_root
-
 
 class DataGrabber:
     def __init__(self):
