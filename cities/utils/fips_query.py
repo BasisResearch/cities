@@ -63,39 +63,81 @@ class FipsQuery:
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
         
         
-        #TODO_Nikodem, here you'll need to grab wide without std
-        #TODO_Nikodem, and slice as well, so that you can use
-        #TODO_Nikodem, the resulting df for user friendliness
         
         self.outcome_slices = slice_with_lag(self.data.std_wide[self.outcome_var],
                                              self.fips, self.lag)
         
         self.my_array = np.array(self.outcome_slices['my_array'])
         self.other_arrays = np.array(self.outcome_slices['other_arrays'])
-        self.other_df = self.outcome_slices['other_df']
         
-        features_arrays = np.array([])
+        assert self.my_array.shape[0] == self.other_arrays.shape[1]
+        
+        
+        #TODO_Nikodem, here you'll need to grab wide without std
+        #TODO_Nikodem, and slice as well, so that you can use
+        #TODO_Nikodem, the resulting df for user friendliness
+        
+        #self.other_df = self.outcome_slices['other_df']
+        
+        
+        my_features_arrays = np.array([])
+        others_features_arrays = np.array([])
         for feature in self.feature_groups:
-            _extracted_array = np.array(self.data.std_wide[feature][:, 2:])
-            if features_arrays.size == 0:
-                features_arrays = _extracted_array
+            print("extracting feature", feature)
+            _extracted_df = self.data.std_wide[feature].copy()
+            _extracted_others_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] != self.fips].iloc[:, 2:])
+            _extracted_my_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] == self.fips].iloc[:, 2:])
+            
+
+            if my_features_arrays.size == 0:
+                my_features_arrays = _extracted_my_array
             else:
-                features_arrays = np.hstack((features_arrays, _extracted_array))
+                my_features_arrays = np.hstack((my_features_arrays, _extracted_my_array))
+            
+            if others_features_arrays.size == 0:
+                others_features_arrays = _extracted_others_array
+            else:
+                others_features_arrays = np.hstack((others_features_arrays, _extracted_others_array))
+            
+        
+            
+            
+            #            display(others_features_arrays.shape)
+        display(my_features_arrays.shape)
+        
+        display(self.my_array.shape)
+        
+        my_new = np.hstack((self.my_array.reshape(1, -1), my_features_arrays))
+        
+        display(my_features_arrays)
+        display(self.my_array)
+        display(my_new)
+          
+        #self.my_array = np.hstack((self.my_array, my_features_arrays))
+        #self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
+        
+        
+#        display(self.my_array.shape)
+#        display(self.other_arrays.shape)
+        
+        
+        
+        # self.comparison_arrays = np.hstack((self.other_arrays, features_arrays))
+        
+        # assert self.comparison_arrays.shape[1] == self.my_array.shape[0] + features_arrays.shape[1] - 2
+        
+        # distances = []
+        # for vector in self.comparison_arrays:
+        #     distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
+        
+        # assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
 
-        self.comparison_arrays = np.hstack((self.other_arrays, features_arrays))
+        # #TODO_Nikodem: this will have to be expanded to incorporate all features prior
+        # #TODO_Nikodem: to normalization and rescaling
+        # self.other_df[f'distance to {self.fips}'] = distances
         
-        distances = []
-        for vector in self.comparison_arrays:
-            distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
-        
-        assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
-
-        #TODO_Nikodem: this will have to be expanded to incorporate all features prior
-        #TODO_Nikodem: to normalization and rescaling
-        self.other_df[f'distance to {self.fips}'] = distances
-        
-        self.euclidean_kins = self.other_df.sort_values(by=self.other_df.columns[-1])
-        #TODO_Nikodem make sure this returns df with the original variable values, prior to normalization and rescaling
+        # self.euclidean_kins = self.other_df.sort_values(by=self.other_df.columns[-1])
+        # #TODO_Nikodem make sure this returns df with the original variable values, prior to normalization and rescaling
 
 
     def plot_kins(self):
