@@ -32,4 +32,5 @@ def test_slice_with_lag():
     assert np.array_equal(sliced['other_arrays'], expected)
     assert sliced['other_df'].shape[0] == df.shape[0] -1
     
+test_slice_with_lag()
 

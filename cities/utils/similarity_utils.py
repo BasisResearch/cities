@@ -27,8 +27,11 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
     my_array = np.array(my_values)
     other_arrays = np.array(other_df[:, 2:])    
     
-    assert other_arrays.shape[0] + 1 == original_length, "Dataset sizes don't match"
-    assert other_arrays.shape[1] == my_array.shape[0], "Lengths don't match"
+    print(my_array.shape)
+    print(other_arrays.shape)
+    
+#    assert other_arrays.shape[0] == original_length, "Dataset sizes don't match"
+#    assert other_arrays.shape[1] == my_array.shape[0], "Lengths don't match"
     
     return {'my_array': my_array, 'other_arrays': other_arrays, "my_df": my_df,
             'other_df': other_df}

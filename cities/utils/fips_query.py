@@ -47,6 +47,7 @@ class FipsQuery:
             all_features.append("gdp")
     
         self.data.get_features_std_wide(all_features)
+        self.data.get_features_wide(all_features)
         
         #TODO_Nikodem: here you need to implement testing if the features are a time series, and 
         #TODO_Nikodem: dropping columns that are excluded by `how_far_back`
@@ -62,21 +63,22 @@ class FipsQuery:
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
         
-        
-        
+    
         self.outcome_slices = slice_with_lag(self.data.std_wide[self.outcome_var],
                                              self.fips, self.lag)
+ 
         
         self.my_array = np.array(self.outcome_slices['my_array'])
         self.other_arrays = np.array(self.outcome_slices['other_arrays'])
         
         assert self.my_array.shape[0] == self.other_arrays.shape[1]
         
-        #TODO_Nikodem, here you'll need to grab wide without std
-        #TODO_Nikodem, and slice as well, so that you can use
-        #TODO_Nikodem, the resulting df for user friendliness
-        #self.other_df = self.outcome_slices['other_df']
         
+        self.my_df = self.outcome_slices['my_df']
+        self.my_df_unscaled = self.data_wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] == self.fips].copy()
+        
+        self.other_df = self.outcome_slices['other_df']
+        self.other_df_unscaled = self.data_wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] != self.fips].copy()
         
         # add data on other features listed to the arrays
         # prior to distance computation
