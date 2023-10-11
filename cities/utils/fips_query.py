@@ -72,18 +72,17 @@ class FipsQuery:
         
         assert self.my_array.shape[0] == self.other_arrays.shape[1]
         
-        
         #TODO_Nikodem, here you'll need to grab wide without std
         #TODO_Nikodem, and slice as well, so that you can use
         #TODO_Nikodem, the resulting df for user friendliness
-        
         #self.other_df = self.outcome_slices['other_df']
         
         
+        # add data on other features listed to the arrays
+        # prior to distance computation
         my_features_arrays = np.array([])
         others_features_arrays = np.array([])
         for feature in self.feature_groups:
-            print("extracting feature", feature)
             _extracted_df = self.data.std_wide[feature].copy()
             _extracted_others_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] != self.fips].iloc[:, 2:])
             _extracted_my_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] == self.fips].iloc[:, 2:])
@@ -98,46 +97,24 @@ class FipsQuery:
                 others_features_arrays = _extracted_others_array
             else:
                 others_features_arrays = np.hstack((others_features_arrays, _extracted_others_array))
-            
         
-            
-            
-            #            display(others_features_arrays.shape)
-        display(my_features_arrays.shape)
-        
-        display(self.my_array.shape)
-        
-        my_new = np.hstack((self.my_array.reshape(1, -1), my_features_arrays))
-        
-        display(my_features_arrays)
-        display(self.my_array)
-        display(my_new)
-          
-        #self.my_array = np.hstack((self.my_array, my_features_arrays))
-        #self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
-        
-        
-#        display(self.my_array.shape)
-#        display(self.other_arrays.shape)
+        self.my_array = np.hstack((self.my_array, np.squeeze(my_features_arrays)))        
+        self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
         
         
         
-        # self.comparison_arrays = np.hstack((self.other_arrays, features_arrays))
+        distances = []
+        for vector in self.other_arrays:
+            distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
         
-        # assert self.comparison_arrays.shape[1] == self.my_array.shape[0] + features_arrays.shape[1] - 2
-        
-        # distances = []
-        # for vector in self.comparison_arrays:
-        #     distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
-        
-        # assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
+        assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
 
-        # #TODO_Nikodem: this will have to be expanded to incorporate all features prior
-        # #TODO_Nikodem: to normalization and rescaling
-        # self.other_df[f'distance to {self.fips}'] = distances
+        #TODO_Nikodem: this will have to be expanded to incorporate all features prior
+        #TODO_Nikodem: to normalization and rescaling
+        #self.other_df[f'distance to {self.fips}'] = distances
         
-        # self.euclidean_kins = self.other_df.sort_values(by=self.other_df.columns[-1])
-        # #TODO_Nikodem make sure this returns df with the original variable values, prior to normalization and rescaling
+        #self.euclidean_kins = self.other_df.sort_values(by=self.other_df.columns[-1])
+        #TODO_Nikodem make sure this returns df with the original variable values, prior to normalization and rescaling
 
 
     def plot_kins(self):

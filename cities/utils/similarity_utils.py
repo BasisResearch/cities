@@ -17,17 +17,18 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
         
     # this assumes input df has two columns of metadata, then the rest are features
     # obey this convention with other datasets!
-    my_array = np.array(df[df['GeoFIPS'] == fips].values[0][2+lag:].copy())
-    other_df = df[df['GeoFIPS'] != fips].copy()
+    my_id = df[df['GeoFIPS'] == fips].values[0][:2].copy()
+    my_values = df[df['GeoFIPS'] == fips].values[0][2+lag:].copy()
     
-    if lag >0:
-        other_df_cut = other_df.iloc[:, 2:-lag]
-        other_arrays = np.array(other_df_cut.values)
-    else:
-        other_df_cut = other_df.iloc[:, 2:]
-        other_arrays = np.array(other_df_cut.values)
-            
+    my_df = pd.concat([pd.DataFrame(my_id).T, pd.DataFrame(my_values).T], axis=1)
+    
+    other_df = df[df['GeoFIPS'] != fips].values[:, :-lag].copy()
+          
+    my_array = np.array(my_values)
+    other_arrays = np.array(other_df[:, 2:])    
+    
     assert other_arrays.shape[0] + 1 == original_length, "Dataset sizes don't match"
     assert other_arrays.shape[1] == my_array.shape[0], "Lengths don't match"
     
-    return {'my_array': my_array, 'other_arrays': other_arrays, 'other_df': other_df}
+    return {'my_array': my_array, 'other_arrays': other_arrays, "my_df": my_df,
+            'other_df': other_df}

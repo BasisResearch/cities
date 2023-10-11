@@ -1,18 +1,16 @@
-import os
-import sys
+#from scipy.spatial import distance
+#from cities.utils.data_grabber import DataGrabber
+from cities.utils.similarity_utils import slice_with_lag
 
-parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))  
-sys.path.insert(0, parent_dir)
+#import os
+#import sys
+
+# parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))  
+# sys.path.insert(0, parent_dir)
 
 
 import pandas as pd
 import numpy as np
-
-import plotly.graph_objects as go
-from scipy.spatial import distance
-from cities.utils.data_grabber import DataGrabber
-from cities.utils.similarity_utils import slice_with_lag
-
 
 
 def test_slice_with_lag():
