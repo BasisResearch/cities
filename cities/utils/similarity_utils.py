@@ -14,7 +14,8 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
     Meant to be used prior to calculating similarity.
     """
     original_length = df.shape[0]
-        
+    
+    print(original_length)
     # this assumes input df has two columns of metadata, then the rest are features
     # obey this convention with other datasets!
     my_id = df[df['GeoFIPS'] == fips].values[0][:2].copy()
@@ -30,8 +31,8 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
     print(my_array.shape)
     print(other_arrays.shape)
     
-#    assert other_arrays.shape[0] == original_length, "Dataset sizes don't match"
-#    assert other_arrays.shape[1] == my_array.shape[0], "Lengths don't match"
+    assert other_arrays.shape[0] + 1 == original_length, "Dataset sizes don't match"
+    assert other_arrays.shape[1] == my_array.shape[0], "Lengths don't match"
     
     return {'my_array': my_array, 'other_arrays': other_arrays, "my_df": my_df,
             'other_df': other_df}
