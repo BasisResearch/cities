@@ -24,13 +24,17 @@ def test_slice_with_lag():
     df['2004'] = [2004] * 5
     df['2005'] = [2005] * 5
     
+    print(df)
+    
     sliced = slice_with_lag(df, fips = 3, lag = 2)
+
     
     expected = np.array([[2001, 2002, 2003], [2001, 2002, 2003], [2001, 2002, 2003], [2001, 2002, 2003]])
+
 
     assert (sliced['my_array'] == [2003, 2004, 2005]).all()
     assert np.array_equal(sliced['other_arrays'], expected)
     assert sliced['other_df'].shape[0] == df.shape[0] -1
-    
-test_slice_with_lag()
 
+
+test_slice_with_lag()

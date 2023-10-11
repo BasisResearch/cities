@@ -63,53 +63,53 @@ class FipsQuery:
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
         
-    
+        
         self.outcome_slices = slice_with_lag(self.data.std_wide[self.outcome_var],
-                                             self.fips, self.lag)
+                                              self.fips, self.lag)
  
         
-        self.my_array = np.array(self.outcome_slices['my_array'])
-        self.other_arrays = np.array(self.outcome_slices['other_arrays'])
+        # self.my_array = np.array(self.outcome_slices['my_array'])
+        # self.other_arrays = np.array(self.outcome_slices['other_arrays'])
         
-        assert self.my_array.shape[0] == self.other_arrays.shape[1]
+        #assert self.my_array.shape[0] == self.other_arrays.shape[1]
         
         
-        self.my_df = self.outcome_slices['my_df']
-        self.my_df_unscaled = self.data_wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] == self.fips].copy()
+        # # self.my_df = self.outcome_slices['my_df']
+        # # self.my_df_unscaled = self.data.wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] == self.fips].copy()
         
-        self.other_df = self.outcome_slices['other_df']
-        self.other_df_unscaled = self.data_wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] != self.fips].copy()
+        # # self.other_df = self.outcome_slices['other_df']
+        # # self.other_df_unscaled = self.data.wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] != self.fips].copy()
         
-        # add data on other features listed to the arrays
-        # prior to distance computation
-        my_features_arrays = np.array([])
-        others_features_arrays = np.array([])
-        for feature in self.feature_groups:
-            _extracted_df = self.data.std_wide[feature].copy()
-            _extracted_others_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] != self.fips].iloc[:, 2:])
-            _extracted_my_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] == self.fips].iloc[:, 2:])
+        # # add data on other features listed to the arrays
+        # # prior to distance computation
+        # my_features_arrays = np.array([])
+        # others_features_arrays = np.array([])
+        # for feature in self.feature_groups:
+        #     _extracted_df = self.data.std_wide[feature].copy()
+        #     _extracted_others_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] != self.fips].iloc[:, 2:])
+        #     _extracted_my_array = np.array(_extracted_df[_extracted_df['GeoFIPS'] == self.fips].iloc[:, 2:])
             
 
-            if my_features_arrays.size == 0:
-                my_features_arrays = _extracted_my_array
-            else:
-                my_features_arrays = np.hstack((my_features_arrays, _extracted_my_array))
+        #     if my_features_arrays.size == 0:
+        #         my_features_arrays = _extracted_my_array
+        #     else:
+        #         my_features_arrays = np.hstack((my_features_arrays, _extracted_my_array))
             
-            if others_features_arrays.size == 0:
-                others_features_arrays = _extracted_others_array
-            else:
-                others_features_arrays = np.hstack((others_features_arrays, _extracted_others_array))
+        #     if others_features_arrays.size == 0:
+        #         others_features_arrays = _extracted_others_array
+        #     else:
+        #         others_features_arrays = np.hstack((others_features_arrays, _extracted_others_array))
         
-        self.my_array = np.hstack((self.my_array, np.squeeze(my_features_arrays)))        
-        self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
+        # self.my_array = np.hstack((self.my_array, np.squeeze(my_features_arrays)))        
+        # self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
         
         
         
-        distances = []
-        for vector in self.other_arrays:
-            distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
+        # distances = []
+        # for vector in self.other_arrays:
+        #     distances.append(distance.euclidean(self.my_array, vector, w = self.weights))
         
-        assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
+        # assert len(distances) == self.other_arrays.shape[0], "Something went wrong"
 
         #TODO_Nikodem: this will have to be expanded to incorporate all features prior
         #TODO_Nikodem: to normalization and rescaling
@@ -119,82 +119,82 @@ class FipsQuery:
         #TODO_Nikodem make sure this returns df with the original variable values, prior to normalization and rescaling
 
 
-    def plot_kins(self):
-        if self.outcome_var == "gdp":
-            self.data.get_gdp_long()
-            my_outcomes_long = self.data.gdp_long[self.data.gdp_long['GeoFIPS'] == self.fips].copy() 
+#     def plot_kins(self):
+#         if self.outcome_var == "gdp":
+#             self.data.get_gdp_long()
+#             my_outcomes_long = self.data.gdp_long[self.data.gdp_long['GeoFIPS'] == self.fips].copy() 
           
-            fips_top = self.euclidean_kins['GeoFIPS'].iloc[:self.top].values
+#             fips_top = self.euclidean_kins['GeoFIPS'].iloc[:self.top].values
             
-            others_outcome_long = self.data.gdp_long[self.data.gdp_long['GeoFIPS'].isin(fips_top)]
+#             others_outcome_long = self.data.gdp_long[self.data.gdp_long['GeoFIPS'].isin(fips_top)]
 
 
-            fig = go.Figure()
-            fig.add_trace(go.Scatter(x=my_outcomes_long['Year'], y=my_outcomes_long['Value'],
-                                      mode='lines', name=my_outcomes_long['GeoName'].iloc[0],
-                                      line=dict(color='darkred', width=3),
-                                      text=my_outcomes_long['GeoName'].iloc[0], 
-                                      textposition='top right'
-                                      ))
+#             fig = go.Figure()
+#             fig.add_trace(go.Scatter(x=my_outcomes_long['Year'], y=my_outcomes_long['Value'],
+#                                       mode='lines', name=my_outcomes_long['GeoName'].iloc[0],
+#                                       line=dict(color='darkred', width=3),
+#                                       text=my_outcomes_long['GeoName'].iloc[0], 
+#                                       textposition='top right'
+#                                       ))
 
-            #TODO_Nikodem add more shades and test on various settings of top
-            shades_of_grey = ['#333333', '#444444', '#555555', '#666666', '#777777'][:self.top]
-            pastel_colors = ['#FFC0CB', '#A9A9A9', '#87CEFA', '#FFD700', '#98FB98'][:self.top]
+#             #TODO_Nikodem add more shades and test on various settings of top
+#             shades_of_grey = ['#333333', '#444444', '#555555', '#666666', '#777777'][:self.top]
+#             pastel_colors = ['#FFC0CB', '#A9A9A9', '#87CEFA', '#FFD700', '#98FB98'][:self.top]
 
-            #R: not sure which look better
+#             #R: not sure which look better
 
-            for i, geoname in enumerate(others_outcome_long['GeoName'].unique()):
-                subset = others_outcome_long[others_outcome_long['GeoName'] == geoname]
-                #line_color = shades_of_grey[i % len(shades_of_grey)]
-                line_color = pastel_colors[i % len(pastel_colors)]
-                fig.add_trace(go.Scatter(x=subset['Year'] + self.lag, y=subset['Value'],
-                                        mode='lines', name=subset['GeoName'].iloc[0],
-                                        line_color=line_color,
-                                        text=subset['GeoName'].iloc[0], 
-                                        textposition='top right'
-                                        ))
+#             for i, geoname in enumerate(others_outcome_long['GeoName'].unique()):
+#                 subset = others_outcome_long[others_outcome_long['GeoName'] == geoname]
+#                 #line_color = shades_of_grey[i % len(shades_of_grey)]
+#                 line_color = pastel_colors[i % len(pastel_colors)]
+#                 fig.add_trace(go.Scatter(x=subset['Year'] + self.lag, y=subset['Value'],
+#                                         mode='lines', name=subset['GeoName'].iloc[0],
+#                                         line_color=line_color,
+#                                         text=subset['GeoName'].iloc[0], 
+#                                         textposition='top right'
+#                                         ))
 
-            if self.lag >0:
-                fig.update_layout(
-                    shapes=[
-                        dict(
-                            type='line',
-                            x0=2021,
-                            x1=2021,
-                            y0=0,
-                            y1=1,
-                            xref='x',
-                            yref='paper',
-                            line=dict(color='darkgray', width=2)
-                        )
-                    ]
-                )
+#             if self.lag >0:
+#                 fig.update_layout(
+#                     shapes=[
+#                         dict(
+#                             type='line',
+#                             x0=2021,
+#                             x1=2021,
+#                             y0=0,
+#                             y1=1,
+#                             xref='x',
+#                             yref='paper',
+#                             line=dict(color='darkgray', width=2)
+#                         )
+#                     ]
+#                 )
 
-                fig.add_annotation(
-                       text=f'their year {2021 - self.lag}',
-                        x=2021.,
-                        y=1.05, 
-                        xref='x',
-                        yref='paper',
-                        showarrow=False,
-                        font=dict(color='darkgray')
-                        )
-
-
-
-            fig.update_layout(
-                title=f'Top {self.top} locations whose GDP patterns up to year {2021-self.lag} are most similar to the current pattern of {self.name}', 
-                xaxis_title='Year',
-                yaxis_title='Chain-type quantity indexes for real GDP',
-                legend=dict(title='GeoName'),
-                template = "simple_white",
-            )
-
-            fig.show()
+#                 fig.add_annotation(
+#                        text=f'their year {2021 - self.lag}',
+#                         x=2021.,
+#                         y=1.05, 
+#                         xref='x',
+#                         yref='paper',
+#                         showarrow=False,
+#                         font=dict(color='darkgray')
+#                         )
 
 
-#TODO_Nikodem add population clustering and warning if a population is much different,
-#especially if small
+
+#             fig.update_layout(
+#                 title=f'Top {self.top} locations whose GDP patterns up to year {2021-self.lag} are most similar to the current pattern of {self.name}', 
+#                 xaxis_title='Year',
+#                 yaxis_title='Chain-type quantity indexes for real GDP',
+#                 legend=dict(title='GeoName'),
+#                 template = "simple_white",
+#             )
+
+#             fig.show()
+
+
+# #TODO_Nikodem add population clustering and warning if a population is much different,
+# #especially if small
 
              
             
