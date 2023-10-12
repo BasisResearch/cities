@@ -62,8 +62,71 @@ class FipsQuery:
                 "top must be a positive integer smaller than the number of locations in the dataset"
                     ) 
         
-    def where_are_we(self):
+    def where_are_we(self, range_multiplier = 5, sample_size = 150):
+
+        #TODO add shading by population and warning about
+        # locations with low population
+
+        self.data.get_features_long([self.outcome_var])
+        plot_data = self.data.long[self.outcome_var]
+        my_plot_data =  plot_data[plot_data['GeoFIPS'] == self.fips].copy() 
+        upper_limit = my_plot_data['Year'].max()
+
+        others_plot_data = plot_data[plot_data['GeoFIPS'] != self.fips]
         
+        fips = others_plot_data['GeoFIPS'].unique()
+        sampled_fips = np.random.choice(fips, sample_size, replace=False)
+        others_sampled_plot_data = plot_data[plot_data['GeoFIPS'].isin(sampled_fips)]
+
+        y_min = my_plot_data['Value'].mean() -  range_multiplier * my_plot_data['Value'].std()
+        y_max = my_plot_data['Value'].mean() +  range_multiplier * my_plot_data['Value'].std()
+
+
+        fig = go.Figure()
+        
+       
+        for i, geoname in enumerate(others_sampled_plot_data['GeoName'].unique()):
+            subset = others_plot_data[others_plot_data['GeoName'] == geoname]
+            #line_color = shades_of_grey[i % len(shades_of_grey)]
+            #line_color = pastel_colors[i % len(pastel_colors)]
+            line_color = 'lightgray'
+            fig.add_trace(go.Scatter(x=subset['Year'], y=subset['Value'],
+                                    mode='lines', name=subset['GeoName'].iloc[0],
+                                    line_color=line_color,
+                                    text=subset['GeoName'].iloc[0], 
+                                    textposition='top right',
+                                    showlegend=False,
+                                    opacity= 0.4
+                                    ))
+    
+        fig.add_trace(go.Scatter(x=my_plot_data['Year'], y=my_plot_data['Value'],
+                            mode='lines', name=my_plot_data['GeoName'].iloc[0],
+                            line=dict(color='darkred', width=3),
+                            text=my_plot_data['GeoName'].iloc[0], 
+                            textposition='top right',
+                            showlegend=False
+                            ))  
+            
+        title = f'{self.outcome_var} of {self.name}, compared to {sample_size} random other locations'
+        fig.update_layout(
+                    title = title, 
+                    xaxis_title='Year',
+                    yaxis_title=f'{self.outcome_var}',
+                    template = "simple_white",
+                )
+
+        
+        fig.show()
+
+       
+
+
+
+
+
+
+
+
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
         
@@ -172,7 +235,7 @@ class FipsQuery:
         plot_data = self.data.long[self.outcome_var]
         my_plot_data =  plot_data[plot_data['GeoFIPS'] == self.fips].copy()  
         upper_limit = my_plot_data['Year'].max()
-        print(upper_limit)       
+            
         
         fips_top = self.euclidean_kins['GeoFIPS'].iloc[1:(self.top+1)].values
         others_plot_data = plot_data[plot_data['GeoFIPS'].isin(fips_top)]
@@ -239,7 +302,8 @@ class FipsQuery:
             else:
                 title=f'Top {self.top} locations with most similar outcome and feature patterns up to {upper_limit} (lag of {self.lag} years)'
 
-    #TODO will need to mention how_far_back if we implement it            
+    #TODO will need to mention how_far_back if we implement it  \
+    #TODO consider adding info about cluster weights at the bottom of the plot          
 
 
 
