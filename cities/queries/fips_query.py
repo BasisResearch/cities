@@ -22,8 +22,7 @@ class FipsQuery:
         #assert feature_groups == list(weights.keys()), "feature_groups and weights must correspond!."
         #TODO_Nikodem fix the above assertion to be useful
        
-            
-       
+        
         self.data = DataGrabber()
         self.repo_root = self.data.repo_root
         self.fips = fips
@@ -61,8 +60,7 @@ class FipsQuery:
         assert (self.top > 0 and isinstance(self.top, int) and 
                     self.top < self.data.std_wide[self.outcome_var].shape[0]), (
                 "top must be a positive integer smaller than the number of locations in the dataset"
-                    )
-        
+                    ) 
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
         
@@ -70,7 +68,6 @@ class FipsQuery:
         self.outcome_slices = slice_with_lag(self.data.std_wide[self.outcome_var],
                                               self.fips, self.lag)
  
-    
         self.my_array = np.array(self.outcome_slices['my_array'])
         self.other_arrays = np.array(self.outcome_slices['other_arrays'])
     

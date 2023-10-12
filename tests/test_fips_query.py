@@ -37,5 +37,5 @@ def test_euclidean_kins_dont_die(query):
     
     f  =  query
     f.find_euclidean_kins()
-    f.weigth_plot.show()
+    assert f.weigth_plot is not None
     
