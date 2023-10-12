@@ -1,10 +1,12 @@
 import pandas as pd
 import numpy as np
 import sys
+import pickle
 
 from cities.utils.cleaning_utils import standardize_and_scale
 
-
+import os
+os.getcwd()
 
 def clean_gdp():
     gdp = pd.read_csv("../data/raw/CAGDP1_2001_2021.csv", encoding='ISO-8859-1')
@@ -41,14 +43,21 @@ def clean_gdp():
 
 
     assert gdp['GeoName'].is_unique
-    #TODO_Nikodem add transport assertions
-    
-    
+
     
     #TODO_Nikodem  subsetting GeoFIPS to values that transport uses
-   
     
+    with open('../data/raw/exclusions.pkl', 'rb') as file:
+        exclusions = pickle.load(file)
+
+    gdp = gdp[~gdp['GeoFIPS'].isin(exclusions.get('transport'))]
+    assert len(gdp) == len(gdp['GeoFIPS'].unique())
+    assert len(gdp) > 3000, 'The number of records is lower than 3000'
     
+    patState = r', [A-Z]{2}(\*{1,2})?$'
+    GeoNameError = 'Wrong Geoname value!'
+    assert gdp['GeoName'].str.contains(patState, regex=True).all(), GeoNameError
+    assert sum(gdp['GeoName'].str.count(', ')) == gdp.shape[0], GeoNameError
 
     for column in gdp.columns[2:]:
         assert (gdp[column] > 0).all(), f"Negative values in {column}"
