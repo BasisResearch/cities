@@ -14,3 +14,8 @@ cities/utils/cleaning_utils.py
 cities/utils/data_grabber.py
 cities/utils/fips_query.py
 cities/utils/similarity_utils.py
+tests/test_cleaning_utils.py
+tests/test_data_grabber.py
+tests/test_fips_query.py
+tests/test_similarity.py
+tests/test_trivial.py

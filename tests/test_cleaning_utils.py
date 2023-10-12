@@ -10,7 +10,7 @@ from cities.utils.cleaning_utils import standardize_and_scale
 
 
 # set up gdp data
-gdp = pd.read_csv("../data/raw/CAGDP1_2001_2021.csv", encoding='ISO-8859-1')
+gdp = pd.read_csv("/data/raw/CAGDP1_2001_2021.csv", encoding='ISO-8859-1')
 
 gdp = gdp.drop(gdp.columns[2:8], axis=1) 
 gdp = gdp.drop('2012', axis=1)

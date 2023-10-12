@@ -3,7 +3,6 @@ import os
 import pytest
 import pandas as pd
 import numpy as np
-
 from cities.utils.data_grabber import  DataGrabber
 
 
@@ -41,4 +40,4 @@ def test_DataGrabber():
     assert all(data.wide[feature].equals(data2.wide[feature]) for feature in features)
 
     
-    
+#    test_DataGrabber()
