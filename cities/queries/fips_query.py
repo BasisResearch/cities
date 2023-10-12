@@ -1,11 +1,6 @@
 import os
 import sys
 
-# parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))  
-# sys.path.insert(0, parent_dir)
-
-# print("current_environment", os.environ['CONDA_DEFAULT_ENV'])
-
 import pandas as pd
 import numpy as np
 
@@ -21,13 +16,11 @@ class FipsQuery:
 
     def __init__(self, fips, outcome_var = "gdp", feature_groups = [], weights = {}, lag = 0, top = 5, time_decay = 1.08): 
         
-        #TODO add weights rescaling to init
-        #TODO with a non-trival example of feature groups
     
         assert outcome_var in ["gdp", "population"], "outcome_var must be one of ['gdp', 'population']"
         assert outcome_var not in feature_groups, "Outcome_var cannot be at the same time in background variables!"
         #assert feature_groups == list(weights.keys()), "feature_groups and weights must correspond!."
-        #TODO keep expanding to other outcome vars
+        #TODO_Nikodem fix the above assertion to be useful
        
             
        
@@ -60,7 +53,9 @@ class FipsQuery:
         #TODO_Nikodem: here you need to implement testing if the features are a time series, and 
         #TODO_Nikodem: dropping columns that are excluded by `how_far_back`
         
+        assert fips in self.data.std_wide['gdp']['GeoFIPS'].values , "FIPS not found in the data set."
         self.name = self.data.std_wide["gdp"]['GeoName'][self.data.std_wide["gdp"]['GeoFIPS'] == self.fips].values[0]
+
 
         assert self.lag >= 0 and self.lag < 6 and  isinstance(self.lag, int),  "lag must be  an iteger between 0 and 5"
         assert (self.top > 0 and isinstance(self.top, int) and 
@@ -81,10 +76,9 @@ class FipsQuery:
     
         assert self.my_array.shape[1] == self.other_arrays.shape[1]
         
-        #self.my_df = self.outcome_slices['my_df']
         self.my_df = self.data.wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] == self.fips].copy()
         
-        #self.other_df = self.outcome_slices['other_df']
+        self.other_df = self.outcome_slices['other_df']
         self.other_df = self.data.wide[self.outcome_var][self.data.wide[self.outcome_var]['GeoFIPS'] != self.fips].copy()
         
 
@@ -126,7 +120,6 @@ class FipsQuery:
             _extracted_my_array = np.array(_extracted_df_std[_extracted_df_std['GeoFIPS'] == self.fips].iloc[:, 2:])
             
 
-
             if my_features_arrays.size == 0:
                 my_features_arrays = _extracted_my_array
             else:
@@ -137,12 +130,15 @@ class FipsQuery:
             else:
                 others_features_arrays = np.hstack((others_features_arrays, _extracted_other_array))
         
-        self.my_array = np.hstack((self.my_array, my_features_arrays))        
-        self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
+        if self.feature_groups:
+            self.my_array = np.hstack((self.my_array, my_features_arrays))        
+            self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
          
 
-        
         compute_weight_array(self, self.time_decay)
+
+        diff =   self.all_weights.shape[0] -  self.other_arrays.shape[1]
+        self.all_weights = self.all_weights[diff:]
 
         assert self.other_arrays.shape[1] == self.all_weights.shape[0], "Weights and arrays are misaligned" 
 
@@ -151,7 +147,6 @@ class FipsQuery:
             distances.append(distance.euclidean(np.squeeze(self.my_array), vector, w = self.all_weights))
         
         count = sum([1 for distance in distances if distance == 0])
-       
        
 
         assert len(distances) == self.other_arrays.shape[0], "Distances and arrays are misaligned"
