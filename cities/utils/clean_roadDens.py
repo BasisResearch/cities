@@ -10,7 +10,7 @@ def clean_population():
     data.get_gdp_wide()
     gdp = data.gdp_wide
     
-    smart = pd.read_csv("../data/raw/EPA_SmartLocationDatabase_V3_Jan_2021_Final.csv")
+    smart = pd.read_csv("../data/raw/smartLocationSmall.csv")
 
     smart['STATEFP'] = smart['STATEFP'].astype(str).str.zfill(2)
     smart['COUNTYFP'] = smart['COUNTYFP'].astype(str).str.zfill(3)

@@ -3,7 +3,7 @@ import numpy as np
 import sys
 
 from cities.utils.cleaning_utils import standardize_and_scale
-                                         
+
 
 
 def clean_gdp():
@@ -41,6 +41,14 @@ def clean_gdp():
 
 
     assert gdp['GeoName'].is_unique
+    #TODO_Nikodem add transport assertions
+    
+    
+    
+    #TODO_Nikodem  subsetting GeoFIPS to values that transport uses
+   
+    
+    
 
     for column in gdp.columns[2:]:
         assert (gdp[column] > 0).all(), f"Negative values in {column}"
