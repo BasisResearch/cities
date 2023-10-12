@@ -5,19 +5,29 @@ import pandas as pd
 
 
 
-def clean_population():
+def clean_transport():
     data = DataGrabber()
-    data.get_gdp_wide()
-    gdp = data.gdp_wide
+    data.get_features_wide(['gdp'])
+    gdp = data.wide
+    gdp = gdp.get('gdp')
     
     # grabbing gdp for comparison
     
-    transport = pd.read_csv("data/raw/smartLocationSmall.csv")
+    transport = pd.read_csv("../data/raw/smartLocationSmall.csv")
     
-    #choosing transport values
-    transport = transport[['GeoFIPS', 'D3A']]
+    #choosing transport variables
+    transport = transport[['GeoFIPS', 'D3A', 'WeightAvgNatWalkInd']]
 
-    assert transport.isna().sum().sum() == 0
+    # list of GeoFips with Na values
+    transportUnwanted = transport[(pd.isna(transport['WeightAvgNatWalkInd']) | 
+                                    (transport['WeightAvgNatWalkInd'] == 1)) |
+                                    (transport['D3A'] == 0)|
+                                    (transport['D3A'] == 1)]
+
+    exclude_mask = transport['GeoFIPS'].isin(transportUnwanted['GeoFIPS'])
+    transport = transport[~exclude_mask]
+
+    assert transport.isna().sum().sum() == 0, 'Na values detected'
     assert transport['GeoFIPS'].is_unique
     
     # subsetting to common FIPS numbers
@@ -31,10 +41,13 @@ def clean_population():
 
     # adding geoname column
     transport = transport.merge(gdp[['GeoFIPS', 'GeoName']],
-                            on='GeoFIPS', how='left')[['GeoFIPS', 'GeoName', 'D3A']]
+                            on='GeoFIPS', how='left')[['GeoFIPS',
+                                                       'GeoName',
+                                                       'D3A',
+                                                       'WeightAvgNatWalkInd']]
     
     patState = r', [A-Z]{2}(\*{1,2})?$'
-    GeoNameError = 'Wrong Geoname value!'
+    GeoNameError = 'Wrong GeoName value!'
     assert transport['GeoName'].str.contains(patState, regex=True).all(), GeoNameError
     assert sum(transport['GeoName'].str.count(', ')) == transport.shape[0], GeoNameError
     
@@ -47,6 +60,18 @@ def clean_population():
     
     # Standardizing, formatting, saving
     
+    transport_wide = transport.copy()
     transport_std_wide = standardize_and_scale(transport)
+
+    transport_long = pd.melt(transport, id_vars=['GeoFIPS', 'GeoName'],
+                        var_name='Category', value_name='Value')
+    transport_std_long = pd.melt(transport_std_wide.copy(),
+                        id_vars=['GeoFIPS', 'GeoName'],
+                        var_name='Category', value_name='Value')
+    
+
+    transport_wide.to_csv("../data/processed/transport_wide.csv", index=False)
+    transport_long.to_csv("../data/processed/transport_long.csv", index=False)
+    transport_std_wide.to_csv("../data/processed/transport_std_wide.csv", index=False)
+    transport_std_long.to_csv("../data/processed/transport_std_long.csv", index=False)    
         
-    transport_std_wide.to_csv("data/processed/transport_std_wide.csv", index=False)
