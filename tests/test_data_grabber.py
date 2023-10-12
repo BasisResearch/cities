@@ -40,4 +40,3 @@ def test_DataGrabber():
     assert all(data.wide[feature].equals(data2.wide[feature]) for feature in features)
 
     
-#    test_DataGrabber()

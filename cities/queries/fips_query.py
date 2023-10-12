@@ -33,7 +33,7 @@ class FipsQuery:
         self.time_decay = time_decay
         
         if len(feature_groups) > 0:
-            assert len(weights) == len(feature_groups)
+            assert len(weights) == len(feature_groups), "feature_groups and weights must correspond!"
         self.feature_groups = feature_groups
         self.weights = weights
         
