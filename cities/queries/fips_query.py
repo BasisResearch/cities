@@ -62,10 +62,16 @@ class FipsQuery:
                 "top must be a positive integer smaller than the number of locations in the dataset"
                     ) 
         
-    def where_are_we(self, range_multiplier = 5, sample_size = 150):
+    def where_are_we(self, range_multiplier = 2, sample_size = 250):
+
+        #TODO_Nikodem add a test for this function
 
         #TODO add shading by population and warning about
         # locations with low population
+
+        #TODO consider explicit printing of percentiles in 
+        # complete data set
+
 
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
@@ -78,8 +84,8 @@ class FipsQuery:
         sampled_fips = np.random.choice(fips, sample_size, replace=False)
         others_sampled_plot_data = plot_data[plot_data['GeoFIPS'].isin(sampled_fips)]
 
-        y_min = my_plot_data['Value'].mean() -  range_multiplier * my_plot_data['Value'].std()
-        y_max = my_plot_data['Value'].mean() +  range_multiplier * my_plot_data['Value'].std()
+        y_min = my_plot_data['Value'].mean() -  (range_multiplier * my_plot_data['Value'].std())
+        y_max = my_plot_data['Value'].mean() +  (range_multiplier * my_plot_data['Value'].std())
 
 
         fig = go.Figure()
@@ -117,15 +123,6 @@ class FipsQuery:
 
         
         fig.show()
-
-       
-
-
-
-
-
-
-
 
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
