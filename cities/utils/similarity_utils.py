@@ -87,10 +87,8 @@ def compute_weight_array(object, rate = 1.08):
             weight_lists[feature] = divide_exponentially(object.weights[feature], column_counts[feature], rate)
         else:
             weight_lists[feature] = [object.weights[feature] / column_counts[feature]] * column_counts[feature]
-
+    
     all_weights = np.concatenate(list(weight_lists.values()))
-
-
 
     fig = go.Figure()
 
@@ -107,7 +105,5 @@ def compute_weight_array(object, rate = 1.08):
     
     object.all_weights = all_weights
 
-    print("weights calculated, shape:", object.all_weights.shape)
     return np.array(all_weights)
     
-    pass

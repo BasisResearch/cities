@@ -102,5 +102,4 @@ def test_compute_weight_array():
     assert len(fp.all_weights) == fp.data.std_wide['gdp'].shape[1] + fp.data.std_wide['population'].shape[1] - 4
 
 
-test_compute_weight_array()
 
