@@ -7,8 +7,6 @@ import sys
 # sys.path.insert(0, find_repo_root())
 
 
-
-
 clean_gdp()
 
 clean_population()

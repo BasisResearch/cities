@@ -72,7 +72,6 @@ class FipsQuery:
         #TODO consider explicit printing of percentiles in 
         # complete data set
 
-
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
         my_plot_data =  plot_data[plot_data['GeoFIPS'] == self.fips].copy() 
@@ -207,7 +206,6 @@ class FipsQuery:
             distances.append(distance.euclidean(np.squeeze(self.my_array), vector, w = self.all_weights))
         
         count = sum([1 for distance in distances if distance == 0])
-       
 
         assert len(distances) == self.other_arrays.shape[0], "Distances and arrays are misaligned"
         assert len(distances) == self.other_df.shape[0], "Distances and df are misaligned"
@@ -224,8 +222,6 @@ class FipsQuery:
         self.euclidean_kins = pd.concat((self.my_df, self.other_df), axis = 0)
 
         
-        
-
     def plot_kins(self):
 
         self.data.get_features_long([self.outcome_var])
@@ -245,7 +241,7 @@ class FipsQuery:
                                     textposition='top right'
                                     ))
 
-        #TODO_Nikodem add more shades and test on various settings of top
+        #TODO_Nikodem add more shades and test on largish top
         shades_of_grey = ['#333333', '#444444', '#555555', '#666666', '#777777'][:self.top]
         pastel_colors = ['#FFC0CB', '#A9A9A9', '#87CEFA', '#FFD700', '#98FB98'][:self.top]
 
@@ -300,9 +296,7 @@ class FipsQuery:
                 title=f'Top {self.top} locations with most similar outcome and feature patterns up to {upper_limit} (lag of {self.lag} years)'
 
     #TODO will need to mention how_far_back if we implement it  \
-    #TODO consider adding info about cluster weights at the bottom of the plot          
-
-
+    #TODO adding info about feature cluster weights at the bottom of the plot          
 
         fig.update_layout(
             title = title, 
@@ -317,9 +311,3 @@ class FipsQuery:
 
 #TODO_Nikodem add population clustering and warning if a population is much different,
 #especially if small
-
-             
-            
-            
-
-

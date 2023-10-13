@@ -102,7 +102,6 @@ def compute_weight_array(object, rate = 1.08):
     )
 
     object.weigth_plot = fig
-    
     object.all_weights = all_weights
 
     return np.array(all_weights)
