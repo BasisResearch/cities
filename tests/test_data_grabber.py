@@ -1,10 +1,13 @@
 import os
-
 import pytest
 import pandas as pd
 import numpy as np
 from cities.utils.data_grabber import  DataGrabber
 
+# for some reason this test succeeds only
+# with pytest run as a module. 
+# python -m pytest test_data_grabber.py
+#TODO fix this
 
 features = ["gdp", "population"]
 
@@ -39,4 +42,3 @@ def test_DataGrabber():
 
     assert all(data.wide[feature].equals(data2.wide[feature]) for feature in features)
 
-    

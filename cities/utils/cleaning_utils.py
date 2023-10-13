@@ -21,8 +21,6 @@ def find_repo_root():
     return current_dir
 
 
-
-
 def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
     """
     Standardizes and scales float columns in a DataFrame to [-1,1], copying other columns. Returns a new DataFrame.
@@ -55,7 +53,6 @@ def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
 
 
             new_data[column] =  scaled_values.reshape(-1)
-
     
     return new_data
 

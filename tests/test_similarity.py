@@ -1,18 +1,9 @@
-#from scipy.spatial import distance
-#from cities.utils.data_grabber import DataGrabber
-#import os
-#print("current_environment", os.environ['CONDA_DEFAULT_ENV'])
 from cities.utils.similarity_utils import (slice_with_lag, compute_weight_array)
 from cities.utils.data_grabber import DataGrabber
 from cities.queries.fips_query import FipsQuery
 
 from scipy.spatial import distance
 import matplotlib.pyplot as plt
-#import sys
-#print(sys.path)
-#parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))  
-#sys.path.insert(0, parent_dir)
-
 
 
 import pandas as pd
@@ -55,7 +46,6 @@ def test_slice_with_lag(lag):
         assert np.array_equal(sliced['other_arrays'], expected2)
 
 
-
 def test_slice_with_lag_on_real_data():
     outcome_var = "gdp"
     fips = 21001
@@ -66,12 +56,8 @@ def test_slice_with_lag_on_real_data():
 
     outcome_slices = slice_with_lag(data.std_wide[outcome_var],
                                                fips, lag)
- 
-    print(data.std_wide[outcome_var].shape)
-
     
     assert data.std_wide[outcome_var].duplicated().sum() == 0 
-    
 
     my_array = outcome_slices['my_array']
     other_arrays = outcome_slices['other_arrays']
@@ -80,8 +66,6 @@ def test_slice_with_lag_on_real_data():
     for vector in other_arrays:
         distances.append(distance.euclidean(np.squeeze(my_array), vector))
         
-    print(other_arrays.shape)
-
     count = sum(1 for distance in distances if distance == 0)
     print("Number of zeros:", count)
 
@@ -100,6 +84,4 @@ def test_compute_weight_array():
 
     assert len(f.all_weights) == f.data.std_wide['gdp'].shape[1] - 2
     assert len(fp.all_weights) == fp.data.std_wide['gdp'].shape[1] + fp.data.std_wide['population'].shape[1] - 4
-
-
 

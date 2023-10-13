@@ -61,6 +61,68 @@ class FipsQuery:
                     self.top < self.data.std_wide[self.outcome_var].shape[0]), (
                 "top must be a positive integer smaller than the number of locations in the dataset"
                     ) 
+        
+    def where_are_we(self, range_multiplier = 2, sample_size = 250):
+
+        #TODO_Nikodem add a test for this function
+
+        #TODO add shading by population and warning about
+        # locations with low population
+
+        #TODO consider explicit printing of percentiles in 
+        # complete data set
+
+        self.data.get_features_long([self.outcome_var])
+        plot_data = self.data.long[self.outcome_var]
+        my_plot_data =  plot_data[plot_data['GeoFIPS'] == self.fips].copy() 
+        upper_limit = my_plot_data['Year'].max()
+
+        others_plot_data = plot_data[plot_data['GeoFIPS'] != self.fips]
+        
+        fips = others_plot_data['GeoFIPS'].unique()
+        sampled_fips = np.random.choice(fips, sample_size, replace=False)
+        others_sampled_plot_data = plot_data[plot_data['GeoFIPS'].isin(sampled_fips)]
+
+        y_min = my_plot_data['Value'].mean() -  (range_multiplier * my_plot_data['Value'].std())
+        y_max = my_plot_data['Value'].mean() +  (range_multiplier * my_plot_data['Value'].std())
+
+
+        fig = go.Figure()
+        
+       
+        for i, geoname in enumerate(others_sampled_plot_data['GeoName'].unique()):
+            subset = others_plot_data[others_plot_data['GeoName'] == geoname]
+            #line_color = shades_of_grey[i % len(shades_of_grey)]
+            #line_color = pastel_colors[i % len(pastel_colors)]
+            line_color = 'lightgray'
+            fig.add_trace(go.Scatter(x=subset['Year'], y=subset['Value'],
+                                    mode='lines', name=subset['GeoName'].iloc[0],
+                                    line_color=line_color,
+                                    text=subset['GeoName'].iloc[0], 
+                                    textposition='top right',
+                                    showlegend=False,
+                                    opacity= 0.4
+                                    ))
+    
+        fig.add_trace(go.Scatter(x=my_plot_data['Year'], y=my_plot_data['Value'],
+                            mode='lines', name=my_plot_data['GeoName'].iloc[0],
+                            line=dict(color='darkred', width=3),
+                            text=my_plot_data['GeoName'].iloc[0], 
+                            textposition='top right',
+                            showlegend=False
+                            ))  
+            
+        title = f'{self.outcome_var} of {self.name}, compared to {sample_size} random other locations'
+        fig.update_layout(
+                    title = title, 
+                    xaxis_title='Year',
+                    yaxis_title=f'{self.outcome_var}',
+                    template = "simple_white",
+                )
+
+        
+        fig.show()
+
 
     def find_euclidean_kins(self): ##TODO_Nikodem add a test for this function
         
@@ -144,7 +206,6 @@ class FipsQuery:
             distances.append(distance.euclidean(np.squeeze(self.my_array), vector, w = self.all_weights))
         
         count = sum([1 for distance in distances if distance == 0])
-       
 
         assert len(distances) == self.other_arrays.shape[0], "Distances and arrays are misaligned"
         assert len(distances) == self.other_df.shape[0], "Distances and df are misaligned"
@@ -161,87 +222,92 @@ class FipsQuery:
         self.euclidean_kins = pd.concat((self.my_df, self.other_df), axis = 0)
 
         
+    def plot_kins(self):
+
+        self.data.get_features_long([self.outcome_var])
+        plot_data = self.data.long[self.outcome_var]
+        my_plot_data =  plot_data[plot_data['GeoFIPS'] == self.fips].copy()  
+        upper_limit = my_plot_data['Year'].max()
+            
         
+        fips_top = self.euclidean_kins['GeoFIPS'].iloc[1:(self.top+1)].values
+        others_plot_data = plot_data[plot_data['GeoFIPS'].isin(fips_top)]
 
-#     def plot_kins(self):
-#         if self.outcome_var == "gdp":
-#             self.data.get_gdp_long()
-#             my_outcomes_long = self.data.gdp_long[self.data.gdp_long['GeoFIPS'] == self.fips].copy() 
-          
-#             fips_top = self.euclidean_kins['GeoFIPS'].iloc[:self.top].values
-            
-#             others_outcome_long = self.data.gdp_long[self.data.gdp_long['GeoFIPS'].isin(fips_top)]
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=my_plot_data['Year'], y=my_plot_data['Value'],
+                                    mode='lines', name=my_plot_data['GeoName'].iloc[0],
+                                    line=dict(color='darkred', width=3),
+                                    text=my_plot_data['GeoName'].iloc[0], 
+                                    textposition='top right'
+                                    ))
 
+        #TODO_Nikodem add more shades and test on largish top
+        shades_of_grey = ['#333333', '#444444', '#555555', '#666666', '#777777'][:self.top]
+        pastel_colors = ['#FFC0CB', '#A9A9A9', '#87CEFA', '#FFD700', '#98FB98'][:self.top]
 
-#             fig = go.Figure()
-#             fig.add_trace(go.Scatter(x=my_outcomes_long['Year'], y=my_outcomes_long['Value'],
-#                                       mode='lines', name=my_outcomes_long['GeoName'].iloc[0],
-#                                       line=dict(color='darkred', width=3),
-#                                       text=my_outcomes_long['GeoName'].iloc[0], 
-#                                       textposition='top right'
-#                                       ))
+       
 
-#             #TODO_Nikodem add more shades and test on various settings of top
-#             shades_of_grey = ['#333333', '#444444', '#555555', '#666666', '#777777'][:self.top]
-#             pastel_colors = ['#FFC0CB', '#A9A9A9', '#87CEFA', '#FFD700', '#98FB98'][:self.top]
+        for i, geoname in enumerate(others_plot_data['GeoName'].unique()):
+            subset = others_plot_data[others_plot_data['GeoName'] == geoname]
+            #line_color = shades_of_grey[i % len(shades_of_grey)]
+            line_color = pastel_colors[i % len(pastel_colors)]
+            fig.add_trace(go.Scatter(x=subset['Year'] + self.lag, y=subset['Value'],
+                                    mode='lines', name=subset['GeoName'].iloc[0],
+                                    line_color=line_color,
+                                    text=subset['GeoName'].iloc[0], 
+                                    textposition='top right'
+                                    ))
 
-#             #R: not sure which look better
+        if self.lag >0:
+            fig.update_layout(
+                shapes=[
+                    dict(
+                        type='line',
+                        x0=2021,
+                        x1=2021,
+                        y0=0,
+                        y1=1,
+                        xref='x',
+                        yref='paper',
+                        line=dict(color='darkgray', width=2)
+                    )
+                ]
+            )
 
-#             for i, geoname in enumerate(others_outcome_long['GeoName'].unique()):
-#                 subset = others_outcome_long[others_outcome_long['GeoName'] == geoname]
-#                 #line_color = shades_of_grey[i % len(shades_of_grey)]
-#                 line_color = pastel_colors[i % len(pastel_colors)]
-#                 fig.add_trace(go.Scatter(x=subset['Year'] + self.lag, y=subset['Value'],
-#                                         mode='lines', name=subset['GeoName'].iloc[0],
-#                                         line_color=line_color,
-#                                         text=subset['GeoName'].iloc[0], 
-#                                         textposition='top right'
-#                                         ))
+            fig.add_annotation(
+                    text=f'their year {2021 - self.lag}',
+                    x=2021.,
+                    y=1.05, 
+                    xref='x',
+                    yref='paper',
+                    showarrow=False,
+                    font=dict(color='darkgray')
+                    )
 
-#             if self.lag >0:
-#                 fig.update_layout(
-#                     shapes=[
-#                         dict(
-#                             type='line',
-#                             x0=2021,
-#                             x1=2021,
-#                             y0=0,
-#                             y1=1,
-#                             xref='x',
-#                             yref='paper',
-#                             line=dict(color='darkgray', width=2)
-#                         )
-#                     ]
-#                 )
+        if not self.feature_groups:
+            if self.lag == 0:
+                title=f'Top {self.top} locations with most similar {self.outcome_var} patterns up to {upper_limit}'
+            else:
+                title=f'Top {self.top} locations with most similar {self.outcome_var} patterns up to {upper_limit} (lag of {self.lag} years)'
+        else:
+            if self.lag == 0:
+                title=f'Top {self.top} locations with most similar outcome and feature patterns up to {upper_limit}'
+            else:
+                title=f'Top {self.top} locations with most similar outcome and feature patterns up to {upper_limit} (lag of {self.lag} years)'
 
-#                 fig.add_annotation(
-#                        text=f'their year {2021 - self.lag}',
-#                         x=2021.,
-#                         y=1.05, 
-#                         xref='x',
-#                         yref='paper',
-#                         showarrow=False,
-#                         font=dict(color='darkgray')
-#                         )
+    #TODO will need to mention how_far_back if we implement it  \
+    #TODO adding info about feature cluster weights at the bottom of the plot          
 
+        fig.update_layout(
+            title = title, 
+            xaxis_title='Year',
+            yaxis_title=f'{self.outcome_var}',
+            legend=dict(title='GeoName'),
+            template = "simple_white",
+        )
 
-
-#             fig.update_layout(
-#                 title=f'Top {self.top} locations whose GDP patterns up to year {2021-self.lag} are most similar to the current pattern of {self.name}', 
-#                 xaxis_title='Year',
-#                 yaxis_title='Chain-type quantity indexes for real GDP',
-#                 legend=dict(title='GeoName'),
-#                 template = "simple_white",
-#             )
-
-#             fig.show()
-
-
-# #TODO_Nikodem add population clustering and warning if a population is much different,
-# #especially if small
-
-             
-            
-            
+        fig.show()
 
 
+#TODO_Nikodem add population clustering and warning if a population is much different,
+#especially if small
