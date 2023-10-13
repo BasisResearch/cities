@@ -45,7 +45,7 @@ def clean_gdp():
     assert gdp['GeoName'].is_unique
 
     
-    #TODO_Nikodem  subsetting GeoFIPS to values that transport uses
+    # subsetting GeoFIPS to values that transport uses
     
     with open('../data/raw/exclusions.pkl', 'rb') as file:
         exclusions = pickle.load(file)
