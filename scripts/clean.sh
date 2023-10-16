@@ -1,5 +1,5 @@
 #!/bin/bash
 set -euxo pipefail
 
-isort --profile black chirho/ tests/
-black chirho/ tests/
+isort --profile black cities/ tests/
+black cities/ tests/

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euxo pipefail
 
-mypy --ignore-missing-imports chirho/
-isort --check --profile black --diff chirho/ tests/
-black --check chirho/ tests/
-flake8 chirho/ tests/
+mypy --ignore-missing-imports cities/
+isort --check --profile black --diff cities/ tests/
+black --check cities/ tests/
+flake8 cities/ tests/
