@@ -20,6 +20,7 @@ class FipsQuery:
         assert outcome_var in ["gdp", "population"], "outcome_var must be one of ['gdp', 'population']"
         assert outcome_var not in feature_groups, "Outcome_var cannot be at the same time in background variables!"
         #assert feature_groups == list(weights.keys()), "feature_groups and weights must correspond!."
+        
         #TODO_Nikodem fix the above assertion to be useful
        
         
