@@ -50,7 +50,7 @@ def clean_gdp():
 
     gdp = gdp[~gdp['GeoFIPS'].isin(exclusions.get('transport'))]
     assert len(gdp) == len(gdp['GeoFIPS'].unique())
-    assert len(gdp) > 2800, 'The number of records is lower than 3000'
+    assert len(gdp) > 2800, 'The number of records is lower than 2800'
     
     patState = r', [A-Z]{2}(\*{1,2})?$'
     GeoNameError = 'Wrong Geoname value!'
