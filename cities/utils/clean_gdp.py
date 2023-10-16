@@ -5,8 +5,6 @@ import pickle
 
 from cities.utils.cleaning_utils import standardize_and_scale
 
-import os
-os.getcwd()
 
 def clean_gdp():
     gdp = pd.read_csv("../data/raw/CAGDP1_2001_2021.csv", encoding='ISO-8859-1')

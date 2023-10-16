@@ -24,8 +24,13 @@ def clean_transport():
                                     (transport['D3A'] == 0)|
                                     (transport['D3A'] == 1)]
 
+   
+
     exclude_mask = transport['GeoFIPS'].isin(transportUnwanted['GeoFIPS'])
     transport = transport[~exclude_mask]
+
+    # the step above deleted 10 records with NAs, 
+    # no loss on a dataset because they were not common with gdp anyway
 
     assert transport.isna().sum().sum() == 0, 'Na values detected'
     assert transport['GeoFIPS'].is_unique
@@ -45,6 +50,9 @@ def clean_transport():
                                                        'GeoName',
                                                        'D3A',
                                                        'WeightAvgNatWalkInd']]
+    
+    # renaming D3A to roadDenisty
+    transport.rename(columns={'D3A': 'roadDensity'}, inplace=True)
     
     patState = r', [A-Z]{2}(\*{1,2})?$'
     GeoNameError = 'Wrong GeoName value!'
