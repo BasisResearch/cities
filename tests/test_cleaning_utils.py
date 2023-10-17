@@ -1,13 +1,13 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.getcwd()))
-
 import numpy as np
 import pandas as pd
-import pytest
 
 from cities.utils.cleaning_utils import standardize_and_scale
+
+sys.path.insert(0, os.path.dirname(os.getcwd()))
+
 
 # set up gdp data
 gdp = pd.read_csv("../data/raw/CAGDP1_2001_2021.csv", encoding="ISO-8859-1")

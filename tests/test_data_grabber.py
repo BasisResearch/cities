@@ -1,9 +1,5 @@
 import os
 
-import numpy as np
-import pandas as pd
-import pytest
-
 from cities.utils.data_grabber import DataGrabber
 
 # for some reason this test succeeds only

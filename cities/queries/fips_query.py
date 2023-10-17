@@ -1,7 +1,3 @@
-import os
-import sys
-
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -91,7 +87,6 @@ class FipsQuery:
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-        upper_limit = my_plot_data["Year"].max()
 
         others_plot_data = plot_data[plot_data["GeoFIPS"] != self.fips]
 
@@ -106,7 +101,7 @@ class FipsQuery:
             range_multiplier * my_plot_data["Value"].std()
         )
 
-        fig = go.Figure()
+        fig = go.Figure(layout_yaxis_range=[y_min, y_max])
 
         for i, geoname in enumerate(others_sampled_plot_data["GeoName"].unique()):
             subset = others_plot_data[others_plot_data["GeoName"] == geoname]
@@ -150,7 +145,7 @@ class FipsQuery:
 
         fig.show()
 
-    def find_euclidean_kins(self):  ##TODO_Nikodem add a test for this function
+    def find_euclidean_kins(self):  # TODO_Nikodem add a test for this function
         self.outcome_slices = slice_with_lag(
             self.data.std_wide[self.outcome_var], self.fips, self.lag
         )
@@ -275,7 +270,7 @@ class FipsQuery:
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-        upper_limit = my_plot_data["Year"].max()
+        up = my_plot_data["Year"].max()
 
         fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
@@ -293,10 +288,9 @@ class FipsQuery:
             )
         )
 
-        # TODO_Nikodem add more shades and test on largish top
-        shades_of_grey = ["#333333", "#444444", "#555555", "#666666", "#777777"][
-            : self.top
-        ]
+        # TODO_Nikodem maybe add more shades and test on largish top
+        # shades_of_grey = ["#333333", "#444444", "#555555", "#666666", "#777777"][: self.top]
+
         pastel_colors = ["#FFC0CB", "#A9A9A9", "#87CEFA", "#FFD700", "#98FB98"][
             : self.top
         ]
@@ -343,16 +337,23 @@ class FipsQuery:
                 font=dict(color="darkgray"),
             )
 
+        top = self.top
+        lag = self.lag
+        title_1 = (
+            title
+        ) = f"Top {self.top} locations with most similar patterns up to {up}"
+        title_2 = f"Top {self.top} locations with most similar patterns up to {up} (lag of {self.lag} years)"
+
         if not self.feature_groups:
             if self.lag == 0:
-                title = f"Top {self.top} locations with most similar {self.outcome_var} patterns up to {upper_limit}"
+                title = title_1
             else:
-                title = f"Top {self.top} locations with most similar {self.outcome_var} patterns up to {upper_limit} (lag of {self.lag} years)"
+                title = title_2
         else:
             if self.lag == 0:
-                title = f"Top {self.top} locations with most similar outcome and feature patterns up to {upper_limit}"
+                title = f"Top {top} locations with most similar patterns up to {up}"
             else:
-                title = f"Top {self.top} locations with most similar outcome and feature patterns up to {upper_limit} (lag of {self.lag} years)"
+                title = f"Top {top} locations with most similar patterns up to {up} (lag of {lag} years)"
 
         # TODO will need to mention how_far_back if we implement it  \
         # TODO adding info about feature cluster weights at the bottom of the plot

@@ -1,10 +1,9 @@
 import pytest
-from plotly import graph_objs as go
 
+from cities.queries.fips_query import FipsQuery
 from cities.utils.data_grabber import DataGrabber
 
 data = DataGrabber()
-from cities.queries.fips_query import FipsQuery
 
 
 def test_fips_query_init():
