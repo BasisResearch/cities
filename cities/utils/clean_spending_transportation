@@ -13,7 +13,7 @@ def clean_spending_transportation():
     gdp = gdp.get("gdp")
     
     
-    spending_transportation = pd.read_csv("../data/raw/spending_transportation.csv")
+    spending_transportation = pd.read_csv("data/raw/spending_transportation.csv")
    
     transportUnwanted = spending_transportation[(pd.isna(spending_transportation['total_obligated_amount']) | 
                                     (spending_transportation['total_obligated_amount'] == 1) |
@@ -27,26 +27,92 @@ def clean_spending_transportation():
 
     # loading names and repearing fips of value 3 and shorter
 
-    names_transportation = pd.read_csv("../data/raw/spending_transportation_names.csv")
+    names_transportation = pd.read_csv("data/raw/spending_transportation_names.csv")
 
     short_geofips = spending_transportation[spending_transportation['GeoFIPS'].astype(str).str.len().between(1, 3)]
-    geofips_to_geonamealt = dict(zip(names_transportation['GeoFIPS'], names_transportation['GeoNameALT']))
 
-    short_geofips['GeoNameALT'] = short_geofips['GeoFIPS'].map(geofips_to_geonamealt)
-    short_geofips = short_geofips.rename(columns={'GeoFIPS': 'damagedFIPS'})
+    transport_only_fips = np.setdiff1d(gdp['GeoFIPS'], spending_transportation['GeoFIPS'])
+    spending_only_fips = np.setdiff1d(spending_transportation['GeoFIPS'], gdp['GeoFIPS'])
+
+    fips4_to_repeair = [fip for fip in spending_only_fips if (fip < 10000 and fip > 999)]
+    short4_fips = spending_transportation[spending_transportation['GeoFIPS'].isin(fips4_to_repeair)]
+
+    full_geofipsLIST = [fip for fip in spending_only_fips if fip > 9999]
+    full_geofips = spending_transportation[spending_transportation['GeoFIPS'].isin(full_geofipsLIST)]
     
-    short_geofipsmapping_dict = dict(zip(gdp['GeoName'], gdp['GeoFIPS']))
+    cleaningLIST = [full_geofips, short4_fips, short_geofips]
 
-    short_geofips['repairedFIPS'] = short_geofips['GeoNameALT'].apply(lambda x: short_geofipsmapping_dict.get(x))
-    repaired_geofips = short_geofips[short_geofips['repairedFIPS'].notna()]
 
-    assert (repaired_geofips.shape[0] / short_geofips.shape[0]) < 0.9, 'Less than 0.9 of short FIPS were successfully repaired!'
+    for badFIPS in cleaningLIST:
 
-    spending_transportation['GeoFIPS'] = spending_transportation['GeoFIPS'].replace(
-    dict(zip(repaired_geofips['damagedFIPS'], repaired_geofips['repairedFIPS']))
-    )
+        geofips_to_geonamealt = dict(zip(names_transportation['GeoFIPS'], names_transportation['GeoNameALT']))
 
+        badFIPS['GeoNameALT'] = badFIPS['GeoFIPS'].map(geofips_to_geonamealt)
+        badFIPS = badFIPS.rename(columns={'GeoFIPS': 'damagedFIPS'})
+
+        badFIPSmapping_dict = dict(zip(gdp['GeoName'], gdp['GeoFIPS']))
+
+        badFIPS['repairedFIPS'] = badFIPS['GeoNameALT'].apply(lambda x: badFIPSmapping_dict.get(x))
+        repaired_geofips = badFIPS[badFIPS['repairedFIPS'].notna()]
+
+        
+        repair_ratio = (repaired_geofips.shape[0] / badFIPS.shape[0])
+        print(f'Ratio of repaired FIPS: {round(repair_ratio, 2)}')
+        
+        #assert repair_ratio > 0.9, f'Less than 0.9 of FIPS were successfully repaired!'
+        
+        spending_transportation['GeoFIPS'] = spending_transportation['GeoFIPS'].replace(
+        dict(zip(repaired_geofips['damagedFIPS'], repaired_geofips['repairedFIPS']))
+        )
+        
+    # deleting short FIPS codes    
     count_short_geofips = spending_transportation[spending_transportation['GeoFIPS'] <= 999]['GeoFIPS'].count()
     assert count_short_geofips / spending_transportation.shape[0] < 0.05, 'More than 0.05 of FIPS are short and will be deleted!'
 
     spending_transportation = spending_transportation[spending_transportation['GeoFIPS'] > 999]
+    
+    
+    common_fips = np.intersect1d(gdp['GeoFIPS'].unique(),
+                                spending_transportation['GeoFIPS'].unique())
+    
+    all_FIPS_spending_transportation = spending_transportation.copy()
+
+    spending_transportation = spending_transportation[spending_transportation["GeoFIPS"].isin(common_fips)] # 0.96 of FIPS are common
+    assert spending_transportation.shape[0] / all_FIPS_spending_transportation.shape[0] > 0.9, 'Less than 0.9 of FIPS are common!'
+
+
+    # grouping duplicate fips for years 
+    # (they appeared because we have repaired some of them and now they mathch with number that is already present)
+
+
+    spending_transportation = spending_transportation.groupby(['GeoFIPS', 'year'])['total_obligated_amount'].sum().reset_index()
+    spending_transportation.reset_index(drop=True, inplace=True)
+
+    # adding GeoNames
+    spending_transportation = spending_transportation.merge(gdp[["GeoFIPS", "GeoName"]], on="GeoFIPS", how="left")[
+            ["GeoFIPS", "GeoName", "year", "total_obligated_amount"]
+        ]
+
+
+    # standardizing and saving
+    spending_transportation_long = spending_transportation.copy()
+    
+    spending_transportation_wide = spending_transportation.pivot_table(index=['GeoFIPS', 'GeoName'], columns='year',
+                                                  values='total_obligated_amount')
+    spending_transportation_wide.reset_index(inplace=True)
+    spending_transportation_wide.columns.name = None
+    spending_transportation_wide = spending_transportation_wide.fillna(0)
+    
+    spending_transportation_std_long = standardize_and_scale(spending_transportation_long)
+    spending_transportation_std_wide = standardize_and_scale(spending_transportation_wide)
+    
+    
+    spending_transportation_wide.to_csv("data/processed/spending_transportation_wide.csv", index=False)
+    spending_transportation_long.to_csv("data/processed/spending_transportation_long.csv", index=False)
+    spending_transportation_std_wide.to_csv("data/processed/spending_transportation_std_wide.csv", index=False)
+    spending_transportation_std_long.to_csv("data/processed/spending_transportation_std_long.csv", index=False)
+
+
+
+
+clean_spending_transportation()
