@@ -13,7 +13,7 @@ def clean_spending_transportation():
     gdp = gdp.get("gdp")
     
     
-    spending_transportation = pd.read_csv("data/raw/spending_transportation.csv")
+    spending_transportation = pd.read_csv("../data/raw/spending_transportation.csv")
    
     transportUnwanted = spending_transportation[(pd.isna(spending_transportation['total_obligated_amount']) | 
                                     (spending_transportation['total_obligated_amount'] == 1) |
@@ -27,7 +27,7 @@ def clean_spending_transportation():
 
     # loading names and repearing fips of value 3 and shorter
 
-    names_transportation = pd.read_csv("data/raw/spending_transportation_names.csv")
+    names_transportation = pd.read_csv("../data/raw/spending_transportation_names.csv")
 
     short_geofips = spending_transportation[spending_transportation['GeoFIPS'].astype(str).str.len().between(1, 3)]
 
@@ -107,12 +107,9 @@ def clean_spending_transportation():
     spending_transportation_std_wide = standardize_and_scale(spending_transportation_wide)
     
     
-    spending_transportation_wide.to_csv("data/processed/spending_transportation_wide.csv", index=False)
-    spending_transportation_long.to_csv("data/processed/spending_transportation_long.csv", index=False)
-    spending_transportation_std_wide.to_csv("data/processed/spending_transportation_std_wide.csv", index=False)
-    spending_transportation_std_long.to_csv("data/processed/spending_transportation_std_long.csv", index=False)
+    spending_transportation_wide.to_csv("../data/processed/spending_transportation_wide.csv", index=False)
+    spending_transportation_long.to_csv("../data/processed/spending_transportation_long.csv", index=False)
+    spending_transportation_std_wide.to_csv("../data/processed/spending_transportation_std_wide.csv", index=False)
+    spending_transportation_std_long.to_csv("../data/processed/spending_transportation_std_long.csv", index=False)
 
 
-
-
-clean_spending_transportation()
