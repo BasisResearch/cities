@@ -8,7 +8,7 @@ from cities.utils.data_grabber import DataGrabber
 # python -m pytest test_data_grabber.py
 # TODO fix this
 
-features = ["gdp", "population", "transport", "spending_transportation"]
+features = ["gdp", "population", "transport", "spending_transportation", "spending_commerce"]
 
 
 def test_DataGrabber():
