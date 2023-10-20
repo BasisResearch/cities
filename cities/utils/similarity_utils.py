@@ -58,7 +58,7 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
     }
 
 
-def compute_weight_array(object, rate=1.08):
+def compute_weight_array(query_object, rate=1.08):
     def divide_exponentially(k, n, r):
         result = []
         denominator = sum([r**j for j in range(n)])
@@ -72,10 +72,10 @@ def compute_weight_array(object, rate=1.08):
         check = df.columns[2:].isin(years_to_check).any().any()
         return check
 
-    max_other_scores = sum(object.weights.values())
+    max_other_scores = sum(query_object.weights.values())
 
     weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
-    object.weights[object.outcome_var] = weight_outcome_joint
+    query_object.weights[query_object.outcome_var] = weight_outcome_joint
 
     tensed_status = {}
     columns = {}
@@ -83,24 +83,24 @@ def compute_weight_array(object, rate=1.08):
     column_tags = []
     weight_lists = {}
     all_columns = []
-    for feature in object.all_features:
-        tensed_status[feature] = check_if_tensed(object.data.std_wide[feature])
-        columns[feature] = object.data.std_wide[feature].columns[2:]
-        column_counts[feature] = len(object.data.std_wide[feature].columns) - 2
+    for feature in query_object.all_features:
+        tensed_status[feature] = check_if_tensed(query_object.data.std_wide[feature])
+        columns[feature] = query_object.data.std_wide[feature].columns[2:]
+        column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
         all_columns.extend(
             [
                 f"{column}_{feature}"
-                for column in object.data.std_wide[feature].columns[2:]
+                for column in query_object.data.std_wide[feature].columns[2:]
             ]
         )
         column_tags.extend([feature] * column_counts[feature])
         if tensed_status[feature]:
             weight_lists[feature] = divide_exponentially(
-                object.weights[feature], column_counts[feature], rate
+                query_object.weights[feature], column_counts[feature], rate
             )
         else:
             weight_lists[feature] = [
-                object.weights[feature] / column_counts[feature]
+                query_object.weights[feature] / column_counts[feature]
             ] * column_counts[feature]
 
     all_weights = np.concatenate(list(weight_lists.values()))
@@ -116,7 +116,7 @@ def compute_weight_array(object, rate=1.08):
         template="plotly_white",
     )
 
-    object.weigth_plot = fig
-    object.all_weights = all_weights
+    query_object.weigth_plot = fig
+    query_object.all_weights = all_weights
 
     return np.array(all_weights)

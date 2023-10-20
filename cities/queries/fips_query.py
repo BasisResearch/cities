@@ -75,7 +75,7 @@ class FipsQuery:
             and self.top < self.data.std_wide[self.outcome_var].shape[0]
         ), "top must be a positive integer smaller than the number of locations in the dataset"
 
-    def where_are_we(self, range_multiplier=2, sample_size=250):
+    def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
         # TODO_Nikodem add a test for this function
 
         # TODO add shading by population and warning about
