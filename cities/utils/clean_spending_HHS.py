@@ -31,8 +31,8 @@ def clean_spending_HHS():
 
     spending_only_fips = np.setdiff1d(spending_HHS['GeoFIPS'], gdp['GeoFIPS'])
 
-    fips4_to_repeair = [fip for fip in spending_only_fips if (fip < 10000 and fip > 999)]
-    short4_fips = spending_HHS[spending_HHS['GeoFIPS'].isin(fips4_to_repeair)]
+    fips4_to_repair = [fip for fip in spending_only_fips if (fip < 10000 and fip > 999)]
+    short4_fips = spending_HHS[spending_HHS['GeoFIPS'].isin(fips4_to_repair)]
 
     full_geofipsLIST = [fip for fip in spending_only_fips if fip > 9999]
     full_geofips = spending_HHS[spending_HHS['GeoFIPS'].isin(full_geofipsLIST)]
@@ -73,7 +73,7 @@ def clean_spending_HHS():
 
 
     # grouping duplicate fips for years 
-    # (they appeared because we have repaired some of them and now they mathch with number that is already present)
+    # (they appeared because we have repaired some of them and now they match with number that is already present)
 
 
     spending_HHS = spending_HHS.groupby(['GeoFIPS', 'year'])['total_obligated_amount'].sum().reset_index()

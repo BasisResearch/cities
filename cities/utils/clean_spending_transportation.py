@@ -81,7 +81,7 @@ def clean_spending_transportation():
 
 
     # grouping duplicate fips for years 
-    # (they appeared because we have repaired some of them and now they mathch with number that is already present)
+    # (they appeared because we have repaired some of them and now they match with number that is already present)
 
 
     spending_transportation = spending_transportation.groupby(['GeoFIPS', 'year'])['total_obligated_amount'].sum().reset_index()
