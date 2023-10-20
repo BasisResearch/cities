@@ -13,17 +13,17 @@ def clean_spending_transportation():
     gdp = gdp.get("gdp")
     
     
-    spending_transportation = pd.read_csv("../data/raw/spending_transportation.csv")
-   
-    transportUnwanted = spending_transportation[(pd.isna(spending_transportation['total_obligated_amount']) | 
-                                    (spending_transportation['total_obligated_amount'] == 1) |
-                                    (spending_transportation['total_obligated_amount'] == 0))] 
-  
-    exclude_mask = spending_transportation['total_obligated_amount'].isin(transportUnwanted['total_obligated_amount'])
-    spending_transportation = spending_transportation[~exclude_mask]  # 66 values removed 
+    spending_commerce = pd.read_csv("../data/raw/spending_commerce.csv")
 
-    assert spending_transportation.isna().sum().sum() == 0, 'Na values detected'
-   
+
+    transportUnwanted = spending_commerce[(pd.isna(spending_commerce['total_obligated_amount']) | 
+                                (spending_commerce['total_obligated_amount'] == 1) |
+                                (spending_commerce['total_obligated_amount'] == 0))] 
+
+    exclude_mask = spending_commerce['total_obligated_amount'].isin(transportUnwanted['total_obligated_amount'])
+    spending_commerce = spending_commerce[~exclude_mask]  # 24 values lost
+
+    assert spending_commerce.isna().sum().sum() == 0, 'Na values detected'
 
     # loading names and repearing fips of value 3 and shorter
 
