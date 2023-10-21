@@ -7,8 +7,9 @@ from cities.utils.data_grabber import DataGrabber
 
 def clean_population():
     data = DataGrabber()
-    data.get_gdp_wide()
-    gdp = data.gdp_wide
+    data.get_features_wide(["gdp"])
+    gdp = data.wide['gdp']
+    
 
     cainc30 = pd.read_csv("../data/raw/CAINC30_1969_2021.csv", encoding="ISO-8859-1")
 

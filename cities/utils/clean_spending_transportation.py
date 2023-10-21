@@ -93,6 +93,21 @@ def clean_spending_transportation():
         ]
 
 
+    # adding missing FIPS with 0 values in total_obligated_amount column, and 2018 year (as a dummy variable)
+
+    unique_gdp = gdp[['GeoFIPS', 'GeoName']].drop_duplicates(subset=['GeoFIPS', 'GeoName'], keep='first')
+    exclude_geofips = set(spending_transportation['GeoFIPS'])
+    unique_gdp = unique_gdp[~unique_gdp['GeoFIPS'].isin(exclude_geofips)]
+
+    unique_gdp['year'] = np.repeat(2018, unique_gdp.shape[0])
+    unique_gdp['total_obligated_amount'] = np.repeat(0, unique_gdp.shape[0])
+    spending_transportation = pd.concat([spending_transportation, unique_gdp], ignore_index=True)
+    spending_transportation = spending_transportation.sort_values(by=['GeoFIPS', 'GeoName', 'year'])
+
+    assert spending_transportation['GeoFIPS'].nunique() == spending_transportation['GeoName'].nunique()
+    assert spending_transportation['GeoFIPS'].nunique() == gdp['GeoFIPS'].nunique()
+
+
     # standardizing and saving
     spending_transportation_long = spending_transportation.copy()
     

@@ -21,10 +21,19 @@ def test_DataGrabber():
     data.get_features_std_long(features)
 
     for feature in features:
-        assert data.wide[feature].shape[0] > 100
+        assert data.wide[feature].shape[0] > 2800
         assert data.std_wide[feature].shape[1] < 100
-        assert data.long[feature].shape[0] > 1000
+        assert data.long[feature].shape[0] > 2800
         assert data.std_long[feature].shape[1] == 4
+        
+    for i in range(len(features) - 1):
+        current_feature = features[i]
+        next_feature = features[i + 1]
+        
+        assert data.wide[current_feature]['GeoFIPS'].nunique() == data.wide[next_feature]['GeoFIPS'].nunique()
+        assert data.long[current_feature]['GeoFIPS'].nunique() == data.long[next_feature]['GeoFIPS'].nunique()
+        
+
 
     for feature in features:  
         dataTypeError = "Wrong data type!"
@@ -36,6 +45,16 @@ def test_DataGrabber():
         assert data.long[feature].iloc[:, 1].dtype == object, dataTypeError
         assert data.std_long[feature].iloc[:, 0].dtype == np.int64, dataTypeError
         assert data.std_long[feature].iloc[:, 1].dtype == object, dataTypeError
+        
+        
+    for feature in features:  
+        namesFipsError = "FIPS codes and GeoNames don't match!"
+        assert data.wide[feature]['GeoFIPS'].nunique() == data.wide[feature]['GeoName'].nunique(), namesFipsError   
+        assert data.long[feature]['GeoFIPS'].nunique() == data.long[feature]['GeoName'].nunique(), namesFipsError
+        assert data.std_wide[feature]['GeoFIPS'].nunique() == data.std_wide[feature]['GeoName'].nunique(), namesFipsError
+        assert data.std_long[feature]['GeoFIPS'].nunique() == data.std_long[feature]['GeoName'].nunique(), namesFipsError
+        
+        
 
     for feature in features:          
         for column in data.wide[feature].columns[2:]:

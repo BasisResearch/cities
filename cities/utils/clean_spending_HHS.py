@@ -86,6 +86,20 @@ def clean_spending_HHS():
         ]
 
 
+
+    unique_gdp = gdp[['GeoFIPS', 'GeoName']].drop_duplicates(subset=['GeoFIPS', 'GeoName'], keep='first')
+    exclude_geofips = set(spending_HHS['GeoFIPS'])
+    unique_gdp = unique_gdp[~unique_gdp['GeoFIPS'].isin(exclude_geofips)]
+
+    unique_gdp['year'] = np.repeat(2018, unique_gdp.shape[0])
+    unique_gdp['total_obligated_amount'] = np.repeat(0, unique_gdp.shape[0])
+    spending_HHS = pd.concat([spending_HHS, unique_gdp], ignore_index=True)
+    spending_HHS = spending_HHS.sort_values(by=['GeoFIPS', 'GeoName', 'year'])
+
+    assert spending_HHS['GeoFIPS'].nunique() == spending_HHS['GeoName'].nunique()
+    assert spending_HHS['GeoFIPS'].nunique() == gdp['GeoFIPS'].nunique()
+
+
     # standardizing and saving
     spending_HHS_long = spending_HHS.copy()
     

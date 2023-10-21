@@ -13,7 +13,7 @@ def clean_spending_commerce():
     gdp = gdp.get("gdp")
     
     
-    spending_commerce = pd.read_csv("data/raw/spending_commerce.csv")
+    spending_commerce = pd.read_csv("../data/raw/spending_commerce.csv")
 
 
     transportUnwanted = spending_commerce[(pd.isna(spending_commerce['total_obligated_amount']) | 
@@ -27,7 +27,7 @@ def clean_spending_commerce():
 
     # loading names and repearing fips of value 3 and shorter
 
-    names_commerce = pd.read_csv("data/raw/spending_commerce_names.csv")
+    names_commerce = pd.read_csv("../data/raw/spending_commerce_names.csv")
 
     spending_only_fips = np.setdiff1d(spending_commerce['GeoFIPS'], gdp['GeoFIPS'])
 
@@ -88,6 +88,19 @@ def clean_spending_commerce():
         ]
 
 
+    unique_gdp = gdp[['GeoFIPS', 'GeoName']].drop_duplicates(subset=['GeoFIPS', 'GeoName'], keep='first')
+    exclude_geofips = set(spending_commerce['GeoFIPS'])
+    unique_gdp = unique_gdp[~unique_gdp['GeoFIPS'].isin(exclude_geofips)]
+
+    unique_gdp['year'] = np.repeat(2018, unique_gdp.shape[0])
+    unique_gdp['total_obligated_amount'] = np.repeat(0, unique_gdp.shape[0])
+    spending_commerce = pd.concat([spending_commerce, unique_gdp], ignore_index=True)
+    spending_commerce = spending_commerce.sort_values(by=['GeoFIPS', 'GeoName', 'year'])
+
+    assert spending_commerce['GeoFIPS'].nunique() == spending_commerce['GeoName'].nunique()
+    assert spending_commerce['GeoFIPS'].nunique() == gdp['GeoFIPS'].nunique()
+
+
     # standardizing and saving
     spending_commerce_long = spending_commerce.copy()
     
@@ -101,9 +114,9 @@ def clean_spending_commerce():
     spending_commerce_std_wide = standardize_and_scale(spending_commerce_wide)
     
     
-    spending_commerce_wide.to_csv("data/processed/spending_commerce_wide.csv", index=False)
-    spending_commerce_long.to_csv("data/processed/spending_commerce_long.csv", index=False)
-    spending_commerce_std_wide.to_csv("data/processed/spending_commerce_std_wide.csv", index=False)
-    spending_commerce_std_long.to_csv("data/processed/spending_commerce_std_long.csv", index=False)
+    spending_commerce_wide.to_csv("../data/processed/spending_commerce_wide.csv", index=False)
+    spending_commerce_long.to_csv("../data/processed/spending_commerce_long.csv", index=False)
+    spending_commerce_std_wide.to_csv("../data/processed/spending_commerce_std_wide.csv", index=False)
+    spending_commerce_std_long.to_csv("../data/processed/spending_commerce_std_long.csv", index=False)
 
 

@@ -1,4 +1,5 @@
 GeoFIPS,GeoName,year,total_obligated_amount
+1001,"Autauga, AL",2018,0.0
 1003,"Baldwin, AL",2010,49158971.0
 1003,"Baldwin, AL",2011,23130080.0
 1003,"Baldwin, AL",2012,23130080.0
@@ -11,6 +12,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1003,"Baldwin, AL",2019,68205746.92
 1003,"Baldwin, AL",2020,29083414.29
 1003,"Baldwin, AL",2021,14724586.38
+1005,"Barbour, AL",2018,0.0
 1007,"Bibb, AL",2012,13161891.0
 1007,"Bibb, AL",2013,66916266.0
 1007,"Bibb, AL",2014,66916266.0
@@ -22,6 +24,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1007,"Bibb, AL",2020,395603965.0
 1007,"Bibb, AL",2021,349717479.0
 1009,"Blount, AL",2021,123636.54
+1011,"Bullock, AL",2018,0.0
 1013,"Butler, AL",2021,99058.0
 1015,"Calhoun, AL",2010,21523814.0
 1015,"Calhoun, AL",2011,19117011.0
@@ -35,7 +38,12 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1015,"Calhoun, AL",2019,27149476.0
 1015,"Calhoun, AL",2020,22313902.0
 1015,"Calhoun, AL",2021,24336140.0
+1017,"Chambers, AL",2018,0.0
 1019,"Cherokee, AL",2021,49529.0
+1021,"Chilton, AL",2018,0.0
+1023,"Choctaw, AL",2018,0.0
+1025,"Clarke, AL",2018,0.0
+1027,"Clay, AL",2018,0.0
 1029,"Cleburne, AL",2016,436592.33
 1031,"Coffee, AL",2010,58948.0
 1031,"Coffee, AL",2014,7731.0
@@ -46,11 +54,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1031,"Coffee, AL",2019,48720.0
 1031,"Coffee, AL",2020,1143954.0
 1031,"Coffee, AL",2021,1381171.0
+1033,"Colbert, AL",2018,0.0
 1035,"Conecuh, AL",2010,19055743.0
 1035,"Conecuh, AL",2011,47567135.0
 1035,"Conecuh, AL",2012,19017130.0
 1035,"Conecuh, AL",2013,19017130.0
 1035,"Conecuh, AL",2014,19017130.0
+1037,"Coosa, AL",2018,0.0
 1039,"Covington, AL",2010,1382448.0
 1039,"Covington, AL",2011,1124060.0
 1039,"Covington, AL",2012,1124060.0
@@ -63,6 +73,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1039,"Covington, AL",2019,250000.0
 1039,"Covington, AL",2020,375000.0
 1039,"Covington, AL",2021,875000.0
+1041,"Crenshaw, AL",2018,0.0
 1043,"Cullman, AL",2010,17443863.0
 1043,"Cullman, AL",2011,5524608.0
 1043,"Cullman, AL",2012,21848388.0
@@ -75,6 +86,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1043,"Cullman, AL",2019,18059493.61
 1043,"Cullman, AL",2020,21524560.04
 1043,"Cullman, AL",2021,30998834.72
+1045,"Dale, AL",2018,0.0
 1047,"Dallas, AL",2010,89324512.0
 1047,"Dallas, AL",2011,141988836.0
 1047,"Dallas, AL",2012,144868272.0
@@ -123,7 +135,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1055,"Etowah, AL",2019,1116603114.38
 1055,"Etowah, AL",2020,573453055.84
 1055,"Etowah, AL",2021,521114016.92
+1057,"Fayette, AL",2018,0.0
 1059,"Franklin, AL",2014,1076190.0
+1061,"Geneva, AL",2018,0.0
 1063,"Greene, AL",2012,84905.0
 1063,"Greene, AL",2016,2430000.0
 1063,"Greene, AL",2017,2430000.0
@@ -131,6 +145,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1063,"Greene, AL",2019,3128592.0
 1063,"Greene, AL",2020,4701100.0
 1063,"Greene, AL",2021,16048316.0
+1065,"Hale, AL",2018,0.0
+1067,"Henry, AL",2018,0.0
 1069,"Houston, AL",2010,133830699.76
 1069,"Houston, AL",2011,69062505.68
 1069,"Houston, AL",2012,146669351.68
@@ -167,6 +183,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1073,"Jefferson, AL",2019,8939083294.38
 1073,"Jefferson, AL",2020,9823831292.71
 1073,"Jefferson, AL",2021,10447953349.07
+1075,"Lamar, AL",2018,0.0
 1077,"Lauderdale, AL",2010,28586606.0
 1077,"Lauderdale, AL",2011,17433204.0
 1077,"Lauderdale, AL",2012,45885861.29
@@ -179,6 +196,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1077,"Lauderdale, AL",2019,3386001.29
 1077,"Lauderdale, AL",2020,3906504.58
 1077,"Lauderdale, AL",2021,2739739.29
+1079,"Lawrence, AL",2018,0.0
 1081,"Lee, AL",2010,94797868.89
 1081,"Lee, AL",2011,99910543.63
 1081,"Lee, AL",2012,103834139.0
@@ -240,6 +258,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1091,"Marengo, AL",2018,5885450.0
 1091,"Marengo, AL",2020,3241852.0
 1091,"Marengo, AL",2021,1025500.0
+1093,"Marion, AL",2018,0.0
 1095,"Marshall, AL",2010,1926084.0
 1095,"Marshall, AL",2011,1659760.0
 1095,"Marshall, AL",2012,1605139.0
@@ -424,6 +443,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 1129,"Washington, AL",2017,530972.0
 1129,"Washington, AL",2021,49529.0
 1131,"Wilcox, AL",2021,247645.0
+1133,"Winston, AL",2018,0.0
 2013,"Aleutians East Borough, AK",2013,47624.0
 2013,"Aleutians East Borough, AK",2014,71589.0
 2013,"Aleutians East Borough, AK",2015,49363.0
@@ -480,6 +500,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 2060,"Bristol Bay Borough, AK",2019,97809803.0
 2060,"Bristol Bay Borough, AK",2020,45845247.0
 2060,"Bristol Bay Borough, AK",2021,24736066.0
+2068,"Denali Borough, AK",2018,0.0
 2070,"Dillingham Census Area, AK",2010,70707561.16
 2070,"Dillingham Census Area, AK",2011,154395965.16
 2070,"Dillingham Census Area, AK",2012,83835294.16
@@ -724,6 +745,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 4009,"Graham, AZ",2019,147913.0
 4009,"Graham, AZ",2020,643326.0
 4009,"Graham, AZ",2021,624116.0
+4011,"Greenlee, AZ",2018,0.0
 4012,"La Paz, AZ",2010,29742070.24
 4012,"La Paz, AZ",2011,30789150.24
 4012,"La Paz, AZ",2012,50074433.24
@@ -984,6 +1006,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5035,"Crittenden, AR",2021,215592240.6
 5037,"Cross, AR",2020,500000.0
 5037,"Cross, AR",2021,1000000.0
+5039,"Dallas, AR",2018,0.0
 5041,"Desha, AR",2016,589356.0
 5041,"Desha, AR",2017,589356.0
 5041,"Desha, AR",2018,589356.0
@@ -1003,6 +1026,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5045,"Faulkner, AR",2019,135557719.2
 5045,"Faulkner, AR",2020,121905826.85
 5045,"Faulkner, AR",2021,89842779.53999999
+5047,"Franklin, AR",2018,0.0
 5049,"Fulton, AR",2021,1040109.0
 5051,"Garland, AR",2010,9698974.0
 5051,"Garland, AR",2011,18376948.0
@@ -1016,10 +1040,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5051,"Garland, AR",2019,184370900.79
 5051,"Garland, AR",2020,206152593.73
 5051,"Garland, AR",2021,191217339.43
+5053,"Grant, AR",2018,0.0
 5055,"Greene, AR",2010,99000.0
 5055,"Greene, AR",2020,4892340.12
 5055,"Greene, AR",2021,270393.0
+5057,"Hempstead, AR",2018,0.0
 5059,"Hot Spring, AR",2020,9453943.08
+5061,"Howard, AR",2018,0.0
 5063,"Independence, AR",2010,35981669.0
 5063,"Independence, AR",2011,29542024.0
 5063,"Independence, AR",2012,24707478.0
@@ -1032,6 +1059,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5063,"Independence, AR",2019,59744498.08
 5063,"Independence, AR",2020,49394471.54
 5063,"Independence, AR",2021,36206290.36
+5065,"Izard, AR",2018,0.0
+5067,"Jackson, AR",2018,0.0
 5069,"Jefferson, AR",2010,81954979.0
 5069,"Jefferson, AR",2011,191914171.0
 5069,"Jefferson, AR",2012,107589316.0
@@ -1044,6 +1073,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5069,"Jefferson, AR",2019,311659851.04
 5069,"Jefferson, AR",2020,210609713.65
 5069,"Jefferson, AR",2021,376413634.61
+5071,"Johnson, AR",2018,0.0
+5073,"Lafayette, AR",2018,0.0
 5075,"Lawrence, AR",2015,375000.0
 5075,"Lawrence, AR",2016,375000.0
 5075,"Lawrence, AR",2017,375000.0
@@ -1063,6 +1094,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5077,"Lee, AR",2019,54461166.8
 5077,"Lee, AR",2020,41602158.1
 5077,"Lee, AR",2021,111186943.6
+5079,"Lincoln, AR",2018,0.0
+5081,"Little River, AR",2018,0.0
 5083,"Logan, AR",2010,26167298.0
 5083,"Logan, AR",2011,65418245.0
 5083,"Logan, AR",2012,39250947.0
@@ -1079,6 +1112,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5087,"Madison, AR",2010,622690.0
 5087,"Madison, AR",2011,622690.0
 5087,"Madison, AR",2012,622690.0
+5089,"Marion, AR",2018,0.0
 5091,"Miller, AR",2010,37014626.0
 5091,"Miller, AR",2011,24444804.0
 5091,"Miller, AR",2012,48889608.0
@@ -1107,6 +1141,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5095,"Monroe, AR",2019,69250195.0
 5095,"Monroe, AR",2020,79889246.0
 5095,"Monroe, AR",2021,82581545.0
+5097,"Montgomery, AR",2018,0.0
+5099,"Nevada, AR",2018,0.0
 5101,"Newton, AR",2010,5927872.0
 5101,"Newton, AR",2011,2963936.0
 5101,"Newton, AR",2012,2963936.0
@@ -1119,6 +1155,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5101,"Newton, AR",2019,6446559.0
 5101,"Newton, AR",2020,10340307.0
 5101,"Newton, AR",2021,3602505.0
+5103,"Ouachita, AR",2018,0.0
+5105,"Perry, AR",2018,0.0
 5107,"Phillips, AR",2010,40729305.0
 5107,"Phillips, AR",2011,53657951.0
 5107,"Phillips, AR",2012,79515243.0
@@ -1131,6 +1169,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5107,"Phillips, AR",2019,38977892.0
 5107,"Phillips, AR",2020,35281537.0
 5107,"Phillips, AR",2021,35316552.0
+5109,"Pike, AR",2018,0.0
+5111,"Poinsett, AR",2018,0.0
 5113,"Polk, AR",2010,20640904.0
 5113,"Polk, AR",2011,80187616.0
 5113,"Polk, AR",2012,60140712.0
@@ -1147,6 +1187,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5115,"Pope, AR",2011,97476339.0
 5115,"Pope, AR",2012,97476339.0
 5115,"Pope, AR",2021,8000000.0
+5117,"Prairie, AR",2018,0.0
 5119,"Pulaski, AR",2010,29673814400.67
 5119,"Pulaski, AR",2011,21605683786.37
 5119,"Pulaski, AR",2012,30308609449.05
@@ -1213,6 +1254,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 5131,"Sebastian, AR",2019,743340.44
 5131,"Sebastian, AR",2020,13582432.88
 5131,"Sebastian, AR",2021,15426841.0
+5133,"Sevier, AR",2018,0.0
+5135,"Sharp, AR",2018,0.0
+5137,"Stone, AR",2018,0.0
 5139,"Union, AR",2010,97140944.0
 5139,"Union, AR",2011,119923328.0
 5139,"Union, AR",2012,100615168.0
@@ -1545,6 +1589,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 6049,"Modoc, CA",2019,18334822.56
 6049,"Modoc, CA",2020,13172199.29
 6049,"Modoc, CA",2021,25254699.04
+6051,"Mono, CA",2018,0.0
 6053,"Monterey, CA",2010,174710981.0
 6053,"Monterey, CA",2011,314495029.0
 6053,"Monterey, CA",2012,131786150.0
@@ -1966,6 +2011,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 8007,"Archuleta, CO",2014,2626714.46
 8007,"Archuleta, CO",2015,1276257.46
 8007,"Archuleta, CO",2016,1350457.0
+8009,"Baca, CO",2018,0.0
+8011,"Bent, CO",2018,0.0
 8013,"Boulder, CO*",2010,637708371.79
 8013,"Boulder, CO*",2011,1053649921.14
 8013,"Boulder, CO*",2012,674961906.82
@@ -1990,6 +2037,12 @@ GeoFIPS,GeoName,year,total_obligated_amount
 8015,"Chaffee, CO",2019,25427551.02
 8015,"Chaffee, CO",2020,19884495.34
 8015,"Chaffee, CO",2021,20532128.38
+8017,"Cheyenne, CO",2018,0.0
+8019,"Clear Creek, CO",2018,0.0
+8021,"Conejos, CO",2018,0.0
+8023,"Costilla, CO",2018,0.0
+8025,"Crowley, CO",2018,0.0
+8027,"Custer, CO",2018,0.0
 8029,"Delta, CO",2015,709409.0
 8029,"Delta, CO",2016,1003151.26
 8029,"Delta, CO",2017,1406302.52
@@ -2087,9 +2140,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 8051,"Gunnison, CO",2019,399999.98
 8051,"Gunnison, CO",2020,324998.99
 8051,"Gunnison, CO",2021,4199997.99
+8053,"Hinsdale, CO",2018,0.0
 8055,"Huerfano, CO",2011,900000.0
 8055,"Huerfano, CO",2012,900000.0
 8055,"Huerfano, CO",2013,900000.0
+8057,"Jackson, CO",2018,0.0
 8059,"Jefferson, CO*",2010,112787219.91
 8059,"Jefferson, CO*",2011,97437028.91
 8059,"Jefferson, CO*",2012,116447890.91
@@ -2102,6 +2157,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 8059,"Jefferson, CO*",2019,136574008.11
 8059,"Jefferson, CO*",2020,159176551.97
 8059,"Jefferson, CO*",2021,183741243.69
+8061,"Kiowa, CO",2018,0.0
+8063,"Kit Carson, CO",2018,0.0
 8065,"Lake, CO",2010,15403552.0
 8065,"Lake, CO",2011,11708914.0
 8065,"Lake, CO",2012,11708914.0
@@ -2175,6 +2232,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 8077,"Mesa, CO",2019,71943166.8
 8077,"Mesa, CO",2020,73263450.16
 8077,"Mesa, CO",2021,99931312.19
+8079,"Mineral, CO",2018,0.0
 8081,"Moffat, CO",2010,16492912.0
 8081,"Moffat, CO",2011,81264560.0
 8081,"Moffat, CO",2012,48878736.0
@@ -2234,12 +2292,15 @@ GeoFIPS,GeoName,year,total_obligated_amount
 8089,"Otero, CO",2019,146299148.26
 8089,"Otero, CO",2020,140223734.26
 8089,"Otero, CO",2021,214912793.0
+8091,"Ouray, CO",2018,0.0
 8093,"Park, CO",2010,7008890.0
 8093,"Park, CO",2016,151055.0
 8093,"Park, CO",2018,2299210.0
 8093,"Park, CO",2019,982411.5
 8093,"Park, CO",2020,982411.5
 8093,"Park, CO",2021,982411.5
+8095,"Phillips, CO",2018,0.0
+8097,"Pitkin, CO",2018,0.0
 8099,"Prowers, CO",2010,26569067.0
 8099,"Prowers, CO",2011,78639159.0
 8099,"Prowers, CO",2012,26235917.0
@@ -2285,6 +2346,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 8107,"Routt, CO",2019,152581692.0
 8107,"Routt, CO",2020,64490934.0
 8107,"Routt, CO",2021,67629784.0
+8109,"Saguache, CO",2018,0.0
+8111,"San Juan, CO",2018,0.0
 8113,"San Miguel, CO",2010,8423647.0
 8113,"San Miguel, CO",2011,49945844.0
 8113,"San Miguel, CO",2012,26060766.0
@@ -2618,6 +2681,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 12023,"Columbia, FL",2019,86366240.61
 12023,"Columbia, FL",2020,161612586.29000002
 12023,"Columbia, FL",2021,153274557.84
+12027,"DeSoto, FL",2018,0.0
 12029,"Dixie, FL",2014,500000.0
 12029,"Dixie, FL",2015,500000.0
 12029,"Dixie, FL",2016,500000.0
@@ -2651,6 +2715,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 12033,"Escambia, FL",2020,515583678.21
 12033,"Escambia, FL",2021,420481443.59
 12035,"Flagler, FL",2010,800000.0
+12037,"Franklin, FL",2018,0.0
 12039,"Gadsden, FL",2010,21991876.0
 12039,"Gadsden, FL",2011,10995938.0
 12039,"Gadsden, FL",2012,32987814.0
@@ -2675,6 +2740,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 12041,"Gilchrist, FL",2019,199972549.0
 12041,"Gilchrist, FL",2020,175186940.0
 12041,"Gilchrist, FL",2021,444066950.0
+12043,"Glades, FL",2018,0.0
 12045,"Gulf, FL",2010,120705651.0
 12045,"Gulf, FL",2011,83317718.0
 12045,"Gulf, FL",2012,92065875.0
@@ -2785,6 +2851,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 12063,"Jackson, FL",2019,28644879.18
 12063,"Jackson, FL",2020,27488129.31
 12063,"Jackson, FL",2021,9884491.77
+12065,"Jefferson, FL",2018,0.0
+12067,"Lafayette, FL",2018,0.0
 12069,"Lake, FL",2010,84876176.0
 12069,"Lake, FL",2011,59721600.0
 12069,"Lake, FL",2012,138629052.0
@@ -2927,6 +2995,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 12091,"Okaloosa, FL",2019,68052617.78
 12091,"Okaloosa, FL",2020,38810423.12
 12091,"Okaloosa, FL",2021,20511404.56
+12093,"Okeechobee, FL",2018,0.0
 12095,"Orange, FL",2010,1302367161.88
 12095,"Orange, FL",2011,2224529497.5
 12095,"Orange, FL",2012,1706643628.3
@@ -3133,7 +3202,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 12133,"Washington, FL",2014,372011.0
 12133,"Washington, FL",2021,247645.0
 13001,"Appling, GA",2021,1173224.0
+13003,"Atkinson, GA",2018,0.0
 13005,"Bacon, GA",2010,983070.0
+13007,"Baker, GA",2018,0.0
 13009,"Baldwin, GA",2010,7903889.0
 13009,"Baldwin, GA",2011,11411175.0
 13009,"Baldwin, GA",2012,10195636.0
@@ -3146,6 +3217,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13009,"Baldwin, GA",2019,39116955.87
 13009,"Baldwin, GA",2020,43854381.22
 13009,"Baldwin, GA",2021,23542516.22
+13011,"Banks, GA",2018,0.0
 13013,"Barrow, GA",2017,1295768.0
 13015,"Bartow, GA",2010,47673080.0
 13015,"Bartow, GA",2011,71005949.0
@@ -3182,6 +3254,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13023,"Bleckley, GA",2018,1799897.73
 13023,"Bleckley, GA",2019,599797.46
 13023,"Bleckley, GA",2020,299898.73
+13025,"Brantley, GA",2018,0.0
 13027,"Brooks, GA",2016,500000.0
 13027,"Brooks, GA",2017,250000.0
 13027,"Brooks, GA",2018,250000.0
@@ -3232,6 +3305,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13035,"Butts, GA",2019,195809180.12
 13035,"Butts, GA",2020,289283103.57
 13035,"Butts, GA",2021,100573894.42
+13037,"Calhoun, GA",2018,0.0
 13039,"Camden, GA",2021,375000.0
 13043,"Candler, GA",2021,49529.0
 13045,"Carroll, GA",2010,325392.0
@@ -3256,6 +3330,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13047,"Catoosa, GA",2019,60507216.0
 13047,"Catoosa, GA",2020,28261147.0
 13047,"Catoosa, GA",2021,40755226.0
+13049,"Charlton, GA",2018,0.0
 13051,"Chatham, GA",2010,260138471.0
 13051,"Chatham, GA",2011,335077467.0
 13051,"Chatham, GA",2012,383601967.0
@@ -3268,6 +3343,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13051,"Chatham, GA",2019,832066164.72
 13051,"Chatham, GA",2020,587170444.66
 13051,"Chatham, GA",2021,598098201.98
+13053,"Chattahoochee, GA",2018,0.0
+13055,"Chattooga, GA",2018,0.0
 13057,"Cherokee, GA",2010,4000000.0
 13057,"Cherokee, GA",2011,4073107.0
 13057,"Cherokee, GA",2012,4073107.0
@@ -3292,6 +3369,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13059,"Clarke, GA",2019,814385718.18
 13059,"Clarke, GA",2020,800853237.91
 13059,"Clarke, GA",2021,790361721.14
+13061,"Clay, GA",2018,0.0
 13063,"Clayton, GA",2010,59363508.0
 13063,"Clayton, GA",2011,41029576.0
 13063,"Clayton, GA",2012,43348321.0
@@ -3304,6 +3382,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13063,"Clayton, GA",2019,122002428.0
 13063,"Clayton, GA",2020,116489082.0
 13063,"Clayton, GA",2021,44327584.87
+13065,"Clinch, GA",2018,0.0
 13067,"Cobb, GA",2010,81094887.0
 13067,"Cobb, GA",2011,52576957.0
 13067,"Cobb, GA",2012,61267756.0
@@ -3350,6 +3429,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13077,"Coweta, GA",2016,343700.0
 13077,"Coweta, GA",2017,343700.0
 13077,"Coweta, GA",2018,343700.0
+13079,"Crawford, GA",2018,0.0
 13081,"Crisp, GA",2016,11510992.0
 13081,"Crisp, GA",2017,194579368.0
 13081,"Crisp, GA",2018,531102423.36
@@ -3367,6 +3447,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13083,"Dade, GA",2018,303404751.0
 13083,"Dade, GA",2019,176079258.0
 13083,"Dade, GA",2021,19564362.0
+13085,"Dawson, GA",2018,0.0
 13087,"Decatur, GA",2015,650760.0
 13087,"Decatur, GA",2017,363747.0
 13087,"Decatur, GA",2018,166447.0
@@ -3422,6 +3503,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13099,"Early, GA",2019,208200575.0
 13099,"Early, GA",2020,153189986.0
 13099,"Early, GA",2021,156761488.0
+13101,"Echols, GA",2018,0.0
+13103,"Effingham, GA",2018,0.0
 13105,"Elbert, GA",2021,49529.0
 13107,"Emanuel, GA",2010,49169801.0
 13107,"Emanuel, GA",2011,188026947.0
@@ -3488,6 +3571,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13117,"Forsyth, GA",2019,133813944.0
 13117,"Forsyth, GA",2020,155639231.0
 13117,"Forsyth, GA",2021,146096180.0
+13119,"Franklin, GA",2018,0.0
 13121,"Fulton, GA",2010,58732035338.45
 13121,"Fulton, GA",2011,90355250362.74
 13121,"Fulton, GA",2012,50587121210.48
@@ -3518,6 +3602,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13129,"Gordon, GA",2010,148500.0
 13129,"Gordon, GA",2020,500000.0
 13129,"Gordon, GA",2021,2000000.0
+13131,"Grady, GA",2018,0.0
 13133,"Greene, GA",2010,18071771.0
 13133,"Greene, GA",2011,90358855.0
 13133,"Greene, GA",2012,54215313.0
@@ -3570,6 +3655,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13141,"Hancock, GA",2019,34035318.0
 13141,"Hancock, GA",2020,34939206.12
 13141,"Hancock, GA",2021,12173512.04
+13143,"Haralson, GA",2018,0.0
+13145,"Harris, GA",2018,0.0
+13147,"Hart, GA",2018,0.0
+13149,"Heard, GA",2018,0.0
 13151,"Henry, GA",2019,115094839.39
 13151,"Henry, GA",2020,73967522.39
 13151,"Henry, GA",2021,110767543.29
@@ -3632,6 +3721,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13167,"Johnson, GA",2019,342240693.29999995
 13167,"Johnson, GA",2020,412956213.96
 13167,"Johnson, GA",2021,283118689.64
+13169,"Jones, GA",2018,0.0
+13171,"Lamar, GA",2018,0.0
 13173,"Lanier, GA",2010,169369.0
 13173,"Lanier, GA",2011,169369.0
 13173,"Lanier, GA",2012,169369.0
@@ -3648,6 +3739,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13175,"Laurens, GA",2019,39764013.29
 13175,"Laurens, GA",2020,19148582.13
 13175,"Laurens, GA",2021,28936038.83
+13177,"Lee, GA",2018,0.0
 13179,"Liberty, GA",2012,553011.0
 13179,"Liberty, GA",2013,553011.0
 13179,"Liberty, GA",2014,553011.0
@@ -3657,6 +3749,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13179,"Liberty, GA",2019,155968708.0
 13179,"Liberty, GA",2020,83951298.0
 13179,"Liberty, GA",2021,116006931.0
+13181,"Lincoln, GA",2018,0.0
+13183,"Long, GA",2018,0.0
 13185,"Lowndes, GA",2010,98031688.0
 13185,"Lowndes, GA",2011,92027276.0
 13185,"Lowndes, GA",2012,131477324.0
@@ -3678,6 +3772,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13187,"Lumpkin, GA",2019,681480.0
 13187,"Lumpkin, GA",2020,921366.0
 13187,"Lumpkin, GA",2021,1870041.0
+13189,"McDuffie, GA",2018,0.0
+13191,"McIntosh, GA",2018,0.0
+13193,"Macon, GA",2018,0.0
 13195,"Madison, GA",2010,52657772.0
 13195,"Madison, GA",2011,263288860.0
 13195,"Madison, GA",2012,105315544.0
@@ -3690,14 +3787,20 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13195,"Madison, GA",2019,411227580.0
 13195,"Madison, GA",2020,276592471.0
 13195,"Madison, GA",2021,563930244.0
+13197,"Marion, GA",2018,0.0
+13199,"Meriwether, GA",2018,0.0
 13201,"Miller, GA",2011,2438524.0
 13201,"Miller, GA",2012,3128137.0
+13205,"Mitchell, GA",2018,0.0
 13207,"Monroe, GA",2011,900000.0
 13207,"Monroe, GA",2012,900000.0
 13207,"Monroe, GA",2013,900000.0
 13207,"Monroe, GA",2014,1135597.0
 13207,"Monroe, GA",2015,5064974.0
 13207,"Monroe, GA",2016,5064974.0
+13209,"Montgomery, GA",2018,0.0
+13211,"Morgan, GA",2018,0.0
+13213,"Murray, GA",2018,0.0
 13215,"Muscogee, GA",2010,150669016.0
 13215,"Muscogee, GA",2011,365599825.0
 13215,"Muscogee, GA",2012,296735734.0
@@ -3721,6 +3824,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13219,"Oconee, GA",2019,688877.0
 13219,"Oconee, GA",2020,224999.0
 13219,"Oconee, GA",2021,863878.0
+13221,"Oglethorpe, GA",2018,0.0
 13223,"Paulding, GA",2013,242282.0
 13223,"Paulding, GA",2017,484564.0
 13223,"Paulding, GA",2018,250000.0
@@ -3755,6 +3859,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13229,"Pierce, GA",2019,3296183.26
 13229,"Pierce, GA",2020,8305233.63
 13229,"Pierce, GA",2021,6134054.63
+13231,"Pike, GA",2018,0.0
 13233,"Polk, GA",2014,84319.0
 13233,"Polk, GA",2016,168638.0
 13235,"Pulaski, GA",2012,85000.0
@@ -3770,6 +3875,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13237,"Putnam, GA",2019,13666772.0
 13237,"Putnam, GA",2020,25560928.0
 13237,"Putnam, GA",2021,13322548.0
+13239,"Quitman, GA",2018,0.0
 13241,"Rabun, GA",2019,4000000.0
 13241,"Rabun, GA",2020,3000000.0
 13241,"Rabun, GA",2021,9300000.0
@@ -3808,10 +3914,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13247,"Rockdale, GA",2019,7973992.3
 13247,"Rockdale, GA",2020,5107336.0
 13247,"Rockdale, GA",2021,10280629.1
+13249,"Schley, GA",2018,0.0
+13251,"Screven, GA",2018,0.0
 13253,"Seminole, GA",2021,1778750.0
 13255,"Spalding, GA",2019,1576101.0
 13255,"Spalding, GA",2020,1817124.0
 13255,"Spalding, GA",2021,605708.0
+13257,"Stephens, GA",2018,0.0
 13259,"Stewart, GA",2010,86729482.0
 13259,"Stewart, GA",2011,260188446.0
 13259,"Stewart, GA",2012,173458964.0
@@ -3832,9 +3941,14 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13261,"Sumter, GA",2015,2690108.0
 13261,"Sumter, GA",2016,2468783.0
 13261,"Sumter, GA",2017,962620.0
+13263,"Talbot, GA",2018,0.0
+13265,"Taliaferro, GA",2018,0.0
 13267,"Tattnall, GA",2012,436098.0
 13267,"Tattnall, GA",2016,436098.0
 13267,"Tattnall, GA",2021,600000.0
+13269,"Taylor, GA",2018,0.0
+13271,"Telfair, GA",2018,0.0
+13273,"Terrell, GA",2018,0.0
 13275,"Thomas, GA",2021,2862790.0
 13277,"Tift, GA",2017,1070078.28
 13277,"Tift, GA",2018,3210234.84
@@ -3851,6 +3965,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13279,"Toombs, GA",2019,557422.44
 13279,"Toombs, GA",2020,4799836.0
 13279,"Toombs, GA",2021,3578547.22
+13281,"Towns, GA",2018,0.0
+13283,"Treutlen, GA",2018,0.0
 13285,"Troup, GA",2010,131015618.0
 13285,"Troup, GA",2011,193898268.0
 13285,"Troup, GA",2012,143171730.0
@@ -3863,7 +3979,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13285,"Troup, GA",2021,68020614.0
 13287,"Turner, GA",2012,259645.0
 13287,"Turner, GA",2016,259645.0
+13289,"Twiggs, GA",2018,0.0
 13291,"Union, GA",2021,375000.0
+13293,"Upson, GA",2018,0.0
 13295,"Walker, GA",2010,7594534.0
 13295,"Walker, GA",2011,7594534.0
 13295,"Walker, GA",2012,7594534.0
@@ -3912,6 +4030,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13305,"Wayne, GA",2020,3195672.72
 13305,"Wayne, GA",2021,1195672.72
 13307,"Webster, GA",2021,49529.0
+13309,"Wheeler, GA",2018,0.0
+13311,"White, GA",2018,0.0
 13313,"Whitfield, GA",2010,9854552.0
 13313,"Whitfield, GA",2011,10755987.0
 13313,"Whitfield, GA",2012,23107034.0
@@ -3921,7 +4041,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 13313,"Whitfield, GA",2016,9654552.0
 13313,"Whitfield, GA",2017,3190120.0
 13313,"Whitfield, GA",2021,4928990.0
+13315,"Wilcox, GA",2018,0.0
 13317,"Wilkes, GA",2021,99058.0
+13319,"Wilkinson, GA",2018,0.0
 13321,"Worth, GA",2021,15071.76
 15001,"Hawaii, HI",2010,107582445.0
 15001,"Hawaii, HI",2011,331290959.0
@@ -4025,6 +4147,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16013,"Blaine, ID",2012,625000.0
 16013,"Blaine, ID",2013,625000.0
 16013,"Blaine, ID",2014,625000.0
+16015,"Boise, ID",2018,0.0
+16017,"Bonner, ID",2018,0.0
 16019,"Bonneville, ID",2010,60076651.0
 16019,"Bonneville, ID",2011,63528906.0
 16019,"Bonneville, ID",2012,51348766.0
@@ -4049,6 +4173,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16021,"Boundary, ID",2019,225178798.0
 16021,"Boundary, ID",2020,90232547.0
 16021,"Boundary, ID",2021,213840252.0
+16023,"Butte, ID",2018,0.0
+16025,"Camas, ID",2018,0.0
 16027,"Canyon, ID",2010,213951598.0
 16027,"Canyon, ID",2011,708465687.0
 16027,"Canyon, ID",2012,354919597.0
@@ -4062,6 +4188,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16027,"Canyon, ID",2020,871197302.53
 16027,"Canyon, ID",2021,1486012878.13
 16029,"Caribou, ID",2010,99000.0
+16031,"Cassia, ID",2018,0.0
+16033,"Clark, ID",2018,0.0
 16035,"Clearwater, ID",2010,300000.0
 16035,"Clearwater, ID",2011,300000.0
 16035,"Clearwater, ID",2012,300000.0
@@ -4108,6 +4236,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16049,"Idaho, ID",2017,825000.0
 16049,"Idaho, ID",2020,250000.0
 16049,"Idaho, ID",2021,200000.0
+16051,"Jefferson, ID",2018,0.0
+16053,"Jerome, ID",2018,0.0
 16055,"Kootenai, ID",2010,68085100.0
 16055,"Kootenai, ID",2011,207708480.0
 16055,"Kootenai, ID",2012,159965814.0
@@ -4143,6 +4273,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16061,"Lewis, ID",2019,250000.0
 16061,"Lewis, ID",2020,450000.0
 16061,"Lewis, ID",2021,250000.0
+16063,"Lincoln, ID",2018,0.0
 16065,"Madison, ID",2010,52603631.0
 16065,"Madison, ID",2011,81187137.0
 16065,"Madison, ID",2012,23461809.0
@@ -4153,6 +4284,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16065,"Madison, ID",2017,2972420.0
 16065,"Madison, ID",2018,986640.0
 16065,"Madison, ID",2021,986640.0
+16067,"Minidoka, ID",2018,0.0
 16069,"Nez Perce, ID",2010,127783212.2
 16069,"Nez Perce, ID",2011,141540525.0
 16069,"Nez Perce, ID",2012,126608817.0
@@ -4165,6 +4297,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16069,"Nez Perce, ID",2019,251258224.82
 16069,"Nez Perce, ID",2020,227180397.75
 16069,"Nez Perce, ID",2021,160999215.61
+16071,"Oneida, ID",2018,0.0
+16073,"Owyhee, ID",2018,0.0
 16075,"Payette, ID",2010,249773113.0
 16075,"Payette, ID",2011,361979726.0
 16075,"Payette, ID",2012,369730048.0
@@ -4177,6 +4311,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 16075,"Payette, ID",2019,641121067.0
 16075,"Payette, ID",2020,353296054.0
 16075,"Payette, ID",2021,609122728.0
+16077,"Power, ID",2018,0.0
+16079,"Shoshone, ID",2018,0.0
+16081,"Teton, ID",2018,0.0
 16083,"Twin Falls, ID",2010,218114233.0
 16083,"Twin Falls, ID",2011,386771502.0
 16083,"Twin Falls, ID",2012,388398853.0
@@ -4214,6 +4351,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17003,"Alexander, IL",2014,126830156.0
 17003,"Alexander, IL",2015,126830156.0
 17003,"Alexander, IL",2016,126830156.0
+17005,"Bond, IL",2018,0.0
 17007,"Boone, IL",2016,18824.0
 17009,"Brown, IL",2010,37571171.0
 17009,"Brown, IL",2011,35942558.0
@@ -4277,6 +4415,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17019,"Champaign, IL",2019,1006431990.28
 17019,"Champaign, IL",2020,1015474464.74
 17019,"Champaign, IL",2021,997489922.27
+17021,"Christian, IL",2018,0.0
+17023,"Clark, IL",2018,0.0
 17025,"Clay, IL",2015,90145.0
 17025,"Clay, IL",2016,600000.0
 17025,"Clay, IL",2017,1200000.0
@@ -4315,6 +4455,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17031,"Cook, IL",2019,40501878753.27
 17031,"Cook, IL",2020,40951964793.07
 17031,"Cook, IL",2021,47222730203.92
+17033,"Crawford, IL",2018,0.0
 17035,"Cumberland, IL",2010,48251620.0
 17035,"Cumberland, IL",2011,72377430.0
 17035,"Cumberland, IL",2012,48251620.0
@@ -4339,6 +4480,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17037,"DeKalb, IL",2019,3377768.24
 17037,"DeKalb, IL",2020,2759622.24
 17037,"DeKalb, IL",2021,1817048.52
+17039,"De Witt, IL",2018,0.0
+17041,"Douglas, IL",2018,0.0
 17043,"DuPage, IL",2010,29182763.0
 17043,"DuPage, IL",2011,217196718.0
 17043,"DuPage, IL",2012,201424610.0
@@ -4372,6 +4515,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17049,"Effingham, IL",2019,143838705.25
 17049,"Effingham, IL",2020,96044981.25
 17049,"Effingham, IL",2021,116445786.5
+17051,"Fayette, IL",2018,0.0
 17053,"Ford, IL",2015,600000.0
 17053,"Ford, IL",2016,600000.0
 17053,"Ford, IL",2017,600000.0
@@ -4390,6 +4534,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17055,"Franklin, IL",2019,196261465.56
 17055,"Franklin, IL",2020,244344333.88
 17055,"Franklin, IL",2021,87660266.7
+17057,"Fulton, IL",2018,0.0
+17059,"Gallatin, IL",2018,0.0
 17061,"Greene, IL",2021,198116.0
 17063,"Grundy, IL",2015,332949.0
 17063,"Grundy, IL",2016,665898.0
@@ -4397,6 +4543,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17065,"Hamilton, IL",2010,198000.0
 17067,"Hancock, IL",2017,1000000.0
 17067,"Hancock, IL",2021,611125.0
+17069,"Hardin, IL",2018,0.0
 17071,"Henderson, IL",2010,21677005.0
 17071,"Henderson, IL",2011,61828008.0
 17071,"Henderson, IL",2012,30914004.0
@@ -4429,6 +4576,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17077,"Jackson, IL",2019,200240937.66
 17077,"Jackson, IL",2020,182311128.02
 17077,"Jackson, IL",2021,264752158.46
+17079,"Jasper, IL",2018,0.0
 17081,"Jefferson, IL",2010,22983376.0
 17081,"Jefferson, IL",2011,11341694.0
 17081,"Jefferson, IL",2012,11341694.0
@@ -4448,6 +4596,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17083,"Jersey, IL",2019,3359185.0
 17083,"Jersey, IL",2020,3974592.5
 17083,"Jersey, IL",2021,7966822.5
+17085,"Jo Daviess, IL",2018,0.0
+17087,"Johnson, IL",2018,0.0
 17089,"Kane, IL",2010,207854783.0
 17089,"Kane, IL",2011,246264645.0
 17089,"Kane, IL",2012,337071215.0
@@ -4522,6 +4672,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17103,"Lee, IL",2019,5899400.0
 17103,"Lee, IL",2020,4603888.27
 17103,"Lee, IL",2021,6241482.27
+17105,"Livingston, IL",2018,0.0
 17107,"Logan, IL",2010,40585525.0
 17107,"Logan, IL",2011,58536050.0
 17107,"Logan, IL",2012,39080320.0
@@ -4534,6 +4685,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17107,"Logan, IL",2019,85498145.0
 17107,"Logan, IL",2020,68076507.84
 17107,"Logan, IL",2021,52159518.88
+17109,"McDonough, IL",2018,0.0
 17111,"McHenry, IL",2010,25003200.0
 17111,"McHenry, IL",2011,25742548.0
 17111,"McHenry, IL",2012,25967211.0
@@ -4606,6 +4758,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17121,"Marion, IL",2019,89587376.0
 17121,"Marion, IL",2020,90964268.0
 17121,"Marion, IL",2021,92108334.0
+17123,"Marshall, IL",2018,0.0
 17125,"Mason, IL",2021,32302.28
 17127,"Massac, IL",2019,69210.0
 17127,"Massac, IL",2020,388420.0
@@ -4619,6 +4772,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17131,"Mercer, IL",2019,1106148.0
 17131,"Mercer, IL",2020,368716.0
 17131,"Mercer, IL",2021,467774.0
+17133,"Monroe, IL",2018,0.0
 17135,"Montgomery, IL",2014,254970.0
 17135,"Montgomery, IL",2015,99987.0
 17135,"Montgomery, IL",2017,1197690.0
@@ -4639,6 +4793,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17137,"Morgan, IL",2020,692208.76
 17137,"Morgan, IL",2021,1086660.0
 17139,"Moultrie, IL",2021,49529.0
+17141,"Ogle, IL",2018,0.0
 17143,"Peoria, IL",2010,107583092.0
 17143,"Peoria, IL",2011,210606919.0
 17143,"Peoria, IL",2012,159326166.0
@@ -4651,12 +4806,14 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17143,"Peoria, IL",2019,379565748.7
 17143,"Peoria, IL",2020,342461224.61
 17143,"Peoria, IL",2021,286464891.45
+17145,"Perry, IL",2018,0.0
 17147,"Piatt, IL",2016,25000.0
 17147,"Piatt, IL",2017,25000.0
 17147,"Piatt, IL",2018,201339.0
 17147,"Piatt, IL",2019,226339.0
 17147,"Piatt, IL",2020,726339.0
 17147,"Piatt, IL",2021,722322.0
+17149,"Pike, IL",2018,0.0
 17151,"Pope, IL",2018,200000.0
 17151,"Pope, IL",2020,3000000.0
 17153,"Pulaski, IL",2010,72088623.0
@@ -4671,6 +4828,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17153,"Pulaski, IL",2019,169252465.0
 17153,"Pulaski, IL",2020,115302168.0
 17153,"Pulaski, IL",2021,116715778.0
+17155,"Putnam, IL",2018,0.0
 17157,"Randolph, IL",2010,29820738.0
 17157,"Randolph, IL",2011,29820738.0
 17157,"Randolph, IL",2012,14910369.0
@@ -4683,6 +4841,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17157,"Randolph, IL",2019,49645609.0
 17157,"Randolph, IL",2020,40577369.0
 17157,"Randolph, IL",2021,29739860.0
+17159,"Richland, IL",2018,0.0
 17161,"Rock Island, IL",2010,81280436.0
 17161,"Rock Island, IL",2011,81280436.0
 17161,"Rock Island, IL",2012,81280436.0
@@ -4725,8 +4884,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17167,"Sangamon, IL",2019,329363565255.07
 17167,"Sangamon, IL",2020,478059133385.83
 17167,"Sangamon, IL",2021,594593816243.0
+17169,"Schuyler, IL",2018,0.0
+17171,"Scott, IL",2018,0.0
 17173,"Shelby, IL",2020,1800000.0
 17173,"Shelby, IL",2021,2700000.0
+17175,"Stark, IL",2018,0.0
 17177,"Stephenson, IL",2010,14941578.0
 17177,"Stephenson, IL",2011,14941578.0
 17177,"Stephenson, IL",2012,7470789.0
@@ -4795,6 +4957,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17187,"Warren, IL",2019,50045704.3
 17187,"Warren, IL",2020,58489862.6
 17187,"Warren, IL",2021,34401430.45
+17189,"Washington, IL",2018,0.0
+17191,"Wayne, IL",2018,0.0
 17193,"White, IL",2010,28877224.0
 17193,"White, IL",2011,55735762.0
 17193,"White, IL",2012,140949205.0
@@ -4855,6 +5019,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 17201,"Winnebago, IL",2019,448920123.91
 17201,"Winnebago, IL",2020,588589809.08
 17201,"Winnebago, IL",2021,624841131.08
+17203,"Woodford, IL",2018,0.0
 18001,"Adams, IN",2010,925000.0
 18001,"Adams, IN",2011,925000.0
 18001,"Adams, IN",2012,925000.0
@@ -4886,6 +5051,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18005,"Bartholomew, IN",2019,204417564.17
 18005,"Bartholomew, IN",2020,167984298.15
 18005,"Bartholomew, IN",2021,140972778.83
+18007,"Benton, IN",2018,0.0
+18009,"Blackford, IN",2018,0.0
 18011,"Boone, IN",2010,580546.0
 18011,"Boone, IN",2011,580546.0
 18011,"Boone, IN",2012,549904.0
@@ -4895,6 +5062,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18011,"Boone, IN",2018,460458.0
 18011,"Boone, IN",2019,243091.0
 18011,"Boone, IN",2021,243091.0
+18013,"Brown, IN",2018,0.0
+18015,"Carroll, IN",2018,0.0
 18017,"Cass, IN",2010,21619503.0
 18017,"Cass, IN",2011,12622251.0
 18017,"Cass, IN",2012,11246091.0
@@ -4919,6 +5088,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18019,"Clark, IN",2019,338563644.45
 18019,"Clark, IN",2020,176852278.87
 18019,"Clark, IN",2021,224404902.12
+18021,"Clay, IN",2018,0.0
+18023,"Clinton, IN",2018,0.0
+18025,"Crawford, IN",2018,0.0
+18027,"Daviess, IN",2018,0.0
 18029,"Dearborn, IN",2010,32867364.0
 18029,"Dearborn, IN",2011,16283682.0
 18029,"Dearborn, IN",2012,16283682.0
@@ -5037,6 +5210,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18047,"Franklin, IN",2019,1894290.0
 18047,"Franklin, IN",2020,3600000.0
 18047,"Franklin, IN",2021,694290.0
+18049,"Fulton, IN",2018,0.0
 18051,"Gibson, IN",2019,11949668.0
 18051,"Gibson, IN",2020,43022513.5
 18051,"Gibson, IN",2021,4793175.0
@@ -5077,6 +5251,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18059,"Hancock, IN",2019,225000.0
 18059,"Hancock, IN",2020,800000.0
 18059,"Hancock, IN",2021,549529.0
+18061,"Harrison, IN",2018,0.0
 18063,"Hendricks, IN",2010,1168501.0
 18063,"Hendricks, IN",2011,624001.0
 18063,"Hendricks, IN",2012,624001.0
@@ -5117,6 +5292,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18069,"Huntington, IN",2019,19584799.56
 18069,"Huntington, IN",2020,41614837.48
 18069,"Huntington, IN",2021,15070190.84
+18071,"Jackson, IN",2018,0.0
+18073,"Jasper, IN",2018,0.0
 18075,"Jay, IN",2010,50309604.0
 18075,"Jay, IN",2011,50309604.0
 18075,"Jay, IN",2012,50462933.0
@@ -5141,6 +5318,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18077,"Jefferson, IN",2019,56648275.0
 18077,"Jefferson, IN",2020,52394932.0
 18077,"Jefferson, IN",2021,33133619.0
+18079,"Jennings, IN",2018,0.0
 18081,"Johnson, IN",2010,32263720.0
 18081,"Johnson, IN",2011,112923020.0
 18081,"Johnson, IN",2012,64964440.0
@@ -5250,6 +5428,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18099,"Marshall, IN",2019,44025170.84
 18099,"Marshall, IN",2020,44025170.84
 18099,"Marshall, IN",2021,55594511.55
+18101,"Martin, IN",2018,0.0
 18103,"Miami, IN",2019,3293753.0
 18103,"Miami, IN",2020,1943752.0
 18103,"Miami, IN",2021,2131250.0
@@ -5268,6 +5447,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18107,"Montgomery, IN",2010,263986.0
 18109,"Morgan, IN",2010,498424.0
 18109,"Morgan, IN",2011,399424.0
+18111,"Newton, IN",2018,0.0
 18113,"Noble, IN",2010,496302.0
 18113,"Noble, IN",2011,496302.0
 18113,"Noble, IN",2012,496302.0
@@ -5277,9 +5457,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18113,"Noble, IN",2016,189000.0
 18113,"Noble, IN",2020,200000.0
 18113,"Noble, IN",2021,200000.0
+18115,"Ohio, IN",2018,0.0
 18117,"Orange, IN",2019,12582428.0
 18117,"Orange, IN",2020,20478780.16
 18117,"Orange, IN",2021,42130714.58
+18119,"Owen, IN",2018,0.0
 18121,"Parke, IN",2017,77961104.0
 18121,"Parke, IN",2018,97451380.0
 18121,"Parke, IN",2019,97451380.0
@@ -5297,6 +5479,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18123,"Perry, IN",2019,93251249.57
 18123,"Perry, IN",2020,103564948.76
 18123,"Perry, IN",2021,104824659.76
+18125,"Pike, IN",2018,0.0
 18127,"Porter, IN",2010,126070358.0
 18127,"Porter, IN",2011,366559838.0
 18127,"Porter, IN",2012,193651020.0
@@ -5309,6 +5492,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18127,"Porter, IN",2019,783720062.98
 18127,"Porter, IN",2020,691962754.41
 18127,"Porter, IN",2021,1003300571.45
+18129,"Posey, IN",2018,0.0
 18131,"Pulaski, IN",2021,104018.64
 18133,"Putnam, IN",2010,38032724.0
 18133,"Putnam, IN",2011,38032724.0
@@ -5361,6 +5545,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18145,"Shelby, IN",2019,593000.0
 18145,"Shelby, IN",2020,743000.0
 18145,"Shelby, IN",2021,982000.0
+18147,"Spencer, IN",2018,0.0
 18149,"Starke, IN",2020,147734.66
 18149,"Starke, IN",2021,1107359.66
 18151,"Steuben, IN",2010,21042330.0
@@ -5375,6 +5560,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18151,"Steuben, IN",2019,58271781.4
 18151,"Steuben, IN",2020,38382195.4
 18151,"Steuben, IN",2021,58430521.1
+18153,"Sullivan, IN",2018,0.0
+18155,"Switzerland, IN",2018,0.0
 18157,"Tippecanoe, IN",2010,443528047.74
 18157,"Tippecanoe, IN",2011,627065511.78
 18157,"Tippecanoe, IN",2012,434219991.76
@@ -5387,6 +5574,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18157,"Tippecanoe, IN",2019,780061341.96
 18157,"Tippecanoe, IN",2020,769379148.71
 18157,"Tippecanoe, IN",2021,1086991050.86
+18159,"Tipton, IN",2018,0.0
 18161,"Union, IN",2010,15067987.0
 18161,"Union, IN",2011,14650863.0
 18161,"Union, IN",2012,14650863.0
@@ -5438,7 +5626,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18169,"Wabash, IN",2018,1090526.61
 18169,"Wabash, IN",2019,363508.87
 18169,"Wabash, IN",2021,198116.0
+18171,"Warren, IN",2018,0.0
 18173,"Warrick, IN",2011,15000.0
+18175,"Washington, IN",2018,0.0
 18177,"Wayne, IN",2010,23579827.0
 18177,"Wayne, IN",2011,44254966.0
 18177,"Wayne, IN",2012,24811226.0
@@ -5451,6 +5641,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18177,"Wayne, IN",2019,95703719.0
 18177,"Wayne, IN",2020,115079946.5
 18177,"Wayne, IN",2021,109815834.48
+18179,"Wells, IN",2018,0.0
 18181,"White, IN",2010,14530908.0
 18181,"White, IN",2011,14530908.0
 18181,"White, IN",2012,14530908.0
@@ -5467,8 +5658,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 18183,"Whitley, IN",2014,1499999.0
 18183,"Whitley, IN",2015,1862955.0
 18183,"Whitley, IN",2017,362956.0
+19001,"Adair, IA",2018,0.0
 19003,"Adams, IA",2021,148587.0
 19005,"Allamakee, IA",2021,49529.0
+19007,"Appanoose, IA",2018,0.0
+19009,"Audubon, IA",2018,0.0
 19011,"Benton, IA",2011,875000.0
 19011,"Benton, IA",2012,875000.0
 19011,"Benton, IA",2013,875000.0
@@ -5499,6 +5693,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19017,"Bremer, IA",2012,642432.0
 19017,"Bremer, IA",2013,214144.0
 19017,"Bremer, IA",2014,214144.0
+19019,"Buchanan, IA",2018,0.0
 19021,"Buena Vista, IA",2010,20286652.0
 19021,"Buena Vista, IA",2011,60859956.0
 19021,"Buena Vista, IA",2012,30429978.0
@@ -5511,6 +5706,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19021,"Buena Vista, IA",2019,51452254.0
 19021,"Buena Vista, IA",2020,59624760.0
 19021,"Buena Vista, IA",2021,54282208.0
+19023,"Butler, IA",2018,0.0
 19025,"Calhoun, IA",2012,233687.0
 19027,"Carroll, IA",2010,35113260.0
 19027,"Carroll, IA",2011,35193260.0
@@ -5529,6 +5725,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19029,"Cass, IA",2012,267839.0
 19029,"Cass, IA",2014,267839.0
 19029,"Cass, IA",2021,198116.0
+19031,"Cedar, IA",2018,0.0
 19033,"Cerro Gordo, IA",2010,69964927.0
 19033,"Cerro Gordo, IA",2011,35202981.0
 19033,"Cerro Gordo, IA",2012,52961869.0
@@ -5542,6 +5739,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19033,"Cerro Gordo, IA",2020,86173101.42
 19033,"Cerro Gordo, IA",2021,68030488.4
 19035,"Cherokee, IA",2010,599602.0
+19037,"Chickasaw, IA",2018,0.0
 19039,"Clarke, IA",2021,49529.0
 19041,"Clay, IA",2010,400000.0
 19041,"Clay, IA",2011,400000.0
@@ -5574,6 +5772,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19045,"Clinton, IA",2019,348069.0
 19045,"Clinton, IA",2020,1446138.0
 19045,"Clinton, IA",2021,2300000.0
+19047,"Crawford, IA",2018,0.0
 19049,"Dallas, IA",2010,15788674.0
 19049,"Dallas, IA",2017,222654.0
 19049,"Dallas, IA",2018,222654.0
@@ -5596,6 +5795,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19053,"Decatur, IA",2019,118829700.0
 19053,"Decatur, IA",2020,152558693.0
 19053,"Decatur, IA",2021,83464447.22
+19055,"Delaware, IA",2018,0.0
 19057,"Des Moines, IA",2010,64868173.0
 19057,"Des Moines, IA",2011,118973468.0
 19057,"Des Moines, IA",2012,80444854.0
@@ -5608,6 +5808,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19057,"Des Moines, IA",2019,266929191.0
 19057,"Des Moines, IA",2020,206004381.22
 19057,"Des Moines, IA",2021,259288472.44
+19059,"Dickinson, IA",2018,0.0
 19061,"Dubuque, IA",2010,71008052.0
 19061,"Dubuque, IA",2011,119633562.0
 19061,"Dubuque, IA",2012,100873977.0
@@ -5626,7 +5827,12 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19065,"Fayette, IA",2018,250000.0
 19065,"Fayette, IA",2019,500000.0
 19065,"Fayette, IA",2021,500000.0
+19067,"Floyd, IA",2018,0.0
 19069,"Franklin, IA",2010,300000.0
+19071,"Fremont, IA",2018,0.0
+19073,"Greene, IA",2018,0.0
+19075,"Grundy, IA",2018,0.0
+19077,"Guthrie, IA",2018,0.0
 19079,"Hamilton, IA",2021,198116.0
 19081,"Hancock, IA",2010,1109961.0
 19081,"Hancock, IA",2011,1109961.0
@@ -5640,6 +5846,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19081,"Hancock, IA",2019,250000.0
 19081,"Hancock, IA",2020,875000.0
 19081,"Hancock, IA",2021,375000.0
+19083,"Hardin, IA",2018,0.0
 19085,"Harrison, IA",2010,350000.0
 19087,"Henry, IA",2010,825000.0
 19087,"Henry, IA",2011,825000.0
@@ -5653,6 +5860,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19087,"Henry, IA",2020,488156.1
 19087,"Henry, IA",2021,197447.1
 19089,"Howard, IA",2021,148587.0
+19091,"Humboldt, IA",2018,0.0
+19093,"Ida, IA",2018,0.0
 19095,"Iowa, IA",2021,148587.0
 19097,"Jackson, IA",2018,238875.0
 19097,"Jackson, IA",2019,477750.0
@@ -5680,11 +5889,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19105,"Jones, IA",2014,210000.0
 19105,"Jones, IA",2015,210000.0
 19105,"Jones, IA",2021,703034.94
+19107,"Keokuk, IA",2018,0.0
 19109,"Kossuth, IA",2010,697107.0
 19109,"Kossuth, IA",2011,697107.0
 19109,"Kossuth, IA",2012,697107.0
 19109,"Kossuth, IA",2013,697107.0
 19109,"Kossuth, IA",2014,2091321.0
+19111,"Lee, IA",2018,0.0
 19113,"Linn, IA",2010,152822438.0
 19113,"Linn, IA",2011,155084646.0
 19113,"Linn, IA",2012,168078636.0
@@ -5697,12 +5908,14 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19113,"Linn, IA",2019,276068998.84
 19113,"Linn, IA",2020,299498679.63
 19113,"Linn, IA",2021,256943627.31
+19115,"Louisa, IA",2018,0.0
 19117,"Lucas, IA",2016,15294178.0
 19117,"Lucas, IA",2017,52139202.46
 19117,"Lucas, IA",2018,50748781.92
 19117,"Lucas, IA",2019,43101692.92
 19117,"Lucas, IA",2020,64652539.38
 19117,"Lucas, IA",2021,33010724.69
+19119,"Lyon, IA",2018,0.0
 19121,"Madison, IA",2010,247500.0
 19121,"Madison, IA",2013,438472.0
 19121,"Madison, IA",2014,438472.0
@@ -5733,14 +5946,19 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19127,"Marshall, IA",2019,60706805.0
 19127,"Marshall, IA",2020,76285131.0
 19127,"Marshall, IA",2021,78314718.0
+19129,"Mills, IA",2018,0.0
 19131,"Mitchell, IA",2021,148587.0
 19133,"Monona, IA",2021,247645.0
 19135,"Monroe, IA",2018,399698.0
 19135,"Monroe, IA",2019,775336.4
 19135,"Monroe, IA",2020,775336.4
 19135,"Monroe, IA",2021,387668.2
+19137,"Montgomery, IA",2018,0.0
 19139,"Muscatine, IA",2020,900000.0
 19139,"Muscatine, IA",2021,2700000.0
+19141,"O'Brien, IA",2018,0.0
+19143,"Osceola, IA",2018,0.0
+19145,"Page, IA",2018,0.0
 19147,"Palo Alto, IA",2010,50837452.19
 19147,"Palo Alto, IA",2011,70301391.0
 19147,"Palo Alto, IA",2012,70301391.0
@@ -5765,6 +5983,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19149,"Plymouth, IA",2019,84731765.22
 19149,"Plymouth, IA",2020,104819342.79
 19149,"Plymouth, IA",2021,65181749.08
+19151,"Pocahontas, IA",2018,0.0
 19153,"Polk, IA",2010,17688348969.31
 19153,"Polk, IA",2011,29249586978.15
 19153,"Polk, IA",2012,21976934044.06
@@ -5794,6 +6013,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19157,"Poweshiek, IA",2015,1171788.0
 19157,"Poweshiek, IA",2018,1064528.0
 19157,"Poweshiek, IA",2019,878841.0
+19159,"Ringgold, IA",2018,0.0
+19161,"Sac, IA",2018,0.0
 19163,"Scott, IA",2010,178726375.0
 19163,"Scott, IA",2011,398951003.0
 19163,"Scott, IA",2012,216209431.0
@@ -5854,6 +6075,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19171,"Tama, IA",2019,15483916.28
 19171,"Tama, IA",2020,25742331.48
 19171,"Tama, IA",2021,22663095.76
+19173,"Taylor, IA",2018,0.0
 19175,"Union, IA",2010,23906085.0
 19175,"Union, IA",2011,23906085.0
 19175,"Union, IA",2012,23906085.0
@@ -5886,8 +6108,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19179,"Wapello, IA",2019,210358132.25
 19179,"Wapello, IA",2020,258430971.55
 19179,"Wapello, IA",2021,248156994.25
+19181,"Warren, IA",2018,0.0
 19183,"Washington, IA",2010,150000.0
 19183,"Washington, IA",2011,150000.0
+19185,"Wayne, IA",2018,0.0
 19187,"Webster, IA",2010,50737830.0
 19187,"Webster, IA",2011,92876186.0
 19187,"Webster, IA",2012,71343442.0
@@ -5934,6 +6158,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 19193,"Woodbury, IA",2019,323711104.58
 19193,"Woodbury, IA",2020,290226747.24
 19193,"Woodbury, IA",2021,326444444.67
+19195,"Worth, IA",2018,0.0
 19197,"Wright, IA",2011,900000.0
 19197,"Wright, IA",2012,900000.0
 19197,"Wright, IA",2013,900000.0
@@ -5951,6 +6176,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20001,"Allen, KS",2019,1903724.0
 20001,"Allen, KS",2020,2164713.0
 20001,"Allen, KS",2021,30168294.5
+20003,"Anderson, KS",2018,0.0
 20005,"Atchison, KS",2015,6230030.0
 20005,"Atchison, KS",2016,3115015.0
 20005,"Atchison, KS",2017,9345045.0
@@ -5971,6 +6197,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20009,"Barton, KS",2019,69643608.0
 20009,"Barton, KS",2020,35644890.0
 20009,"Barton, KS",2021,97973779.0
+20011,"Bourbon, KS",2018,0.0
 20013,"Brown, KS",2010,57660610.71
 20013,"Brown, KS",2011,87392234.76
 20013,"Brown, KS",2012,63266872.76
@@ -5988,7 +6215,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20015,"Butler, KS",2019,109454.54
 20015,"Butler, KS",2020,54727.27
 20015,"Butler, KS",2021,104256.27
+20017,"Chase, KS",2018,0.0
+20019,"Chautauqua, KS",2018,0.0
 20021,"Cherokee, KS",2021,1916805.0
+20023,"Cheyenne, KS",2018,0.0
+20025,"Clark, KS",2018,0.0
 20027,"Clay, KS",2010,18111380.0
 20027,"Clay, KS",2011,17865698.0
 20027,"Clay, KS",2012,26798547.0
@@ -6001,7 +6232,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20027,"Clay, KS",2019,52164938.75
 20027,"Clay, KS",2020,43586900.0
 20027,"Clay, KS",2021,66189843.7
+20029,"Cloud, KS",2018,0.0
 20031,"Coffey, KS",2021,198116.0
+20033,"Comanche, KS",2018,0.0
 20035,"Cowley, KS",2010,7959462.0
 20035,"Cowley, KS",2011,22851287.0
 20035,"Cowley, KS",2012,15180858.0
@@ -6026,6 +6259,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20037,"Crawford, KS",2019,956801394.91
 20037,"Crawford, KS",2020,779993566.62
 20037,"Crawford, KS",2021,447809814.67
+20039,"Decatur, KS",2018,0.0
+20041,"Dickinson, KS",2018,0.0
 20043,"Doniphan, KS",2010,620594.0
 20043,"Doniphan, KS",2011,813630.0
 20043,"Doniphan, KS",2012,349332.0
@@ -6050,6 +6285,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20045,"Douglas, KS",2019,543622106.15
 20045,"Douglas, KS",2020,624962836.51
 20045,"Douglas, KS",2021,731440129.16
+20047,"Edwards, KS",2018,0.0
+20049,"Elk, KS",2018,0.0
 20051,"Ellis, KS",2010,11926110.0
 20051,"Ellis, KS",2011,67681669.0
 20051,"Ellis, KS",2012,48537849.0
@@ -6062,6 +6299,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20051,"Ellis, KS",2019,173982794.8
 20051,"Ellis, KS",2020,77131743.65
 20051,"Ellis, KS",2021,100171987.9
+20053,"Ellsworth, KS",2018,0.0
 20055,"Finney, KS",2010,17151963.0
 20055,"Finney, KS",2011,85759815.0
 20055,"Finney, KS",2012,17151963.0
@@ -6110,6 +6348,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20061,"Geary, KS",2019,114928860.0
 20061,"Geary, KS",2020,77999689.0
 20061,"Geary, KS",2021,63638046.0
+20063,"Gove, KS",2018,0.0
+20065,"Graham, KS",2018,0.0
+20067,"Grant, KS",2018,0.0
+20069,"Gray, KS",2018,0.0
 20071,"Greeley, KS",2011,746876.0
 20071,"Greeley, KS",2012,746876.0
 20071,"Greeley, KS",2013,746876.0
@@ -6117,6 +6359,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20071,"Greeley, KS",2017,821230.0
 20071,"Greeley, KS",2018,410615.0
 20071,"Greeley, KS",2021,99058.0
+20073,"Greenwood, KS",2018,0.0
+20075,"Hamilton, KS",2018,0.0
 20077,"Harper, KS",2021,148587.0
 20079,"Harvey, KS",2010,600000.0
 20079,"Harvey, KS",2011,363209.0
@@ -6130,6 +6374,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20079,"Harvey, KS",2019,82248457.76
 20079,"Harvey, KS",2020,88530757.76
 20079,"Harvey, KS",2021,62181586.82
+20081,"Haskell, KS",2018,0.0
+20083,"Hodgeman, KS",2018,0.0
 20085,"Jackson, KS",2010,15141965.0
 20085,"Jackson, KS",2011,12663658.0
 20085,"Jackson, KS",2012,12258537.0
@@ -6144,6 +6390,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20085,"Jackson, KS",2021,49815026.62
 20087,"Jefferson, KS",2015,454785.0
 20087,"Jefferson, KS",2016,454785.0
+20089,"Jewell, KS",2018,0.0
 20091,"Johnson, KS",2010,30226214.0
 20091,"Johnson, KS",2011,14755624.0
 20091,"Johnson, KS",2012,46100930.0
@@ -6158,6 +6405,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20091,"Johnson, KS",2021,1589537097.75
 20093,"Kearny, KS",2018,200000.0
 20093,"Kearny, KS",2021,99058.0
+20095,"Kingman, KS",2018,0.0
 20097,"Kiowa, KS",2010,396000.0
 20099,"Labette, KS",2011,73408.0
 20099,"Labette, KS",2015,203422.0
@@ -6167,12 +6415,15 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20099,"Labette, KS",2019,77880.0
 20099,"Labette, KS",2020,153159.0
 20099,"Labette, KS",2021,1213428.0
+20101,"Lane, KS",2018,0.0
 20103,"Leavenworth, KS",2014,697072.0
 20103,"Leavenworth, KS",2015,697072.0
 20103,"Leavenworth, KS",2016,1394144.0
 20103,"Leavenworth, KS",2018,1151857.0
 20103,"Leavenworth, KS",2019,99763.0
 20103,"Leavenworth, KS",2021,8201316.0
+20105,"Lincoln, KS",2018,0.0
+20107,"Linn, KS",2018,0.0
 20109,"Logan, KS",2010,9865332.0
 20109,"Logan, KS",2011,17544222.0
 20109,"Logan, KS",2012,16815408.0
@@ -6223,11 +6474,18 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20117,"Marshall, KS",2019,760137.28
 20117,"Marshall, KS",2020,760137.28
 20117,"Marshall, KS",2021,976744.64
+20119,"Meade, KS",2018,0.0
+20121,"Miami, KS",2018,0.0
+20123,"Mitchell, KS",2018,0.0
 20125,"Montgomery, KS",2020,7999634.0
 20125,"Montgomery, KS",2021,13999253.0
+20127,"Morris, KS",2018,0.0
+20129,"Morton, KS",2018,0.0
 20131,"Nemaha, KS",2021,300000.0
 20133,"Neosho, KS",2010,233376.0
 20133,"Neosho, KS",2021,99052.36
+20135,"Ness, KS",2018,0.0
+20137,"Norton, KS",2018,0.0
 20139,"Osage, KS",2014,350838.0
 20139,"Osage, KS",2015,350838.0
 20139,"Osage, KS",2016,350838.0
@@ -6236,6 +6494,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20139,"Osage, KS",2019,2479890.0
 20139,"Osage, KS",2020,1695178.0
 20139,"Osage, KS",2021,826630.0
+20141,"Osborne, KS",2018,0.0
+20143,"Ottawa, KS",2018,0.0
+20145,"Pawnee, KS",2018,0.0
 20147,"Phillips, KS",2014,895500.0
 20147,"Phillips, KS",2015,895500.0
 20147,"Phillips, KS",2016,895500.0
@@ -6260,6 +6521,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20155,"Reno, KS",2019,197189005.92
 20155,"Reno, KS",2020,145960721.84
 20155,"Reno, KS",2021,149183083.66
+20157,"Republic, KS",2018,0.0
+20159,"Rice, KS",2018,0.0
 20161,"Riley, KS",2010,71081766.0
 20161,"Riley, KS",2011,87163913.0
 20161,"Riley, KS",2012,47647648.66
@@ -6272,6 +6535,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20161,"Riley, KS",2019,135360046.35
 20161,"Riley, KS",2020,143880319.41
 20161,"Riley, KS",2021,183889801.56
+20163,"Rooks, KS",2018,0.0
+20165,"Rush, KS",2018,0.0
+20167,"Russell, KS",2018,0.0
 20169,"Saline, KS",2010,58255663.0
 20169,"Saline, KS",2011,139530180.0
 20169,"Saline, KS",2012,102090940.0
@@ -6284,6 +6550,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20169,"Saline, KS",2019,212072838.55
 20169,"Saline, KS",2020,175243116.19
 20169,"Saline, KS",2021,180699856.56
+20171,"Scott, KS",2018,0.0
 20173,"Sedgwick, KS",2010,507062845.98
 20173,"Sedgwick, KS",2011,723030208.36
 20173,"Sedgwick, KS",2012,501435180.5
@@ -6296,6 +6563,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20173,"Sedgwick, KS",2019,1167788772.33
 20173,"Sedgwick, KS",2020,753182026.52
 20173,"Sedgwick, KS",2021,810468201.21
+20175,"Seward, KS",2018,0.0
 20177,"Shawnee, KS",2010,17695345364.74
 20177,"Shawnee, KS",2011,17887904285.74
 20177,"Shawnee, KS",2012,11662403216.9
@@ -6315,7 +6583,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20179,"Sheridan, KS",2019,60678410.8
 20179,"Sheridan, KS",2020,28724333.0
 20179,"Sheridan, KS",2021,47087260.6
+20181,"Sherman, KS",2018,0.0
+20183,"Smith, KS",2018,0.0
 20185,"Stafford, KS",2017,1561600.0
+20187,"Stanton, KS",2018,0.0
+20189,"Stevens, KS",2018,0.0
 20191,"Sumner, KS",2010,11113428.0
 20191,"Sumner, KS",2011,5556714.0
 20191,"Sumner, KS",2012,11183771.0
@@ -6333,8 +6605,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 20193,"Thomas, KS",2012,210000.0
 20193,"Thomas, KS",2013,630000.0
 20193,"Thomas, KS",2014,210000.0
+20195,"Trego, KS",2018,0.0
+20197,"Wabaunsee, KS",2018,0.0
+20199,"Wallace, KS",2018,0.0
+20201,"Washington, KS",2018,0.0
 20203,"Wichita, KS",2010,148500.0
 20205,"Wilson, KS",2021,49529.0
+20207,"Woodson, KS",2018,0.0
 20209,"Wyandotte, KS",2010,522130046.65
 20209,"Wyandotte, KS",2011,467239701.47
 20209,"Wyandotte, KS",2012,612933754.93
@@ -6359,6 +6636,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21003,"Allen, KY",2019,250000.0
 21003,"Allen, KY",2020,900000.0
 21003,"Allen, KY",2021,750000.0
+21005,"Anderson, KY",2018,0.0
+21007,"Ballard, KY",2018,0.0
 21009,"Barren, KY",2013,625000.0
 21009,"Barren, KY",2014,625000.0
 21009,"Barren, KY",2015,625000.0
@@ -6413,6 +6692,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21021,"Boyle, KY",2012,420000.0
 21021,"Boyle, KY",2013,605868.0
 21021,"Boyle, KY",2014,420000.0
+21023,"Bracken, KY",2018,0.0
 21025,"Breathitt, KY",2010,63908520.0
 21025,"Breathitt, KY",2011,63908520.0
 21025,"Breathitt, KY",2012,42605680.0
@@ -6482,6 +6762,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21037,"Campbell, KY",2019,8360259.37
 21037,"Campbell, KY",2020,48589666.99
 21037,"Campbell, KY",2021,208847330.67
+21039,"Carlisle, KY",2018,0.0
 21041,"Carroll, KY",2010,29664643.0
 21041,"Carroll, KY",2011,18535032.0
 21041,"Carroll, KY",2012,20709627.0
@@ -6522,9 +6803,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21047,"Christian, KY",2015,29350728.0
 21047,"Christian, KY",2016,51363774.0
 21047,"Christian, KY",2021,9746710.0
+21049,"Clark, KY",2018,0.0
 21051,"Clay, KY",2014,33357.0
 21051,"Clay, KY",2016,33357.0
 21053,"Clinton, KY",2021,1000000.0
+21055,"Crittenden, KY",2018,0.0
 21057,"Cumberland, KY",2010,29091850.0
 21057,"Cumberland, KY",2011,145933752.0
 21057,"Cumberland, KY",2012,92585311.0
@@ -6552,6 +6835,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21061,"Edmonson, KY",2019,17828958.0
 21061,"Edmonson, KY",2020,57128655.0
 21061,"Edmonson, KY",2021,8655637.0
+21063,"Elliott, KY",2018,0.0
 21065,"Estill, KY",2010,85000.0
 21065,"Estill, KY",2012,482313.0
 21065,"Estill, KY",2013,964626.0
@@ -6609,6 +6893,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21073,"Franklin, KY",2019,121585263816.26
 21073,"Franklin, KY",2020,175993212869.93
 21073,"Franklin, KY",2021,180612847138.16
+21075,"Fulton, KY",2018,0.0
 21077,"Gallatin, KY",2018,220517.0
 21077,"Gallatin, KY",2019,220517.0
 21077,"Gallatin, KY",2020,720517.0
@@ -6650,6 +6935,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21087,"Green, KY",2012,625000.0
 21087,"Green, KY",2013,625000.0
 21087,"Green, KY",2014,625000.0
+21089,"Greenup, KY",2018,0.0
 21091,"Hancock, KY",2010,925000.0
 21091,"Hancock, KY",2011,925000.0
 21091,"Hancock, KY",2012,925000.0
@@ -6671,6 +6957,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21095,"Harlan, KY",2020,181367.0
 21095,"Harlan, KY",2021,1171625.0
 21097,"Harrison, KY",2010,99000.0
+21099,"Hart, KY",2018,0.0
 21101,"Henderson, KY",2010,4807889.0
 21101,"Henderson, KY",2011,9415778.0
 21101,"Henderson, KY",2012,11710437.0
@@ -6688,6 +6975,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21103,"Henry, KY",2012,198296.0
 21103,"Henry, KY",2014,248770.0
 21103,"Henry, KY",2015,248770.0
+21105,"Hickman, KY",2018,0.0
 21107,"Hopkins, KY",2010,16964722.0
 21107,"Hopkins, KY",2011,78866610.0
 21107,"Hopkins, KY",2012,31075944.0
@@ -6774,6 +7062,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21121,"Knox, KY",2019,532909330.0
 21121,"Knox, KY",2020,314992470.0
 21121,"Knox, KY",2021,226752299.0
+21123,"Larue, KY",2018,0.0
 21125,"Laurel, KY",2010,719000.0
 21125,"Laurel, KY",2011,740402.0
 21125,"Laurel, KY",2012,728750.0
@@ -6786,6 +7075,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21125,"Laurel, KY",2019,2500000.0
 21125,"Laurel, KY",2020,25416665.0
 21125,"Laurel, KY",2021,84315247.0
+21127,"Lawrence, KY",2018,0.0
 21129,"Lee, KY",2010,36161208.0
 21129,"Lee, KY",2011,108483624.0
 21129,"Lee, KY",2012,54241812.0
@@ -6904,7 +7194,12 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21155,"Marion, KY",2021,149425855.54999998
 21157,"Marshall, KY",2011,32820.0
 21157,"Marshall, KY",2013,32820.0
+21159,"Martin, KY",2018,0.0
+21161,"Mason, KY",2018,0.0
+21163,"Meade, KY",2018,0.0
 21165,"Menifee, KY",2021,39758.03
+21167,"Mercer, KY",2018,0.0
+21169,"Metcalfe, KY",2018,0.0
 21171,"Monroe, KY",2010,875000.0
 21171,"Monroe, KY",2011,875000.0
 21171,"Monroe, KY",2012,875000.0
@@ -6954,6 +7249,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21179,"Nelson, KY",2011,625000.0
 21179,"Nelson, KY",2012,625000.0
 21179,"Nelson, KY",2021,65538.77
+21181,"Nicholas, KY",2018,0.0
 21183,"Ohio, KY",2010,1460920.0
 21183,"Ohio, KY",2011,1144979.0
 21183,"Ohio, KY",2012,968032.0
@@ -7027,6 +7323,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21195,"Pike, KY",2019,5985535.0
 21195,"Pike, KY",2020,19299524.62
 21195,"Pike, KY",2021,20911827.27
+21197,"Powell, KY",2018,0.0
 21199,"Pulaski, KY",2010,2600000.0
 21199,"Pulaski, KY",2011,2266977.0
 21199,"Pulaski, KY",2012,3387301.0
@@ -7039,6 +7336,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21199,"Pulaski, KY",2019,3362786.14
 21199,"Pulaski, KY",2020,4403757.87
 21199,"Pulaski, KY",2021,3275703.91
+21201,"Robertson, KY",2018,0.0
+21203,"Rockcastle, KY",2018,0.0
 21205,"Rowan, KY",2010,1859417.0
 21205,"Rowan, KY",2011,1595991.0
 21205,"Rowan, KY",2012,625000.0
@@ -7085,6 +7384,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21211,"Shelby, KY",2019,166702875.0
 21211,"Shelby, KY",2020,430174557.0
 21211,"Shelby, KY",2021,427748567.0
+21213,"Simpson, KY",2018,0.0
 21215,"Spencer, KY",2020,500000.0
 21215,"Spencer, KY",2021,2500000.0
 21217,"Taylor, KY",2010,625000.0
@@ -7092,6 +7392,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21217,"Taylor, KY",2012,625000.0
 21217,"Taylor, KY",2021,148587.0
 21219,"Todd, KY",2021,99058.0
+21221,"Trigg, KY",2018,0.0
 21223,"Trimble, KY",2010,10714076.0
 21223,"Trimble, KY",2011,5658298.0
 21223,"Trimble, KY",2012,5658298.0
@@ -7103,6 +7404,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 21223,"Trimble, KY",2019,250000.0
 21223,"Trimble, KY",2020,500000.0
 21223,"Trimble, KY",2021,250000.0
+21225,"Union, KY",2018,0.0
 21227,"Warren, KY",2010,97545484.0
 21227,"Warren, KY",2011,145565330.0
 21227,"Warren, KY",2012,111513304.0
@@ -7226,6 +7528,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 22011,"Beauregard, LA",2019,388194.22
 22011,"Beauregard, LA",2020,388194.22
 22011,"Beauregard, LA",2021,3714886.0
+22013,"Bienville, LA",2018,0.0
 22015,"Bossier, LA",2010,39096974.0
 22015,"Bossier, LA",2011,58645461.0
 22015,"Bossier, LA",2012,39096974.0
@@ -7297,6 +7600,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 22027,"Claiborne, LA",2019,4599998.98
 22027,"Claiborne, LA",2020,7599998.98
 22027,"Claiborne, LA",2021,2398115.66
+22029,"Concordia, LA",2018,0.0
 22031,"De Soto, LA",2013,471392.0
 22031,"De Soto, LA",2014,1027334.0
 22031,"De Soto, LA",2015,471392.0
@@ -7314,6 +7618,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 22033,"East Baton Rouge, LA",2019,51529521194.77
 22033,"East Baton Rouge, LA",2020,75064158853.65
 22033,"East Baton Rouge, LA",2021,105464935337.21
+22035,"East Carroll, LA",2018,0.0
 22037,"East Feliciana, LA",2010,71190934.0
 22037,"East Feliciana, LA",2011,214782802.0
 22037,"East Feliciana, LA",2012,106786401.0
@@ -7451,6 +7756,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 22061,"Lincoln, LA",2019,37457296.0
 22061,"Lincoln, LA",2020,79130929.0
 22061,"Lincoln, LA",2021,73125230.38
+22063,"Livingston, LA",2018,0.0
 22065,"Madison, LA",2010,59488246.0
 22065,"Madison, LA",2011,84633606.0
 22065,"Madison, LA",2012,87699448.0
@@ -8402,6 +8708,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26007,"Alpena, MI",2019,1402724564.0
 26007,"Alpena, MI",2020,969951838.0
 26007,"Alpena, MI",2021,845679815.0
+26009,"Antrim, MI",2018,0.0
 26011,"Arenac, MI",2010,22383658.0
 26011,"Arenac, MI",2011,108041414.0
 26011,"Arenac, MI",2012,43931674.0
@@ -8668,6 +8975,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26069,"Iosco, MI",2013,69140.0
 26069,"Iosco, MI",2016,69140.0
 26069,"Iosco, MI",2021,369735.0
+26071,"Iron, MI",2018,0.0
 26073,"Isabella, MI",2010,8253049.02
 26073,"Isabella, MI",2011,4209997.51
 26073,"Isabella, MI",2012,4754831.0
@@ -8720,6 +9028,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26081,"Kent, MI",2019,1357633075.13
 26081,"Kent, MI",2020,1323289550.45
 26081,"Kent, MI",2021,1847265316.6
+26083,"Keweenaw, MI",2018,0.0
 26085,"Lake, MI",2010,66426742.0
 26085,"Lake, MI",2011,199757726.0
 26085,"Lake, MI",2012,100452613.0
@@ -8855,6 +9164,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26111,"Midland, MI",2019,492889.0
 26111,"Midland, MI",2020,11332125.7
 26111,"Midland, MI",2021,37495934.1
+26113,"Missaukee, MI",2018,0.0
 26115,"Monroe, MI",2010,41287728.0
 26115,"Monroe, MI",2011,124385240.0
 26115,"Monroe, MI",2012,31366648.0
@@ -8926,7 +9236,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26127,"Oceana, MI",2012,407890.0
 26127,"Oceana, MI",2015,782890.0
 26127,"Oceana, MI",2016,375000.0
+26129,"Ogemaw, MI",2018,0.0
 26131,"Ontonagon, MI",2021,49305.52
+26133,"Osceola, MI",2018,0.0
 26135,"Oscoda, MI",2010,287593.0
 26135,"Oscoda, MI",2011,287593.0
 26135,"Oscoda, MI",2012,287593.0
@@ -8944,6 +9256,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26139,"Ottawa, MI",2019,48341900.08
 26139,"Ottawa, MI",2020,68815641.38
 26139,"Ottawa, MI",2021,72878922.55
+26141,"Presque Isle, MI",2018,0.0
 26143,"Roscommon, MI",2010,38862870.0
 26143,"Roscommon, MI",2011,117074489.0
 26143,"Roscommon, MI",2012,77874395.0
@@ -9000,6 +9313,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26151,"Sanilac, MI",2020,5450000.0
 26151,"Sanilac, MI",2021,2600000.0
 26153,"Schoolcraft, MI",2021,31445.4
+26155,"Shiawassee, MI",2018,0.0
 26157,"Tuscola, MI",2010,10585286.0
 26157,"Tuscola, MI",2011,18771938.0
 26157,"Tuscola, MI",2012,18230693.0
@@ -9053,6 +9367,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 26165,"Wexford, MI",2019,1397419.0
 26165,"Wexford, MI",2020,982456.0
 26165,"Wexford, MI",2021,1012137.0
+27001,"Aitkin, MN",2018,0.0
 27003,"Anoka, MN",2010,131353680.0
 27003,"Anoka, MN",2011,163910850.0
 27003,"Anoka, MN",2012,131128680.0
@@ -9101,6 +9416,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27009,"Benton, MN",2019,67991640.0
 27009,"Benton, MN",2020,67991640.0
 27009,"Benton, MN",2021,36043212.0
+27011,"Big Stone, MN",2018,0.0
 27013,"Blue Earth, MN",2010,37679932.0
 27013,"Blue Earth, MN",2011,118697631.0
 27013,"Blue Earth, MN",2012,107485419.0
@@ -9183,6 +9499,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27027,"Clay, MN",2019,330884868.09
 27027,"Clay, MN",2020,301653382.05
 27027,"Clay, MN",2021,194379958.43
+27029,"Clearwater, MN",2018,0.0
 27031,"Cook, MN",2010,17678717.0
 27031,"Cook, MN",2011,52200111.0
 27031,"Cook, MN",2012,29288770.0
@@ -9195,6 +9512,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27031,"Cook, MN",2019,84978209.63
 27031,"Cook, MN",2020,107377231.91
 27031,"Cook, MN",2021,35128604.96
+27033,"Cottonwood, MN",2018,0.0
 27035,"Crow Wing, MN",2016,500000.0
 27035,"Crow Wing, MN",2020,200000.0
 27035,"Crow Wing, MN",2021,200000.0
@@ -9207,6 +9525,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27037,"Dakota, MN",2018,222782.0
 27037,"Dakota, MN",2020,17245487.0
 27037,"Dakota, MN",2021,7510184.0
+27039,"Dodge, MN",2018,0.0
 27041,"Douglas, MN",2015,2938356.0
 27041,"Douglas, MN",2016,979452.0
 27041,"Douglas, MN",2017,489726.0
@@ -9214,6 +9533,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27041,"Douglas, MN",2019,72014.0
 27041,"Douglas, MN",2020,572014.0
 27041,"Douglas, MN",2021,1000000.0
+27043,"Faribault, MN",2018,0.0
 27045,"Fillmore, MN",2010,27667410.0
 27045,"Fillmore, MN",2011,27788704.0
 27045,"Fillmore, MN",2012,14005323.0
@@ -9272,6 +9592,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27053,"Hennepin, MN",2019,7145942353.74
 27053,"Hennepin, MN",2020,7166524480.03
 27053,"Hennepin, MN",2021,7136512503.49
+27055,"Houston, MN",2018,0.0
 27057,"Hubbard, MN",2016,750000.0
 27057,"Hubbard, MN",2017,500000.0
 27057,"Hubbard, MN",2018,158667.0
@@ -9291,6 +9612,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27061,"Itasca, MN",2019,36248695.48
 27061,"Itasca, MN",2020,47876400.44
 27061,"Itasca, MN",2021,86151563.48
+27063,"Jackson, MN",2018,0.0
 27065,"Kanabec, MN",2010,41604108.0
 27065,"Kanabec, MN",2011,21364554.0
 27065,"Kanabec, MN",2012,21364554.0
@@ -9341,6 +9663,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27077,"Lake of the Woods, MN",2020,3540236.0
 27077,"Lake of the Woods, MN",2021,5010648.0
 27079,"Le Sueur, MN",2010,4389589.0
+27081,"Lincoln, MN",2018,0.0
 27083,"Lyon, MN",2010,30375987.0
 27083,"Lyon, MN",2011,20250658.0
 27083,"Lyon, MN",2012,30375987.0
@@ -9375,6 +9698,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27091,"Martin, MN",2019,250000.0
 27091,"Martin, MN",2020,750000.0
 27091,"Martin, MN",2021,500000.0
+27093,"Meeker, MN",2018,0.0
 27095,"Mille Lacs, MN",2010,65113661.9
 27095,"Mille Lacs, MN",2011,45744208.14
 27095,"Mille Lacs, MN",2012,57557849.24
@@ -9401,6 +9725,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27097,"Morrison, MN",2021,144172287.66
 27099,"Mower, MN",2020,500000.0
 27099,"Mower, MN",2021,1000000.0
+27101,"Murray, MN",2018,0.0
 27103,"Nicollet, MN",2021,367399.0
 27105,"Nobles, MN",2010,13563190.0
 27105,"Nobles, MN",2011,20344785.0
@@ -9414,6 +9739,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27105,"Nobles, MN",2019,41874959.8
 27105,"Nobles, MN",2020,36798556.0
 27105,"Nobles, MN",2021,18815576.0
+27107,"Norman, MN",2018,0.0
 27109,"Olmsted, MN",2010,2394196346.96
 27109,"Olmsted, MN",2011,2470435546.11
 27109,"Olmsted, MN",2012,2252719536.19
@@ -9429,6 +9755,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27111,"Otter Tail, MN",2010,18269328.0
 27111,"Otter Tail, MN",2011,12179552.0
 27111,"Otter Tail, MN",2012,18269328.0
+27113,"Pennington, MN",2018,0.0
+27115,"Pine, MN",2018,0.0
+27117,"Pipestone, MN",2018,0.0
 27119,"Polk, MN",2010,109038901.0
 27119,"Polk, MN",2011,190675673.0
 27119,"Polk, MN",2012,147333055.0
@@ -9493,6 +9822,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27131,"Rice, MN",2019,2162316.48
 27131,"Rice, MN",2020,1016812.32
 27131,"Rice, MN",2021,6038194.32
+27133,"Rock, MN",2018,0.0
 27135,"Roseau, MN",2010,26022832.0
 27135,"Roseau, MN",2011,25589179.0
 27135,"Roseau, MN",2012,25589179.0
@@ -9534,6 +9864,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27141,"Sherburne, MN",2019,235533.0
 27141,"Sherburne, MN",2020,846066.0
 27141,"Sherburne, MN",2021,653934.0
+27143,"Sibley, MN",2018,0.0
 27145,"Stearns, MN",2010,5103124.0
 27145,"Stearns, MN",2011,905247.0
 27145,"Stearns, MN",2012,910785.0
@@ -9557,6 +9888,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27147,"Steele, MN",2019,239179.0
 27147,"Steele, MN",2020,614179.0
 27147,"Steele, MN",2021,407463.0
+27149,"Stevens, MN",2018,0.0
 27151,"Swift, MN",2021,49529.0
 27153,"Todd, MN",2015,921184.0
 27153,"Todd, MN",2016,921184.0
@@ -9564,6 +9896,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27153,"Todd, MN",2018,242040.05
 27153,"Todd, MN",2019,242040.05
 27153,"Todd, MN",2021,815150.95
+27155,"Traverse, MN",2018,0.0
+27157,"Wabasha, MN",2018,0.0
 27159,"Wadena, MN",2010,625000.0
 27159,"Wadena, MN",2011,625000.0
 27159,"Wadena, MN",2012,625000.0
@@ -9574,6 +9908,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27159,"Wadena, MN",2018,202820.9
 27159,"Wadena, MN",2019,250000.0
 27159,"Wadena, MN",2021,1136361.4
+27161,"Waseca, MN",2018,0.0
 27163,"Washington, MN",2010,625000.0
 27163,"Washington, MN",2011,1079262.0
 27163,"Washington, MN",2012,870571.0
@@ -9586,6 +9921,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 27163,"Washington, MN",2019,1410785.32
 27163,"Washington, MN",2020,704696.3300000001
 27163,"Washington, MN",2021,4299058.0
+27165,"Watonwan, MN",2018,0.0
 27167,"Wilkin, MN",2010,786869.0
 27167,"Wilkin, MN",2011,786869.0
 27167,"Wilkin, MN",2012,786869.0
@@ -9652,6 +9988,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28005,"Amite, MS",2019,90825091.0
 28005,"Amite, MS",2020,130605485.0
 28005,"Amite, MS",2021,41652135.0
+28007,"Attala, MS",2018,0.0
 28009,"Benton, MS",2010,33266409.0
 28009,"Benton, MS",2011,84482220.0
 28009,"Benton, MS",2012,54087873.0
@@ -9676,6 +10013,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28011,"Bolivar, MS",2019,497239862.31
 28011,"Bolivar, MS",2020,444454866.44
 28011,"Bolivar, MS",2021,557901091.98
+28013,"Calhoun, MS",2018,0.0
+28015,"Carroll, MS",2018,0.0
 28017,"Chickasaw, MS",2021,49529.0
 28019,"Choctaw, MS",2021,99058.0
 28021,"Claiborne, MS",2010,11496302.0
@@ -9726,6 +10065,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28027,"Coahoma, MS",2019,335812435.69
 28027,"Coahoma, MS",2020,282544273.32
 28027,"Coahoma, MS",2021,276103505.9
+28029,"Copiah, MS",2018,0.0
 28031,"Covington, MS",2021,476703.0
 28033,"DeSoto, MS",2013,317742.0
 28033,"DeSoto, MS",2014,547875.0
@@ -9769,6 +10109,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28041,"Greene, MS",2015,43076345.0
 28041,"Greene, MS",2016,68922152.0
 28041,"Greene, MS",2017,8615269.0
+28043,"Grenada, MS",2018,0.0
 28045,"Hancock, MS",2010,495000.0
 28045,"Hancock, MS",2016,250000.0
 28045,"Hancock, MS",2017,500000.0
@@ -9812,6 +10153,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28051,"Holmes, MS",2019,103268928.0
 28051,"Holmes, MS",2020,95860306.0
 28051,"Holmes, MS",2021,213438543.0
+28053,"Humphreys, MS",2018,0.0
+28055,"Issaquena, MS",2018,0.0
 28057,"Itawamba, MS",2010,15699262.0
 28057,"Itawamba, MS",2011,47097786.0
 28057,"Itawamba, MS",2012,23548893.0
@@ -9836,6 +10179,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28059,"Jackson, MS",2019,56474516.7
 28059,"Jackson, MS",2020,148967828.5
 28059,"Jackson, MS",2021,91775581.85
+28061,"Jasper, MS",2018,0.0
 28063,"Jefferson, MS",2010,29448320.0
 28063,"Jefferson, MS",2011,93871983.0
 28063,"Jefferson, MS",2012,54042320.0
@@ -9902,6 +10246,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28075,"Lauderdale, MS",2019,431403473.56
 28075,"Lauderdale, MS",2020,252417785.0
 28075,"Lauderdale, MS",2021,131089986.91
+28077,"Lawrence, MS",2018,0.0
+28079,"Leake, MS",2018,0.0
 28081,"Lee, MS",2010,3943303.0
 28081,"Lee, MS",2019,9456515.0
 28081,"Lee, MS",2020,14435932.0
@@ -9918,6 +10264,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28083,"Leflore, MS",2019,7316127.4
 28083,"Leflore, MS",2020,3872508.84
 28083,"Leflore, MS",2021,3970095.84
+28085,"Lincoln, MS",2018,0.0
 28087,"Lowndes, MS",2010,317122.0
 28087,"Lowndes, MS",2011,167122.0
 28087,"Lowndes, MS",2013,178818.0
@@ -10024,7 +10371,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28109,"Pearl River, MS",2019,22782263.69
 28109,"Pearl River, MS",2020,96680524.5
 28109,"Pearl River, MS",2021,46386352.02
+28111,"Perry, MS",2018,0.0
 28113,"Pike, MS",2021,18138169.0
+28115,"Pontotoc, MS",2018,0.0
 28117,"Prentiss, MS",2010,1598024.0
 28117,"Prentiss, MS",2020,1040283.0
 28117,"Prentiss, MS",2021,2299719.0
@@ -10058,10 +10407,12 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28123,"Scott, MS",2019,89301051.0
 28123,"Scott, MS",2020,64752243.0
 28123,"Scott, MS",2021,67947018.0
+28125,"Sharkey, MS",2018,0.0
 28127,"Simpson, MS",2010,374985.0
 28127,"Simpson, MS",2011,374985.0
 28127,"Simpson, MS",2015,374985.0
 28127,"Simpson, MS",2021,148587.0
+28129,"Smith, MS",2018,0.0
 28131,"Stone, MS",2010,60395.0
 28131,"Stone, MS",2011,59306.0
 28131,"Stone, MS",2013,60395.0
@@ -10081,7 +10432,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28135,"Tallahatchie, MS",2021,1938615.0
 28137,"Tate, MS",2010,495000.0
 28139,"Tippah, MS",2021,148587.0
+28141,"Tishomingo, MS",2018,0.0
 28143,"Tunica, MS",2021,99058.0
+28145,"Union, MS",2018,0.0
 28147,"Walthall, MS",2010,375000.0
 28149,"Warren, MS",2010,300000.0
 28149,"Warren, MS",2012,193032.0
@@ -10105,6 +10458,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 28153,"Wayne, MS",2019,33563356.0
 28153,"Wayne, MS",2020,16781678.0
 28153,"Wayne, MS",2021,63794441.0
+28155,"Webster, MS",2018,0.0
+28157,"Wilkinson, MS",2018,0.0
+28159,"Winston, MS",2018,0.0
+28161,"Yalobusha, MS",2018,0.0
 28163,"Yazoo, MS",2010,87377.0
 28163,"Yazoo, MS",2021,49529.0
 29001,"Adair, MO",2010,67680618.0
@@ -10119,6 +10476,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29001,"Adair, MO",2019,715058305.92
 29001,"Adair, MO",2020,544329153.65
 29001,"Adair, MO",2021,426614056.74
+29003,"Andrew, MO",2018,0.0
 29005,"Atchison, MO",2010,495000.0
 29007,"Audrain, MO",2011,80000.0
 29007,"Audrain, MO",2013,5047055.0
@@ -10142,6 +10500,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29013,"Bates, MO",2011,150000.0
 29013,"Bates, MO",2013,650530.0
 29013,"Bates, MO",2014,650530.0
+29015,"Benton, MO",2018,0.0
+29017,"Bollinger, MO",2018,0.0
 29019,"Boone, MO",2010,494071017.45
 29019,"Boone, MO",2011,718965271.84
 29019,"Boone, MO",2012,569797943.07
@@ -10166,10 +10526,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29021,"Buchanan, MO",2019,1092428993.84
 29021,"Buchanan, MO",2020,722655788.88
 29021,"Buchanan, MO",2021,493530625.96
+29023,"Butler, MO",2018,0.0
+29025,"Caldwell, MO",2018,0.0
 29027,"Callaway, MO",2011,80000.0
 29027,"Callaway, MO",2019,5070465.0
 29027,"Callaway, MO",2020,3380310.0
 29027,"Callaway, MO",2021,1690155.0
+29029,"Camden, MO",2018,0.0
 29031,"Cape Girardeau, MO",2010,41293677.0
 29031,"Cape Girardeau, MO",2011,120420146.0
 29031,"Cape Girardeau, MO",2012,60862789.0
@@ -10182,7 +10545,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29031,"Cape Girardeau, MO",2019,153850770.0
 29031,"Cape Girardeau, MO",2020,127767386.0
 29031,"Cape Girardeau, MO",2021,80963682.28999999
+29033,"Carroll, MO",2018,0.0
+29035,"Carter, MO",2018,0.0
+29037,"Cass, MO",2018,0.0
+29039,"Cedar, MO",2018,0.0
+29041,"Chariton, MO",2018,0.0
 29043,"Christian, MO",2021,49529.0
+29045,"Clark, MO",2018,0.0
 29047,"Clay, MO",2010,1334862.33
 29047,"Clay, MO",2013,475076.0
 29047,"Clay, MO",2016,250000.0
@@ -10191,6 +10560,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29047,"Clay, MO",2019,1125000.0
 29047,"Clay, MO",2020,1250000.0
 29047,"Clay, MO",2021,1250000.0
+29049,"Clinton, MO",2018,0.0
 29051,"Cole, MO",2010,51158980744.0
 29051,"Cole, MO",2011,59268168410.0
 29051,"Cole, MO",2012,47673900886.68
@@ -10206,6 +10576,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29053,"Cooper, MO",2019,149980.0
 29053,"Cooper, MO",2020,16682244.0
 29053,"Cooper, MO",2021,99058.0
+29055,"Crawford, MO",2018,0.0
+29057,"Dade, MO",2018,0.0
+29059,"Dallas, MO",2018,0.0
+29061,"Daviess, MO",2018,0.0
+29063,"DeKalb, MO",2018,0.0
 29065,"Dent, MO",2021,375000.0
 29067,"Douglas, MO",2010,21705835.0
 29067,"Douglas, MO",2011,65117505.0
@@ -10232,6 +10607,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29071,"Franklin, MO",2019,500000.0
 29071,"Franklin, MO",2020,950000.0
 29071,"Franklin, MO",2021,900000.0
+29073,"Gasconade, MO",2018,0.0
+29075,"Gentry, MO",2018,0.0
 29077,"Greene, MO",2010,225291589.0
 29077,"Greene, MO",2011,322763148.0
 29077,"Greene, MO",2012,282505607.0
@@ -10256,6 +10633,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29079,"Grundy, MO",2019,74841354.0
 29079,"Grundy, MO",2020,41403604.0
 29079,"Grundy, MO",2021,42083456.0
+29081,"Harrison, MO",2018,0.0
 29083,"Henry, MO",2013,17090335.0
 29083,"Henry, MO",2014,68361340.0
 29083,"Henry, MO",2015,85451675.0
@@ -10275,6 +10653,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29085,"Hickory, MO",2019,178817840.0
 29085,"Hickory, MO",2020,90652753.0
 29085,"Hickory, MO",2021,60676031.0
+29087,"Holt, MO",2018,0.0
+29089,"Howard, MO",2018,0.0
 29091,"Howell, MO",2010,35241059.0
 29091,"Howell, MO",2011,73954523.0
 29091,"Howell, MO",2012,64152407.0
@@ -10342,6 +10722,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29101,"Johnson, MO",2020,4036253.11
 29101,"Johnson, MO",2021,6852486.33
 29103,"Knox, MO",2013,85000.0
+29105,"Laclede, MO",2018,0.0
 29107,"Lafayette, MO",2010,540000.0
 29107,"Lafayette, MO",2011,980000.0
 29107,"Lafayette, MO",2012,1400000.0
@@ -10354,6 +10735,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29107,"Lafayette, MO",2019,168817990.0
 29107,"Lafayette, MO",2020,170535793.0
 29107,"Lafayette, MO",2021,182691267.0
+29109,"Lawrence, MO",2018,0.0
 29111,"Lewis, MO",2016,218241.0
 29113,"Lincoln, MO",2014,1055210.0
 29113,"Lincoln, MO",2015,975000.0
@@ -10370,9 +10752,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29115,"Linn, MO",2019,3996350.0
 29115,"Linn, MO",2020,1998175.0
 29115,"Linn, MO",2021,1998175.0
+29117,"Livingston, MO",2018,0.0
+29119,"McDonald, MO",2018,0.0
 29121,"Macon, MO",2010,540000.0
 29121,"Macon, MO",2020,11110.0
 29121,"Macon, MO",2021,11110.0
+29123,"Madison, MO",2018,0.0
+29125,"Maries, MO",2018,0.0
 29127,"Marion, MO",2010,100084741.0
 29127,"Marion, MO",2011,73642928.0
 29127,"Marion, MO",2012,99044424.0
@@ -10385,6 +10771,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29127,"Marion, MO",2019,152121622.16
 29127,"Marion, MO",2020,139733659.2
 29127,"Marion, MO",2021,204213346.02
+29129,"Mercer, MO",2018,0.0
+29131,"Miller, MO",2018,0.0
 29133,"Mississippi, MO",2010,650000.0
 29133,"Mississippi, MO",2013,2729875.0
 29133,"Mississippi, MO",2014,2729875.0
@@ -10395,6 +10783,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29133,"Mississippi, MO",2019,2785740.0
 29133,"Mississippi, MO",2020,2614367.0
 29133,"Mississippi, MO",2021,14121959.0
+29135,"Moniteau, MO",2018,0.0
+29137,"Monroe, MO",2018,0.0
+29139,"Montgomery, MO",2018,0.0
+29141,"Morgan, MO",2018,0.0
 29143,"New Madrid, MO",2010,228966791.0
 29143,"New Madrid, MO",2011,320200267.0
 29143,"New Madrid, MO",2012,386542447.0
@@ -10431,6 +10823,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29147,"Nodaway, MO",2019,63422299.63
 29147,"Nodaway, MO",2020,82878110.69
 29147,"Nodaway, MO",2021,49295903.75
+29149,"Oregon, MO",2018,0.0
 29151,"Osage, MO",2010,17456165.0
 29151,"Osage, MO",2011,69824660.0
 29151,"Osage, MO",2012,52368495.0
@@ -10443,6 +10836,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29151,"Osage, MO",2019,186662281.0
 29151,"Osage, MO",2020,188022760.0
 29151,"Osage, MO",2021,149416175.0
+29153,"Ozark, MO",2018,0.0
+29155,"Pemiscot, MO",2018,0.0
 29157,"Perry, MO",2013,1092227.0
 29157,"Perry, MO",2014,1092227.0
 29157,"Perry, MO",2015,1092227.0
@@ -10510,6 +10905,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29169,"Pulaski, MO",2019,358729709.45
 29169,"Pulaski, MO",2020,297348213.15
 29169,"Pulaski, MO",2021,353914233.08
+29171,"Putnam, MO",2018,0.0
+29173,"Ralls, MO",2018,0.0
 29175,"Randolph, MO",2012,85000.0
 29175,"Randolph, MO",2013,838839.0
 29175,"Randolph, MO",2014,838839.0
@@ -10519,6 +10916,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29175,"Randolph, MO",2019,7180948.0
 29175,"Randolph, MO",2020,8995237.0
 29175,"Randolph, MO",2021,7892654.0
+29177,"Ray, MO",2018,0.0
 29179,"Reynolds, MO",2010,31680406.0
 29179,"Reynolds, MO",2011,107050364.0
 29179,"Reynolds, MO",2012,54793842.0
@@ -10531,6 +10929,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29179,"Reynolds, MO",2019,186089198.0
 29179,"Reynolds, MO",2020,254549324.0
 29179,"Reynolds, MO",2021,235243939.0
+29181,"Ripley, MO",2018,0.0
 29183,"St. Charles, MO",2010,146075845.0
 29183,"St. Charles, MO",2011,153522126.0
 29183,"St. Charles, MO",2012,142384797.0
@@ -10592,6 +10991,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29195,"Saline, MO",2019,123942542.89
 29195,"Saline, MO",2020,126306618.76
 29195,"Saline, MO",2021,48587706.2
+29197,"Schuyler, MO",2018,0.0
 29199,"Scotland, MO",2021,198116.0
 29201,"Scott, MO",2010,9675678.0
 29201,"Scott, MO",2011,9675678.0
@@ -10616,6 +11016,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29203,"Shannon, MO",2019,325289848.0
 29203,"Shannon, MO",2020,220710665.0
 29203,"Shannon, MO",2021,253650578.0
+29205,"Shelby, MO",2018,0.0
+29207,"Stoddard, MO",2018,0.0
 29209,"Stone, MO",2010,959607.0
 29209,"Stone, MO",2011,959607.0
 29209,"Stone, MO",2012,959607.0
@@ -10627,6 +11029,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29209,"Stone, MO",2019,3999930.0
 29209,"Stone, MO",2020,3999930.0
 29209,"Stone, MO",2021,5999895.0
+29211,"Sullivan, MO",2018,0.0
 29213,"Taney, MO",2013,836253.0
 29213,"Taney, MO",2014,836253.0
 29213,"Taney, MO",2015,1499453.0
@@ -10637,6 +11040,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29213,"Taney, MO",2020,1317871.46
 29213,"Taney, MO",2021,1372099.13
 29215,"Texas, MO",2021,396232.0
+29217,"Vernon, MO",2018,0.0
+29219,"Warren, MO",2018,0.0
 29221,"Washington, MO",2010,24463228.0
 29221,"Washington, MO",2011,61158070.0
 29221,"Washington, MO",2012,36694842.0
@@ -10649,6 +11054,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29221,"Washington, MO",2019,136188479.0
 29221,"Washington, MO",2020,112378185.0
 29221,"Washington, MO",2021,221012467.0
+29223,"Wayne, MO",2018,0.0
 29225,"Webster, MO",2015,6753900.0
 29225,"Webster, MO",2016,10130850.0
 29225,"Webster, MO",2017,16884750.0
@@ -10656,6 +11062,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 29225,"Webster, MO",2019,42780869.36
 29225,"Webster, MO",2020,24345773.68
 29225,"Webster, MO",2021,42084103.69
+29227,"Worth, MO",2018,0.0
 29229,"Wright, MO",2021,148587.0
 29510,"St. Louis (Independent City), MO",2010,5562544639.12
 29510,"St. Louis (Independent City), MO",2011,7825244463.32
@@ -10694,6 +11101,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30005,"Blaine, MT",2019,70597436.45
 30005,"Blaine, MT",2020,83350481.96000001
 30005,"Blaine, MT",2021,79118203.59
+30007,"Broadwater, MT",2018,0.0
+30009,"Carbon, MT",2018,0.0
 30011,"Carter, MT",2011,85000.0
 30011,"Carter, MT",2020,346174.0
 30013,"Cascade, MT",2010,84972372.0
@@ -10708,6 +11117,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30013,"Cascade, MT",2019,282159473.15
 30013,"Cascade, MT",2020,313398357.36
 30013,"Cascade, MT",2021,395847700.85
+30015,"Chouteau, MT",2018,0.0
 30017,"Custer, MT",2010,6447077.0
 30017,"Custer, MT",2011,19341231.0
 30017,"Custer, MT",2012,6447077.0
@@ -10746,6 +11156,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30023,"Deer Lodge, MT",2019,16215952.0
 30023,"Deer Lodge, MT",2020,15306236.0
 30023,"Deer Lodge, MT",2021,10196460.0
+30025,"Fallon, MT",2018,0.0
 30027,"Fergus, MT",2010,15941003.0
 30027,"Fergus, MT",2011,53849151.0
 30027,"Fergus, MT",2012,31882006.0
@@ -10782,6 +11193,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30031,"Gallatin, MT",2019,417988426.61
 30031,"Gallatin, MT",2020,559832272.3
 30031,"Gallatin, MT",2021,546359893.3
+30033,"Garfield, MT",2018,0.0
 30035,"Glacier, MT",2010,135464928.46
 30035,"Glacier, MT",2011,116521185.73
 30035,"Glacier, MT",2012,110401585.73
@@ -10794,6 +11206,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30035,"Glacier, MT",2019,249619592.48
 30035,"Glacier, MT",2020,153485356.27
 30035,"Glacier, MT",2021,236038220.41
+30037,"Golden Valley, MT",2018,0.0
 30039,"Granite, MT",2010,371365.0
 30039,"Granite, MT",2011,371365.0
 30039,"Granite, MT",2012,500000.0
@@ -10816,6 +11229,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30041,"Hill, MT",2019,221620136.91
 30041,"Hill, MT",2020,242833107.91
 30041,"Hill, MT",2021,190634995.14
+30043,"Jefferson, MT",2018,0.0
+30045,"Judith Basin, MT",2018,0.0
 30047,"Lake, MT",2010,87972418.0
 30047,"Lake, MT",2011,64088515.5
 30047,"Lake, MT",2012,89824567.38
@@ -10885,6 +11300,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30063,"Missoula, MT",2019,605806749.11
 30063,"Missoula, MT",2020,456823809.95
 30063,"Missoula, MT",2021,569204558.32
+30065,"Musselshell, MT",2018,0.0
 30067,"Park, MT",2010,30478286.0
 30067,"Park, MT",2011,152391430.0
 30067,"Park, MT",2012,30618416.0
@@ -10897,11 +11313,15 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30067,"Park, MT",2019,165532991.32
 30067,"Park, MT",2020,166345561.16
 30067,"Park, MT",2021,97234359.02
+30069,"Petroleum, MT",2018,0.0
 30071,"Phillips, MT",2010,625000.0
 30071,"Phillips, MT",2011,710000.0
 30071,"Phillips, MT",2012,625000.0
 30071,"Phillips, MT",2013,625000.0
 30073,"Pondera, MT",2021,49529.0
+30075,"Powder River, MT",2018,0.0
+30077,"Powell, MT",2018,0.0
+30079,"Prairie, MT",2018,0.0
 30081,"Ravalli, MT",2010,34614039.0
 30081,"Ravalli, MT",2011,32253661.0
 30081,"Ravalli, MT",2012,32253661.0
@@ -10965,6 +11385,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30093,"Silver Bow, MT",2019,683887931.5
 30093,"Silver Bow, MT",2020,411982726.55
 30093,"Silver Bow, MT",2021,566643321.86
+30095,"Stillwater, MT",2018,0.0
+30097,"Sweet Grass, MT",2018,0.0
+30099,"Teton, MT",2018,0.0
 30101,"Toole, MT",2015,6840790.0
 30101,"Toole, MT",2016,6840790.0
 30101,"Toole, MT",2017,10261185.0
@@ -10975,8 +11398,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 30103,"Treasure, MT",2014,5961269.0
 30103,"Treasure, MT",2015,5961269.0
 30103,"Treasure, MT",2016,6463554.02
+30105,"Valley, MT",2018,0.0
 30107,"Wheatland, MT",2010,375000.0
 30107,"Wheatland, MT",2011,375000.0
+30109,"Wibaux, MT",2018,0.0
 30111,"Yellowstone, MT",2010,205508402.0
 30111,"Yellowstone, MT",2011,465425370.0
 30111,"Yellowstone, MT",2012,278694685.0
@@ -11001,8 +11426,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31001,"Adams, NE",2019,163604259.69
 31001,"Adams, NE",2020,86956377.06
 31001,"Adams, NE",2021,115693861.44
+31003,"Antelope, NE",2018,0.0
+31005,"Arthur, NE",2018,0.0
+31007,"Banner, NE",2018,0.0
+31009,"Blaine, NE",2018,0.0
 31011,"Boone, NE",2021,99058.0
 31013,"Box Butte, NE",2011,31660.0
+31015,"Boyd, NE",2018,0.0
 31017,"Brown, NE",2021,49529.0
 31019,"Buffalo, NE",2010,43621694.0
 31019,"Buffalo, NE",2011,41074410.0
@@ -11018,6 +11448,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31019,"Buffalo, NE",2021,64588619.47
 31021,"Burt, NE",2017,1066838.0
 31021,"Burt, NE",2018,1066838.0
+31023,"Butler, NE",2018,0.0
 31025,"Cass, NE",2010,19360815.0
 31025,"Cass, NE",2011,12907210.0
 31025,"Cass, NE",2012,19360815.0
@@ -11030,8 +11461,12 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31025,"Cass, NE",2019,21002588.08
 31025,"Cass, NE",2020,29101575.2
 31025,"Cass, NE",2021,23610704.16
+31027,"Cedar, NE",2018,0.0
+31029,"Chase, NE",2018,0.0
 31031,"Cherry, NE",2021,49529.0
 31033,"Cheyenne, NE",2021,99058.0
+31035,"Clay, NE",2018,0.0
+31037,"Colfax, NE",2018,0.0
 31039,"Cuming, NE",2010,29504108.0
 31039,"Cuming, NE",2011,30379108.0
 31039,"Cuming, NE",2012,30379108.0
@@ -11043,6 +11478,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31039,"Cuming, NE",2018,100000.0
 31039,"Cuming, NE",2020,2027974.0
 31039,"Cuming, NE",2021,3155948.0
+31041,"Custer, NE",2018,0.0
 31043,"Dakota, NE",2010,14312499.0
 31043,"Dakota, NE",2011,13692780.0
 31043,"Dakota, NE",2012,27385560.0
@@ -11062,6 +11498,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31045,"Dawes, NE",2020,75845020.19
 31045,"Dawes, NE",2021,99724256.62
 31047,"Dawson, NE",2021,280000.0
+31049,"Deuel, NE",2018,0.0
+31051,"Dixon, NE",2018,0.0
 31053,"Dodge, NE",2010,9795924.0
 31053,"Dodge, NE",2011,4897962.0
 31053,"Dodge, NE",2012,9795924.0
@@ -11087,9 +11525,17 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31055,"Douglas, NE",2020,2608483495.1
 31055,"Douglas, NE",2021,3270825263.41
 31057,"Dundy, NE",2021,99017.64
+31059,"Fillmore, NE",2018,0.0
+31061,"Franklin, NE",2018,0.0
+31063,"Frontier, NE",2018,0.0
+31065,"Furnas, NE",2018,0.0
 31067,"Gage, NE",2010,547642.0
+31069,"Garden, NE",2018,0.0
 31071,"Garfield, NE",2011,400000.0
 31071,"Garfield, NE",2021,49529.0
+31073,"Gosper, NE",2018,0.0
+31075,"Grant, NE",2018,0.0
+31077,"Greeley, NE",2018,0.0
 31079,"Hall, NE",2010,10039115.0
 31079,"Hall, NE",2011,10039115.0
 31079,"Hall, NE",2012,8881271.0
@@ -11102,7 +11548,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31079,"Hall, NE",2019,74774448.16
 31079,"Hall, NE",2020,44102554.58
 31079,"Hall, NE",2021,24532357.16
+31081,"Hamilton, NE",2018,0.0
 31083,"Harlan, NE",2021,99058.0
+31085,"Hayes, NE",2018,0.0
+31087,"Hitchcock, NE",2018,0.0
 31089,"Holt, NE",2010,400000.0
 31089,"Holt, NE",2015,374999.0
 31089,"Holt, NE",2016,749998.0
@@ -11111,6 +11560,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31089,"Holt, NE",2019,661521.0
 31089,"Holt, NE",2020,1632028.0
 31089,"Holt, NE",2021,2198116.0
+31091,"Hooker, NE",2018,0.0
 31093,"Howard, NE",2021,297174.0
 31095,"Jefferson, NE",2010,34044040.0
 31095,"Jefferson, NE",2011,49122450.0
@@ -11131,6 +11581,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31099,"Kearney, NE",2013,210000.0
 31099,"Kearney, NE",2014,210000.0
 31099,"Kearney, NE",2015,210000.0
+31101,"Keith, NE",2018,0.0
+31103,"Keya Paha, NE",2018,0.0
 31105,"Kimball, NE",2021,99058.0
 31107,"Knox, NE",2010,18282786.55
 31107,"Knox, NE",2011,14239140.55
@@ -11163,6 +11615,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31111,"Lincoln, NE",2014,818032.0
 31111,"Lincoln, NE",2015,818032.0
 31111,"Lincoln, NE",2016,625000.0
+31113,"Logan, NE",2018,0.0
+31115,"Loup, NE",2018,0.0
+31117,"McPherson, NE",2018,0.0
 31119,"Madison, NE",2010,12574708.0
 31119,"Madison, NE",2011,100868960.0
 31119,"Madison, NE",2012,25149416.0
@@ -11178,12 +11633,17 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31121,"Merrick, NE",2018,20102428.0
 31121,"Merrick, NE",2020,30848730.0
 31121,"Merrick, NE",2021,64673363.0
+31123,"Morrill, NE",2018,0.0
+31125,"Nance, NE",2018,0.0
 31127,"Nemaha, NE",2010,400000.0
 31127,"Nemaha, NE",2011,400000.0
 31129,"Nuckolls, NE",2021,148587.0
 31131,"Otoe, NE",2010,300000.0
 31131,"Otoe, NE",2021,99058.0
 31133,"Pawnee, NE",2021,20000.0
+31135,"Perkins, NE",2018,0.0
+31137,"Phelps, NE",2018,0.0
+31139,"Pierce, NE",2018,0.0
 31141,"Platte, NE",2010,16866655.0
 31141,"Platte, NE",2011,82944087.0
 31141,"Platte, NE",2012,54558074.0
@@ -11196,6 +11656,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31141,"Platte, NE",2019,154326084.0
 31141,"Platte, NE",2020,127332666.47
 31141,"Platte, NE",2021,93850798.84
+31143,"Polk, NE",2018,0.0
+31145,"Red Willow, NE",2018,0.0
 31147,"Richardson, NE",2010,15908794.0
 31147,"Richardson, NE",2011,15892793.0
 31147,"Richardson, NE",2012,16004146.0
@@ -11208,6 +11670,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31147,"Richardson, NE",2019,25157644.0
 31147,"Richardson, NE",2020,23384944.8
 31147,"Richardson, NE",2021,35529653.2
+31149,"Rock, NE",2018,0.0
 31151,"Saline, NE",2010,1075000.0
 31151,"Saline, NE",2011,975000.0
 31151,"Saline, NE",2012,1100000.0
@@ -11243,6 +11706,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31157,"Scotts Bluff, NE",2019,336830208.52000004
 31157,"Scotts Bluff, NE",2020,111307735.94
 31157,"Scotts Bluff, NE",2021,147019000.53
+31159,"Seward, NE",2018,0.0
 31161,"Sheridan, NE",2021,1495254.0
 31163,"Sherman, NE",2010,34144933.0
 31163,"Sherman, NE",2011,65981120.0
@@ -11256,12 +11720,15 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31163,"Sherman, NE",2019,177827923.0
 31163,"Sherman, NE",2020,73281582.0
 31163,"Sherman, NE",2021,74809000.0
+31165,"Sioux, NE",2018,0.0
+31167,"Stanton, NE",2018,0.0
 31169,"Thayer, NE",2010,625000.0
 31169,"Thayer, NE",2011,625000.0
 31169,"Thayer, NE",2012,625000.0
 31169,"Thayer, NE",2013,625000.0
 31169,"Thayer, NE",2014,625000.0
 31169,"Thayer, NE",2021,198116.0
+31171,"Thomas, NE",2018,0.0
 31173,"Thurston, NE",2010,88288373.15
 31173,"Thurston, NE",2011,67862420.56
 31173,"Thurston, NE",2012,73149502.58
@@ -11275,10 +11742,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 31173,"Thurston, NE",2020,230962317.62
 31173,"Thurston, NE",2021,205176447.11
 31175,"Valley, NE",2021,148587.0
+31177,"Washington, NE",2018,0.0
 31179,"Wayne, NE",2013,169372.0
 31179,"Wayne, NE",2018,100000.0
 31179,"Wayne, NE",2020,1800000.0
 31179,"Wayne, NE",2021,3395423.0
+31181,"Webster, NE",2018,0.0
+31183,"Wheeler, NE",2018,0.0
 31185,"York, NE",2016,99968.0
 31185,"York, NE",2018,299968.0
 31185,"York, NE",2019,600000.0
@@ -11332,6 +11802,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 32007,"Elko, NV",2019,65993479.72
 32007,"Elko, NV",2020,87882569.13
 32007,"Elko, NV",2021,60157136.08
+32009,"Esmeralda, NV",2018,0.0
+32011,"Eureka, NV",2018,0.0
 32013,"Humboldt, NV",2010,84973.0
 32013,"Humboldt, NV",2011,1082490.0
 32013,"Humboldt, NV",2012,1516035.0
@@ -11355,6 +11827,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 32015,"Lander, NV",2018,3099726.04
 32015,"Lander, NV",2020,3099726.04
 32015,"Lander, NV",2021,1599392.02
+32017,"Lincoln, NV",2018,0.0
 32019,"Lyon, NV",2010,1842403.08
 32019,"Lyon, NV",2011,2769094.08
 32019,"Lyon, NV",2012,2055486.08
@@ -11730,6 +12203,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 34031,"Passaic, NJ",2019,466905321.88
 34031,"Passaic, NJ",2020,460399134.58
 34031,"Passaic, NJ",2021,472576209.64
+34033,"Salem, NJ",2018,0.0
 34035,"Somerset, NJ",2010,70148570.0
 34035,"Somerset, NJ",2011,32198526.0
 34035,"Somerset, NJ",2012,26658933.0
@@ -11790,6 +12264,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 35001,"Bernalillo, NM",2019,3442848193.55
 35001,"Bernalillo, NM",2020,3656439954.86
 35001,"Bernalillo, NM",2021,3826550221.72
+35003,"Catron, NM",2018,0.0
+35005,"Chaves, NM",2018,0.0
 35006,"Cibola, NM",2010,79994907.15
 35006,"Cibola, NM",2011,69862881.15
 35006,"Cibola, NM",2012,70586912.15
@@ -11814,6 +12290,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 35007,"Colfax, NM",2019,15485307.12
 35007,"Colfax, NM",2020,7932109.08
 35007,"Colfax, NM",2021,16685307.12
+35009,"Curry, NM",2018,0.0
 35011,"De Baca, NM",2010,9318159.0
 35011,"De Baca, NM",2011,46590795.0
 35011,"De Baca, NM",2012,27954477.0
@@ -11863,6 +12340,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 35017,"Grant, NM",2020,44147626.8
 35017,"Grant, NM",2021,39828883.12
 35019,"Guadalupe, NM",2021,565500.0
+35021,"Harding, NM",2018,0.0
 35023,"Hidalgo, NM",2010,41617687.0
 35023,"Hidalgo, NM",2011,119433567.0
 35023,"Hidalgo, NM",2012,33249319.0
@@ -12325,6 +12803,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 36039,"Greene, NY",2019,48628895.0
 36039,"Greene, NY",2020,18330960.0
 36039,"Greene, NY",2021,24875548.0
+36041,"Hamilton, NY",2018,0.0
 36043,"Herkimer, NY",2010,268500.0
 36043,"Herkimer, NY",2011,325874.0
 36043,"Herkimer, NY",2012,325874.0
@@ -12851,6 +13330,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37009,"Ashe, NC",2019,536687.87
 37009,"Ashe, NC",2020,171854.1
 37009,"Ashe, NC",2021,171854.1
+37011,"Avery, NC",2018,0.0
 37013,"Beaufort, NC",2010,18013601.0
 37013,"Beaufort, NC",2011,67732915.0
 37013,"Beaufort, NC",2012,40639749.0
@@ -12933,6 +13413,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37027,"Caldwell, NC",2019,54544101.5
 37027,"Caldwell, NC",2020,31966648.0
 37027,"Caldwell, NC",2021,49548052.0
+37029,"Camden, NC",2018,0.0
 37031,"Carteret, NC",2010,78688900.0
 37031,"Carteret, NC",2011,81088509.0
 37031,"Carteret, NC",2012,78306664.0
@@ -13037,6 +13518,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37051,"Cumberland, NC",2019,368467563.53
 37051,"Cumberland, NC",2020,343109348.57
 37051,"Cumberland, NC",2021,514419890.85
+37053,"Currituck, NC",2018,0.0
 37055,"Dare, NC",2010,1125000.0
 37055,"Dare, NC",2011,1125000.0
 37055,"Dare, NC",2012,1125000.0
@@ -13049,6 +13531,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37055,"Dare, NC",2020,124715.0
 37057,"Davidson, NC",2020,69720.45
 37057,"Davidson, NC",2021,69720.45
+37059,"Davie, NC",2018,0.0
 37061,"Duplin, NC",2010,164593666.0
 37061,"Duplin, NC",2011,395520394.0
 37061,"Duplin, NC",2012,246495004.0
@@ -13097,6 +13580,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37067,"Forsyth, NC",2019,2506830649.58
 37067,"Forsyth, NC",2020,2740810126.9
 37067,"Forsyth, NC",2021,2031495772.1
+37069,"Franklin, NC",2018,0.0
 37071,"Gaston, NC",2010,99156053.0
 37071,"Gaston, NC",2011,359708293.0
 37071,"Gaston, NC",2012,255480473.0
@@ -13117,6 +13601,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37073,"Gates, NC",2019,34932598.2
 37073,"Gates, NC",2020,21623832.44
 37073,"Gates, NC",2021,51088196.48
+37075,"Graham, NC",2018,0.0
 37077,"Granville, NC",2015,99999.0
 37077,"Granville, NC",2016,600000.0
 37077,"Granville, NC",2017,1299999.0
@@ -13254,6 +13739,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37101,"Johnston, NC",2019,86584402.11
 37101,"Johnston, NC",2020,133180303.57
 37101,"Johnston, NC",2021,28035405.05
+37103,"Jones, NC",2018,0.0
+37105,"Lee, NC",2018,0.0
 37107,"Lenoir, NC",2010,87436247.0
 37107,"Lenoir, NC",2011,142569851.0
 37107,"Lenoir, NC",2012,96451113.0
@@ -13266,6 +13753,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37107,"Lenoir, NC",2019,268680003.3
 37107,"Lenoir, NC",2020,248314069.47
 37107,"Lenoir, NC",2021,249505803.38
+37109,"Lincoln, NC",2018,0.0
 37111,"McDowell, NC",2010,14425831.0
 37111,"McDowell, NC",2011,14751459.0
 37111,"McDowell, NC",2012,14100203.0
@@ -13325,6 +13813,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37121,"Mitchell, NC",2019,75625889.47
 37121,"Mitchell, NC",2020,84927463.47
 37121,"Mitchell, NC",2021,102394316.1
+37123,"Montgomery, NC",2018,0.0
 37125,"Moore, NC",2010,2057342.0
 37125,"Moore, NC",2011,1253413.0
 37125,"Moore, NC",2012,954596.0
@@ -13416,6 +13905,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37141,"Pender, NC",2019,8097668.0
 37141,"Pender, NC",2020,29661928.0
 37141,"Pender, NC",2021,18388566.0
+37143,"Perquimans, NC",2018,0.0
 37145,"Person, NC",2010,22258237.0
 37145,"Person, NC",2011,35668096.0
 37145,"Person, NC",2012,15986042.0
@@ -13464,6 +13954,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37151,"Randolph, NC",2019,118142678.4
 37151,"Randolph, NC",2020,104957436.4
 37151,"Randolph, NC",2021,98313654.6
+37153,"Richmond, NC",2018,0.0
 37155,"Robeson, NC",2010,156363568.0
 37155,"Robeson, NC",2011,222721167.0
 37155,"Robeson, NC",2012,205363512.0
@@ -13536,6 +14027,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 37167,"Stanly, NC",2019,12562218.15
 37167,"Stanly, NC",2020,11537443.63
 37167,"Stanly, NC",2021,8062443.63
+37169,"Stokes, NC",2018,0.0
+37171,"Surry, NC",2018,0.0
 37173,"Swain, NC",2010,50368499.0
 37173,"Swain, NC",2011,39786122.45
 37173,"Swain, NC",2012,40517703.45
@@ -13682,8 +14175,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38005,"Benson, ND",2019,116784103.05
 38005,"Benson, ND",2020,118985451.74
 38005,"Benson, ND",2021,90889318.96
+38007,"Billings, ND",2018,0.0
+38009,"Bottineau, ND",2018,0.0
 38011,"Bowman, ND",2010,516604.0
 38011,"Bowman, ND",2021,49529.0
+38013,"Burke, ND",2018,0.0
 38015,"Burleigh, ND",2010,4371872246.0
 38015,"Burleigh, ND",2011,4150690227.56
 38015,"Burleigh, ND",2012,4459698554.78
@@ -13709,6 +14205,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38017,"Cass, ND",2020,338037403.06
 38017,"Cass, ND",2021,283132453.89
 38019,"Cavalier, ND",2021,99057.93
+38021,"Dickey, ND",2018,0.0
+38023,"Divide, ND",2018,0.0
+38025,"Dunn, ND",2018,0.0
+38027,"Eddy, ND",2018,0.0
+38029,"Emmons, ND",2018,0.0
+38031,"Foster, ND",2018,0.0
+38033,"Golden Valley, ND",2018,0.0
 38035,"Grand Forks, ND",2010,197746943.04
 38035,"Grand Forks, ND",2011,304735868.76
 38035,"Grand Forks, ND",2012,203366090.04
@@ -13725,6 +14228,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38037,"Grant, ND",2012,752567.0
 38037,"Grant, ND",2013,752567.0
 38037,"Grant, ND",2016,752567.0
+38039,"Griggs, ND",2018,0.0
+38041,"Hettinger, ND",2018,0.0
+38043,"Kidder, ND",2018,0.0
 38045,"LaMoure, ND",2010,1047180.0
 38045,"LaMoure, ND",2011,1047180.0
 38045,"LaMoure, ND",2012,1047180.0
@@ -13806,6 +14312,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38063,"Nelson, ND",2011,263091.0
 38063,"Nelson, ND",2012,263091.0
 38063,"Nelson, ND",2014,263091.0
+38065,"Oliver, ND",2018,0.0
+38067,"Pembina, ND",2018,0.0
+38069,"Pierce, ND",2018,0.0
 38071,"Ramsey, ND",2013,549775.0
 38071,"Ramsey, ND",2014,549775.0
 38071,"Ramsey, ND",2015,549775.0
@@ -13813,6 +14322,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38071,"Ramsey, ND",2017,549775.0
 38071,"Ramsey, ND",2019,400000.0
 38071,"Ramsey, ND",2020,200000.0
+38073,"Ransom, ND",2018,0.0
+38075,"Renville, ND",2018,0.0
 38077,"Richland, ND",2018,175759.0
 38077,"Richland, ND",2019,351518.0
 38077,"Richland, ND",2020,1000000.0
@@ -13830,6 +14341,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38079,"Rolette, ND",2020,161959956.8
 38079,"Rolette, ND",2021,262853710.8
 38081,"Sargent, ND",2012,1599987.0
+38083,"Sheridan, ND",2018,0.0
 38085,"Sioux, ND",2010,148716940.01
 38085,"Sioux, ND",2011,120368033.01
 38085,"Sioux, ND",2012,177919867.01
@@ -13842,6 +14354,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38085,"Sioux, ND",2019,167390176.53
 38085,"Sioux, ND",2020,176280988.82
 38085,"Sioux, ND",2021,92846761.93
+38087,"Slope, ND",2018,0.0
 38089,"Stark, ND",2010,24372923.0
 38089,"Stark, ND",2011,42629810.0
 38089,"Stark, ND",2012,31378607.0
@@ -13854,6 +14367,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38089,"Stark, ND",2019,58220266.5
 38089,"Stark, ND",2020,78337198.85
 38089,"Stark, ND",2021,35298230.6
+38091,"Steele, ND",2018,0.0
 38093,"Stutsman, ND",2010,37935798.0
 38093,"Stutsman, ND",2011,50581064.0
 38093,"Stutsman, ND",2012,37935798.0
@@ -13895,6 +14409,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 38101,"Ward, ND",2019,67430177.84
 38101,"Ward, ND",2020,97816223.45
 38101,"Ward, ND",2021,86541411.68
+38103,"Wells, ND",2018,0.0
 38105,"Williams, ND",2010,8604922.0
 38105,"Williams, ND",2011,13559369.0
 38105,"Williams, ND",2012,5203788.0
@@ -13959,6 +14474,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39009,"Athens, OH",2019,156792574.01999998
 39009,"Athens, OH",2020,197446252.3
 39009,"Athens, OH",2021,135726337.96
+39011,"Auglaize, OH",2018,0.0
 39013,"Belmont, OH",2010,37268332.0
 39013,"Belmont, OH",2011,112017331.0
 39013,"Belmont, OH",2012,79367009.0
@@ -13995,6 +14511,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39017,"Butler, OH",2019,456523815.23
 39017,"Butler, OH",2020,309797983.76
 39017,"Butler, OH",2021,371554169.17
+39019,"Carroll, OH",2018,0.0
+39021,"Champaign, OH",2018,0.0
 39023,"Clark, OH",2010,7624535.02
 39023,"Clark, OH",2011,69807946.8
 39023,"Clark, OH",2012,43159954.8
@@ -14162,6 +14680,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39051,"Fulton, OH",2019,250000.0
 39051,"Fulton, OH",2020,500000.0
 39051,"Fulton, OH",2021,1375000.0
+39053,"Gallia, OH",2018,0.0
 39055,"Geauga, OH",2010,497500.0
 39055,"Geauga, OH",2011,250000.0
 39055,"Geauga, OH",2012,250000.0
@@ -14214,6 +14733,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39065,"Hardin, OH",2018,2656519.0
 39065,"Hardin, OH",2019,2550210.0
 39065,"Hardin, OH",2020,495446.0
+39067,"Harrison, OH",2018,0.0
 39069,"Henry, OH",2017,15500000.0
 39069,"Henry, OH",2018,24587319.0
 39069,"Henry, OH",2019,19133418.0
@@ -14243,6 +14763,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39075,"Holmes, OH",2016,1397278.0
 39075,"Holmes, OH",2017,1598639.0
 39075,"Holmes, OH",2018,2198639.0
+39077,"Huron, OH",2018,0.0
 39079,"Jackson, OH",2010,19379650.0
 39079,"Jackson, OH",2011,28756975.0
 39079,"Jackson, OH",2012,19379650.0
@@ -14345,6 +14866,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39095,"Lucas, OH",2019,1041339389.09
 39095,"Lucas, OH",2020,628149354.84
 39095,"Lucas, OH",2021,731421235.63
+39097,"Madison, OH",2018,0.0
 39099,"Mahoning, OH",2010,173169787.2
 39099,"Mahoning, OH",2011,258427958.0
 39099,"Mahoning, OH",2012,126429612.0
@@ -14374,6 +14896,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39103,"Medina, OH",2019,18242598.0
 39103,"Medina, OH",2020,16648631.0
 39103,"Medina, OH",2021,9242778.0
+39105,"Meigs, OH",2018,0.0
 39107,"Mercer, OH",2010,13907510.0
 39107,"Mercer, OH",2011,6953755.0
 39107,"Mercer, OH",2012,20861265.0
@@ -14398,6 +14921,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39109,"Miami, OH",2019,220362032.43
 39109,"Miami, OH",2020,415212484.77
 39109,"Miami, OH",2021,164792239.89000002
+39111,"Monroe, OH",2018,0.0
 39113,"Montgomery, OH",2010,409532597.78
 39113,"Montgomery, OH",2011,488946853.56
 39113,"Montgomery, OH",2012,788951233.56
@@ -14422,6 +14946,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39115,"Morgan, OH",2019,204612078.0
 39115,"Morgan, OH",2020,187963480.0
 39115,"Morgan, OH",2021,474318439.0
+39117,"Morrow, OH",2018,0.0
 39119,"Muskingum, OH",2010,25045758.0
 39119,"Muskingum, OH",2011,12522879.0
 39119,"Muskingum, OH",2012,12522879.0
@@ -14446,6 +14971,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39121,"Noble, OH",2019,83498199.92
 39121,"Noble, OH",2020,86174820.16
 39121,"Noble, OH",2021,87375792.16
+39123,"Ottawa, OH",2018,0.0
+39125,"Paulding, OH",2018,0.0
+39127,"Perry, OH",2018,0.0
 39129,"Pickaway, OH",2010,39533927.0
 39129,"Pickaway, OH",2011,38005581.0
 39129,"Pickaway, OH",2012,53836503.0
@@ -14482,6 +15010,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39133,"Portage, OH",2019,251079649.59
 39133,"Portage, OH",2020,289507981.07
 39133,"Portage, OH",2021,267847623.38
+39135,"Preble, OH",2018,0.0
+39137,"Putnam, OH",2018,0.0
 39139,"Richland, OH",2010,27668342.0
 39139,"Richland, OH",2011,101916190.0
 39139,"Richland, OH",2012,55044402.0
@@ -14540,6 +15070,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39147,"Seneca, OH",2019,5979787.87
 39147,"Seneca, OH",2020,3319858.58
 39147,"Seneca, OH",2021,3979787.87
+39149,"Shelby, OH",2018,0.0
 39151,"Stark, OH",2010,128209524.96
 39151,"Stark, OH",2011,239883721.0
 39151,"Stark, OH",2012,217359536.0
@@ -14665,6 +15196,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 39173,"Wood, OH",2019,65025540.0
 39173,"Wood, OH",2020,38618360.0
 39173,"Wood, OH",2021,64720273.93
+39175,"Wyandot, OH",2018,0.0
 40001,"Adair, OK",2010,424955.0
 40001,"Adair, OK",2011,424955.0
 40001,"Adair, OK",2012,1349910.0
@@ -14684,6 +15216,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40003,"Alfalfa, OK",2019,104761041.0
 40003,"Alfalfa, OK",2020,120775525.0
 40003,"Alfalfa, OK",2021,66678180.0
+40005,"Atoka, OK",2018,0.0
+40007,"Beaver, OK",2018,0.0
 40009,"Beckham, OK",2021,99058.0
 40011,"Blaine, OK",2010,70662162.0
 40011,"Blaine, OK",2011,103109823.0
@@ -14755,6 +15289,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40023,"Choctaw, OK",2019,145656416.92000002
 40023,"Choctaw, OK",2020,132385825.92
 40023,"Choctaw, OK",2021,82345138.0
+40025,"Cimarron, OK",2018,0.0
 40027,"Cleveland, OK",2010,106330220.0
 40027,"Cleveland, OK",2011,129043274.0
 40027,"Cleveland, OK",2012,122982935.0
@@ -14805,6 +15340,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40037,"Creek, OK",2019,900000.0
 40037,"Creek, OK",2020,900000.0
 40037,"Creek, OK",2021,1899058.0
+40039,"Custer, OK",2018,0.0
 40041,"Delaware, OK",2010,29684004.0
 40041,"Delaware, OK",2011,42731946.0
 40041,"Delaware, OK",2012,56975928.0
@@ -14817,6 +15353,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40041,"Delaware, OK",2019,88736197.17
 40041,"Delaware, OK",2020,60939558.72
 40041,"Delaware, OK",2021,42535078.48
+40043,"Dewey, OK",2018,0.0
+40045,"Ellis, OK",2018,0.0
 40047,"Garfield, OK",2010,803931.0
 40047,"Garfield, OK",2011,699020.0
 40047,"Garfield, OK",2012,699020.0
@@ -14852,6 +15390,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40051,"Grady, OK",2019,95058158.6
 40051,"Grady, OK",2020,44266038.72
 40051,"Grady, OK",2021,30619046.48
+40053,"Grant, OK",2018,0.0
 40055,"Greer, OK",2021,49529.0
 40057,"Harmon, OK",2012,6656063.0
 40057,"Harmon, OK",2013,26624252.0
@@ -14863,6 +15402,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40057,"Harmon, OK",2019,78011952.0
 40057,"Harmon, OK",2020,36037957.0
 40057,"Harmon, OK",2021,28735615.0
+40059,"Harper, OK",2018,0.0
 40061,"Haskell, OK",2010,176676078.0
 40061,"Haskell, OK",2011,228260494.0
 40061,"Haskell, OK",2012,176146773.0
@@ -14899,6 +15439,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40065,"Jackson, OK",2019,66425519.8
 40065,"Jackson, OK",2020,53140415.84
 40065,"Jackson, OK",2021,33226520.92
+40067,"Jefferson, OK",2018,0.0
 40069,"Johnston, OK",2010,66124488.0
 40069,"Johnston, OK",2011,142090776.0
 40069,"Johnston, OK",2012,99186732.0
@@ -14923,6 +15464,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40071,"Kay, OK",2019,53881200.38
 40071,"Kay, OK",2020,68312714.86999999
 40071,"Kay, OK",2021,78901921.45
+40073,"Kingfisher, OK",2018,0.0
+40075,"Kiowa, OK",2018,0.0
+40077,"Latimer, OK",2018,0.0
 40079,"Le Flore, OK",2010,2325000.0
 40079,"Le Flore, OK",2011,825000.0
 40079,"Le Flore, OK",2012,825000.0
@@ -14949,6 +15493,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40083,"Logan, OK",2019,5357043.0
 40083,"Logan, OK",2020,6134086.0
 40083,"Logan, OK",2021,8737043.0
+40085,"Love, OK",2018,0.0
 40087,"McClain, OK",2010,180000.0
 40087,"McClain, OK",2011,180000.0
 40087,"McClain, OK",2012,180000.0
@@ -14965,6 +15510,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40089,"McCurtain, OK",2020,58123446.0
 40089,"McCurtain, OK",2021,49359252.0
 40091,"McIntosh, OK",2021,49529.0
+40093,"Major, OK",2018,0.0
+40095,"Marshall, OK",2018,0.0
 40097,"Mayes, OK",2015,375000.0
 40097,"Mayes, OK",2016,375000.0
 40097,"Mayes, OK",2017,375000.0
@@ -14972,6 +15519,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40097,"Mayes, OK",2019,440978.0
 40097,"Mayes, OK",2020,1411467.0
 40097,"Mayes, OK",2021,16189020.0
+40099,"Murray, OK",2018,0.0
 40101,"Muskogee, OK",2010,41526861.0
 40101,"Muskogee, OK",2011,59887170.0
 40101,"Muskogee, OK",2012,39924780.0
@@ -15131,6 +15679,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40127,"Pushmataha, OK",2019,150896941.0
 40127,"Pushmataha, OK",2020,73454421.0
 40127,"Pushmataha, OK",2021,84458908.0
+40129,"Roger Mills, OK",2018,0.0
 40131,"Rogers, OK",2010,103401817.0
 40131,"Rogers, OK",2011,120722684.0
 40131,"Rogers, OK",2012,95313313.0
@@ -15242,6 +15791,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 40151,"Woods, OK",2018,1712250.0
 40151,"Woods, OK",2020,563511.23
 40151,"Woods, OK",2021,563511.23
+40153,"Woodward, OK",2018,0.0
 41001,"Baker, OR",2010,1989937.0
 41001,"Baker, OR",2011,1989937.0
 41003,"Benton, OR",2010,306410562.94
@@ -15313,6 +15863,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 41013,"Crook, OR",2019,222424038.23
 41013,"Crook, OR",2020,201241729.67
 41013,"Crook, OR",2021,397477965.74
+41015,"Curry, OR",2018,0.0
 41017,"Deschutes, OR",2010,43452914.0
 41017,"Deschutes, OR",2011,85222934.0
 41017,"Deschutes, OR",2012,63288752.0
@@ -15337,6 +15888,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 41019,"Douglas, OR",2019,422242402.89
 41019,"Douglas, OR",2020,374002851.0
 41019,"Douglas, OR",2021,466797213.43
+41021,"Gilliam, OR",2018,0.0
 41023,"Grant, OR",2010,575000.0
 41023,"Grant, OR",2011,575000.0
 41023,"Grant, OR",2012,575000.0
@@ -15687,6 +16239,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42013,"Blair, PA",2019,149346295.92
 42013,"Blair, PA",2020,141558745.78
 42013,"Blair, PA",2021,176953103.53
+42015,"Bradford, PA",2018,0.0
 42017,"Bucks, PA",2010,104077592.0
 42017,"Bucks, PA",2011,100339919.0
 42017,"Bucks, PA",2012,100011458.0
@@ -15735,6 +16288,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42023,"Cameron, PA",2019,195290622.0
 42023,"Cameron, PA",2020,88683567.0
 42023,"Cameron, PA",2021,99672016.0
+42025,"Carbon, PA",2018,0.0
 42027,"Centre, PA",2010,520741272.4
 42027,"Centre, PA",2011,624963679.88
 42027,"Centre, PA",2012,564703516.78
@@ -15783,6 +16337,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42033,"Clearfield, PA",2019,179146181.48
 42033,"Clearfield, PA",2020,130854200.4
 42033,"Clearfield, PA",2021,142366273.82
+42035,"Clinton, PA",2018,0.0
 42037,"Columbia, PA",2010,20561604.0
 42037,"Columbia, PA",2011,30723360.0
 42037,"Columbia, PA",2012,21788585.0
@@ -15862,6 +16417,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42051,"Fayette, PA",2015,800000.0
 42051,"Fayette, PA",2019,800000.0
 42051,"Fayette, PA",2021,800000.0
+42053,"Forest, PA",2018,0.0
 42055,"Franklin, PA",2010,108987540.0
 42055,"Franklin, PA",2011,263290414.0
 42055,"Franklin, PA",2012,185290973.0
@@ -15934,6 +16490,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42065,"Jefferson, PA",2019,73577044.0
 42065,"Jefferson, PA",2020,58528881.0
 42065,"Jefferson, PA",2021,59427363.0
+42067,"Juniata, PA",2018,0.0
 42069,"Lackawanna, PA",2010,200841416.66
 42069,"Lackawanna, PA",2011,454408594.63
 42069,"Lackawanna, PA",2012,224313850.63
@@ -15970,6 +16527,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42073,"Lawrence, PA",2019,90851806.0
 42073,"Lawrence, PA",2020,133613514.0
 42073,"Lawrence, PA",2021,48373598.0
+42075,"Lebanon, PA",2018,0.0
 42077,"Lehigh, PA",2010,163352105.07
 42077,"Lehigh, PA",2011,208599353.0
 42077,"Lehigh, PA",2012,180464854.0
@@ -16086,6 +16644,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42097,"Northumberland, PA",2019,96500973.2
 42097,"Northumberland, PA",2020,81303592.31
 42097,"Northumberland, PA",2021,42936173.63
+42099,"Perry, PA",2018,0.0
 42101,"Philadelphia, PA",2010,10853221044.13
 42101,"Philadelphia, PA",2011,13259716454.14
 42101,"Philadelphia, PA",2012,12895225806.17
@@ -16115,6 +16674,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42107,"Schuylkill, PA",2019,51476312.0
 42107,"Schuylkill, PA",2020,45758195.0
 42107,"Schuylkill, PA",2021,16317565.0
+42109,"Snyder, PA",2018,0.0
 42111,"Somerset, PA",2010,18046168.0
 42111,"Somerset, PA",2011,35492336.0
 42111,"Somerset, PA",2012,26619252.0
@@ -16127,6 +16687,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42111,"Somerset, PA",2019,31631197.88
 42111,"Somerset, PA",2020,32693871.84
 42111,"Somerset, PA",2021,16769223.92
+42113,"Sullivan, PA",2018,0.0
 42115,"Susquehanna, PA",2010,9894915.0
 42115,"Susquehanna, PA",2011,46009575.0
 42115,"Susquehanna, PA",2012,9295784.0
@@ -16223,6 +16784,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 42129,"Westmoreland, PA",2019,448150950.41
 42129,"Westmoreland, PA",2020,410304478.91
 42129,"Westmoreland, PA",2021,328418398.09
+42131,"Wyoming, PA",2018,0.0
 42133,"York, PA",2010,76990593.0
 42133,"York, PA",2011,233544608.0
 42133,"York, PA",2012,125531807.0
@@ -16371,6 +16933,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45015,"Berkeley, SC",2019,26981382.41
 45015,"Berkeley, SC",2020,100219527.64
 45015,"Berkeley, SC",2021,53526696.82
+45017,"Calhoun, SC",2018,0.0
 45019,"Charleston, SC",2010,1194000326.68
 45019,"Charleston, SC",2011,1737954475.08
 45019,"Charleston, SC",2012,1247864736.84
@@ -16434,6 +16997,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45031,"Darlington, SC",2019,838538150.68
 45031,"Darlington, SC",2020,470894347.85
 45031,"Darlington, SC",2021,607755852.51
+45033,"Dillon, SC",2018,0.0
 45035,"Dorchester, SC",2010,2000000.0
 45035,"Dorchester, SC",2011,2000000.0
 45035,"Dorchester, SC",2012,2000000.0
@@ -16446,6 +17010,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45035,"Dorchester, SC",2019,272648.0
 45035,"Dorchester, SC",2020,536191.0
 45035,"Dorchester, SC",2021,556334.0
+45037,"Edgefield, SC",2018,0.0
 45039,"Fairfield, SC",2010,300000.0
 45039,"Fairfield, SC",2011,1200000.0
 45039,"Fairfield, SC",2012,1200000.0
@@ -16467,6 +17032,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45041,"Florence, SC",2019,672759625.59
 45041,"Florence, SC",2020,589921130.25
 45041,"Florence, SC",2021,843687119.38
+45043,"Georgetown, SC",2018,0.0
 45045,"Greenville, SC",2010,287860260.0
 45045,"Greenville, SC",2011,426614934.0
 45045,"Greenville, SC",2012,459223005.0
@@ -16491,6 +17057,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45047,"Greenwood, SC",2019,1107142796.56
 45047,"Greenwood, SC",2020,682531052.56
 45047,"Greenwood, SC",2021,581890683.56
+45049,"Hampton, SC",2018,0.0
 45051,"Horry, SC",2010,215766768.0
 45051,"Horry, SC",2011,535778060.0
 45051,"Horry, SC",2012,354935179.0
@@ -16531,6 +17098,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45059,"Laurens, SC",2017,365184.0
 45059,"Laurens, SC",2018,330844.0
 45059,"Laurens, SC",2019,365184.0
+45061,"Lee, SC",2018,0.0
 45063,"Lexington, SC",2010,399741.0
 45063,"Lexington, SC",2011,400812.0
 45063,"Lexington, SC",2012,480993.0
@@ -16543,6 +17111,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45063,"Lexington, SC",2019,29936238.0
 45063,"Lexington, SC",2020,22412762.0
 45063,"Lexington, SC",2021,31386202.0
+45065,"McCormick, SC",2018,0.0
 45067,"Marion, SC",2021,49529.0
 45069,"Marlboro, SC",2013,625000.0
 45069,"Marlboro, SC",2014,625000.0
@@ -16601,6 +17170,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45079,"Richland, SC",2019,73586158083.75
 45079,"Richland, SC",2020,91009534320.98
 45079,"Richland, SC",2021,109114146405.47
+45081,"Saluda, SC",2018,0.0
 45083,"Spartanburg, SC",2010,105278487.0
 45083,"Spartanburg, SC",2011,194956684.0
 45083,"Spartanburg, SC",2012,210499169.0
@@ -16625,6 +17195,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45085,"Sumter, SC",2019,64944682.67999999
 45085,"Sumter, SC",2020,87886029.24
 45085,"Sumter, SC",2021,64614616.34
+45087,"Union, SC",2018,0.0
 45089,"Williamsburg, SC",2013,1871404.1
 45089,"Williamsburg, SC",2014,1871404.1
 45089,"Williamsburg, SC",2015,935702.05
@@ -16644,7 +17215,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 45091,"York, SC",2019,432314931.76
 45091,"York, SC",2020,344638126.9
 45091,"York, SC",2021,379338405.84
+46003,"Aurora, SD",2018,0.0
+46005,"Beadle, SD",2018,0.0
 46007,"Bennett, SD",2021,49529.0
+46009,"Bon Homme, SD",2018,0.0
 46011,"Brookings, SD",2010,16045405.58
 46011,"Brookings, SD",2011,13161790.79
 46011,"Brookings, SD",2012,8439775.629999999
@@ -16669,6 +17243,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46013,"Brown, SD",2019,122675775.6
 46013,"Brown, SD",2020,76047359.75
 46013,"Brown, SD",2021,98720137.7
+46015,"Brule, SD",2018,0.0
 46017,"Buffalo, SD",2010,4075317.0
 46017,"Buffalo, SD",2011,3228156.0
 46017,"Buffalo, SD",2012,6353224.0
@@ -16693,6 +17268,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46019,"Butte, SD",2019,41573786.76
 46019,"Butte, SD",2020,51967233.45
 46019,"Butte, SD",2021,37717217.07
+46021,"Campbell, SD",2018,0.0
 46023,"Charles Mix, SD",2010,63618570.0
 46023,"Charles Mix, SD",2011,45015837.0
 46023,"Charles Mix, SD",2012,78425662.0
@@ -16705,6 +17281,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46023,"Charles Mix, SD",2019,111911783.94
 46023,"Charles Mix, SD",2020,163021778.99
 46023,"Charles Mix, SD",2021,167872229.9
+46025,"Clark, SD",2018,0.0
 46027,"Clay, SD",2010,104045145.0
 46027,"Clay, SD",2011,116682414.0
 46027,"Clay, SD",2012,139131387.0
@@ -16736,6 +17313,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46035,"Davison, SD",2016,507176.0
 46035,"Davison, SD",2017,1521528.0
 46035,"Davison, SD",2018,507176.0
+46037,"Day, SD",2018,0.0
+46039,"Deuel, SD",2018,0.0
 46041,"Dewey, SD",2010,116200256.2
 46041,"Dewey, SD",2011,105875856.34
 46041,"Dewey, SD",2012,60599291.74
@@ -16748,10 +17327,20 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46041,"Dewey, SD",2019,136033640.76999998
 46041,"Dewey, SD",2020,103106007.64
 46041,"Dewey, SD",2021,119279652.73
+46043,"Douglas, SD",2018,0.0
+46045,"Edmunds, SD",2018,0.0
+46047,"Fall River, SD",2018,0.0
+46049,"Faulk, SD",2018,0.0
+46051,"Grant, SD",2018,0.0
 46053,"Gregory, SD",2011,888912.0
 46053,"Gregory, SD",2012,888912.0
 46053,"Gregory, SD",2013,888912.0
 46053,"Gregory, SD",2018,148099.0
+46055,"Haakon, SD",2018,0.0
+46057,"Hamlin, SD",2018,0.0
+46059,"Hand, SD",2018,0.0
+46061,"Hanson, SD",2018,0.0
+46063,"Harding, SD",2018,0.0
 46065,"Hughes, SD",2010,4453103064.56
 46065,"Hughes, SD",2011,4997038060.21
 46065,"Hughes, SD",2012,4015257739.07
@@ -16776,6 +17365,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46069,"Hyde, SD",2019,6087327.6
 46069,"Hyde, SD",2020,2029109.2
 46069,"Hyde, SD",2021,8116436.8
+46071,"Jackson, SD",2018,0.0
+46073,"Jerauld, SD",2018,0.0
+46075,"Jones, SD",2018,0.0
+46077,"Kingsbury, SD",2018,0.0
 46079,"Lake, SD",2010,75207279.0
 46079,"Lake, SD",2011,94025456.0
 46079,"Lake, SD",2012,67399933.0
@@ -16817,6 +17410,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46085,"Lyman, SD",2019,24789713.75
 46085,"Lyman, SD",2020,41384481.43
 46085,"Lyman, SD",2021,54722048.0
+46087,"McCook, SD",2018,0.0
+46089,"McPherson, SD",2018,0.0
+46091,"Marshall, SD",2018,0.0
 46093,"Meade, SD",2011,625000.0
 46093,"Meade, SD",2012,625000.0
 46093,"Meade, SD",2013,625000.0
@@ -16827,6 +17423,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46093,"Meade, SD",2019,250000.0
 46093,"Meade, SD",2020,1000000.0
 46093,"Meade, SD",2021,2525000.0
+46095,"Mellette, SD",2018,0.0
 46097,"Miner, SD",2010,104077636.0
 46097,"Miner, SD",2011,365171726.0
 46097,"Miner, SD",2012,158056454.0
@@ -16881,6 +17478,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46103,"Pennington, SD",2019,978372308.21
 46103,"Pennington, SD",2020,885445586.89
 46103,"Pennington, SD",2021,645202625.85
+46105,"Perkins, SD",2018,0.0
+46107,"Potter, SD",2018,0.0
 46109,"Roberts, SD",2010,74154681.78999999
 46109,"Roberts, SD",2011,43283716.43
 46109,"Roberts, SD",2012,50541546.62
@@ -16893,6 +17492,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46109,"Roberts, SD",2019,81442228.33
 46109,"Roberts, SD",2020,93007566.91
 46109,"Roberts, SD",2021,67966818.66
+46111,"Sanborn, SD",2018,0.0
 46115,"Spink, SD",2021,110767.6
 46117,"Stanley, SD",2017,59273286.0
 46117,"Stanley, SD",2018,133204658.0
@@ -16932,6 +17532,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46127,"Union, SD",2015,45240864.0
 46127,"Union, SD",2016,22620432.0
 46127,"Union, SD",2017,30160576.0
+46129,"Walworth, SD",2018,0.0
 46135,"Yankton, SD",2010,938592.0
 46135,"Yankton, SD",2011,1018592.0
 46135,"Yankton, SD",2012,1049528.0
@@ -16940,6 +17541,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 46135,"Yankton, SD",2018,99995.0
 46135,"Yankton, SD",2020,2700000.0
 46135,"Yankton, SD",2021,1800000.0
+46137,"Ziebach, SD",2018,0.0
 47001,"Anderson, TN",2010,88694988.0
 47001,"Anderson, TN",2011,28362564.0
 47001,"Anderson, TN",2012,50631350.0
@@ -17001,6 +17603,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47013,"Campbell, TN",2019,235958004.75
 47013,"Campbell, TN",2020,153884936.2
 47013,"Campbell, TN",2021,177247468.85
+47015,"Cannon, TN",2018,0.0
 47017,"Carroll, TN",2021,346703.0
 47019,"Carter, TN",2015,285000.0
 47019,"Carter, TN",2016,285000.0
@@ -17064,6 +17667,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47031,"Coffee, TN",2017,500000.0
 47031,"Coffee, TN",2018,207748.0
 47031,"Coffee, TN",2020,103874.0
+47033,"Crockett, TN",2018,0.0
 47035,"Cumberland, TN",2021,375000.0
 47037,"Davidson, TN",2010,47592603870.52
 47037,"Davidson, TN",2011,71336027546.72
@@ -17078,8 +17682,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47037,"Davidson, TN",2020,154207586190.48
 47037,"Davidson, TN",2021,134151320563.72
 47039,"Decatur, TN",2021,49529.0
+47041,"DeKalb, TN",2018,0.0
 47043,"Dickson, TN",2021,750000.0
 47045,"Dyer, TN",2021,56178.0
+47047,"Fayette, TN",2018,0.0
+47049,"Fentress, TN",2018,0.0
 47051,"Franklin, TN",2010,802080.0
 47051,"Franklin, TN",2011,625000.0
 47051,"Franklin, TN",2012,1124814.0
@@ -17094,6 +17701,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47053,"Gibson, TN",2012,393034.0
 47053,"Gibson, TN",2021,99058.0
 47055,"Giles, TN",2010,990000.0
+47057,"Grainger, TN",2018,0.0
+47059,"Greene, TN",2018,0.0
 47061,"Grundy, TN",2014,65780.0
 47063,"Hamblen, TN",2010,249679666.0
 47063,"Hamblen, TN",2011,488190959.9
@@ -17157,6 +17766,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47073,"Hawkins, TN",2020,161873919.0
 47073,"Hawkins, TN",2021,171067667.0
 47075,"Haywood, TN",2021,198116.0
+47077,"Henderson, TN",2018,0.0
 47079,"Henry, TN",2010,1532100.0
 47079,"Henry, TN",2011,1532100.0
 47079,"Henry, TN",2012,1532100.0
@@ -17186,6 +17796,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47083,"Houston, TN",2019,25439931.31
 47083,"Houston, TN",2020,59992006.39
 47083,"Houston, TN",2021,31013560.39
+47085,"Humphreys, TN",2018,0.0
 47087,"Jackson, TN",2010,1125000.0
 47087,"Jackson, TN",2011,1275000.0
 47087,"Jackson, TN",2012,1275000.0
@@ -17265,6 +17876,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47105,"Loudon, TN",2017,4376980.0
 47107,"McMinn, TN",2012,402065.0
 47109,"McNairy, TN",2021,99058.0
+47111,"Macon, TN",2018,0.0
 47113,"Madison, TN",2010,167063.0
 47113,"Madison, TN",2011,167063.0
 47113,"Madison, TN",2013,27329.0
@@ -17281,6 +17893,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47115,"Marion, TN",2019,119523459.0
 47115,"Marion, TN",2020,149141402.0
 47115,"Marion, TN",2021,60007875.0
+47117,"Marshall, TN",2018,0.0
 47119,"Maury, TN",2013,6176135.0
 47119,"Maury, TN",2014,18613405.0
 47119,"Maury, TN",2015,24804153.0
@@ -17315,6 +17928,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47125,"Montgomery, TN",2019,33436816.950000003
 47125,"Montgomery, TN",2020,52174333.760000005
 47125,"Montgomery, TN",2021,45866594.78
+47127,"Moore, TN",2018,0.0
 47129,"Morgan, TN",2010,39353280.0
 47129,"Morgan, TN",2011,58493820.0
 47129,"Morgan, TN",2012,29486671.0
@@ -17344,6 +17958,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47135,"Perry, TN",2019,102874779.27
 47135,"Perry, TN",2020,58021462.15
 47135,"Perry, TN",2021,37445132.09
+47137,"Pickett, TN",2018,0.0
 47139,"Polk, TN",2010,17737505.0
 47139,"Polk, TN",2011,88687525.0
 47139,"Polk, TN",2012,35475010.0
@@ -17381,6 +17996,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47145,"Roane, TN",2019,54965425.2
 47145,"Roane, TN",2020,54904870.6
 47145,"Roane, TN",2021,92047627.2
+47147,"Robertson, TN",2018,0.0
 47149,"Rutherford, TN",2010,2040620.0
 47149,"Rutherford, TN",2011,2966248.0
 47149,"Rutherford, TN",2012,9532001.0
@@ -17409,6 +18025,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47153,"Sequatchie, TN",2012,303536.0
 47153,"Sequatchie, TN",2013,303536.0
 47153,"Sequatchie, TN",2014,721106.0
+47155,"Sevier, TN",2018,0.0
 47157,"Shelby, TN",2010,2915222595.8
 47157,"Shelby, TN",2011,3360674861.98
 47157,"Shelby, TN",2012,3046023104.43
@@ -17421,6 +18038,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47157,"Shelby, TN",2019,3660893489.69
 47157,"Shelby, TN",2020,3949404824.2
 47157,"Shelby, TN",2021,3835861881.1
+47159,"Smith, TN",2018,0.0
+47161,"Stewart, TN",2018,0.0
 47163,"Sullivan, TN",2010,204090008.0
 47163,"Sullivan, TN",2011,204090008.0
 47163,"Sullivan, TN",2012,153617506.0
@@ -17452,7 +18071,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47167,"Tipton, TN",2019,35316927.43
 47167,"Tipton, TN",2020,38717903.15
 47167,"Tipton, TN",2021,30633839.02
+47169,"Trousdale, TN",2018,0.0
 47171,"Unicoi, TN",2021,375000.0
+47173,"Union, TN",2018,0.0
 47175,"Van Buren, TN",2021,49529.0
 47177,"Warren, TN",2011,3600000.0
 47177,"Warren, TN",2012,2400000.0
@@ -17476,6 +18097,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47179,"Washington, TN",2019,221531160.53
 47179,"Washington, TN",2020,162900010.84
 47179,"Washington, TN",2021,887770675.27
+47181,"Wayne, TN",2018,0.0
 47183,"Weakley, TN",2010,302227110.0
 47183,"Weakley, TN",2011,300646902.0
 47183,"Weakley, TN",2012,303807318.0
@@ -17488,6 +18110,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47183,"Weakley, TN",2019,476512391.37
 47183,"Weakley, TN",2020,274667761.64
 47183,"Weakley, TN",2021,420396441.55
+47185,"White, TN",2018,0.0
 47187,"Williamson, TN",2010,2851463.0
 47187,"Williamson, TN",2011,148007.82
 47187,"Williamson, TN",2012,7059103.82
@@ -17509,6 +18132,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 47189,"Wilson, TN",2016,105099595.13
 47189,"Wilson, TN",2020,125254605.10999998
 47189,"Wilson, TN",2021,45031734.37
+48001,"Anderson, TX",2018,0.0
 48003,"Andrews, TX",2015,73762.0
 48005,"Angelina, TX",2010,1140756.0
 48005,"Angelina, TX",2011,83603.0
@@ -17527,6 +18151,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48007,"Aransas, TX",2013,800000.0
 48007,"Aransas, TX",2014,800000.0
 48007,"Aransas, TX",2015,800000.0
+48009,"Archer, TX",2018,0.0
+48011,"Armstrong, TX",2018,0.0
 48013,"Atascosa, TX",2010,75389002.0
 48013,"Atascosa, TX",2011,188472505.0
 48013,"Atascosa, TX",2012,155778004.0
@@ -17544,6 +18170,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48015,"Austin, TX",2012,865963.0
 48015,"Austin, TX",2014,828104.0
 48017,"Bailey, TX",2021,148587.0
+48019,"Bandera, TX",2018,0.0
 48021,"Bastrop, TX",2010,38883558.0
 48021,"Bastrop, TX",2011,88472549.0
 48021,"Bastrop, TX",2012,74202408.0
@@ -17592,6 +18219,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48031,"Blanco, TX",2019,151506.0
 48031,"Blanco, TX",2020,1803012.0
 48031,"Blanco, TX",2021,696988.0
+48033,"Borden, TX",2018,0.0
 48035,"Bosque, TX",2021,99058.0
 48037,"Bowie, TX",2010,6738767.0
 48037,"Bowie, TX",2011,10242774.0
@@ -17629,9 +18257,16 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48041,"Brazos, TX",2019,1187122066.77
 48041,"Brazos, TX",2020,1071313668.32
 48041,"Brazos, TX",2021,1232643665.19
+48043,"Brewster, TX",2018,0.0
+48045,"Briscoe, TX",2018,0.0
+48047,"Brooks, TX",2018,0.0
+48049,"Brown, TX",2018,0.0
+48051,"Burleson, TX",2018,0.0
+48053,"Burnet, TX",2018,0.0
 48055,"Caldwell, TX",2010,533596.0
 48055,"Caldwell, TX",2016,207256.0
 48057,"Calhoun, TX",2021,83837.53
+48059,"Callahan, TX",2018,0.0
 48061,"Cameron, TX",2010,625863964.0
 48061,"Cameron, TX",2011,1622447314.0
 48061,"Cameron, TX",2012,1438785257.0
@@ -17644,6 +18279,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48061,"Cameron, TX",2019,1920990594.93
 48061,"Cameron, TX",2020,1737539262.89
 48061,"Cameron, TX",2021,2528430597.59
+48063,"Camp, TX",2018,0.0
 48065,"Carson, TX",2021,49529.0
 48067,"Cass, TX",2016,18627708.27
 48067,"Cass, TX",2017,55883124.81
@@ -17667,6 +18303,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48071,"Chambers, TX",2019,98841936.0
 48071,"Chambers, TX",2020,50496504.0
 48071,"Chambers, TX",2021,70302570.0
+48073,"Cherokee, TX",2018,0.0
+48075,"Childress, TX",2018,0.0
+48077,"Clay, TX",2018,0.0
+48079,"Cochran, TX",2018,0.0
+48081,"Coke, TX",2018,0.0
 48083,"Coleman, TX",2010,45029324.0
 48083,"Coleman, TX",2011,45029324.0
 48083,"Coleman, TX",2012,45029324.0
@@ -17728,8 +18369,12 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48095,"Concho, TX",2021,134898122.77
 48097,"Cooke, TX",2021,49529.0
 48099,"Coryell, TX",2011,80000.0
+48101,"Cottle, TX",2018,0.0
 48103,"Crane, TX",2021,49529.0
+48105,"Crockett, TX",2018,0.0
+48107,"Crosby, TX",2018,0.0
 48109,"Culberson, TX",2021,49529.0
+48111,"Dallam, TX",2018,0.0
 48113,"Dallas, TX",2010,3352132871.78
 48113,"Dallas, TX",2011,4957360786.0
 48113,"Dallas, TX",2012,4243379255.79
@@ -17754,6 +18399,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48115,"Dawson, TX",2019,74768156.01
 48115,"Dawson, TX",2020,99690874.68
 48115,"Dawson, TX",2021,86173725.01
+48117,"Deaf Smith, TX",2018,0.0
 48119,"Delta, TX",2010,2585347.0
 48119,"Delta, TX",2011,5170694.0
 48119,"Delta, TX",2012,2585347.0
@@ -17779,6 +18425,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48121,"Denton, TX",2020,119565840.58
 48121,"Denton, TX",2021,151848238.85999998
 48123,"DeWitt, TX",2021,233369.75
+48125,"Dickens, TX",2018,0.0
 48127,"Dimmit, TX",2010,113274935.0
 48127,"Dimmit, TX",2011,184835790.0
 48127,"Dimmit, TX",2012,112475317.0
@@ -17791,6 +18438,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48127,"Dimmit, TX",2019,182740330.0
 48127,"Dimmit, TX",2020,168137286.78
 48127,"Dimmit, TX",2021,133871640.68
+48129,"Donley, TX",2018,0.0
+48131,"Duval, TX",2018,0.0
+48133,"Eastland, TX",2018,0.0
 48135,"Ector, TX",2010,163789264.0
 48135,"Ector, TX",2011,40646991.0
 48135,"Ector, TX",2012,81293982.0
@@ -17803,6 +18453,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48135,"Ector, TX",2019,200492223.05
 48135,"Ector, TX",2020,129031858.06
 48135,"Ector, TX",2021,79540419.81
+48137,"Edwards, TX",2018,0.0
 48139,"Ellis, TX",2011,44830080.0
 48139,"Ellis, TX",2012,26898048.0
 48139,"Ellis, TX",2013,44830080.0
@@ -17826,6 +18477,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48141,"El Paso, TX",2019,3424926896.46
 48141,"El Paso, TX",2020,4142301271.34
 48141,"El Paso, TX",2021,3365490296.37
+48143,"Erath, TX",2018,0.0
+48145,"Falls, TX",2018,0.0
 48147,"Fannin, TX",2010,17198148.0
 48147,"Fannin, TX",2011,5732716.0
 48147,"Fannin, TX",2012,5732716.0
@@ -17848,6 +18501,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48149,"Fayette, TX",2019,94612339.65
 48149,"Fayette, TX",2020,26132856.24
 48149,"Fayette, TX",2021,34684219.55
+48151,"Fisher, TX",2018,0.0
+48153,"Floyd, TX",2018,0.0
 48155,"Foard, TX",2010,33061893.0
 48155,"Foard, TX",2011,33061893.0
 48155,"Foard, TX",2012,33061893.0
@@ -17881,6 +18536,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48159,"Franklin, TX",2019,1422812.0
 48159,"Franklin, TX",2020,1422812.0
 48159,"Franklin, TX",2021,49529.0
+48161,"Freestone, TX",2018,0.0
+48163,"Frio, TX",2018,0.0
+48165,"Gaines, TX",2018,0.0
 48167,"Galveston, TX",2010,909162579.59
 48167,"Galveston, TX",2011,1479672280.95
 48167,"Galveston, TX",2012,1032857164.03
@@ -17893,12 +18551,14 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48167,"Galveston, TX",2019,1612773628.78
 48167,"Galveston, TX",2020,1491277509.58
 48167,"Galveston, TX",2021,2263416852.93
+48169,"Garza, TX",2018,0.0
 48171,"Gillespie, TX",2010,16288094.0
 48171,"Gillespie, TX",2011,16288094.0
 48171,"Gillespie, TX",2012,8144047.0
 48171,"Gillespie, TX",2013,8144047.0
 48171,"Gillespie, TX",2014,8144047.0
 48171,"Gillespie, TX",2015,8144047.0
+48173,"Glasscock, TX",2018,0.0
 48175,"Goliad, TX",2011,1079986.0
 48175,"Goliad, TX",2012,539993.0
 48175,"Goliad, TX",2013,539993.0
@@ -17969,8 +18629,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48189,"Hale, TX",2019,356685162.58
 48189,"Hale, TX",2020,328356105.0
 48189,"Hale, TX",2021,398388013.29
+48191,"Hall, TX",2018,0.0
+48193,"Hamilton, TX",2018,0.0
 48195,"Hansford, TX",2021,49529.0
 48197,"Hardeman, TX",2021,98250.81
+48199,"Hardin, TX",2018,0.0
 48201,"Harris, TX",2010,9123876298.42
 48201,"Harris, TX",2011,11671087442.51
 48201,"Harris, TX",2012,9843631646.39
@@ -17995,6 +18658,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48203,"Harrison, TX",2019,211215494.28
 48203,"Harrison, TX",2020,213344664.28
 48203,"Harrison, TX",2021,84425880.03999999
+48205,"Hartley, TX",2018,0.0
+48207,"Haskell, TX",2018,0.0
 48209,"Hays, TX",2010,161055610.17
 48209,"Hays, TX",2011,218060908.79
 48209,"Hays, TX",2012,184420284.71
@@ -18070,6 +18735,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48225,"Houston, TX",2020,1047509.0
 48225,"Houston, TX",2021,1100180.0
 48227,"Howard, TX",2021,5688573.0
+48229,"Hudspeth, TX",2018,0.0
 48231,"Hunt, TX",2010,48340581.0
 48231,"Hunt, TX",2011,179643242.0
 48231,"Hunt, TX",2012,110371794.0
@@ -18083,10 +18749,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48231,"Hunt, TX",2020,373135493.9
 48231,"Hunt, TX",2021,306456547.03
 48233,"Hutchinson, TX",2021,197755.9
+48235,"Irion, TX",2018,0.0
 48237,"Jack, TX",2021,396232.0
+48239,"Jackson, TX",2018,0.0
 48241,"Jasper, TX",2010,575000.0
 48241,"Jasper, TX",2011,375000.0
 48241,"Jasper, TX",2021,120000.0
+48243,"Jeff Davis, TX",2018,0.0
 48245,"Jefferson, TX",2010,89742638.0
 48245,"Jefferson, TX",2011,216654644.0
 48245,"Jefferson, TX",2012,158435067.0
@@ -18099,6 +18768,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48245,"Jefferson, TX",2019,299311995.54
 48245,"Jefferson, TX",2020,382400915.72
 48245,"Jefferson, TX",2021,257506399.8
+48247,"Jim Hogg, TX",2018,0.0
 48249,"Jim Wells, TX",2010,246269468.0
 48249,"Jim Wells, TX",2011,338225786.0
 48249,"Jim Wells, TX",2012,368398728.0
@@ -18113,6 +18783,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48249,"Jim Wells, TX",2021,583280611.25
 48251,"Johnson, TX",2010,375625.0
 48251,"Johnson, TX",2014,375625.0
+48253,"Jones, TX",2018,0.0
 48255,"Karnes, TX",2010,57255192.0
 48255,"Karnes, TX",2011,43066394.0
 48255,"Karnes, TX",2012,43066394.0
@@ -18131,6 +18802,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48257,"Kaufman, TX",2020,20472382.9
 48257,"Kaufman, TX",2021,25959833.4
 48259,"Kendall, TX",2011,325460.0
+48261,"Kenedy, TX",2018,0.0
+48263,"Kent, TX",2018,0.0
 48265,"Kerr, TX",2010,5725427.0
 48265,"Kerr, TX",2011,5718493.0
 48265,"Kerr, TX",2012,13419497.0
@@ -18144,6 +18817,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48265,"Kerr, TX",2020,19604312.0
 48265,"Kerr, TX",2021,20865043.0
 48267,"Kimble, TX",2021,49529.0
+48269,"King, TX",2018,0.0
+48271,"Kinney, TX",2018,0.0
 48273,"Kleberg, TX",2010,3640464.0
 48273,"Kleberg, TX",2011,6421097.0
 48273,"Kleberg, TX",2012,8294393.0
@@ -18156,6 +18831,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48273,"Kleberg, TX",2019,26212238.21
 48273,"Kleberg, TX",2020,24413152.74
 48273,"Kleberg, TX",2021,19381743.29
+48275,"Knox, TX",2018,0.0
 48277,"Lamar, TX",2010,17060022.0
 48277,"Lamar, TX",2011,25590033.0
 48277,"Lamar, TX",2012,17060022.0
@@ -18171,6 +18847,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48279,"Lamb, TX",2019,54434.0
 48279,"Lamb, TX",2020,358868.37
 48279,"Lamb, TX",2021,815661.74
+48281,"Lampasas, TX",2018,0.0
 48283,"La Salle, TX",2010,35130921.0
 48283,"La Salle, TX",2011,175654605.0
 48283,"La Salle, TX",2012,70761842.0
@@ -18183,6 +18860,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48283,"La Salle, TX",2019,312033400.0
 48283,"La Salle, TX",2020,201570239.0
 48283,"La Salle, TX",2021,93902846.0
+48285,"Lavaca, TX",2018,0.0
+48287,"Lee, TX",2018,0.0
 48289,"Leon, TX",2010,298284.0
 48291,"Liberty, TX",2010,31547226.0
 48291,"Liberty, TX",2011,94641678.0
@@ -18196,6 +18875,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48291,"Liberty, TX",2019,134890340.0
 48291,"Liberty, TX",2020,68604287.0
 48291,"Liberty, TX",2021,167336545.0
+48293,"Limestone, TX",2018,0.0
+48295,"Lipscomb, TX",2018,0.0
+48297,"Live Oak, TX",2018,0.0
+48299,"Llano, TX",2018,0.0
+48301,"Loving, TX",2018,0.0
 48303,"Lubbock, TX",2010,238072482.28
 48303,"Lubbock, TX",2011,652647359.46
 48303,"Lubbock, TX",2012,361015739.46
@@ -18209,6 +18893,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48303,"Lubbock, TX",2020,584783355.19
 48303,"Lubbock, TX",2021,653963550.69
 48305,"Lynn, TX",2021,196852.92
+48307,"McCulloch, TX",2018,0.0
 48309,"McLennan, TX",2010,124180793.0
 48309,"McLennan, TX",2011,332201907.0
 48309,"McLennan, TX",2012,195649083.0
@@ -18221,6 +18906,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48309,"McLennan, TX",2019,482075464.9
 48309,"McLennan, TX",2020,282775769.85
 48309,"McLennan, TX",2021,355664409.22
+48311,"McMullen, TX",2018,0.0
 48313,"Madison, TX",2012,418769.0
 48313,"Madison, TX",2013,837538.0
 48313,"Madison, TX",2014,418769.0
@@ -18232,6 +18918,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48315,"Marion, TX",2014,42770930.27
 48315,"Marion, TX",2015,61398638.54
 48315,"Marion, TX",2016,37255416.54
+48317,"Martin, TX",2018,0.0
+48319,"Mason, TX",2018,0.0
 48321,"Matagorda, TX",2010,156802191.0
 48321,"Matagorda, TX",2011,276798331.0
 48321,"Matagorda, TX",2012,181336980.0
@@ -18258,6 +18946,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48323,"Maverick, TX",2021,434660090.02
 48325,"Medina, TX",2020,220169.12
 48325,"Medina, TX",2021,368756.12
+48327,"Menard, TX",2018,0.0
 48329,"Midland, TX",2010,56277318.0
 48329,"Midland, TX",2011,84500989.0
 48329,"Midland, TX",2012,56277318.0
@@ -18270,7 +18959,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48329,"Midland, TX",2019,53038880.0
 48329,"Midland, TX",2020,39970943.0
 48329,"Midland, TX",2021,34530424.0
+48331,"Milam, TX",2018,0.0
+48333,"Mills, TX",2018,0.0
 48335,"Mitchell, TX",2021,49529.0
+48337,"Montague, TX",2018,0.0
 48339,"Montgomery, TX",2010,208807600.0
 48339,"Montgomery, TX",2011,409595542.16
 48339,"Montgomery, TX",2012,244969985.16
@@ -18284,6 +18976,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48339,"Montgomery, TX",2020,562106608.0
 48339,"Montgomery, TX",2021,350698372.0
 48341,"Moore, TX",2021,75277.0
+48343,"Morris, TX",2018,0.0
+48345,"Motley, TX",2018,0.0
 48347,"Nacogdoches, TX",2010,162603845.0
 48347,"Nacogdoches, TX",2011,335558552.0
 48347,"Nacogdoches, TX",2012,189907378.0
@@ -18296,6 +18990,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48347,"Nacogdoches, TX",2019,341690798.35
 48347,"Nacogdoches, TX",2020,278295230.52
 48347,"Nacogdoches, TX",2021,512691344.52
+48349,"Navarro, TX",2018,0.0
+48351,"Newton, TX",2018,0.0
+48353,"Nolan, TX",2018,0.0
 48355,"Nueces, TX",2010,226543522.0
 48355,"Nueces, TX",2011,303592254.0
 48355,"Nueces, TX",2012,225672550.0
@@ -18308,6 +19005,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48355,"Nueces, TX",2019,674229691.61
 48355,"Nueces, TX",2020,612891480.0799999
 48355,"Nueces, TX",2021,703418887.25
+48357,"Ochiltree, TX",2018,0.0
+48359,"Oldham, TX",2018,0.0
 48361,"Orange, TX",2010,24198382.0
 48361,"Orange, TX",2011,24198382.0
 48361,"Orange, TX",2012,12099191.0
@@ -18320,6 +19019,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48361,"Orange, TX",2019,25408241.28
 48361,"Orange, TX",2020,23207843.69
 48361,"Orange, TX",2021,8110361.93
+48363,"Palo Pinto, TX",2018,0.0
+48365,"Panola, TX",2018,0.0
 48367,"Parker, TX",2010,158961577.0
 48367,"Parker, TX",2011,230615671.0
 48367,"Parker, TX",2012,229284816.0
@@ -18385,6 +19086,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48381,"Randall, TX",2019,399546601.05
 48381,"Randall, TX",2020,119348803.42
 48381,"Randall, TX",2021,184303283.13
+48383,"Reagan, TX",2018,0.0
+48385,"Real, TX",2018,0.0
 48387,"Red River, TX",2010,20465607.0
 48387,"Red River, TX",2011,13643738.0
 48387,"Red River, TX",2012,20465607.0
@@ -18399,9 +19102,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48387,"Red River, TX",2021,21557633.53
 48389,"Reeves, TX",2021,49529.0
 48391,"Refugio, TX",2021,148587.0
+48393,"Roberts, TX",2018,0.0
 48395,"Robertson, TX",2019,5014068.29
 48395,"Robertson, TX",2020,59281454.18
 48395,"Robertson, TX",2021,22650376.36
+48397,"Rockwall, TX",2018,0.0
 48399,"Runnels, TX",2021,99058.0
 48401,"Rusk, TX",2011,50744510.0
 48401,"Rusk, TX",2012,30863523.0
@@ -18417,6 +19122,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48403,"Sabine, TX",2021,49529.0
 48405,"San Augustine, TX",2020,30533704.97
 48405,"San Augustine, TX",2021,124009651.88
+48407,"San Jacinto, TX",2018,0.0
+48409,"San Patricio, TX",2018,0.0
 48411,"San Saba, TX",2010,179985666.0
 48411,"San Saba, TX",2011,239980888.0
 48411,"San Saba, TX",2012,239980888.0
@@ -18466,6 +19173,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48419,"Shelby, TX",2019,154902726.79999998
 48419,"Shelby, TX",2020,207143335.18
 48419,"Shelby, TX",2021,89455836.78
+48421,"Sherman, TX",2018,0.0
 48423,"Smith, TX",2010,102303110.0
 48423,"Smith, TX",2011,93219782.6
 48423,"Smith, TX",2012,109072694.2
@@ -18478,9 +19186,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48423,"Smith, TX",2019,447027831.05
 48423,"Smith, TX",2020,548449740.66
 48423,"Smith, TX",2021,408262588.6
+48425,"Somervell, TX",2018,0.0
 48427,"Starr, TX",2014,1743512.0
 48427,"Starr, TX",2021,148587.0
+48429,"Stephens, TX",2018,0.0
+48431,"Sterling, TX",2018,0.0
 48433,"Stonewall, TX",2021,148587.0
+48435,"Sutton, TX",2018,0.0
 48437,"Swisher, TX",2010,12486252.0
 48437,"Swisher, TX",2011,12486252.0
 48437,"Swisher, TX",2012,12486252.0
@@ -18524,6 +19236,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48443,"Terrell, TX",2014,32744388.0
 48443,"Terrell, TX",2015,32744388.0
 48443,"Terrell, TX",2016,24558291.0
+48445,"Terry, TX",2018,0.0
+48447,"Throckmorton, TX",2018,0.0
 48449,"Titus, TX",2010,17546787.0
 48449,"Titus, TX",2011,33944994.0
 48449,"Titus, TX",2012,33944994.0
@@ -18560,7 +19274,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48453,"Travis, TX",2019,489694863782.82
 48453,"Travis, TX",2020,628849463909.15
 48453,"Travis, TX",2021,777653211355.88
+48455,"Trinity, TX",2018,0.0
 48457,"Tyler, TX",2021,49529.0
+48459,"Upshur, TX",2018,0.0
+48461,"Upton, TX",2018,0.0
 48463,"Uvalde, TX",2010,73174615.0
 48463,"Uvalde, TX",2011,196737036.0
 48463,"Uvalde, TX",2012,163947530.0
@@ -18585,6 +19302,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48465,"Val Verde, TX",2019,24019516.67
 48465,"Val Verde, TX",2020,38546127.72
 48465,"Val Verde, TX",2021,26832724.48
+48467,"Van Zandt, TX",2018,0.0
 48469,"Victoria, TX",2010,21332650.0
 48469,"Victoria, TX",2011,11156325.0
 48469,"Victoria, TX",2012,450000.0
@@ -18617,6 +19335,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48473,"Waller, TX",2020,264641.22
 48473,"Waller, TX",2021,529282.44
 48475,"Ward, TX",2021,99058.0
+48477,"Washington, TX",2018,0.0
 48479,"Webb, TX",2010,1264672794.0
 48479,"Webb, TX",2011,1417243253.0
 48479,"Webb, TX",2012,2684460772.3
@@ -18629,6 +19348,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48479,"Webb, TX",2019,468166687.4
 48479,"Webb, TX",2020,468599598.68
 48479,"Webb, TX",2021,339680591.76
+48481,"Wharton, TX",2018,0.0
 48483,"Wheeler, TX",2021,49529.0
 48485,"Wichita, TX",2010,126214203.0
 48485,"Wichita, TX",2011,195547447.0
@@ -18642,6 +19362,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48485,"Wichita, TX",2019,425103271.35
 48485,"Wichita, TX",2020,284345456.52
 48485,"Wichita, TX",2021,231352111.72
+48487,"Wilbarger, TX",2018,0.0
+48489,"Willacy, TX",2018,0.0
 48491,"Williamson, TX",2010,189015503.0
 48491,"Williamson, TX",2011,301846132.0
 48491,"Williamson, TX",2012,212395129.25
@@ -18657,9 +19379,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 48493,"Wilson, TX",2012,42606.0
 48493,"Wilson, TX",2014,42606.0
 48493,"Wilson, TX",2021,105000.0
+48495,"Winkler, TX",2018,0.0
+48497,"Wise, TX",2018,0.0
 48499,"Wood, TX",2020,748813.8400000001
 48499,"Wood, TX",2021,2642208.0
+48501,"Yoakum, TX",2018,0.0
 48503,"Young, TX",2021,54500.0
+48505,"Zapata, TX",2018,0.0
 48507,"Zavala, TX",2010,25982119.0
 48507,"Zavala, TX",2011,129910595.0
 48507,"Zavala, TX",2012,52464238.0
@@ -18704,6 +19430,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 49007,"Carbon, UT",2019,255333293.48
 49007,"Carbon, UT",2020,241397202.84
 49007,"Carbon, UT",2021,185462339.12
+49009,"Daggett, UT",2018,0.0
 49011,"Davis, UT",2010,66601905.0
 49011,"Davis, UT",2011,66984899.0
 49011,"Davis, UT",2012,102549385.0
@@ -18716,6 +19443,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 49011,"Davis, UT",2019,135225034.0
 49011,"Davis, UT",2020,111270018.43
 49011,"Davis, UT",2021,87514292.42999999
+49013,"Duchesne, UT",2018,0.0
 49015,"Emery, UT",2010,6459895.0
 49015,"Emery, UT",2011,25839580.0
 49015,"Emery, UT",2012,12919790.0
@@ -18750,6 +19478,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 49021,"Iron, UT",2019,159884253.21
 49021,"Iron, UT",2020,225037086.09
 49021,"Iron, UT",2021,176318683.28
+49023,"Juab, UT",2018,0.0
 49025,"Kane, UT",2015,968823.0
 49025,"Kane, UT",2016,322941.0
 49025,"Kane, UT",2017,645882.0
@@ -18757,6 +19486,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 49025,"Kane, UT",2019,250000.0
 49025,"Kane, UT",2020,500000.0
 49025,"Kane, UT",2021,250000.0
+49027,"Millard, UT",2018,0.0
+49029,"Morgan, UT",2018,0.0
+49031,"Piute, UT",2018,0.0
 49033,"Rich, UT",2010,19280709.0
 49033,"Rich, UT",2011,134964963.0
 49033,"Rich, UT",2012,19280709.0
@@ -18841,6 +19573,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 49049,"Utah, UT",2019,605216618.23
 49049,"Utah, UT",2020,325585038.06
 49049,"Utah, UT",2021,487300983.69
+49051,"Wasatch, UT",2018,0.0
 49053,"Washington, UT",2010,66849959.0
 49053,"Washington, UT",2011,142778508.0
 49053,"Washington, UT",2012,74504528.0
@@ -19035,8 +19768,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51001,"Accomack, VA",2019,256294920.0
 51001,"Accomack, VA",2020,309360572.0
 51001,"Accomack, VA",2021,111071999.0
+51007,"Amelia, VA",2018,0.0
 51009,"Amherst, VA",2020,300000.0
 51009,"Amherst, VA",2021,382609.0
+51011,"Appomattox, VA",2018,0.0
 51013,"Arlington, VA",2010,160865304.0
 51013,"Arlington, VA",2011,123151232.0
 51013,"Arlington, VA",2012,214644662.0
@@ -19049,6 +19784,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51013,"Arlington, VA",2019,24604115977.49
 51013,"Arlington, VA",2020,28557002120.15
 51013,"Arlington, VA",2021,37891255164.78
+51017,"Bath, VA",2018,0.0
+51019,"Bedford, VA*",2018,0.0
 51021,"Bland, VA",2010,14307756.0
 51021,"Bland, VA",2011,85846536.0
 51021,"Bland, VA",2012,42923268.0
@@ -19061,6 +19798,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51021,"Bland, VA",2019,45748280.0
 51021,"Bland, VA",2020,46655230.0
 51021,"Bland, VA",2021,121293070.0
+51023,"Botetourt, VA",2018,0.0
+51025,"Brunswick, VA",2018,0.0
 51027,"Buchanan, VA",2010,27770175.0
 51027,"Buchanan, VA",2011,18513450.0
 51027,"Buchanan, VA",2012,27770175.0
@@ -19085,11 +19824,13 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51029,"Buckingham, VA",2019,474661026.0
 51029,"Buckingham, VA",2020,635335752.0
 51029,"Buckingham, VA",2021,170714310.0
+51033,"Caroline, VA",2018,0.0
 51036,"Charles City, VA",2017,811659.5
 51036,"Charles City, VA",2018,811659.5
 51036,"Charles City, VA",2019,2593647.5
 51036,"Charles City, VA",2020,9100258.0
 51036,"Charles City, VA",2021,13871018.5
+51037,"Charlotte, VA",2018,0.0
 51041,"Chesterfield, VA",2010,48616401.0
 51041,"Chesterfield, VA",2011,9899423.0
 51041,"Chesterfield, VA",2012,16527550.0
@@ -19104,6 +19845,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51041,"Chesterfield, VA",2021,57803895.36
 51043,"Clarke, VA",2012,50000.0
 51043,"Clarke, VA",2021,3000000.0
+51045,"Craig, VA",2018,0.0
 51047,"Culpeper, VA",2010,24677583.0
 51047,"Culpeper, VA",2011,8225861.0
 51047,"Culpeper, VA",2012,8225861.0
@@ -19153,6 +19895,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51061,"Fauquier, VA",2019,20763267.0
 51061,"Fauquier, VA",2020,21545562.0
 51061,"Fauquier, VA",2021,21961860.0
+51063,"Floyd, VA",2018,0.0
+51065,"Fluvanna, VA",2018,0.0
 51067,"Franklin, VA",2010,42058200.0
 51067,"Franklin, VA",2011,29560308.0
 51067,"Franklin, VA",2012,39413744.0
@@ -19185,6 +19929,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51073,"Gloucester, VA",2017,2738845.96
 51073,"Gloucester, VA",2019,4421911.84
 51073,"Gloucester, VA",2021,2738845.96
+51075,"Goochland, VA",2018,0.0
+51077,"Grayson, VA",2018,0.0
+51079,"Greene, VA",2018,0.0
 51083,"Halifax, VA",2010,28077920.0
 51083,"Halifax, VA",2011,21058440.0
 51083,"Halifax, VA",2012,35162929.0
@@ -19233,8 +19980,10 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51091,"Highland, VA",2019,50587929.0
 51091,"Highland, VA",2020,65766027.0
 51091,"Highland, VA",2021,52721241.0
+51093,"Isle of Wight, VA",2018,0.0
 51097,"King and Queen, VA",2020,600621.0
 51097,"King and Queen, VA",2021,798820.0
+51099,"King George, VA",2018,0.0
 51101,"King William, VA",2010,21595054.0
 51101,"King William, VA",2011,32392581.0
 51101,"King William, VA",2012,10797527.0
@@ -19273,6 +20022,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51107,"Loudoun, VA",2019,116339572.22
 51107,"Loudoun, VA",2020,124790261.51
 51107,"Loudoun, VA",2021,173150779.62
+51109,"Louisa, VA",2018,0.0
 51111,"Lunenburg, VA",2010,47203108.0
 51111,"Lunenburg, VA",2011,118007770.0
 51111,"Lunenburg, VA",2012,47701108.0
@@ -19297,6 +20047,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51113,"Madison, VA",2019,14648676.26
 51113,"Madison, VA",2020,32888053.76
 51113,"Madison, VA",2021,18775471.5
+51115,"Mathews, VA",2018,0.0
 51117,"Mecklenburg, VA",2010,3864788.0
 51117,"Mecklenburg, VA",2011,7729576.0
 51117,"Mecklenburg, VA",2012,1932394.0
@@ -19335,6 +20086,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51133,"Northumberland, VA",2018,1652764.0
 51133,"Northumberland, VA",2019,225000.0
 51133,"Northumberland, VA",2020,2094698.59
+51135,"Nottoway, VA",2018,0.0
 51137,"Orange, VA",2010,18495769.0
 51137,"Orange, VA",2011,11787352.0
 51137,"Orange, VA",2012,11787352.0
@@ -19354,6 +20106,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51139,"Page, VA",2019,923946.0
 51139,"Page, VA",2020,3973946.0
 51139,"Page, VA",2021,3734304.0
+51141,"Patrick, VA",2018,0.0
+51145,"Powhatan, VA",2018,0.0
 51147,"Prince Edward, VA",2015,40053503.56
 51147,"Prince Edward, VA",2016,60080255.34
 51147,"Prince Edward, VA",2017,60080255.34
@@ -19361,6 +20115,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51147,"Prince Edward, VA",2019,80107007.12
 51147,"Prince Edward, VA",2020,80107007.12
 51147,"Prince Edward, VA",2021,92077359.12
+51155,"Pulaski, VA",2018,0.0
+51157,"Rappahannock, VA",2018,0.0
 51159,"Richmond, VA",2010,168981168.0
 51159,"Richmond, VA",2011,185288458.0
 51159,"Richmond, VA",2012,203344480.0
@@ -19368,6 +20124,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51159,"Richmond, VA",2014,162435795.0
 51159,"Richmond, VA",2015,261438260.0
 51159,"Richmond, VA",2016,156778487.0
+51167,"Russell, VA",2018,0.0
 51169,"Scott, VA",2010,35335855.0
 51169,"Scott, VA",2011,56297590.0
 51169,"Scott, VA",2012,45157961.0
@@ -19409,6 +20166,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51179,"Stafford, VA",2019,40008163.58
 51179,"Stafford, VA",2020,55290551.16
 51179,"Stafford, VA",2021,14658225.79
+51181,"Surry, VA",2018,0.0
 51183,"Sussex, VA",2010,4061708.0
 51183,"Sussex, VA",2011,16246832.0
 51183,"Sussex, VA",2012,8123416.0
@@ -19462,6 +20220,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51510,"Alexandria (Independent City), VA",2019,288567671.72
 51510,"Alexandria (Independent City), VA",2020,325058582.39
 51510,"Alexandria (Independent City), VA",2021,349787145.1
+51550,"Chesapeake (Independent City), VA",2018,0.0
 51650,"Hampton (Independent City), VA",2010,16678278.27
 51650,"Hampton (Independent City), VA",2011,10303370.27
 51650,"Hampton (Independent City), VA",2012,11168460.2
@@ -19534,6 +20293,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 51770,"Roanoke (Independent City), VA",2019,363586630.26
 51770,"Roanoke (Independent City), VA",2020,312800173.31
 51770,"Roanoke (Independent City), VA",2021,240793007.23
+51800,"Suffolk (Independent City), VA",2018,0.0
 51810,"Virginia Beach (Independent City), VA",2010,1850000.0
 51810,"Virginia Beach (Independent City), VA",2011,1668444.0
 51810,"Virginia Beach (Independent City), VA",2012,2340645.0
@@ -19634,6 +20394,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 53015,"Cowlitz, WA",2019,339353347.77
 53015,"Cowlitz, WA",2020,192101127.0
 53015,"Cowlitz, WA",2021,263901301.7
+53017,"Douglas, WA",2018,0.0
 53019,"Ferry, WA",2016,826488.11
 53019,"Ferry, WA",2017,923424.11
 53019,"Ferry, WA",2018,1749912.22
@@ -19740,6 +20501,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 53041,"Lewis, WA",2019,188154912.0
 53041,"Lewis, WA",2020,144000848.0
 53041,"Lewis, WA",2021,104257168.0
+53043,"Lincoln, WA",2018,0.0
 53045,"Mason, WA",2010,63728662.0
 53045,"Mason, WA",2011,45462855.0
 53045,"Mason, WA",2012,64219689.0
@@ -19955,6 +20717,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54003,"Berkeley, WV",2019,239940102.91
 54003,"Berkeley, WV",2020,226868966.65
 54003,"Berkeley, WV",2021,343685421.56
+54005,"Boone, WV",2018,0.0
 54007,"Braxton, WV",2010,12722199.0
 54007,"Braxton, WV",2011,8481466.0
 54007,"Braxton, WV",2012,12722199.0
@@ -19967,6 +20730,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54007,"Braxton, WV",2019,27138885.0
 54007,"Braxton, WV",2020,17333812.0
 54007,"Braxton, WV",2021,13382328.0
+54009,"Brooke, WV",2018,0.0
 54011,"Cabell, WV",2010,188799808.0
 54011,"Cabell, WV",2011,426249390.0
 54011,"Cabell, WV",2012,397462695.33
@@ -19992,6 +20756,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54013,"Calhoun, WV",2020,56899408.0
 54013,"Calhoun, WV",2021,213273168.0
 54015,"Clay, WV",2010,4116950.0
+54017,"Doddridge, WV",2018,0.0
 54019,"Fayette, WV",2010,61307016.0
 54019,"Fayette, WV",2011,137230935.0
 54019,"Fayette, WV",2012,79284632.0
@@ -20004,6 +20769,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54019,"Fayette, WV",2019,252466652.72
 54019,"Fayette, WV",2020,175144479.54
 54019,"Fayette, WV",2021,256693261.36
+54021,"Gilmer, WV",2018,0.0
 54023,"Grant, WV",2010,24867030.0
 54023,"Grant, WV",2011,24867030.0
 54023,"Grant, WV",2012,24867030.0
@@ -20096,6 +20862,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54039,"Kanawha, WV",2019,51700365636.78
 54039,"Kanawha, WV",2020,79535840959.25
 54039,"Kanawha, WV",2021,68481656106.67
+54041,"Lewis, WV",2018,0.0
 54043,"Lincoln, WV",2010,21502211.0
 54043,"Lincoln, WV",2011,83571537.0
 54043,"Lincoln, WV",2012,49903809.0
@@ -20262,6 +21029,9 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54071,"Pendleton, WV",2019,52256115.0
 54071,"Pendleton, WV",2020,63538505.0
 54071,"Pendleton, WV",2021,22917450.0
+54073,"Pleasants, WV",2018,0.0
+54075,"Pocahontas, WV",2018,0.0
+54077,"Preston, WV",2018,0.0
 54079,"Putnam, WV",2010,40460361.0
 54079,"Putnam, WV",2011,128678500.0
 54079,"Putnam, WV",2012,79839831.0
@@ -20322,6 +21092,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54087,"Roane, WV",2019,39511745.0
 54087,"Roane, WV",2020,40341539.0
 54087,"Roane, WV",2021,53751955.0
+54089,"Summers, WV",2018,0.0
 54091,"Taylor, WV",2010,17582783.0
 54091,"Taylor, WV",2011,65612332.0
 54091,"Taylor, WV",2012,32806166.0
@@ -20381,6 +21152,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54101,"Webster, WV",2019,143231247.0
 54101,"Webster, WV",2020,100110647.0
 54101,"Webster, WV",2021,125054238.0
+54103,"Wetzel, WV",2018,0.0
 54105,"Wirt, WV",2010,15332600.0
 54105,"Wirt, WV",2011,61492745.0
 54105,"Wirt, WV",2012,45997800.0
@@ -20412,6 +21184,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 54109,"Wyoming, WV",2019,117149216.0
 54109,"Wyoming, WV",2020,102982280.0
 54109,"Wyoming, WV",2021,64937104.0
+55001,"Adams, WI",2018,0.0
 55003,"Ashland, WI",2010,15141080.9
 55003,"Ashland, WI",2011,9774073.95
 55003,"Ashland, WI",2012,17054893.0
@@ -20460,6 +21233,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55009,"Brown, WI",2019,353471421.72
 55009,"Brown, WI",2020,288495439.45
 55009,"Brown, WI",2021,326054039.56
+55011,"Buffalo, WI",2018,0.0
 55013,"Burnett, WI",2010,9193989.42
 55013,"Burnett, WI",2011,6134427.71
 55013,"Burnett, WI",2012,5917098.0
@@ -20472,9 +21246,11 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55013,"Burnett, WI",2019,8910658.96
 55013,"Burnett, WI",2020,20988120.23
 55013,"Burnett, WI",2021,19149409.62
+55015,"Calumet, WI",2018,0.0
 55017,"Chippewa, WI",2019,76841.66
 55017,"Chippewa, WI",2020,775349.98
 55017,"Chippewa, WI",2021,1748158.0
+55019,"Clark, WI",2018,0.0
 55021,"Columbia, WI",2010,87520672.0
 55021,"Columbia, WI",2011,86243724.0
 55021,"Columbia, WI",2012,86043724.0
@@ -20502,6 +21278,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55025,"Dane, WI",2019,58475131490.54
 55025,"Dane, WI",2020,71801543807.52
 55025,"Dane, WI",2021,93733950339.23
+55027,"Dodge, WI",2018,0.0
+55029,"Door, WI",2018,0.0
 55031,"Douglas, WI",2010,44104980.0
 55031,"Douglas, WI",2011,22052490.0
 55031,"Douglas, WI",2012,66157470.0
@@ -20538,6 +21316,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55035,"Eau Claire, WI",2019,551676.9
 55035,"Eau Claire, WI",2020,5298087.45
 55035,"Eau Claire, WI",2021,8091123.0
+55037,"Florence, WI",2018,0.0
 55039,"Fond du Lac, WI",2010,36104175.0
 55039,"Fond du Lac, WI",2011,26963248.64
 55039,"Fond du Lac, WI",2012,38334018.64
@@ -20589,6 +21368,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55049,"Iowa, WI",2019,74100741.56
 55049,"Iowa, WI",2020,70364214.36
 55049,"Iowa, WI",2021,57572601.6
+55051,"Iron, WI",2018,0.0
 55053,"Jackson, WI",2010,19828664.0
 55053,"Jackson, WI",2011,27314653.0
 55053,"Jackson, WI",2012,14674208.0
@@ -20623,6 +21403,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55059,"Kenosha, WI",2019,128563067.03
 55059,"Kenosha, WI",2020,167982148.09
 55059,"Kenosha, WI",2021,136195077.38
+55061,"Kewaunee, WI",2018,0.0
 55063,"La Crosse, WI",2010,35421892.0
 55063,"La Crosse, WI",2011,19556052.0
 55063,"La Crosse, WI",2012,22910954.12
@@ -20635,6 +21416,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55063,"La Crosse, WI",2019,93227163.73
 55063,"La Crosse, WI",2020,87357663.0
 55063,"La Crosse, WI",2021,132653315.04
+55065,"Lafayette, WI",2018,0.0
 55067,"Langlade, WI",2021,144826.57
 55069,"Lincoln, WI",2010,4658422.0
 55069,"Lincoln, WI",2011,4658422.0
@@ -20945,6 +21727,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 55133,"Waukesha, WI",2019,122085363.18
 55133,"Waukesha, WI",2020,126743604.94
 55133,"Waukesha, WI",2021,83719276.84
+55135,"Waupaca, WI",2018,0.0
 55137,"Waushara, WI",2010,18712686.0
 55137,"Waushara, WI",2011,93563430.0
 55137,"Waushara, WI",2012,18712686.0
@@ -21018,6 +21801,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 56007,"Carbon, WY",2019,15588696.0
 56007,"Carbon, WY",2020,24306110.0
 56007,"Carbon, WY",2021,14324324.0
+56009,"Converse, WY",2018,0.0
+56011,"Crook, WY",2018,0.0
 56013,"Fremont, WY",2010,85476530.45
 56013,"Fremont, WY",2011,103829428.45
 56013,"Fremont, WY",2012,91563925.45
@@ -21030,6 +21815,8 @@ GeoFIPS,GeoName,year,total_obligated_amount
 56013,"Fremont, WY",2019,142402064.54
 56013,"Fremont, WY",2020,115103028.02
 56013,"Fremont, WY",2021,88469821.37
+56015,"Goshen, WY",2018,0.0
+56017,"Hot Springs, WY",2018,0.0
 56019,"Johnson, WY",2010,277965.0
 56019,"Johnson, WY",2011,277965.0
 56019,"Johnson, WY",2018,1947673.0
@@ -21061,6 +21848,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 56025,"Natrona, WY",2019,267439964.0
 56025,"Natrona, WY",2020,208858409.08
 56025,"Natrona, WY",2021,135579098.12
+56027,"Niobrara, WY",2018,0.0
 56029,"Park, WY",2012,625000.0
 56029,"Park, WY",2013,625000.0
 56029,"Park, WY",2014,625000.0
@@ -21090,6 +21878,7 @@ GeoFIPS,GeoName,year,total_obligated_amount
 56033,"Sheridan, WY",2019,39460.04
 56033,"Sheridan, WY",2020,78920.08
 56033,"Sheridan, WY",2021,1181979.08
+56035,"Sublette, WY",2018,0.0
 56037,"Sweetwater, WY",2010,9662044.0
 56037,"Sweetwater, WY",2011,4831022.0
 56037,"Sweetwater, WY",2012,9662044.0
@@ -21138,3 +21927,4 @@ GeoFIPS,GeoName,year,total_obligated_amount
 56043,"Washakie, WY",2019,149453896.92
 56043,"Washakie, WY",2020,162984090.92
 56043,"Washakie, WY",2021,111608505.92
+56045,"Weston, WY",2018,0.0
