@@ -47,6 +47,8 @@ class FipsQuery:
         self.lag = lag
         self.top = top
         self.outcome_var = outcome_var
+        
+
         self.time_decay = time_decay
 
         if "gdp" not in self.feature_groups:
@@ -75,6 +77,11 @@ class FipsQuery:
             and self.top < self.data.std_wide[self.outcome_var].shape[0]
         ), "top must be a positive integer smaller than the number of locations in the dataset"
 
+        self.outcome = self.data.std_wide[self.outcome_var]
+        most_recent_outcome =self. data.wide[self.outcome_var].iloc[:, -1].values
+        self.outcome['percentile'] = (most_recent_outcome < most_recent_outcome[:, np.newaxis]).sum(axis=1)/most_recent_outcome.shape[0]
+
+
     def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
         # TODO add shading by population and warning about
         # locations with low population
@@ -82,9 +89,12 @@ class FipsQuery:
         # TODO consider explicit printing of percentiles in
         # complete data set
 
+
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
+        my_percentile = round(self.outcome['percentile'][self.outcome['GeoFIPS'] == self.fips].values[0], 2) * 100
+        
 
         others_plot_data = plot_data[plot_data["GeoFIPS"] != self.fips]
 
@@ -132,6 +142,17 @@ class FipsQuery:
                 showlegend=False,
             )
         )
+        
+        label_x = my_plot_data["Year"].iloc[-1]-2
+        label_y = my_plot_data["Value"].iloc[-1] * 1.2
+        fig.add_annotation(
+            text=f'Location recent percentile: {my_percentile}%',
+            x=label_x,
+            y=label_y,
+            showarrow=False,
+            font=dict(size=12, color="darkred"),
+            )
+        
 
         title = f"{self.outcome_var} of {self.name}, compared to {sample_size} random other locations"
         fig.update_layout(
