@@ -1,4 +1,5 @@
 import os
+
 import numpy as np
 
 from cities.utils.data_grabber import DataGrabber
@@ -8,8 +9,14 @@ from cities.utils.data_grabber import DataGrabber
 # python -m pytest test_data_grabber.py
 # TODO fix this
 
-features = ["gdp", "population", "transport",
-            "spending_transportation", "spending_commerce", "spending_HHS"]
+features = [
+    "gdp",
+    "population",
+    "transport",
+    "spending_transportation",
+    "spending_commerce",
+    "spending_HHS",
+]
 
 
 def test_DataGrabber():
@@ -25,17 +32,17 @@ def test_DataGrabber():
         assert data.std_wide[feature].shape[1] < 100
         assert data.long[feature].shape[0] > 2800
         assert data.std_long[feature].shape[1] == 4
-        
-    for i in range(len(features) - 1):
-        current_feature = features[i]
-        next_feature = features[i + 1]
-        
-        assert data.wide[current_feature]['GeoFIPS'].nunique() == data.wide[next_feature]['GeoFIPS'].nunique()
-        assert data.long[current_feature]['GeoFIPS'].nunique() == data.long[next_feature]['GeoFIPS'].nunique()
-        
 
+        assert (
+            data.wide["gdp"]["GeoFIPS"].nunique()
+            == data.wide[feature]["GeoFIPS"].nunique()
+        )
+        assert (
+            data.long["gdp"]["GeoFIPS"].nunique()
+            == data.long[feature]["GeoFIPS"].nunique()
+        )
 
-    for feature in features:  
+    for feature in features:
         dataTypeError = "Wrong data type!"
         assert data.wide[feature].iloc[:, 0].dtype == np.int64, dataTypeError
         assert data.wide[feature].iloc[:, 1].dtype == object, dataTypeError
@@ -45,18 +52,27 @@ def test_DataGrabber():
         assert data.long[feature].iloc[:, 1].dtype == object, dataTypeError
         assert data.std_long[feature].iloc[:, 0].dtype == np.int64, dataTypeError
         assert data.std_long[feature].iloc[:, 1].dtype == object, dataTypeError
-        
-        
-    for feature in features:  
-        namesFipsError = "FIPS codes and GeoNames don't match!"
-        assert data.wide[feature]['GeoFIPS'].nunique() == data.wide[feature]['GeoName'].nunique(), namesFipsError   
-        assert data.long[feature]['GeoFIPS'].nunique() == data.long[feature]['GeoName'].nunique(), namesFipsError
-        assert data.std_wide[feature]['GeoFIPS'].nunique() == data.std_wide[feature]['GeoName'].nunique(), namesFipsError
-        assert data.std_long[feature]['GeoFIPS'].nunique() == data.std_long[feature]['GeoName'].nunique(), namesFipsError
-        
-        
 
-    for feature in features:          
+    for feature in features:
+        namesFipsError = "FIPS codes and GeoNames don't match!"
+        assert (
+            data.wide[feature]["GeoFIPS"].nunique()
+            == data.wide[feature]["GeoName"].nunique()
+        ), namesFipsError
+        assert (
+            data.long[feature]["GeoFIPS"].nunique()
+            == data.long[feature]["GeoName"].nunique()
+        ), namesFipsError
+        assert (
+            data.std_wide[feature]["GeoFIPS"].nunique()
+            == data.std_wide[feature]["GeoName"].nunique()
+        ), namesFipsError
+        assert (
+            data.std_long[feature]["GeoFIPS"].nunique()
+            == data.std_long[feature]["GeoName"].nunique()
+        ), namesFipsError
+
+    for feature in features:
         for column in data.wide[feature].columns[2:]:
             std_error = "Standarization error"
             assert (
@@ -69,7 +85,7 @@ def test_DataGrabber():
                 data.std_wide[feature][column] <= 1
             ).all(), std_error
 
-    for column in data.long[feature].columns[3:]:     
+    for column in data.long[feature].columns[3:]:
         assert (
             data.long[feature][column].dtype == float
         ), f"The column '{column}' is not of float or int type."
@@ -89,7 +105,7 @@ def test_DataGrabber():
             object,
         ), f"The column '{column}' is not of float or int type."
 
-    for feature in features:       
+    for feature in features:
         for column in data.std_long[feature].columns[3:]:
             assert (data.std_long[feature][column] >= -1).all() and (
                 data.std_long[feature][column] <= 1
