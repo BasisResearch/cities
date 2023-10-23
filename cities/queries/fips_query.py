@@ -21,14 +21,16 @@ class FipsQuery:
         feature_groups_with_weights=None,
         lag=0,
         top=5,
-        time_decay=1.08, outcome_comparison_period = None,
-        outcome_percentile_range = None,
+        time_decay=1.08,
+        outcome_comparison_period=None,
+        outcome_percentile_range=None,
     ):
         if feature_groups_with_weights is None:
             feature_groups_with_weights = {outcome_var: 4}
 
-
-        assert not (lag > 0 and outcome_comparison_period is not None), "outcome_comparison_period is only used when lag = 0"
+        assert not (
+            lag > 0 and outcome_comparison_period is not None
+        ), "outcome_comparison_period is only used when lag = 0"
 
         assert outcome_var in [
             "gdp",
@@ -52,7 +54,6 @@ class FipsQuery:
         self.top = top
         self.outcome_var = outcome_var
         self.outcome_comparison_period = outcome_comparison_period
-        
 
         self.time_decay = time_decay
 
@@ -83,12 +84,14 @@ class FipsQuery:
         ), "top must be a positive integer smaller than the number of locations in the dataset"
 
         self.outcome_with_percentiles = self.data.std_wide[self.outcome_var].copy()
-        most_recent_outcome =self. data.wide[self.outcome_var].iloc[:, -1].values
-        self.outcome_with_percentiles['percentile'] = (most_recent_outcome < most_recent_outcome[:, np.newaxis]).sum(axis=1)/most_recent_outcome.shape[0]
-        self.outcome_with_percentiles['percentile'] = round(self.outcome_with_percentiles['percentile'] * 100, 2)
+        most_recent_outcome = self.data.wide[self.outcome_var].iloc[:, -1].values
+        self.outcome_with_percentiles["percentile"] = (
+            most_recent_outcome < most_recent_outcome[:, np.newaxis]
+        ).sum(axis=1) / most_recent_outcome.shape[0]
+        self.outcome_with_percentiles["percentile"] = round(
+            self.outcome_with_percentiles["percentile"] * 100, 2
+        )
         self.outcome_percentile_range = outcome_percentile_range
-
-
 
     def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
         # TODO add shading by population and warning about
@@ -97,12 +100,12 @@ class FipsQuery:
         # TODO consider explicit printing of percentiles in
         # complete data set
 
-
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-        my_percentile = self.outcome_with_percentiles['percentile'][self.outcome_with_percentiles['GeoFIPS'] == self.fips].values[0]
-        
+        my_percentile = self.outcome_with_percentiles["percentile"][
+            self.outcome_with_percentiles["GeoFIPS"] == self.fips
+        ].values[0]
 
         others_plot_data = plot_data[plot_data["GeoFIPS"] != self.fips]
 
@@ -150,17 +153,16 @@ class FipsQuery:
                 showlegend=False,
             )
         )
-        
-        label_x = my_plot_data["Year"].iloc[-1]-2
+
+        label_x = my_plot_data["Year"].iloc[-1] - 2
         label_y = my_plot_data["Value"].iloc[-1] * 1.2
         fig.add_annotation(
-            text=f'Location recent percentile: {my_percentile}%',
+            text=f"Location recent percentile: {my_percentile}%",
             x=label_x,
             y=label_y,
             showarrow=False,
             font=dict(size=12, color="darkred"),
-            )
-        
+        )
 
         title = f"{self.outcome_var} of {self.name}, compared to {sample_size} random other locations"
         fig.update_layout(
@@ -173,28 +175,25 @@ class FipsQuery:
         fig.show()
 
     def find_euclidean_kins(self):  # TODO_Nikodem add a test for this function
-        
-            
-        if  self.outcome_comparison_period is not None:      
+        if self.outcome_comparison_period is not None:
+            start_year, end_year = self.outcome_comparison_period
 
-            start_year, end_year = self.outcome_comparison_period 
-            
             outcome_df = self.data.std_wide[self.outcome_var].copy()
-            
-            
-            condition = (outcome_df.columns[2:].copy().astype(int) >= start_year) & (outcome_df.columns[2:].copy().astype(int) <= end_year)
+
+            condition = (outcome_df.columns[2:].copy().astype(int) >= start_year) & (
+                outcome_df.columns[2:].copy().astype(int) <= end_year
+            )
             selected_columns = outcome_df.columns[2:][condition].copy()
             filtered_dataframe = outcome_df[selected_columns]
 
-           
-            restricted_df = pd.concat([outcome_df.iloc[:, :2].copy(), filtered_dataframe], axis = 1)
+            restricted_df = pd.concat(
+                [outcome_df.iloc[:, :2].copy(), filtered_dataframe], axis=1
+            )
 
         else:
             restricted_df = self.data.std_wide[self.outcome_var].copy()
-     
-        self.outcome_slices = slice_with_lag(
-            restricted_df, self.fips, self.lag
-        )
+
+        self.outcome_slices = slice_with_lag(restricted_df, self.fips, self.lag)
 
         self.my_array = np.array(self.outcome_slices["my_array"])
         self.other_arrays = np.array(self.outcome_slices["other_arrays"])
@@ -325,20 +324,22 @@ class FipsQuery:
         self.my_df[f"distance to {self.fips}"] = 0
 
         self.euclidean_kins = pd.concat((self.my_df, self.other_df), axis=0)
-        
+
         self.euclidean_kins = self.euclidean_kins.merge(
-        self.outcome_with_percentiles[['GeoFIPS', 'percentile']],
-        on='GeoFIPS',
-        how='left'
+            self.outcome_with_percentiles[["GeoFIPS", "percentile"]],
+            on="GeoFIPS",
+            how="left",
         )
-        
+
         if self.outcome_percentile_range:
-            myself  = self.euclidean_kins.iloc[:1]
-            self.euclidean_kins = self.euclidean_kins[self.euclidean_kins['percentile'] >= self.outcome_percentile_range[0]]
-            self.euclidean_kins = self.euclidean_kins[self.euclidean_kins['percentile'] <= self.outcome_percentile_range[1]]
+            myself = self.euclidean_kins.iloc[:1]
+            self.euclidean_kins = self.euclidean_kins[
+                self.euclidean_kins["percentile"] >= self.outcome_percentile_range[0]
+            ]
+            self.euclidean_kins = self.euclidean_kins[
+                self.euclidean_kins["percentile"] <= self.outcome_percentile_range[1]
+            ]
             self.euclidean_kins = pd.concat([myself, self.euclidean_kins])
-        
-        
 
     def plot_weights(self):
         plot_weights(self)
@@ -347,7 +348,8 @@ class FipsQuery:
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-        up = my_plot_data["Year"].max()
+        #up = my_plot_data["Year"].max()
+        # possibly remove
 
         fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
