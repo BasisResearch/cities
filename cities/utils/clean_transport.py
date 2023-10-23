@@ -43,7 +43,7 @@ def clean_transport():
     transport = transport[transport["GeoFIPS"].isin(common_fips)]
 
     assert len(common_fips) == len(transport["GeoFIPS"].unique())
-    assert len(transport) > 2800, "The number of records is lower than 3000"
+    assert len(transport) > 2800, "The number of records is lower than 2800"
 
     # adding geoname column
     transport = transport.merge(gdp[["GeoFIPS", "GeoName"]], on="GeoFIPS", how="left")[
