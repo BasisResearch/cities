@@ -61,8 +61,12 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
 
 
 def generalized_euclidean_distance(u, v, weights):
-    result = sum(abs(weights) * ((weights >= 0) * abs(u-v) + (weights < 0) * (-abs(u-v) + 2))**2)**(1/2)
+    result = sum(
+        abs(weights)
+        * ((weights >= 0) * abs(u - v) + (weights < 0) * (-abs(u - v) + 2)) ** 2
+    ) ** (1 / 2)
     return result
+
 
 def divide_exponentially(group_weight, number_of_features, rate):
     """
@@ -70,7 +74,7 @@ def divide_exponentially(group_weight, number_of_features, rate):
     exponentially. Intended for time series feature groups.
     If `rate` is 1, all weights are equal. If `rate` is greater than 1, weights
     prefer more recent events.
-    """    
+    """
     result = []
     denominator = sum([rate**j for j in range(number_of_features)])
     for i in range(number_of_features):
@@ -78,43 +82,53 @@ def divide_exponentially(group_weight, number_of_features, rate):
         result.append(value)
     return result
 
-def compute_weight_array(query_object, rate=1.08):
-   
-    #max_other_scores = sum(query_object.weights.values())
 
-    max_other_scores =  sum(abs(value) for key, value in query_object.feature_groups_with_weights.items() if key != query_object.outcome_var) 
+def compute_weight_array(query_object, rate=1.08):
+    # max_other_scores = sum(query_object.weights.values())
+
+    max_other_scores = sum(
+        abs(value)
+        for key, value in query_object.feature_groups_with_weights.items()
+        if key != query_object.outcome_var
+    )
     weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
-    query_object.feature_groups_with_weights[query_object.outcome_var] = weight_outcome_joint * query_object.feature_groups_with_weights[query_object.outcome_var]
+    query_object.feature_groups_with_weights[query_object.outcome_var] = (
+        weight_outcome_joint
+        * query_object.feature_groups_with_weights[query_object.outcome_var]
+    )
 
     tensed_status = {}
     columns = {}
     column_counts = {}
-    #column_tags = [] #remove if tests passed
+    # column_tags = [] #remove if tests passed
     weight_lists = {}
     all_columns = []
     for feature in query_object.feature_groups:
         tensed_status[feature] = check_if_tensed(query_object.data.std_wide[feature])
-        
+
         columns[feature] = query_object.data.std_wide[feature].columns[2:]
-        
+
         column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
-        
+
         all_columns.extend(
             [
                 f"{column}_{feature}"
                 for column in query_object.data.std_wide[feature].columns[2:]
             ]
         )
-        
-        #TODO: remove if tests passed
-        #column_tags.extend([feature] * column_counts[feature])
+
+        # TODO: remove if tests passed
+        # column_tags.extend([feature] * column_counts[feature])
         if tensed_status[feature]:
             weight_lists[feature] = divide_exponentially(
-                query_object.feature_groups_with_weights[feature], column_counts[feature], rate
+                query_object.feature_groups_with_weights[feature],
+                column_counts[feature],
+                rate,
             )
         else:
             weight_lists[feature] = [
-                query_object.feature_groups_with_weights[feature] / column_counts[feature]
+                query_object.feature_groups_with_weights[feature]
+                / column_counts[feature]
             ] * column_counts[feature]
 
     query_object.all_columns = all_columns
@@ -122,7 +136,6 @@ def compute_weight_array(query_object, rate=1.08):
 
 
 def plot_weights(query_object):
-
     fig = go.Figure()
 
     fig.add_trace(go.Bar(x=query_object.all_columns, y=query_object.all_weights))
@@ -136,5 +149,3 @@ def plot_weights(query_object):
 
     query_object.weigth_plot = fig
     query_object.weigth_plot.show()
-
-

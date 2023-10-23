@@ -10,7 +10,7 @@ def test_fips_query_init():
     f1007 = FipsQuery(
         fips=1007,
         outcome_var="gdp",
-        feature_groups_with_weights={"gdp": 4, "population":4},
+        feature_groups_with_weights={"gdp": 4, "population": 4},
         lag=0,
         top=8,
     )
@@ -28,7 +28,7 @@ queries = [
     FipsQuery(
         1007,
         outcome_var="gdp",
-        feature_groups_with_weights= {"gdp": 4, "population": 4},
+        feature_groups_with_weights={"gdp": 4, "population": 4},
         lag=0,
         top=5,
         time_decay=1.03,
@@ -49,4 +49,3 @@ queries = [
 def test_euclidean_kins_dont_die(query):
     f = query
     f.find_euclidean_kins()
-    
