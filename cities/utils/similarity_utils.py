@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 from plotly import graph_objs as go
 
+from cities.utils.cleaning_utils import check_if_tensed
+
 
 def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarray]:
     """
@@ -58,56 +60,72 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
     }
 
 
+def generalized_euclidean_distance(u, v, weights):
+    result = sum(abs(weights) * ((weights >= 0) * abs(u-v) + (weights < 0) * (-abs(u-v) + 2))**2)**(1/2)
+    return result
+
+def divide_exponentially(group_weight, number_of_features, rate):
+    """
+    Returns a list of `number_of_features` weights that sum to `group_weight` and are distributed
+    exponentially. Intended for time series feature groups.
+    If `rate` is 1, all weights are equal. If `rate` is greater than 1, weights
+    prefer more recent events.
+    """    
+    result = []
+    denominator = sum([rate**j for j in range(number_of_features)])
+    for i in range(number_of_features):
+        value = group_weight * (rate**i) / denominator
+        result.append(value)
+    return result
+
 def compute_weight_array(query_object, rate=1.08):
-    def divide_exponentially(k, n, r):
-        result = []
-        denominator = sum([r**j for j in range(n)])
-        for i in range(n):
-            value = k * (r**i) / denominator
-            result.append(value)
-        return result
+   
+    #max_other_scores = sum(query_object.weights.values())
 
-    def check_if_tensed(df):
-        years_to_check = ["2015", "2018", "2019", "2020"]
-        check = df.columns[2:].isin(years_to_check).any().any()
-        return check
-
-    max_other_scores = sum(query_object.weights.values())
-
+    max_other_scores =  sum(abs(value) for key, value in query_object.feature_groups_with_weights.items() if key != query_object.outcome_var) 
     weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
-    query_object.weights[query_object.outcome_var] = weight_outcome_joint
+    query_object.feature_groups_with_weights[query_object.outcome_var] = weight_outcome_joint * query_object.feature_groups_with_weights[query_object.outcome_var]
 
     tensed_status = {}
     columns = {}
     column_counts = {}
-    column_tags = []
+    #column_tags = [] #remove if tests passed
     weight_lists = {}
     all_columns = []
-    for feature in query_object.all_features:
+    for feature in query_object.feature_groups:
         tensed_status[feature] = check_if_tensed(query_object.data.std_wide[feature])
+        
         columns[feature] = query_object.data.std_wide[feature].columns[2:]
+        
         column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
+        
         all_columns.extend(
             [
                 f"{column}_{feature}"
                 for column in query_object.data.std_wide[feature].columns[2:]
             ]
         )
-        column_tags.extend([feature] * column_counts[feature])
+        
+        #TODO: remove if tests passed
+        #column_tags.extend([feature] * column_counts[feature])
         if tensed_status[feature]:
             weight_lists[feature] = divide_exponentially(
-                query_object.weights[feature], column_counts[feature], rate
+                query_object.feature_groups_with_weights[feature], column_counts[feature], rate
             )
         else:
             weight_lists[feature] = [
-                query_object.weights[feature] / column_counts[feature]
+                query_object.feature_groups_with_weights[feature] / column_counts[feature]
             ] * column_counts[feature]
 
-    all_weights = np.concatenate(list(weight_lists.values()))
+    query_object.all_columns = all_columns
+    query_object.all_weights = np.concatenate(list(weight_lists.values()))
+
+
+def plot_weights(query_object):
 
     fig = go.Figure()
 
-    fig.add_trace(go.Bar(x=all_columns, y=all_weights))
+    fig.add_trace(go.Bar(x=query_object.all_columns, y=query_object.all_weights))
 
     fig.update_layout(
         xaxis_title="columns",
@@ -117,6 +135,6 @@ def compute_weight_array(query_object, rate=1.08):
     )
 
     query_object.weigth_plot = fig
-    query_object.all_weights = all_weights
+    query_object.weigth_plot.show()
 
-    return np.array(all_weights)
+

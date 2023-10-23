@@ -58,3 +58,9 @@ def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
             new_data[column] = scaled_values.reshape(-1)
 
     return new_data
+
+
+def check_if_tensed(df):
+    years_to_check = ["2015", "2018", "2019", "2020"]
+    check = df.columns[2:].isin(years_to_check).any().any()
+    return check

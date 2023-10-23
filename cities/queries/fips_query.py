@@ -1,10 +1,12 @@
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
-from scipy.spatial import distance
+#from scipy.spatial import distance
+
 
 from cities.utils.data_grabber import DataGrabber
-from cities.utils.similarity_utils import compute_weight_array, slice_with_lag
+from cities.utils.similarity_utils import (compute_weight_array, slice_with_lag,
+                                           plot_weights, generalized_euclidean_distance)
 
 
 class FipsQuery:
@@ -12,23 +14,28 @@ class FipsQuery:
         self,
         fips,
         outcome_var="gdp",
-        feature_groups=[],
-        weights={},
+        feature_groups_with_weights=None,
         lag=0,
         top=5,
         time_decay=1.08,
     ):
+        
+        if feature_groups_with_weights is None:
+            feature_groups_with_weights = {outcome_var: 4}
+
         assert outcome_var in [
             "gdp",
             "population",
         ], "outcome_var must be one of ['gdp', 'population']"
-        assert (
-            outcome_var not in feature_groups
-        ), "Outcome_var cannot be at the same time in background variables!"
-        # assert feature_groups == list(weights.keys()), "feature_groups and weights must correspond!."
-
-        # TODO_Nikodem fix the above assertion to be useful
-
+        #TODO_Nikodem update once variable added
+        
+        feature_groups = list(feature_groups_with_weights.keys())
+        
+        assert all( isinstance(value, int) and -4 <= value <= 4 for value in feature_groups_with_weights.values())
+    
+     
+        self.feature_groups_with_weights = feature_groups_with_weights
+        self.feature_groups = feature_groups
         self.data = DataGrabber()
         self.repo_root = self.data.repo_root
         self.fips = fips
@@ -37,26 +44,15 @@ class FipsQuery:
         self.outcome_var = outcome_var
         self.time_decay = time_decay
 
-        if len(feature_groups) > 0:
-            assert len(weights) == len(
-                feature_groups
-            ), "feature_groups and weights must correspond!"
-        self.feature_groups = feature_groups
-        self.weights = weights
+        if 'gdp' not in self.feature_groups:
+            self.all_features =  ['gdp'] + feature_groups
+        else:
+            self.all_features = feature_groups
+    
+        self.data.get_features_std_wide(self.all_features)
+        self.data.get_features_wide(self.all_features)
 
-        self.all_features = [outcome_var] + feature_groups
-        all_features_with_gdp = self.all_features
-        if "gdp" not in self.all_features:
-            all_features_with_gdp.append("gdp")
-
-        # we want the gdp added to be the source of truth for indexing
-        # but we will use all_features in weighting
-        # where we might not have gdp
-
-        self.data.get_features_std_wide(all_features_with_gdp)
-        self.data.get_features_wide(all_features_with_gdp)
-
-        # TODO_Nikodem: here you need to implement testing if the features are a time series, and
+     
         # TODO_Nikodem: dropping columns that are excluded by `how_far_back`
 
         assert (
@@ -76,7 +72,6 @@ class FipsQuery:
         ), "top must be a positive integer smaller than the number of locations in the dataset"
 
     def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
-        # TODO_Nikodem add a test for this function
 
         # TODO add shading by population and warning about
         # locations with low population
@@ -164,71 +159,74 @@ class FipsQuery:
             self.data.wide[self.outcome_var]["GeoFIPS"] != self.fips
         ].copy()
 
+     
         # add data on other features listed to the arrays
         # prior to distance computation
         my_features_arrays = np.array([])
         others_features_arrays = np.array([])
         for feature in self.feature_groups:
-            _extracted_df = self.data.wide[feature].copy()
-            _extracted_my_df = _extracted_df[_extracted_df["GeoFIPS"] == self.fips]
-            _extracted_other_df = _extracted_df[_extracted_df["GeoFIPS"] != self.fips]
+            if feature != self.outcome_var:
+                _extracted_df = self.data.wide[feature].copy()
+                _extracted_my_df = _extracted_df[_extracted_df["GeoFIPS"] == self.fips]
+                _extracted_other_df = _extracted_df[_extracted_df["GeoFIPS"] != self.fips]
 
-            before_shape = self.other_df.shape
+                before_shape = self.other_df.shape
 
-            assert (
-                self.other_df["GeoFIPS"].unique()
-                == _extracted_other_df["GeoFIPS"].unique()
-            ).all(), "FIPS are missing"
+                assert (
+                    self.other_df["GeoFIPS"].unique()
+                    == _extracted_other_df["GeoFIPS"].unique()
+                ).all(), "FIPS are missing"
 
-            assert (
-                self.other_df["GeoFIPS"] == _extracted_other_df["GeoFIPS"]
-            ).all(), "FIPS are misaligned"
+                assert (
+                    self.other_df["GeoFIPS"] == _extracted_other_df["GeoFIPS"]
+                ).all(), "FIPS are misaligned"
 
-            _extracted_other_df.columns = [
-                f"{col}_{feature}" if col not in ["GeoFIPS", "GeoName"] else col
-                for col in _extracted_other_df.columns
-            ]
+                _extracted_other_df.columns = [
+                    f"{col}_{feature}" if col not in ["GeoFIPS", "GeoName"] else col
+                    for col in _extracted_other_df.columns
+                ]
 
-            _extracted_my_df.columns = [
-                f"{col}_{feature}" if col not in ["GeoFIPS", "GeoName"] else col
-                for col in _extracted_my_df.columns
-            ]
+                _extracted_my_df.columns = [
+                    f"{col}_{feature}" if col not in ["GeoFIPS", "GeoName"] else col
+                    for col in _extracted_my_df.columns
+                ]
 
-            self.my_df = pd.concat((self.my_df, _extracted_my_df.iloc[:, 2:]), axis=1)
-            self.other_df = pd.concat(
-                (self.other_df, _extracted_other_df.iloc[:, 2:]), axis=1
-            )
-
-            after_shape = self.other_df.shape
-
-            assert before_shape[0] == after_shape[0], "Feature merging went wrong!"
-
-            _extracted_df_std = self.data.std_wide[feature].copy()
-            _extracted_other_array = np.array(
-                _extracted_df_std[_extracted_df_std["GeoFIPS"] != self.fips].iloc[:, 2:]
-            )
-            _extracted_my_array = np.array(
-                _extracted_df_std[_extracted_df_std["GeoFIPS"] == self.fips].iloc[:, 2:]
-            )
-
-            if my_features_arrays.size == 0:
-                my_features_arrays = _extracted_my_array
-            else:
-                my_features_arrays = np.hstack(
-                    (my_features_arrays, _extracted_my_array)
+                self.my_df = pd.concat((self.my_df, _extracted_my_df.iloc[:, 2:]), axis=1)
+                self.other_df = pd.concat(
+                    (self.other_df, _extracted_other_df.iloc[:, 2:]), axis=1
                 )
 
-            if others_features_arrays.size == 0:
-                others_features_arrays = _extracted_other_array
-            else:
-                others_features_arrays = np.hstack(
-                    (others_features_arrays, _extracted_other_array)
+                after_shape = self.other_df.shape
+
+                assert before_shape[0] == after_shape[0], "Feature merging went wrong!"
+
+                _extracted_df_std = self.data.std_wide[feature].copy()
+                _extracted_other_array = np.array(
+                    _extracted_df_std[_extracted_df_std["GeoFIPS"] != self.fips].iloc[:, 2:]
+                )
+                _extracted_my_array = np.array(
+                    _extracted_df_std[_extracted_df_std["GeoFIPS"] == self.fips].iloc[:, 2:]
                 )
 
-        if self.feature_groups:
+                if my_features_arrays.size == 0:
+                    my_features_arrays = _extracted_my_array
+                else:
+                    my_features_arrays = np.hstack(
+                        (my_features_arrays, _extracted_my_array)
+                    )
+
+                if others_features_arrays.size == 0:
+                    others_features_arrays = _extracted_other_array
+                else:
+                    others_features_arrays = np.hstack(
+                        (others_features_arrays, _extracted_other_array)
+                    )
+
+        if len(self.feature_groups)>1:
             self.my_array = np.hstack((self.my_array, my_features_arrays))
             self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
 
+        
         compute_weight_array(self, self.time_decay)
 
         diff = self.all_weights.shape[0] - self.other_arrays.shape[1]
@@ -238,13 +236,19 @@ class FipsQuery:
             self.other_arrays.shape[1] == self.all_weights.shape[0]
         ), "Weights and arrays are misaligned"
 
+        
         distances = []
         for vector in self.other_arrays:
             distances.append(
-                distance.euclidean(
-                    np.squeeze(self.my_array), vector, w=self.all_weights
+                generalized_euclidean_distance(
+                    np.squeeze(self.my_array), vector, self.all_weights
                 )
             )
+            # distances.append(
+            #     distance.euclidean(
+            #         np.squeeze(self.my_array), vector, w=self.all_weights
+            #     )
+            # )
 
         count = sum([1 for distance in distances if distance == 0])
 
@@ -265,6 +269,11 @@ class FipsQuery:
         self.my_df[f"distance to {self.fips}"] = 0
 
         self.euclidean_kins = pd.concat((self.my_df, self.other_df), axis=0)
+        
+        
+    def plot_weights(self):
+        plot_weights(self)
+        
 
     def plot_kins(self):
         self.data.get_features_long([self.outcome_var])
@@ -341,8 +350,8 @@ class FipsQuery:
         lag = self.lag
         title_1 = (
             title
-        ) = f"Top {self.top} locations with most similar patterns up to {up}"
-        title_2 = f"Top {self.top} locations with most similar patterns up to {up} (lag of {self.lag} years)"
+        ) = f"Top {self.top} locations matching your search"
+        title_2 = f"Top {self.top} locations matching your search (lag of {self.lag} years)"
 
         if not self.feature_groups:
             if self.lag == 0:
@@ -351,9 +360,9 @@ class FipsQuery:
                 title = title_2
         else:
             if self.lag == 0:
-                title = f"Top {top} locations with most similar patterns up to {up}"
+                title = f"Top {top} locations matching your search"
             else:
-                title = f"Top {top} locations with most similar patterns up to {up} (lag of {lag} years)"
+                title = f"Top {top} locations matching your search (lag of {lag} years)"
 
         # TODO will need to mention how_far_back if we implement it  \
         # TODO adding info about feature cluster weights at the bottom of the plot

@@ -10,14 +10,13 @@ def test_fips_query_init():
     f1007 = FipsQuery(
         fips=1007,
         outcome_var="gdp",
-        feature_groups=["population"],
-        weights={"population": 4},
+        feature_groups_with_weights={"gdp": 4, "population":4},
         lag=0,
         top=8,
     )
 
     assert f1007.outcome_var == "gdp"
-    assert f1007.feature_groups == ["population"]
+    assert f1007.feature_groups == ["gdp", "population"]
     assert list(f1007.data.std_wide.keys()) == ["gdp", "population"]
 
     assert f1007.data.std_wide["gdp"].shape[0] > 100
@@ -29,8 +28,7 @@ queries = [
     FipsQuery(
         1007,
         outcome_var="gdp",
-        feature_groups=["population"],
-        weights={"population": 4},
+        feature_groups_with_weights= {"gdp": 4, "population": 4},
         lag=0,
         top=5,
         time_decay=1.03,
@@ -39,8 +37,7 @@ queries = [
     FipsQuery(
         20003,
         outcome_var="gdp",
-        feature_groups=["population"],
-        weights={"population": 4},
+        feature_groups_with_weights={"gdp": 4, "population": 4},
         lag=2,
         top=5,
         time_decay=1.03,
@@ -52,4 +49,4 @@ queries = [
 def test_euclidean_kins_dont_die(query):
     f = query
     f.find_euclidean_kins()
-    assert f.weigth_plot is not None
+    
