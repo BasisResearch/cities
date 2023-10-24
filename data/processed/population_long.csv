@@ -541,7 +541,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",1993,135085.0
 15003,"Honolulu, HI",1993,870348.0
 15007,"Kauai, HI",1993,55461.0
-15901,"Maui + Kalawao, HI*",1993,111944.0
 16001,"Ada, ID",1993,236477.0
 16003,"Adams, ID",1993,3583.0
 16005,"Bannock, ID",1993,70770.0
@@ -2893,29 +2892,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",1993,98048.0
 51800,"Suffolk (Independent City), VA",1993,53267.0
 51810,"Virginia Beach (Independent City), VA",1993,419718.0
-51901,"Albemarle + Charlottesville, VA*",1993,113555.0
-51903,"Alleghany + Covington, VA*",1993,24616.0
-51907,"Augusta, Staunton + Waynesboro, VA*",1993,101163.0
-51911,"Campbell + Lynchburg, VA*",1993,115496.0
-51913,"Carroll + Galax, VA*",1993,34404.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",1993,76578.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",1993,896359.0
-51921,"Frederick + Winchester, VA*",1993,72657.0
-51923,"Greensville + Emporia, VA*",1993,16909.0
-51929,"Henry + Martinsville, VA*",1993,73687.0
-51931,"James City + Williamsburg, VA*",1993,50328.0
-51933,"Montgomery + Radford, VA*",1993,92701.0
-51939,"Pittsylvania + Danville, VA*",1993,110008.0
-51941,"Prince George + Hopewell, VA*",1993,52303.0
-51942,"Prince William, Manassas + Manassas Park, VA*",1993,272542.0
-51944,"Roanoke + Salem, VA*",1993,105548.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",1993,32577.0
-51947,"Rockingham + Harrisonburg, VA*",1993,95333.0
-51949,"Southampton + Franklin, VA*",1993,25696.0
-51951,"Spotsylvania + Fredericksburg, VA*",1993,87364.0
-51953,"Washington + Bristol, VA*",1993,66155.0
-51955,"Wise + Norton, VA*",1993,43883.0
-51958,"York + Poquoson, VA*",1993,60642.0
 53001,"Adams, WA",1993,14932.0
 53003,"Asotin, WA",1993,18860.0
 53005,"Benton, WA",1993,125195.0
@@ -3647,7 +3623,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",1994,137713.0
 15003,"Honolulu, HI",1994,878591.0
 15007,"Kauai, HI",1994,56478.0
-15901,"Maui + Kalawao, HI*",1994,114754.0
 16001,"Ada, ID",1994,247225.0
 16003,"Adams, ID",1994,3692.0
 16005,"Bannock, ID",1994,72468.0
@@ -5999,29 +5974,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",1994,97959.0
 51800,"Suffolk (Independent City), VA",1994,53834.0
 51810,"Virginia Beach (Independent City), VA",1994,421257.0
-51901,"Albemarle + Charlottesville, VA*",1994,115190.0
-51903,"Alleghany + Covington, VA*",1994,24338.0
-51907,"Augusta, Staunton + Waynesboro, VA*",1994,102263.0
-51911,"Campbell + Lynchburg, VA*",1994,116069.0
-51913,"Carroll + Galax, VA*",1994,34715.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",1994,76642.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",1994,909686.0
-51921,"Frederick + Winchester, VA*",1994,74541.0
-51923,"Greensville + Emporia, VA*",1994,16823.0
-51929,"Henry + Martinsville, VA*",1994,73841.0
-51931,"James City + Williamsburg, VA*",1994,51645.0
-51933,"Montgomery + Radford, VA*",1994,94105.0
-51939,"Pittsylvania + Danville, VA*",1994,110750.0
-51941,"Prince George + Hopewell, VA*",1994,52525.0
-51942,"Prince William, Manassas + Manassas Park, VA*",1994,278786.0
-51944,"Roanoke + Salem, VA*",1994,106844.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",1994,32759.0
-51947,"Rockingham + Harrisonburg, VA*",1994,97631.0
-51949,"Southampton + Franklin, VA*",1994,25713.0
-51951,"Spotsylvania + Fredericksburg, VA*",1994,90962.0
-51953,"Washington + Bristol, VA*",1994,66329.0
-51955,"Wise + Norton, VA*",1994,43782.0
-51958,"York + Poquoson, VA*",1994,62515.0
 53001,"Adams, WA",1994,15646.0
 53003,"Asotin, WA",1994,19454.0
 53005,"Benton, WA",1994,130703.0
@@ -6753,7 +6705,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",1995,140492.0
 15003,"Honolulu, HI",1995,881399.0
 15007,"Kauai, HI",1995,57068.0
-15901,"Maui + Kalawao, HI*",1995,117895.0
 16001,"Ada, ID",1995,256860.0
 16003,"Adams, ID",1995,3676.0
 16005,"Bannock, ID",1995,73603.0
@@ -9105,29 +9056,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",1995,97604.0
 51800,"Suffolk (Independent City), VA",1995,55358.0
 51810,"Virginia Beach (Independent City), VA",1995,421893.0
-51901,"Albemarle + Charlottesville, VA*",1995,116709.0
-51903,"Alleghany + Covington, VA*",1995,24206.0
-51907,"Augusta, Staunton + Waynesboro, VA*",1995,103697.0
-51911,"Campbell + Lynchburg, VA*",1995,115588.0
-51913,"Carroll + Galax, VA*",1995,35119.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",1995,76431.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",1995,921869.0
-51921,"Frederick + Winchester, VA*",1995,76090.0
-51923,"Greensville + Emporia, VA*",1995,16992.0
-51929,"Henry + Martinsville, VA*",1995,74023.0
-51931,"James City + Williamsburg, VA*",1995,53281.0
-51933,"Montgomery + Radford, VA*",1995,94593.0
-51939,"Pittsylvania + Danville, VA*",1995,110797.0
-51941,"Prince George + Hopewell, VA*",1995,52762.0
-51942,"Prince William, Manassas + Manassas Park, VA*",1995,284163.0
-51944,"Roanoke + Salem, VA*",1995,107117.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",1995,32859.0
-51947,"Rockingham + Harrisonburg, VA*",1995,100011.0
-51949,"Southampton + Franklin, VA*",1995,26261.0
-51951,"Spotsylvania + Fredericksburg, VA*",1995,94529.0
-51953,"Washington + Bristol, VA*",1995,67111.0
-51955,"Wise + Norton, VA*",1995,43940.0
-51958,"York + Poquoson, VA*",1995,63901.0
 53001,"Adams, WA",1995,15711.0
 53003,"Asotin, WA",1995,19894.0
 53005,"Benton, WA",1995,134740.0
@@ -9859,7 +9787,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",1996,141935.0
 15003,"Honolulu, HI",1996,883443.0
 15007,"Kauai, HI",1996,57688.0
-15901,"Maui + Kalawao, HI*",1996,120689.0
 16001,"Ada, ID",1996,266290.0
 16003,"Adams, ID",1996,3693.0
 16005,"Bannock, ID",1996,74026.0
@@ -12211,29 +12138,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",1996,97230.0
 51800,"Suffolk (Independent City), VA",1996,57310.0
 51810,"Virginia Beach (Independent City), VA",1996,421044.0
-51901,"Albemarle + Charlottesville, VA*",1996,118316.0
-51903,"Alleghany + Covington, VA*",1996,24048.0
-51907,"Augusta, Staunton + Waynesboro, VA*",1996,104994.0
-51911,"Campbell + Lynchburg, VA*",1996,115690.0
-51913,"Carroll + Galax, VA*",1996,35423.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",1996,76155.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",1996,937734.0
-51921,"Frederick + Winchester, VA*",1996,77498.0
-51923,"Greensville + Emporia, VA*",1996,17231.0
-51929,"Henry + Martinsville, VA*",1996,73819.0
-51931,"James City + Williamsburg, VA*",1996,54665.0
-51933,"Montgomery + Radford, VA*",1996,95036.0
-51939,"Pittsylvania + Danville, VA*",1996,110779.0
-51941,"Prince George + Hopewell, VA*",1996,53016.0
-51942,"Prince William, Manassas + Manassas Park, VA*",1996,293082.0
-51944,"Roanoke + Salem, VA*",1996,108122.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",1996,32928.0
-51947,"Rockingham + Harrisonburg, VA*",1996,102652.0
-51949,"Southampton + Franklin, VA*",1996,26741.0
-51951,"Spotsylvania + Fredericksburg, VA*",1996,98111.0
-51953,"Washington + Bristol, VA*",1996,67475.0
-51955,"Wise + Norton, VA*",1996,43644.0
-51958,"York + Poquoson, VA*",1996,65084.0
 53001,"Adams, WA",1996,15860.0
 53003,"Asotin, WA",1996,20280.0
 53005,"Benton, WA",1996,135833.0
@@ -12965,7 +12869,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",1997,144445.0
 15003,"Honolulu, HI",1997,886711.0
 15007,"Kauai, HI",1997,57712.0
-15901,"Maui + Kalawao, HI*",1997,122772.0
 16001,"Ada, ID",1997,274325.0
 16003,"Adams, ID",1997,3572.0
 16005,"Bannock, ID",1997,74635.0
@@ -15317,29 +15220,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",1997,96953.0
 51800,"Suffolk (Independent City), VA",1997,59345.0
 51810,"Virginia Beach (Independent City), VA",1997,421938.0
-51901,"Albemarle + Charlottesville, VA*",1997,119866.0
-51903,"Alleghany + Covington, VA*",1997,23903.0
-51907,"Augusta, Staunton + Waynesboro, VA*",1997,105988.0
-51911,"Campbell + Lynchburg, VA*",1997,116827.0
-51913,"Carroll + Galax, VA*",1997,35654.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",1997,75900.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",1997,954976.0
-51921,"Frederick + Winchester, VA*",1997,78892.0
-51923,"Greensville + Emporia, VA*",1997,17185.0
-51929,"Henry + Martinsville, VA*",1997,73923.0
-51931,"James City + Williamsburg, VA*",1997,55891.0
-51933,"Montgomery + Radford, VA*",1997,95833.0
-51939,"Pittsylvania + Danville, VA*",1997,110698.0
-51941,"Prince George + Hopewell, VA*",1997,53111.0
-51942,"Prince William, Manassas + Manassas Park, VA*",1997,298916.0
-51944,"Roanoke + Salem, VA*",1997,108656.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",1997,33523.0
-51947,"Rockingham + Harrisonburg, VA*",1997,104218.0
-51949,"Southampton + Franklin, VA*",1997,26880.0
-51951,"Spotsylvania + Fredericksburg, VA*",1997,101767.0
-51953,"Washington + Bristol, VA*",1997,67593.0
-51955,"Wise + Norton, VA*",1997,43271.0
-51958,"York + Poquoson, VA*",1997,65817.0
 53001,"Adams, WA",1997,16042.0
 53003,"Asotin, WA",1997,20499.0
 53005,"Benton, WA",1997,137376.0
@@ -16071,7 +15951,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",1998,145833.0
 15003,"Honolulu, HI",1998,886909.0
 15007,"Kauai, HI",1998,57843.0
-15901,"Maui + Kalawao, HI*",1998,124648.0
 16001,"Ada, ID",1998,284946.0
 16003,"Adams, ID",1998,3531.0
 16005,"Bannock, ID",1998,74864.0
@@ -18423,29 +18302,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",1998,95964.0
 51800,"Suffolk (Independent City), VA",1998,60595.0
 51810,"Virginia Beach (Independent City), VA",1998,420351.0
-51901,"Albemarle + Charlottesville, VA*",1998,121329.0
-51903,"Alleghany + Covington, VA*",1998,23709.0
-51907,"Augusta, Staunton + Waynesboro, VA*",1998,106879.0
-51911,"Campbell + Lynchburg, VA*",1998,116247.0
-51913,"Carroll + Galax, VA*",1998,35718.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",1998,75990.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",1998,968213.0
-51921,"Frederick + Winchester, VA*",1998,80360.0
-51923,"Greensville + Emporia, VA*",1998,16950.0
-51929,"Henry + Martinsville, VA*",1998,73638.0
-51931,"James City + Williamsburg, VA*",1998,57414.0
-51933,"Montgomery + Radford, VA*",1998,97764.0
-51939,"Pittsylvania + Danville, VA*",1998,110487.0
-51941,"Prince George + Hopewell, VA*",1998,54021.0
-51942,"Prince William, Manassas + Manassas Park, VA*",1998,307105.0
-51944,"Roanoke + Salem, VA*",1998,109460.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",1998,33800.0
-51947,"Rockingham + Harrisonburg, VA*",1998,105512.0
-51949,"Southampton + Franklin, VA*",1998,26424.0
-51951,"Spotsylvania + Fredericksburg, VA*",1998,103155.0
-51953,"Washington + Bristol, VA*",1998,68084.0
-51955,"Wise + Norton, VA*",1998,43187.0
-51958,"York + Poquoson, VA*",1998,66430.0
 53001,"Adams, WA",1998,16194.0
 53003,"Asotin, WA",1998,20721.0
 53005,"Benton, WA",1998,138628.0
@@ -19177,7 +19033,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",1999,146970.0
 15003,"Honolulu, HI",1999,878906.0
 15007,"Kauai, HI",1999,58264.0
-15901,"Maui + Kalawao, HI*",1999,126160.0
 16001,"Ada, ID",1999,294292.0
 16003,"Adams, ID",1999,3517.0
 16005,"Bannock, ID",1999,75527.0
@@ -21529,29 +21384,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",1999,95431.0
 51800,"Suffolk (Independent City), VA",1999,62393.0
 51810,"Virginia Beach (Independent City), VA",1999,422369.0
-51901,"Albemarle + Charlottesville, VA*",1999,122911.0
-51903,"Alleghany + Covington, VA*",1999,23601.0
-51907,"Augusta, Staunton + Waynesboro, VA*",1999,108150.0
-51911,"Campbell + Lynchburg, VA*",1999,116218.0
-51913,"Carroll + Galax, VA*",1999,35735.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",1999,75455.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",1999,987296.0
-51921,"Frederick + Winchester, VA*",1999,81533.0
-51923,"Greensville + Emporia, VA*",1999,17233.0
-51929,"Henry + Martinsville, VA*",1999,73502.0
-51931,"James City + Williamsburg, VA*",1999,58928.0
-51933,"Montgomery + Radford, VA*",1999,99088.0
-51939,"Pittsylvania + Danville, VA*",1999,110305.0
-51941,"Prince George + Hopewell, VA*",1999,54765.0
-51942,"Prince William, Manassas + Manassas Park, VA*",1999,317240.0
-51944,"Roanoke + Salem, VA*",1999,109882.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",1999,33937.0
-51947,"Rockingham + Harrisonburg, VA*",1999,107311.0
-51949,"Southampton + Franklin, VA*",1999,26037.0
-51951,"Spotsylvania + Fredericksburg, VA*",1999,106667.0
-51953,"Washington + Bristol, VA*",1999,68357.0
-51955,"Wise + Norton, VA*",1999,44103.0
-51958,"York + Poquoson, VA*",1999,67117.0
 53001,"Adams, WA",1999,16239.0
 53003,"Asotin, WA",1999,20560.0
 53005,"Benton, WA",1999,140629.0
@@ -22283,7 +22115,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2000,149244.0
 15003,"Honolulu, HI",2000,876629.0
 15007,"Kauai, HI",2000,58568.0
-15901,"Maui + Kalawao, HI*",2000,129078.0
 16001,"Ada, ID",2000,303328.0
 16003,"Adams, ID",2000,3477.0
 16005,"Bannock, ID",2000,75728.0
@@ -24635,29 +24466,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2000,94941.0
 51800,"Suffolk (Independent City), VA",2000,64216.0
 51810,"Virginia Beach (Independent City), VA",2000,426918.0
-51901,"Albemarle + Charlottesville, VA*",2000,124883.0
-51903,"Alleghany + Covington, VA*",2000,23494.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2000,109129.0
-51911,"Campbell + Lynchburg, VA*",2000,116412.0
-51913,"Carroll + Galax, VA*",2000,36185.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2000,75140.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2000,1007517.0
-51921,"Frederick + Winchester, VA*",2000,83338.0
-51923,"Greensville + Emporia, VA*",2000,17221.0
-51929,"Henry + Martinsville, VA*",2000,73234.0
-51931,"James City + Williamsburg, VA*",2000,60548.0
-51933,"Montgomery + Radford, VA*",2000,99671.0
-51939,"Pittsylvania + Danville, VA*",2000,109939.0
-51941,"Prince George + Hopewell, VA*",2000,55377.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2000,329784.0
-51944,"Roanoke + Salem, VA*",2000,110491.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2000,34041.0
-51947,"Rockingham + Harrisonburg, VA*",2000,108414.0
-51949,"Southampton + Franklin, VA*",2000,25762.0
-51951,"Spotsylvania + Fredericksburg, VA*",2000,110848.0
-51953,"Washington + Bristol, VA*",2000,68519.0
-51955,"Wise + Norton, VA*",2000,45993.0
-51958,"York + Poquoson, VA*",2000,68701.0
 53001,"Adams, WA",2000,16458.0
 53003,"Asotin, WA",2000,20546.0
 53005,"Benton, WA",2000,143131.0
@@ -25389,7 +25197,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2001,151690.0
 15003,"Honolulu, HI",2001,882755.0
 15007,"Kauai, HI",2001,59075.0
-15901,"Maui + Kalawao, HI*",2001,132428.0
 16001,"Ada, ID",2001,313896.0
 16003,"Adams, ID",2001,3495.0
 16005,"Bannock, ID",2001,76296.0
@@ -27741,29 +27548,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2001,94931.0
 51800,"Suffolk (Independent City), VA",2001,66448.0
 51810,"Virginia Beach (Independent City), VA",2001,428396.0
-51901,"Albemarle + Charlottesville, VA*",2001,126438.0
-51903,"Alleghany + Covington, VA*",2001,23401.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2001,109602.0
-51911,"Campbell + Lynchburg, VA*",2001,116352.0
-51913,"Carroll + Galax, VA*",2001,36223.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2001,74851.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2001,1023782.0
-51921,"Frederick + Winchester, VA*",2001,85584.0
-51923,"Greensville + Emporia, VA*",2001,17223.0
-51929,"Henry + Martinsville, VA*",2001,72566.0
-51931,"James City + Williamsburg, VA*",2001,61810.0
-51933,"Montgomery + Radford, VA*",2001,101429.0
-51939,"Pittsylvania + Danville, VA*",2001,109452.0
-51941,"Prince George + Hopewell, VA*",2001,55733.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2001,344961.0
-51944,"Roanoke + Salem, VA*",2001,110428.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2001,34186.0
-51947,"Rockingham + Harrisonburg, VA*",2001,110317.0
-51949,"Southampton + Franklin, VA*",2001,25649.0
-51951,"Spotsylvania + Fredericksburg, VA*",2001,116387.0
-51953,"Washington + Bristol, VA*",2001,68771.0
-51955,"Wise + Norton, VA*",2001,45706.0
-51958,"York + Poquoson, VA*",2001,70174.0
 53001,"Adams, WA",2001,16259.0
 53003,"Asotin, WA",2001,20447.0
 53005,"Benton, WA",2001,145909.0
@@ -28495,7 +28279,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2002,154576.0
 15003,"Honolulu, HI",2002,890473.0
 15007,"Kauai, HI",2002,59981.0
-15901,"Maui + Kalawao, HI*",2002,134583.0
 16001,"Ada, ID",2002,321616.0
 16003,"Adams, ID",2002,3559.0
 16005,"Bannock, ID",2002,76487.0
@@ -30847,29 +30630,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2002,93956.0
 51800,"Suffolk (Independent City), VA",2002,69274.0
 51810,"Virginia Beach (Independent City), VA",2002,430183.0
-51901,"Albemarle + Charlottesville, VA*",2002,127599.0
-51903,"Alleghany + Covington, VA*",2002,23236.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2002,110436.0
-51911,"Campbell + Lynchburg, VA*",2002,116948.0
-51913,"Carroll + Galax, VA*",2002,36153.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2002,74867.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2002,1030816.0
-51921,"Frederick + Winchester, VA*",2002,87915.0
-51923,"Greensville + Emporia, VA*",2002,17375.0
-51929,"Henry + Martinsville, VA*",2002,71853.0
-51931,"James City + Williamsburg, VA*",2002,63551.0
-51933,"Montgomery + Radford, VA*",2002,101709.0
-51939,"Pittsylvania + Danville, VA*",2002,108904.0
-51941,"Prince George + Hopewell, VA*",2002,56549.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2002,358777.0
-51944,"Roanoke + Salem, VA*",2002,111123.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2002,34243.0
-51947,"Rockingham + Harrisonburg, VA*",2002,112152.0
-51949,"Southampton + Franklin, VA*",2002,25397.0
-51951,"Spotsylvania + Fredericksburg, VA*",2002,122303.0
-51953,"Washington + Bristol, VA*",2002,68757.0
-51955,"Wise + Norton, VA*",2002,45596.0
-51958,"York + Poquoson, VA*",2002,71823.0
 53001,"Adams, WA",2002,16445.0
 53003,"Asotin, WA",2002,20490.0
 53005,"Benton, WA",2002,150323.0
@@ -31601,7 +31361,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2003,158442.0
 15003,"Honolulu, HI",2003,894311.0
 15007,"Kauai, HI",2003,60805.0
-15901,"Maui + Kalawao, HI*",2003,137596.0
 16001,"Ada, ID",2003,327393.0
 16003,"Adams, ID",2003,3624.0
 16005,"Bannock, ID",2003,76312.0
@@ -33953,29 +33712,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2003,93716.0
 51800,"Suffolk (Independent City), VA",2003,72721.0
 51810,"Virginia Beach (Independent City), VA",2003,431600.0
-51901,"Albemarle + Charlottesville, VA*",2003,128315.0
-51903,"Alleghany + Covington, VA*",2003,22917.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2003,111549.0
-51911,"Campbell + Lynchburg, VA*",2003,118381.0
-51913,"Carroll + Galax, VA*",2003,36216.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2003,75116.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2003,1035184.0
-51921,"Frederick + Winchester, VA*",2003,90028.0
-51923,"Greensville + Emporia, VA*",2003,17569.0
-51929,"Henry + Martinsville, VA*",2003,71302.0
-51931,"James City + Williamsburg, VA*",2003,65530.0
-51933,"Montgomery + Radford, VA*",2003,102399.0
-51939,"Pittsylvania + Danville, VA*",2003,108622.0
-51941,"Prince George + Hopewell, VA*",2003,56391.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2003,370987.0
-51944,"Roanoke + Salem, VA*",2003,111803.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2003,34494.0
-51947,"Rockingham + Harrisonburg, VA*",2003,113151.0
-51949,"Southampton + Franklin, VA*",2003,25522.0
-51951,"Spotsylvania + Fredericksburg, VA*",2003,127184.0
-51953,"Washington + Bristol, VA*",2003,69373.0
-51955,"Wise + Norton, VA*",2003,45584.0
-51958,"York + Poquoson, VA*",2003,72417.0
 53001,"Adams, WA",2003,16612.0
 53003,"Asotin, WA",2003,20487.0
 53005,"Benton, WA",2003,153596.0
@@ -34707,7 +34443,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2004,162852.0
 15003,"Honolulu, HI",2004,907997.0
 15007,"Kauai, HI",2004,62095.0
-15901,"Maui + Kalawao, HI*",2004,140625.0
 16001,"Ada, ID",2004,334926.0
 16003,"Adams, ID",2004,3693.0
 16005,"Bannock, ID",2004,76834.0
@@ -37059,29 +36794,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2004,93614.0
 51800,"Suffolk (Independent City), VA",2004,75725.0
 51810,"Virginia Beach (Independent City), VA",2004,437494.0
-51901,"Albemarle + Charlottesville, VA*",2004,129772.0
-51903,"Alleghany + Covington, VA*",2004,22837.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2004,112751.0
-51911,"Campbell + Lynchburg, VA*",2004,119114.0
-51913,"Carroll + Galax, VA*",2004,36460.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2004,75358.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2004,1042687.0
-51921,"Frederick + Winchester, VA*",2004,92617.0
-51923,"Greensville + Emporia, VA*",2004,17087.0
-51929,"Henry + Martinsville, VA*",2004,70631.0
-51931,"James City + Williamsburg, VA*",2004,68168.0
-51933,"Montgomery + Radford, VA*",2004,103032.0
-51939,"Pittsylvania + Danville, VA*",2004,108067.0
-51941,"Prince George + Hopewell, VA*",2004,56923.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2004,385985.0
-51944,"Roanoke + Salem, VA*",2004,112273.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2004,34830.0
-51947,"Rockingham + Harrisonburg, VA*",2004,114542.0
-51949,"Southampton + Franklin, VA*",2004,25712.0
-51951,"Spotsylvania + Fredericksburg, VA*",2004,132147.0
-51953,"Washington + Bristol, VA*",2004,69877.0
-51955,"Wise + Norton, VA*",2004,45438.0
-51958,"York + Poquoson, VA*",2004,73698.0
 53001,"Adams, WA",2004,16664.0
 53003,"Asotin, WA",2004,20783.0
 53005,"Benton, WA",2004,155689.0
@@ -37813,7 +37525,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2005,168237.0
 15003,"Honolulu, HI",2005,918181.0
 15007,"Kauai, HI",2005,62863.0
-15901,"Maui + Kalawao, HI*",2005,143448.0
 16001,"Ada, ID",2005,348755.0
 16003,"Adams, ID",2005,3817.0
 16005,"Bannock, ID",2005,77419.0
@@ -40165,29 +39876,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2005,93932.0
 51800,"Suffolk (Independent City), VA",2005,77957.0
 51810,"Virginia Beach (Independent City), VA",2005,436210.0
-51901,"Albemarle + Charlottesville, VA*",2005,132273.0
-51903,"Alleghany + Covington, VA*",2005,22653.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2005,114085.0
-51911,"Campbell + Lynchburg, VA*",2005,121568.0
-51913,"Carroll + Galax, VA*",2005,36481.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2005,75427.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2005,1051190.0
-51921,"Frederick + Winchester, VA*",2005,95486.0
-51923,"Greensville + Emporia, VA*",2005,17720.0
-51929,"Henry + Martinsville, VA*",2005,70056.0
-51931,"James City + Williamsburg, VA*",2005,70828.0
-51933,"Montgomery + Radford, VA*",2005,104691.0
-51939,"Pittsylvania + Danville, VA*",2005,107553.0
-51941,"Prince George + Hopewell, VA*",2005,56929.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2005,399515.0
-51944,"Roanoke + Salem, VA*",2005,113555.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2005,35275.0
-51947,"Rockingham + Harrisonburg, VA*",2005,116602.0
-51949,"Southampton + Franklin, VA*",2005,26088.0
-51951,"Spotsylvania + Fredericksburg, VA*",2005,136677.0
-51953,"Washington + Bristol, VA*",2005,70433.0
-51955,"Wise + Norton, VA*",2005,45352.0
-51958,"York + Poquoson, VA*",2005,74955.0
 53001,"Adams, WA",2005,16918.0
 53003,"Asotin, WA",2005,20908.0
 53005,"Benton, WA",2005,157726.0
@@ -40919,7 +40607,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2006,173536.0
 15003,"Honolulu, HI",2006,926954.0
 15007,"Kauai, HI",2006,63465.0
-15901,"Maui + Kalawao, HI*",2006,145776.0
 16001,"Ada, ID",2006,363498.0
 16003,"Adams, ID",2006,3788.0
 16005,"Bannock, ID",2006,78491.0
@@ -43271,29 +42958,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2006,94247.0
 51800,"Suffolk (Independent City), VA",2006,80291.0
 51810,"Virginia Beach (Independent City), VA",2006,437739.0
-51901,"Albemarle + Charlottesville, VA*",2006,134918.0
-51903,"Alleghany + Covington, VA*",2006,22543.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2006,116262.0
-51911,"Campbell + Lynchburg, VA*",2006,124394.0
-51913,"Carroll + Galax, VA*",2006,36773.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2006,76375.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2006,1051240.0
-51921,"Frederick + Winchester, VA*",2006,98213.0
-51923,"Greensville + Emporia, VA*",2006,17782.0
-51929,"Henry + Martinsville, VA*",2006,69745.0
-51931,"James City + Williamsburg, VA*",2006,73943.0
-51933,"Montgomery + Radford, VA*",2006,106225.0
-51939,"Pittsylvania + Danville, VA*",2006,107172.0
-51941,"Prince George + Hopewell, VA*",2006,56870.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2006,407295.0
-51944,"Roanoke + Salem, VA*",2006,114997.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2006,35588.0
-51947,"Rockingham + Harrisonburg, VA*",2006,118858.0
-51949,"Southampton + Franklin, VA*",2006,26517.0
-51951,"Spotsylvania + Fredericksburg, VA*",2006,140370.0
-51953,"Washington + Bristol, VA*",2006,71006.0
-51955,"Wise + Norton, VA*",2006,45356.0
-51958,"York + Poquoson, VA*",2006,75920.0
 53001,"Adams, WA",2006,16997.0
 53003,"Asotin, WA",2006,21133.0
 53005,"Benton, WA",2006,159564.0
@@ -44025,7 +43689,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2007,177733.0
 15003,"Honolulu, HI",2007,925335.0
 15007,"Kauai, HI",2007,64490.0
-15901,"Maui + Kalawao, HI*",2007,148117.0
 16001,"Ada, ID",2007,375368.0
 16003,"Adams, ID",2007,3949.0
 16005,"Bannock, ID",2007,79338.0
@@ -46377,29 +46040,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2007,94916.0
 51800,"Suffolk (Independent City), VA",2007,81273.0
 51810,"Virginia Beach (Independent City), VA",2007,434732.0
-51901,"Albemarle + Charlottesville, VA*",2007,136547.0
-51903,"Alleghany + Covington, VA*",2007,22587.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2007,117708.0
-51911,"Campbell + Lynchburg, VA*",2007,126638.0
-51913,"Carroll + Galax, VA*",2007,36813.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2007,76858.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2007,1060356.0
-51921,"Frederick + Winchester, VA*",2007,100371.0
-51923,"Greensville + Emporia, VA*",2007,17902.0
-51929,"Henry + Martinsville, VA*",2007,69326.0
-51931,"James City + Williamsburg, VA*",2007,76149.0
-51933,"Montgomery + Radford, VA*",2007,107889.0
-51939,"Pittsylvania + Danville, VA*",2007,106965.0
-51941,"Prince George + Hopewell, VA*",2007,57015.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2007,415662.0
-51944,"Roanoke + Salem, VA*",2007,115602.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2007,35802.0
-51947,"Rockingham + Harrisonburg, VA*",2007,120825.0
-51949,"Southampton + Franklin, VA*",2007,27182.0
-51951,"Spotsylvania + Fredericksburg, VA*",2007,141981.0
-51953,"Washington + Bristol, VA*",2007,71756.0
-51955,"Wise + Norton, VA*",2007,45412.0
-51958,"York + Poquoson, VA*",2007,76799.0
 53001,"Adams, WA",2007,17413.0
 53003,"Asotin, WA",2007,21188.0
 53005,"Benton, WA",2007,161669.0
@@ -47131,7 +46771,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2008,181506.0
 15003,"Honolulu, HI",2008,933680.0
 15007,"Kauai, HI",2008,65603.0
-15901,"Maui + Kalawao, HI*",2008,151424.0
 16001,"Ada, ID",2008,382618.0
 16003,"Adams, ID",2008,4021.0
 16005,"Bannock, ID",2008,80609.0
@@ -49483,29 +49122,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2008,95813.0
 51800,"Suffolk (Independent City), VA",2008,82603.0
 51810,"Virginia Beach (Independent City), VA",2008,433331.0
-51901,"Albemarle + Charlottesville, VA*",2008,139211.0
-51903,"Alleghany + Covington, VA*",2008,22395.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2008,118420.0
-51911,"Campbell + Lynchburg, VA*",2008,128250.0
-51913,"Carroll + Galax, VA*",2008,36955.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2008,77402.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2008,1077509.0
-51921,"Frederick + Winchester, VA*",2008,102064.0
-51923,"Greensville + Emporia, VA*",2008,18026.0
-51929,"Henry + Martinsville, VA*",2008,69113.0
-51931,"James City + Williamsburg, VA*",2008,77732.0
-51933,"Montgomery + Radford, VA*",2008,109028.0
-51939,"Pittsylvania + Danville, VA*",2008,107237.0
-51941,"Prince George + Hopewell, VA*",2008,57635.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2008,422378.0
-51944,"Roanoke + Salem, VA*",2008,116377.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2008,35990.0
-51947,"Rockingham + Harrisonburg, VA*",2008,122361.0
-51949,"Southampton + Franklin, VA*",2008,27244.0
-51951,"Spotsylvania + Fredericksburg, VA*",2008,143472.0
-51953,"Washington + Bristol, VA*",2008,72106.0
-51955,"Wise + Norton, VA*",2008,45350.0
-51958,"York + Poquoson, VA*",2008,77047.0
 53001,"Adams, WA",2008,17782.0
 53003,"Asotin, WA",2008,21393.0
 53005,"Benton, WA",2008,166573.0
@@ -50237,7 +49853,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2009,183629.0
 15003,"Honolulu, HI",2009,943177.0
 15007,"Kauai, HI",2009,66518.0
-15901,"Maui + Kalawao, HI*",2009,153393.0
 16001,"Ada, ID",2009,388577.0
 16003,"Adams, ID",2009,4000.0
 16005,"Bannock, ID",2009,81994.0
@@ -52589,29 +52204,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2009,97023.0
 51800,"Suffolk (Independent City), VA",2009,83648.0
 51810,"Virginia Beach (Independent City), VA",2009,435004.0
-51901,"Albemarle + Charlottesville, VA*",2009,141125.0
-51903,"Alleghany + Covington, VA*",2009,22254.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2009,118593.0
-51911,"Campbell + Lynchburg, VA*",2009,129609.0
-51913,"Carroll + Galax, VA*",2009,36968.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2009,77581.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2009,1099347.0
-51921,"Frederick + Winchester, VA*",2009,103513.0
-51923,"Greensville + Emporia, VA*",2009,18137.0
-51929,"Henry + Martinsville, VA*",2009,68414.0
-51931,"James City + Williamsburg, VA*",2009,79805.0
-51933,"Montgomery + Radford, VA*",2009,110133.0
-51939,"Pittsylvania + Danville, VA*",2009,106882.0
-51941,"Prince George + Hopewell, VA*",2009,58283.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2009,439288.0
-51944,"Roanoke + Salem, VA*",2009,116899.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2009,35952.0
-51947,"Rockingham + Harrisonburg, VA*",2009,124144.0
-51949,"Southampton + Franklin, VA*",2009,27096.0
-51951,"Spotsylvania + Fredericksburg, VA*",2009,144813.0
-51953,"Washington + Bristol, VA*",2009,72564.0
-51955,"Wise + Norton, VA*",2009,45357.0
-51958,"York + Poquoson, VA*",2009,77350.0
 53001,"Adams, WA",2009,18405.0
 53003,"Asotin, WA",2009,21415.0
 53005,"Benton, WA",2009,171122.0
@@ -53343,7 +52935,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2010,185303.0
 15003,"Honolulu, HI",2010,957482.0
 15007,"Kauai, HI",2010,67238.0
-15901,"Maui + Kalawao, HI*",2010,155041.0
 16001,"Ada, ID",2010,393444.0
 16003,"Adams, ID",2010,3962.0
 16005,"Bannock, ID",2010,82990.0
@@ -55695,29 +55286,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2010,96742.0
 51800,"Suffolk (Independent City), VA",2010,84877.0
 51810,"Virginia Beach (Independent City), VA",2010,439061.0
-51901,"Albemarle + Charlottesville, VA*",2010,142693.0
-51903,"Alleghany + Covington, VA*",2010,22158.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2010,118347.0
-51911,"Campbell + Lynchburg, VA*",2010,130411.0
-51913,"Carroll + Galax, VA*",2010,37048.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2010,77981.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2010,1121179.0
-51921,"Frederick + Winchester, VA*",2010,104717.0
-51923,"Greensville + Emporia, VA*",2010,18168.0
-51929,"Henry + Martinsville, VA*",2010,67929.0
-51931,"James City + Williamsburg, VA*",2010,81409.0
-51933,"Montgomery + Radford, VA*",2010,110969.0
-51939,"Pittsylvania + Danville, VA*",2010,106596.0
-51941,"Prince George + Hopewell, VA*",2010,58390.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2010,459025.0
-51944,"Roanoke + Salem, VA*",2010,117370.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2010,36008.0
-51947,"Rockingham + Harrisonburg, VA*",2010,125411.0
-51949,"Southampton + Franklin, VA*",2010,27238.0
-51951,"Spotsylvania + Fredericksburg, VA*",2010,147351.0
-51953,"Washington + Bristol, VA*",2010,72738.0
-51955,"Wise + Norton, VA*",2010,45547.0
-51958,"York + Poquoson, VA*",2010,77400.0
 53001,"Adams, WA",2010,18804.0
 53003,"Asotin, WA",2010,21713.0
 53005,"Benton, WA",2010,176485.0
@@ -56449,7 +56017,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2011,186807.0
 15003,"Honolulu, HI",2011,973408.0
 15007,"Kauai, HI",2011,68047.0
-15901,"Maui + Kalawao, HI*",2011,156681.0
 16001,"Ada, ID",2011,401731.0
 16003,"Adams, ID",2011,3978.0
 16005,"Bannock, ID",2011,83475.0
@@ -58801,29 +58368,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2011,96894.0
 51800,"Suffolk (Independent City), VA",2011,84898.0
 51810,"Virginia Beach (Independent City), VA",2011,443647.0
-51901,"Albemarle + Charlottesville, VA*",2011,144162.0
-51903,"Alleghany + Covington, VA*",2011,22151.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2011,118916.0
-51911,"Campbell + Lynchburg, VA*",2011,131150.0
-51913,"Carroll + Galax, VA*",2011,36873.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2011,77890.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2011,1138607.0
-51921,"Frederick + Winchester, VA*",2011,106294.0
-51923,"Greensville + Emporia, VA*",2011,17918.0
-51929,"Henry + Martinsville, VA*",2011,67355.0
-51931,"James City + Williamsburg, VA*",2011,82545.0
-51933,"Montgomery + Radford, VA*",2011,111458.0
-51939,"Pittsylvania + Danville, VA*",2011,106321.0
-51941,"Prince George + Hopewell, VA*",2011,59787.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2011,474244.0
-51944,"Roanoke + Salem, VA*",2011,118160.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2011,36155.0
-51947,"Rockingham + Harrisonburg, VA*",2011,126808.0
-51949,"Southampton + Franklin, VA*",2011,27172.0
-51951,"Spotsylvania + Fredericksburg, VA*",2011,150384.0
-51953,"Washington + Bristol, VA*",2011,72579.0
-51955,"Wise + Norton, VA*",2011,45347.0
-51958,"York + Poquoson, VA*",2011,77978.0
 53001,"Adams, WA",2011,18943.0
 53003,"Asotin, WA",2011,21922.0
 53005,"Benton, WA",2011,180540.0
@@ -59555,7 +59099,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2012,188661.0
 15003,"Honolulu, HI",2012,989064.0
 15007,"Kauai, HI",2012,68959.0
-15901,"Maui + Kalawao, HI*",2012,158340.0
 16001,"Ada, ID",2012,409727.0
 16003,"Adams, ID",2012,3903.0
 16005,"Bannock, ID",2012,83452.0
@@ -61907,29 +61450,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2012,98223.0
 51800,"Suffolk (Independent City), VA",2012,85483.0
 51810,"Virginia Beach (Independent City), VA",2012,446993.0
-51901,"Albemarle + Charlottesville, VA*",2012,146390.0
-51903,"Alleghany + Covington, VA*",2012,22012.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2012,118719.0
-51911,"Campbell + Lynchburg, VA*",2012,131690.0
-51913,"Carroll + Galax, VA*",2012,36658.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2012,78321.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2012,1156467.0
-51921,"Frederick + Winchester, VA*",2012,107463.0
-51923,"Greensville + Emporia, VA*",2012,17698.0
-51929,"Henry + Martinsville, VA*",2012,66981.0
-51931,"James City + Williamsburg, VA*",2012,84185.0
-51933,"Montgomery + Radford, VA*",2012,112211.0
-51939,"Pittsylvania + Danville, VA*",2012,106339.0
-51941,"Prince George + Hopewell, VA*",2012,60474.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2012,487113.0
-51944,"Roanoke + Salem, VA*",2012,118481.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2012,36192.0
-51947,"Rockingham + Harrisonburg, VA*",2012,128461.0
-51949,"Southampton + Franklin, VA*",2012,27148.0
-51951,"Spotsylvania + Fredericksburg, VA*",2012,153168.0
-51953,"Washington + Bristol, VA*",2012,72841.0
-51955,"Wise + Norton, VA*",2012,44695.0
-51958,"York + Poquoson, VA*",2012,78238.0
 53001,"Adams, WA",2012,19056.0
 53003,"Asotin, WA",2012,21823.0
 53005,"Benton, WA",2012,182568.0
@@ -62661,7 +62181,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2013,190737.0
 15003,"Honolulu, HI",2013,1002219.0
 15007,"Kauai, HI",2013,70062.0
-15901,"Maui + Kalawao, HI*",2013,160153.0
 16001,"Ada, ID",2013,417202.0
 16003,"Adams, ID",2013,3860.0
 16005,"Bannock, ID",2013,83022.0
@@ -65013,29 +64532,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2013,99158.0
 51800,"Suffolk (Independent City), VA",2013,86069.0
 51810,"Virginia Beach (Independent City), VA",2013,450543.0
-51901,"Albemarle + Charlottesville, VA*",2013,147782.0
-51903,"Alleghany + Covington, VA*",2013,21945.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2013,119487.0
-51911,"Campbell + Lynchburg, VA*",2013,132410.0
-51913,"Carroll + Galax, VA*",2013,36682.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2013,78940.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2013,1168505.0
-51921,"Frederick + Winchester, VA*",2013,109118.0
-51923,"Greensville + Emporia, VA*",2013,17580.0
-51929,"Henry + Martinsville, VA*",2013,66707.0
-51931,"James City + Williamsburg, VA*",2013,85589.0
-51933,"Montgomery + Radford, VA*",2013,113476.0
-51939,"Pittsylvania + Danville, VA*",2013,106246.0
-51941,"Prince George + Hopewell, VA*",2013,61012.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2013,497394.0
-51944,"Roanoke + Salem, VA*",2013,119439.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2013,36195.0
-51947,"Rockingham + Harrisonburg, VA*",2013,128974.0
-51949,"Southampton + Franklin, VA*",2013,27097.0
-51951,"Spotsylvania + Fredericksburg, VA*",2013,155441.0
-51953,"Washington + Bristol, VA*",2013,72248.0
-51955,"Wise + Norton, VA*",2013,44277.0
-51958,"York + Poquoson, VA*",2013,78502.0
 53001,"Adams, WA",2013,19255.0
 53003,"Asotin, WA",2013,22004.0
 53005,"Benton, WA",2013,184607.0
@@ -65767,7 +65263,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2014,192782.0
 15003,"Honolulu, HI",2014,1008682.0
 15007,"Kauai, HI",2014,70861.0
-15901,"Maui + Kalawao, HI*",2014,161887.0
 16001,"Ada, ID",2014,427131.0
 16003,"Adams, ID",2014,3877.0
 16005,"Bannock, ID",2014,82968.0
@@ -68119,29 +67614,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2014,99835.0
 51800,"Suffolk (Independent City), VA",2014,87290.0
 51810,"Virginia Beach (Independent City), VA",2014,452576.0
-51901,"Albemarle + Charlottesville, VA*",2014,149906.0
-51903,"Alleghany + Covington, VA*",2014,21631.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2014,119971.0
-51911,"Campbell + Lynchburg, VA*",2014,132614.0
-51913,"Carroll + Galax, VA*",2014,36407.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2014,79156.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2014,1173146.0
-51921,"Frederick + Winchester, VA*",2014,110525.0
-51923,"Greensville + Emporia, VA*",2014,17423.0
-51929,"Henry + Martinsville, VA*",2014,66261.0
-51931,"James City + Williamsburg, VA*",2014,87129.0
-51933,"Montgomery + Radford, VA*",2014,114182.0
-51939,"Pittsylvania + Danville, VA*",2014,106023.0
-51941,"Prince George + Hopewell, VA*",2014,61523.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2014,504394.0
-51944,"Roanoke + Salem, VA*",2014,119858.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2014,36193.0
-51947,"Rockingham + Harrisonburg, VA*",2014,130433.0
-51949,"Southampton + Franklin, VA*",2014,26910.0
-51951,"Spotsylvania + Fredericksburg, VA*",2014,157364.0
-51953,"Washington + Bristol, VA*",2014,71903.0
-51955,"Wise + Norton, VA*",2014,43396.0
-51958,"York + Poquoson, VA*",2014,79089.0
 53001,"Adams, WA",2014,19383.0
 53003,"Asotin, WA",2014,22022.0
 53005,"Benton, WA",2014,186860.0
@@ -68873,7 +68345,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2015,194827.0
 15003,"Honolulu, HI",2015,1017472.0
 15007,"Kauai, HI",2015,71733.0
-15901,"Maui + Kalawao, HI*",2015,162447.0
 16001,"Ada, ID",2015,434962.0
 16003,"Adams, ID",2015,3882.0
 16005,"Bannock, ID",2015,83493.0
@@ -71225,29 +70696,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2015,100186.0
 51800,"Suffolk (Independent City), VA",2015,88582.0
 51810,"Virginia Beach (Independent City), VA",2015,454894.0
-51901,"Albemarle + Charlottesville, VA*",2015,152244.0
-51903,"Alleghany + Covington, VA*",2015,21395.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2015,120642.0
-51911,"Campbell + Lynchburg, VA*",2015,133493.0
-51913,"Carroll + Galax, VA*",2015,36413.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2015,79186.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2015,1177517.0
-51921,"Frederick + Winchester, VA*",2015,111512.0
-51923,"Greensville + Emporia, VA*",2015,17669.0
-51929,"Henry + Martinsville, VA*",2015,66074.0
-51931,"James City + Williamsburg, VA*",2015,88233.0
-51933,"Montgomery + Radford, VA*",2015,114239.0
-51939,"Pittsylvania + Danville, VA*",2015,105661.0
-51941,"Prince George + Hopewell, VA*",2015,63004.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2015,512966.0
-51944,"Roanoke + Salem, VA*",2015,120039.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2015,36191.0
-51947,"Rockingham + Harrisonburg, VA*",2015,131145.0
-51949,"Southampton + Franklin, VA*",2015,26831.0
-51951,"Spotsylvania + Fredericksburg, VA*",2015,158389.0
-51953,"Washington + Bristol, VA*",2015,71551.0
-51955,"Wise + Norton, VA*",2015,42807.0
-51958,"York + Poquoson, VA*",2015,80515.0
 53001,"Adams, WA",2015,19493.0
 53003,"Asotin, WA",2015,21905.0
 53005,"Benton, WA",2015,190691.0
@@ -71979,7 +71427,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2016,197045.0
 15003,"Honolulu, HI",2016,1023837.0
 15007,"Kauai, HI",2016,72395.0
-15901,"Maui + Kalawao, HI*",2016,163731.0
 16001,"Ada, ID",2016,446983.0
 16003,"Adams, ID",2016,3933.0
 16005,"Bannock, ID",2016,83834.0
@@ -74331,29 +73778,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2016,99912.0
 51800,"Suffolk (Independent City), VA",2016,89834.0
 51810,"Virginia Beach (Independent City), VA",2016,456600.0
-51901,"Albemarle + Charlottesville, VA*",2016,154443.0
-51903,"Alleghany + Covington, VA*",2016,21424.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2016,121550.0
-51911,"Campbell + Lynchburg, VA*",2016,133890.0
-51913,"Carroll + Galax, VA*",2016,36090.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2016,79222.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2016,1181265.0
-51921,"Frederick + Winchester, VA*",2016,113099.0
-51923,"Greensville + Emporia, VA*",2016,17364.0
-51929,"Henry + Martinsville, VA*",2016,65672.0
-51931,"James City + Williamsburg, VA*",2016,89572.0
-51933,"Montgomery + Radford, VA*",2016,115053.0
-51939,"Pittsylvania + Danville, VA*",2016,105383.0
-51941,"Prince George + Hopewell, VA*",2016,63517.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2016,519486.0
-51944,"Roanoke + Salem, VA*",2016,120249.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2016,36189.0
-51947,"Rockingham + Harrisonburg, VA*",2016,133007.0
-51949,"Southampton + Franklin, VA*",2016,26718.0
-51951,"Spotsylvania + Fredericksburg, VA*",2016,160197.0
-51953,"Washington + Bristol, VA*",2016,71387.0
-51955,"Wise + Norton, VA*",2016,42109.0
-51958,"York + Poquoson, VA*",2016,80566.0
 53001,"Adams, WA",2016,19653.0
 53003,"Asotin, WA",2016,22048.0
 53005,"Benton, WA",2016,194070.0
@@ -75085,7 +74509,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2017,198619.0
 15003,"Honolulu, HI",2017,1022650.0
 15007,"Kauai, HI",2017,72801.0
-15901,"Maui + Kalawao, HI*",2017,164291.0
 16001,"Ada, ID",2017,459432.0
 16003,"Adams, ID",2017,4114.0
 16005,"Bannock, ID",2017,84483.0
@@ -77437,29 +76860,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2017,99601.0
 51800,"Suffolk (Independent City), VA",2017,90784.0
 51810,"Virginia Beach (Independent City), VA",2017,456310.0
-51901,"Albemarle + Charlottesville, VA*",2017,156512.0
-51903,"Alleghany + Covington, VA*",2017,21202.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2017,122727.0
-51911,"Campbell + Lynchburg, VA*",2017,134403.0
-51913,"Carroll + Galax, VA*",2017,35953.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2017,79310.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2017,1186137.0
-51921,"Frederick + Winchester, VA*",2017,115412.0
-51923,"Greensville + Emporia, VA*",2017,17464.0
-51929,"Henry + Martinsville, VA*",2017,65335.0
-51931,"James City + Williamsburg, VA*",2017,91129.0
-51933,"Montgomery + Radford, VA*",2017,115035.0
-51939,"Pittsylvania + Danville, VA*",2017,104657.0
-51941,"Prince George + Hopewell, VA*",2017,63994.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2017,527648.0
-51944,"Roanoke + Salem, VA*",2017,120965.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2017,36468.0
-51947,"Rockingham + Harrisonburg, VA*",2017,134178.0
-51949,"Southampton + Franklin, VA*",2017,26478.0
-51951,"Spotsylvania + Fredericksburg, VA*",2017,161997.0
-51953,"Washington + Bristol, VA*",2017,71238.0
-51955,"Wise + Norton, VA*",2017,41442.0
-51958,"York + Poquoson, VA*",2017,80987.0
 53001,"Adams, WA",2017,19977.0
 53003,"Asotin, WA",2017,22244.0
 53005,"Benton, WA",2017,198821.0
@@ -78191,7 +77591,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2018,200241.0
 15003,"Honolulu, HI",2018,1021634.0
 15007,"Kauai, HI",2018,73404.0
-15901,"Maui + Kalawao, HI*",2018,164904.0
 16001,"Ada, ID",2018,472035.0
 16003,"Adams, ID",2018,4198.0
 16005,"Bannock, ID",2018,85511.0
@@ -80543,29 +79942,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2018,99660.0
 51800,"Suffolk (Independent City), VA",2018,91774.0
 51810,"Virginia Beach (Independent City), VA",2018,457201.0
-51901,"Albemarle + Charlottesville, VA*",2018,157344.0
-51903,"Alleghany + Covington, VA*",2018,21127.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2018,123812.0
-51911,"Campbell + Lynchburg, VA*",2018,134787.0
-51913,"Carroll + Galax, VA*",2018,35699.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2018,79286.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2018,1186528.0
-51921,"Frederick + Winchester, VA*",2018,117068.0
-51923,"Greensville + Emporia, VA*",2018,17251.0
-51929,"Henry + Martinsville, VA*",2018,64956.0
-51931,"James City + Williamsburg, VA*",2018,92031.0
-51933,"Montgomery + Radford, VA*",2018,115901.0
-51939,"Pittsylvania + Danville, VA*",2018,104153.0
-51941,"Prince George + Hopewell, VA*",2018,64588.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2018,532383.0
-51944,"Roanoke + Salem, VA*",2018,121377.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2018,36714.0
-51947,"Rockingham + Harrisonburg, VA*",2018,134997.0
-51949,"Southampton + Franklin, VA*",2018,26331.0
-51951,"Spotsylvania + Fredericksburg, VA*",2018,164027.0
-51953,"Washington + Bristol, VA*",2018,71026.0
-51955,"Wise + Norton, VA*",2018,40627.0
-51958,"York + Poquoson, VA*",2018,81221.0
 53001,"Adams, WA",2018,20100.0
 53003,"Asotin, WA",2018,22280.0
 53005,"Benton, WA",2018,201857.0
@@ -81297,7 +80673,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2019,199912.0
 15003,"Honolulu, HI",2019,1018784.0
 15007,"Kauai, HI",2019,73441.0
-15901,"Maui + Kalawao, HI*",2019,164897.0
 16001,"Ada, ID",2019,485166.0
 16003,"Adams, ID",2019,4246.0
 16005,"Bannock, ID",2019,86401.0
@@ -83649,29 +83024,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2019,99996.0
 51800,"Suffolk (Independent City), VA",2019,93000.0
 51810,"Virginia Beach (Independent City), VA",2019,458292.0
-51901,"Albemarle + Charlottesville, VA*",2019,158364.0
-51903,"Alleghany + Covington, VA*",2019,21022.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2019,124506.0
-51911,"Campbell + Lynchburg, VA*",2019,135047.0
-51913,"Carroll + Galax, VA*",2019,35866.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2019,79377.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2019,1189209.0
-51921,"Frederick + Winchester, VA*",2019,118423.0
-51923,"Greensville + Emporia, VA*",2019,17231.0
-51929,"Henry + Martinsville, VA*",2019,64591.0
-51931,"James City + Williamsburg, VA*",2019,92775.0
-51933,"Montgomery + Radford, VA*",2019,116090.0
-51939,"Pittsylvania + Danville, VA*",2019,103316.0
-51941,"Prince George + Hopewell, VA*",2019,65493.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2019,538315.0
-51944,"Roanoke + Salem, VA*",2019,121818.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2019,36614.0
-51947,"Rockingham + Harrisonburg, VA*",2019,135460.0
-51949,"Southampton + Franklin, VA*",2019,26266.0
-51951,"Spotsylvania + Fredericksburg, VA*",2019,166228.0
-51953,"Washington + Bristol, VA*",2019,70986.0
-51955,"Wise + Norton, VA*",2019,40070.0
-51958,"York + Poquoson, VA*",2019,81872.0
 53001,"Adams, WA",2019,20484.0
 53003,"Asotin, WA",2019,22217.0
 53005,"Benton, WA",2019,204948.0
@@ -84403,7 +83755,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2020,200746.0
 15003,"Honolulu, HI",2020,1013227.0
 15007,"Kauai, HI",2020,73201.0
-15901,"Maui + Kalawao, HI*",2020,164737.0
 16001,"Ada, ID",2020,497984.0
 16003,"Adams, ID",2020,4424.0
 16005,"Bannock, ID",2020,87177.0
@@ -86755,29 +86106,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2020,99875.0
 51800,"Suffolk (Independent City), VA",2020,94685.0
 51810,"Virginia Beach (Independent City), VA",2020,459373.0
-51901,"Albemarle + Charlottesville, VA*",2020,158919.0
-51903,"Alleghany + Covington, VA*",2020,20882.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2020,125591.0
-51911,"Campbell + Lynchburg, VA*",2020,134509.0
-51913,"Carroll + Galax, VA*",2020,35821.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2020,79519.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2020,1187255.0
-51921,"Frederick + Winchester, VA*",2020,119774.0
-51923,"Greensville + Emporia, VA*",2020,17109.0
-51929,"Henry + Martinsville, VA*",2020,64204.0
-51931,"James City + Williamsburg, VA*",2020,93857.0
-51933,"Montgomery + Radford, VA*",2020,115597.0
-51939,"Pittsylvania + Danville, VA*",2020,102777.0
-51941,"Prince George + Hopewell, VA*",2020,65990.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2020,542606.0
-51944,"Roanoke + Salem, VA*",2020,122219.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2020,36543.0
-51947,"Rockingham + Harrisonburg, VA*",2020,135433.0
-51949,"Southampton + Franklin, VA*",2020,26120.0
-51951,"Spotsylvania + Fredericksburg, VA*",2020,168470.0
-51953,"Washington + Bristol, VA*",2020,71098.0
-51955,"Wise + Norton, VA*",2020,39697.0
-51958,"York + Poquoson, VA*",2020,82609.0
 53001,"Adams, WA",2020,20605.0
 53003,"Asotin, WA",2020,22290.0
 53005,"Benton, WA",2020,207230.0
@@ -87509,7 +86837,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2021,202906.0
 15003,"Honolulu, HI",2021,1000890.0
 15007,"Kauai, HI",2021,73454.0
-15901,"Maui + Kalawao, HI*",2021,164303.0
 16001,"Ada, ID",2021,511931.0
 16003,"Adams, ID",2021,4625.0
 16005,"Bannock, ID",2021,88263.0
@@ -89861,29 +89188,6 @@ GeoFIPS,GeoName,Year,Value
 51770,"Roanoke (Independent City), VA",2021,98865.0
 51800,"Suffolk (Independent City), VA",2021,96194.0
 51810,"Virginia Beach (Independent City), VA",2021,457672.0
-51901,"Albemarle + Charlottesville, VA*",2021,159207.0
-51903,"Alleghany + Covington, VA*",2021,20703.0
-51907,"Augusta, Staunton + Waynesboro, VA*",2021,125774.0
-51911,"Campbell + Lynchburg, VA*",2021,134501.0
-51913,"Carroll + Galax, VA*",2021,35708.0
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2021,79614.0
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2021,1178489.0
-51921,"Frederick + Winchester, VA*",2021,121853.0
-51923,"Greensville + Emporia, VA*",2021,17104.0
-51929,"Henry + Martinsville, VA*",2021,63765.0
-51931,"James City + Williamsburg, VA*",2021,95472.0
-51933,"Montgomery + Radford, VA*",2021,114972.0
-51939,"Pittsylvania + Danville, VA*",2021,102187.0
-51941,"Prince George + Hopewell, VA*",2021,66020.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2021,544182.0
-51944,"Roanoke + Salem, VA*",2021,121962.0
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2021,36698.0
-51947,"Rockingham + Harrisonburg, VA*",2021,135824.0
-51949,"Southampton + Franklin, VA*",2021,26223.0
-51951,"Spotsylvania + Fredericksburg, VA*",2021,172043.0
-51953,"Washington + Bristol, VA*",2021,70689.0
-51955,"Wise + Norton, VA*",2021,39313.0
-51958,"York + Poquoson, VA*",2021,83489.0
 53001,"Adams, WA",2021,20621.0
 53003,"Asotin, WA",2021,22397.0
 53005,"Benton, WA",2021,210025.0
