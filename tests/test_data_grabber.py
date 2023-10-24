@@ -2,21 +2,24 @@ import os
 
 import numpy as np
 
+from cities.utils.cleaning_utils import list_available_features
 from cities.utils.data_grabber import DataGrabber
 
-# for some reason this test succeeds only
-# with pytest run as a module.
-# python -m pytest test_data_grabber.py
-# TODO fix this
 
-features = [
-    "gdp",
-    "population",
-    "transport",
-    "spending_transportation",
-    "spending_commerce",
-    "spending_HHS",
-]
+
+
+
+
+# features = [
+#     "gdp",
+#     "population",
+#     "transport",
+#     "spending_transportation",
+#     "spending_commerce",
+#     "spending_HHS",
+# ]
+
+features = list_available_features()
 
 
 def test_DataGrabber():

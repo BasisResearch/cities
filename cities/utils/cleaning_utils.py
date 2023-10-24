@@ -3,23 +3,13 @@ import os
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+from pathlib import Path
+import re
 
 
-def find_repo_root():
-    """
-    Finds the repo root (fodler containing .gitignore) and adds it to sys.path.
-    """
-    current_dir = os.getcwd()
-    while True:
-        marker_file_path = os.path.join(current_dir, ".gitignore")
-        if os.path.isfile(marker_file_path):
-            return current_dir
 
-        parent_dir = os.path.dirname(current_dir)
-        if parent_dir == current_dir:
-            break
-        current_dir = parent_dir
-    return current_dir
+def find_repo_root() -> Path:
+    return Path(__file__).parent.parent.parent
 
 
 def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
@@ -58,3 +48,21 @@ def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
             new_data[column] = scaled_values.reshape(-1)
 
     return new_data
+
+
+def list_available_features():
+    
+    root = find_repo_root()
+    folder_path = f"{root}/data/processed"
+    file_names = [f for f in os.listdir(folder_path) if f != ".gitkeep"]
+    processed_file_names = []
+
+    for file_name in file_names:
+        # Use regular expressions to find the patterns and split accordingly
+        matches = re.split(r'_wide|_long|_std', file_name)
+        if matches:
+            processed_file_names.append(matches[0])
+        
+    feature_names = list(set(processed_file_names))
+
+    return feature_names
