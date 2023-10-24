@@ -109,12 +109,16 @@ def clean_spending_HHS():
 
     assert spending_HHS["GeoFIPS"].nunique() == spending_HHS["GeoName"].nunique()
     assert spending_HHS["GeoFIPS"].nunique() == gdp["GeoFIPS"].nunique()
+    
+    # Assuming you have a DataFrame named 'your_dataframe'
+    spending_HHS = spending_HHS.rename(columns={'year': 'Year'})
+
 
     # standardizing and saving
     spending_HHS_long = spending_HHS.copy()
 
     spending_HHS_wide = spending_HHS.pivot_table(
-        index=["GeoFIPS", "GeoName"], columns="year", values="total_obligated_amount"
+        index=["GeoFIPS", "GeoName"], columns="Year", values="total_obligated_amount"
     )
     spending_HHS_wide.reset_index(inplace=True)
     spending_HHS_wide.columns.name = None

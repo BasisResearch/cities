@@ -1,4 +1,4 @@
-GeoFIPS,GeoName,year,total_obligated_amount
+GeoFIPS,GeoName,Year,total_obligated_amount
 1001,"Autauga, AL",2017,-0.9585692546880583
 1003,"Baldwin, AL",2011,-0.977675823009765
 1003,"Baldwin, AL",2013,-0.9967313415364082
