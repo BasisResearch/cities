@@ -10,17 +10,22 @@ from cities.utils.cleaning_utils import (standardize_and_scale,
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 
 
-root = find_repo_root()
-folder_path = f"{root}/data/processed"
-file_names = os.listdir(folder_path)
+def test_data_folder():
+    root = find_repo_root()
+    folder_path = f"{root}/data/processed"
+    file_names = os.listdir(folder_path)
 
-allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
+    allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
 
-for file_name in file_names:
-    if file_name != ".gitkeep":
-        ends_with_allowed_extension = any(file_name.endswith(ext) for ext in allowed_extensions)
-        assert ends_with_allowed_extension, f"File '{file_name}' does not have an allowed extension."
-
+    for file_name in file_names:
+        if file_name != ".gitkeep":
+            ends_with_allowed_extension = any(file_name.endswith(ext) for ext in allowed_extensions)
+            assert ends_with_allowed_extension, f"File '{file_name}' does not have an allowed extension."
+            
+    all_features = list_available_features()
+    for feature in all_features:
+        valid_files = [feature + ext for ext in allowed_extensions if feature + ext in file_names]
+        assert len(valid_files) == 4,  f"For feature '{feature}' some data formats are missing."
 
 
 # set up gdp data
@@ -48,12 +53,12 @@ def test_standardize_and_scale():
 
 
 
-available_features = list_available_features()
-assert "spending_commerce" in available_features
-assert ".gitkeep" not in available_features
+all_features = list_available_features()
+assert "spending_commerce" in all_features
+assert ".gitkeep" not in all_features
 unique_features = []
-for item in available_features:
+for item in all_features:
     if item not in unique_features:
         unique_features.append(item)
 
-assert len(unique_features) == len(available_features)
+assert len(unique_features) == len(all_features)
