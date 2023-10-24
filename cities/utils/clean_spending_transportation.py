@@ -143,8 +143,8 @@ def clean_spending_transportation():
         == spending_transportation["GeoName"].nunique()
     )
     assert spending_transportation["GeoFIPS"].nunique() == gdp["GeoFIPS"].nunique()
-    
-    spending_transportation = spending_transportation.rename(columns={'year': 'Year'})
+
+    spending_transportation = spending_transportation.rename(columns={"year": "Year"})
 
     # standardizing and saving
     spending_transportation_long = spending_transportation.copy()
