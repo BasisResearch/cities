@@ -74,6 +74,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2001,88.736
 2070,"Dillingham Census Area, AK",2001,82.049
 2090,"Fairbanks North Star Borough, AK",2001,103.572
+2100,"Haines Borough, AK",2001,85.525
 2110,"Juneau City and Borough, AK",2001,81.588
 2122,"Kenai Peninsula Borough, AK",2001,94.882
 2130,"Ketchikan Gateway Borough, AK*",2001,84.133
@@ -540,7 +541,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2001,76.574
 15003,"Honolulu, HI",2001,77.518
 15007,"Kauai, HI",2001,77.907
-15901,"Maui + Kalawao, HI*",2001,77.222
 16001,"Ada, ID",2001,74.22
 16003,"Adams, ID",2001,70.449
 16005,"Bannock, ID",2001,86.625
@@ -2885,34 +2885,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2001,78.521
 51550,"Chesapeake (Independent City), VA",2001,81.231
 51650,"Hampton (Independent City), VA",2001,102.675
+51700,"Newport News (Independent City), VA",2001,76.478
 51710,"Norfolk (Independent City), VA",2001,95.855
 51740,"Portsmouth (Independent City), VA",2001,84.336
 51760,"Richmond (Independent City), VA",2001,112.266
 51770,"Roanoke (Independent City), VA",2001,109.055
+51800,"Suffolk (Independent City), VA",2001,69.927
 51810,"Virginia Beach (Independent City), VA",2001,83.818
-51901,"Albemarle + Charlottesville, VA*",2001,76.004
-51903,"Alleghany + Covington, VA*",2001,83.34
-51907,"Augusta, Staunton + Waynesboro, VA*",2001,100.057
-51911,"Campbell + Lynchburg, VA*",2001,90.95
-51913,"Carroll + Galax, VA*",2001,105.45
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2001,104.946
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2001,70.99
-51921,"Frederick + Winchester, VA*",2001,84.475
-51923,"Greensville + Emporia, VA*",2001,123.21
-51929,"Henry + Martinsville, VA*",2001,116.764
-51931,"James City + Williamsburg, VA*",2001,87.276
-51933,"Montgomery + Radford, VA*",2001,87.717
-51939,"Pittsylvania + Danville, VA*",2001,116.708
-51941,"Prince George + Hopewell, VA*",2001,73.361
-51942,"Prince William, Manassas + Manassas Park, VA*",2001,64.672
-51944,"Roanoke + Salem, VA*",2001,87.233
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2001,95.944
-51947,"Rockingham + Harrisonburg, VA*",2001,93.819
-51949,"Southampton + Franklin, VA*",2001,94.282
-51951,"Spotsylvania + Fredericksburg, VA*",2001,82.282
-51953,"Washington + Bristol, VA*",2001,92.488
-51955,"Wise + Norton, VA*",2001,111.35
-51958,"York + Poquoson, VA*",2001,86.791
 53001,"Adams, WA",2001,58.991
 53003,"Asotin, WA",2001,83.149
 53005,"Benton, WA",2001,75.397
@@ -3177,6 +3156,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2002,89.46
 2070,"Dillingham Census Area, AK",2002,81.7
 2090,"Fairbanks North Star Borough, AK",2002,90.558
+2100,"Haines Borough, AK",2002,84.984
 2110,"Juneau City and Borough, AK",2002,79.986
 2122,"Kenai Peninsula Borough, AK",2002,97.917
 2130,"Ketchikan Gateway Borough, AK*",2002,82.567
@@ -3643,7 +3623,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2002,78.825
 15003,"Honolulu, HI",2002,79.162
 15007,"Kauai, HI",2002,79.316
-15901,"Maui + Kalawao, HI*",2002,80.141
 16001,"Ada, ID",2002,76.311
 16003,"Adams, ID",2002,72.183
 16005,"Bannock, ID",2002,85.225
@@ -5988,34 +5967,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2002,82.336
 51550,"Chesapeake (Independent City), VA",2002,84.019
 51650,"Hampton (Independent City), VA",2002,103.48
+51700,"Newport News (Independent City), VA",2002,77.684
 51710,"Norfolk (Independent City), VA",2002,99.929
 51740,"Portsmouth (Independent City), VA",2002,86.489
 51760,"Richmond (Independent City), VA",2002,108.439
 51770,"Roanoke (Independent City), VA",2002,107.691
+51800,"Suffolk (Independent City), VA",2002,66.319
 51810,"Virginia Beach (Independent City), VA",2002,85.699
-51901,"Albemarle + Charlottesville, VA*",2002,76.767
-51903,"Alleghany + Covington, VA*",2002,91.84
-51907,"Augusta, Staunton + Waynesboro, VA*",2002,94.921
-51911,"Campbell + Lynchburg, VA*",2002,93.314
-51913,"Carroll + Galax, VA*",2002,108.795
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2002,105.567
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2002,73.44
-51921,"Frederick + Winchester, VA*",2002,85.505
-51923,"Greensville + Emporia, VA*",2002,103.687
-51929,"Henry + Martinsville, VA*",2002,114.443
-51931,"James City + Williamsburg, VA*",2002,87.601
-51933,"Montgomery + Radford, VA*",2002,88.534
-51939,"Pittsylvania + Danville, VA*",2002,111.496
-51941,"Prince George + Hopewell, VA*",2002,71.083
-51942,"Prince William, Manassas + Manassas Park, VA*",2002,68.008
-51944,"Roanoke + Salem, VA*",2002,86.428
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2002,98.816
-51947,"Rockingham + Harrisonburg, VA*",2002,81.779
-51949,"Southampton + Franklin, VA*",2002,95.933
-51951,"Spotsylvania + Fredericksburg, VA*",2002,86.051
-51953,"Washington + Bristol, VA*",2002,90.866
-51955,"Wise + Norton, VA*",2002,108.817
-51958,"York + Poquoson, VA*",2002,91.547
 53001,"Adams, WA",2002,74.407
 53003,"Asotin, WA",2002,86.331
 53005,"Benton, WA",2002,81.613
@@ -6280,6 +6238,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2003,87.089
 2070,"Dillingham Census Area, AK",2003,83.756
 2090,"Fairbanks North Star Borough, AK",2003,91.749
+2100,"Haines Borough, AK",2003,84.541
 2110,"Juneau City and Borough, AK",2003,82.222
 2122,"Kenai Peninsula Borough, AK",2003,101.853
 2130,"Ketchikan Gateway Borough, AK*",2003,83.095
@@ -6746,7 +6705,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2003,84.609
 15003,"Honolulu, HI",2003,82.883
 15007,"Kauai, HI",2003,84.493
-15901,"Maui + Kalawao, HI*",2003,85.582
 16001,"Ada, ID",2003,81.966
 16003,"Adams, ID",2003,73.299
 16005,"Bannock, ID",2003,89.017
@@ -9091,34 +9049,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2003,83.546
 51550,"Chesapeake (Independent City), VA",2003,89.156
 51650,"Hampton (Independent City), VA",2003,108.305
+51700,"Newport News (Independent City), VA",2003,80.815
 51710,"Norfolk (Independent City), VA",2003,104.131
 51740,"Portsmouth (Independent City), VA",2003,89.523
 51760,"Richmond (Independent City), VA",2003,108.976
 51770,"Roanoke (Independent City), VA",2003,104.648
+51800,"Suffolk (Independent City), VA",2003,66.914
 51810,"Virginia Beach (Independent City), VA",2003,90.447
-51901,"Albemarle + Charlottesville, VA*",2003,79.829
-51903,"Alleghany + Covington, VA*",2003,92.628
-51907,"Augusta, Staunton + Waynesboro, VA*",2003,93.745
-51911,"Campbell + Lynchburg, VA*",2003,97.8
-51913,"Carroll + Galax, VA*",2003,109.49
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2003,106.449
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2003,77.356
-51921,"Frederick + Winchester, VA*",2003,86.822
-51923,"Greensville + Emporia, VA*",2003,103.837
-51929,"Henry + Martinsville, VA*",2003,114.176
-51931,"James City + Williamsburg, VA*",2003,89.23
-51933,"Montgomery + Radford, VA*",2003,90.062
-51939,"Pittsylvania + Danville, VA*",2003,107.625
-51941,"Prince George + Hopewell, VA*",2003,68.808
-51942,"Prince William, Manassas + Manassas Park, VA*",2003,72.564
-51944,"Roanoke + Salem, VA*",2003,88.935
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2003,101.483
-51947,"Rockingham + Harrisonburg, VA*",2003,80.629
-51949,"Southampton + Franklin, VA*",2003,98.309
-51951,"Spotsylvania + Fredericksburg, VA*",2003,90.22
-51953,"Washington + Bristol, VA*",2003,102.069
-51955,"Wise + Norton, VA*",2003,116.387
-51958,"York + Poquoson, VA*",2003,96.98
 53001,"Adams, WA",2003,73.484
 53003,"Asotin, WA",2003,87.523
 53005,"Benton, WA",2003,81.325
@@ -9383,6 +9320,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2004,95.043
 2070,"Dillingham Census Area, AK",2004,84.077
 2090,"Fairbanks North Star Borough, AK",2004,92.494
+2100,"Haines Borough, AK",2004,91.951
 2110,"Juneau City and Borough, AK",2004,83.417
 2122,"Kenai Peninsula Borough, AK",2004,106.307
 2130,"Ketchikan Gateway Borough, AK*",2004,81.929
@@ -9849,7 +9787,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2004,91.112
 15003,"Honolulu, HI",2004,87.189
 15007,"Kauai, HI",2004,88.149
-15901,"Maui + Kalawao, HI*",2004,91.442
 16001,"Ada, ID",2004,89.232
 16003,"Adams, ID",2004,84.061
 16005,"Bannock, ID",2004,96.9
@@ -12194,34 +12131,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2004,83.631
 51550,"Chesapeake (Independent City), VA",2004,95.703
 51650,"Hampton (Independent City), VA",2004,110.1
+51700,"Newport News (Independent City), VA",2004,83.906
 51710,"Norfolk (Independent City), VA",2004,108.304
 51740,"Portsmouth (Independent City), VA",2004,92.418
 51760,"Richmond (Independent City), VA",2004,105.82
 51770,"Roanoke (Independent City), VA",2004,103.408
+51800,"Suffolk (Independent City), VA",2004,68.871
 51810,"Virginia Beach (Independent City), VA",2004,95.027
-51901,"Albemarle + Charlottesville, VA*",2004,83.643
-51903,"Alleghany + Covington, VA*",2004,93.69
-51907,"Augusta, Staunton + Waynesboro, VA*",2004,97.662
-51911,"Campbell + Lynchburg, VA*",2004,100.464
-51913,"Carroll + Galax, VA*",2004,108.967
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2004,104.585
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2004,82.268
-51921,"Frederick + Winchester, VA*",2004,89.53
-51923,"Greensville + Emporia, VA*",2004,78.369
-51929,"Henry + Martinsville, VA*",2004,112.052
-51931,"James City + Williamsburg, VA*",2004,90.623
-51933,"Montgomery + Radford, VA*",2004,88.765
-51939,"Pittsylvania + Danville, VA*",2004,108.457
-51941,"Prince George + Hopewell, VA*",2004,74.568
-51942,"Prince William, Manassas + Manassas Park, VA*",2004,78.192
-51944,"Roanoke + Salem, VA*",2004,89.717
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2004,100.65
-51947,"Rockingham + Harrisonburg, VA*",2004,82.243
-51949,"Southampton + Franklin, VA*",2004,90.784
-51951,"Spotsylvania + Fredericksburg, VA*",2004,95.108
-51953,"Washington + Bristol, VA*",2004,100.399
-51955,"Wise + Norton, VA*",2004,118.165
-51958,"York + Poquoson, VA*",2004,103.862
 53001,"Adams, WA",2004,71.485
 53003,"Asotin, WA",2004,88.062
 53005,"Benton, WA",2004,83.818
@@ -12486,6 +12402,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2005,98.603
 2070,"Dillingham Census Area, AK",2005,87.826
 2090,"Fairbanks North Star Borough, AK",2005,101.239
+2100,"Haines Borough, AK",2005,98.057
 2110,"Juneau City and Borough, AK",2005,85.932
 2122,"Kenai Peninsula Borough, AK",2005,91.035
 2130,"Ketchikan Gateway Borough, AK*",2005,86.412
@@ -12952,7 +12869,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2005,101.427
 15003,"Honolulu, HI",2005,91.507
 15007,"Kauai, HI",2005,92.913
-15901,"Maui + Kalawao, HI*",2005,99.619
 16001,"Ada, ID",2005,99.443
 16003,"Adams, ID",2005,92.142
 16005,"Bannock, ID",2005,103.564
@@ -15297,34 +15213,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2005,93.108
 51550,"Chesapeake (Independent City), VA",2005,102.34
 51650,"Hampton (Independent City), VA",2005,110.836
+51700,"Newport News (Independent City), VA",2005,88.389
 51710,"Norfolk (Independent City), VA",2005,110.585
 51740,"Portsmouth (Independent City), VA",2005,94.31
 51760,"Richmond (Independent City), VA",2005,108.195
 51770,"Roanoke (Independent City), VA",2005,101.337
+51800,"Suffolk (Independent City), VA",2005,72.213
 51810,"Virginia Beach (Independent City), VA",2005,98.663
-51901,"Albemarle + Charlottesville, VA*",2005,87.604
-51903,"Alleghany + Covington, VA*",2005,93.112
-51907,"Augusta, Staunton + Waynesboro, VA*",2005,100.621
-51911,"Campbell + Lynchburg, VA*",2005,101.101
-51913,"Carroll + Galax, VA*",2005,109.852
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2005,106.179
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2005,88.064
-51921,"Frederick + Winchester, VA*",2005,95.557
-51923,"Greensville + Emporia, VA*",2005,82.439
-51929,"Henry + Martinsville, VA*",2005,116.128
-51931,"James City + Williamsburg, VA*",2005,98.805
-51933,"Montgomery + Radford, VA*",2005,91.356
-51939,"Pittsylvania + Danville, VA*",2005,108.812
-51941,"Prince George + Hopewell, VA*",2005,74.455
-51942,"Prince William, Manassas + Manassas Park, VA*",2005,83.464
-51944,"Roanoke + Salem, VA*",2005,97.552
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2005,107.397
-51947,"Rockingham + Harrisonburg, VA*",2005,86.928
-51949,"Southampton + Franklin, VA*",2005,99.575
-51951,"Spotsylvania + Fredericksburg, VA*",2005,102.422
-51953,"Washington + Bristol, VA*",2005,101.728
-51955,"Wise + Norton, VA*",2005,120.336
-51958,"York + Poquoson, VA*",2005,106.473
 53001,"Adams, WA",2005,81.695
 53003,"Asotin, WA",2005,93.275
 53005,"Benton, WA",2005,86.592
@@ -15589,6 +15484,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2006,98.946
 2070,"Dillingham Census Area, AK",2006,90.341
 2090,"Fairbanks North Star Borough, AK",2006,105.57
+2100,"Haines Borough, AK",2006,100.793
 2110,"Juneau City and Borough, AK",2006,95.399
 2122,"Kenai Peninsula Borough, AK",2006,95.835
 2130,"Ketchikan Gateway Borough, AK*",2006,87.154
@@ -16055,7 +15951,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2006,103.02
 15003,"Honolulu, HI",2006,93.039
 15007,"Kauai, HI",2006,98.066
-15901,"Maui + Kalawao, HI*",2006,106.685
 16001,"Ada, ID",2006,98.829
 16003,"Adams, ID",2006,95.44
 16005,"Bannock, ID",2006,101.868
@@ -18400,34 +18295,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2006,99.712
 51550,"Chesapeake (Independent City), VA",2006,102.588
 51650,"Hampton (Independent City), VA",2006,108.177
+51700,"Newport News (Independent City), VA",2006,86.716
 51710,"Norfolk (Independent City), VA",2006,114.236
 51740,"Portsmouth (Independent City), VA",2006,97.969
 51760,"Richmond (Independent City), VA",2006,105.938
 51770,"Roanoke (Independent City), VA",2006,103.067
+51800,"Suffolk (Independent City), VA",2006,72.601
 51810,"Virginia Beach (Independent City), VA",2006,99.977
-51901,"Albemarle + Charlottesville, VA*",2006,91.091
-51903,"Alleghany + Covington, VA*",2006,91.935
-51907,"Augusta, Staunton + Waynesboro, VA*",2006,97.64
-51911,"Campbell + Lynchburg, VA*",2006,103.832
-51913,"Carroll + Galax, VA*",2006,105.184
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2006,107.532
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2006,89.405
-51921,"Frederick + Winchester, VA*",2006,98.259
-51923,"Greensville + Emporia, VA*",2006,88.569
-51929,"Henry + Martinsville, VA*",2006,118.49
-51931,"James City + Williamsburg, VA*",2006,102.333
-51933,"Montgomery + Radford, VA*",2006,94.629
-51939,"Pittsylvania + Danville, VA*",2006,107.58
-51941,"Prince George + Hopewell, VA*",2006,77.674
-51942,"Prince William, Manassas + Manassas Park, VA*",2006,84.846
-51944,"Roanoke + Salem, VA*",2006,101.214
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2006,106.497
-51947,"Rockingham + Harrisonburg, VA*",2006,88.069
-51949,"Southampton + Franklin, VA*",2006,104.85
-51951,"Spotsylvania + Fredericksburg, VA*",2006,105.29
-51953,"Washington + Bristol, VA*",2006,103.68
-51955,"Wise + Norton, VA*",2006,121.476
-51958,"York + Poquoson, VA*",2006,97.241
 53001,"Adams, WA",2006,86.523
 53003,"Asotin, WA",2006,97.394
 53005,"Benton, WA",2006,88.146
@@ -18692,6 +18566,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2007,100.327
 2070,"Dillingham Census Area, AK",2007,88.615
 2090,"Fairbanks North Star Borough, AK",2007,106.816
+2100,"Haines Borough, AK",2007,102.752
 2110,"Juneau City and Borough, AK",2007,100.0
 2122,"Kenai Peninsula Borough, AK",2007,97.635
 2130,"Ketchikan Gateway Borough, AK*",2007,94.334
@@ -19158,7 +19033,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2007,103.644
 15003,"Honolulu, HI",2007,94.927
 15007,"Kauai, HI",2007,101.668
-15901,"Maui + Kalawao, HI*",2007,108.495
 16001,"Ada, ID",2007,99.271
 16003,"Adams, ID",2007,98.128
 16005,"Bannock, ID",2007,102.342
@@ -21503,34 +21377,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2007,98.328
 51550,"Chesapeake (Independent City), VA",2007,104.844
 51650,"Hampton (Independent City), VA",2007,109.021
+51700,"Newport News (Independent City), VA",2007,90.66
 51710,"Norfolk (Independent City), VA",2007,113.821
 51740,"Portsmouth (Independent City), VA",2007,98.508
 51760,"Richmond (Independent City), VA",2007,103.849
 51770,"Roanoke (Independent City), VA",2007,102.543
+51800,"Suffolk (Independent City), VA",2007,71.184
 51810,"Virginia Beach (Independent City), VA",2007,102.604
-51901,"Albemarle + Charlottesville, VA*",2007,93.96
-51903,"Alleghany + Covington, VA*",2007,87.035
-51907,"Augusta, Staunton + Waynesboro, VA*",2007,101.752
-51911,"Campbell + Lynchburg, VA*",2007,101.838
-51913,"Carroll + Galax, VA*",2007,99.729
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2007,112.97
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2007,90.746
-51921,"Frederick + Winchester, VA*",2007,97.017
-51923,"Greensville + Emporia, VA*",2007,96.018
-51929,"Henry + Martinsville, VA*",2007,113.732
-51931,"James City + Williamsburg, VA*",2007,102.225
-51933,"Montgomery + Radford, VA*",2007,101.8
-51939,"Pittsylvania + Danville, VA*",2007,101.224
-51941,"Prince George + Hopewell, VA*",2007,79.966
-51942,"Prince William, Manassas + Manassas Park, VA*",2007,87.676
-51944,"Roanoke + Salem, VA*",2007,105.972
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2007,106.536
-51947,"Rockingham + Harrisonburg, VA*",2007,88.295
-51949,"Southampton + Franklin, VA*",2007,97.239
-51951,"Spotsylvania + Fredericksburg, VA*",2007,102.497
-51953,"Washington + Bristol, VA*",2007,102.037
-51955,"Wise + Norton, VA*",2007,119.603
-51958,"York + Poquoson, VA*",2007,105.742
 53001,"Adams, WA",2007,104.604
 53003,"Asotin, WA",2007,95.849
 53005,"Benton, WA",2007,89.21
@@ -21795,6 +21648,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2008,114.145
 2070,"Dillingham Census Area, AK",2008,88.027
 2090,"Fairbanks North Star Borough, AK",2008,114.719
+2100,"Haines Borough, AK",2008,98.679
 2110,"Juneau City and Borough, AK",2008,92.637
 2122,"Kenai Peninsula Borough, AK",2008,91.634
 2130,"Ketchikan Gateway Borough, AK*",2008,96.766
@@ -22261,7 +22115,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2008,103.981
 15003,"Honolulu, HI",2008,96.471
 15007,"Kauai, HI",2008,99.94
-15901,"Maui + Kalawao, HI*",2008,102.837
 16001,"Ada, ID",2008,103.783
 16003,"Adams, ID",2008,90.993
 16005,"Bannock, ID",2008,107.707
@@ -24606,34 +24459,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2008,101.065
 51550,"Chesapeake (Independent City), VA",2008,104.471
 51650,"Hampton (Independent City), VA",2008,109.667
+51700,"Newport News (Independent City), VA",2008,94.129
 51710,"Norfolk (Independent City), VA",2008,110.613
 51740,"Portsmouth (Independent City), VA",2008,98.669
 51760,"Richmond (Independent City), VA",2008,102.255
 51770,"Roanoke (Independent City), VA",2008,102.927
+51800,"Suffolk (Independent City), VA",2008,76.272
 51810,"Virginia Beach (Independent City), VA",2008,103.108
-51901,"Albemarle + Charlottesville, VA*",2008,97.454
-51903,"Alleghany + Covington, VA*",2008,88.796
-51907,"Augusta, Staunton + Waynesboro, VA*",2008,105.476
-51911,"Campbell + Lynchburg, VA*",2008,102.218
-51913,"Carroll + Galax, VA*",2008,102.204
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2008,111.884
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2008,93.088
-51921,"Frederick + Winchester, VA*",2008,94.412
-51923,"Greensville + Emporia, VA*",2008,96.825
-51929,"Henry + Martinsville, VA*",2008,110.247
-51931,"James City + Williamsburg, VA*",2008,105.299
-51933,"Montgomery + Radford, VA*",2008,99.851
-51939,"Pittsylvania + Danville, VA*",2008,105.013
-51941,"Prince George + Hopewell, VA*",2008,83.111
-51942,"Prince William, Manassas + Manassas Park, VA*",2008,90.03
-51944,"Roanoke + Salem, VA*",2008,106.915
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2008,108.645
-51947,"Rockingham + Harrisonburg, VA*",2008,88.391
-51949,"Southampton + Franklin, VA*",2008,98.502
-51951,"Spotsylvania + Fredericksburg, VA*",2008,99.95
-51953,"Washington + Bristol, VA*",2008,103.116
-51955,"Wise + Norton, VA*",2008,120.613
-51958,"York + Poquoson, VA*",2008,109.857
 53001,"Adams, WA",2008,104.522
 53003,"Asotin, WA",2008,96.178
 53005,"Benton, WA",2008,92.686
@@ -24898,6 +24730,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2009,108.644
 2070,"Dillingham Census Area, AK",2009,93.148
 2090,"Fairbanks North Star Borough, AK",2009,112.446
+2100,"Haines Borough, AK",2009,100.693
 2110,"Juneau City and Borough, AK",2009,94.51
 2122,"Kenai Peninsula Borough, AK",2009,98.786
 2130,"Ketchikan Gateway Borough, AK*",2009,99.959
@@ -25364,7 +25197,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2009,95.124
 15003,"Honolulu, HI",2009,94.846
 15007,"Kauai, HI",2009,91.101
-15901,"Maui + Kalawao, HI*",2009,92.553
 16001,"Ada, ID",2009,99.871
 16003,"Adams, ID",2009,87.339
 16005,"Bannock, ID",2009,100.051
@@ -27709,34 +27541,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2009,101.349
 51550,"Chesapeake (Independent City), VA",2009,104.412
 51650,"Hampton (Independent City), VA",2009,109.419
+51700,"Newport News (Independent City), VA",2009,94.821
 51710,"Norfolk (Independent City), VA",2009,105.989
 51740,"Portsmouth (Independent City), VA",2009,97.662
 51760,"Richmond (Independent City), VA",2009,99.019
 51770,"Roanoke (Independent City), VA",2009,99.696
+51800,"Suffolk (Independent City), VA",2009,89.108
 51810,"Virginia Beach (Independent City), VA",2009,97.576
-51901,"Albemarle + Charlottesville, VA*",2009,96.409
-51903,"Alleghany + Covington, VA*",2009,82.984
-51907,"Augusta, Staunton + Waynesboro, VA*",2009,106.276
-51911,"Campbell + Lynchburg, VA*",2009,101.18
-51913,"Carroll + Galax, VA*",2009,100.936
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2009,109.713
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2009,92.302
-51921,"Frederick + Winchester, VA*",2009,96.74
-51923,"Greensville + Emporia, VA*",2009,102.933
-51929,"Henry + Martinsville, VA*",2009,105.657
-51931,"James City + Williamsburg, VA*",2009,103.817
-51933,"Montgomery + Radford, VA*",2009,96.391
-51939,"Pittsylvania + Danville, VA*",2009,105.965
-51941,"Prince George + Hopewell, VA*",2009,84.22
-51942,"Prince William, Manassas + Manassas Park, VA*",2009,89.652
-51944,"Roanoke + Salem, VA*",2009,103.86
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2009,101.02
-51947,"Rockingham + Harrisonburg, VA*",2009,92.459
-51949,"Southampton + Franklin, VA*",2009,98.319
-51951,"Spotsylvania + Fredericksburg, VA*",2009,95.778
-51953,"Washington + Bristol, VA*",2009,103.167
-51955,"Wise + Norton, VA*",2009,115.884
-51958,"York + Poquoson, VA*",2009,105.136
 53001,"Adams, WA",2009,100.717
 53003,"Asotin, WA",2009,95.411
 53005,"Benton, WA",2009,97.057
@@ -28001,6 +27812,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2010,103.95
 2070,"Dillingham Census Area, AK",2010,100.88
 2090,"Fairbanks North Star Borough, AK",2010,113.437
+2100,"Haines Borough, AK",2010,103.617
 2110,"Juneau City and Borough, AK",2010,99.598
 2122,"Kenai Peninsula Borough, AK",2010,101.49
 2130,"Ketchikan Gateway Borough, AK*",2010,98.79
@@ -28467,7 +28279,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2010,99.408
 15003,"Honolulu, HI",2010,96.917
 15007,"Kauai, HI",2010,93.985
-15901,"Maui + Kalawao, HI*",2010,95.142
 16001,"Ada, ID",2010,100.37
 16003,"Adams, ID",2010,89.747
 16005,"Bannock, ID",2010,100.32
@@ -30812,34 +30623,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2010,102.956
 51550,"Chesapeake (Independent City), VA",2010,105.339
 51650,"Hampton (Independent City), VA",2010,105.846
+51700,"Newport News (Independent City), VA",2010,95.781
 51710,"Norfolk (Independent City), VA",2010,104.343
 51740,"Portsmouth (Independent City), VA",2010,99.136
 51760,"Richmond (Independent City), VA",2010,97.879
 51770,"Roanoke (Independent City), VA",2010,99.662
+51800,"Suffolk (Independent City), VA",2010,94.87
 51810,"Virginia Beach (Independent City), VA",2010,99.384
-51901,"Albemarle + Charlottesville, VA*",2010,100.348
-51903,"Alleghany + Covington, VA*",2010,86.917
-51907,"Augusta, Staunton + Waynesboro, VA*",2010,107.994
-51911,"Campbell + Lynchburg, VA*",2010,106.368
-51913,"Carroll + Galax, VA*",2010,100.558
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2010,109.426
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2010,95.898
-51921,"Frederick + Winchester, VA*",2010,100.22
-51923,"Greensville + Emporia, VA*",2010,100.905
-51929,"Henry + Martinsville, VA*",2010,111.247
-51931,"James City + Williamsburg, VA*",2010,105.641
-51933,"Montgomery + Radford, VA*",2010,97.239
-51939,"Pittsylvania + Danville, VA*",2010,106.878
-51941,"Prince George + Hopewell, VA*",2010,94.17
-51942,"Prince William, Manassas + Manassas Park, VA*",2010,94.529
-51944,"Roanoke + Salem, VA*",2010,105.495
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2010,103.571
-51947,"Rockingham + Harrisonburg, VA*",2010,98.345
-51949,"Southampton + Franklin, VA*",2010,92.754
-51951,"Spotsylvania + Fredericksburg, VA*",2010,98.802
-51953,"Washington + Bristol, VA*",2010,102.398
-51955,"Wise + Norton, VA*",2010,125.422
-51958,"York + Poquoson, VA*",2010,106.048
 53001,"Adams, WA",2010,101.453
 53003,"Asotin, WA",2010,103.486
 53005,"Benton, WA",2010,109.252
@@ -31104,6 +30894,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2011,98.968
 2070,"Dillingham Census Area, AK",2011,101.184
 2090,"Fairbanks North Star Borough, AK",2011,105.584
+2100,"Haines Borough, AK",2011,102.861
 2110,"Juneau City and Borough, AK",2011,101.593
 2122,"Kenai Peninsula Borough, AK",2011,102.319
 2130,"Ketchikan Gateway Borough, AK*",2011,101.393
@@ -31570,7 +31361,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2011,96.664
 15003,"Honolulu, HI",2011,98.882
 15007,"Kauai, HI",2011,94.735
-15901,"Maui + Kalawao, HI*",2011,96.509
 16001,"Ada, ID",2011,100.335
 16003,"Adams, ID",2011,91.964
 16005,"Bannock, ID",2011,98.211
@@ -33915,34 +33705,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2011,99.515
 51550,"Chesapeake (Independent City), VA",2011,103.766
 51650,"Hampton (Independent City), VA",2011,103.155
+51700,"Newport News (Independent City), VA",2011,98.757
 51710,"Norfolk (Independent City), VA",2011,102.087
 51740,"Portsmouth (Independent City), VA",2011,101.234
 51760,"Richmond (Independent City), VA",2011,98.523
 51770,"Roanoke (Independent City), VA",2011,99.628
+51800,"Suffolk (Independent City), VA",2011,96.609
 51810,"Virginia Beach (Independent City), VA",2011,99.902
-51901,"Albemarle + Charlottesville, VA*",2011,99.28
-51903,"Alleghany + Covington, VA*",2011,88.154
-51907,"Augusta, Staunton + Waynesboro, VA*",2011,104.556
-51911,"Campbell + Lynchburg, VA*",2011,104.103
-51913,"Carroll + Galax, VA*",2011,99.78
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2011,105.802
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2011,97.422
-51921,"Frederick + Winchester, VA*",2011,100.653
-51923,"Greensville + Emporia, VA*",2011,98.271
-51929,"Henry + Martinsville, VA*",2011,105.204
-51931,"James City + Williamsburg, VA*",2011,101.614
-51933,"Montgomery + Radford, VA*",2011,99.536
-51939,"Pittsylvania + Danville, VA*",2011,102.898
-51941,"Prince George + Hopewell, VA*",2011,97.554
-51942,"Prince William, Manassas + Manassas Park, VA*",2011,97.252
-51944,"Roanoke + Salem, VA*",2011,103.589
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2011,102.604
-51947,"Rockingham + Harrisonburg, VA*",2011,98.876
-51949,"Southampton + Franklin, VA*",2011,95.214
-51951,"Spotsylvania + Fredericksburg, VA*",2011,97.502
-51953,"Washington + Bristol, VA*",2011,101.824
-51955,"Wise + Norton, VA*",2011,116.111
-51958,"York + Poquoson, VA*",2011,103.437
 53001,"Adams, WA",2011,98.38
 53003,"Asotin, WA",2011,102.929
 53005,"Benton, WA",2011,106.22
@@ -34207,6 +33976,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2013,128.219
 2070,"Dillingham Census Area, AK",2013,101.264
 2090,"Fairbanks North Star Borough, AK",2013,98.196
+2100,"Haines Borough, AK",2013,108.161
 2110,"Juneau City and Borough, AK",2013,101.366
 2122,"Kenai Peninsula Borough, AK",2013,104.258
 2130,"Ketchikan Gateway Borough, AK*",2013,101.541
@@ -34673,7 +34443,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2013,100.574
 15003,"Honolulu, HI",2013,101.365
 15007,"Kauai, HI",2013,106.075
-15901,"Maui + Kalawao, HI*",2013,102.47
 16001,"Ada, ID",2013,104.619
 16003,"Adams, ID",2013,101.788
 16005,"Bannock, ID",2013,98.381
@@ -37018,34 +36787,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2013,95.716
 51550,"Chesapeake (Independent City), VA",2013,101.301
 51650,"Hampton (Independent City), VA",2013,99.171
+51700,"Newport News (Independent City), VA",2013,104.435
 51710,"Norfolk (Independent City), VA",2013,99.167
 51740,"Portsmouth (Independent City), VA",2013,101.202
 51760,"Richmond (Independent City), VA",2013,101.226
 51770,"Roanoke (Independent City), VA",2013,101.541
+51800,"Suffolk (Independent City), VA",2013,96.985
 51810,"Virginia Beach (Independent City), VA",2013,100.587
-51901,"Albemarle + Charlottesville, VA*",2013,100.731
-51903,"Alleghany + Covington, VA*",2013,91.903
-51907,"Augusta, Staunton + Waynesboro, VA*",2013,103.019
-51911,"Campbell + Lynchburg, VA*",2013,98.549
-51913,"Carroll + Galax, VA*",2013,97.701
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2013,101.743
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2013,100.552
-51921,"Frederick + Winchester, VA*",2013,103.139
-51923,"Greensville + Emporia, VA*",2013,109.931
-51929,"Henry + Martinsville, VA*",2013,97.671
-51931,"James City + Williamsburg, VA*",2013,101.205
-51933,"Montgomery + Radford, VA*",2013,101.476
-51939,"Pittsylvania + Danville, VA*",2013,101.082
-51941,"Prince George + Hopewell, VA*",2013,97.934
-51942,"Prince William, Manassas + Manassas Park, VA*",2013,103.178
-51944,"Roanoke + Salem, VA*",2013,99.529
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2013,101.593
-51947,"Rockingham + Harrisonburg, VA*",2013,102.236
-51949,"Southampton + Franklin, VA*",2013,94.939
-51951,"Spotsylvania + Fredericksburg, VA*",2013,102.783
-51953,"Washington + Bristol, VA*",2013,97.367
-51955,"Wise + Norton, VA*",2013,95.379
-51958,"York + Poquoson, VA*",2013,103.387
 53001,"Adams, WA",2013,103.894
 53003,"Asotin, WA",2013,102.848
 53005,"Benton, WA",2013,98.078
@@ -37310,6 +37058,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2014,132.44
 2070,"Dillingham Census Area, AK",2014,106.339
 2090,"Fairbanks North Star Borough, AK",2014,96.937
+2100,"Haines Borough, AK",2014,105.606
 2110,"Juneau City and Borough, AK",2014,101.375
 2122,"Kenai Peninsula Borough, AK",2014,115.269
 2130,"Ketchikan Gateway Borough, AK*",2014,99.28
@@ -37776,7 +37525,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2014,101.385
 15003,"Honolulu, HI",2014,102.008
 15007,"Kauai, HI",2014,106.569
-15901,"Maui + Kalawao, HI*",2014,102.854
 16001,"Ada, ID",2014,109.773
 16003,"Adams, ID",2014,103.346
 16005,"Bannock, ID",2014,100.475
@@ -40121,34 +39869,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2014,95.147
 51550,"Chesapeake (Independent City), VA",2014,100.555
 51650,"Hampton (Independent City), VA",2014,98.363
+51700,"Newport News (Independent City), VA",2014,100.874
 51710,"Norfolk (Independent City), VA",2014,99.299
 51740,"Portsmouth (Independent City), VA",2014,100.295
 51760,"Richmond (Independent City), VA",2014,103.605
 51770,"Roanoke (Independent City), VA",2014,102.188
+51800,"Suffolk (Independent City), VA",2014,89.943
 51810,"Virginia Beach (Independent City), VA",2014,100.856
-51901,"Albemarle + Charlottesville, VA*",2014,102.354
-51903,"Alleghany + Covington, VA*",2014,86.718
-51907,"Augusta, Staunton + Waynesboro, VA*",2014,101.949
-51911,"Campbell + Lynchburg, VA*",2014,98.208
-51913,"Carroll + Galax, VA*",2014,102.211
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2014,99.364
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2014,100.276
-51921,"Frederick + Winchester, VA*",2014,102.724
-51923,"Greensville + Emporia, VA*",2014,107.547
-51929,"Henry + Martinsville, VA*",2014,95.851
-51931,"James City + Williamsburg, VA*",2014,97.953
-51933,"Montgomery + Radford, VA*",2014,102.361
-51939,"Pittsylvania + Danville, VA*",2014,98.929
-51941,"Prince George + Hopewell, VA*",2014,95.108
-51942,"Prince William, Manassas + Manassas Park, VA*",2014,104.508
-51944,"Roanoke + Salem, VA*",2014,101.036
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2014,99.853
-51947,"Rockingham + Harrisonburg, VA*",2014,97.518
-51949,"Southampton + Franklin, VA*",2014,88.485
-51951,"Spotsylvania + Fredericksburg, VA*",2014,102.541
-51953,"Washington + Bristol, VA*",2014,97.386
-51955,"Wise + Norton, VA*",2014,88.016
-51958,"York + Poquoson, VA*",2014,102.504
 53001,"Adams, WA",2014,99.821
 53003,"Asotin, WA",2014,98.78
 53005,"Benton, WA",2014,99.116
@@ -40413,6 +40140,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2015,129.539
 2070,"Dillingham Census Area, AK",2015,103.274
 2090,"Fairbanks North Star Borough, AK",2015,96.161
+2100,"Haines Borough, AK",2015,110.832
 2110,"Juneau City and Borough, AK",2015,97.661
 2122,"Kenai Peninsula Borough, AK",2015,112.444
 2130,"Ketchikan Gateway Borough, AK*",2015,100.192
@@ -40879,7 +40607,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2015,106.622
 15003,"Honolulu, HI",2015,104.781
 15007,"Kauai, HI",2015,108.767
-15901,"Maui + Kalawao, HI*",2015,108.457
 16001,"Ada, ID",2015,110.869
 16003,"Adams, ID",2015,110.298
 16005,"Bannock, ID",2015,99.817
@@ -43224,34 +42951,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2015,94.894
 51550,"Chesapeake (Independent City), VA",2015,102.359
 51650,"Hampton (Independent City), VA",2015,96.321
+51700,"Newport News (Independent City), VA",2015,104.499
 51710,"Norfolk (Independent City), VA",2015,100.886
 51740,"Portsmouth (Independent City), VA",2015,101.099
 51760,"Richmond (Independent City), VA",2015,107.8
 51770,"Roanoke (Independent City), VA",2015,104.565
+51800,"Suffolk (Independent City), VA",2015,88.597
 51810,"Virginia Beach (Independent City), VA",2015,102.171
-51901,"Albemarle + Charlottesville, VA*",2015,105.079
-51903,"Alleghany + Covington, VA*",2015,91.086
-51907,"Augusta, Staunton + Waynesboro, VA*",2015,101.759
-51911,"Campbell + Lynchburg, VA*",2015,97.773
-51913,"Carroll + Galax, VA*",2015,105.921
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2015,102.157
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2015,101.199
-51921,"Frederick + Winchester, VA*",2015,106.881
-51923,"Greensville + Emporia, VA*",2015,103.184
-51929,"Henry + Martinsville, VA*",2015,98.211
-51931,"James City + Williamsburg, VA*",2015,103.227
-51933,"Montgomery + Radford, VA*",2015,106.204
-51939,"Pittsylvania + Danville, VA*",2015,96.475
-51941,"Prince George + Hopewell, VA*",2015,96.919
-51942,"Prince William, Manassas + Manassas Park, VA*",2015,104.239
-51944,"Roanoke + Salem, VA*",2015,104.446
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2015,101.653
-51947,"Rockingham + Harrisonburg, VA*",2015,94.484
-51949,"Southampton + Franklin, VA*",2015,89.339
-51951,"Spotsylvania + Fredericksburg, VA*",2015,104.771
-51953,"Washington + Bristol, VA*",2015,101.372
-51955,"Wise + Norton, VA*",2015,82.201
-51958,"York + Poquoson, VA*",2015,102.907
 53001,"Adams, WA",2015,113.205
 53003,"Asotin, WA",2015,101.686
 53005,"Benton, WA",2015,104.14
@@ -43516,6 +43222,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2016,125.328
 2070,"Dillingham Census Area, AK",2016,101.984
 2090,"Fairbanks North Star Borough, AK",2016,96.238
+2100,"Haines Borough, AK",2016,107.391
 2110,"Juneau City and Borough, AK",2016,97.687
 2122,"Kenai Peninsula Borough, AK",2016,106.143
 2130,"Ketchikan Gateway Borough, AK*",2016,96.98
@@ -43982,7 +43689,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2016,109.311
 15003,"Honolulu, HI",2016,106.434
 15007,"Kauai, HI",2016,111.676
-15901,"Maui + Kalawao, HI*",2016,111.913
 16001,"Ada, ID",2016,115.915
 16003,"Adams, ID",2016,112.13
 16005,"Bannock, ID",2016,100.626
@@ -46327,34 +46033,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2016,94.5
 51550,"Chesapeake (Independent City), VA",2016,102.728
 51650,"Hampton (Independent City), VA",2016,96.651
+51700,"Newport News (Independent City), VA",2016,103.293
 51710,"Norfolk (Independent City), VA",2016,102.901
 51740,"Portsmouth (Independent City), VA",2016,100.403
 51760,"Richmond (Independent City), VA",2016,109.991
 51770,"Roanoke (Independent City), VA",2016,106.256
+51800,"Suffolk (Independent City), VA",2016,87.93
 51810,"Virginia Beach (Independent City), VA",2016,103.805
-51901,"Albemarle + Charlottesville, VA*",2016,107.464
-51903,"Alleghany + Covington, VA*",2016,93.011
-51907,"Augusta, Staunton + Waynesboro, VA*",2016,101.213
-51911,"Campbell + Lynchburg, VA*",2016,97.457
-51913,"Carroll + Galax, VA*",2016,105.684
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2016,100.201
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2016,102.445
-51921,"Frederick + Winchester, VA*",2016,108.549
-51923,"Greensville + Emporia, VA*",2016,96.003
-51929,"Henry + Martinsville, VA*",2016,97.899
-51931,"James City + Williamsburg, VA*",2016,106.866
-51933,"Montgomery + Radford, VA*",2016,107.633
-51939,"Pittsylvania + Danville, VA*",2016,94.987
-51941,"Prince George + Hopewell, VA*",2016,92.511
-51942,"Prince William, Manassas + Manassas Park, VA*",2016,105.177
-51944,"Roanoke + Salem, VA*",2016,98.763
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2016,100.612
-51947,"Rockingham + Harrisonburg, VA*",2016,90.941
-51949,"Southampton + Franklin, VA*",2016,92.25
-51951,"Spotsylvania + Fredericksburg, VA*",2016,106.102
-51953,"Washington + Bristol, VA*",2016,105.57
-51955,"Wise + Norton, VA*",2016,78.812
-51958,"York + Poquoson, VA*",2016,98.179
 53001,"Adams, WA",2016,101.46
 53003,"Asotin, WA",2016,101.504
 53005,"Benton, WA",2016,108.977
@@ -46619,6 +46304,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2017,130.093
 2070,"Dillingham Census Area, AK",2017,104.591
 2090,"Fairbanks North Star Borough, AK",2017,95.348
+2100,"Haines Borough, AK",2017,115.261
 2110,"Juneau City and Borough, AK",2017,101.884
 2122,"Kenai Peninsula Borough, AK",2017,107.872
 2130,"Ketchikan Gateway Borough, AK*",2017,97.087
@@ -47085,7 +46771,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2017,115.61
 15003,"Honolulu, HI",2017,108.409
 15007,"Kauai, HI",2017,112.488
-15901,"Maui + Kalawao, HI*",2017,113.533
 16001,"Ada, ID",2017,119.899
 16003,"Adams, ID",2017,109.689
 16005,"Bannock, ID",2017,102.031
@@ -49430,34 +49115,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2017,95.278
 51550,"Chesapeake (Independent City), VA",2017,103.445
 51650,"Hampton (Independent City), VA",2017,97.607
+51700,"Newport News (Independent City), VA",2017,102.144
 51710,"Norfolk (Independent City), VA",2017,99.066
 51740,"Portsmouth (Independent City), VA",2017,101.66
 51760,"Richmond (Independent City), VA",2017,111.783
 51770,"Roanoke (Independent City), VA",2017,106.611
+51800,"Suffolk (Independent City), VA",2017,85.258
 51810,"Virginia Beach (Independent City), VA",2017,106.038
-51901,"Albemarle + Charlottesville, VA*",2017,112.861
-51903,"Alleghany + Covington, VA*",2017,82.857
-51907,"Augusta, Staunton + Waynesboro, VA*",2017,101.788
-51911,"Campbell + Lynchburg, VA*",2017,99.128
-51913,"Carroll + Galax, VA*",2017,100.099
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2017,101.166
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2017,103.86
-51921,"Frederick + Winchester, VA*",2017,109.04
-51923,"Greensville + Emporia, VA*",2017,97.535
-51929,"Henry + Martinsville, VA*",2017,99.927
-51931,"James City + Williamsburg, VA*",2017,115.695
-51933,"Montgomery + Radford, VA*",2017,110.089
-51939,"Pittsylvania + Danville, VA*",2017,96.151
-51941,"Prince George + Hopewell, VA*",2017,93.436
-51942,"Prince William, Manassas + Manassas Park, VA*",2017,109.052
-51944,"Roanoke + Salem, VA*",2017,97.368
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2017,103.096
-51947,"Rockingham + Harrisonburg, VA*",2017,92.86
-51949,"Southampton + Franklin, VA*",2017,87.04
-51951,"Spotsylvania + Fredericksburg, VA*",2017,108.783
-51953,"Washington + Bristol, VA*",2017,114.508
-51955,"Wise + Norton, VA*",2017,75.964
-51958,"York + Poquoson, VA*",2017,98.707
 53001,"Adams, WA",2017,93.484
 53003,"Asotin, WA",2017,105.305
 53005,"Benton, WA",2017,110.492
@@ -49722,6 +49386,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2018,130.913
 2070,"Dillingham Census Area, AK",2018,104.544
 2090,"Fairbanks North Star Borough, AK",2018,94.363
+2100,"Haines Borough, AK",2018,122.926
 2110,"Juneau City and Borough, AK",2018,100.622
 2122,"Kenai Peninsula Borough, AK",2018,96.789
 2130,"Ketchikan Gateway Borough, AK*",2018,96.753
@@ -50188,7 +49853,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2018,116.64
 15003,"Honolulu, HI",2018,108.672
 15007,"Kauai, HI",2018,119.626
-15901,"Maui + Kalawao, HI*",2018,119.585
 16001,"Ada, ID",2018,129.109
 16003,"Adams, ID",2018,106.137
 16005,"Bannock, ID",2018,101.662
@@ -52533,34 +52197,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2018,96.062
 51550,"Chesapeake (Independent City), VA",2018,106.133
 51650,"Hampton (Independent City), VA",2018,96.269
+51700,"Newport News (Independent City), VA",2018,107.877
 51710,"Norfolk (Independent City), VA",2018,91.005
 51740,"Portsmouth (Independent City), VA",2018,99.972
 51760,"Richmond (Independent City), VA",2018,113.836
 51770,"Roanoke (Independent City), VA",2018,106.883
+51800,"Suffolk (Independent City), VA",2018,87.17
 51810,"Virginia Beach (Independent City), VA",2018,103.895
-51901,"Albemarle + Charlottesville, VA*",2018,116.207
-51903,"Alleghany + Covington, VA*",2018,84.981
-51907,"Augusta, Staunton + Waynesboro, VA*",2018,102.659
-51911,"Campbell + Lynchburg, VA*",2018,105.163
-51913,"Carroll + Galax, VA*",2018,100.101
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2018,103.104
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2018,108.11
-51921,"Frederick + Winchester, VA*",2018,111.707
-51923,"Greensville + Emporia, VA*",2018,104.958
-51929,"Henry + Martinsville, VA*",2018,100.769
-51931,"James City + Williamsburg, VA*",2018,116.785
-51933,"Montgomery + Radford, VA*",2018,113.905
-51939,"Pittsylvania + Danville, VA*",2018,98.271
-51941,"Prince George + Hopewell, VA*",2018,94.472
-51942,"Prince William, Manassas + Manassas Park, VA*",2018,111.736
-51944,"Roanoke + Salem, VA*",2018,99.239
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2018,101.778
-51947,"Rockingham + Harrisonburg, VA*",2018,94.967
-51949,"Southampton + Franklin, VA*",2018,88.094
-51951,"Spotsylvania + Fredericksburg, VA*",2018,112.016
-51953,"Washington + Bristol, VA*",2018,119.895
-51955,"Wise + Norton, VA*",2018,76.719
-51958,"York + Poquoson, VA*",2018,101.145
 53001,"Adams, WA",2018,108.08
 53003,"Asotin, WA",2018,107.769
 53005,"Benton, WA",2018,112.67
@@ -52825,6 +52468,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2019,128.183
 2070,"Dillingham Census Area, AK",2019,101.734
 2090,"Fairbanks North Star Borough, AK",2019,93.411
+2100,"Haines Borough, AK",2019,121.43
 2110,"Juneau City and Borough, AK",2019,97.673
 2122,"Kenai Peninsula Borough, AK",2019,99.268
 2130,"Ketchikan Gateway Borough, AK*",2019,98.579
@@ -53291,7 +52935,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2019,117.597
 15003,"Honolulu, HI",2019,107.108
 15007,"Kauai, HI",2019,121.222
-15901,"Maui + Kalawao, HI*",2019,120.98
 16001,"Ada, ID",2019,134.0
 16003,"Adams, ID",2019,107.867
 16005,"Bannock, ID",2019,103.979
@@ -55636,34 +55279,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2019,94.061
 51550,"Chesapeake (Independent City), VA",2019,107.879
 51650,"Hampton (Independent City), VA",2019,97.507
+51700,"Newport News (Independent City), VA",2019,113.287
 51710,"Norfolk (Independent City), VA",2019,87.655
 51740,"Portsmouth (Independent City), VA",2019,105.71
 51760,"Richmond (Independent City), VA",2019,116.922
 51770,"Roanoke (Independent City), VA",2019,106.005
+51800,"Suffolk (Independent City), VA",2019,91.562
 51810,"Virginia Beach (Independent City), VA",2019,105.879
-51901,"Albemarle + Charlottesville, VA*",2019,117.12
-51903,"Alleghany + Covington, VA*",2019,87.867
-51907,"Augusta, Staunton + Waynesboro, VA*",2019,103.915
-51911,"Campbell + Lynchburg, VA*",2019,105.713
-51913,"Carroll + Galax, VA*",2019,97.169
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2019,102.826
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2019,113.277
-51921,"Frederick + Winchester, VA*",2019,114.647
-51923,"Greensville + Emporia, VA*",2019,172.297
-51929,"Henry + Martinsville, VA*",2019,104.453
-51931,"James City + Williamsburg, VA*",2019,119.532
-51933,"Montgomery + Radford, VA*",2019,110.984
-51939,"Pittsylvania + Danville, VA*",2019,98.714
-51941,"Prince George + Hopewell, VA*",2019,96.117
-51942,"Prince William, Manassas + Manassas Park, VA*",2019,115.332
-51944,"Roanoke + Salem, VA*",2019,97.13
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2019,106.211
-51947,"Rockingham + Harrisonburg, VA*",2019,98.086
-51949,"Southampton + Franklin, VA*",2019,96.616
-51951,"Spotsylvania + Fredericksburg, VA*",2019,113.277
-51953,"Washington + Bristol, VA*",2019,116.86
-51955,"Wise + Norton, VA*",2019,71.778
-51958,"York + Poquoson, VA*",2019,103.925
 53001,"Adams, WA",2019,114.566
 53003,"Asotin, WA",2019,108.808
 53005,"Benton, WA",2019,116.818
@@ -55928,6 +55550,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2020,96.345
 2070,"Dillingham Census Area, AK",2020,93.558
 2090,"Fairbanks North Star Borough, AK",2020,91.878
+2100,"Haines Borough, AK",2020,95.714
 2110,"Juneau City and Borough, AK",2020,93.651
 2122,"Kenai Peninsula Borough, AK",2020,96.801
 2130,"Ketchikan Gateway Borough, AK*",2020,85.611
@@ -56394,7 +56017,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2020,106.141
 15003,"Honolulu, HI",2020,96.323
 15007,"Kauai, HI",2020,102.299
-15901,"Maui + Kalawao, HI*",2020,96.528
 16001,"Ada, ID",2020,135.359
 16003,"Adams, ID",2020,112.009
 16005,"Bannock, ID",2020,103.178
@@ -58739,34 +58361,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2020,90.199
 51550,"Chesapeake (Independent City), VA",2020,107.303
 51650,"Hampton (Independent City), VA",2020,95.599
+51700,"Newport News (Independent City), VA",2020,105.901
 51710,"Norfolk (Independent City), VA",2020,85.289
 51740,"Portsmouth (Independent City), VA",2020,104.326
 51760,"Richmond (Independent City), VA",2020,116.018
 51770,"Roanoke (Independent City), VA",2020,105.292
+51800,"Suffolk (Independent City), VA",2020,94.606
 51810,"Virginia Beach (Independent City), VA",2020,103.469
-51901,"Albemarle + Charlottesville, VA*",2020,112.592
-51903,"Alleghany + Covington, VA*",2020,81.046
-51907,"Augusta, Staunton + Waynesboro, VA*",2020,100.413
-51911,"Campbell + Lynchburg, VA*",2020,98.914
-51913,"Carroll + Galax, VA*",2020,92.334
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2020,101.268
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2020,111.768
-51921,"Frederick + Winchester, VA*",2020,116.483
-51923,"Greensville + Emporia, VA*",2020,170.822
-51929,"Henry + Martinsville, VA*",2020,104.463
-51931,"James City + Williamsburg, VA*",2020,119.601
-51933,"Montgomery + Radford, VA*",2020,107.906
-51939,"Pittsylvania + Danville, VA*",2020,96.309
-51941,"Prince George + Hopewell, VA*",2020,96.0
-51942,"Prince William, Manassas + Manassas Park, VA*",2020,114.691
-51944,"Roanoke + Salem, VA*",2020,94.379
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2020,102.021
-51947,"Rockingham + Harrisonburg, VA*",2020,98.059
-51949,"Southampton + Franklin, VA*",2020,91.367
-51951,"Spotsylvania + Fredericksburg, VA*",2020,112.101
-51953,"Washington + Bristol, VA*",2020,113.752
-51955,"Wise + Norton, VA*",2020,70.122
-51958,"York + Poquoson, VA*",2020,98.089
 53001,"Adams, WA",2020,116.55
 53003,"Asotin, WA",2020,108.738
 53005,"Benton, WA",2020,113.023
@@ -59031,6 +58632,7 @@ GeoFIPS,GeoName,Year,Value
 2068,"Denali Borough, AK",2021,118.118
 2070,"Dillingham Census Area, AK",2021,92.772
 2090,"Fairbanks North Star Borough, AK",2021,94.578
+2100,"Haines Borough, AK",2021,103.134
 2110,"Juneau City and Borough, AK",2021,95.353
 2122,"Kenai Peninsula Borough, AK",2021,97.943
 2130,"Ketchikan Gateway Borough, AK*",2021,89.519
@@ -59497,7 +59099,6 @@ GeoFIPS,GeoName,Year,Value
 15001,"Hawaii, HI",2021,112.385
 15003,"Honolulu, HI",2021,101.427
 15007,"Kauai, HI",2021,109.963
-15901,"Maui + Kalawao, HI*",2021,109.567
 16001,"Ada, ID",2021,147.95
 16003,"Adams, ID",2021,122.021
 16005,"Bannock, ID",2021,108.253
@@ -61842,34 +61443,13 @@ GeoFIPS,GeoName,Year,Value
 51510,"Alexandria (Independent City), VA",2021,92.421
 51550,"Chesapeake (Independent City), VA",2021,111.718
 51650,"Hampton (Independent City), VA",2021,98.296
+51700,"Newport News (Independent City), VA",2021,118.209
 51710,"Norfolk (Independent City), VA",2021,90.163
 51740,"Portsmouth (Independent City), VA",2021,108.398
 51760,"Richmond (Independent City), VA",2021,120.826
 51770,"Roanoke (Independent City), VA",2021,111.491
+51800,"Suffolk (Independent City), VA",2021,100.487
 51810,"Virginia Beach (Independent City), VA",2021,109.877
-51901,"Albemarle + Charlottesville, VA*",2021,120.732
-51903,"Alleghany + Covington, VA*",2021,81.17
-51907,"Augusta, Staunton + Waynesboro, VA*",2021,105.483
-51911,"Campbell + Lynchburg, VA*",2021,102.688
-51913,"Carroll + Galax, VA*",2021,95.11
-51918,"Dinwiddie, Colonial Heights + Petersburg, VA*",2021,105.024
-51919,"Fairfax, Fairfax City + Falls Church, VA*",2021,118.761
-51921,"Frederick + Winchester, VA*",2021,122.157
-51923,"Greensville + Emporia, VA*",2021,191.711
-51929,"Henry + Martinsville, VA*",2021,111.239
-51931,"James City + Williamsburg, VA*",2021,132.639
-51933,"Montgomery + Radford, VA*",2021,114.101
-51939,"Pittsylvania + Danville, VA*",2021,99.734
-51941,"Prince George + Hopewell, VA*",2021,96.491
-51942,"Prince William, Manassas + Manassas Park, VA*",2021,119.254
-51944,"Roanoke + Salem, VA*",2021,98.472
-51945,"Rockbridge, Buena Vista + Lexington, VA*",2021,105.844
-51947,"Rockingham + Harrisonburg, VA*",2021,105.829
-51949,"Southampton + Franklin, VA*",2021,94.677
-51951,"Spotsylvania + Fredericksburg, VA*",2021,117.812
-51953,"Washington + Bristol, VA*",2021,119.64
-51955,"Wise + Norton, VA*",2021,72.127
-51958,"York + Poquoson, VA*",2021,103.865
 53001,"Adams, WA",2021,110.037
 53003,"Asotin, WA",2021,113.529
 53005,"Benton, WA",2021,116.605
