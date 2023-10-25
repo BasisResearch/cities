@@ -1,3 +1,4 @@
+from cities.utils.clean_ethnic_composition import clean_ethnic_composition
 from cities.utils.clean_gdp import clean_gdp
 from cities.utils.clean_population import clean_population
 from cities.utils.clean_spending_commerce import clean_spending_commerce
@@ -16,3 +17,5 @@ clean_spending_transportation()
 clean_spending_commerce()
 
 clean_spending_HHS()
+
+clean_ethnic_composition()
