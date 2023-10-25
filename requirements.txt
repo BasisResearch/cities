@@ -4,7 +4,6 @@ attrs==23.1.0
 backcall==0.2.0
 black==23.9.1
 chirho==0.1.0
--e git+https://github.com/BasisResearch/cities.git@9e8101ab86b330f92b2049f85c064abc460c0697#egg=cities
 click==8.1.7
 comm==0.1.4
 contourpy==1.1.1

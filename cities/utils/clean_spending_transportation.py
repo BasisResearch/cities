@@ -144,11 +144,13 @@ def clean_spending_transportation():
     )
     assert spending_transportation["GeoFIPS"].nunique() == gdp["GeoFIPS"].nunique()
 
+    spending_transportation = spending_transportation.rename(columns={"year": "Year"})
+
     # standardizing and saving
     spending_transportation_long = spending_transportation.copy()
 
     spending_transportation_wide = spending_transportation.pivot_table(
-        index=["GeoFIPS", "GeoName"], columns="year", values="total_obligated_amount"
+        index=["GeoFIPS", "GeoName"], columns="Year", values="total_obligated_amount"
     )
     spending_transportation_wide.reset_index(inplace=True)
     spending_transportation_wide.columns.name = None
