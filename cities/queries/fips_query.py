@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
+from cities.utils.cleaning_utils import (list_available_features, check_if_tensed)
 from cities.utils.data_grabber import DataGrabber
 from cities.utils.similarity_utils import (
     compute_weight_array,
@@ -32,11 +33,7 @@ class FipsQuery:
             lag > 0 and outcome_comparison_period is not None
         ), "outcome_comparison_period is only used when lag = 0"
 
-        assert outcome_var in [
-            "gdp",
-            "population",
-        ], "outcome_var must be one of ['gdp', 'population']"
-        # TODO_Nikodem update once variable added
+        self.all_available_features = list_available_features()
 
         feature_groups = list(feature_groups_with_weights.keys())
 
@@ -82,6 +79,8 @@ class FipsQuery:
             and isinstance(self.top, int)
             and self.top < self.data.std_wide[self.outcome_var].shape[0]
         ), "top must be a positive integer smaller than the number of locations in the dataset"
+
+        assert check_if_tensed(self.data.std_wide[self.outcome_var]), "Outcome needs to be a time series."
 
         self.outcome_with_percentiles = self.data.std_wide[self.outcome_var].copy()
         most_recent_outcome = self.data.wide[self.outcome_var].iloc[:, -1].values
