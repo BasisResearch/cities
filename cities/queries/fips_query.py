@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
-from cities.utils.cleaning_utils import (list_available_features, check_if_tensed)
+from cities.utils.cleaning_utils import check_if_tensed, list_available_features
 from cities.utils.data_grabber import DataGrabber
 from cities.utils.similarity_utils import (
     compute_weight_array,
@@ -80,7 +80,9 @@ class FipsQuery:
             and self.top < self.data.std_wide[self.outcome_var].shape[0]
         ), "top must be a positive integer smaller than the number of locations in the dataset"
 
-        assert check_if_tensed(self.data.std_wide[self.outcome_var]), "Outcome needs to be a time series."
+        assert check_if_tensed(
+            self.data.std_wide[self.outcome_var]
+        ), "Outcome needs to be a time series."
 
         self.outcome_with_percentiles = self.data.std_wide[self.outcome_var].copy()
         most_recent_outcome = self.data.wide[self.outcome_var].iloc[:, -1].values
@@ -347,7 +349,7 @@ class FipsQuery:
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-        #up = my_plot_data["Year"].max()
+        # up = my_plot_data["Year"].max()
         # possibly remove
 
         fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
