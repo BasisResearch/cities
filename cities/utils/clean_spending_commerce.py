@@ -116,7 +116,7 @@ def clean_spending_commerce():
     )
     assert spending_commerce["GeoFIPS"].nunique() == gdp["GeoFIPS"].nunique()
 
-    spending_commerce = spending_commerce.rename(columns={'year': 'Year'})
+    spending_commerce = spending_commerce.rename(columns={"year": "Year"})
 
     # standardizing and saving
     spending_commerce_long = spending_commerce.copy()

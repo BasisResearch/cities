@@ -5,11 +5,6 @@ import numpy as np
 from cities.utils.cleaning_utils import list_available_features
 from cities.utils.data_grabber import DataGrabber
 
-
-
-
-
-
 # features = [
 #     "gdp",
 #     "population",
