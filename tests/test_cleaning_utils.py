@@ -4,11 +4,9 @@ import sys
 import numpy as np
 import pandas as pd
 
-from cities.utils.cleaning_utils import (
-    find_repo_root,
-    list_available_features,
-    standardize_and_scale,
-)
+import cities
+from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
+from cities.utils.data_grabber import list_available_features
 
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 

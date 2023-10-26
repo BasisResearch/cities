@@ -1,11 +1,12 @@
 import os
+import re
 import sys
 from typing import List
 
 import pandas as pd
 
-from cities.utils.cleaning_utils import (find_repo_root,
-                    check_if_tensed, list_available_features)
+from cities.utils.cleaning_utils import check_if_tensed, find_repo_root
+
 
 class DataGrabber:
     def __init__(self):
@@ -66,11 +67,10 @@ def list_tensed_features():
     data = DataGrabber()
     all_features = list_available_features()
     data.get_features_wide(all_features)
-    
+
     tensed_features = []
     for feature in all_features:
         if check_if_tensed(data.wide[feature]):
             tensed_features.append(feature)
-    
-    return tensed_features    
 
+    return tensed_features

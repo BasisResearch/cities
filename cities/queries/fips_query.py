@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
-from cities.utils.cleaning_utils import check_if_tensed, list_available_features
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.cleaning_utils import check_if_tensed
+from cities.utils.data_grabber import DataGrabber, list_available_features
 from cities.utils.similarity_utils import (
     compute_weight_array,
     generalized_euclidean_distance,
