@@ -12,7 +12,7 @@ def clean_industry():
 
     industry = pd.read_csv("../data/raw/ACSDP5Y2021_DP03_industry.csv")
 
-    industry["GEO_ID"].isna() == 0
+    assert industry["GEO_ID"].isna() == 0
 
     industry["GEO_ID"] = industry["GEO_ID"].str.split("US").str[1]
     industry["GEO_ID"] = industry["GEO_ID"].astype("int64")
