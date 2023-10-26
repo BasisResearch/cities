@@ -4,8 +4,9 @@ import sys
 import numpy as np
 import pandas as pd
 
-from cities.utils.cleaning_utils import (standardize_and_scale,
-                                         list_available_features, find_repo_root)
+import cities
+from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
+from cities.utils.data_grabber import list_available_features
 
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 
@@ -19,13 +20,21 @@ def test_data_folder():
 
     for file_name in file_names:
         if file_name != ".gitkeep":
-            ends_with_allowed_extension = any(file_name.endswith(ext) for ext in allowed_extensions)
-            assert ends_with_allowed_extension, f"File '{file_name}' does not have an allowed extension."
-            
+            ends_with_allowed_extension = any(
+                file_name.endswith(ext) for ext in allowed_extensions
+            )
+            assert (
+                ends_with_allowed_extension
+            ), f"File '{file_name}' does not have an allowed extension."
+
     all_features = list_available_features()
     for feature in all_features:
-        valid_files = [feature + ext for ext in allowed_extensions if feature + ext in file_names]
-        assert len(valid_files) == 4,  f"For feature '{feature}' some data formats are missing."
+        valid_files = [
+            feature + ext for ext in allowed_extensions if feature + ext in file_names
+        ]
+        assert (
+            len(valid_files) == 4
+        ), f"For feature '{feature}' some data formats are missing."
 
 
 # set up gdp data
@@ -50,7 +59,6 @@ def test_standardize_and_scale():
         assert np.max(gdp_scaled[column]) <= 1
 
     assert gdp.shape == gdp_scaled.shape
-
 
 
 all_features = list_available_features()

@@ -1,11 +1,10 @@
 import os
+import re
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from pathlib import Path
-import re
-
 
 
 def find_repo_root() -> Path:
@@ -50,19 +49,7 @@ def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
     return new_data
 
 
-def list_available_features():
-    
-    root = find_repo_root()
-    folder_path = f"{root}/data/processed"
-    file_names = [f for f in os.listdir(folder_path) if f != ".gitkeep"]
-    processed_file_names = []
-
-    for file_name in file_names:
-        # Use regular expressions to find the patterns and split accordingly
-        matches = re.split(r'_wide|_long|_std', file_name)
-        if matches:
-            processed_file_names.append(matches[0])
-        
-    feature_names = list(set(processed_file_names))
-
-    return feature_names
+def check_if_tensed(df):
+    years_to_check = ["2015", "2018", "2019", "2020"]
+    check = df.columns[2:].isin(years_to_check).any().any()
+    return check

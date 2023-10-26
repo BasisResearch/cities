@@ -83,8 +83,7 @@ def test_compute_weight_array():
     fp = FipsQuery(
         42001,
         "gdp",
-        feature_groups=["population"],
-        weights={"population": 4},
+        feature_groups_with_weights={"gdp": 4, "population": 4},
         lag=0,
         top=5,
     )
