@@ -446,6 +446,10 @@ class FipsQuery:
             template="simple_white",
         )
 
+        return fig #fig.show()
+    
+    def show_kins_plot(self):
+        fig = self.plot_kins()
         fig.show()
 
 
