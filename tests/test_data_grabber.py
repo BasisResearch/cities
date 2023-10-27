@@ -105,7 +105,9 @@ def test_DataGrabber():
         for column in data.std_long[feature].columns[3:]:
             assert (data.std_long[feature][column] >= -1).all() and (
                 data.std_long[feature][column] <= 1
-            ).all(), f"The column '{column}' of feature '{feature}' is not standardized."
+            ).all(), (
+                f"The column '{column}' of feature '{feature}' is not standardized."
+            )
 
     os.chdir(os.path.dirname(os.getcwd()))
     data2 = DataGrabber()

@@ -1,12 +1,15 @@
+import os
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
-from pathlib import Path
-import os
+
+from cities.utils.clean_variable import clean_variable
 from cities.utils.cleaning_utils import standardize_and_scale
 from cities.utils.data_grabber import DataGrabber
-from cities.utils.clean_variable import clean_variable
 
 path = Path(__file__).parent.absolute()
+
 
 def clean_industry_step_one():
     data = DataGrabber()
@@ -98,6 +101,7 @@ def clean_industry_step_one():
     industry_long.to_csv("../data/processed/industry_long.csv", index=False)
     industry_std_wide.to_csv("../data/processed/industry_std_wide.csv", index=False)
     industry_std_long.to_csv("../data/processed/industry_std_long.csv", index=False)
+
 
 def clean_industry():
     clean_industry_step_one()
