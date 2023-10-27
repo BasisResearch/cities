@@ -189,7 +189,7 @@ class FipsQuery:
 
     def find_euclidean_kins(self):  
 
-        
+        # cut the relevant years from the outcome variable
         if  self.outcome_comparison_period and self.outcome_var:
             start_year, end_year = self.outcome_comparison_period
 
@@ -208,6 +208,8 @@ class FipsQuery:
         elif self.outcome_var:
             restricted_df = self.data.std_wide[self.outcome_var].copy()
 
+        # apply lag in different directions to you and other locations
+        # to the outcome variable
         if self.outcome_var:
             self.outcome_slices = slice_with_lag(restricted_df, self.fips, self.lag)
 
@@ -224,19 +226,21 @@ class FipsQuery:
             self.other_df = self.data.wide[self.outcome_var][
                 self.data.wide[self.outcome_var]["GeoFIPS"] != self.fips
             ].copy()
+        else:
+            self.my_df = pd.DataFrame()
+            self.other_df = pd.DataFrame()
 
 
-        # add data on other features listed to the arrays
+        # add data on other features to the arrays
         # prior to distance computation
+
         my_features_arrays = np.array([])
         others_features_arrays = np.array([])
         for feature in self.feature_groups:
             if feature != self.outcome_var:
                 _extracted_df = self.data.wide[feature].copy()
                 _extracted_my_df = _extracted_df[_extracted_df["GeoFIPS"] == self.fips]
-                _extracted_other_df = _extracted_df[
-                    _extracted_df["GeoFIPS"] != self.fips
-                ]
+                _extracted_other_df = _extracted_df[_extracted_df["GeoFIPS"] != self.fips]
 
                 if self.outcome_var:
                     before_shape = self.other_df.shape
@@ -262,19 +266,15 @@ class FipsQuery:
 
             assert _extracted_df.shape[1] == _extracted_my_df.shape[1] == _extracted_other_df.shape[1]
        
-
-            if self.outcome_var:
                     
-                self.my_df = pd.concat((self.my_df.copy(), _extracted_my_df.iloc[:, 2:]), axis=1)
-                self.other_df = pd.concat((self.other_df.copy(), _extracted_other_df.iloc[:, 2:]), axis=1)
+            self.my_df = pd.concat((self.my_df, _extracted_my_df.iloc[:, 2:]), axis=1)
+            self.other_df = pd.concat((self.other_df, _extracted_other_df.iloc[:, 2:]), axis=1)
+            
+            if self.outcome_var:
                 after_shape = self.other_df.shape    
                 assert before_shape[0] == after_shape[0], "Feature merging went wrong!"
 
-            else:
-                self.my_df = _extracted_my_df.copy()
-                self.other_df = _extracted_other_df.copy()
         
-
                     
             _extracted_df_std = self.data.std_wide[feature].copy()
             _extracted_other_array = np.array(
@@ -297,6 +297,9 @@ class FipsQuery:
             others_features_arrays = _extracted_other_array
         else:
             others_features_arrays = np.hstack((others_features_arrays, _extracted_other_array))
+
+        display(my_features_arrays.shape)
+        display(others_features_arrays.shape)
 
         # if len(self.feature_groups) > 1 and self.outcome_var:
         #     self.my_array = np.hstack((self.my_array, my_features_arrays))
