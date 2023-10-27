@@ -3261,9 +3261,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 22045,"Iberia, LA",2018,0.0
 22047,"Iberville, LA",2018,0.0
 22049,"Jackson, LA",2018,0.0
-22051,"Jefferson, LA",2011,789045.0
-22051,"Jefferson, LA",2017,1500000.0
-22051,"Jefferson, LA",2020,1452000.0
 22053,"Jefferson Davis, LA",2018,0.0
 22055,"Lafayette, LA",2010,9164995.0
 22055,"Lafayette, LA",2011,8254192.0
@@ -3304,18 +3301,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 22067,"Morehouse, LA",2010,1800000.0
 22067,"Morehouse, LA",2012,490000.0
 22069,"Natchitoches, LA",2018,0.0
-22071,"Orleans, LA",2010,7395143.0
-22071,"Orleans, LA",2011,4493068.0
-22071,"Orleans, LA",2012,4762649.0
-22071,"Orleans, LA",2013,1821727.0
-22071,"Orleans, LA",2014,1369807.0
-22071,"Orleans, LA",2015,2305429.0
-22071,"Orleans, LA",2016,848688.27
-22071,"Orleans, LA",2017,1037444.48
-22071,"Orleans, LA",2018,1835830.1
-22071,"Orleans, LA",2019,2168567.09
-22071,"Orleans, LA",2020,5196665.46
-22071,"Orleans, LA",2021,7552784.59
 22073,"Ouachita, LA",2010,9343384.0
 22073,"Ouachita, LA",2013,9163384.0
 22073,"Ouachita, LA",2014,1000000.0
@@ -3326,7 +3311,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 22073,"Ouachita, LA",2019,660000.0
 22073,"Ouachita, LA",2020,483357.76
 22073,"Ouachita, LA",2021,276986.0
-22075,"Plaquemines, LA",2019,4000000.0
 22077,"Pointe Coupee, LA",2018,0.0
 22079,"Rapides, LA",2010,2180000.0
 22079,"Rapides, LA",2016,1460000.0
@@ -3338,21 +3322,14 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 22081,"Red River, LA",2018,0.0
 22083,"Richland, LA",2018,0.0
 22085,"Sabine, LA",2018,0.0
-22087,"St. Bernard, LA",2010,200000.0
-22089,"St. Charles, LA",2018,0.0
 22091,"St. Helena, LA",2018,0.0
 22093,"St. James, LA",2016,1500000.0
-22095,"St. John the Baptist, LA",2015,250000.0
-22095,"St. John the Baptist, LA",2020,1500000.0
 22097,"St. Landry, LA",2018,0.0
 22099,"St. Martin, LA",2018,0.0
 22101,"St. Mary, LA",2010,1750000.0
 22101,"St. Mary, LA",2012,1800000.0
 22101,"St. Mary, LA",2016,1040000.0
 22101,"St. Mary, LA",2018,1300000.0
-22103,"St. Tammany, LA",2016,26011.0
-22103,"St. Tammany, LA",2017,26011.0
-22103,"St. Tammany, LA",2021,320000.0
 22105,"Tangipahoa, LA",2020,99265.8
 22107,"Tensas, LA",2018,0.0
 22109,"Terrebonne, LA",2010,3097090.0

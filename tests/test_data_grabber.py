@@ -29,7 +29,6 @@ def test_DataGrabber():
         assert data.std_wide[feature].shape[1] < 100
         assert data.long[feature].shape[0] > 2800
         assert data.std_long[feature].shape[1] == 4
-
         assert (
             data.wide["gdp"]["GeoFIPS"].nunique()
             == data.wide[feature]["GeoFIPS"].nunique()
@@ -74,7 +73,7 @@ def test_DataGrabber():
             std_error = "Standarization error"
             assert (
                 data.wide[feature][column].dtype == float
-            ), f"The column '{column}' is not of float type."
+            ), f"The column '{column}' of feature '{feature}' is not of float type."
             assert (
                 data.std_wide[feature][column].dtype == float
             ), f"The column '{column}' is not of float type."
@@ -85,28 +84,28 @@ def test_DataGrabber():
     for column in data.long[feature].columns[3:]:
         assert (
             data.long[feature][column].dtype == float
-        ), f"The column '{column}' is not of float or int type."
+        ), f"The column '{column}' of feature '{feature}' is not of float or int type."
         assert (
             data.std_long[feature][column].dtype == float
-        ), f"The column '{column}' is not of float or int type."
+        ), f"The column '{column}' of feature '{feature}' is not of float or int type."
 
     for feature in features:
         assert data.std_long[feature].iloc[:, 2].dtype in (
             float,
             np.int64,
             object,
-        ), f"The column '{column}' is not of float or int type."
+        ), f"The column '{column}' of feature '{feature}' is not of float or int type."
         assert data.long[feature].iloc[:, 2].dtype in (
             float,
             np.int64,
             object,
-        ), f"The column '{column}' is not of float or int type."
+        ), f"The column '{column}' of feature '{feature}' is not of float or int type."
 
     for feature in features:
         for column in data.std_long[feature].columns[3:]:
             assert (data.std_long[feature][column] >= -1).all() and (
                 data.std_long[feature][column] <= 1
-            ).all()
+            ).all(), f"The column '{column}' of feature '{feature}' is not standardized."
 
     os.chdir(os.path.dirname(os.getcwd()))
     data2 = DataGrabber()

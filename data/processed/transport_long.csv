@@ -1127,7 +1127,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",roadDensity,1.7476472073456248
 22047,"Iberville, LA",roadDensity,1.19607370824857
 22049,"Jackson, LA",roadDensity,2.262597561131648
-22051,"Jefferson, LA",roadDensity,7.270273802896168
 22053,"Jefferson Davis, LA",roadDensity,2.180503582534248
 22055,"Lafayette, LA",roadDensity,6.91780984647073
 22057,"Lafourche, LA",roadDensity,1.1351264369691745
@@ -1137,23 +1136,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",roadDensity,1.4543239623097224
 22067,"Morehouse, LA",roadDensity,1.560110483321977
 22069,"Natchitoches, LA",roadDensity,1.916257150281411
-22071,"Orleans, LA",roadDensity,12.25995066029894
 22073,"Ouachita, LA",roadDensity,3.2962957053344373
-22075,"Plaquemines, LA",roadDensity,0.73391317431423
 22077,"Pointe Coupee, LA",roadDensity,1.61333188544781
 22079,"Rapides, LA",roadDensity,2.2222923620351454
 22081,"Red River, LA",roadDensity,1.8618607587398597
 22083,"Richland, LA",roadDensity,2.1935620060045222
 22085,"Sabine, LA",roadDensity,2.2646882014494296
-22087,"St. Bernard, LA",roadDensity,0.901619019814348
-22089,"St. Charles, LA",roadDensity,2.070789613005688
 22091,"St. Helena, LA",roadDensity,1.8825236935850316
 22093,"St. James, LA",roadDensity,2.055945538832124
-22095,"St. John the Baptist, LA",roadDensity,2.121187907645146
 22097,"St. Landry, LA",roadDensity,2.427868214122857
 22099,"St. Martin, LA",roadDensity,1.3217228414948377
 22101,"St. Mary, LA",roadDensity,1.873819052497432
-22103,"St. Tammany, LA",roadDensity,3.5104316306856207
 22105,"Tangipahoa, LA",roadDensity,2.7513600120089965
 22107,"Tensas, LA",roadDensity,1.4320312400909003
 22109,"Terrebonne, LA",roadDensity,0.8685580165633159
@@ -4208,7 +4201,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",WeightAvgNatWalkInd,6.381828561991402
 22047,"Iberville, LA",WeightAvgNatWalkInd,5.340580369924626
 22049,"Jackson, LA",WeightAvgNatWalkInd,4.906651597066433
-22051,"Jefferson, LA",WeightAvgNatWalkInd,9.25807565646569
 22053,"Jefferson Davis, LA",WeightAvgNatWalkInd,5.65253016385318
 22055,"Lafayette, LA",WeightAvgNatWalkInd,7.748903540782924
 22057,"Lafourche, LA",WeightAvgNatWalkInd,5.782171245087676
@@ -4218,23 +4210,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",WeightAvgNatWalkInd,7.141925267317642
 22067,"Morehouse, LA",WeightAvgNatWalkInd,5.234232328147468
 22069,"Natchitoches, LA",WeightAvgNatWalkInd,5.623647221003157
-22071,"Orleans, LA",WeightAvgNatWalkInd,13.708377817902058
 22073,"Ouachita, LA",WeightAvgNatWalkInd,6.536214426771732
-22075,"Plaquemines, LA",WeightAvgNatWalkInd,6.364145238749925
 22077,"Pointe Coupee, LA",WeightAvgNatWalkInd,4.758153563613684
 22079,"Rapides, LA",WeightAvgNatWalkInd,6.403288583361114
 22081,"Red River, LA",WeightAvgNatWalkInd,5.081089967009399
 22083,"Richland, LA",WeightAvgNatWalkInd,5.254981928293543
 22085,"Sabine, LA",WeightAvgNatWalkInd,4.15161767964941
-22087,"St. Bernard, LA",WeightAvgNatWalkInd,7.502804890536853
-22089,"St. Charles, LA",WeightAvgNatWalkInd,6.2585255292774455
 22091,"St. Helena, LA",WeightAvgNatWalkInd,3.8570582396641058
 22093,"St. James, LA",WeightAvgNatWalkInd,5.4211421703733205
-22095,"St. John the Baptist, LA",WeightAvgNatWalkInd,7.060089919817338
 22097,"St. Landry, LA",WeightAvgNatWalkInd,6.09720108488605
 22099,"St. Martin, LA",WeightAvgNatWalkInd,5.379347125098155
 22101,"St. Mary, LA",WeightAvgNatWalkInd,7.006133941717013
-22103,"St. Tammany, LA",WeightAvgNatWalkInd,7.052523605796202
 22105,"Tangipahoa, LA",WeightAvgNatWalkInd,5.924889913835913
 22107,"Tensas, LA",WeightAvgNatWalkInd,4.947885412293829
 22109,"Terrebonne, LA",WeightAvgNatWalkInd,6.42555534836521

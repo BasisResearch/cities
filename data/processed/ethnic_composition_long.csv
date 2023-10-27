@@ -1127,7 +1127,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",mexican,0.009494029893076945
 22047,"Iberville, LA",mexican,0.002724217806923102
 22049,"Jackson, LA",mexican,0.004765347706060207
-22051,"Jefferson, LA",mexican,0.011342688472059754
 22053,"Jefferson Davis, LA",mexican,0.006678029129222188
 22055,"Lafayette, LA",mexican,0.008856712816111256
 22057,"Lafourche, LA",mexican,0.011880995526070621
@@ -1137,23 +1136,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",mexican,0.003447606098863747
 22067,"Morehouse, LA",mexican,0.0015279282067151478
 22069,"Natchitoches, LA",mexican,0.007718492716909437
-22071,"Orleans, LA",mexican,0.00590534775792111
 22073,"Ouachita, LA",mexican,0.008104127269436486
-22075,"Plaquemines, LA",mexican,0.01850356900067981
 22077,"Pointe Coupee, LA",mexican,0.01097799627702735
 22079,"Rapides, LA",mexican,0.01010279091515342
 22081,"Red River, LA",mexican,0.0
 22083,"Richland, LA",mexican,0.006190949776230731
 22085,"Sabine, LA",mexican,0.01213299369888725
-22087,"St. Bernard, LA",mexican,0.0069259031058168455
-22089,"St. Charles, LA",mexican,0.008919883230619527
 22091,"St. Helena, LA",mexican,0.001608308059920963
 22093,"St. James, LA",mexican,0.005247670426679745
-22095,"St. John the Baptist, LA",mexican,0.0031378793555638814
 22097,"St. Landry, LA",mexican,0.004831383510644707
 22099,"St. Martin, LA",mexican,0.009794722530734174
 22101,"St. Mary, LA",mexican,0.022291139748685213
-22103,"St. Tammany, LA",mexican,0.007383970258638731
 22105,"Tangipahoa, LA",mexican,0.00878920991456088
 22107,"Tensas, LA",mexican,0.012297962052002811
 22109,"Terrebonne, LA",mexican,0.015299727520435968
@@ -4208,7 +4201,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",puerto_rican,0.001262089111999773
 22047,"Iberville, LA",puerto_rican,0.000978760888714887
 22049,"Jackson, LA",puerto_rican,0.001906139082424083
-22051,"Jefferson, LA",puerto_rican,0.0034376265925052684
 22053,"Jefferson Davis, LA",puerto_rican,0.00017043693833281685
 22055,"Lafayette, LA",puerto_rican,0.000961965062424069
 22057,"Lafourche, LA",puerto_rican,0.0003429671263449942
@@ -4218,23 +4210,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",puerto_rican,0.00024278916189181314
 22067,"Morehouse, LA",puerto_rican,0.0005608850379080923
 22069,"Natchitoches, LA",puerto_rican,0.0010291323622545914
-22071,"Orleans, LA",puerto_rican,0.0012318542401308422
 22073,"Ouachita, LA",puerto_rican,0.0006584408370624177
-22075,"Plaquemines, LA",puerto_rican,0.009920972127804215
 22077,"Pointe Coupee, LA",puerto_rican,0.0
 22079,"Rapides, LA",puerto_rican,0.002207590124100292
 22081,"Red River, LA",puerto_rican,0.0
 22083,"Richland, LA",puerto_rican,0.0008453505718547986
 22085,"Sabine, LA",puerto_rican,6.70331143584931e-05
-22087,"St. Bernard, LA",puerto_rican,0.002510211998813354
-22089,"St. Charles, LA",puerto_rican,0.0009730781706130393
 22091,"St. Helena, LA",puerto_rican,0.0
 22093,"St. James, LA",puerto_rican,0.0
-22095,"St. John the Baptist, LA",puerto_rican,0.005725458973398276
 22097,"St. Landry, LA",puerto_rican,0.00027711177243099316
 22099,"St. Martin, LA",puerto_rican,0.0005170234766956455
 22101,"St. Mary, LA",puerto_rican,0.0010839455618451162
-22103,"St. Tammany, LA",puerto_rican,0.0016933093352714433
 22105,"Tangipahoa, LA",puerto_rican,0.0012189415209974941
 22107,"Tensas, LA",puerto_rican,0.0
 22109,"Terrebonne, LA",puerto_rican,0.002888283378746594
@@ -7289,7 +7275,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",cuban,0.00016307893020221786
 22047,"Iberville, LA",cuban,0.0009950735701934684
 22049,"Jackson, LA",cuban,3.286446693834626e-05
-22051,"Jefferson, LA",cuban,0.005020459624671713
 22053,"Jefferson Davis, LA",cuban,0.0005113108149984506
 22055,"Lafayette, LA",cuban,0.0009308670539405323
 22057,"Lafourche, LA",cuban,0.00039415624968006796
@@ -7299,23 +7284,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",cuban,0.0028163542779450325
 22067,"Morehouse, LA",cuban,0.0011217700758161845
 22069,"Natchitoches, LA",cuban,0.00038262613468439944
-22071,"Orleans, LA",cuban,0.0030379661122888527
 22073,"Ouachita, LA",cuban,0.00010922004406248635
-22075,"Plaquemines, LA",cuban,0.001763256288239293
 22077,"Pointe Coupee, LA",cuban,0.0
 22079,"Rapides, LA",cuban,0.0010616362228746197
 22081,"Red River, LA",cuban,0.0010273532811095416
 22083,"Richland, LA",cuban,0.0006215813028344107
 22085,"Sabine, LA",cuban,0.000670331143584931
-22087,"St. Bernard, LA",cuban,0.002943794071335661
-22089,"St. Charles, LA",cuban,0.001182957776039381
 22091,"St. Helena, LA",cuban,0.0
 22093,"St. James, LA",cuban,0.0015939185875429131
-22095,"St. John the Baptist, LA",cuban,0.0037233046084675907
 22097,"St. Landry, LA",cuban,0.0010000120483379317
 22099,"St. Martin, LA",cuban,0.00043085289724637124
 22101,"St. Mary, LA",cuban,0.0010337628969448794
-22103,"St. Tammany, LA",cuban,0.0011681931818614225
 22105,"Tangipahoa, LA",cuban,0.0012868701506506053
 22107,"Tensas, LA",cuban,0.0008198641368001874
 22109,"Terrebonne, LA",cuban,0.0006494096276112625
@@ -10370,7 +10349,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",other_hispanic_latino,0.010983011429705892
 22047,"Iberville, LA",other_hispanic_latino,0.009706045479755962
 22049,"Jackson, LA",other_hispanic_latino,0.0024976994873143156
-22051,"Jefferson, LA",other_hispanic_latino,0.0545024829199685
 22053,"Jefferson Davis, LA",other_hispanic_latino,0.005376510691044314
 22055,"Lafayette, LA",other_hispanic_latino,0.012316884560046109
 22057,"Lafourche, LA",other_hispanic_latino,0.009592841712992824
@@ -10380,23 +10358,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",other_hispanic_latino,0.005487035058754977
 22067,"Morehouse, LA",other_hispanic_latino,0.0008896797153024911
 22069,"Natchitoches, LA",other_hispanic_latino,0.003034621068186616
-22071,"Orleans, LA",other_hispanic_latino,0.01757931526613781
 22073,"Ouachita, LA",other_hispanic_latino,0.0025713518944996787
-22075,"Plaquemines, LA",other_hispanic_latino,0.009559823249490142
 22077,"Pointe Coupee, LA",other_hispanic_latino,0.003651377022576488
 22079,"Rapides, LA",other_hispanic_latino,0.0035375098690009887
 22081,"Red River, LA",other_hispanic_latino,0.001476820341594966
 22083,"Richland, LA",other_hispanic_latino,0.0036797613127797116
 22085,"Sabine, LA",other_hispanic_latino,0.007261920722170086
-22087,"St. Bernard, LA",other_hispanic_latino,0.03897674630884736
-22089,"St. Charles, LA",other_hispanic_latino,0.020949800614374844
 22091,"St. Helena, LA",other_hispanic_latino,0.008547008547008548
 22093,"St. James, LA",other_hispanic_latino,0.002010789602746444
-22095,"St. John the Baptist, LA",other_hispanic_latino,0.020946515548894717
 22097,"St. Landry, LA",other_hispanic_latino,0.005747057193460162
 22099,"St. Martin, LA",other_hispanic_latino,0.004624487763777718
 22101,"St. Mary, LA",other_hispanic_latino,0.01095989401421173
-22103,"St. Tammany, LA",other_hispanic_latino,0.019307531611611917
 22105,"Tangipahoa, LA",other_hispanic_latino,0.011019533254838027
 22107,"Tensas, LA",other_hispanic_latino,0.0016397282736003748
 22109,"Terrebonne, LA",other_hispanic_latino,0.007175295186194369
@@ -13451,7 +13423,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",white,0.2891956663546896
 22047,"Iberville, LA",white,0.23371178754363642
 22049,"Jackson, LA",white,0.3329827790193243
-22051,"Jefferson, LA",white,0.2565463971488523
 22053,"Jefferson Davis, LA",white,0.3869073442826154
 22055,"Lafayette, LA",white,0.3231933093671348
 22057,"Lafourche, LA",white,0.38205002201132304
@@ -13461,23 +13432,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",white,0.16699038554918907
 22067,"Morehouse, LA",white,0.24160606529475476
 22069,"Natchitoches, LA",white,0.25555467595524595
-22071,"Orleans, LA",white,0.1529322297863918
 22073,"Ouachita, LA",white,0.2850861590119019
-22075,"Plaquemines, LA",white,0.3150280421481985
 22077,"Pointe Coupee, LA",white,0.30165624552527326
 22079,"Rapides, LA",white,0.30314121678075107
 22081,"Red River, LA",white,0.28033902658276616
 22083,"Richland, LA",white,0.3033565390353058
 22085,"Sabine, LA",white,0.332975823390088
-22087,"St. Bernard, LA",white,0.30436320485611923
-22089,"St. Charles, LA",white,0.32196485470607317
 22091,"St. Helena, LA",white,0.22093557577428546
 22093,"St. James, LA",white,0.24357528200098089
-22095,"St. John the Baptist, LA",white,0.15832240539527914
 22097,"St. Landry, LA",white,0.2689008301304835
 22099,"St. Martin, LA",white,0.32153115545172534
 22101,"St. Mary, LA",white,0.28007948934120197
-22103,"St. Tammany, LA",white,0.38552848374613297
 22105,"Tangipahoa, LA",white,0.312962292062917
 22107,"Tensas, LA",white,0.21035371281330523
 22109,"Terrebonne, LA",white,0.3309400544959128
@@ -16532,7 +16497,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",black_african_american,0.15576873989619672
 22047,"Iberville, LA",black_african_american,0.2343479821213011
 22049,"Jackson, LA",black_african_american,0.13372551597213092
-22051,"Jefferson, LA",black_african_american,0.132070404777402
 22053,"Jefferson Davis, LA",black_african_american,0.0810969941121785
 22055,"Lafayette, LA",black_african_american,0.12799318331654042
 22057,"Lafourche, LA",black_african_american,0.06621824994625142
@@ -16542,23 +16506,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",black_african_american,0.31649995144216764
 22067,"Morehouse, LA",black_african_american,0.2435981742224973
 22069,"Natchitoches, LA",black_african_american,0.2100353599324467
-22071,"Orleans, LA",black_african_american,0.2881718553860418
 22073,"Ouachita, LA",black_african_american,0.1871937938050391
-22075,"Plaquemines, LA",black_african_american,0.09372875594833446
 22077,"Pointe Coupee, LA",black_african_american,0.17113741587513723
 22079,"Rapides, LA",black_african_american,0.15568109520998935
 22081,"Red River, LA",black_african_american,0.2102863747271093
 22083,"Richland, LA",black_african_american,0.17645450024863252
 22085,"Sabine, LA",black_african_american,0.07201590919247441
-22087,"St. Bernard, LA",black_african_american,0.11793432372606741
-22089,"St. Charles, LA",black_african_american,0.12943847665566388
 22091,"St. Helena, LA",black_african_american,0.25654811138682104
 22093,"St. James, LA",black_african_american,0.24681216282491417
-22095,"St. John the Baptist, LA",black_african_american,0.28545335331584865
 22097,"St. Landry, LA",black_african_american,0.2016108627814793
 22099,"St. Martin, LA",black_african_american,0.1465761556432155
 22101,"St. Mary, LA",black_african_american,0.14986551045806737
-22103,"St. Tammany, LA",black_african_american,0.05825554891761384
 22105,"Tangipahoa, LA",black_african_american,0.14934863991788183
 22107,"Tensas, LA",black_african_american,0.2655188568751464
 22109,"Terrebonne, LA",black_african_american,0.09479564032697547
@@ -19613,7 +19571,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",american_indian_alaska_native,0.0002907059190561275
 22047,"Iberville, LA",american_indian_alaska_native,0.0003425663110502104
 22049,"Jackson, LA",american_indian_alaska_native,0.000755882739581964
-22051,"Jefferson, LA",american_indian_alaska_native,0.0008500188893086513
 22053,"Jefferson Davis, LA",american_indian_alaska_native,0.004477843198016734
 22055,"Lafayette, LA",american_indian_alaska_native,0.0006986685905967915
 22057,"Lafourche, LA",american_indian_alaska_native,0.010657575478362357
@@ -19623,23 +19580,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",american_indian_alaska_native,0.0007769253180538021
 22067,"Morehouse, LA",american_indian_alaska_native,0.0007736345350456444
 22069,"Natchitoches, LA",american_indian_alaska_native,0.004380409541904159
-22071,"Orleans, LA",american_indian_alaska_native,0.0005234729434805481
 22073,"Ouachita, LA",american_indian_alaska_native,0.0005554619383749305
-22075,"Plaquemines, LA",american_indian_alaska_native,0.007350441876274643
 22077,"Pointe Coupee, LA",american_indian_alaska_native,0.0005727650231492531
 22079,"Rapides, LA",american_indian_alaska_native,0.0034340290819337878
 22081,"Red River, LA",american_indian_alaska_native,0.0
 22083,"Richland, LA",american_indian_alaska_native,0.0006215813028344107
 22085,"Sabine, LA",american_indian_alaska_native,0.02965098091790678
-22087,"St. Bernard, LA",american_indian_alaska_native,0.00065037310878346
-22089,"St. Charles, LA",american_indian_alaska_native,0.0012783575966877183
 22091,"St. Helena, LA",american_indian_alaska_native,0.0027570995312930797
 22093,"St. James, LA",american_indian_alaska_native,0.0
-22095,"St. John the Baptist, LA",american_indian_alaska_native,4.683402023229674e-05
 22097,"St. Landry, LA",american_indian_alaska_native,0.0006144652345208978
 22099,"St. Martin, LA",american_indian_alaska_native,0.0018191566772624563
 22101,"St. Mary, LA",american_indian_alaska_native,0.008079409048938134
-22103,"St. Tammany, LA",american_indian_alaska_native,0.0022774059262021546
 22105,"Tangipahoa, LA",american_indian_alaska_native,0.0007057029858406546
 22107,"Tensas, LA",american_indian_alaska_native,0.0
 22109,"Terrebonne, LA",american_indian_alaska_native,0.02768392370572207
@@ -22694,7 +22645,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",asian,0.013351201111772881
 22047,"Iberville, LA",asian,0.0002610029036573032
 22049,"Jackson, LA",asian,0.003056395425266202
-22051,"Jefferson, LA",asian,0.020740688481163037
 22053,"Jefferson Davis, LA",asian,0.0007902076231794237
 22055,"Lafayette, LA",asian,0.009240254920741542
 22057,"Lafourche, LA",asian,0.0028870665560981603
@@ -22704,23 +22654,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",asian,0.0
 22067,"Morehouse, LA",asian,0.0025529939656506267
 22069,"Natchitoches, LA",asian,0.0007784462740130885
-22071,"Orleans, LA",asian,0.013657174704537287
 22073,"Ouachita, LA",asian,0.005451640485061819
-22075,"Plaquemines, LA",asian,0.021116587355540447
 22077,"Pointe Coupee, LA",asian,0.0023865209297885544
 22079,"Rapides, LA",asian,0.00621651246751853
 22081,"Red River, LA",asian,0.0
 22083,"Richland, LA",asian,0.0014669318746892094
 22085,"Sabine, LA",asian,0.0016758278589623274
-22087,"St. Bernard, LA",asian,0.012288628739645376
-22089,"St. Charles, LA",asian,0.005132510350880541
 22091,"St. Helena, LA",asian,0.0
 22093,"St. James, LA",asian,0.00012260912211868564
-22095,"St. John the Baptist, LA",asian,0.004273604346197077
 22097,"St. Landry, LA",asian,0.002759069386378149
 22099,"St. Martin, LA",asian,0.004892574010953238
 22101,"St. Mary, LA",asian,0.0068248424264322136
-22103,"St. Tammany, LA",asian,0.006748503609222257
 22105,"Tangipahoa, LA",asian,0.003211514657488754
 22107,"Tensas, LA",asian,0.0007027406886858749
 22109,"Terrebonne, LA",asian,0.006044504995458674
@@ -25775,7 +25719,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",native_hawaiian_other_pacific_islander,0.0
 22047,"Iberville, LA",native_hawaiian_other_pacific_islander,0.0
 22049,"Jackson, LA",native_hawaiian_other_pacific_islander,0.0
-22051,"Jefferson, LA",native_hawaiian_other_pacific_islander,9.786027373566802e-05
 22053,"Jefferson Davis, LA",native_hawaiian_other_pacific_islander,0.0
 22055,"Lafayette, LA",native_hawaiian_other_pacific_islander,0.00022597886164703345
 22057,"Lafourche, LA",native_hawaiian_other_pacific_islander,0.0
@@ -25785,23 +25728,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",native_hawaiian_other_pacific_islander,0.0
 22067,"Morehouse, LA",native_hawaiian_other_pacific_islander,0.0
 22069,"Natchitoches, LA",native_hawaiian_other_pacific_islander,0.0
-22071,"Orleans, LA",native_hawaiian_other_pacific_islander,5.469120305020653e-05
 22073,"Ouachita, LA",native_hawaiian_other_pacific_islander,6.24114537499922e-06
-22075,"Plaquemines, LA",native_hawaiian_other_pacific_islander,0.0003823929299796057
 22077,"Pointe Coupee, LA",native_hawaiian_other_pacific_islander,0.0
 22079,"Rapides, LA",native_hawaiian_other_pacific_islander,4.215883917552641e-05
 22081,"Red River, LA",native_hawaiian_other_pacific_islander,0.0
 22083,"Richland, LA",native_hawaiian_other_pacific_islander,0.0
 22085,"Sabine, LA",native_hawaiian_other_pacific_islander,0.00015641060016981722
-22087,"St. Bernard, LA",native_hawaiian_other_pacific_islander,0.00019397092718103192
-22089,"St. Charles, LA",native_hawaiian_other_pacific_islander,0.0
 22091,"St. Helena, LA",native_hawaiian_other_pacific_islander,0.0
 22093,"St. James, LA",native_hawaiian_other_pacific_islander,0.0
-22095,"St. John the Baptist, LA",native_hawaiian_other_pacific_islander,0.0
 22097,"St. Landry, LA",native_hawaiian_other_pacific_islander,0.0010542295690309522
 22099,"St. Martin, LA",native_hawaiian_other_pacific_islander,0.0
 22101,"St. Mary, LA",native_hawaiian_other_pacific_islander,5.018266490023686e-05
-22103,"St. Tammany, LA",native_hawaiian_other_pacific_islander,0.0011415568552391752
 22105,"Tangipahoa, LA",native_hawaiian_other_pacific_islander,0.00016227394861576547
 22107,"Tensas, LA",native_hawaiian_other_pacific_islander,0.0
 22109,"Terrebonne, LA",native_hawaiian_other_pacific_islander,8.174386920980927e-05
@@ -28856,7 +28793,6 @@ GeoFIPS,GeoName,Category,Value
 22045,"Iberia, LA",other_race_races,0.019491477353299865
 22047,"Iberville, LA",other_race_races,0.016932563374767545
 22049,"Jackson, LA",other_race_races,0.020277376100959643
-22051,"Jefferson, LA",other_race_races,0.015391372820333088
 22053,"Jefferson Davis, LA",other_race_races,0.013991323210412148
 22055,"Lafayette, LA",other_race_races,0.015582175450817463
 22057,"Lafourche, LA",other_race_races,0.01597612539287652
@@ -28866,23 +28802,17 @@ GeoFIPS,GeoName,Category,Value
 22065,"Madison, LA",other_race_races,0.0037389530931339226
 22067,"Morehouse, LA",other_race_races,0.007368868946309763
 22069,"Natchitoches, LA",other_race_races,0.017086236014355077
-22071,"Orleans, LA",other_race_races,0.016906092600019792
 22073,"Ouachita, LA",other_race_races,0.010263563569186217
-22075,"Plaquemines, LA",other_race_races,0.02264615907545887
 22077,"Pointe Coupee, LA",other_race_races,0.009617679347047874
 22079,"Rapides, LA",other_race_races,0.01457546048950245
 22081,"Red River, LA",other_race_races,0.0068704250674200594
 22083,"Richland, LA",other_race_races,0.0067628045748383886
 22085,"Sabine, LA",other_race_races,0.04339276936139786
-22087,"St. Bernard, LA",other_race_races,0.013212843157390292
-22089,"St. Charles, LA",other_race_races,0.01016008089904791
 22091,"St. Helena, LA",other_race_races,0.009603896700670893
 22093,"St. James, LA",other_race_races,0.0006375674350171653
-22095,"St. John the Baptist, LA",other_race_races,0.018370644436118397
 22097,"St. Landry, LA",other_race_races,0.013204978373233412
 22099,"St. Martin, LA",other_race_races,0.009813871548389568
 22101,"St. Mary, LA",other_race_races,0.019731823838773133
-22103,"St. Tammany, LA",other_race_races,0.01649549655820608
 22105,"Tangipahoa, LA",other_race_races,0.01129502158620898
 22107,"Tensas, LA",other_race_races,0.008667135160459125
 22109,"Terrebonne, LA",other_race_races,0.01444141689373297

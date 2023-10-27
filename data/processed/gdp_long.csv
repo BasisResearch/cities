@@ -1127,7 +1127,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2001,81.771
 22047,"Iberville, LA",2001,136.66
 22049,"Jackson, LA",2001,162.571
-22051,"Jefferson, LA",2001,88.995
 22053,"Jefferson Davis, LA",2001,186.337
 22055,"Lafayette, LA",2001,76.656
 22057,"Lafourche, LA",2001,77.66
@@ -1137,23 +1136,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2001,75.638
 22067,"Morehouse, LA",2001,100.759
 22069,"Natchitoches, LA",2001,82.822
-22071,"Orleans, LA",2001,121.599
 22073,"Ouachita, LA",2001,88.878
-22075,"Plaquemines, LA",2001,136.004
 22077,"Pointe Coupee, LA",2001,191.667
 22079,"Rapides, LA",2001,85.161
 22081,"Red River, LA",2001,19.236
 22083,"Richland, LA",2001,74.257
 22085,"Sabine, LA",2001,40.111
-22087,"St. Bernard, LA",2001,124.727
-22089,"St. Charles, LA",2001,78.85
 22091,"St. Helena, LA",2001,85.595
 22093,"St. James, LA",2001,54.926
-22095,"St. John the Baptist, LA",2001,64.365
 22097,"St. Landry, LA",2001,85.632
 22099,"St. Martin, LA",2001,50.549
 22101,"St. Mary, LA",2001,80.887
-22103,"St. Tammany, LA",2001,64.859
 22105,"Tangipahoa, LA",2001,63.325
 22107,"Tensas, LA",2001,80.307
 22109,"Terrebonne, LA",2001,107.99
@@ -4208,7 +4201,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2002,75.63
 22047,"Iberville, LA",2002,155.256
 22049,"Jackson, LA",2002,185.674
-22051,"Jefferson, LA",2002,90.961
 22053,"Jefferson Davis, LA",2002,162.107
 22055,"Lafayette, LA",2002,73.748
 22057,"Lafourche, LA",2002,78.743
@@ -4218,23 +4210,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2002,77.694
 22067,"Morehouse, LA",2002,102.695
 22069,"Natchitoches, LA",2002,86.149
-22071,"Orleans, LA",2002,122.69
 22073,"Ouachita, LA",2002,95.661
-22075,"Plaquemines, LA",2002,121.832
 22077,"Pointe Coupee, LA",2002,150.908
 22079,"Rapides, LA",2002,88.257
 22081,"Red River, LA",2002,19.698
 22083,"Richland, LA",2002,73.829
 22085,"Sabine, LA",2002,41.01
-22087,"St. Bernard, LA",2002,142.389
-22089,"St. Charles, LA",2002,83.279
 22091,"St. Helena, LA",2002,88.265
 22093,"St. James, LA",2002,68.133
-22095,"St. John the Baptist, LA",2002,75.141
 22097,"St. Landry, LA",2002,88.865
 22099,"St. Martin, LA",2002,51.237
 22101,"St. Mary, LA",2002,78.498
-22103,"St. Tammany, LA",2002,69.255
 22105,"Tangipahoa, LA",2002,65.948
 22107,"Tensas, LA",2002,72.852
 22109,"Terrebonne, LA",2002,101.066
@@ -7289,7 +7275,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2003,72.626
 22047,"Iberville, LA",2003,128.525
 22049,"Jackson, LA",2003,213.976
-22051,"Jefferson, LA",2003,92.132
 22053,"Jefferson Davis, LA",2003,135.823
 22055,"Lafayette, LA",2003,74.828
 22057,"Lafourche, LA",2003,77.389
@@ -7299,23 +7284,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2003,95.966
 22067,"Morehouse, LA",2003,108.959
 22069,"Natchitoches, LA",2003,88.557
-22071,"Orleans, LA",2003,119.954
 22073,"Ouachita, LA",2003,98.241
-22075,"Plaquemines, LA",2003,113.41
 22077,"Pointe Coupee, LA",2003,154.138
 22079,"Rapides, LA",2003,89.327
 22081,"Red River, LA",2003,19.26
 22083,"Richland, LA",2003,81.891
 22085,"Sabine, LA",2003,41.899
-22087,"St. Bernard, LA",2003,214.104
-22089,"St. Charles, LA",2003,103.632
 22091,"St. Helena, LA",2003,76.983
 22093,"St. James, LA",2003,108.476
-22095,"St. John the Baptist, LA",2003,104.685
 22097,"St. Landry, LA",2003,97.662
 22099,"St. Martin, LA",2003,54.402
 22101,"St. Mary, LA",2003,77.025
-22103,"St. Tammany, LA",2003,71.168
 22105,"Tangipahoa, LA",2003,71.716
 22107,"Tensas, LA",2003,96.082
 22109,"Terrebonne, LA",2003,95.051
@@ -10370,7 +10349,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2004,76.719
 22047,"Iberville, LA",2004,174.443
 22049,"Jackson, LA",2004,266.456
-22051,"Jefferson, LA",2004,94.957
 22053,"Jefferson Davis, LA",2004,122.64
 22055,"Lafayette, LA",2004,76.003
 22057,"Lafourche, LA",2004,77.807
@@ -10380,23 +10358,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2004,93.665
 22067,"Morehouse, LA",2004,102.235
 22069,"Natchitoches, LA",2004,94.905
-22071,"Orleans, LA",2004,121.548
 22073,"Ouachita, LA",2004,105.079
-22075,"Plaquemines, LA",2004,109.114
 22077,"Pointe Coupee, LA",2004,140.147
 22079,"Rapides, LA",2004,93.534
 22081,"Red River, LA",2004,19.836
 22083,"Richland, LA",2004,84.11
 22085,"Sabine, LA",2004,46.483
-22087,"St. Bernard, LA",2004,257.137
-22089,"St. Charles, LA",2004,96.896
 22091,"St. Helena, LA",2004,82.733
 22093,"St. James, LA",2004,142.229
-22095,"St. John the Baptist, LA",2004,113.555
 22097,"St. Landry, LA",2004,99.684
 22099,"St. Martin, LA",2004,56.801
 22101,"St. Mary, LA",2004,73.862
-22103,"St. Tammany, LA",2004,73.918
 22105,"Tangipahoa, LA",2004,78.604
 22107,"Tensas, LA",2004,84.443
 22109,"Terrebonne, LA",2004,92.468
@@ -13451,7 +13423,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2005,77.997
 22047,"Iberville, LA",2005,212.24
 22049,"Jackson, LA",2005,264.646
-22051,"Jefferson, LA",2005,95.816
 22053,"Jefferson Davis, LA",2005,120.059
 22055,"Lafayette, LA",2005,81.087
 22057,"Lafourche, LA",2005,79.731
@@ -13461,23 +13432,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2005,99.627
 22067,"Morehouse, LA",2005,100.036
 22069,"Natchitoches, LA",2005,103.974
-22071,"Orleans, LA",2005,113.491
 22073,"Ouachita, LA",2005,110.758
-22075,"Plaquemines, LA",2005,96.856
 22077,"Pointe Coupee, LA",2005,135.226
 22079,"Rapides, LA",2005,99.362
 22081,"Red River, LA",2005,19.381
 22083,"Richland, LA",2005,91.522
 22085,"Sabine, LA",2005,49.699
-22087,"St. Bernard, LA",2005,294.881
-22089,"St. Charles, LA",2005,119.541
 22091,"St. Helena, LA",2005,91.811
 22093,"St. James, LA",2005,214.91
-22095,"St. John the Baptist, LA",2005,145.069
 22097,"St. Landry, LA",2005,109.301
 22099,"St. Martin, LA",2005,59.058
 22101,"St. Mary, LA",2005,78.704
-22103,"St. Tammany, LA",2005,77.175
 22105,"Tangipahoa, LA",2005,87.331
 22107,"Tensas, LA",2005,88.072
 22109,"Terrebonne, LA",2005,95.527
@@ -16532,7 +16497,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2006,93.696
 22047,"Iberville, LA",2006,221.555
 22049,"Jackson, LA",2006,241.22
-22051,"Jefferson, LA",2006,101.017
 22053,"Jefferson Davis, LA",2006,127.308
 22055,"Lafayette, LA",2006,92.65
 22057,"Lafourche, LA",2006,91.38
@@ -16542,23 +16506,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2006,95.624
 22067,"Morehouse, LA",2006,100.918
 22069,"Natchitoches, LA",2006,108.472
-22071,"Orleans, LA",2006,96.089
 22073,"Ouachita, LA",2006,112.102
-22075,"Plaquemines, LA",2006,115.161
 22077,"Pointe Coupee, LA",2006,155.391
 22079,"Rapides, LA",2006,100.345
 22081,"Red River, LA",2006,18.391
 22083,"Richland, LA",2006,98.584
 22085,"Sabine, LA",2006,46.695
-22087,"St. Bernard, LA",2006,225.97
-22089,"St. Charles, LA",2006,110.465
 22091,"St. Helena, LA",2006,91.312
 22093,"St. James, LA",2006,162.01
-22095,"St. John the Baptist, LA",2006,129.982
 22097,"St. Landry, LA",2006,118.31
 22099,"St. Martin, LA",2006,68.659
 22101,"St. Mary, LA",2006,92.469
-22103,"St. Tammany, LA",2006,85.0
 22105,"Tangipahoa, LA",2006,101.246
 22107,"Tensas, LA",2006,98.253
 22109,"Terrebonne, LA",2006,112.818
@@ -19613,7 +19571,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2007,96.34
 22047,"Iberville, LA",2007,192.357
 22049,"Jackson, LA",2007,190.625
-22051,"Jefferson, LA",2007,102.961
 22053,"Jefferson Davis, LA",2007,114.983
 22055,"Lafayette, LA",2007,92.374
 22057,"Lafourche, LA",2007,97.205
@@ -19623,23 +19580,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2007,82.23
 22067,"Morehouse, LA",2007,95.525
 22069,"Natchitoches, LA",2007,98.662
-22071,"Orleans, LA",2007,100.443
 22073,"Ouachita, LA",2007,99.55
-22075,"Plaquemines, LA",2007,120.982
 22077,"Pointe Coupee, LA",2007,135.749
 22079,"Rapides, LA",2007,96.13
 22081,"Red River, LA",2007,17.307
 22083,"Richland, LA",2007,88.751
 22085,"Sabine, LA",2007,40.916
-22087,"St. Bernard, LA",2007,151.355
-22089,"St. Charles, LA",2007,104.856
 22091,"St. Helena, LA",2007,81.191
 22093,"St. James, LA",2007,111.267
-22095,"St. John the Baptist, LA",2007,120.508
 22097,"St. Landry, LA",2007,112.077
 22099,"St. Martin, LA",2007,63.798
 22101,"St. Mary, LA",2007,92.542
-22103,"St. Tammany, LA",2007,90.031
 22105,"Tangipahoa, LA",2007,95.137
 22107,"Tensas, LA",2007,91.067
 22109,"Terrebonne, LA",2007,109.577
@@ -22694,7 +22645,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2008,98.522
 22047,"Iberville, LA",2008,151.791
 22049,"Jackson, LA",2008,150.962
-22051,"Jefferson, LA",2008,102.133
 22053,"Jefferson Davis, LA",2008,105.786
 22055,"Lafayette, LA",2008,94.005
 22057,"Lafourche, LA",2008,96.241
@@ -22704,23 +22654,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2008,72.453
 22067,"Morehouse, LA",2008,84.641
 22069,"Natchitoches, LA",2008,93.629
-22071,"Orleans, LA",2008,115.549
 22073,"Ouachita, LA",2008,94.978
-22075,"Plaquemines, LA",2008,113.797
 22077,"Pointe Coupee, LA",2008,121.469
 22079,"Rapides, LA",2008,95.72
 22081,"Red River, LA",2008,22.478
 22083,"Richland, LA",2008,81.25
 22085,"Sabine, LA",2008,48.136
-22087,"St. Bernard, LA",2008,131.482
-22089,"St. Charles, LA",2008,93.303
 22091,"St. Helena, LA",2008,88.824
 22093,"St. James, LA",2008,69.111
-22095,"St. John the Baptist, LA",2008,289.392
 22097,"St. Landry, LA",2008,104.122
 22099,"St. Martin, LA",2008,71.633
 22101,"St. Mary, LA",2008,100.39
-22103,"St. Tammany, LA",2008,86.047
 22105,"Tangipahoa, LA",2008,97.792
 22107,"Tensas, LA",2008,69.567
 22109,"Terrebonne, LA",2008,106.859
@@ -25775,7 +25719,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2009,100.207
 22047,"Iberville, LA",2009,116.662
 22049,"Jackson, LA",2009,167.211
-22051,"Jefferson, LA",2009,99.611
 22053,"Jefferson Davis, LA",2009,112.908
 22055,"Lafayette, LA",2009,89.384
 22057,"Lafourche, LA",2009,99.97
@@ -25785,23 +25728,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2009,79.056
 22067,"Morehouse, LA",2009,91.787
 22069,"Natchitoches, LA",2009,103.474
-22071,"Orleans, LA",2009,118.761
 22073,"Ouachita, LA",2009,96.721
-22075,"Plaquemines, LA",2009,112.119
 22077,"Pointe Coupee, LA",2009,118.466
 22079,"Rapides, LA",2009,97.685
 22081,"Red River, LA",2009,75.421
 22083,"Richland, LA",2009,90.097
 22085,"Sabine, LA",2009,50.121
-22087,"St. Bernard, LA",2009,93.16
-22089,"St. Charles, LA",2009,72.826
 22091,"St. Helena, LA",2009,88.494
 22093,"St. James, LA",2009,57.78
-22095,"St. John the Baptist, LA",2009,397.802
 22097,"St. Landry, LA",2009,95.918
 22099,"St. Martin, LA",2009,81.016
 22101,"St. Mary, LA",2009,97.324
-22103,"St. Tammany, LA",2009,91.715
 22105,"Tangipahoa, LA",2009,92.923
 22107,"Tensas, LA",2009,105.508
 22109,"Terrebonne, LA",2009,105.446
@@ -28856,7 +28793,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2010,96.095
 22047,"Iberville, LA",2010,114.555
 22049,"Jackson, LA",2010,132.359
-22051,"Jefferson, LA",2010,101.764
 22053,"Jefferson Davis, LA",2010,97.446
 22055,"Lafayette, LA",2010,93.671
 22057,"Lafourche, LA",2010,99.568
@@ -28866,23 +28802,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2010,72.705
 22067,"Morehouse, LA",2010,82.523
 22069,"Natchitoches, LA",2010,111.394
-22071,"Orleans, LA",2010,130.912
 22073,"Ouachita, LA",2010,99.643
-22075,"Plaquemines, LA",2010,90.184
 22077,"Pointe Coupee, LA",2010,112.064
 22079,"Rapides, LA",2010,99.125
 22081,"Red River, LA",2010,124.141
 22083,"Richland, LA",2010,92.257
 22085,"Sabine, LA",2010,73.036
-22087,"St. Bernard, LA",2010,82.965
-22089,"St. Charles, LA",2010,73.15
 22091,"St. Helena, LA",2010,97.021
 22093,"St. James, LA",2010,76.411
-22095,"St. John the Baptist, LA",2010,546.022
 22097,"St. Landry, LA",2010,95.447
 22099,"St. Martin, LA",2010,86.948
 22101,"St. Mary, LA",2010,100.591
-22103,"St. Tammany, LA",2010,97.003
 22105,"Tangipahoa, LA",2010,98.442
 22107,"Tensas, LA",2010,85.647
 22109,"Terrebonne, LA",2010,102.139
@@ -31937,7 +31867,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2011,95.44
 22047,"Iberville, LA",2011,102.986
 22049,"Jackson, LA",2011,106.714
-22051,"Jefferson, LA",2011,100.812
 22053,"Jefferson Davis, LA",2011,89.218
 22055,"Lafayette, LA",2011,97.468
 22057,"Lafourche, LA",2011,97.481
@@ -31947,23 +31876,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2011,108.944
 22067,"Morehouse, LA",2011,82.224
 22069,"Natchitoches, LA",2011,103.998
-22071,"Orleans, LA",2011,98.91
 22073,"Ouachita, LA",2011,99.282
-22075,"Plaquemines, LA",2011,98.598
 22077,"Pointe Coupee, LA",2011,107.246
 22079,"Rapides, LA",2011,99.785
 22081,"Red River, LA",2011,108.413
 22083,"Richland, LA",2011,98.274
 22085,"Sabine, LA",2011,93.406
-22087,"St. Bernard, LA",2011,98.652
-22089,"St. Charles, LA",2011,112.633
 22091,"St. Helena, LA",2011,94.445
 22093,"St. James, LA",2011,80.596
-22095,"St. John the Baptist, LA",2011,57.876
 22097,"St. Landry, LA",2011,106.103
 22099,"St. Martin, LA",2011,92.147
 22101,"St. Mary, LA",2011,99.264
-22103,"St. Tammany, LA",2011,99.187
 22105,"Tangipahoa, LA",2011,110.618
 22107,"Tensas, LA",2011,107.622
 22109,"Terrebonne, LA",2011,96.866
@@ -35018,7 +34941,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2013,96.996
 22047,"Iberville, LA",2013,100.054
 22049,"Jackson, LA",2013,100.845
-22051,"Jefferson, LA",2013,97.493
 22053,"Jefferson Davis, LA",2013,93.97
 22055,"Lafayette, LA",2013,99.117
 22057,"Lafourche, LA",2013,103.102
@@ -35028,23 +34950,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2013,88.187
 22067,"Morehouse, LA",2013,97.255
 22069,"Natchitoches, LA",2013,97.662
-22071,"Orleans, LA",2013,97.421
 22073,"Ouachita, LA",2013,100.201
-22075,"Plaquemines, LA",2013,107.454
 22077,"Pointe Coupee, LA",2013,97.722
 22079,"Rapides, LA",2013,98.956
 22081,"Red River, LA",2013,85.362
 22083,"Richland, LA",2013,103.207
 22085,"Sabine, LA",2013,80.8
-22087,"St. Bernard, LA",2013,76.721
-22089,"St. Charles, LA",2013,81.099
 22091,"St. Helena, LA",2013,104.693
 22093,"St. James, LA",2013,96.021
-22095,"St. John the Baptist, LA",2013,99.118
 22097,"St. Landry, LA",2013,95.391
 22099,"St. Martin, LA",2013,106.654
 22101,"St. Mary, LA",2013,96.032
-22103,"St. Tammany, LA",2013,102.322
 22105,"Tangipahoa, LA",2013,92.881
 22107,"Tensas, LA",2013,112.577
 22109,"Terrebonne, LA",2013,103.538
@@ -38099,7 +38015,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2014,94.01
 22047,"Iberville, LA",2014,100.439
 22049,"Jackson, LA",2014,110.698
-22051,"Jefferson, LA",2014,98.084
 22053,"Jefferson Davis, LA",2014,91.99
 22055,"Lafayette, LA",2014,100.508
 22057,"Lafourche, LA",2014,103.058
@@ -38109,23 +38024,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2014,77.007
 22067,"Morehouse, LA",2014,90.104
 22069,"Natchitoches, LA",2014,99.722
-22071,"Orleans, LA",2014,98.415
 22073,"Ouachita, LA",2014,105.112
-22075,"Plaquemines, LA",2014,95.077
 22077,"Pointe Coupee, LA",2014,99.412
 22079,"Rapides, LA",2014,98.558
 22081,"Red River, LA",2014,95.834
 22083,"Richland, LA",2014,92.156
 22085,"Sabine, LA",2014,72.726
-22087,"St. Bernard, LA",2014,81.094
-22089,"St. Charles, LA",2014,89.47
 22091,"St. Helena, LA",2014,96.569
 22093,"St. James, LA",2014,94.503
-22095,"St. John the Baptist, LA",2014,97.573
 22097,"St. Landry, LA",2014,97.629
 22099,"St. Martin, LA",2014,103.757
 22101,"St. Mary, LA",2014,96.388
-22103,"St. Tammany, LA",2014,108.14
 22105,"Tangipahoa, LA",2014,92.454
 22107,"Tensas, LA",2014,79.586
 22109,"Terrebonne, LA",2014,104.604
@@ -41180,7 +41089,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2015,86.886
 22047,"Iberville, LA",2015,99.194
 22049,"Jackson, LA",2015,109.524
-22051,"Jefferson, LA",2015,100.113
 22053,"Jefferson Davis, LA",2015,90.043
 22055,"Lafayette, LA",2015,93.851
 22057,"Lafourche, LA",2015,92.076
@@ -41190,23 +41098,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2015,71.732
 22067,"Morehouse, LA",2015,83.34
 22069,"Natchitoches, LA",2015,103.62
-22071,"Orleans, LA",2015,102.092
 22073,"Ouachita, LA",2015,108.457
-22075,"Plaquemines, LA",2015,90.174
 22077,"Pointe Coupee, LA",2015,83.553
 22079,"Rapides, LA",2015,96.816
 22081,"Red River, LA",2015,85.17
 22083,"Richland, LA",2015,92.154
 22085,"Sabine, LA",2015,73.638
-22087,"St. Bernard, LA",2015,64.364
-22089,"St. Charles, LA",2015,90.663
 22091,"St. Helena, LA",2015,96.431
 22093,"St. James, LA",2015,72.385
-22095,"St. John the Baptist, LA",2015,86.364
 22097,"St. Landry, LA",2015,96.475
 22099,"St. Martin, LA",2015,91.657
 22101,"St. Mary, LA",2015,87.512
-22103,"St. Tammany, LA",2015,114.626
 22105,"Tangipahoa, LA",2015,87.599
 22107,"Tensas, LA",2015,60.987
 22109,"Terrebonne, LA",2015,97.567
@@ -44261,7 +44163,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2016,75.613
 22047,"Iberville, LA",2016,102.023
 22049,"Jackson, LA",2016,99.926
-22051,"Jefferson, LA",2016,99.399
 22053,"Jefferson Davis, LA",2016,90.891
 22055,"Lafayette, LA",2016,85.186
 22057,"Lafourche, LA",2016,80.898
@@ -44271,23 +44172,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2016,80.403
 22067,"Morehouse, LA",2016,88.697
 22069,"Natchitoches, LA",2016,105.019
-22071,"Orleans, LA",2016,100.653
 22073,"Ouachita, LA",2016,111.265
-22075,"Plaquemines, LA",2016,84.033
 22077,"Pointe Coupee, LA",2016,79.972
 22079,"Rapides, LA",2016,98.131
 22081,"Red River, LA",2016,89.993
 22083,"Richland, LA",2016,97.639
 22085,"Sabine, LA",2016,68.604
-22087,"St. Bernard, LA",2016,80.279
-22089,"St. Charles, LA",2016,90.757
 22091,"St. Helena, LA",2016,98.586
 22093,"St. James, LA",2016,82.983
-22095,"St. John the Baptist, LA",2016,79.572
 22097,"St. Landry, LA",2016,94.515
 22099,"St. Martin, LA",2016,83.844
 22101,"St. Mary, LA",2016,75.987
-22103,"St. Tammany, LA",2016,121.737
 22105,"Tangipahoa, LA",2016,90.483
 22107,"Tensas, LA",2016,78.389
 22109,"Terrebonne, LA",2016,84.244
@@ -47342,7 +47237,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2017,73.082
 22047,"Iberville, LA",2017,118.345
 22049,"Jackson, LA",2017,96.113
-22051,"Jefferson, LA",2017,100.35
 22053,"Jefferson Davis, LA",2017,88.973
 22055,"Lafayette, LA",2017,84.735
 22057,"Lafourche, LA",2017,79.355
@@ -47352,23 +47246,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2017,88.393
 22067,"Morehouse, LA",2017,79.435
 22069,"Natchitoches, LA",2017,112.728
-22071,"Orleans, LA",2017,101.765
 22073,"Ouachita, LA",2017,112.169
-22075,"Plaquemines, LA",2017,92.996
 22077,"Pointe Coupee, LA",2017,79.86
 22079,"Rapides, LA",2017,98.307
 22081,"Red River, LA",2017,105.539
 22083,"Richland, LA",2017,97.827
 22085,"Sabine, LA",2017,72.285
-22087,"St. Bernard, LA",2017,90.036
-22089,"St. Charles, LA",2017,110.529
 22091,"St. Helena, LA",2017,93.096
 22093,"St. James, LA",2017,124.702
-22095,"St. John the Baptist, LA",2017,109.742
 22097,"St. Landry, LA",2017,101.15
 22099,"St. Martin, LA",2017,86.885
 22101,"St. Mary, LA",2017,75.619
-22103,"St. Tammany, LA",2017,127.102
 22105,"Tangipahoa, LA",2017,97.902
 22107,"Tensas, LA",2017,80.558
 22109,"Terrebonne, LA",2017,79.798
@@ -50423,7 +50311,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2018,74.641
 22047,"Iberville, LA",2018,117.463
 22049,"Jackson, LA",2018,95.999
-22051,"Jefferson, LA",2018,100.428
 22053,"Jefferson Davis, LA",2018,86.916
 22055,"Lafayette, LA",2018,88.748
 22057,"Lafourche, LA",2018,81.279
@@ -50433,23 +50320,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2018,89.197
 22067,"Morehouse, LA",2018,78.711
 22069,"Natchitoches, LA",2018,111.798
-22071,"Orleans, LA",2018,102.81
 22073,"Ouachita, LA",2018,114.396
-22075,"Plaquemines, LA",2018,90.779
 22077,"Pointe Coupee, LA",2018,78.219
 22079,"Rapides, LA",2018,99.328
 22081,"Red River, LA",2018,106.31
 22083,"Richland, LA",2018,99.833
 22085,"Sabine, LA",2018,82.465
-22087,"St. Bernard, LA",2018,93.658
-22089,"St. Charles, LA",2018,101.742
 22091,"St. Helena, LA",2018,115.336
 22093,"St. James, LA",2018,119.409
-22095,"St. John the Baptist, LA",2018,109.398
 22097,"St. Landry, LA",2018,98.933
 22099,"St. Martin, LA",2018,87.642
 22101,"St. Mary, LA",2018,75.931
-22103,"St. Tammany, LA",2018,130.222
 22105,"Tangipahoa, LA",2018,98.746
 22107,"Tensas, LA",2018,76.698
 22109,"Terrebonne, LA",2018,82.659
@@ -53504,7 +53385,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2019,75.263
 22047,"Iberville, LA",2019,119.104
 22049,"Jackson, LA",2019,92.363
-22051,"Jefferson, LA",2019,101.593
 22053,"Jefferson Davis, LA",2019,85.766
 22055,"Lafayette, LA",2019,88.247
 22057,"Lafourche, LA",2019,81.382
@@ -53514,23 +53394,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2019,85.595
 22067,"Morehouse, LA",2019,80.273
 22069,"Natchitoches, LA",2019,113.781
-22071,"Orleans, LA",2019,103.604
 22073,"Ouachita, LA",2019,109.822
-22075,"Plaquemines, LA",2019,90.095
 22077,"Pointe Coupee, LA",2019,78.423
 22079,"Rapides, LA",2019,99.243
 22081,"Red River, LA",2019,118.176
 22083,"Richland, LA",2019,105.762
 22085,"Sabine, LA",2019,88.989
-22087,"St. Bernard, LA",2019,62.619
-22089,"St. Charles, LA",2019,109.104
 22091,"St. Helena, LA",2019,111.553
 22093,"St. James, LA",2019,111.295
-22095,"St. John the Baptist, LA",2019,108.28
 22097,"St. Landry, LA",2019,99.992
 22099,"St. Martin, LA",2019,89.472
 22101,"St. Mary, LA",2019,77.182
-22103,"St. Tammany, LA",2019,135.737
 22105,"Tangipahoa, LA",2019,101.153
 22107,"Tensas, LA",2019,78.545
 22109,"Terrebonne, LA",2019,81.539
@@ -56585,7 +56459,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2020,69.015
 22047,"Iberville, LA",2020,113.0
 22049,"Jackson, LA",2020,93.519
-22051,"Jefferson, LA",2020,94.446
 22053,"Jefferson Davis, LA",2020,86.556
 22055,"Lafayette, LA",2020,84.504
 22057,"Lafourche, LA",2020,77.233
@@ -56595,23 +56468,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2020,78.592
 22067,"Morehouse, LA",2020,79.712
 22069,"Natchitoches, LA",2020,112.583
-22071,"Orleans, LA",2020,95.303
 22073,"Ouachita, LA",2020,106.048
-22075,"Plaquemines, LA",2020,75.393
 22077,"Pointe Coupee, LA",2020,69.531
 22079,"Rapides, LA",2020,96.762
 22081,"Red River, LA",2020,111.572
 22083,"Richland, LA",2020,107.168
 22085,"Sabine, LA",2020,87.761
-22087,"St. Bernard, LA",2020,59.002
-22089,"St. Charles, LA",2020,93.856
 22091,"St. Helena, LA",2020,103.694
 22093,"St. James, LA",2020,86.328
-22095,"St. John the Baptist, LA",2020,80.652
 22097,"St. Landry, LA",2020,98.54
 22099,"St. Martin, LA",2020,83.611
 22101,"St. Mary, LA",2020,71.316
-22103,"St. Tammany, LA",2020,131.023
 22105,"Tangipahoa, LA",2020,101.654
 22107,"Tensas, LA",2020,73.186
 22109,"Terrebonne, LA",2020,74.002
@@ -59666,7 +59533,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2021,65.712
 22047,"Iberville, LA",2021,107.136
 22049,"Jackson, LA",2021,96.954
-22051,"Jefferson, LA",2021,97.73
 22053,"Jefferson Davis, LA",2021,80.812
 22055,"Lafayette, LA",2021,87.329
 22057,"Lafourche, LA",2021,72.031
@@ -59676,23 +59542,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2021,73.414
 22067,"Morehouse, LA",2021,77.654
 22069,"Natchitoches, LA",2021,122.63
-22071,"Orleans, LA",2021,96.714
 22073,"Ouachita, LA",2021,106.013
-22075,"Plaquemines, LA",2021,68.293
 22077,"Pointe Coupee, LA",2021,75.936
 22079,"Rapides, LA",2021,99.359
 22081,"Red River, LA",2021,131.602
 22083,"Richland, LA",2021,108.01
 22085,"Sabine, LA",2021,97.045
-22087,"St. Bernard, LA",2021,53.951
-22089,"St. Charles, LA",2021,93.041
 22091,"St. Helena, LA",2021,109.777
 22093,"St. James, LA",2021,76.816
-22095,"St. John the Baptist, LA",2021,73.457
 22097,"St. Landry, LA",2021,101.034
 22099,"St. Martin, LA",2021,85.709
 22101,"St. Mary, LA",2021,71.657
-22103,"St. Tammany, LA",2021,134.284
 22105,"Tangipahoa, LA",2021,104.218
 22107,"Tensas, LA",2021,67.938
 22109,"Terrebonne, LA",2021,73.462
