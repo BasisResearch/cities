@@ -7,21 +7,24 @@ from cities.utils.clean_spending_HHS import clean_spending_HHS
 from cities.utils.clean_spending_transportation import clean_spending_transportation
 from cities.utils.clean_transport import clean_transport
 from cities.utils.clean_urbanization import clean_urbanization
+from cities.utils.clean_industry_ts import clean_industry_ts    
 
-clean_gdp()
+# clean_gdp()
 
-clean_population()
+# clean_population()
 
-clean_transport()
+# clean_transport()
 
-clean_spending_transportation()
+# clean_spending_transportation()
 
-clean_spending_commerce()
+# clean_spending_commerce()
 
-clean_spending_HHS()
+# clean_spending_HHS()
 
-clean_ethnic_composition()
+# clean_ethnic_composition()
 
-clean_industry()
+# clean_industry()
 
-clean_urbanization()
+# clean_urbanization()
+
+clean_industry_ts()
