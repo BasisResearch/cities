@@ -45,7 +45,6 @@ class FipsQuery:
             outcome_var is None and outcome_percentile_range is not None
         ), "outcome_percentile_range requires an outcome variable"
 
-
         self.all_available_features = list_available_features()
 
         feature_groups = list(feature_groups_with_weights.keys())
@@ -62,7 +61,7 @@ class FipsQuery:
         self.fips = fips
         self.lag = lag
         self.top = top
-        
+
         # it's fine if they're None (by default)
         self.outcome_var = outcome_var
         self.outcome_comparison_period = outcome_comparison_period
@@ -77,7 +76,6 @@ class FipsQuery:
         self.data.get_features_std_wide(self.all_features)
         self.data.get_features_wide(self.all_features)
 
-
         assert (
             fips in self.data.std_wide["gdp"]["GeoFIPS"].values
         ), "FIPS not found in the data set."
@@ -91,7 +89,8 @@ class FipsQuery:
         assert (
             self.top > 0
             and isinstance(self.top, int)
-            and self.top < 2800 #TODO Make sure the number makes sense once we add all datasets we need
+            and self.top
+            < 2800  # TODO Make sure the number makes sense once we add all datasets we need
         ), "top must be a positive integer smaller than the number of locations in the dataset"
 
         if outcome_var:
@@ -102,9 +101,11 @@ class FipsQuery:
             self.outcome_with_percentiles = self.data.std_wide[self.outcome_var].copy()
             most_recent_outcome = self.data.wide[self.outcome_var].iloc[:, -1].values
             self.outcome_with_percentiles["percentile"] = (
-                    most_recent_outcome < most_recent_outcome[:, np.newaxis]
-                    ).sum(axis=1) / most_recent_outcome.shape[0]
-            self.outcome_with_percentiles["percentile"] = round(self.outcome_with_percentiles["percentile"] * 100, 2)
+                most_recent_outcome < most_recent_outcome[:, np.newaxis]
+            ).sum(axis=1) / most_recent_outcome.shape[0]
+            self.outcome_with_percentiles["percentile"] = round(
+                self.outcome_with_percentiles["percentile"] * 100, 2
+            )
             self.outcome_percentile_range = outcome_percentile_range
 
     def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
@@ -187,10 +188,10 @@ class FipsQuery:
 
         fig.show()
 
-    def find_euclidean_kins(self):  
+    def find_euclidean_kins(self):
 
         # cut the relevant years from the outcome variable
-        if  self.outcome_comparison_period and self.outcome_var:
+        if self.outcome_comparison_period and self.outcome_var:
             start_year, end_year = self.outcome_comparison_period
 
             outcome_df = self.data.std_wide[self.outcome_var].copy()
@@ -230,29 +231,23 @@ class FipsQuery:
             self.my_df = pd.DataFrame()
             self.other_df = pd.DataFrame()
 
-
         # add data on other features to the arrays
         # prior to distance computation
 
+        if self.outcome_var:
+            before_shape = self.other_df.shape
+
         my_features_arrays = np.array([])
         others_features_arrays = np.array([])
+        feature_column_count = 0
         for feature in self.feature_groups:
             if feature != self.outcome_var:
                 _extracted_df = self.data.wide[feature].copy()
+                feature_column_count += _extracted_df.shape[1] - 2
                 _extracted_my_df = _extracted_df[_extracted_df["GeoFIPS"] == self.fips]
-                _extracted_other_df = _extracted_df[_extracted_df["GeoFIPS"] != self.fips]
-
-                if self.outcome_var:
-                    before_shape = self.other_df.shape
-
-                    assert (
-                        self.other_df["GeoFIPS"].unique()
-                        == _extracted_other_df["GeoFIPS"].unique()
-                    ).all(), "FIPS are missing"
-
-                    assert (
-                        self.other_df["GeoFIPS"] == _extracted_other_df["GeoFIPS"]
-                    ).all(), "FIPS are misaligned"
+                _extracted_other_df = _extracted_df[
+                    _extracted_df["GeoFIPS"] != self.fips
+                ]
 
                 _extracted_other_df.columns = [
                     f"{col}_{feature}" if col not in ["GeoFIPS", "GeoName"] else col
@@ -264,109 +259,130 @@ class FipsQuery:
                     for col in _extracted_my_df.columns
                 ]
 
-            assert _extracted_df.shape[1] == _extracted_my_df.shape[1] == _extracted_other_df.shape[1]
-       
-                    
-            self.my_df = pd.concat((self.my_df, _extracted_my_df.iloc[:, 2:]), axis=1)
-            self.other_df = pd.concat((self.other_df, _extracted_other_df.iloc[:, 2:]), axis=1)
-            
-            if self.outcome_var:
-                after_shape = self.other_df.shape    
-                assert before_shape[0] == after_shape[0], "Feature merging went wrong!"
+                assert (
+                    _extracted_df.shape[1]
+                    == _extracted_my_df.shape[1]
+                    == _extracted_other_df.shape[1]
+                )
 
-        
-                    
-            _extracted_df_std = self.data.std_wide[feature].copy()
-            _extracted_other_array = np.array(
+                self.my_df = pd.concat(
+                    (self.my_df, _extracted_my_df.iloc[:, 2:]), axis=1
+                )
+
+                self.other_df = pd.concat(
+                    (self.other_df, _extracted_other_df.iloc[:, 2:]), axis=1
+                )
+
+                if self.outcome_var is None:
+                    assert (
+                        self.my_df.shape[1]
+                        == self.other_df.shape[1]
+                        == feature_column_count
+                    )
+
+                if self.outcome_var:
+                    after_shape = self.other_df.shape
+                    assert (
+                        before_shape[0] == after_shape[0]
+                    ), "Feature merging went wrong!"
+
+                _extracted_df_std = self.data.std_wide[feature].copy()
+                _extracted_other_array = np.array(
                     _extracted_df_std[_extracted_df_std["GeoFIPS"] != self.fips].iloc[
                         :, 2:
                     ]
                 )
-            _extracted_my_array = np.array(
+                _extracted_my_array = np.array(
                     _extracted_df_std[_extracted_df_std["GeoFIPS"] == self.fips].iloc[
                         :, 2:
                     ]
                 )
 
-        if my_features_arrays.size == 0:
-            my_features_arrays = _extracted_my_array
-        else:
-            my_features_arrays = np.hstack((my_features_arrays, _extracted_my_array))
+                if my_features_arrays.size == 0:
+                    my_features_arrays = _extracted_my_array
+                else:
+                    my_features_arrays = np.hstack(
+                        (my_features_arrays, _extracted_my_array)
+                    )
 
-        if others_features_arrays.size == 0:
-            others_features_arrays = _extracted_other_array
-        else:
-            others_features_arrays = np.hstack((others_features_arrays, _extracted_other_array))
+                if others_features_arrays.size == 0:
+                    others_features_arrays = _extracted_other_array
+                else:
+                    others_features_arrays = np.hstack(
+                        (others_features_arrays, _extracted_other_array)
+                    )
 
-        display(my_features_arrays.shape)
-        display(others_features_arrays.shape)
+        if len(self.feature_groups) > 1 and self.outcome_var:
+            self.my_array = np.hstack((self.my_array, my_features_arrays))
+            self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
+        elif len(self.feature_groups) > 1 and self.outcome_var is None:
+            self.my_array = my_features_arrays.copy()
+            self.other_arrays = others_features_arrays.copy()
 
-        # if len(self.feature_groups) > 1 and self.outcome_var:
-        #     self.my_array = np.hstack((self.my_array, my_features_arrays))
-        #     self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
-        # elif len(self.feature_groups) >= 1 and self.outcome_var is None:
-        #     self.my_array = my_features_arrays.copy()
-        #     self.other_arrays = others_features_arrays.copy()
-        
+        if self.outcome_var is None:
+            assert (
+                feature_column_count
+                == self.my_array.shape[1]
+                == self.other_arrays.shape[1]
+            )
+            assert my_features_arrays.shape == self.my_array.shape
+            assert others_features_arrays.shape == self.other_arrays.shape
 
-        # compute_weight_array(self, self.time_decay)
+        compute_weight_array(self, self.time_decay)
 
-        # diff = self.all_weights.shape[0] - self.other_arrays.shape[1]
-        # self.all_weights = self.all_weights[diff:]
+        diff = self.all_weights.shape[0] - self.other_arrays.shape[1]
+        self.all_weights = self.all_weights[diff:]
 
         # if self.outcome_var:
-        #     assert (
-        #         self.other_arrays.shape[1] == self.all_weights.shape[0]
-        #     ), "Weights and arrays are misaligned"
+        assert (
+            self.other_arrays.shape[1] == self.all_weights.shape[0]
+        ), "Weights and arrays are misaligned"
 
-        # distances = []
-        # for vector in self.other_arrays:
-        #     distances.append(
-        #         generalized_euclidean_distance(
-        #             np.squeeze(self.my_array), vector, self.all_weights
-        #         )
-        #     )
-        
+        distances = []
+        for vector in self.other_arrays:
+            distances.append(
+                generalized_euclidean_distance(
+                    np.squeeze(self.my_array), vector, self.all_weights
+                )
+            )
 
-        # count = sum([1 for distance in distances if distance == 0])
+        count = sum([1 for distance in distances if distance == 0])
 
-        # assert (
-        #     len(distances) == self.other_arrays.shape[0]
-        # ), "Distances and arrays are misaligned"
-        # assert (
-        #     len(distances) == self.other_df.shape[0]
-        # ), "Distances and df are misaligned"
+        assert (
+            len(distances) == self.other_arrays.shape[0]
+        ), "Distances and arrays are misaligned"
+        assert (
+            len(distances) == self.other_df.shape[0]
+        ), "Distances and df are misaligned"
 
         # #self.other_df[f"distance to {self.fips}"] = distances #remove soon if no errors
-        # self.other_df.loc[:, f"distance to {self.fips}"] = distances
+        self.other_df.loc[:, f"distance to {self.fips}"] = distances
 
-        # count_zeros = (self.other_df[f"distance to {self.fips}"] == 0).sum()
+        count_zeros = (self.other_df[f"distance to {self.fips}"] == 0).sum()
+        assert count_zeros == count, "f{count_zeros} zeros in alien distances!"
 
-        # assert count_zeros == count, "f{count_zeros} zeros in alien distances!"
+        self.other_df.sort_values(by=self.other_df.columns[-1], inplace=True)
 
-        # self.other_df.sort_values(by=self.other_df.columns[-1], inplace=True)
+        self.my_df[f"distance to {self.fips}"] = 0
 
-        # #self.my_df[f"distance to {self.fips}"] = 0 #possibly remove soon if no errors
-        # self.my_df.loc[f"distance to {self.fips}"] = 0
+        self.euclidean_kins = pd.concat((self.my_df, self.other_df), axis=0)
 
-        # self.euclidean_kins = pd.concat((self.my_df, self.other_df), axis=0)
+        if self.outcome_var:
+            self.euclidean_kins = self.euclidean_kins.merge(
+                self.outcome_with_percentiles[["GeoFIPS", "percentile"]],
+                on="GeoFIPS",
+                how="left",
+            )
 
-        # if self.outcome_var:
-        #     self.euclidean_kins = self.euclidean_kins.merge(
-        #         self.outcome_with_percentiles[["GeoFIPS", "percentile"]],
-        #         on="GeoFIPS",
-        #         how="left",
-        #     )
-
-        # if self.outcome_var:
-        #     myself = self.euclidean_kins.iloc[:1]
-        #     self.euclidean_kins = self.euclidean_kins[
-        #         self.euclidean_kins["percentile"] >= self.outcome_percentile_range[0]
-        #     ]
-        #     self.euclidean_kins = self.euclidean_kins[
-        #         self.euclidean_kins["percentile"] <= self.outcome_percentile_range[1]
-        #     ]
-        #     self.euclidean_kins = pd.concat([myself, self.euclidean_kins])
+        if self.outcome_var and self.outcome_percentile_range is not None:
+            myself = self.euclidean_kins.iloc[:1]
+            self.euclidean_kins = self.euclidean_kins[
+                self.euclidean_kins["percentile"] >= self.outcome_percentile_range[0]
+            ]
+            self.euclidean_kins = self.euclidean_kins[
+                self.euclidean_kins["percentile"] <= self.outcome_percentile_range[1]
+            ]
+            self.euclidean_kins = pd.concat([myself, self.euclidean_kins])
 
     def plot_weights(self):
         plot_weights(self)
@@ -475,7 +491,7 @@ class FipsQuery:
             template="simple_white",
         )
 
-        return fig 
+        return fig
 
     def show_kins_plot(self):
         fig = self.plot_kins()

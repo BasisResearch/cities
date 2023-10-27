@@ -4,7 +4,6 @@ import sys
 import numpy as np
 import pandas as pd
 
-import cities
 from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
 from cities.utils.data_grabber import list_available_features
 

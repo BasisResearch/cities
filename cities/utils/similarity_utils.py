@@ -85,8 +85,13 @@ def divide_exponentially(group_weight, number_of_features, rate):
 
 def compute_weight_array(query_object, rate=1.08):
 
-    assert sum(abs(value) for key, value in query_object.feature_groups_with_weights.items()
-        ) != 0, "At least one weight has to be other than 0"
+    assert (
+        sum(
+            abs(value)
+            for key, value in query_object.feature_groups_with_weights.items()
+        )
+        != 0
+    ), "At least one weight has to be other than 0"
 
     max_other_scores = sum(
         abs(value)
@@ -94,7 +99,10 @@ def compute_weight_array(query_object, rate=1.08):
         if key != query_object.outcome_var
     )
 
-    if query_object.outcome_var and query_object.feature_groups_with_weights[query_object.outcome_var] != 0:
+    if (
+        query_object.outcome_var
+        and query_object.feature_groups_with_weights[query_object.outcome_var] != 0
+    ):
         weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
         query_object.feature_groups_with_weights[query_object.outcome_var] = (
             weight_outcome_joint
