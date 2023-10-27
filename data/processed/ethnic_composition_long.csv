@@ -87,7 +87,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",mexican,0.010352366255144033
 2220,"Sitka City and Borough, AK",mexican,0.02553416294904907
 2240,"Southeast Fairbanks Census Area, AK",mexican,0.013651627974886844
-2282,"Yakutat City and Borough, AK*",mexican,0.03914590747330961
 2290,"Yukon-Koyukuk Census Area, AK",mexican,0.008466777102889747
 4001,"Apache, AZ",mexican,0.02593534216900095
 4003,"Cochise, AZ",mexican,0.15579733316279218
@@ -3169,7 +3168,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",puerto_rican,0.0007073045267489712
 2220,"Sitka City and Borough, AK",puerto_rican,0.0036980511857243486
 2240,"Southeast Fairbanks Census Area, AK",puerto_rican,0.02000292013432618
-2282,"Yakutat City and Borough, AK*",puerto_rican,0.0
 2290,"Yukon-Koyukuk Census Area, AK",puerto_rican,0.003681207436039021
 4001,"Apache, AZ",puerto_rican,0.0011132339446090894
 4003,"Cochise, AZ",puerto_rican,0.007498481117897228
@@ -6251,7 +6249,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",cuban,0.0006430041152263374
 2220,"Sitka City and Borough, AK",cuban,0.0017022775299366049
 2240,"Southeast Fairbanks Census Area, AK",cuban,0.0
-2282,"Yakutat City and Borough, AK*",cuban,0.0
 2290,"Yukon-Koyukuk Census Area, AK",cuban,0.0
 4001,"Apache, AZ",cuban,0.0002707866351751839
 4003,"Cochise, AZ",cuban,0.0005076263869791834
@@ -9333,7 +9330,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",other_hispanic_latino,0.0009645061728395061
 2220,"Sitka City and Borough, AK",other_hispanic_latino,0.004754637238788448
 2240,"Southeast Fairbanks Census Area, AK",other_hispanic_latino,0.0018250839538618776
-2282,"Yakutat City and Borough, AK*",other_hispanic_latino,0.016903914590747332
 2290,"Yukon-Koyukuk Census Area, AK",other_hispanic_latino,0.0015645131603165838
 4001,"Apache, AZ",other_hispanic_latino,0.0067922314323108635
 4003,"Cochise, AZ",other_hispanic_latino,0.01476513286221341
@@ -12415,7 +12411,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",white,0.051247427983539096
 2220,"Sitka City and Borough, AK",white,0.3072317445409721
 2240,"Southeast Fairbanks Census Area, AK",white,0.36027157249233466
-2282,"Yakutat City and Borough, AK*",white,0.152135231316726
 2290,"Yukon-Koyukuk Census Area, AK",white,0.10693907601693356
 4001,"Apache, AZ",white,0.08856227340423932
 4003,"Cochise, AZ",white,0.2696415438237457
@@ -15497,7 +15492,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",black_african_american,0.0055941358024691355
 2220,"Sitka City and Borough, AK",black_african_american,0.0023479690068091102
 2240,"Southeast Fairbanks Census Area, AK",black_african_american,0.0040151846984961305
-2282,"Yakutat City and Borough, AK*",black_african_american,0.01601423487544484
 2290,"Yukon-Koyukuk Census Area, AK",black_african_american,0.0004601509295048776
 4001,"Apache, AZ",black_african_american,0.004234802100100792
 4003,"Cochise, AZ",black_african_american,0.016507850222236435
@@ -18579,7 +18573,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",american_indian_alaska_native,0.40901491769547327
 2220,"Sitka City and Borough, AK",american_indian_alaska_native,0.04936604836816154
 2240,"Southeast Fairbanks Census Area, AK",american_indian_alaska_native,0.06847714994889766
-2282,"Yakutat City and Borough, AK*",american_indian_alaska_native,0.1423487544483986
 2290,"Yukon-Koyukuk Census Area, AK",american_indian_alaska_native,0.3426283821093319
 4001,"Apache, AZ",american_indian_alaska_native,0.363410708107051
 4003,"Cochise, AZ",american_indian_alaska_native,0.0035773670578454256
@@ -21661,7 +21654,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",asian,0.00636574074074074
 2220,"Sitka City and Borough, AK",asian,0.03633482038037098
 2240,"Southeast Fairbanks Census Area, AK",asian,0.014819681705358446
-2282,"Yakutat City and Borough, AK*",asian,0.0711743772241993
 2290,"Yukon-Koyukuk Census Area, AK",asian,0.003681207436039021
 4001,"Apache, AZ",asian,0.0027454756066372815
 4003,"Cochise, AZ",asian,0.009217216128929109
@@ -24743,7 +24735,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",native_hawaiian_other_pacific_islander,0.0005787037037037037
 2220,"Sitka City and Borough, AK",native_hawaiian_other_pacific_islander,0.00017609767551068326
 2240,"Southeast Fairbanks Census Area, AK",native_hawaiian_other_pacific_islander,0.00036501679077237555
-2282,"Yakutat City and Borough, AK*",native_hawaiian_other_pacific_islander,0.0017793594306049821
 2290,"Yukon-Koyukuk Census Area, AK",native_hawaiian_other_pacific_islander,0.00018406037180195104
 4001,"Apache, AZ",native_hawaiian_other_pacific_islander,0.00048139846253366026
 4003,"Cochise, AZ",native_hawaiian_other_pacific_islander,0.0016587791385540241
@@ -27825,7 +27816,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",other_race_races,0.014531893004115226
 2220,"Sitka City and Borough, AK",other_race_races,0.06885419112467715
 2240,"Southeast Fairbanks Census Area, AK",other_race_races,0.01657176230106585
-2282,"Yakutat City and Borough, AK*",other_race_races,0.060498220640569395
 2290,"Yukon-Koyukuk Census Area, AK",other_race_races,0.03239462543714338
 4001,"Apache, AZ",other_race_races,0.0064537481383418836
 4003,"Cochise, AZ",other_race_races,0.02082867009880728

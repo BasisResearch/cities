@@ -87,7 +87,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",roadDensity,0.0148860776608418
 2220,"Sitka City and Borough, AK",roadDensity,0.049051919839298
 2240,"Southeast Fairbanks Census Area, AK",roadDensity,0.0639713831462359
-2282,"Yakutat City and Borough, AK*",roadDensity,0.03277249
 2290,"Yukon-Koyukuk Census Area, AK",roadDensity,0.0372379869088068
 4001,"Apache, AZ",roadDensity,1.1185965030385514
 4003,"Cochise, AZ",roadDensity,0.9798446164144848
@@ -3169,7 +3168,6 @@ GeoFIPS,GeoName,Category,Value
 2188,"Northwest Arctic Borough, AK",WeightAvgNatWalkInd,6.118136367584044
 2220,"Sitka City and Borough, AK",WeightAvgNatWalkInd,12.8988899067702
 2240,"Southeast Fairbanks Census Area, AK",WeightAvgNatWalkInd,5.196819856640344
-2282,"Yakutat City and Borough, AK*",WeightAvgNatWalkInd,7.166666667
 2290,"Yukon-Koyukuk Census Area, AK",WeightAvgNatWalkInd,5.203385657249862
 4001,"Apache, AZ",WeightAvgNatWalkInd,4.334552072672269
 4003,"Cochise, AZ",WeightAvgNatWalkInd,6.095192655529091

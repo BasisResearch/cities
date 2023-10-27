@@ -87,7 +87,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2001,104.185
 2220,"Sitka City and Borough, AK",2001,81.403
 2240,"Southeast Fairbanks Census Area, AK",2001,67.734
-2282,"Yakutat City and Borough, AK*",2001,83.095
 2290,"Yukon-Koyukuk Census Area, AK",2001,111.162
 4001,"Apache, AZ",2001,76.718
 4003,"Cochise, AZ",2001,76.359
@@ -3169,7 +3168,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2002,89.882
 2220,"Sitka City and Borough, AK",2002,81.554
 2240,"Southeast Fairbanks Census Area, AK",2002,48.786
-2282,"Yakutat City and Borough, AK*",2002,83.708
 2290,"Yukon-Koyukuk Census Area, AK",2002,76.703
 4001,"Apache, AZ",2002,74.466
 4003,"Cochise, AZ",2002,77.258
@@ -6251,7 +6249,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2003,92.826
 2220,"Sitka City and Borough, AK",2003,84.832
 2240,"Southeast Fairbanks Census Area, AK",2003,54.32
-2282,"Yakutat City and Borough, AK*",2003,84.29
 2290,"Yukon-Koyukuk Census Area, AK",2003,76.963
 4001,"Apache, AZ",2003,76.833
 4003,"Cochise, AZ",2003,82.71
@@ -9333,7 +9330,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2004,97.309
 2220,"Sitka City and Borough, AK",2004,82.928
 2240,"Southeast Fairbanks Census Area, AK",2004,57.611
-2282,"Yakutat City and Borough, AK*",2004,91.222
 2290,"Yukon-Koyukuk Census Area, AK",2004,74.824
 4001,"Apache, AZ",2004,75.631
 4003,"Cochise, AZ",2004,85.541
@@ -12415,7 +12411,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2005,98.392
 2220,"Sitka City and Borough, AK",2005,85.6
 2240,"Southeast Fairbanks Census Area, AK",2005,80.4
-2282,"Yakutat City and Borough, AK*",2005,93.01
 2290,"Yukon-Koyukuk Census Area, AK",2005,73.008
 4001,"Apache, AZ",2005,77.074
 4003,"Cochise, AZ",2005,89.881
@@ -15497,7 +15492,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2006,128.794
 2220,"Sitka City and Borough, AK",2006,85.921
 2240,"Southeast Fairbanks Census Area, AK",2006,117.271
-2282,"Yakutat City and Borough, AK*",2006,99.202
 2290,"Yukon-Koyukuk Census Area, AK",2006,74.662
 4001,"Apache, AZ",2006,80.745
 4003,"Cochise, AZ",2006,91.443
@@ -18579,7 +18573,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2007,144.267
 2220,"Sitka City and Borough, AK",2007,85.937
 2240,"Southeast Fairbanks Census Area, AK",2007,147.483
-2282,"Yakutat City and Borough, AK*",2007,110.715
 2290,"Yukon-Koyukuk Census Area, AK",2007,87.611
 4001,"Apache, AZ",2007,81.498
 4003,"Cochise, AZ",2007,97.503
@@ -21661,7 +21654,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2008,112.229
 2220,"Sitka City and Borough, AK",2008,85.184
 2240,"Southeast Fairbanks Census Area, AK",2008,125.781
-2282,"Yakutat City and Borough, AK*",2008,98.332
 2290,"Yukon-Koyukuk Census Area, AK",2008,81.645
 4001,"Apache, AZ",2008,91.735
 4003,"Cochise, AZ",2008,99.594
@@ -24743,7 +24735,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2009,111.895
 2220,"Sitka City and Borough, AK",2009,88.753
 2240,"Southeast Fairbanks Census Area, AK",2009,127.653
-2282,"Yakutat City and Borough, AK*",2009,87.085
 2290,"Yukon-Koyukuk Census Area, AK",2009,80.503
 4001,"Apache, AZ",2009,92.5
 4003,"Cochise, AZ",2009,99.844
@@ -27825,7 +27816,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2010,124.412
 2220,"Sitka City and Borough, AK",2010,93.993
 2240,"Southeast Fairbanks Census Area, AK",2010,133.411
-2282,"Yakutat City and Borough, AK*",2010,92.737
 2290,"Yukon-Koyukuk Census Area, AK",2010,94.654
 4001,"Apache, AZ",2010,101.732
 4003,"Cochise, AZ",2010,103.397
@@ -30907,7 +30897,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2011,117.935
 2220,"Sitka City and Borough, AK",2011,99.302
 2240,"Southeast Fairbanks Census Area, AK",2011,125.205
-2282,"Yakutat City and Borough, AK*",2011,95.015
 2290,"Yukon-Koyukuk Census Area, AK",2011,108.03
 4001,"Apache, AZ",2011,104.899
 4003,"Cochise, AZ",2011,104.111
@@ -33989,7 +33978,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2013,105.599
 2220,"Sitka City and Borough, AK",2013,103.867
 2240,"Southeast Fairbanks Census Area, AK",2013,104.404
-2282,"Yakutat City and Borough, AK*",2013,131.706
 2290,"Yukon-Koyukuk Census Area, AK",2013,73.716
 4001,"Apache, AZ",2013,99.425
 4003,"Cochise, AZ",2013,96.799
@@ -37071,7 +37059,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2014,109.432
 2220,"Sitka City and Borough, AK",2014,100.532
 2240,"Southeast Fairbanks Census Area, AK",2014,103.066
-2282,"Yakutat City and Borough, AK*",2014,126.996
 2290,"Yukon-Koyukuk Census Area, AK",2014,61.426
 4001,"Apache, AZ",2014,90.59
 4003,"Cochise, AZ",2014,93.648
@@ -40153,7 +40140,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2015,96.653
 2220,"Sitka City and Borough, AK",2015,96.588
 2240,"Southeast Fairbanks Census Area, AK",2015,93.749
-2282,"Yakutat City and Borough, AK*",2015,107.711
 2290,"Yukon-Koyukuk Census Area, AK",2015,59.737
 4001,"Apache, AZ",2015,89.113
 4003,"Cochise, AZ",2015,95.343
@@ -43235,7 +43221,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2016,99.209
 2220,"Sitka City and Borough, AK",2016,87.724
 2240,"Southeast Fairbanks Census Area, AK",2016,99.444
-2282,"Yakutat City and Borough, AK*",2016,75.045
 2290,"Yukon-Koyukuk Census Area, AK",2016,63.712
 4001,"Apache, AZ",2016,90.096
 4003,"Cochise, AZ",2016,96.806
@@ -46317,7 +46302,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2017,117.368
 2220,"Sitka City and Borough, AK",2017,89.109
 2240,"Southeast Fairbanks Census Area, AK",2017,111.392
-2282,"Yakutat City and Borough, AK*",2017,73.343
 2290,"Yukon-Koyukuk Census Area, AK",2017,66.092
 4001,"Apache, AZ",2017,90.268
 4003,"Cochise, AZ",2017,95.376
@@ -49399,7 +49383,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2018,115.968
 2220,"Sitka City and Borough, AK",2018,90.769
 2240,"Southeast Fairbanks Census Area, AK",2018,106.659
-2282,"Yakutat City and Borough, AK*",2018,76.688
 2290,"Yukon-Koyukuk Census Area, AK",2018,69.578
 4001,"Apache, AZ",2018,91.729
 4003,"Cochise, AZ",2018,96.104
@@ -52481,7 +52464,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2019,109.562
 2220,"Sitka City and Borough, AK",2019,89.877
 2240,"Southeast Fairbanks Census Area, AK",2019,95.703
-2282,"Yakutat City and Borough, AK*",2019,82.141
 2290,"Yukon-Koyukuk Census Area, AK",2019,68.78
 4001,"Apache, AZ",2019,82.228
 4003,"Cochise, AZ",2019,97.306
@@ -55563,7 +55545,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2020,109.035
 2220,"Sitka City and Borough, AK",2020,77.676
 2240,"Southeast Fairbanks Census Area, AK",2020,106.195
-2282,"Yakutat City and Borough, AK*",2020,84.88
 2290,"Yukon-Koyukuk Census Area, AK",2020,68.703
 4001,"Apache, AZ",2020,82.847
 4003,"Cochise, AZ",2020,102.028
@@ -58645,7 +58626,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2021,98.655
 2220,"Sitka City and Borough, AK",2021,83.495
 2240,"Southeast Fairbanks Census Area, AK",2021,110.756
-2282,"Yakutat City and Borough, AK*",2021,102.837
 2290,"Yukon-Koyukuk Census Area, AK",2021,70.292
 4001,"Apache, AZ",2021,83.476
 4003,"Cochise, AZ",2021,101.328
