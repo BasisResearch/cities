@@ -72,7 +72,7 @@ def clean_industry_ts():
 
     industry_ts = industry_ts.sort_values(by=["GeoFIPS", "GeoName", "Year"])
 
-
+    industry_ts.fillna(0, inplace=True)
 
     columns_to_save = industry_ts.columns[industry_ts.columns.get_loc('Year') + 1:]
 
