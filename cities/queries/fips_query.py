@@ -387,12 +387,12 @@ class FipsQuery:
     def plot_weights(self):
         plot_weights(self)
 
-    def plot_kins(self):
+    def plot_kins_other_outcome_var(self, outcome_var):
         assert self.outcome_var, "Outcome comparison requires an outcome variable"
         assert hasattr(self, 'euclidean_kins'), "Run `find_euclidean_kins` first"
 
-        self.data.get_features_long([self.outcome_var])
-        plot_data = self.data.long[self.outcome_var]
+        self.data.get_features_long([outcome_var])
+        plot_data = self.data.long[outcome_var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
         # up = my_plot_data["Year"].max()
         # possibly remove
@@ -487,11 +487,16 @@ class FipsQuery:
         fig.update_layout(
             title=title,
             xaxis_title="Year",
-            yaxis_title=f"{self.outcome_var}",
+            yaxis_title=f"{outcome_var}",
             legend=dict(title="GeoName"),
             template="simple_white",
         )
 
+        return fig
+
+
+    def plot_kins(self):
+        fig = self.plot_kins_other_outcome_var(self.outcome_var)
         return fig
 
     def show_kins_plot(self):
