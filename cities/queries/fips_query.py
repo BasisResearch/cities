@@ -49,6 +49,8 @@ class FipsQuery:
 
         feature_groups = list(feature_groups_with_weights.keys())
 
+        assert feature_groups, "You need to specify at least one feature group"
+
         assert all(
             isinstance(value, int) and -4 <= value <= 4
             for value in feature_groups_with_weights.values()
@@ -231,6 +233,7 @@ class FipsQuery:
             self.my_df = pd.DataFrame()
             self.other_df = pd.DataFrame()
 
+
         # add data on other features to the arrays
         # prior to distance computation
 
@@ -273,12 +276,14 @@ class FipsQuery:
                     (self.other_df, _extracted_other_df.iloc[:, 2:]), axis=1
                 )
 
+
                 if self.outcome_var is None:
                     assert (
                         self.my_df.shape[1]
                         == self.other_df.shape[1]
                         == feature_column_count
                     )
+
 
                 if self.outcome_var:
                     after_shape = self.other_df.shape
@@ -312,10 +317,11 @@ class FipsQuery:
                         (others_features_arrays, _extracted_other_array)
                     )
 
+
         if len(self.feature_groups) > 1 and self.outcome_var:
             self.my_array = np.hstack((self.my_array, my_features_arrays))
             self.other_arrays = np.hstack((self.other_arrays, others_features_arrays))
-        elif len(self.feature_groups) > 1 and self.outcome_var is None:
+        elif self.outcome_var is None:
             self.my_array = my_features_arrays.copy()
             self.other_arrays = others_features_arrays.copy()
 
