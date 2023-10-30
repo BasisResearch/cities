@@ -389,7 +389,7 @@ class FipsQuery:
 
     def plot_kins(self):
         assert self.outcome_var, "Outcome comparison requires an outcome variable"
-        assert self.euclidean_kins, "Run `find_euclidean_kins` first"
+        assert hasattr(self, 'euclidean_kins'), "Run `find_euclidean_kins` first"
 
         self.data.get_features_long([self.outcome_var])
         plot_data = self.data.long[self.outcome_var]
@@ -398,6 +398,7 @@ class FipsQuery:
         # possibly remove
 
         fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
+        geonames_top = self.euclidean_kins["GeoName"].iloc[1 : (self.top + 1)].values        
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
 
         fig = go.Figure()
@@ -420,7 +421,7 @@ class FipsQuery:
             : self.top
         ]
 
-        for i, geoname in enumerate(others_plot_data["GeoName"].unique()):
+        for i, geoname in enumerate(geonames_top):
             subset = others_plot_data[others_plot_data["GeoName"] == geoname]
             # line_color = shades_of_grey[i % len(shades_of_grey)]
             line_color = pastel_colors[i % len(pastel_colors)]
