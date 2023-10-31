@@ -84,23 +84,34 @@ def divide_exponentially(group_weight, number_of_features, rate):
 
 
 def compute_weight_array(query_object, rate=1.08):
-    # max_other_scores = sum(query_object.weights.values())
+
+    assert (
+        sum(
+            abs(value)
+            for key, value in query_object.feature_groups_with_weights.items()
+        )
+        != 0
+    ), "At least one weight has to be other than 0"
 
     max_other_scores = sum(
         abs(value)
         for key, value in query_object.feature_groups_with_weights.items()
         if key != query_object.outcome_var
     )
-    weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
-    query_object.feature_groups_with_weights[query_object.outcome_var] = (
-        weight_outcome_joint
-        * query_object.feature_groups_with_weights[query_object.outcome_var]
-    )
+
+    if (
+        query_object.outcome_var
+        and query_object.feature_groups_with_weights[query_object.outcome_var] != 0
+    ):
+        weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
+        query_object.feature_groups_with_weights[query_object.outcome_var] = (
+            weight_outcome_joint
+            * query_object.feature_groups_with_weights[query_object.outcome_var]
+        )
 
     tensed_status = {}
     columns = {}
     column_counts = {}
-    # column_tags = [] #remove if tests passed
     weight_lists = {}
     all_columns = []
     for feature in query_object.feature_groups:
@@ -109,6 +120,9 @@ def compute_weight_array(query_object, rate=1.08):
         columns[feature] = query_object.data.std_wide[feature].columns[2:]
 
         column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
+
+        if feature == query_object.outcome_var and query_object.lag > 0:
+            column_counts[feature] -= query_object.lag
 
         all_columns.extend(
             [
@@ -131,7 +145,7 @@ def compute_weight_array(query_object, rate=1.08):
                 / column_counts[feature]
             ] * column_counts[feature]
 
-    query_object.all_columns = all_columns
+    query_object.all_columns = all_columns[query_object.lag :]
     query_object.all_weights = np.concatenate(list(weight_lists.values()))
 
 

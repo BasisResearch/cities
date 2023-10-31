@@ -33,6 +33,21 @@ queries = [
         top=5,
         time_decay=1.03,
     ),
+    FipsQuery(
+        1007,
+        feature_groups_with_weights={"gdp": 4, "population": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+    ),
+    FipsQuery(
+        1007,
+        outcome_var="gdp",
+        feature_groups_with_weights={"gdp": 0, "population": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+    ),
     FipsQuery(42001, "gdp", lag=2, top=5, time_decay=1.06),
     FipsQuery(
         20003,
