@@ -122,6 +122,9 @@ def compute_weight_array(query_object, rate=1.08):
 
         column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
 
+        if feature == query_object.outcome_var and query_object.lag > 0:
+            column_counts[feature] -= query_object.lag
+
         all_columns.extend(
             [
                 f"{column}_{feature}"
@@ -143,7 +146,7 @@ def compute_weight_array(query_object, rate=1.08):
                 / column_counts[feature]
             ] * column_counts[feature]
 
-    query_object.all_columns = all_columns
+    query_object.all_columns = all_columns[query_object.lag :]
     query_object.all_weights = np.concatenate(list(weight_lists.values()))
 
 

@@ -12,7 +12,8 @@ sys.path.insert(0, os.path.dirname(os.getcwd()))
 root = find_repo_root()
 folder_path = f"{root}/data/processed"
 
-def test_data_folder():    
+
+def test_data_folder():
     file_names = os.listdir(folder_path)
 
     allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
