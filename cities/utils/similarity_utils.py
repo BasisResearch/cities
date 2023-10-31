@@ -112,7 +112,6 @@ def compute_weight_array(query_object, rate=1.08):
     tensed_status = {}
     columns = {}
     column_counts = {}
-    # column_tags = [] #remove if tests passed
     weight_lists = {}
     all_columns = []
     for feature in query_object.feature_groups:
