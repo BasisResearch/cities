@@ -240,8 +240,6 @@ class FipsQuery:
                 self.data.wide[self.outcome_var]["GeoFIPS"] != self.fips
             ].copy()
         else:
-            # self.my_df = pd.DataFrame()
-            # self.other_df = pd.DataFrame()
             self.my_df = pd.DataFrame(
                 self.data.wide["gdp"][
                     self.data.wide["gdp"]["GeoFIPS"] == self.fips
