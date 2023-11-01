@@ -370,10 +370,34 @@ class FipsQuery:
         featurewise_contributions_df = pd.concat([self.other_df[["GeoFIPS", "GeoName"]], featurewise_contributions_df], axis=1)
         featurewise_contributions_df.sort_values(by=featurewise_contributions_df.columns[-1], inplace=True)
 
-        aggregated_featurewise_contributions_df= featurewise_contributions_df[2:].T.groupby(featurewise_contributions_df.columns.str[4:]).sum()
 
-        display(aggregated_featurewise_contributions_df)
+        tensed_column_names = [col for col in featurewise_contributions_df.columns if col[:4].isdigit()]
+        atemporal_column_names = [col for col in featurewise_contributions_df.columns if not col[:4].isdigit()]
+        id_columns = atemporal_column_names[0,1,-1]
+        print(id_columns)
+        print("Tcn", tensed_column_names)
+        print("Atn", atemporal_column_names)    
+        tensed_featurewise_contributions_df = featurewise_contributions_df[tensed_column_names]
+        aggregated_tensed_featurewise_contributions_df= tensed_featurewise_contributions_df[2:].T.groupby(tensed_featurewise_contributions_df.columns.str[4:]).sum().T
 
+        atemporal_featurewise_contributions_df = featurewise_contributions_df[atemporal_column_names]
+        display(atemporal_featurewise_contributions_df)
+
+#        aggregated_atemporal_featurewise_contributions_df = atemporal_featurewise_contributions_df.iloc[:[0,1,-1]].copy()
+#        print(aggregated_atemporal_featurewise_contributions_df)
+        for feature in list(list_available_features()):
+            _selected = [col for col in atemporal_featurewise_contributions_df.columns if col.endswith(feature)]
+            #if _selected:
+                
+#     # Check if there are columns to aggregate
+#     if selected_columns:
+#         # Sum the columns and store the result in the aggregated_data dictionary
+#         aggregated_data[f'{keyword}_sum'] = df[selected_columns].sum(axis=1)
+
+# # Create a new DataFrame from the aggregated_data dictionary
+# aggregated_df = pd.DataFrame(aggregated_data)
+
+        
         self.featurewise_contributions = featurewise_contributions_df
 
 
