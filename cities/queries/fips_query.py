@@ -61,7 +61,7 @@ class FipsQuery:
         assert all(
             isinstance(value, int) and -4 <= value <= 4
             for value in feature_groups_with_weights.values()
-        )
+        ), "Feature weights need to be integers between -4 and 4"
 
         self.feature_groups_with_weights = feature_groups_with_weights
         self.feature_groups = feature_groups
