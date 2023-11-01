@@ -1,25 +1,12 @@
-import os
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 
-def find_repo_root():
-    """
-    Finds the repo root (fodler containing .gitignore) and adds it to sys.path.
-    """
-    current_dir = os.getcwd()
-    while True:
-        marker_file_path = os.path.join(current_dir, ".gitignore")
-        if os.path.isfile(marker_file_path):
-            return current_dir
-
-        parent_dir = os.path.dirname(current_dir)
-        if parent_dir == current_dir:
-            break
-        current_dir = parent_dir
-    return current_dir
+def find_repo_root() -> Path:
+    return Path(__file__).parent.parent.parent
 
 
 def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:

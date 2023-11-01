@@ -3,8 +3,8 @@ venv
 
 
 
-
-
+cities.egg-info/*
+cities.egg-info/
 */__pycache__
 *.pyc
 **/*.pyc 
@@ -14,3 +14,7 @@ tests/__pycache__/
 tests/.coverage
 tests/pytest_report/
 tests/.pytest_cache/
+cities.egg-info/SOURCES.txt
+tests/.coverage
+
+*.DS_Store

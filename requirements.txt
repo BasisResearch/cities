@@ -4,7 +4,6 @@ attrs==23.1.0
 backcall==0.2.0
 black==23.9.1
 chirho==0.1.0
--e git+https://github.com/BasisResearch/cities.git@9e8101ab86b330f92b2049f85c064abc460c0697#egg=cities
 click==8.1.7
 comm==0.1.4
 contourpy==1.1.1
@@ -73,10 +72,11 @@ stack-data==0.6.3
 sympy==1.12
 tenacity==8.2.3
 threadpoolctl==3.2.0
-torch==2.0.1
+torch
 tornado==6.3.3
 tqdm==4.66.1
 traitlets==5.11.2
 typing_extensions==4.8.0
 tzdata==2023.3
 wcwidth==0.2.8
+geopandas==0.14.0

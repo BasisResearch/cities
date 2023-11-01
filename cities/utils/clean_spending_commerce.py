@@ -116,11 +116,13 @@ def clean_spending_commerce():
     )
     assert spending_commerce["GeoFIPS"].nunique() == gdp["GeoFIPS"].nunique()
 
+    spending_commerce = spending_commerce.rename(columns={"year": "Year"})
+
     # standardizing and saving
     spending_commerce_long = spending_commerce.copy()
 
     spending_commerce_wide = spending_commerce.pivot_table(
-        index=["GeoFIPS", "GeoName"], columns="year", values="total_obligated_amount"
+        index=["GeoFIPS", "GeoName"], columns="Year", values="total_obligated_amount"
     )
     spending_commerce_wide.reset_index(inplace=True)
     spending_commerce_wide.columns.name = None

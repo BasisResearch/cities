@@ -61,11 +61,18 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
 
 
 def generalized_euclidean_distance(u, v, weights):
-    result = sum(
+    featurewise_squared_contributions = (
         abs(weights)
         * ((weights >= 0) * abs(u - v) + (weights < 0) * (-abs(u - v) + 2)) ** 2
-    ) ** (1 / 2)
-    return result
+    )
+
+    featurewise_contributions = featurewise_squared_contributions ** (1 / 2)
+
+    distance = sum(featurewise_squared_contributions) ** (1 / 2)
+    return {
+        "distance": distance,
+        "featurewise_contributions": featurewise_contributions,
+    }
 
 
 def divide_exponentially(group_weight, number_of_features, rate):
@@ -84,38 +91,52 @@ def divide_exponentially(group_weight, number_of_features, rate):
 
 
 def compute_weight_array(query_object, rate=1.08):
-    # max_other_scores = sum(query_object.weights.values())
+    assert (
+        sum(
+            abs(value)
+            for key, value in query_object.feature_groups_with_weights.items()
+        )
+        != 0
+    ), "At least one weight has to be other than 0"
 
     max_other_scores = sum(
         abs(value)
         for key, value in query_object.feature_groups_with_weights.items()
         if key != query_object.outcome_var
     )
-    weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
-    query_object.feature_groups_with_weights[query_object.outcome_var] = (
-        weight_outcome_joint
-        * query_object.feature_groups_with_weights[query_object.outcome_var]
-    )
+
+    if (
+        query_object.outcome_var
+        and query_object.feature_groups_with_weights[query_object.outcome_var] != 0
+    ):
+        weight_outcome_joint = max_other_scores if max_other_scores > 0 else 1
+        query_object.feature_groups_with_weights[query_object.outcome_var] = (
+            weight_outcome_joint
+            * query_object.feature_groups_with_weights[query_object.outcome_var]
+        )
 
     tensed_status = {}
     columns = {}
     column_counts = {}
-    # column_tags = [] #remove if tests passed
     weight_lists = {}
     all_columns = []
     for feature in query_object.feature_groups:
         tensed_status[feature] = check_if_tensed(query_object.data.std_wide[feature])
 
-        columns[feature] = query_object.data.std_wide[feature].columns[2:]
+        if feature == query_object.outcome_var:
+            columns[feature] = query_object.restricted_outcome_df.columns[2:]
+        else:
+            columns[feature] = query_object.data.std_wide[feature].columns[2:]
 
-        column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
+        # TODO remove if all tests passed before merging
+        # column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
 
-        all_columns.extend(
-            [
-                f"{column}_{feature}"
-                for column in query_object.data.std_wide[feature].columns[2:]
-            ]
-        )
+        column_counts[feature] = len(columns[feature])
+
+        if feature == query_object.outcome_var and query_object.lag > 0:
+            column_counts[feature] -= query_object.lag
+
+        all_columns.extend([f"{column}_{feature}" for column in columns[feature]])
 
         # TODO: remove if tests passed
         # column_tags.extend([feature] * column_counts[feature])
@@ -131,7 +152,7 @@ def compute_weight_array(query_object, rate=1.08):
                 / column_counts[feature]
             ] * column_counts[feature]
 
-    query_object.all_columns = all_columns
+    query_object.all_columns = all_columns[query_object.lag :]
     query_object.all_weights = np.concatenate(list(weight_lists.values()))
 
 
