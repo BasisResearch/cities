@@ -61,11 +61,12 @@ def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarra
 
 
 def generalized_euclidean_distance(u, v, weights):
-    result = sum(
-        abs(weights)
-        * ((weights >= 0) * abs(u - v) + (weights < 0) * (-abs(u - v) + 2)) ** 2
-    ) ** (1 / 2)
-    return result
+    featurewise_squared_contributions = abs(weights) * ((weights >= 0) * abs(u - v) + (weights < 0) * (-abs(u - v) + 2)) ** 2
+    
+    featurewise_contributions = featurewise_squared_contributions ** (1 / 2)
+
+    distance = sum(featurewise_squared_contributions) ** (1 / 2)
+    return {"distance": distance, "featurewise_contributions": featurewise_contributions}
 
 
 def divide_exponentially(group_weight, number_of_features, rate):

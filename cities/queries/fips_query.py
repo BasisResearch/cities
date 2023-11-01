@@ -344,12 +344,32 @@ class FipsQuery:
         ), "Weights and arrays are misaligned"
 
         distances = []
+        featurewise_contributions = []
         for vector in self.other_arrays:
-            distances.append(
-                generalized_euclidean_distance(
-                    np.squeeze(self.my_array), vector, self.all_weights
-                )
-            )
+            _ge =  generalized_euclidean_distance( np.squeeze(self.my_array), vector, self.all_weights)
+            distances.append(_ge['distance'])
+            featurewise_contributions.append(_ge['featurewise_contributions'])
+        
+        featurewise_contributions_array = np.vstack(featurewise_contributions)
+        print(featurewise_contributions_array.shape)
+
+        assert featurewise_contributions_array.shape[1] == len(self.all_weights)
+        print(self.all_columns)
+
+        featurewise_contributions_df = pd.DataFrame(featurewise_contributions_array, columns=self.all_columns)
+        print(featurewise_contributions_df.shape)
+        print(len(distances))
+        featurewise_contributions_df[f"distance to {self.fips}"] = distances
+        featurewise_contributions_df = pd.concat([self.other_df[["GeoFIPS", "GeoName"]], featurewise_contributions_df], axis=1)
+        featurewise_contributions_df.sort_values(by=featurewise_contributions_df.columns[-1], inplace=True)
+
+        self.featurewise_contributions = featurewise_contributions_df
+
+        for col_name, col_data in featurewise_contributions_df.iteritems():
+            print(col_name[:4].isdigit())
+
+    # Group columns by the first four characters of the column name
+#    col_group = col_data.groupby(col_data.index.str[:4]).sum()
 
         count = sum([1 for distance in distances if distance == 0])
 
