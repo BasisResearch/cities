@@ -211,6 +211,9 @@ class FipsQuery:
         elif self.outcome_var:
             restricted_df = self.data.std_wide[self.outcome_var].copy()
 
+        if self.outcome_var:
+            self.restricted_outcome_df = restricted_df
+
         # apply lag in different directions to you and other locations
         # to the outcome variable
         if self.outcome_var:
