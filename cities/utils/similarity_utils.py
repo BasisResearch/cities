@@ -117,19 +117,20 @@ def compute_weight_array(query_object, rate=1.08):
     for feature in query_object.feature_groups:
         tensed_status[feature] = check_if_tensed(query_object.data.std_wide[feature])
 
-        columns[feature] = query_object.data.std_wide[feature].columns[2:]
+        if feature == query_object.outcome_var:
+            columns[feature] = query_object.restricted_outcome_df.columns[2:]
+        else:
+            columns[feature] = query_object.data.std_wide[feature].columns[2:]
 
-        column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
+        # TODO remove if all tests passed before merging
+        # column_counts[feature] = len(query_object.data.std_wide[feature].columns) - 2
+
+        column_counts[feature] = len(columns[feature])
 
         if feature == query_object.outcome_var and query_object.lag > 0:
             column_counts[feature] -= query_object.lag
 
-        all_columns.extend(
-            [
-                f"{column}_{feature}"
-                for column in query_object.data.std_wide[feature].columns[2:]
-            ]
-        )
+        all_columns.extend([f"{column}_{feature}" for column in columns[feature]])
 
         # TODO: remove if tests passed
         # column_tags.extend([feature] * column_counts[feature])
