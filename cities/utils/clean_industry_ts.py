@@ -80,7 +80,6 @@ def clean_industry_ts():
     columns_to_save = industry_ts.columns[industry_ts.columns.get_loc("Year") + 1 :]
 
     for column in columns_to_save:
-
         selected_columns = ["GeoFIPS", "GeoName", "Year", column]
         subsetindustry_ts = industry_ts[selected_columns]
 

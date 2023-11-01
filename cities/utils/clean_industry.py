@@ -1,18 +1,22 @@
+import os
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 
+from cities.utils.clean_variable import clean_variable
 from cities.utils.cleaning_utils import standardize_and_scale
 from cities.utils.data_grabber import DataGrabber
 
+path = Path(__file__).parent.absolute()
 
-def clean_industry():
+
+def clean_industry_step_one():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
     gdp = data.wide["gdp"]
 
     industry = pd.read_csv("../data/raw/ACSDP5Y2021_DP03_industry.csv")
-
-    assert industry["GEO_ID"].isna() == 0
 
     industry["GEO_ID"] = industry["GEO_ID"].str.split("US").str[1]
     industry["GEO_ID"] = industry["GEO_ID"].astype("int64")
@@ -73,6 +77,8 @@ def clean_industry():
     industry.iloc[:, 3:] = industry.iloc[:, 3:].div(row_sums, axis=0)
     industry = industry.drop(["employed_sum"], axis=1)
 
+    industry.to_csv("../data/raw/industry_percent.csv", index=False)
+
     industry_wide = industry.copy()
 
     industry_long = pd.melt(
@@ -95,3 +101,10 @@ def clean_industry():
     industry_long.to_csv("../data/processed/industry_long.csv", index=False)
     industry_std_wide.to_csv("../data/processed/industry_std_wide.csv", index=False)
     industry_std_long.to_csv("../data/processed/industry_std_long.csv", index=False)
+
+
+def clean_industry():
+    clean_industry_step_one()
+    variable_name = "industry"
+    path_to_raw_csv = os.path.join(path, "../../data/raw/industry_percent.csv")
+    clean_variable(variable_name, path_to_raw_csv)

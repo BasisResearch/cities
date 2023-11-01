@@ -87,7 +87,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",1993,6564.0
 2220,"Sitka City and Borough, AK*",1993,9275.0
 2240,"Southeast Fairbanks Census Area, AK*",1993,6113.0
-2282,"Yakutat City and Borough, AK*",1993,779.0
 2290,"Yukon-Koyukuk Census Area, AK*",1993,6841.0
 4001,"Apache, AZ",1993,64489.0
 4003,"Cochise, AZ",1993,104403.0
@@ -1128,7 +1127,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",1993,70105.0
 22047,"Iberville, LA",1993,31659.0
 22049,"Jackson, LA",1993,15427.0
-22051,"Jefferson, LA",1993,458812.0
 22053,"Jefferson Davis, LA",1993,30969.0
 22055,"Lafayette, LA",1993,174765.0
 22057,"Lafourche, LA",1993,86729.0
@@ -1138,23 +1136,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",1993,12671.0
 22067,"Morehouse, LA",1993,31978.0
 22069,"Natchitoches, LA",1993,37452.0
-22071,"Orleans, LA",1993,496468.0
 22073,"Ouachita, LA",1993,145907.0
-22075,"Plaquemines, LA",1993,25567.0
 22077,"Pointe Coupee, LA",1993,22588.0
 22079,"Rapides, LA",1993,124681.0
 22081,"Red River, LA",1993,9609.0
 22083,"Richland, LA",1993,20456.0
 22085,"Sabine, LA",1993,22963.0
-22087,"St. Bernard, LA",1993,67520.0
-22089,"St. Charles, LA",1993,44584.0
 22091,"St. Helena, LA",1993,10286.0
 22093,"St. James, LA",1993,20910.0
-22095,"St. John the Baptist, LA",1993,41571.0
 22097,"St. Landry, LA",1993,82509.0
 22099,"St. Martin, LA",1993,45146.0
 22101,"St. Mary, LA",1993,56279.0
-22103,"St. Tammany, LA",1993,159833.0
 22105,"Tangipahoa, LA",1993,89885.0
 22107,"Tensas, LA",1993,6885.0
 22109,"Terrebonne, LA",1993,99354.0
@@ -3169,7 +3161,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",1994,6664.0
 2220,"Sitka City and Borough, AK*",1994,9073.0
 2240,"Southeast Fairbanks Census Area, AK*",1994,6272.0
-2282,"Yakutat City and Borough, AK*",1994,805.0
 2290,"Yukon-Koyukuk Census Area, AK*",1994,6646.0
 4001,"Apache, AZ",1994,66085.0
 4003,"Cochise, AZ",1994,109323.0
@@ -4210,7 +4201,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",1994,70492.0
 22047,"Iberville, LA",1994,31814.0
 22049,"Jackson, LA",1994,15488.0
-22051,"Jefferson, LA",1994,460129.0
 22053,"Jefferson Davis, LA",1994,31313.0
 22055,"Lafayette, LA",1994,177625.0
 22057,"Lafourche, LA",1994,87181.0
@@ -4220,23 +4210,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",1994,12805.0
 22067,"Morehouse, LA",1994,31862.0
 22069,"Natchitoches, LA",1994,37950.0
-22071,"Orleans, LA",1994,496092.0
 22073,"Ouachita, LA",1994,146230.0
-22075,"Plaquemines, LA",1994,25668.0
 22077,"Pointe Coupee, LA",1994,22772.0
 22079,"Rapides, LA",1994,125547.0
 22081,"Red River, LA",1994,9586.0
 22083,"Richland, LA",1994,20560.0
 22085,"Sabine, LA",1994,23147.0
-22087,"St. Bernard, LA",1994,67909.0
-22089,"St. Charles, LA",1994,45291.0
 22091,"St. Helena, LA",1994,10268.0
 22093,"St. James, LA",1994,20951.0
-22095,"St. John the Baptist, LA",1994,41855.0
 22097,"St. Landry, LA",1994,82862.0
 22099,"St. Martin, LA",1994,45956.0
 22101,"St. Mary, LA",1994,55735.0
-22103,"St. Tammany, LA",1994,165523.0
 22105,"Tangipahoa, LA",1994,91726.0
 22107,"Tensas, LA",1994,6915.0
 22109,"Terrebonne, LA",1994,99896.0
@@ -6251,7 +6235,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",1995,6692.0
 2220,"Sitka City and Borough, AK*",1995,8947.0
 2240,"Southeast Fairbanks Census Area, AK*",1995,6345.0
-2282,"Yakutat City and Borough, AK*",1995,870.0
 2290,"Yukon-Koyukuk Census Area, AK*",1995,6607.0
 4001,"Apache, AZ",1995,68274.0
 4003,"Cochise, AZ",1995,112480.0
@@ -7292,7 +7275,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",1995,70927.0
 22047,"Iberville, LA",1995,31691.0
 22049,"Jackson, LA",1995,15481.0
-22051,"Jefferson, LA",1995,461176.0
 22053,"Jefferson Davis, LA",1995,31671.0
 22055,"Lafayette, LA",1995,180810.0
 22057,"Lafourche, LA",1995,87611.0
@@ -7302,23 +7284,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",1995,13427.0
 22067,"Morehouse, LA",1995,31881.0
 22069,"Natchitoches, LA",1995,38220.0
-22071,"Orleans, LA",1995,495018.0
 22073,"Ouachita, LA",1995,147018.0
-22075,"Plaquemines, LA",1995,25942.0
 22077,"Pointe Coupee, LA",1995,22837.0
 22079,"Rapides, LA",1995,126207.0
 22081,"Red River, LA",1995,9771.0
 22083,"Richland, LA",1995,20767.0
 22085,"Sabine, LA",1995,23231.0
-22087,"St. Bernard, LA",1995,68216.0
-22089,"St. Charles, LA",1995,45885.0
 22091,"St. Helena, LA",1995,10320.0
 22093,"St. James, LA",1995,20879.0
-22095,"St. John the Baptist, LA",1995,42042.0
 22097,"St. Landry, LA",1995,83933.0
 22099,"St. Martin, LA",1995,46010.0
 22101,"St. Mary, LA",1995,55741.0
-22103,"St. Tammany, LA",1995,171030.0
 22105,"Tangipahoa, LA",1995,93775.0
 22107,"Tensas, LA",1995,6939.0
 22109,"Terrebonne, LA",1995,100362.0
@@ -9333,7 +9309,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",1996,6759.0
 2220,"Sitka City and Borough, AK*",1996,8837.0
 2240,"Southeast Fairbanks Census Area, AK*",1996,6155.0
-2282,"Yakutat City and Borough, AK*",1996,932.0
 2290,"Yukon-Koyukuk Census Area, AK*",1996,6574.0
 4001,"Apache, AZ",1996,69508.0
 4003,"Cochise, AZ",1996,112880.0
@@ -10374,7 +10349,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",1996,71378.0
 22047,"Iberville, LA",1996,32173.0
 22049,"Jackson, LA",1996,15525.0
-22051,"Jefferson, LA",1996,460433.0
 22053,"Jefferson Davis, LA",1996,31805.0
 22055,"Lafayette, LA",1996,183320.0
 22057,"Lafourche, LA",1996,87805.0
@@ -10384,23 +10358,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",1996,13629.0
 22067,"Morehouse, LA",1996,31747.0
 22069,"Natchitoches, LA",1996,38188.0
-22071,"Orleans, LA",1996,490610.0
 22073,"Ouachita, LA",1996,147316.0
-22075,"Plaquemines, LA",1996,26149.0
 22077,"Pointe Coupee, LA",1996,22743.0
 22079,"Rapides, LA",1996,125726.0
 22081,"Red River, LA",1996,9833.0
 22083,"Richland, LA",1996,20841.0
 22085,"Sabine, LA",1996,23355.0
-22087,"St. Bernard, LA",1996,68139.0
-22089,"St. Charles, LA",1996,46432.0
 22091,"St. Helena, LA",1996,10328.0
 22093,"St. James, LA",1996,20933.0
-22095,"St. John the Baptist, LA",1996,42264.0
 22097,"St. Landry, LA",1996,84505.0
 22099,"St. Martin, LA",1996,46523.0
 22101,"St. Mary, LA",1996,55310.0
-22103,"St. Tammany, LA",1996,176171.0
 22105,"Tangipahoa, LA",1996,94851.0
 22107,"Tensas, LA",1996,6904.0
 22109,"Terrebonne, LA",1996,101478.0
@@ -12415,7 +12383,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",1997,6943.0
 2220,"Sitka City and Borough, AK*",1997,8927.0
 2240,"Southeast Fairbanks Census Area, AK*",1997,6126.0
-2282,"Yakutat City and Borough, AK*",1997,926.0
 2290,"Yukon-Koyukuk Census Area, AK*",1997,6559.0
 4001,"Apache, AZ",1997,70478.0
 4003,"Cochise, AZ",1997,114907.0
@@ -13456,7 +13423,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",1997,72024.0
 22047,"Iberville, LA",1997,32468.0
 22049,"Jackson, LA",1997,15525.0
-22051,"Jefferson, LA",1997,459207.0
 22053,"Jefferson Davis, LA",1997,31736.0
 22055,"Lafayette, LA",1997,186421.0
 22057,"Lafourche, LA",1997,88650.0
@@ -13466,23 +13432,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",1997,13676.0
 22067,"Morehouse, LA",1997,31598.0
 22069,"Natchitoches, LA",1997,38239.0
-22071,"Orleans, LA",1997,488061.0
 22073,"Ouachita, LA",1997,147692.0
-22075,"Plaquemines, LA",1997,26430.0
 22077,"Pointe Coupee, LA",1997,23148.0
 22079,"Rapides, LA",1997,125767.0
 22081,"Red River, LA",1997,9798.0
 22083,"Richland, LA",1997,20950.0
 22085,"Sabine, LA",1997,23413.0
-22087,"St. Bernard, LA",1997,68204.0
-22089,"St. Charles, LA",1997,47023.0
 22091,"St. Helena, LA",1997,10312.0
 22093,"St. James, LA",1997,20952.0
-22095,"St. John the Baptist, LA",1997,42222.0
 22097,"St. Landry, LA",1997,85312.0
 22099,"St. Martin, LA",1997,47234.0
 22101,"St. Mary, LA",1997,54915.0
-22103,"St. Tammany, LA",1997,181426.0
 22105,"Tangipahoa, LA",1997,96515.0
 22107,"Tensas, LA",1997,6789.0
 22109,"Terrebonne, LA",1997,102689.0
@@ -15497,7 +15457,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",1998,7087.0
 2220,"Sitka City and Borough, AK*",1998,8807.0
 2240,"Southeast Fairbanks Census Area, AK*",1998,6281.0
-2282,"Yakutat City and Borough, AK*",1998,849.0
 2290,"Yukon-Koyukuk Census Area, AK*",1998,6618.0
 4001,"Apache, AZ",1998,69851.0
 4003,"Cochise, AZ",1998,116091.0
@@ -16538,7 +16497,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",1998,72674.0
 22047,"Iberville, LA",1998,33004.0
 22049,"Jackson, LA",1998,15396.0
-22051,"Jefferson, LA",1998,458575.0
 22053,"Jefferson Davis, LA",1998,31657.0
 22055,"Lafayette, LA",1998,188716.0
 22057,"Lafourche, LA",1998,89454.0
@@ -16548,23 +16506,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",1998,13634.0
 22067,"Morehouse, LA",1998,31338.0
 22069,"Natchitoches, LA",1998,38297.0
-22071,"Orleans, LA",1998,485801.0
 22073,"Ouachita, LA",1998,147640.0
-22075,"Plaquemines, LA",1998,26727.0
 22077,"Pointe Coupee, LA",1998,22991.0
 22079,"Rapides, LA",1998,125860.0
 22081,"Red River, LA",1998,9780.0
 22083,"Richland, LA",1998,21038.0
 22085,"Sabine, LA",1998,23384.0
-22087,"St. Bernard, LA",1998,67971.0
-22089,"St. Charles, LA",1998,47483.0
 22091,"St. Helena, LA",1998,10292.0
 22093,"St. James, LA",1998,21070.0
-22095,"St. John the Baptist, LA",1998,42536.0
 22097,"St. Landry, LA",1998,86089.0
 22099,"St. Martin, LA",1998,47935.0
 22101,"St. Mary, LA",1998,54914.0
-22103,"St. Tammany, LA",1998,185357.0
 22105,"Tangipahoa, LA",1998,98246.0
 22107,"Tensas, LA",1998,6724.0
 22109,"Terrebonne, LA",1998,104210.0
@@ -18579,7 +18531,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",1999,7113.0
 2220,"Sitka City and Borough, AK*",1999,8805.0
 2240,"Southeast Fairbanks Census Area, AK*",1999,6169.0
-2282,"Yakutat City and Borough, AK*",1999,843.0
 2290,"Yukon-Koyukuk Census Area, AK*",1999,6561.0
 4001,"Apache, AZ",1999,69801.0
 4003,"Cochise, AZ",1999,116530.0
@@ -19620,7 +19571,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",1999,73243.0
 22047,"Iberville, LA",1999,33191.0
 22049,"Jackson, LA",1999,15398.0
-22051,"Jefferson, LA",1999,457571.0
 22053,"Jefferson Davis, LA",1999,31525.0
 22055,"Lafayette, LA",1999,190049.0
 22057,"Lafourche, LA",1999,90062.0
@@ -19630,23 +19580,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",1999,13672.0
 22067,"Morehouse, LA",1999,31122.0
 22069,"Natchitoches, LA",1999,38814.0
-22071,"Orleans, LA",1999,485511.0
 22073,"Ouachita, LA",1999,147190.0
-22075,"Plaquemines, LA",1999,26689.0
 22077,"Pointe Coupee, LA",1999,22807.0
 22079,"Rapides, LA",1999,126104.0
 22081,"Red River, LA",1999,9664.0
 22083,"Richland, LA",1999,21039.0
 22085,"Sabine, LA",1999,23415.0
-22087,"St. Bernard, LA",1999,67659.0
-22089,"St. Charles, LA",1999,47907.0
 22091,"St. Helena, LA",1999,10444.0
 22093,"St. James, LA",1999,21221.0
-22095,"St. John the Baptist, LA",1999,42865.0
 22097,"St. Landry, LA",1999,87034.0
 22099,"St. Martin, LA",1999,48285.0
 22101,"St. Mary, LA",1999,54246.0
-22103,"St. Tammany, LA",1999,188947.0
 22105,"Tangipahoa, LA",1999,99643.0
 22107,"Tensas, LA",1999,6717.0
 22109,"Terrebonne, LA",1999,104507.0
@@ -21661,7 +21605,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2000,7226.0
 2220,"Sitka City and Borough, AK*",2000,8845.0
 2240,"Southeast Fairbanks Census Area, AK*",2000,6177.0
-2282,"Yakutat City and Borough, AK*",2000,796.0
 2290,"Yukon-Koyukuk Census Area, AK*",2000,6489.0
 4001,"Apache, AZ",2000,69507.0
 4003,"Cochise, AZ",2000,118132.0
@@ -22702,7 +22645,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2000,73170.0
 22047,"Iberville, LA",2000,33321.0
 22049,"Jackson, LA",2000,15415.0
-22051,"Jefferson, LA",2000,454936.0
 22053,"Jefferson Davis, LA",2000,31506.0
 22055,"Lafayette, LA",2000,190516.0
 22057,"Lafourche, LA",2000,89775.0
@@ -22712,23 +22654,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2000,13704.0
 22067,"Morehouse, LA",2000,30961.0
 22069,"Natchitoches, LA",2000,39089.0
-22071,"Orleans, LA",2000,485610.0
 22073,"Ouachita, LA",2000,147271.0
-22075,"Plaquemines, LA",2000,26758.0
 22077,"Pointe Coupee, LA",2000,22759.0
 22079,"Rapides, LA",2000,126445.0
 22081,"Red River, LA",2000,9598.0
 22083,"Richland, LA",2000,20935.0
 22085,"Sabine, LA",2000,23475.0
-22087,"St. Bernard, LA",2000,67278.0
-22089,"St. Charles, LA",2000,48118.0
 22091,"St. Helena, LA",2000,10548.0
 22093,"St. James, LA",2000,21201.0
-22095,"St. John the Baptist, LA",2000,43248.0
 22097,"St. Landry, LA",2000,87420.0
 22099,"St. Martin, LA",2000,48583.0
 22101,"St. Mary, LA",2000,53377.0
-22103,"St. Tammany, LA",2000,192131.0
 22105,"Tangipahoa, LA",2000,100716.0
 22107,"Tensas, LA",2000,6535.0
 22109,"Terrebonne, LA",2000,104756.0
@@ -24743,7 +24679,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2001,7251.0
 2220,"Sitka City and Borough, AK*",2001,8727.0
 2240,"Southeast Fairbanks Census Area, AK*",2001,5705.0
-2282,"Yakutat City and Borough, AK*",2001,764.0
 2290,"Yukon-Koyukuk Census Area, AK*",2001,6364.0
 4001,"Apache, AZ",2001,67863.0
 4003,"Cochise, AZ",2001,118798.0
@@ -25784,7 +25719,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2001,72993.0
 22047,"Iberville, LA",2001,33327.0
 22049,"Jackson, LA",2001,15517.0
-22051,"Jefferson, LA",2001,453154.0
 22053,"Jefferson Davis, LA",2001,31232.0
 22055,"Lafayette, LA",2001,191725.0
 22057,"Lafourche, LA",2001,90105.0
@@ -25794,23 +25728,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2001,13493.0
 22067,"Morehouse, LA",2001,30605.0
 22069,"Natchitoches, LA",2001,38844.0
-22071,"Orleans, LA",2001,487363.0
 22073,"Ouachita, LA",2001,146789.0
-22075,"Plaquemines, LA",2001,27029.0
 22077,"Pointe Coupee, LA",2001,22574.0
 22079,"Rapides, LA",2001,126206.0
 22081,"Red River, LA",2001,9494.0
 22083,"Richland, LA",2001,20880.0
 22085,"Sabine, LA",2001,23379.0
-22087,"St. Bernard, LA",2001,68028.0
-22089,"St. Charles, LA",2001,48461.0
 22091,"St. Helena, LA",2001,10524.0
 22093,"St. James, LA",2001,21291.0
-22095,"St. John the Baptist, LA",2001,43580.0
 22097,"St. Landry, LA",2001,86416.0
 22099,"St. Martin, LA",2001,48971.0
 22101,"St. Mary, LA",2001,53044.0
-22103,"St. Tammany, LA",2001,195622.0
 22105,"Tangipahoa, LA",2001,101657.0
 22107,"Tensas, LA",2001,6334.0
 22109,"Terrebonne, LA",2001,105255.0
@@ -27825,7 +27753,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2002,7252.0
 2220,"Sitka City and Borough, AK*",2002,8874.0
 2240,"Southeast Fairbanks Census Area, AK*",2002,5672.0
-2282,"Yakutat City and Borough, AK*",2002,702.0
 2290,"Yukon-Koyukuk Census Area, AK*",2002,6334.0
 4001,"Apache, AZ",2002,67319.0
 4003,"Cochise, AZ",2002,119847.0
@@ -28866,7 +28793,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2002,72862.0
 22047,"Iberville, LA",2002,33242.0
 22049,"Jackson, LA",2002,15470.0
-22051,"Jefferson, LA",2002,453429.0
 22053,"Jefferson Davis, LA",2002,31113.0
 22055,"Lafayette, LA",2002,194565.0
 22057,"Lafourche, LA",2002,90994.0
@@ -28876,23 +28802,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2002,13180.0
 22067,"Morehouse, LA",2002,30319.0
 22069,"Natchitoches, LA",2002,39178.0
-22071,"Orleans, LA",2002,489722.0
 22073,"Ouachita, LA",2002,147728.0
-22075,"Plaquemines, LA",2002,27462.0
 22077,"Pointe Coupee, LA",2002,22451.0
 22079,"Rapides, LA",2002,126283.0
 22081,"Red River, LA",2002,9464.0
 22083,"Richland, LA",2002,20784.0
 22085,"Sabine, LA",2002,23380.0
-22087,"St. Bernard, LA",2002,68964.0
-22089,"St. Charles, LA",2002,49117.0
 22091,"St. Helena, LA",2002,10592.0
 22093,"St. James, LA",2002,21365.0
-22095,"St. John the Baptist, LA",2002,43878.0
 22097,"St. Landry, LA",2002,85713.0
 22099,"St. Martin, LA",2002,49228.0
 22101,"St. Mary, LA",2002,53109.0
-22103,"St. Tammany, LA",2002,200701.0
 22105,"Tangipahoa, LA",2002,102511.0
 22107,"Tensas, LA",2002,6150.0
 22109,"Terrebonne, LA",2002,105698.0
@@ -30907,7 +30827,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2003,7310.0
 2220,"Sitka City and Borough, AK*",2003,8881.0
 2240,"Southeast Fairbanks Census Area, AK*",2003,5772.0
-2282,"Yakutat City and Borough, AK*",2003,673.0
 2290,"Yukon-Koyukuk Census Area, AK*",2003,6252.0
 4001,"Apache, AZ",2003,68072.0
 4003,"Cochise, AZ",2003,120638.0
@@ -31948,7 +31867,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2003,72760.0
 22047,"Iberville, LA",2003,33042.0
 22049,"Jackson, LA",2003,15575.0
-22051,"Jefferson, LA",2003,454533.0
 22053,"Jefferson Davis, LA",2003,31091.0
 22055,"Lafayette, LA",2003,196710.0
 22057,"Lafourche, LA",2003,91899.0
@@ -31958,23 +31876,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2003,12959.0
 22067,"Morehouse, LA",2003,30224.0
 22069,"Natchitoches, LA",2003,38924.0
-22071,"Orleans, LA",2003,492187.0
 22073,"Ouachita, LA",2003,148549.0
-22075,"Plaquemines, LA",2003,28169.0
 22077,"Pointe Coupee, LA",2003,22369.0
 22079,"Rapides, LA",2003,126597.0
 22081,"Red River, LA",2003,9468.0
 22083,"Richland, LA",2003,20576.0
 22085,"Sabine, LA",2003,23527.0
-22087,"St. Bernard, LA",2003,69621.0
-22089,"St. Charles, LA",2003,49338.0
 22091,"St. Helena, LA",2003,10549.0
 22093,"St. James, LA",2003,21274.0
-22095,"St. John the Baptist, LA",2003,44316.0
 22097,"St. Landry, LA",2003,85034.0
 22099,"St. Martin, LA",2003,49482.0
 22101,"St. Mary, LA",2003,53245.0
-22103,"St. Tammany, LA",2003,205708.0
 22105,"Tangipahoa, LA",2003,103782.0
 22107,"Tensas, LA",2003,5941.0
 22109,"Terrebonne, LA",2003,106257.0
@@ -33989,7 +33901,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2004,7397.0
 2220,"Sitka City and Borough, AK*",2004,8890.0
 2240,"Southeast Fairbanks Census Area, AK*",2004,6022.0
-2282,"Yakutat City and Borough, AK*",2004,647.0
 2290,"Yukon-Koyukuk Census Area, AK*",2004,6218.0
 4001,"Apache, AZ",2004,68161.0
 4003,"Cochise, AZ",2004,123234.0
@@ -35030,7 +34941,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2004,72590.0
 22047,"Iberville, LA",2004,32717.0
 22049,"Jackson, LA",2004,15650.0
-22051,"Jefferson, LA",2004,456602.0
 22053,"Jefferson Davis, LA",2004,31076.0
 22055,"Lafayette, LA",2004,199338.0
 22057,"Lafourche, LA",2004,92580.0
@@ -35040,23 +34950,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2004,12806.0
 22067,"Morehouse, LA",2004,29891.0
 22069,"Natchitoches, LA",2004,38950.0
-22071,"Orleans, LA",2004,493765.0
 22073,"Ouachita, LA",2004,149293.0
-22075,"Plaquemines, LA",2004,29390.0
 22077,"Pointe Coupee, LA",2004,22332.0
 22079,"Rapides, LA",2004,127095.0
 22081,"Red River, LA",2004,9433.0
 22083,"Richland, LA",2004,20487.0
 22085,"Sabine, LA",2004,23539.0
-22087,"St. Bernard, LA",2004,70547.0
-22089,"St. Charles, LA",2004,49939.0
 22091,"St. Helena, LA",2004,10548.0
 22093,"St. James, LA",2004,21229.0
-22095,"St. John the Baptist, LA",2004,44822.0
 22097,"St. Landry, LA",2004,84487.0
 22099,"St. Martin, LA",2004,49754.0
 22101,"St. Mary, LA",2004,53288.0
-22103,"St. Tammany, LA",2004,211405.0
 22105,"Tangipahoa, LA",2004,105335.0
 22107,"Tensas, LA",2004,5785.0
 22109,"Terrebonne, LA",2004,106783.0
@@ -37071,7 +36975,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2005,7416.0
 2220,"Sitka City and Borough, AK*",2005,8994.0
 2240,"Southeast Fairbanks Census Area, AK*",2005,6530.0
-2282,"Yakutat City and Borough, AK*",2005,665.0
 2290,"Yukon-Koyukuk Census Area, AK*",2005,6000.0
 4001,"Apache, AZ",2005,68521.0
 4003,"Cochise, AZ",2005,125786.0
@@ -38112,7 +38015,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2005,72641.0
 22047,"Iberville, LA",2005,32697.0
 22049,"Jackson, LA",2005,15674.0
-22051,"Jefferson, LA",2005,456554.0
 22053,"Jefferson Davis, LA",2005,31202.0
 22055,"Lafayette, LA",2005,202053.0
 22057,"Lafourche, LA",2005,92656.0
@@ -38122,23 +38024,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2005,12663.0
 22067,"Morehouse, LA",2005,29355.0
 22069,"Natchitoches, LA",2005,39107.0
-22071,"Orleans, LA",2005,494294.0
 22073,"Ouachita, LA",2005,149476.0
-22075,"Plaquemines, LA",2005,29558.0
 22077,"Pointe Coupee, LA",2005,22075.0
 22079,"Rapides, LA",2005,127544.0
 22081,"Red River, LA",2005,9295.0
 22083,"Richland, LA",2005,20466.0
 22085,"Sabine, LA",2005,23690.0
-22087,"St. Bernard, LA",2005,71300.0
-22089,"St. Charles, LA",2005,50670.0
 22091,"St. Helena, LA",2005,10521.0
 22093,"St. James, LA",2005,21399.0
-22095,"St. John the Baptist, LA",2005,45296.0
 22097,"St. Landry, LA",2005,83952.0
 22099,"St. Martin, LA",2005,49890.0
 22101,"St. Mary, LA",2005,53015.0
-22103,"St. Tammany, LA",2005,217358.0
 22105,"Tangipahoa, LA",2005,106987.0
 22107,"Tensas, LA",2005,5700.0
 22109,"Terrebonne, LA",2005,107811.0
@@ -40153,7 +40049,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2006,7467.0
 2220,"Sitka City and Borough, AK*",2006,9046.0
 2240,"Southeast Fairbanks Census Area, AK*",2006,6817.0
-2282,"Yakutat City and Borough, AK*",2006,642.0
 2290,"Yukon-Koyukuk Census Area, AK*",2006,5762.0
 4001,"Apache, AZ",2006,69390.0
 4003,"Cochise, AZ",2006,127241.0
@@ -41194,7 +41089,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2006,73362.0
 22047,"Iberville, LA",2006,33519.0
 22049,"Jackson, LA",2006,15950.0
-22051,"Jefferson, LA",2006,426285.0
 22053,"Jefferson Davis, LA",2006,31489.0
 22055,"Lafayette, LA",2006,209424.0
 22057,"Lafourche, LA",2006,94385.0
@@ -41204,23 +41098,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2006,12537.0
 22067,"Morehouse, LA",2006,29079.0
 22069,"Natchitoches, LA",2006,38984.0
-22071,"Orleans, LA",2006,230172.0
 22073,"Ouachita, LA",2006,151183.0
-22075,"Plaquemines, LA",2006,22329.0
 22077,"Pointe Coupee, LA",2006,22754.0
 22079,"Rapides, LA",2006,130103.0
 22081,"Red River, LA",2006,9281.0
 22083,"Richland, LA",2006,20661.0
 22085,"Sabine, LA",2006,23954.0
-22087,"St. Bernard, LA",2006,16563.0
-22089,"St. Charles, LA",2006,52453.0
 22091,"St. Helena, LA",2006,11089.0
 22093,"St. James, LA",2006,21964.0
-22095,"St. John the Baptist, LA",2006,47296.0
 22097,"St. Landry, LA",2006,85128.0
 22099,"St. Martin, LA",2006,51044.0
 22101,"St. Mary, LA",2006,54152.0
-22103,"St. Tammany, LA",2006,223133.0
 22105,"Tangipahoa, LA",2006,114102.0
 22107,"Tensas, LA",2006,5719.0
 22109,"Terrebonne, LA",2006,109994.0
@@ -43235,7 +43123,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2007,7440.0
 2220,"Sitka City and Borough, AK*",2007,8851.0
 2240,"Southeast Fairbanks Census Area, AK*",2007,6945.0
-2282,"Yakutat City and Borough, AK*",2007,656.0
 2290,"Yukon-Koyukuk Census Area, AK*",2007,5712.0
 4001,"Apache, AZ",2007,69602.0
 4003,"Cochise, AZ",2007,128206.0
@@ -44276,7 +44163,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2007,73482.0
 22047,"Iberville, LA",2007,33603.0
 22049,"Jackson, LA",2007,15922.0
-22051,"Jefferson, LA",2007,432683.0
 22053,"Jefferson Davis, LA",2007,31379.0
 22055,"Lafayette, LA",2007,211826.0
 22057,"Lafourche, LA",2007,94745.0
@@ -44286,23 +44172,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2007,12410.0
 22067,"Morehouse, LA",2007,28478.0
 22069,"Natchitoches, LA",2007,39114.0
-22071,"Orleans, LA",2007,268751.0
 22073,"Ouachita, LA",2007,151157.0
-22075,"Plaquemines, LA",2007,22709.0
 22077,"Pointe Coupee, LA",2007,22848.0
 22079,"Rapides, LA",2007,130238.0
 22081,"Red River, LA",2007,9245.0
 22083,"Richland, LA",2007,20670.0
 22085,"Sabine, LA",2007,24090.0
-22087,"St. Bernard, LA",2007,23613.0
-22089,"St. Charles, LA",2007,52765.0
 22091,"St. Helena, LA",2007,11070.0
 22093,"St. James, LA",2007,22164.0
-22095,"St. John the Baptist, LA",2007,47386.0
 22097,"St. Landry, LA",2007,84710.0
 22099,"St. Martin, LA",2007,51410.0
 22101,"St. Mary, LA",2007,54104.0
-22103,"St. Tammany, LA",2007,226294.0
 22105,"Tangipahoa, LA",2007,116792.0
 22107,"Tensas, LA",2007,5513.0
 22109,"Terrebonne, LA",2007,110656.0
@@ -46317,7 +46197,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2008,7466.0
 2220,"Sitka City and Borough, AK*",2008,8835.0
 2240,"Southeast Fairbanks Census Area, AK*",2008,6904.0
-2282,"Yakutat City and Borough, AK*",2008,627.0
 2290,"Yukon-Koyukuk Census Area, AK*",2008,5585.0
 4001,"Apache, AZ",2008,69883.0
 4003,"Cochise, AZ",2008,129023.0
@@ -47358,7 +47237,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2008,73522.0
 22047,"Iberville, LA",2008,33685.0
 22049,"Jackson, LA",2008,16105.0
-22051,"Jefferson, LA",2008,431759.0
 22053,"Jefferson Davis, LA",2008,31497.0
 22055,"Lafayette, LA",2008,215139.0
 22057,"Lafourche, LA",2008,95603.0
@@ -47368,23 +47246,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2008,12340.0
 22067,"Morehouse, LA",2008,28311.0
 22069,"Natchitoches, LA",2008,39244.0
-22071,"Orleans, LA",2008,301842.0
 22073,"Ouachita, LA",2008,151727.0
-22075,"Plaquemines, LA",2008,22677.0
 22077,"Pointe Coupee, LA",2008,22966.0
 22079,"Rapides, LA",2008,130785.0
 22081,"Red River, LA",2008,9185.0
 22083,"Richland, LA",2008,20727.0
 22085,"Sabine, LA",2008,24124.0
-22087,"St. Bernard, LA",2008,28879.0
-22089,"St. Charles, LA",2008,52516.0
 22091,"St. Helena, LA",2008,11106.0
 22093,"St. James, LA",2008,22095.0
-22095,"St. John the Baptist, LA",2008,46811.0
 22097,"St. Landry, LA",2008,84427.0
 22099,"St. Martin, LA",2008,51914.0
 22101,"St. Mary, LA",2008,54352.0
-22103,"St. Tammany, LA",2008,229252.0
 22105,"Tangipahoa, LA",2008,118621.0
 22107,"Tensas, LA",2008,5376.0
 22109,"Terrebonne, LA",2008,111453.0
@@ -49399,7 +49271,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2009,7467.0
 2220,"Sitka City and Borough, AK*",2009,8844.0
 2240,"Southeast Fairbanks Census Area, AK*",2009,6955.0
-2282,"Yakutat City and Borough, AK*",2009,665.0
 2290,"Yukon-Koyukuk Census Area, AK*",2009,5495.0
 4001,"Apache, AZ",2009,71008.0
 4003,"Cochise, AZ",2009,130081.0
@@ -50440,7 +50311,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2009,73372.0
 22047,"Iberville, LA",2009,33393.0
 22049,"Jackson, LA",2009,16118.0
-22051,"Jefferson, LA",2009,431921.0
 22053,"Jefferson Davis, LA",2009,31530.0
 22055,"Lafayette, LA",2009,219466.0
 22057,"Lafourche, LA",2009,96080.0
@@ -50450,23 +50320,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2009,12040.0
 22067,"Morehouse, LA",2009,28147.0
 22069,"Natchitoches, LA",2009,39425.0
-22071,"Orleans, LA",2009,327803.0
 22073,"Ouachita, LA",2009,153058.0
-22075,"Plaquemines, LA",2009,22730.0
 22077,"Pointe Coupee, LA",2009,22847.0
 22079,"Rapides, LA",2009,131095.0
 22081,"Red River, LA",2009,9117.0
 22083,"Richland, LA",2009,20664.0
 22085,"Sabine, LA",2009,24199.0
-22087,"St. Bernard, LA",2009,32878.0
-22089,"St. Charles, LA",2009,52719.0
 22091,"St. Helena, LA",2009,11154.0
 22093,"St. James, LA",2009,22231.0
-22095,"St. John the Baptist, LA",2009,46336.0
 22097,"St. Landry, LA",2009,83825.0
 22099,"St. Martin, LA",2009,52025.0
 22101,"St. Mary, LA",2009,54551.0
-22103,"St. Tammany, LA",2009,231224.0
 22105,"Tangipahoa, LA",2009,120009.0
 22107,"Tensas, LA",2009,5311.0
 22109,"Terrebonne, LA",2009,111689.0
@@ -52481,7 +52345,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2010,7565.0
 2220,"Sitka City and Borough, AK*",2010,8881.0
 2240,"Southeast Fairbanks Census Area, AK*",2010,7061.0
-2282,"Yakutat City and Borough, AK*",2010,663.0
 2290,"Yukon-Koyukuk Census Area, AK*",2010,5613.0
 4001,"Apache, AZ",2010,71675.0
 4003,"Cochise, AZ",2010,131767.0
@@ -53522,7 +53385,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2010,72902.0
 22047,"Iberville, LA",2010,33337.0
 22049,"Jackson, LA",2010,16294.0
-22051,"Jefferson, LA",2010,432802.0
 22053,"Jefferson Davis, LA",2010,31652.0
 22055,"Lafayette, LA",2010,222415.0
 22057,"Lafourche, LA",2010,96692.0
@@ -53532,23 +53394,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2010,12087.0
 22067,"Morehouse, LA",2010,27906.0
 22069,"Natchitoches, LA",2010,39515.0
-22071,"Orleans, LA",2010,347657.0
 22073,"Ouachita, LA",2010,154148.0
-22075,"Plaquemines, LA",2010,23129.0
 22077,"Pointe Coupee, LA",2010,22792.0
 22079,"Rapides, LA",2010,131769.0
 22081,"Red River, LA",2010,9080.0
 22083,"Richland, LA",2010,20757.0
 22085,"Sabine, LA",2010,24187.0
-22087,"St. Bernard, LA",2010,36747.0
-22089,"St. Charles, LA",2010,52806.0
 22091,"St. Helena, LA",2010,11227.0
 22093,"St. James, LA",2010,22035.0
-22095,"St. John the Baptist, LA",2010,45585.0
 22097,"St. Landry, LA",2010,83525.0
 22099,"St. Martin, LA",2010,52231.0
 22101,"St. Mary, LA",2010,54576.0
-22103,"St. Tammany, LA",2010,234598.0
 22105,"Tangipahoa, LA",2010,121394.0
 22107,"Tensas, LA",2010,5227.0
 22109,"Terrebonne, LA",2010,111540.0
@@ -55563,7 +55419,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2011,7728.0
 2220,"Sitka City and Borough, AK*",2011,8891.0
 2240,"Southeast Fairbanks Census Area, AK*",2011,7139.0
-2282,"Yakutat City and Borough, AK*",2011,663.0
 2290,"Yukon-Koyukuk Census Area, AK*",2011,5655.0
 4001,"Apache, AZ",2011,71412.0
 4003,"Cochise, AZ",2011,132842.0
@@ -56604,7 +56459,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2011,73313.0
 22047,"Iberville, LA",2011,33108.0
 22049,"Jackson, LA",2011,16287.0
-22051,"Jefferson, LA",2011,435062.0
 22053,"Jefferson Davis, LA",2011,31713.0
 22055,"Lafayette, LA",2011,224402.0
 22057,"Lafourche, LA",2011,97023.0
@@ -56614,23 +56468,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2011,11879.0
 22067,"Morehouse, LA",2011,27646.0
 22069,"Natchitoches, LA",2011,39348.0
-22071,"Orleans, LA",2011,360134.0
 22073,"Ouachita, LA",2011,155576.0
-22075,"Plaquemines, LA",2011,23633.0
 22077,"Pointe Coupee, LA",2011,22695.0
 22079,"Rapides, LA",2011,132155.0
 22081,"Red River, LA",2011,8990.0
 22083,"Richland, LA",2011,20886.0
 22085,"Sabine, LA",2011,24210.0
-22087,"St. Bernard, LA",2011,39123.0
-22089,"St. Charles, LA",2011,52335.0
 22091,"St. Helena, LA",2011,11070.0
 22093,"St. James, LA",2011,21710.0
-22095,"St. John the Baptist, LA",2011,45051.0
 22097,"St. Landry, LA",2011,83566.0
 22099,"St. Martin, LA",2011,52640.0
 22101,"St. Mary, LA",2011,54311.0
-22103,"St. Tammany, LA",2011,237073.0
 22105,"Tangipahoa, LA",2011,122344.0
 22107,"Tensas, LA",2011,5082.0
 22109,"Terrebonne, LA",2011,111628.0
@@ -58645,7 +58493,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2012,7745.0
 2220,"Sitka City and Borough, AK*",2012,9026.0
 2240,"Southeast Fairbanks Census Area, AK*",2012,7150.0
-2282,"Yakutat City and Borough, AK*",2012,675.0
 2290,"Yukon-Koyukuk Census Area, AK*",2012,5669.0
 4001,"Apache, AZ",2012,70848.0
 4003,"Cochise, AZ",2012,131580.0
@@ -59686,7 +59533,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2012,73623.0
 22047,"Iberville, LA",2012,32873.0
 22049,"Jackson, LA",2012,16145.0
-22051,"Jefferson, LA",2012,435726.0
 22053,"Jefferson Davis, LA",2012,31663.0
 22055,"Lafayette, LA",2012,226651.0
 22057,"Lafourche, LA",2012,97117.0
@@ -59696,23 +59542,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2012,12033.0
 22067,"Morehouse, LA",2012,27673.0
 22069,"Natchitoches, LA",2012,39274.0
-22071,"Orleans, LA",2012,368676.0
 22073,"Ouachita, LA",2012,156937.0
-22075,"Plaquemines, LA",2012,23917.0
 22077,"Pointe Coupee, LA",2012,22481.0
 22079,"Rapides, LA",2012,132267.0
 22081,"Red River, LA",2012,8906.0
 22083,"Richland, LA",2012,20915.0
 22085,"Sabine, LA",2012,23941.0
-22087,"St. Bernard, LA",2012,40746.0
-22089,"St. Charles, LA",2012,52323.0
 22091,"St. Helena, LA",2012,11177.0
 22093,"St. James, LA",2012,21501.0
-22095,"St. John the Baptist, LA",2012,44691.0
 22097,"St. Landry, LA",2012,83681.0
 22099,"St. Martin, LA",2012,52370.0
 22101,"St. Mary, LA",2012,53783.0
-22103,"St. Tammany, LA",2012,239469.0
 22105,"Tangipahoa, LA",2012,123022.0
 22107,"Tensas, LA",2012,4982.0
 22109,"Terrebonne, LA",2012,111650.0
@@ -61727,7 +61567,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2013,7779.0
 2220,"Sitka City and Borough, AK*",2013,8987.0
 2240,"Southeast Fairbanks Census Area, AK*",2013,6955.0
-2282,"Yakutat City and Borough, AK*",2013,667.0
 2290,"Yukon-Koyukuk Census Area, AK*",2013,5629.0
 4001,"Apache, AZ",2013,70341.0
 4003,"Cochise, AZ",2013,128947.0
@@ -62768,7 +62607,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2013,73884.0
 22047,"Iberville, LA",2013,32733.0
 22049,"Jackson, LA",2013,15957.0
-22051,"Jefferson, LA",2013,436824.0
 22053,"Jefferson Davis, LA",2013,31611.0
 22055,"Lafayette, LA",2013,230432.0
 22057,"Lafourche, LA",2013,97215.0
@@ -62778,23 +62616,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2013,11656.0
 22067,"Morehouse, LA",2013,27358.0
 22069,"Natchitoches, LA",2013,39026.0
-22071,"Orleans, LA",2013,376989.0
 22073,"Ouachita, LA",2013,158510.0
-22075,"Plaquemines, LA",2013,23636.0
 22077,"Pointe Coupee, LA",2013,22146.0
 22079,"Rapides, LA",2013,132692.0
 22081,"Red River, LA",2013,8722.0
 22083,"Richland, LA",2013,20915.0
 22085,"Sabine, LA",2013,23709.0
-22087,"St. Bernard, LA",2013,42318.0
-22089,"St. Charles, LA",2013,52470.0
 22091,"St. Helena, LA",2013,11049.0
 22093,"St. James, LA",2013,21412.0
-22095,"St. John the Baptist, LA",2013,43530.0
 22097,"St. Landry, LA",2013,83729.0
 22099,"St. Martin, LA",2013,52525.0
 22101,"St. Mary, LA",2013,53898.0
-22103,"St. Tammany, LA",2013,242536.0
 22105,"Tangipahoa, LA",2013,124622.0
 22107,"Tensas, LA",2013,4910.0
 22109,"Terrebonne, LA",2013,112611.0
@@ -64809,7 +64641,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2014,7843.0
 2220,"Sitka City and Borough, AK*",2014,8854.0
 2240,"Southeast Fairbanks Census Area, AK*",2014,6884.0
-2282,"Yakutat City and Borough, AK*",2014,674.0
 2290,"Yukon-Koyukuk Census Area, AK*",2014,5553.0
 4001,"Apache, AZ",2014,69234.0
 4003,"Cochise, AZ",2014,126519.0
@@ -65850,7 +65681,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2014,73853.0
 22047,"Iberville, LA",2014,32285.0
 22049,"Jackson, LA",2014,15764.0
-22051,"Jefferson, LA",2014,437411.0
 22053,"Jefferson Davis, LA",2014,31864.0
 22055,"Lafayette, LA",2014,234235.0
 22057,"Lafourche, LA",2014,97823.0
@@ -65860,23 +65690,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2014,11495.0
 22067,"Morehouse, LA",2014,27199.0
 22069,"Natchitoches, LA",2014,39005.0
-22071,"Orleans, LA",2014,381744.0
 22073,"Ouachita, LA",2014,159579.0
-22075,"Plaquemines, LA",2014,23474.0
 22077,"Pointe Coupee, LA",2014,21948.0
 22079,"Rapides, LA",2014,132692.0
 22081,"Red River, LA",2014,8460.0
 22083,"Richland, LA",2014,20759.0
 22085,"Sabine, LA",2014,23399.0
-22087,"St. Bernard, LA",2014,42949.0
-22089,"St. Charles, LA",2014,52489.0
 22091,"St. Helena, LA",2014,10871.0
 22093,"St. James, LA",2014,21261.0
-22095,"St. John the Baptist, LA",2014,43667.0
 22097,"St. Landry, LA",2014,84087.0
 22099,"St. Martin, LA",2014,52749.0
 22101,"St. Mary, LA",2014,53680.0
-22103,"St. Tammany, LA",2014,246002.0
 22105,"Tangipahoa, LA",2014,125831.0
 22107,"Tensas, LA",2014,4823.0
 22109,"Terrebonne, LA",2014,113339.0
@@ -67891,7 +67715,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2015,7859.0
 2220,"Sitka City and Borough, AK*",2015,8800.0
 2240,"Southeast Fairbanks Census Area, AK*",2015,6762.0
-2282,"Yakutat City and Borough, AK*",2015,660.0
 2290,"Yukon-Koyukuk Census Area, AK*",2015,5582.0
 4001,"Apache, AZ",2015,67896.0
 4003,"Cochise, AZ",2015,125470.0
@@ -68932,7 +68755,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2015,73962.0
 22047,"Iberville, LA",2015,32094.0
 22049,"Jackson, LA",2015,15664.0
-22051,"Jefferson, LA",2015,439291.0
 22053,"Jefferson Davis, LA",2015,31946.0
 22055,"Lafayette, LA",2015,237442.0
 22057,"Lafourche, LA",2015,98246.0
@@ -68942,23 +68764,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2015,11161.0
 22067,"Morehouse, LA",2015,26973.0
 22069,"Natchitoches, LA",2015,38862.0
-22071,"Orleans, LA",2015,386978.0
 22073,"Ouachita, LA",2015,160886.0
-22075,"Plaquemines, LA",2015,23649.0
 22077,"Pointe Coupee, LA",2015,21753.0
 22079,"Rapides, LA",2015,132391.0
 22081,"Red River, LA",2015,8346.0
 22083,"Richland, LA",2015,20547.0
 22085,"Sabine, LA",2015,23324.0
-22087,"St. Bernard, LA",2015,43546.0
-22089,"St. Charles, LA",2015,52339.0
 22091,"St. Helena, LA",2015,10888.0
 22093,"St. James, LA",2015,21166.0
-22095,"St. John the Baptist, LA",2015,43471.0
 22097,"St. Landry, LA",2015,84146.0
 22099,"St. Martin, LA",2015,53193.0
 22101,"St. Mary, LA",2015,53370.0
-22103,"St. Tammany, LA",2015,249882.0
 22105,"Tangipahoa, LA",2015,127239.0
 22107,"Tensas, LA",2015,4738.0
 22109,"Terrebonne, LA",2015,113628.0
@@ -70973,7 +70789,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2016,7795.0
 2220,"Sitka City and Borough, AK*",2016,8759.0
 2240,"Southeast Fairbanks Census Area, AK*",2016,6777.0
-2282,"Yakutat City and Borough, AK*",2016,642.0
 2290,"Yukon-Koyukuk Census Area, AK*",2016,5562.0
 4001,"Apache, AZ",2016,67688.0
 4003,"Cochise, AZ",2016,124559.0
@@ -72014,7 +71829,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2016,73238.0
 22047,"Iberville, LA",2016,31622.0
 22049,"Jackson, LA",2016,15539.0
-22051,"Jefferson, LA",2016,441554.0
 22053,"Jefferson Davis, LA",2016,31989.0
 22055,"Lafayette, LA",2016,238949.0
 22057,"Lafourche, LA",2016,98450.0
@@ -72024,23 +71838,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2016,11026.0
 22067,"Morehouse, LA",2016,26693.0
 22069,"Natchitoches, LA",2016,38829.0
-22071,"Orleans, LA",2016,388523.0
 22073,"Ouachita, LA",2016,161683.0
-22075,"Plaquemines, LA",2016,23582.0
 22077,"Pointe Coupee, LA",2016,21600.0
 22079,"Rapides, LA",2016,132512.0
 22081,"Red River, LA",2016,8190.0
 22083,"Richland, LA",2016,20451.0
 22085,"Sabine, LA",2016,23005.0
-22087,"St. Bernard, LA",2016,43529.0
-22089,"St. Charles, LA",2016,52511.0
 22091,"St. Helena, LA",2016,10905.0
 22093,"St. James, LA",2016,21052.0
-22095,"St. John the Baptist, LA",2016,43373.0
 22097,"St. Landry, LA",2016,84423.0
 22099,"St. Martin, LA",2016,52998.0
 22101,"St. Mary, LA",2016,52604.0
-22103,"St. Tammany, LA",2016,253593.0
 22105,"Tangipahoa, LA",2016,128900.0
 22107,"Tensas, LA",2016,4611.0
 22109,"Terrebonne, LA",2016,112753.0
@@ -74055,7 +73863,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2017,7906.0
 2220,"Sitka City and Borough, AK*",2017,8657.0
 2240,"Southeast Fairbanks Census Area, AK*",2017,6829.0
-2282,"Yakutat City and Borough, AK*",2017,641.0
 2290,"Yukon-Koyukuk Census Area, AK*",2017,5567.0
 4001,"Apache, AZ",2017,67226.0
 4003,"Cochise, AZ",2017,123528.0
@@ -75096,7 +74903,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2017,72357.0
 22047,"Iberville, LA",2017,31486.0
 22049,"Jackson, LA",2017,15505.0
-22051,"Jefferson, LA",2017,441995.0
 22053,"Jefferson Davis, LA",2017,32189.0
 22055,"Lafayette, LA",2017,238940.0
 22057,"Lafourche, LA",2017,98024.0
@@ -75106,23 +74912,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2017,10811.0
 22067,"Morehouse, LA",2017,26564.0
 22069,"Natchitoches, LA",2017,38833.0
-22071,"Orleans, LA",2017,387474.0
 22073,"Ouachita, LA",2017,161376.0
-22075,"Plaquemines, LA",2017,23632.0
 22077,"Pointe Coupee, LA",2017,21559.0
 22079,"Rapides, LA",2017,132047.0
 22081,"Red River, LA",2017,8033.0
 22083,"Richland, LA",2017,20413.0
 22085,"Sabine, LA",2017,22707.0
-22087,"St. Bernard, LA",2017,43489.0
-22089,"St. Charles, LA",2017,52283.0
 22091,"St. Helena, LA",2017,10914.0
 22093,"St. James, LA",2017,20941.0
-22095,"St. John the Baptist, LA",2017,43276.0
 22097,"St. Landry, LA",2017,84202.0
 22099,"St. Martin, LA",2017,53155.0
 22101,"St. Mary, LA",2017,51281.0
-22103,"St. Tammany, LA",2017,257282.0
 22105,"Tangipahoa, LA",2017,130259.0
 22107,"Tensas, LA",2017,4525.0
 22109,"Terrebonne, LA",2017,111512.0
@@ -77137,7 +76937,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2018,7829.0
 2220,"Sitka City and Borough, AK*",2018,8574.0
 2240,"Southeast Fairbanks Census Area, AK*",2018,6845.0
-2282,"Yakutat City and Borough, AK*",2018,635.0
 2290,"Yukon-Koyukuk Census Area, AK*",2018,5564.0
 4001,"Apache, AZ",2018,66918.0
 4003,"Cochise, AZ",2018,124838.0
@@ -78178,7 +77977,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2018,71246.0
 22047,"Iberville, LA",2018,31094.0
 22049,"Jackson, LA",2018,15463.0
-22051,"Jefferson, LA",2018,440787.0
 22053,"Jefferson Davis, LA",2018,32359.0
 22055,"Lafayette, LA",2018,239949.0
 22057,"Lafourche, LA",2018,97849.0
@@ -78188,23 +77986,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2018,10609.0
 22067,"Morehouse, LA",2018,26316.0
 22069,"Natchitoches, LA",2018,38378.0
-22071,"Orleans, LA",2018,386570.0
 22073,"Ouachita, LA",2018,160876.0
-22075,"Plaquemines, LA",2018,23703.0
 22077,"Pointe Coupee, LA",2018,21172.0
 22079,"Rapides, LA",2018,131280.0
 22081,"Red River, LA",2018,7943.0
 22083,"Richland, LA",2018,20205.0
 22085,"Sabine, LA",2018,22542.0
-22087,"St. Bernard, LA",2018,43703.0
-22089,"St. Charles, LA",2018,52379.0
 22091,"St. Helena, LA",2018,10827.0
 22093,"St. James, LA",2018,20641.0
-22095,"St. John the Baptist, LA",2018,43049.0
 22097,"St. Landry, LA",2018,83526.0
 22099,"St. Martin, LA",2018,52537.0
 22101,"St. Mary, LA",2018,50420.0
-22103,"St. Tammany, LA",2018,259827.0
 22105,"Tangipahoa, LA",2018,131438.0
 22107,"Tensas, LA",2018,4402.0
 22109,"Terrebonne, LA",2018,110849.0
@@ -80219,7 +80011,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2019,7800.0
 2220,"Sitka City and Borough, AK*",2019,8522.0
 2240,"Southeast Fairbanks Census Area, AK*",2019,6766.0
-2282,"Yakutat City and Borough, AK*",2019,613.0
 2290,"Yukon-Koyukuk Census Area, AK*",2019,5462.0
 4001,"Apache, AZ",2019,66444.0
 4003,"Cochise, AZ",2019,125292.0
@@ -81260,7 +81051,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2019,70321.0
 22047,"Iberville, LA",2019,30742.0
 22049,"Jackson, LA",2019,15229.0
-22051,"Jefferson, LA",2019,440978.0
 22053,"Jefferson Davis, LA",2019,32321.0
 22055,"Lafayette, LA",2019,240801.0
 22057,"Lafourche, LA",2019,97548.0
@@ -81270,23 +81060,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2019,10333.0
 22067,"Morehouse, LA",2019,25955.0
 22069,"Natchitoches, LA",2019,37907.0
-22071,"Orleans, LA",2019,385637.0
 22073,"Ouachita, LA",2019,160286.0
-22075,"Plaquemines, LA",2019,23589.0
 22077,"Pointe Coupee, LA",2019,20973.0
 22079,"Rapides, LA",2019,130775.0
 22081,"Red River, LA",2019,7771.0
 22083,"Richland, LA",2019,20136.0
 22085,"Sabine, LA",2019,22368.0
-22087,"St. Bernard, LA",2019,43783.0
-22089,"St. Charles, LA",2019,52636.0
 22091,"St. Helena, LA",2019,10878.0
 22093,"St. James, LA",2019,20499.0
-22095,"St. John the Baptist, LA",2019,42722.0
 22097,"St. Landry, LA",2019,82972.0
 22099,"St. Martin, LA",2019,52276.0
 22101,"St. Mary, LA",2019,50050.0
-22103,"St. Tammany, LA",2019,262689.0
 22105,"Tangipahoa, LA",2019,132009.0
 22107,"Tensas, LA",2019,4262.0
 22109,"Terrebonne, LA",2019,110148.0
@@ -83301,7 +83085,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2020,7784.0
 2220,"Sitka City and Borough, AK*",2020,8428.0
 2240,"Southeast Fairbanks Census Area, AK*",2020,6831.0
-2282,"Yakutat City and Borough, AK*",2020,683.0
 2290,"Yukon-Koyukuk Census Area, AK*",2020,5300.0
 4001,"Apache, AZ",2020,65897.0
 4003,"Cochise, AZ",2020,125398.0
@@ -84342,7 +84125,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2020,69725.0
 22047,"Iberville, LA",2020,30095.0
 22049,"Jackson, LA",2020,14989.0
-22051,"Jefferson, LA",2020,439845.0
 22053,"Jefferson Davis, LA",2020,32166.0
 22055,"Lafayette, LA",2020,242004.0
 22057,"Lafourche, LA",2020,97495.0
@@ -84352,23 +84134,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2020,9927.0
 22067,"Morehouse, LA",2020,25430.0
 22069,"Natchitoches, LA",2020,37349.0
-22071,"Orleans, LA",2020,383282.0
 22073,"Ouachita, LA",2020,160003.0
-22075,"Plaquemines, LA",2020,23466.0
 22077,"Pointe Coupee, LA",2020,20689.0
 22079,"Rapides, LA",2020,129607.0
 22081,"Red River, LA",2020,7619.0
 22083,"Richland, LA",2020,19997.0
 22085,"Sabine, LA",2020,22118.0
-22087,"St. Bernard, LA",2020,43838.0
-22089,"St. Charles, LA",2020,52481.0
 22091,"St. Helena, LA",2020,10889.0
 22093,"St. James, LA",2020,20127.0
-22095,"St. John the Baptist, LA",2020,42394.0
 22097,"St. Landry, LA",2020,82273.0
 22099,"St. Martin, LA",2020,51604.0
 22101,"St. Mary, LA",2020,49140.0
-22103,"St. Tammany, LA",2020,264933.0
 22105,"Tangipahoa, LA",2020,133549.0
 22107,"Tensas, LA",2020,4116.0
 22109,"Terrebonne, LA",2020,109319.0
@@ -86383,7 +86159,6 @@ GeoFIPS,GeoName,Year,Value
 2188,"Northwest Arctic Borough, AK",2021,7560.0
 2220,"Sitka City and Borough, AK*",2021,8407.0
 2240,"Southeast Fairbanks Census Area, AK*",2021,6970.0
-2282,"Yakutat City and Borough, AK*",2021,704.0
 2290,"Yukon-Koyukuk Census Area, AK*",2021,5275.0
 4001,"Apache, AZ",2021,65623.0
 4003,"Cochise, AZ",2021,126050.0
@@ -87424,7 +87199,6 @@ GeoFIPS,GeoName,Year,Value
 22045,"Iberia, LA",2021,68975.0
 22047,"Iberville, LA",2021,29824.0
 22049,"Jackson, LA",2021,14876.0
-22051,"Jefferson, LA",2021,433688.0
 22053,"Jefferson Davis, LA",2021,32345.0
 22055,"Lafayette, LA",2021,244205.0
 22057,"Lafourche, LA",2021,97504.0
@@ -87434,23 +87208,17 @@ GeoFIPS,GeoName,Year,Value
 22065,"Madison, LA",2021,9799.0
 22067,"Morehouse, LA",2021,25025.0
 22069,"Natchitoches, LA",2021,37026.0
-22071,"Orleans, LA",2021,376971.0
 22073,"Ouachita, LA",2021,158768.0
-22075,"Plaquemines, LA",2021,23303.0
 22077,"Pointe Coupee, LA",2021,20356.0
 22079,"Rapides, LA",2021,128654.0
 22081,"Red River, LA",2021,7564.0
 22083,"Richland, LA",2021,19805.0
 22085,"Sabine, LA",2021,22135.0
-22087,"St. Bernard, LA",2021,44258.0
-22089,"St. Charles, LA",2021,52282.0
 22091,"St. Helena, LA",2021,10912.0
 22093,"St. James, LA",2021,19742.0
-22095,"St. John the Baptist, LA",2021,42094.0
 22097,"St. Landry, LA",2021,82071.0
 22099,"St. Martin, LA",2021,51540.0
 22101,"St. Mary, LA",2021,48232.0
-22103,"St. Tammany, LA",2021,269388.0
 22105,"Tangipahoa, LA",2021,135217.0
 22107,"Tensas, LA",2021,4043.0
 22109,"Terrebonne, LA",2021,108708.0

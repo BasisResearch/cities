@@ -198,7 +198,6 @@ class FipsQuery:
         fig.show()
 
     def find_euclidean_kins(self):
-
         # cut the relevant years from the outcome variable
         if self.outcome_comparison_period and self.outcome_var:
             start_year, end_year = self.outcome_comparison_period

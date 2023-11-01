@@ -1055,18 +1055,6 @@ GeoFIPS,GeoName,Year,Value
 2240,"Southeast Fairbanks Census Area, AK",2019,27.0
 2240,"Southeast Fairbanks Census Area, AK",2020,31.0
 2240,"Southeast Fairbanks Census Area, AK",2021,37.0
-2282,"Yakutat City and Borough, AK*",2010,14.0
-2282,"Yakutat City and Borough, AK*",2011,16.0
-2282,"Yakutat City and Borough, AK*",2012,16.0
-2282,"Yakutat City and Borough, AK*",2013,16.0
-2282,"Yakutat City and Borough, AK*",2014,24.0
-2282,"Yakutat City and Borough, AK*",2015,8.0
-2282,"Yakutat City and Borough, AK*",2016,7.0
-2282,"Yakutat City and Borough, AK*",2017,11.0
-2282,"Yakutat City and Borough, AK*",2018,4.0
-2282,"Yakutat City and Borough, AK*",2019,3.0
-2282,"Yakutat City and Borough, AK*",2020,1.0
-2282,"Yakutat City and Borough, AK*",2021,1.0
 2290,"Yukon-Koyukuk Census Area, AK",2010,32.0
 2290,"Yukon-Koyukuk Census Area, AK",2011,33.0
 2290,"Yukon-Koyukuk Census Area, AK",2012,38.0
@@ -13547,18 +13535,6 @@ GeoFIPS,GeoName,Year,Value
 22049,"Jackson, LA",2019,48.0
 22049,"Jackson, LA",2020,45.0
 22049,"Jackson, LA",2021,42.0
-22051,"Jefferson, LA",2010,4636.0
-22051,"Jefferson, LA",2011,4411.0
-22051,"Jefferson, LA",2012,4390.0
-22051,"Jefferson, LA",2013,4308.0
-22051,"Jefferson, LA",2014,4359.0
-22051,"Jefferson, LA",2015,4507.0
-22051,"Jefferson, LA",2016,4790.0
-22051,"Jefferson, LA",2017,4777.0
-22051,"Jefferson, LA",2018,4940.0
-22051,"Jefferson, LA",2019,4815.0
-22051,"Jefferson, LA",2020,4396.0
-22051,"Jefferson, LA",2021,4636.0
 22053,"Jefferson Davis, LA",2010,101.0
 22053,"Jefferson Davis, LA",2011,128.0
 22053,"Jefferson Davis, LA",2012,163.0
@@ -13667,18 +13643,6 @@ GeoFIPS,GeoName,Year,Value
 22069,"Natchitoches, LA",2019,221.0
 22069,"Natchitoches, LA",2020,173.0
 22069,"Natchitoches, LA",2021,183.0
-22071,"Orleans, LA",2010,2771.0
-22071,"Orleans, LA",2011,2911.0
-22071,"Orleans, LA",2012,3283.0
-22071,"Orleans, LA",2013,3377.0
-22071,"Orleans, LA",2014,3444.0
-22071,"Orleans, LA",2015,3659.0
-22071,"Orleans, LA",2016,3818.0
-22071,"Orleans, LA",2017,4106.0
-22071,"Orleans, LA",2018,4058.0
-22071,"Orleans, LA",2019,4514.0
-22071,"Orleans, LA",2020,4424.0
-22071,"Orleans, LA",2021,4267.0
 22073,"Ouachita, LA",2010,954.0
 22073,"Ouachita, LA",2011,1071.0
 22073,"Ouachita, LA",2012,1134.0
@@ -13691,18 +13655,6 @@ GeoFIPS,GeoName,Year,Value
 22073,"Ouachita, LA",2019,1114.0
 22073,"Ouachita, LA",2020,1047.0
 22073,"Ouachita, LA",2021,984.0
-22075,"Plaquemines, LA",2010,182.0
-22075,"Plaquemines, LA",2011,189.0
-22075,"Plaquemines, LA",2012,218.0
-22075,"Plaquemines, LA",2013,181.0
-22075,"Plaquemines, LA",2014,217.0
-22075,"Plaquemines, LA",2015,121.0
-22075,"Plaquemines, LA",2016,106.0
-22075,"Plaquemines, LA",2017,127.0
-22075,"Plaquemines, LA",2018,130.0
-22075,"Plaquemines, LA",2019,184.0
-22075,"Plaquemines, LA",2020,21.0
-22075,"Plaquemines, LA",2021,23.0
 22077,"Pointe Coupee, LA",2010,40.0
 22077,"Pointe Coupee, LA",2011,55.0
 22077,"Pointe Coupee, LA",2012,68.0
@@ -13763,30 +13715,6 @@ GeoFIPS,GeoName,Year,Value
 22085,"Sabine, LA",2019,57.0
 22085,"Sabine, LA",2020,44.0
 22085,"Sabine, LA",2021,37.0
-22087,"St. Bernard, LA",2010,232.0
-22087,"St. Bernard, LA",2011,193.0
-22087,"St. Bernard, LA",2012,192.0
-22087,"St. Bernard, LA",2013,177.0
-22087,"St. Bernard, LA",2014,262.0
-22087,"St. Bernard, LA",2015,225.0
-22087,"St. Bernard, LA",2016,227.0
-22087,"St. Bernard, LA",2017,268.0
-22087,"St. Bernard, LA",2018,247.0
-22087,"St. Bernard, LA",2019,172.0
-22087,"St. Bernard, LA",2020,365.0
-22087,"St. Bernard, LA",2021,304.0
-22089,"St. Charles, LA",2010,494.0
-22089,"St. Charles, LA",2011,464.0
-22089,"St. Charles, LA",2012,466.0
-22089,"St. Charles, LA",2013,481.0
-22089,"St. Charles, LA",2014,416.0
-22089,"St. Charles, LA",2015,292.0
-22089,"St. Charles, LA",2016,373.0
-22089,"St. Charles, LA",2017,336.0
-22089,"St. Charles, LA",2018,224.0
-22089,"St. Charles, LA",2019,320.0
-22089,"St. Charles, LA",2020,324.0
-22089,"St. Charles, LA",2021,223.0
 22091,"St. Helena, LA",2010,62.0
 22091,"St. Helena, LA",2011,55.0
 22091,"St. Helena, LA",2012,39.0
@@ -13811,18 +13739,6 @@ GeoFIPS,GeoName,Year,Value
 22093,"St. James, LA",2019,26.0
 22093,"St. James, LA",2020,45.0
 22093,"St. James, LA",2021,104.0
-22095,"St. John the Baptist, LA",2010,302.0
-22095,"St. John the Baptist, LA",2011,263.0
-22095,"St. John the Baptist, LA",2012,247.0
-22095,"St. John the Baptist, LA",2013,282.0
-22095,"St. John the Baptist, LA",2014,253.0
-22095,"St. John the Baptist, LA",2015,298.0
-22095,"St. John the Baptist, LA",2016,339.0
-22095,"St. John the Baptist, LA",2017,392.0
-22095,"St. John the Baptist, LA",2018,527.0
-22095,"St. John the Baptist, LA",2019,474.0
-22095,"St. John the Baptist, LA",2020,496.0
-22095,"St. John the Baptist, LA",2021,505.0
 22097,"St. Landry, LA",2010,357.0
 22097,"St. Landry, LA",2011,306.0
 22097,"St. Landry, LA",2012,298.0
@@ -13859,18 +13775,6 @@ GeoFIPS,GeoName,Year,Value
 22101,"St. Mary, LA",2019,182.0
 22101,"St. Mary, LA",2020,179.0
 22101,"St. Mary, LA",2021,165.0
-22103,"St. Tammany, LA",2010,2458.0
-22103,"St. Tammany, LA",2011,2330.0
-22103,"St. Tammany, LA",2012,1984.0
-22103,"St. Tammany, LA",2013,1753.0
-22103,"St. Tammany, LA",2014,1907.0
-22103,"St. Tammany, LA",2015,1659.0
-22103,"St. Tammany, LA",2016,1782.0
-22103,"St. Tammany, LA",2017,1725.0
-22103,"St. Tammany, LA",2018,1898.0
-22103,"St. Tammany, LA",2019,1954.0
-22103,"St. Tammany, LA",2020,1774.0
-22103,"St. Tammany, LA",2021,1911.0
 22105,"Tangipahoa, LA",2010,828.0
 22105,"Tangipahoa, LA",2011,802.0
 22105,"Tangipahoa, LA",2012,762.0

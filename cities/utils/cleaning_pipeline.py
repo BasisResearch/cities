@@ -7,7 +7,10 @@ from cities.utils.clean_spending_commerce import clean_spending_commerce
 from cities.utils.clean_spending_HHS import clean_spending_HHS
 from cities.utils.clean_spending_transportation import clean_spending_transportation
 from cities.utils.clean_transport import clean_transport
+from cities.utils.clean_unemployment import clean_unemployment
 from cities.utils.clean_urbanization import clean_urbanization
+
+clean_unemployment()
 
 clean_gdp()
 

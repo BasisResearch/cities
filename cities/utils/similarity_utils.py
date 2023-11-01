@@ -91,7 +91,6 @@ def divide_exponentially(group_weight, number_of_features, rate):
 
 
 def compute_weight_array(query_object, rate=1.08):
-
     assert (
         sum(
             abs(value)
