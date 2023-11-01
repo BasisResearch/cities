@@ -29,6 +29,11 @@ class FipsQuery:
         if feature_groups_with_weights is None and outcome_var:
             feature_groups_with_weights = {outcome_var: 4}
 
+        if outcome_var:
+            outcome_var_dict = {outcome_var: feature_groups_with_weights.pop(outcome_var)}
+            outcome_var_dict.update(feature_groups_with_weights)
+            feature_groups_with_weights = outcome_var_dict
+    
         assert not (
             lag > 0 and outcome_var is None
         ), "Lag will be idle with no outcome variable"
@@ -233,8 +238,10 @@ class FipsQuery:
                 self.data.wide[self.outcome_var]["GeoFIPS"] != self.fips
             ].copy()
         else:
-            self.my_df = pd.DataFrame()
-            self.other_df = pd.DataFrame()
+            #self.my_df = pd.DataFrame()
+            # self.other_df = pd.DataFrame()
+            self.my_df = pd.DataFrame(self.data.wide["gdp"][self.data.wide["gdp"]["GeoFIPS"] == self.fips].iloc[:, :2])
+            self.other_df = pd.DataFrame(self.data.wide["gdp"][self.data.wide["gdp"]["GeoFIPS"] != self.fips].iloc[:, :2])
 
         # add data on other features to the arrays
         # prior to distance computation
@@ -282,7 +289,7 @@ class FipsQuery:
                     assert (
                         self.my_df.shape[1]
                         == self.other_df.shape[1]
-                        == feature_column_count
+                        == feature_column_count + 2
                     )
 
                 if self.outcome_var:
@@ -363,10 +370,15 @@ class FipsQuery:
         featurewise_contributions_df = pd.concat([self.other_df[["GeoFIPS", "GeoName"]], featurewise_contributions_df], axis=1)
         featurewise_contributions_df.sort_values(by=featurewise_contributions_df.columns[-1], inplace=True)
 
+        aggregated_featurewise_contributions_df= featurewise_contributions_df[2:].T.groupby(featurewise_contributions_df.columns.str[4:]).sum()
+
+        display(aggregated_featurewise_contributions_df)
+
         self.featurewise_contributions = featurewise_contributions_df
 
-        for col_name, col_data in featurewise_contributions_df.iteritems():
-            print(col_name[:4].isdigit())
+
+        # for col_name, col_data in featurewise_contributions_df.iteritems():
+        #     print(col_name[:4].isdigit())
 
     # Group columns by the first four characters of the column name
 #    col_group = col_data.groupby(col_data.index.str[:4]).sum()
@@ -380,6 +392,7 @@ class FipsQuery:
             len(distances) == self.other_df.shape[0]
         ), "Distances and df are misaligned"
 
+        
         # #self.other_df[f"distance to {self.fips}"] = distances #remove soon if no errors
         self.other_df.loc[:, f"distance to {self.fips}"] = distances
 
