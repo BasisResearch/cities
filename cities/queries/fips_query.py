@@ -30,10 +30,12 @@ class FipsQuery:
             feature_groups_with_weights = {outcome_var: 4}
 
         if outcome_var:
-            outcome_var_dict = {outcome_var: feature_groups_with_weights.pop(outcome_var)}
+            outcome_var_dict = {
+                outcome_var: feature_groups_with_weights.pop(outcome_var)
+            }
             outcome_var_dict.update(feature_groups_with_weights)
             feature_groups_with_weights = outcome_var_dict
-    
+
         assert not (
             lag > 0 and outcome_var is None
         ), "Lag will be idle with no outcome variable"
@@ -238,10 +240,18 @@ class FipsQuery:
                 self.data.wide[self.outcome_var]["GeoFIPS"] != self.fips
             ].copy()
         else:
-            #self.my_df = pd.DataFrame()
+            # self.my_df = pd.DataFrame()
             # self.other_df = pd.DataFrame()
-            self.my_df = pd.DataFrame(self.data.wide["gdp"][self.data.wide["gdp"]["GeoFIPS"] == self.fips].iloc[:, :2])
-            self.other_df = pd.DataFrame(self.data.wide["gdp"][self.data.wide["gdp"]["GeoFIPS"] != self.fips].iloc[:, :2])
+            self.my_df = pd.DataFrame(
+                self.data.wide["gdp"][
+                    self.data.wide["gdp"]["GeoFIPS"] == self.fips
+                ].iloc[:, :2]
+            )
+            self.other_df = pd.DataFrame(
+                self.data.wide["gdp"][
+                    self.data.wide["gdp"]["GeoFIPS"] != self.fips
+                ].iloc[:, :2]
+            )
 
         # add data on other features to the arrays
         # prior to distance computation
@@ -353,60 +363,95 @@ class FipsQuery:
         distances = []
         featurewise_contributions = []
         for vector in self.other_arrays:
-            _ge =  generalized_euclidean_distance( np.squeeze(self.my_array), vector, self.all_weights)
-            distances.append(_ge['distance'])
-            featurewise_contributions.append(_ge['featurewise_contributions'])
-        
+            _ge = generalized_euclidean_distance(
+                np.squeeze(self.my_array), vector, self.all_weights
+            )
+            distances.append(_ge["distance"])
+            featurewise_contributions.append(_ge["featurewise_contributions"])
+
+        # keep weighted distance contribution of each individual feature
         featurewise_contributions_array = np.vstack(featurewise_contributions)
-        print(featurewise_contributions_array.shape)
 
         assert featurewise_contributions_array.shape[1] == len(self.all_weights)
-        print(self.all_columns)
 
-        featurewise_contributions_df = pd.DataFrame(featurewise_contributions_array, columns=self.all_columns)
-        print(featurewise_contributions_df.shape)
-        print(len(distances))
+        # turn into df, add ID columns and sort by distance
+        featurewise_contributions_df = pd.DataFrame(
+            featurewise_contributions_array, columns=self.all_columns
+        )
         featurewise_contributions_df[f"distance to {self.fips}"] = distances
-        featurewise_contributions_df = pd.concat([self.other_df[["GeoFIPS", "GeoName"]], featurewise_contributions_df], axis=1)
-        featurewise_contributions_df.sort_values(by=featurewise_contributions_df.columns[-1], inplace=True)
+        featurewise_contributions_df = pd.concat(
+            [self.other_df[["GeoFIPS", "GeoName"]], featurewise_contributions_df],
+            axis=1,
+        )
+        featurewise_contributions_df.sort_values(
+            by=featurewise_contributions_df.columns[-1], inplace=True
+        )
 
+        # isolate ID columns with distance, tensed columns, atemporal columns
+        tensed_column_names = [
+            col for col in featurewise_contributions_df.columns if col[:4].isdigit()
+        ]
+        atemporal_column_names = [
+            col for col in featurewise_contributions_df.columns if not col[:4].isdigit()
+        ]
+        id_column_names = atemporal_column_names[0:2] + [atemporal_column_names[-1]]
+        atemporal_column_names = [
+            col for col in atemporal_column_names if col not in id_column_names
+        ]
 
-        tensed_column_names = [col for col in featurewise_contributions_df.columns if col[:4].isdigit()]
-        atemporal_column_names = [col for col in featurewise_contributions_df.columns if not col[:4].isdigit()]
-        id_columns = atemporal_column_names[0,1,-1]
-        print(id_columns)
-        print("Tcn", tensed_column_names)
-        print("Atn", atemporal_column_names)    
-        tensed_featurewise_contributions_df = featurewise_contributions_df[tensed_column_names]
-        aggregated_tensed_featurewise_contributions_df= tensed_featurewise_contributions_df[2:].T.groupby(tensed_featurewise_contributions_df.columns.str[4:]).sum().T
+        id_df = featurewise_contributions_df[id_column_names]
+        tensed_featurewise_contributions_df = featurewise_contributions_df[
+            tensed_column_names
+        ]
+        atemporal_featurewise_contributions_df = featurewise_contributions_df[
+            atemporal_column_names
+        ]
 
-        atemporal_featurewise_contributions_df = featurewise_contributions_df[atemporal_column_names]
-        display(atemporal_featurewise_contributions_df)
+        # aggregate tensed features (sum across years)
+        aggregated_tensed_featurewise_contributions_df = (
+            tensed_featurewise_contributions_df.T.groupby(
+                tensed_featurewise_contributions_df.columns.str[5:]
+            )
+            .sum()
+            .T
+        )
 
-#        aggregated_atemporal_featurewise_contributions_df = atemporal_featurewise_contributions_df.iloc[:[0,1,-1]].copy()
-#        print(aggregated_atemporal_featurewise_contributions_df)
+        # aggregate atemporal features (sum across official feature list)
+        atemporal_aggregated_dict = {}
         for feature in list(list_available_features()):
-            _selected = [col for col in atemporal_featurewise_contributions_df.columns if col.endswith(feature)]
-            #if _selected:
-                
-#     # Check if there are columns to aggregate
-#     if selected_columns:
-#         # Sum the columns and store the result in the aggregated_data dictionary
-#         aggregated_data[f'{keyword}_sum'] = df[selected_columns].sum(axis=1)
+            _selected = [
+                col
+                for col in atemporal_featurewise_contributions_df.columns
+                if col.endswith(feature)
+            ]
+            if _selected:
+                atemporal_aggregated_dict[
+                    feature
+                ] = atemporal_featurewise_contributions_df[_selected].sum(axis=1)
 
-# # Create a new DataFrame from the aggregated_data dictionary
-# aggregated_df = pd.DataFrame(aggregated_data)
+        aggregated_atemporal_featurewise_contributions_df = pd.DataFrame(
+            atemporal_aggregated_dict
+        )
 
-        
         self.featurewise_contributions = featurewise_contributions_df
 
+        # put together the aggregated featurewise contributions
+        # and normalize row-wise
+        # numbers now mean: "percentage of contribution to the distance"
+        self.aggregated_featurewise_contributions = pd.concat(
+            [
+                id_df,
+                aggregated_tensed_featurewise_contributions_df,
+                aggregated_atemporal_featurewise_contributions_df,
+            ],
+            axis=1,
+        )
+        columns_to_normalize = self.aggregated_featurewise_contributions.iloc[:, 3:]
+        self.aggregated_featurewise_contributions.iloc[
+            :, 3:
+        ] = columns_to_normalize.div(columns_to_normalize.sum(axis=1), axis=0)
 
-        # for col_name, col_data in featurewise_contributions_df.iteritems():
-        #     print(col_name[:4].isdigit())
-
-    # Group columns by the first four characters of the column name
-#    col_group = col_data.groupby(col_data.index.str[:4]).sum()
-
+        # some sanity checks
         count = sum([1 for distance in distances if distance == 0])
 
         assert (
@@ -416,13 +461,13 @@ class FipsQuery:
             len(distances) == self.other_df.shape[0]
         ), "Distances and df are misaligned"
 
-        
         # #self.other_df[f"distance to {self.fips}"] = distances #remove soon if no errors
         self.other_df.loc[:, f"distance to {self.fips}"] = distances
 
         count_zeros = (self.other_df[f"distance to {self.fips}"] == 0).sum()
         assert count_zeros == count, "f{count_zeros} zeros in alien distances!"
 
+        # sort and put together euclidean kins
         self.other_df.sort_values(by=self.other_df.columns[-1], inplace=True)
 
         self.my_df[f"distance to {self.fips}"] = 0
