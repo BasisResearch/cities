@@ -211,6 +211,9 @@ class FipsQuery:
         elif self.outcome_var:
             restricted_df = self.data.std_wide[self.outcome_var].copy()
 
+        if self.outcome_var:
+            self.restricted_outcome_df = restricted_df
+
         # apply lag in different directions to you and other locations
         # to the outcome variable
         if self.outcome_var:
@@ -232,7 +235,6 @@ class FipsQuery:
         else:
             self.my_df = pd.DataFrame()
             self.other_df = pd.DataFrame()
-
 
         # add data on other features to the arrays
         # prior to distance computation
@@ -276,14 +278,12 @@ class FipsQuery:
                     (self.other_df, _extracted_other_df.iloc[:, 2:]), axis=1
                 )
 
-
                 if self.outcome_var is None:
                     assert (
                         self.my_df.shape[1]
                         == self.other_df.shape[1]
                         == feature_column_count
                     )
-
 
                 if self.outcome_var:
                     after_shape = self.other_df.shape
@@ -316,7 +316,6 @@ class FipsQuery:
                     others_features_arrays = np.hstack(
                         (others_features_arrays, _extracted_other_array)
                     )
-
 
         if len(self.feature_groups) > 1 and self.outcome_var:
             self.my_array = np.hstack((self.my_array, my_features_arrays))
@@ -394,8 +393,8 @@ class FipsQuery:
         plot_weights(self)
 
     def plot_kins_other_outcome_var(self, outcome_var):
-        assert self.outcome_var, "Outcome comparison requires an outcome variable"
-        assert hasattr(self, 'euclidean_kins'), "Run `find_euclidean_kins` first"
+        # assert self.outcome_var, "Outcome comparison requires an outcome variable"
+        assert hasattr(self, "euclidean_kins"), "Run `find_euclidean_kins` first"
 
         self.data.get_features_long([outcome_var])
         plot_data = self.data.long[outcome_var]
@@ -404,7 +403,7 @@ class FipsQuery:
         # possibly remove
 
         fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
-        geonames_top = self.euclidean_kins["GeoName"].iloc[1 : (self.top + 1)].values        
+        geonames_top = self.euclidean_kins["GeoName"].iloc[1 : (self.top + 1)].values
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
 
         fig = go.Figure()
@@ -499,7 +498,6 @@ class FipsQuery:
         )
 
         return fig
-
 
     def plot_kins(self):
         fig = self.plot_kins_other_outcome_var(self.outcome_var)
