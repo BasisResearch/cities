@@ -491,12 +491,12 @@ class FipsQuery:
     def plot_weights(self):
         plot_weights(self)
 
-    def plot_kins_other_outcome_var(self, outcome_var):
+    def plot_kins_other_var(self, var):
         # assert self.outcome_var, "Outcome comparison requires an outcome variable"
         assert hasattr(self, "euclidean_kins"), "Run `find_euclidean_kins` first"
 
-        self.data.get_features_long([outcome_var])
-        plot_data = self.data.long[outcome_var]
+        self.data.get_features_long([var])
+        plot_data = self.data.long[var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
         # up = my_plot_data["Year"].max()
         # possibly remove
@@ -505,11 +505,12 @@ class FipsQuery:
         geonames_top = self.euclidean_kins["GeoName"].iloc[1 : (self.top + 1)].values
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
 
+        value_column_name = my_plot_data.columns[-1]
         fig = go.Figure()
         fig.add_trace(
             go.Scatter(
                 x=my_plot_data["Year"],
-                y=my_plot_data["Value"],
+                y=my_plot_data[value_column_name],
                 mode="lines",
                 name=my_plot_data["GeoName"].iloc[0],
                 line=dict(color="darkred", width=3),
@@ -525,14 +526,17 @@ class FipsQuery:
             : self.top
         ]
 
+
         for i, geoname in enumerate(geonames_top):
             subset = others_plot_data[others_plot_data["GeoName"] == geoname]
+            # print("subset.head")
+            # print(subset.head)
             # line_color = shades_of_grey[i % len(shades_of_grey)]
             line_color = pastel_colors[i % len(pastel_colors)]
             fig.add_trace(
                 go.Scatter(
                     x=subset["Year"] + self.lag,
-                    y=subset["Value"],
+                    y=subset[value_column_name],
                     mode="lines",
                     name=subset["GeoName"].iloc[0],
                     line_color=line_color,
@@ -591,7 +595,7 @@ class FipsQuery:
         fig.update_layout(
             title=title,
             xaxis_title="Year",
-            yaxis_title=f"{outcome_var}",
+            yaxis_title=f"{var}",
             legend=dict(title="GeoName"),
             template="simple_white",
         )
@@ -599,7 +603,7 @@ class FipsQuery:
         return fig
 
     def plot_kins(self):
-        fig = self.plot_kins_other_outcome_var(self.outcome_var)
+        fig = self.plot_kins_other_var(self.outcome_var)
         return fig
 
     def show_kins_plot(self):
