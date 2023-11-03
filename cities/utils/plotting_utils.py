@@ -41,6 +41,7 @@ def plot_kins_variable(n_kins, kins_df, variable, type_of_plot="bar"):
         os.path.join(path, "data/processed/" + variable + "_wide.csv")
     )
 
+    # merge kins and variable data
     df_kins_variable = get_df_kins_variable(n_kins, kins_df, variable_df)
 
     match type_of_plot:
@@ -132,8 +133,7 @@ def single_plot_bar(df_kins_variable, barmode="stack"):
 
 def get_df_kins_variable(n_kins, kins_df, variable_df):
     kins_df = kins_df[0:n_kins]
-    df_kins_variable = variable_df[variable_df["GeoFIPS"].isin(kins_df["GeoFIPS"])]
-    df_kins_variable = df_kins_variable.reset_index(drop=True)
+    df_kins_variable = pd.merge(kins_df[['GeoFIPS']], variable_df, on='GeoFIPS', how='left')
     return df_kins_variable
 
 
