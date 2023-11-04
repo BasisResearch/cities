@@ -14,7 +14,7 @@ from cities.utils.data_grabber import (
 )
 
 
-def plot_kins_variable(n_kins, kins_df, variable, type_of_plot="bar"):
+def plot_kins_variable(n_kins, kins_df, variable, type_of_plot="bar", sort_vars=False):
     """Plot kins variables in a grid of subplots.
     Args:
         n_kins (int): number of kins to plot
@@ -43,6 +43,11 @@ def plot_kins_variable(n_kins, kins_df, variable, type_of_plot="bar"):
 
     # merge kins and variable data
     df_kins_variable = get_df_kins_variable(n_kins, kins_df, variable_df)
+
+    # sort columns
+    if sort_vars:
+        df_kins_variable = sort_by_categories(df_kins_variable)
+
 
     match type_of_plot:
         case "bar_multiplot" | "stacked_bar_multiplot" | "pie":  # multiple subplots
@@ -76,7 +81,29 @@ def plot_kins_variable(n_kins, kins_df, variable, type_of_plot="bar"):
     )
     return fig
 
+def sort_by_categories(df, freeze_columns=2):
+    """Sorts the columns of a DataFrame by categories.
 
+    Args:
+        df (DataFrame): DataFrame to be sorted.
+
+    Returns:
+        DataFrame: Sorted DataFrame.
+    """
+    # Split the DataFrame into two parts: frozen columns and columns to be sorted
+    frozen_df = df.iloc[:, :freeze_columns]
+    sort_df = df.iloc[:, freeze_columns:]
+
+    # Sort columns of sort_df based on values in the first row
+    sorted_columns = sort_df.iloc[0].sort_values(ascending=False).index
+    sort_df = sort_df[sorted_columns]
+
+    # Concatenate frozen_df and sort_df back together
+    sorted_df = pd.concat([frozen_df, sort_df], axis=1)
+
+    return sorted_df
+
+    
 def single_plot_lines(df_kins_variable, variable=""):
     fig = go.Figure()
     data_columns = df_kins_variable[
