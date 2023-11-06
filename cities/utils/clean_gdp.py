@@ -39,12 +39,12 @@ def clean_gdp():
 
     assert gdp["GeoName"].is_unique
 
-    # subsetting GeoFIPS to values that transport uses
+    # subsetting GeoFIPS to values in exclusions.csv
 
-    with open("../data/raw/exclusions.pkl", "rb") as file:
-        exclusions = pickle.load(file)
+    exclusions_df = pd.read_csv("../data/raw/exclusions.csv")
+    gdp = gdp[~gdp["GeoFIPS"].isin(exclusions_df["exclusions"])]
+    
 
-    gdp = gdp[~gdp["GeoFIPS"].isin(exclusions.get("transport"))]
     assert len(gdp) == len(gdp["GeoFIPS"].unique())
     assert len(gdp) > 2800, "The number of records is lower than 2800"
 
