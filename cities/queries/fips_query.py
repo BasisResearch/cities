@@ -526,7 +526,6 @@ class FipsQuery:
             : self.top
         ]
 
-
         for i, geoname in enumerate(geonames_top):
             subset = others_plot_data[others_plot_data["GeoName"] == geoname]
             # print("subset.head")
