@@ -6,7 +6,8 @@ from sklearn.preprocessing import StandardScaler
 
 
 def find_repo_root() -> Path:
-    return Path(__file__).parent.parent.parent
+    # return Path(__file__).parent.parent.parent
+    return Path(__file__).parent.parent.parent.parent.parent.parent.parent.parent # TODO: fix this
 
 
 def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
