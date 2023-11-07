@@ -526,12 +526,8 @@ class FipsQuery:
             : self.top
         ]
 
-        for i, geoname in enumerate(geonames_top):
-            # TODO: HACK, fix this via unemployment_rate data format change of GeoName column 
-            if var == "unemployment_rate" and self.outcome_var is None:
-                subset = others_plot_data[others_plot_data["GeoName"] == geoname.replace(",", " County,")]
-            else: 
-                subset = others_plot_data[others_plot_data["GeoName"] == geoname]
+        for i, fips in enumerate(fips_top):
+            subset = others_plot_data[others_plot_data["GeoFIPS"] == fips]
             # line_color = shades_of_grey[i % len(shades_of_grey)]
             line_color = pastel_colors[i % len(pastel_colors)]
             fig.add_trace(
