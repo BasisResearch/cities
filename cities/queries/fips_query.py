@@ -512,7 +512,7 @@ class FipsQuery:
                 x=my_plot_data["Year"],
                 y=my_plot_data[value_column_name],
                 mode="lines",
-                # name=my_plot_data["GeoName"].iloc[0],
+                name=my_plot_data["GeoName"].iloc[0],
                 line=dict(color="darkred", width=3),
                 text=my_plot_data["GeoName"].iloc[0],
                 textposition="top right",
@@ -527,7 +527,8 @@ class FipsQuery:
         ]
 
         for i, geoname in enumerate(geonames_top):
-            if var == "unemployment_rate":
+            # TODO: HACK, fix this via unemployment_rate data format change of GeoName column 
+            if var == "unemployment_rate" and self.outcome_var is None:
                 subset = others_plot_data[others_plot_data["GeoName"] == geoname.replace(",", " County,")]
             else: 
                 subset = others_plot_data[others_plot_data["GeoName"] == geoname]
@@ -538,9 +539,9 @@ class FipsQuery:
                     x=subset["Year"] + self.lag,
                     y=subset[value_column_name],
                     mode="lines",
-                    # name=subset["GeoName"].iloc[0],
+                    name=subset["GeoName"].iloc[0],
                     line_color=line_color,
-                    # text=subset["GeoName"].iloc[0],
+                    text=subset["GeoName"].iloc[0],
                     textposition="top right",
                 )
             )
