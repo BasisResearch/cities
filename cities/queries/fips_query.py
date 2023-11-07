@@ -502,7 +502,6 @@ class FipsQuery:
         # possibly remove
 
         fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
-        geonames_top = self.euclidean_kins["GeoName"].iloc[1 : (self.top + 1)].values
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
 
         value_column_name = my_plot_data.columns[-1]
