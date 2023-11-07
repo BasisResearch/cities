@@ -512,7 +512,7 @@ class FipsQuery:
                 x=my_plot_data["Year"],
                 y=my_plot_data[value_column_name],
                 mode="lines",
-                name=my_plot_data["GeoName"].iloc[0],
+                # name=my_plot_data["GeoName"].iloc[0],
                 line=dict(color="darkred", width=3),
                 text=my_plot_data["GeoName"].iloc[0],
                 textposition="top right",
@@ -527,9 +527,10 @@ class FipsQuery:
         ]
 
         for i, geoname in enumerate(geonames_top):
-            subset = others_plot_data[others_plot_data["GeoName"] == geoname]
-            # print("subset.head")
-            # print(subset.head)
+            if var == "unemployment_rate":
+                subset = others_plot_data[others_plot_data["GeoName"] == geoname.replace(",", " County,")]
+            else: 
+                subset = others_plot_data[others_plot_data["GeoName"] == geoname]
             # line_color = shades_of_grey[i % len(shades_of_grey)]
             line_color = pastel_colors[i % len(pastel_colors)]
             fig.add_trace(
@@ -537,9 +538,9 @@ class FipsQuery:
                     x=subset["Year"] + self.lag,
                     y=subset[value_column_name],
                     mode="lines",
-                    name=subset["GeoName"].iloc[0],
+                    # name=subset["GeoName"].iloc[0],
                     line_color=line_color,
-                    text=subset["GeoName"].iloc[0],
+                    # text=subset["GeoName"].iloc[0],
                     textposition="top right",
                 )
             )
