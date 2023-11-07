@@ -5,7 +5,7 @@ from scipy.spatial import distance
 
 from cities.queries.fips_query import FipsQuery
 from cities.utils.data_grabber import DataGrabber
-from cities.utils.similarity_utils import compute_weight_array, slice_with_lag
+from cities.utils.similarity_utils import slice_with_lag
 
 
 @pytest.mark.parametrize("lag", [0, 2])
@@ -79,19 +79,17 @@ def test_slice_with_lag_on_real_data():
 
 def test_compute_weight_array():
     f = FipsQuery(42001, "gdp", lag=0, top=5)
+    f.find_euclidean_kins()
 
     fp = FipsQuery(
         42001,
         "gdp",
-        feature_groups=["population"],
-        weights={"population": 4},
+        feature_groups_with_weights={"gdp": 4, "population": 4},
         lag=0,
         top=5,
     )
 
-    compute_weight_array(f)
-
-    compute_weight_array(fp)
+    fp.find_euclidean_kins()
 
     assert len(f.all_weights) == f.data.std_wide["gdp"].shape[1] - 2
     assert (

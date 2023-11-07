@@ -16,3 +16,5 @@ tests/pytest_report/
 tests/.pytest_cache/
 cities.egg-info/SOURCES.txt
 tests/.coverage
+
+*.DS_Store

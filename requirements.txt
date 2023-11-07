@@ -72,10 +72,11 @@ stack-data==0.6.3
 sympy==1.12
 tenacity==8.2.3
 threadpoolctl==3.2.0
-torch==2.0.1
+torch
 tornado==6.3.3
 tqdm==4.66.1
 traitlets==5.11.2
 typing_extensions==4.8.0
 tzdata==2023.3
 wcwidth==0.2.8
+geopandas==0.14.0

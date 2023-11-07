@@ -4,18 +4,16 @@ import sys
 import numpy as np
 import pandas as pd
 
-from cities.utils.cleaning_utils import (
-    find_repo_root,
-    list_available_features,
-    standardize_and_scale,
-)
+from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
+from cities.utils.data_grabber import list_available_features
 
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 
+root = find_repo_root()
+folder_path = f"{root}/data/processed"
+
 
 def test_data_folder():
-    root = find_repo_root()
-    folder_path = f"{root}/data/processed"
     file_names = os.listdir(folder_path)
 
     allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
@@ -40,7 +38,7 @@ def test_data_folder():
 
 
 # set up gdp data
-gdp = pd.read_csv("../data/raw/CAGDP1_2001_2021.csv", encoding="ISO-8859-1")
+gdp = pd.read_csv(f"{root}/data/raw/CAGDP1_2001_2021.csv", encoding="ISO-8859-1")
 
 gdp = gdp.drop(gdp.columns[2:8], axis=1)
 gdp = gdp.drop("2012", axis=1)
