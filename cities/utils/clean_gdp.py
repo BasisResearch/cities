@@ -43,7 +43,6 @@ def clean_gdp():
 
     exclusions_df = pd.read_csv("../data/raw/exclusions.csv")
     gdp = gdp[~gdp["GeoFIPS"].isin(exclusions_df["exclusions"])]
-    
 
     assert len(gdp) == len(gdp["GeoFIPS"].unique())
     assert len(gdp) > 2800, "The number of records is lower than 2800"
