@@ -60,7 +60,7 @@ def test_standardize_and_scale():
 
     assert gdp.shape == gdp_scaled.shape
 
-    assert not gdp_scaled.isna().any().any() 
+    assert not gdp_scaled.isna().any().any()
 
 
 all_features = list_available_features()
