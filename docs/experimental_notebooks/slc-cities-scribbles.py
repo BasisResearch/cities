@@ -159,7 +159,6 @@ def cities_model_E(N_t, N_s, state_index, time_index,
    
    
         
-        
     
     
     
