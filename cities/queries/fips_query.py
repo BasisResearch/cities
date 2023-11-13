@@ -502,7 +502,6 @@ class FipsQuery:
         # possibly remove
 
         fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
-        geonames_top = self.euclidean_kins["GeoName"].iloc[1 : (self.top + 1)].values
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
 
         value_column_name = my_plot_data.columns[-1]
@@ -526,11 +525,8 @@ class FipsQuery:
             : self.top
         ]
 
-
-        for i, geoname in enumerate(geonames_top):
-            subset = others_plot_data[others_plot_data["GeoName"] == geoname]
-            # print("subset.head")
-            # print(subset.head)
+        for i, fips in enumerate(fips_top):
+            subset = others_plot_data[others_plot_data["GeoFIPS"] == fips]
             # line_color = shades_of_grey[i % len(shades_of_grey)]
             line_color = pastel_colors[i % len(pastel_colors)]
             fig.add_trace(
