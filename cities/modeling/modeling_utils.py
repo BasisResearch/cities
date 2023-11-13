@@ -1,10 +1,46 @@
 import torch
 import pyro
+import matplotlib.pyplot as plt
+
+
+from pyro.infer.autoguide import AutoNormal, AutoMultivariateNormal, AutoDelta
+from pyro.infer import SVI, Trace_ELBO
+from pyro.optim import Adam
+from chirho.indexed.handlers import IndexPlatesMessenger
+from chirho.counterfactual.handlers import MultiWorldCounterfactual
+from chirho.indexed.ops import IndexSet, gather, indices_of
+from chirho.interventional.handlers import do
+from chirho.observational.handlers import condition
+
 from chirho.observational.handlers import condition
 import seaborn as sns
 import pandas as pd
 
 from cities.utils.data_grabber import DataGrabber, list_available_features, list_tensed_features
+
+
+def train_interactions_model(model, num_iterations=2500, lr=0.01, print_interval=100, model_args = None):
+    pyro.clear_param_store()
+    guide = AutoNormal(model)
+
+    svi = SVI(
+        model=model,
+        guide=guide,
+        optim=Adam({"lr": lr}),
+        loss=Trace_ELBO()
+    )
+
+    losses = []
+    for step in range(num_iterations):
+        loss = svi.step(*model_args)
+        losses.append(loss)
+        if step % print_interval == 0:
+            print('[iteration %04d] loss: %.4f' % (step + 1, loss))
+
+    plt.plot(range(num_iterations), losses, label="Loss")
+    plt.show()
+
+    return guide
 
 
 
