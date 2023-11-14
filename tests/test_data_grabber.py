@@ -70,7 +70,7 @@ def test_DataGrabber():
 
     for feature in features:
         for column in data.wide[feature].columns[2:]:
-            std_error = "Standarization error"
+            std_error = f"Standarization error for {column} in {feature}"
             assert (
                 data.wide[feature][column].dtype == float
             ), f"The column '{column}' of feature '{feature}' is not of float type."

@@ -1,5 +1,3 @@
-import os
-import re
 from pathlib import Path
 
 import numpy as np
@@ -15,36 +13,24 @@ def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
     """
     Standardizes and scales float columns in a DataFrame to [-1,1], copying other columns. Returns a new DataFrame.
     """
-    standard_scaler = StandardScaler()
+    standard_scaler = StandardScaler()  # Standardize to mean 0, std 1
 
-    new_data = pd.DataFrame()
-    for column in data.columns:
-        if data.dtypes[column] != "float64":
-            new_data[column] = data[column].copy()
-        else:
-            new = data[column].copy().values.reshape(-1, 1)
-            new = standard_scaler.fit_transform(new)
+    def sigmoid(x, scale=1 / 3):
+        range_0_1 = 1 / (1 + np.exp(-x * scale))
+        range_minus1_1 = 2 * range_0_1 - 1
+        return range_minus1_1
 
-            positive_mask = new >= 0
-            negative_mask = new < 0
+    # Copy all columns first
+    new_data = data.copy()
 
-            min_positive = np.min(new[positive_mask])
-            max_positive = np.max(new[positive_mask])
-            scaled_positive = (new[positive_mask] - min_positive) / (
-                max_positive - min_positive
-            )
+    # Select float columns
+    float_cols = data.select_dtypes(include=["float64"])
 
-            min_negative = np.min(new[negative_mask])
-            max_negative = np.max(new[negative_mask])
-            scaled_negative = (new[negative_mask] - min_negative) / (
-                max_negative - min_negative
-            ) - 1
+    # Standardize float columns to mean 0, std 1
+    standardized_floats = standard_scaler.fit_transform(float_cols)
 
-            scaled_values = np.empty_like(new, dtype=float)
-            scaled_values[positive_mask] = scaled_positive
-            scaled_values[negative_mask] = scaled_negative
-
-            new_data[column] = scaled_values.reshape(-1)
+    # Apply sigmoid transformation, [-3std, 3std] to [-1, 1]
+    new_data[float_cols.columns] = sigmoid(standardized_floats, scale=1 / 3)
 
     return new_data
 
