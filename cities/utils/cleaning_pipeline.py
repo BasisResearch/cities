@@ -9,6 +9,7 @@ from cities.utils.clean_spending_transportation import clean_spending_transporta
 from cities.utils.clean_transport import clean_transport
 from cities.utils.clean_unemployment import clean_unemployment
 from cities.utils.clean_urbanization import clean_urbanization
+from cities.utils.cleaning_poverty import clean_poverty 
 
 clean_unemployment()
 
@@ -31,3 +32,5 @@ clean_industry()
 clean_urbanization()
 
 clean_industry_ts()
+
+clean_poverty()
