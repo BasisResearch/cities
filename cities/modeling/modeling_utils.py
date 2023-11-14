@@ -14,7 +14,12 @@ from cities.utils.data_grabber import (
 
 
 def train_interactions_model(
-    model, num_iterations=2500, lr=0.01, print_interval=100, model_args=None
+    model,
+    num_iterations=2500,
+    lr=0.01,
+    print_interval=100,
+    model_args=None,
+    plot_loss=False,
 ):
     pyro.clear_param_store()
     guide = AutoNormal(model)
@@ -28,8 +33,9 @@ def train_interactions_model(
         if step % print_interval == 0:
             print("[iteration %04d] loss: %.4f" % (step + 1, loss))
 
-    plt.plot(range(num_iterations), losses, label="Loss")
-    plt.show()
+    if plot_loss:
+        plt.plot(range(num_iterations), losses, label="Loss")
+        plt.show()
 
     return guide
 
