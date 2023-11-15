@@ -1,4 +1,5 @@
 import os
+import logging
 
 import dill
 import pyro
@@ -82,7 +83,7 @@ class InteractionsModel:
         with open(file_path, "wb") as file:
             file.write(serialized_guide)
 
-        print(f"Guide {guide_name} has been saved.")
+        logging.info(f"Guide {guide_name} has been saved.")
 
 
 def cities_model_interactions(

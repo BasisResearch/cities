@@ -71,7 +71,7 @@ def prep_data_for_interaction_inference(
     )
     outcome_df = dg.std_long[outcome_dataset].sort_values(by=["GeoFIPS", "Year"])
 
-    # now we adding forward shift to the outcome
+    # now we are adding forward shift to the outcome
     # cleaning up and puting intervention/outcome in one df
     # and fixed covariates in another
 
