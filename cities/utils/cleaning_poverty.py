@@ -1,11 +1,9 @@
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
 
 
 def clean_poverty():
-
     poverty = pd.read_csv("../data/raw/poverty.csv")
 
     poverty.fillna(0, inplace=True)
