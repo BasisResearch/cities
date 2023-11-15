@@ -1,21 +1,12 @@
-import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
 from cities.utils.data_grabber import DataGrabber
 
 
-
-
 def clean_poverty():
-    data = DataGrabber()
-    data.get_features_wide(["gdp"])
-    gdp = data.wide["gdp"]
 
     poverty = pd.read_csv("../data/raw/poverty.csv")
-
-
-
 
     poverty.fillna(0, inplace=True)
 
@@ -30,17 +21,13 @@ def clean_poverty():
         subsetpoverty_long = subsetpoverty.copy()
 
         file_name_long = f"industry_{column}_long.csv"
-        subsetpoverty_long.to_csv(
-            f"../data/processed/{file_name_long}", index=False
-        )
+        subsetpoverty_long.to_csv(f"../data/processed/{file_name_long}", index=False)
 
         subsetpoverty_std_long = standardize_and_scale(subsetpoverty)
         subsetpoverty_std_long.fillna(0, inplace=True)
 
         file_name_std = f"industry_{column}_std_long.csv"
-        subsetpoverty_std_long.to_csv(
-            f"../data/processed/{file_name_std}", index=False
-        )
+        subsetpoverty_std_long.to_csv(f"../data/processed/{file_name_std}", index=False)
 
         subsetpoverty_wide = subsetpoverty.pivot_table(
             index=["GeoFIPS", "GeoName"], columns="Year", values="Value"
@@ -49,9 +36,7 @@ def clean_poverty():
         subsetpoverty_wide.columns.name = None
 
         file_name_wide = f"industry_{column}_wide.csv"
-        subsetpoverty_wide.to_csv(
-            f"../data/processed/{file_name_wide}", index=False
-        )
+        subsetpoverty_wide.to_csv(f"../data/processed/{file_name_wide}", index=False)
 
         subsetpoverty_std_wide = subsetpoverty_std_long.pivot_table(
             index=["GeoFIPS", "GeoName"], columns="Year", values="Value"
