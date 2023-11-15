@@ -3,6 +3,7 @@ venv
 
 
 
+
 cities.egg-info/*
 cities.egg-info/
 */__pycache__
@@ -18,3 +19,5 @@ cities.egg-info/SOURCES.txt
 tests/.coverage
 
 *.DS_Store
+
+data/model_guides/

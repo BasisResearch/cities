@@ -1,6 +1,88 @@
+import os
+
+import dill
 import pyro
 import pyro.distributions as dist
 import torch
+
+from cities.modeling.modeling_utils import (
+    prep_data_for_interaction_inference,
+    train_interactions_model,
+)
+from cities.utils.cleaning_utils import find_repo_root
+
+
+class InteractionsModel:
+    def __init__(
+        self,
+        outcome_dataset,
+        intervention_dataset,
+        intervention_variable,
+        forward_shift=2,
+        num_iterations=1500,
+        plot_loss=False,
+    ):
+        self.outcome_dataset = outcome_dataset
+        self.intervention_dataset = intervention_dataset
+        self.intervention_variable = intervention_variable
+        self.forward_shift = forward_shift
+        self.num_iterations = num_iterations
+        self.plot_loss = plot_loss
+        self.root = find_repo_root()
+
+        data = prep_data_for_interaction_inference(
+            outcome_dataset=self.outcome_dataset,
+            intervention_dataset=self.intervention_dataset,
+            intervention_variable=self.intervention_variable,
+            forward_shift=2,
+        )
+
+        for key, value in data.items():
+            setattr(self, key, value)
+
+        self.model = cities_model_interactions
+
+        self.model_args = (
+            self.N_t,
+            self.N_cov,
+            self.N_s,
+            self.N_u,
+            self.N_obs,
+            self.state_index_sparse,
+            self.state_index,
+            self.time_index,
+            self.unit_index,
+        )
+
+        self.model_rendering = pyro.render_model(
+            self.model, model_args=self.model_args, render_distributions=True
+        )
+
+        self.model_conditioned = pyro.condition(
+            self.model,
+            data={"T": self.intervention, "Y": self.y, "X": self.covariates_sparse},
+        )
+
+    def train_interactions_model(self):
+        self.guide = train_interactions_model(
+            model=self.model_conditioned,
+            model_args=self.model_args,
+            num_iterations=self.num_iterations,
+            plot_loss=self.plot_loss,
+        )
+
+    def save_guide(self):
+        guide_name = (
+            f"{self.intervention_dataset}_{self.outcome_dataset}_{self.forward_shift}"
+        )
+        serialized_guide = dill.dumps(self.guide)
+        file_path = os.path.join(
+            self.root, "data/model_guides", f"{guide_name}_guide.pkl"
+        )
+        with open(file_path, "wb") as file:
+            file.write(serialized_guide)
+
+        print(f"Guide {guide_name} has been saved.")
 
 
 def cities_model_interactions(
