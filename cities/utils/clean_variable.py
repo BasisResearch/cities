@@ -1,5 +1,4 @@
 import os
-import pickle
 from pathlib import Path
 
 import numpy as np
@@ -28,29 +27,48 @@ def clean_variable(variable_name, path_to_raw_csv, YearOrCategory="Year"):
     # drop nans
     variable_db = variable_db.dropna()
 
-    exclusions_df = pd.read_csv("../../data/raw/exclusions.csv")
-
     # Check if there are any counties that are missing from variable_db but in exclusions_df
     # If so, add them to exclusions, and re-run variable_db with new exclusions
-    if len(np.setdiff1d(exclusions_df["exclusions"].unique(), variable_db["GeoFIPS"].unique())) > 0:
-        # Add new exclusions
+
+    if len(np.setdiff1d(gdp["GeoFIPS"].unique(), variable_db["GeoFIPS"].unique())) > 0:
+        # add new exclusions
+
         new_exclusions = np.setdiff1d(
-            exclusions_df["exclusions"].unique(), variable_db["GeoFIPS"].unique()
+            gdp["GeoFIPS"].unique(), variable_db["GeoFIPS"].unique()
         )
+
         print("Adding new exclusions to exclusions.csv: " + str(new_exclusions))
-        
-        # Create a new DataFrame with the additional exclusions
-        new_exclusions_df = pd.DataFrame({"dataset": [variable_name] * len(new_exclusions), "exclusions": new_exclusions})
-        
-        # Concatenate the new exclusions DataFrame with the existing exclusions DataFrame
-        exclusions_df = pd.concat([exclusions_df, new_exclusions_df], ignore_index=True)
-        
-        # Save the updated exclusions back to the CSV file
-        exclusions_df.to_csv("../../data/raw/exclusions.csv", index=False)
 
-        print("Rerunning variable_db cleaning with new exclusions")
+        # open exclusions file
 
+        exclusions = pd.read_csv(os.path.join(path, "../../data/raw/exclusions.csv"))
+
+        new_rows = pd.DataFrame(
+            {
+                "dataset": [variable_name] * len(new_exclusions),
+                "exclusions": new_exclusions,
+            }
+        )
+
+        # Concatenate the new rows to the existing DataFrame
+        exclusions = pd.concat([exclusions, new_rows], ignore_index=True)
+
+        # Remove duplicates
+        exclusions = exclusions.drop_duplicates()
+
+        exclusions = exclusions.sort_values(by=["dataset", "exclusions"]).reset_index(
+            drop=True
+        )
+
+        exclusions.to_csv(
+            os.path.join(path, "../../data/raw/exclusions.csv"), index=False
+        )
+
+        print("Rerunning gdp cleaning with new exclusions")
+
+        # rerun gdp cleaning
         clean_gdp()
+        clean_variable(variable_name, path_to_raw_csv)
         return
 
     # restrict to only common FIPS codes
