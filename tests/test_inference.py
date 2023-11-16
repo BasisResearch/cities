@@ -61,5 +61,22 @@ def test_training_pipeline():
                             num_iterations= num_iterations)
                     
                     model.train_interactions_model()
+
+
+def test_guide_presence():
+
+    interventions = list_interventions()
+    outcomes = list_outcomes()
+    shifts = [1,2,3]
+
+    N_combinations = len(interventions) * len(outcomes) * len(shifts)
+
+    root = find_repo_root()
+    _dir = os.path.join(root, "data", "model_guides")
+    files = [f for f in os.listdir(_dir) if os.path.isfile(os.path.join(_dir, f))]
+    num_files = len(files)
+
+    assert num_files == N_combinations + 2, f"{N_combinations + 2 - num_files} guides are missing"
+    #two extra files: .gitkeep and .training.log
+
                  
-                

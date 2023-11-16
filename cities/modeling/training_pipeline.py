@@ -1,7 +1,6 @@
 import os
 import logging
 import time
-from logging import FileHandler
 
 from cities.utils.data_grabber import list_interventions, list_outcomes, DataGrabber
 from cities.modeling.model_interactions import InteractionsModel
@@ -11,7 +10,7 @@ from cities.utils.cleaning_utils import find_repo_root
 
 root = find_repo_root()
 log_dir = os.path.join(root, "data", "model_guides")
-log_file_path = os.path.join(log_dir, "training.log")
+log_file_path = os.path.join(log_dir, ".training.log")
 os.makedirs(log_dir, exist_ok=True)
 
 logging.basicConfig(filename=log_file_path, filemode="w", 
@@ -23,6 +22,7 @@ logging.basicConfig(filename=log_file_path, filemode="w",
 # clean data/model_guides folder manually
 # automatic fresh start is not implemented
 # for security reasons
+
 
 num_iterations = 5000
 
@@ -36,7 +36,7 @@ N_combinations = len(interventions) * len(outcomes) * len(shifts)
 files = [f for f in os.listdir(log_dir) if os.path.isfile(os.path.join(log_dir, f))]
 num_files = len(files)
 
-logging.info(f"{num_files} guides already exist. Starting to training {N_combinations - num_files+1} out of {N_combinations} guides.")
+logging.info(f"{num_files} guides already exist. Starting to train {N_combinations - num_files+1} out of {N_combinations} guides.")
 
 dg = DataGrabber()
 dg.get_features_std_long(list_interventions())
@@ -70,6 +70,6 @@ for intervention_dataset, intervention_variable in zip(interventions, interventi
                 duration = end_time - start_time
                 files = [f for f in os.listdir(log_dir) if os.path.isfile(os.path.join(log_dir, f))]
                 num_files = len(files)
-                logging.info(f"Training of {guide_name} completed in {duration:.2f} seconds.
-                {N_combinations - num_files+1} out of {N_combinations} guides remain to be trained.")
+                logging.info(f"Training of {guide_name} completed in {duration:.2f} seconds. "
+                f"{N_combinations - num_files+1} out of {N_combinations} guides remain to be trained.")
                 
