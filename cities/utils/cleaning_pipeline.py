@@ -11,6 +11,8 @@ from cities.utils.clean_unemployment import clean_unemployment
 from cities.utils.clean_urbanization import clean_urbanization
 from cities.utils.cleaning_poverty import clean_poverty
 
+clean_poverty()
+
 clean_unemployment()
 
 clean_gdp()
@@ -33,4 +35,4 @@ clean_urbanization()
 
 clean_industry_ts()
 
-clean_poverty()
+
