@@ -14,7 +14,7 @@ import math
 from sklearn.preprocessing import PolynomialFeatures
 
 # https://github.com/rtqichen/torchdiffeq/blob/master/examples/latent_ode.py
-class LatentODEfunc(PyroM):
+class LatentODEfunc(PyroModule):
 
     def __init__(self, latent_dim, nhidden=20):
         super(LatentODEfunc, self).__init__()
@@ -35,62 +35,62 @@ class LatentODEfunc(PyroM):
 
 
 
-class PolynomialBasis:
-    def __init__(self, degree: int, include_bias: bool = True) -> None:
-        assert degree >= 1
-        self.degree = degree
-        self.include_bias = include_bias
+# class PolynomialBasis:
+#     def __init__(self, degree: int, include_bias: bool = True) -> None:
+#         assert degree >= 1
+#         self.degree = degree
+#         self.include_bias = include_bias
     
-    def __call__(self, x) -> torch.Tensor:
-        # FIXME this doesn't remove duplicate interaction terms for degree > 2
-        expanded = x
-        degree_d_term = x # base case
-        for d in range(self.degree - 1):
-            outer = torch.outer(x, degree_d_term)
-            indices = torch.triu_indices(outer.shape[0], outer.shape[1])
-            degree_d_term = outer[indices.unbind()]
-            expanded = torch.cat([expanded,  degree_d_term], axis=-1)
-        return expanded if not self.include_bias else torch.cat([tnsr([1.]), expanded], axis=-1)
+#     def __call__(self, x) -> torch.Tensor:
+#         # FIXME this doesn't remove duplicate interaction terms for degree > 2
+#         expanded = x
+#         degree_d_term = x # base case
+#         for d in range(self.degree - 1):
+#             outer = torch.outer(x, degree_d_term)
+#             indices = torch.triu_indices(outer.shape[0], outer.shape[1])
+#             degree_d_term = outer[indices.unbind()]
+#             expanded = torch.cat([expanded,  degree_d_term], axis=-1)
+#         return expanded if not self.include_bias else torch.cat([tnsr([1.]), expanded], axis=-1)
     
 
-class SinBasis:
-    def __init__(self, offset: Tnsr, frequency: Tnsr):
-        self.offset = offset
-        self.frequency = frequency
+# class SinBasis:
+#     def __init__(self, offset: Tnsr, frequency: Tnsr):
+#         self.offset = offset
+#         self.frequency = frequency
     
-    def __call__(self, x: Tnsr) -> Tnsr:
-        return torch.sin(self.frequency[:, None] * (x[None, :] + self.offset[:, None])).flatten()
+#     def __call__(self, x: Tnsr) -> Tnsr:
+#         return torch.sin(self.frequency[:, None] * (x[None, :] + self.offset[:, None])).flatten()
 
 
-class LinearDynamics(PyroModule):
-    def __init__(
-        self,
-        name: str,
-        example_state: State[Tnsr],
-        basis_fn,
-        weight_scale=1.,
-        link_fn: Optional[Callable]=None, 
-        mle: bool=False,
-    ):
-        self.name = name
-        super().__init__(name)
-        self.basis_fn = basis_fn
+# class LinearDynamics(PyroModule):
+#     def __init__(
+#         self,
+#         name: str,
+#         example_state: State[Tnsr],
+#         basis_fn,
+#         weight_scale=1.,
+#         link_fn: Optional[Callable]=None, 
+#         mle: bool=False,
+#     ):
+#         self.name = name
+#         super().__init__(name)
+#         self.basis_fn = basis_fn
         
-        example_state = example_state.copy()
-        example_state['t'] = tnsr(0.0)  # because during execution time is added to the state.
-        n_basis_feats = self.basis_fn(flatten_state(example_state)).shape[-1]
-        self.weight = pyro.sample(
-            f"{self.name}_weights",
-            dist.Normal(0., weight_scale / math.sqrt(n_basis_feats)).expand((n_basis_feats,)).to_event(1))
-        self.link_fn = link_fn if link_fn is not None else lambda x: x
-        self.mle = mle
+#         example_state = example_state.copy()
+#         example_state['t'] = tnsr(0.0)  # because during execution time is added to the state.
+#         n_basis_feats = self.basis_fn(flatten_state(example_state)).shape[-1]
+#         self.weight = pyro.sample(
+#             f"{self.name}_weights",
+#             dist.Normal(0., weight_scale / math.sqrt(n_basis_feats)).expand((n_basis_feats,)).to_event(1))
+#         self.link_fn = link_fn if link_fn is not None else lambda x: x
+#         self.mle = mle
 
-        if self.mle:
-            self.weight = PyroParam(self.weight.clone().detach())
+#         if self.mle:
+#             self.weight = PyroParam(self.weight.clone().detach())
 
-    def __call__(self, x):
-        mean = self.basis_fn(x) @ self.weight
-        return self.link_fn(mean)
+#     def __call__(self, x):
+#         mean = self.basis_fn(x) @ self.weight
+#         return self.link_fn(mean)
     
 
 def flatten_state(state: State[torch.Tensor]):
@@ -98,10 +98,10 @@ def flatten_state(state: State[torch.Tensor]):
 
 
 class DollarGDPLatent(PyroModule):
-    def __init__(self, expdec_param, latents: torch.nn.ModuleList):
+    def __init__(self, expdec_param, dynamics_fn):
         super().__init__()
         self.expdec_param = expdec_param
-        self.latents = latents
+        self.dynamics_fn = dynamics_fn
 
     @pyro.nn.pyro_method
     def diff(self, dstate: State[torch.Tensor], state: State[torch.Tensor]) -> None:
@@ -112,10 +112,14 @@ class DollarGDPLatent(PyroModule):
         # # Exponential decay of total dollars over time
         # dstate["cumulative_dollars_over_expdec_window"] = instant_dollars - self.expdec_param * state["cumulative_dollars_over_expdec_window"]
 
-        for i, latent_dynamic in enumerate(self.latents):
-            Zi = state[f"Z{i}"]
-            dstate[f"Z{i}"] = latent_dynamic(flatten_state(state)) #- 0.1 * torch.sign(Zi) * Zi ** 2.
+        # for i, latent_dynamic in enumerate(self.latents):
+        #     Zi = state[f"Z{i}"]
+        #     dstate[f"Z{i}"] = latent_dynamic(flatten_state(state)) #- 0.1 * torch.sign(Zi) * Zi ** 2.
         # dstate[f"Z{0}"] = self.latents[0](torch.atleast_1d(state['t']))
+
+        dsdt = self.dynamics_fn(flatten_state(state))
+        for i, Zi in enumerate(dsdt):
+            dstate[f"Z{i}"] = Zi
 
     def forward(self, state: State[torch.Tensor]):
         dstate = State()
@@ -178,10 +182,10 @@ class DollarGDPLatent(PyroModule):
 # A_noisy = A_true + N(0, 1)
 
 
-NUM_LATENTS = 3
+NUM_LATENTS = 1
 
 def target_fn(t):
-    return torch.exp(-t/15.) * torch.cos(t)
+    return torch.exp(-t/15.) * torch.cos(.4 * t)
 
 initial_state = State(
     # cumulative_dollars=tnsr(0.0),
@@ -204,22 +208,19 @@ def bayes_dynsys():
     #         mle=True
     #     ) for i in range(NUM_LATENTS)
     # ])
-    latents = torch.nn.ModuleList([
-        LatentODEfunc(latent_dim=NUM_LATENTS + 1) for i in range(NUM_LATENTS)
-    ])
 
     dynsys = DollarGDPLatent(
         expdec_param=0.1,
-        latents=latents
+        dynamics_fn=LatentODEfunc(latent_dim=NUM_LATENTS + 1)
     )
     
     return dynsys
 
 
-def simulated_bayes_dynsys(dynsys: DollarGDPLatent, init_state, logging_times) -> State[torch.Tensor]:
+def simulated_bayes_dynsys(dynsys: DollarGDPLatent, init_state, start_time, logging_times) -> State[torch.Tensor]:
 
     with LogTrajectory(logging_times) as lt:
-        simulate(dynsys, init_state, logging_times[0], logging_times[-1] + 1e-3, solver=TorchDiffEq())
+        simulate(dynsys, init_state, start_time, logging_times[-1] + 1e-3, solver=TorchDiffEq())
     
     trajectory = lt.trajectory
     
@@ -229,16 +230,16 @@ def simulated_bayes_dynsys(dynsys: DollarGDPLatent, init_state, logging_times) -
     return trajectory
 
 start_time = tnsr(0.0)
-end_time = torch.tensor(30. - 1e-2)
+end_time = torch.tensor(30.)
 step_size = torch.tensor(0.1)
 trajectory_times = torch.arange(start_time+step_size, end_time, step_size)
 
 target_curve = target_fn(trajectory_times)
 
 def loss_fn(model):
-    traj = simulated_bayes_dynsys(model, initial_state, trajectory_times)
+    traj = simulated_bayes_dynsys(model, initial_state, start_time, trajectory_times)
     # FIXME LogTrajectory seems to result in a trajectory of length one fewer than the requested trajectory times.
-    return ((traj['Z0'] - target_curve[:-1]) ** 2.).sum()
+    return ((traj['Z0'] - target_curve) ** 2.).sum()
 
 
 def fit_dynsys():
@@ -246,9 +247,9 @@ def fit_dynsys():
     model = bayes_dynsys()
     loss_fn(model) # compute the loss once to initialize any lazy parameters.
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-2)
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
-    num_steps = 300
+    num_steps = 1000
 
     for i in range(num_steps):
         loss = loss_fn(model)
@@ -268,6 +269,7 @@ model = fit_dynsys()
 trajectory = simulated_bayes_dynsys(
     dynsys=model,
     init_state=initial_state,
+    start_time=start_time,
     logging_times=trajectory_times
 )
 
@@ -277,7 +279,5 @@ for i in range(1, NUM_LATENTS):
     plt.plot(trajectory[f"Z{i}"].detach(), label=f"Z{i}", linewidth=0.1)
 plt.plot(trajectory['Z0'].detach(), label="Z0", linewidth=1.0)
 plt.plot(target_curve, label="target_curve", linewidth=0.5, linestyle="--")
-
-
 
 plt.show()
