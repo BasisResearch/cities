@@ -74,6 +74,31 @@ class FluxDynamics(pyro.nn.PyroModule):
         return state
 
 
+class TotalLaborForceDynamics(FluxDynamics):
+
+    def __init__(self, *args, total_labor_force_f_of_t, lf_fluxes, **kwargs):
+        # The tlf function takes in time as a scalar and returns a state vector representing
+        #  the total labor force across all fips.
+        self.tlf = total_labor_force_f_of_t
+        self.lf_fluxes = lf_fluxes  # .shape == (n_cats, n_fips)
+
+        super().__init__(*args, **kwargs)
+
+    @pyro.nn.pyro_method
+    def diff(self, dstate: State[torch.Tensor], state: State[torch.Tensor]) -> None:
+        super().diff(dstate, state)
+        t = state['t']
+        dpopdt = torch.autograd.grad(self.tlf(t), t)[0]  # .shape == (n_fips,)
+
+        # For a given county, the labor force deltas are distributed across the employment categories,
+        #  so these need to be normalized across categories.
+        normed_lf_fluxes = self.lf_fluxes / self.lf_fluxes.sum(dim=0, keepdim=True)
+
+        # Note that this vectorization is over (n_fips,), so flux here won't be normalized.
+        for flux, k in zip(normed_lf_fluxes, state.keys()):
+            dstate[k] += flux * dpopdt
+
+
 def transform_county_fluxes(county_flux, end_scale):
     return torch.sigmoid(county_flux) * end_scale
 
@@ -130,12 +155,26 @@ def full_prior(employment_classes, fips_codes):
         mapped_state_idx=mapped_state_idx
     )
 
-    fdyns = FluxDynamics(fluxes, pairs, noise_scale=.05)
-
     with counties_plate:
         initial_state = State(**{
             ec: pyro.sample(f"{ec}0", dist.Uniform(0.5, 1.0)) for ec in employment_classes
         })
+
+        # pop_growth = pyro.sample("pop_growth", dist.Normal(0.0, 0.1))
+        # pop_start =
+
+    # fdyns = TotalLaborForceDynamics(
+    #     fluxes,
+    #     pairs,
+    #     total_labor_force_f_of_t=,
+    #     lf_fluxes=,
+    #     noise_scale = .05
+    # )
+    fdyns = FluxDynamics(
+        fluxes,
+        pairs,
+        noise_scale=0.05
+    )
 
     return fdyns, initial_state
 
