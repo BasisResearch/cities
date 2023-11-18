@@ -40,11 +40,15 @@ class FluxDynamics(pyro.nn.PyroModule):
             dc1 = dstate.get(c1, torch.zeros_like(state[c1]))
             dc2 = dstate.get(c2, torch.zeros_like(state[c2]))
 
-            dc1 -= flux * state[c2]
-            dc2 += flux * state[c1]
+            # HACK for negative vals?
+            totflux = flux * state[c1]
+            dc1 -= totflux
+            dc2 += totflux
 
             dstate[c1] = dc1
             dstate[c2] = dc2
+
+        return
 
     def forward(self, state: State[torch.Tensor]):
         dstate = State()
@@ -70,13 +74,22 @@ class FluxDynamics(pyro.nn.PyroModule):
         return state
 
 
+def transform_county_fluxes(county_flux, end_scale):
+    return torch.sigmoid(county_flux) * end_scale
+
+
 def flux_prior(n_fips, n_states, n_pairs, mapped_state_idx):
 
     flux_plate = pyro.plate("flux_plate", n_pairs, dim=-3)
     states_plate = pyro.plate("states_plate", n_states, dim=-2)
     counties_plate = pyro.plate("counties_plate", n_fips, dim=-1)
 
-    scale = 0.1
+    # This is designed to have three chained normals not grossly violate the domain
+    #  of a sigmoid.
+    scale = 0.5
+
+    # After pushing through a sigmoid, this scales things from unit range.
+    end_scale = 0.1
 
     with flux_plate:
         federal_flux = pyro.sample("federal_flux", dist.Normal(0., scale))
@@ -95,7 +108,9 @@ def flux_prior(n_fips, n_states, n_pairs, mapped_state_idx):
     # The fips codes are "flattened" wrt states, so just remove them, but note that the
     #  state flux sample still centers the county flux for counties in that state.
     # Returning counties plate as well so that initial_state sampling can use it. Kind of strange.
-    return county_flux.squeeze(dim=states_plate.dim), counties_plate
+    county_flux = county_flux.squeeze(dim=states_plate.dim)
+
+    return transform_county_fluxes(county_flux, end_scale), counties_plate
 
 
 def full_prior(employment_classes, fips_codes):
@@ -119,7 +134,7 @@ def full_prior(employment_classes, fips_codes):
 
     with counties_plate:
         initial_state = State(**{
-            ec: pyro.sample(f"{ec}0", dist.Uniform(0., .5)) for ec in employment_classes
+            ec: pyro.sample(f"{ec}0", dist.Uniform(0.5, 1.0)) for ec in employment_classes
         })
 
     return fdyns, initial_state
@@ -131,15 +146,17 @@ def run_svi_inference(model, n_steps=10, verbose=250, lr=0.03, **model_kwargs):
     # initialize parameters
     elbo(**model_kwargs)
     adam = torch.optim.Adam(elbo.parameters(), lr=lr)
+    losses = []
     # Do gradient steps
     for step in range(1, n_steps + 1):
         adam.zero_grad()
         loss = elbo(**model_kwargs)
+        losses.append(loss)
         loss.backward()
         adam.step()
         if (step % verbose == 0) or (step == 1) & verbose:
             print("[iteration %04d] loss: %.4f" % (step, loss))
-    return guide
+    return guide, losses
 
 
 def main():
@@ -150,7 +167,7 @@ def main():
 
     start_time = tnsr(0.0)
     end_time = tnsr(30.0)
-    step_size = tnsr(0.1)
+    step_size = tnsr(0.01)
     # noinspection PyTypeChecker
     trajectory_times = torch.arange(start_time + step_size, end_time, step_size)
 
