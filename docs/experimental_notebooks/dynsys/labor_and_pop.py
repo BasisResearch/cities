@@ -22,33 +22,51 @@ def to_state_codes(fips_codes):
 
 # noinspection PyUnresolvedReferences
 class FluxDynamics(pyro.nn.PyroModule):
-    def __init__(self, fluxes: Tnsr, pairs: List[Tuple[str, str]], noise_scale: float):
+    def __init__(self, flux_rates: Tnsr, noise_scale: float):
         super().__init__()
-        self.fluxes = fluxes  # .shape == (n_pairs, n_fips)
-        self.pairs = pairs
+        self.flux_rates = flux_rates  # .shape == (n_classes, n_classes, n_fips)
         self.noise_scale = noise_scale
 
     @pyro.nn.pyro_method
     def diff(self, dstate: State[torch.Tensor], state: State[torch.Tensor]) -> None:
 
-        # TODO should be a way to vectorize this too I think. Basically just reform the flux
-        #  into a matrix with zeros on the diagonal, then matrix something something?
-        for flux, (c1, c2) in zip(self.fluxes, self.pairs):
+        # # TODO should be a way to vectorize this too I think. Basically just reform the flux
+        # #  into a matrix with zeros on the diagonal, then matrix something something?
+        # for flux, (c1, c2) in zip(self.fluxes, self.pairs):
+        #
+        #     # Note that flux here has shape (n_fips,), and that each state
+        #     #  is a vector over all counties.
+        #     dc1 = dstate.get(c1, torch.zeros_like(state[c1]))
+        #     dc2 = dstate.get(c2, torch.zeros_like(state[c2]))
+        #
+        #     # HACK for negative vals?
+        #     totflux = flux * state[c1]
+        #     dc1 -= totflux
+        #     dc2 += totflux
+        #
+        #     dstate[c1] = dc1
+        #     dstate[c2] = dc2
 
-            # Note that flux here has shape (n_fips,), and that each state
-            #  is a vector over all counties.
-            dc1 = dstate.get(c1, torch.zeros_like(state[c1]))
-            dc2 = dstate.get(c2, torch.zeros_like(state[c2]))
+        # First, adjust so that flux_rates has shape (n_fips, n_classes, n_classes).
+        flux_rates = self.flux_rates.permute(2, 0, 1)  # .shape == (n_fips, n_classes, n_classes)
+        # And do the same for the fluxers in the state of shape (n_classes, n_fips)
+        fluxers = state["fluxers"].permute(1, 0)  # .shape == (n_fips, n_classes)
 
-            # HACK for negative vals?
-            totflux = flux * state[c1]
-            dc1 -= totflux
-            dc2 += totflux
+        # Now, we can emulate the above with a matrix multiplication
+        # Flux for a particular pair gets multiplied by the source state.
+        totflux = fluxers[:, :, None] * flux_rates  # .shape == (n_fips, n_classes, n_classes)
 
-            dstate[c1] = dc1
-            dstate[c2] = dc2
+        # Summing over the columns (for row totals) gives the total going into the state indexed by the row.
+        fluxin = totflux.sum(dim=1)  # .shape == (n_fips, n_classes)
 
-        return
+        # Summing over the rows (for column totals) gives the total going out of the state indexed by the column.
+        fluxout = totflux.sum(dim=2)  # .shape == (n_fips, n_classes)
+
+        dfluxersdt = (fluxin - fluxout).permute(1, 0)
+        dstate["fluxers"] = dfluxersdt
+
+        inoutsum = dstate["fluxers"].sum(dim=0)
+        assert torch.allclose(inoutsum, torch.zeros_like(inoutsum), atol=1e-6), f"Fluxers not conserved: {inoutsum}"
 
     def forward(self, state: State[torch.Tensor]):
         dstate = State()
@@ -240,5 +258,47 @@ def main():
     return
 
 
+def dynsys_only():
+    employment_classes = ["agriculture", "knowledge", "healthcare"]
+    _colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]
+    colors = dict(zip(employment_classes, _colors))
+    # fips_codes = [1001, 1005, 2001, 2003, 3005]
+    fips_codes = [1001, 1002]
+
+    flux_rates = torch.rand(
+        len(employment_classes),
+        len(employment_classes),
+        len(fips_codes)
+        # With diagonal zeroed, as self flux terms aren't necessary.
+    ) * (1. - torch.eye(len(employment_classes)))[:, :, None]
+
+    assert (flux_rates >= 0).all()
+
+    fdyns = FluxDynamics(
+        flux_rates=flux_rates,
+        noise_scale=0.01
+    )
+
+    initial_state = State(
+        fluxers=torch.rand(len(employment_classes), len(fips_codes)),
+    )
+
+    start_time = tnsr(0.0)
+    end_time = tnsr(30.0)
+    step_size = tnsr(0.1)
+    # noinspection PyTypeChecker
+    trajectory_times = torch.arange(start_time + step_size, end_time, step_size)
+
+    with LogTrajectory(trajectory_times) as traj:
+        simulate(fdyns, initial_state, start_time, end_time, solver=TorchDiffEq(), method="dopri8")
+
+    fc = 0
+    for i in range(len(employment_classes)):
+        plt.plot(traj.times, traj.trajectory["fluxers"][i, fc], color=colors[employment_classes[i]])
+
+    plt.show()
+
+
 if __name__ == "__main__":
-    main()
+    # main()
+    dynsys_only()
