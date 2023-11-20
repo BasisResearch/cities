@@ -30,40 +30,16 @@ class FluxDynamics(pyro.nn.PyroModule):
     @pyro.nn.pyro_method
     def diff(self, dstate: State[torch.Tensor], state: State[torch.Tensor]) -> None:
 
-        # # TODO should be a way to vectorize this too I think. Basically just reform the flux
-        # #  into a matrix with zeros on the diagonal, then matrix something something?
-        # for flux, (c1, c2) in zip(self.fluxes, self.pairs):
-        #
-        #     # Note that flux here has shape (n_fips,), and that each state
-        #     #  is a vector over all counties.
-        #     dc1 = dstate.get(c1, torch.zeros_like(state[c1]))
-        #     dc2 = dstate.get(c2, torch.zeros_like(state[c2]))
-        #
-        #     # HACK for negative vals?
-        #     totflux = flux * state[c1]
-        #     dc1 -= totflux
-        #     dc2 += totflux
-        #
-        #     dstate[c1] = dc1
-        #     dstate[c2] = dc2
-
-        # First, adjust so that flux_rates has shape (n_fips, n_classes, n_classes).
-        flux_rates = self.flux_rates.permute(2, 0, 1)  # .shape == (n_fips, n_classes, n_classes)
-        # And do the same for the fluxers in the state of shape (n_classes, n_fips)
-        fluxers = state["fluxers"].permute(1, 0)  # .shape == (n_fips, n_classes)
-
-        # Now, we can emulate the above with a matrix multiplication
-        # Flux for a particular pair gets multiplied by the source state.
-        totflux = fluxers[:, :, None] * flux_rates  # .shape == (n_fips, n_classes, n_classes)
+        # Flux for a particular pair gets multiplied by the source state (indexed by row).
+        totflux = state["fluxers"][:, None, :] * self.flux_rates  # .shape == (n_classes, n_classes, n_fips)
 
         # Summing over the columns (for row totals) gives the total going into the state indexed by the row.
-        fluxin = totflux.sum(dim=1)  # .shape == (n_fips, n_classes)
+        fluxin = totflux.sum(dim=0)  # .shape == (n_fips, n_classes)
 
         # Summing over the rows (for column totals) gives the total going out of the state indexed by the column.
-        fluxout = totflux.sum(dim=2)  # .shape == (n_fips, n_classes)
+        fluxout = totflux.sum(dim=1)  # .shape == (n_fips, n_classes)
 
-        dfluxersdt = (fluxin - fluxout).permute(1, 0)
-        dstate["fluxers"] = dfluxersdt
+        dstate["fluxers"] = fluxin - fluxout
 
         inoutsum = dstate["fluxers"].sum(dim=0)
         assert torch.allclose(inoutsum, torch.zeros_like(inoutsum), atol=1e-6), f"Fluxers not conserved: {inoutsum}"
