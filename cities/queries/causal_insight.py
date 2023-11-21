@@ -106,7 +106,7 @@ class CausalInsight:
         outcome_years = self.data["outcome_years"]
         year_id = [int(x) for x in outcome_years].index(year)
         self.year_id = year_id
-        print(year_id)
+        
 
         self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
 
