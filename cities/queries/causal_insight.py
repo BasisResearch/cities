@@ -1,4 +1,3 @@
-import logging
 import os
 
 import dill
@@ -7,35 +6,12 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import pyro
-import pyro.distributions as dist
-import seaborn as sns
 import torch
-from chirho.counterfactual.handlers import MultiWorldCounterfactual
-from chirho.indexed.handlers import IndexPlatesMessenger
-from chirho.indexed.ops import IndexSet, gather, indices_of
-from chirho.interventional.handlers import do
-from chirho.observational.handlers import condition
-from pyro.infer import SVI, Predictive, Trace_ELBO
-from pyro.infer.autoguide import AutoDelta, AutoMultivariateNormal, AutoNormal
-from pyro.optim import Adam
-from scipy import stats
 
-from cities.modeling.model_interactions import (
-    InteractionsModel,
-    model_cities_interaction,
-)
-from cities.modeling.modeling_utils import (
-    prep_wide_data_for_inference,
-    train_interactions_model,
-)
-from cities.utils.cleaning_utils import check_if_tensed, find_repo_root
-from cities.utils.data_grabber import (
-    DataGrabber,
-    list_available_features,
-    list_interventions,
-    list_outcomes,
-    list_tensed_features,
-)
+from cities.modeling.model_interactions import model_cities_interaction
+from cities.modeling.modeling_utils import prep_wide_data_for_inference
+from cities.utils.cleaning_utils import find_repo_root
+from cities.utils.data_grabber import DataGrabber
 
 
 class CausalInsight:
@@ -204,12 +180,13 @@ class CausalInsight:
         #     self.samples['Y'], IndexSet(**{"T": {1}}),
         #     event_dim=0,).squeeze()#[:,self.fips_id]
 
-        #     self.tensed_outcome_difference[shift] = self.tensed_intervened_samples[shift] - self.tensed_observed_samples[shift]
-
+        #     self.tensed_outcome_difference[shift] = (
+        #     self.tensed_intervened_samples[shift] - self.tensed_observed_samples[shift]
+        #     )
         return
 
     def plot_predictions(self, range_multiplier=1.5, show_figure=True):
-        range_multiplier = 1
+        # range_multiplier = 1
         dg = DataGrabber()
         dg.get_features_std_long([self.outcome_dataset])
         plot_data = dg.std_long[self.outcome_dataset]
@@ -243,7 +220,7 @@ class CausalInsight:
                 y=self.predictions["mean"],
                 mode="lines",
                 line=dict(color="blue", width=2),
-                name=f"mean prediction",
+                name="mean prediction",
                 text=self.predictions["mean"],
             )
         )
@@ -260,8 +237,10 @@ class CausalInsight:
         fig.add_trace(credible_interval_trace)
 
         title = (
-            f"Predicted {self.outcome_dataset} in {self.name} under intervention {self.intervened_value} in year {self.year}<br>"
-            f"compared to the observed values under observed intervention {round(self.observed_intervention,3)}."
+            f"Predicted {self.outcome_dataset} in {self.name} under intervention {self.intervened_value} "
+            f"in year {self.year}<br>"
+            f"compared to the observed values under observed intervention "
+            f"{round(self.observed_intervention, 3)}."
         )
 
         fig.update_yaxes(range=[y_min, y_max])

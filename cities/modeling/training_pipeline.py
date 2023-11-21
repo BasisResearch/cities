@@ -4,7 +4,7 @@ import time
 
 from cities.modeling.model_interactions import InteractionsModel
 from cities.utils.cleaning_utils import find_repo_root
-from cities.utils.data_grabber import DataGrabber, list_interventions, list_outcomes
+from cities.utils.data_grabber import list_interventions, list_outcomes
 
 root = find_repo_root()
 log_dir = os.path.join(root, "data", "model_guides")
@@ -40,9 +40,9 @@ num_files = len(files)
 print(num_files)
 
 logging.info(
-    f"{(num_files-2)/2} guides already exist. Starting to train {N_combinations - (num_files -2)/2} out of {N_combinations} guides needed."
+    f"{(num_files-2)/2} guides already exist. "
+    f"Starting to train {N_combinations - (num_files -2)/2} out of {N_combinations} guides needed."
 )
-
 
 for intervention_dataset in interventions:
     for outcome_dataset in outcomes:
@@ -84,4 +84,4 @@ for intervention_dataset in interventions:
                 f"{N_combinations - num_files+1} out of {N_combinations} guides remain to be trained."
             )
 
-logging.info(f"All guides are now available.")
+logging.info("All guides are now available.")
