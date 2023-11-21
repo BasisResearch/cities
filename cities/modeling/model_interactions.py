@@ -1,14 +1,17 @@
-import os
 import logging
+import os
 
 import dill
 import pyro
 import pyro.distributions as dist
 import torch
 
-from cities.utils.data_grabber import DataGrabber
-from cities.modeling.modeling_utils import (prep_wide_data_for_inference, train_interactions_model)
+from cities.modeling.modeling_utils import (
+    prep_wide_data_for_inference,
+    train_interactions_model,
+)
 from cities.utils.cleaning_utils import find_repo_root
+from cities.utils.data_grabber import DataGrabber
 
 
 class InteractionsModel:
@@ -16,10 +19,10 @@ class InteractionsModel:
         self,
         outcome_dataset,
         intervention_dataset,
-        intervention_variable = None,
+        intervention_variable=None,
         forward_shift=2,
         num_iterations=1500,
-        num_samples = 1000,
+        num_samples=1000,
         plot_loss=False,
     ):
         self.outcome_dataset = outcome_dataset
@@ -37,7 +40,6 @@ class InteractionsModel:
             _dg.get_features_std_long([intervention_dataset])
             self.intervention_variable = _dg.std_long[intervention_dataset].columns[-1]
 
-
         self.data = prep_wide_data_for_inference(
             outcome_dataset=self.outcome_dataset,
             intervention_dataset=self.intervention_dataset,
@@ -46,15 +48,13 @@ class InteractionsModel:
 
         self.model = model_cities_interaction
 
-        self.model_args = self.data['model_args']
+        self.model_args = self.data["model_args"]
 
-        self.model_conditioned =   pyro.condition(
+        self.model_conditioned = pyro.condition(
             self.model,
-            data={"T": self.data['t'], "Y": self.data['y'], 
-                  "X": self.data['x']},
+            data={"T": self.data["t"], "Y": self.data["y"], "X": self.data["x"]},
         )
 
-        
         self.model_rendering = pyro.render_model(
             self.model, model_args=self.model_args, render_distributions=True
         )
@@ -67,10 +67,13 @@ class InteractionsModel:
             plot_loss=self.plot_loss,
         )
 
-
     def sample_from_guide(self):
-        predictive = pyro.infer.Predictive(model=self.model, guide=self.guide, 
-                        num_samples=self.num_samples, parallel=False)
+        predictive = pyro.infer.Predictive(
+            model=self.model,
+            guide=self.guide,
+            num_samples=self.num_samples,
+            parallel=False,
+        )
         self.samples = predictive(*self.model_args)
 
     def save_guide(self):
@@ -88,10 +91,11 @@ class InteractionsModel:
         )
         pyro.get_param_store().save(param_path)
 
-        logging.info(f"Guide and params for {self.intervention_dataset}", 
-                     f"{self.outcome_dataset} with shift {self.forward_shift}", 
-                     "has been saved.")
-
+        logging.info(
+            f"Guide and params for {self.intervention_dataset}",
+            f"{self.outcome_dataset} with shift {self.forward_shift}",
+            "has been saved.",
+        )
 
 
 def model_cities_interaction(
@@ -101,7 +105,7 @@ def model_cities_interaction(
     N_u,
     state_index,
     unit_index,
-    leeway= .9,
+    leeway=0.9,
 ):
     bias_Y = pyro.sample("bias_Y", dist.Normal(0, leeway))
     bias_T = pyro.sample("bias_T", dist.Normal(0, leeway))
@@ -110,7 +114,7 @@ def model_cities_interaction(
 
     sigma_T = pyro.sample("sigma_T", dist.Exponential(1))
     sigma_Y = pyro.sample("sigma_Y", dist.Exponential(1))
- 
+
     counties_plate = pyro.plate("counties_plate", N_u, dim=-1)
     states_plate = pyro.plate("states_plate", N_s, dim=-2)
     covariates_plate = pyro.plate("covariates_plate", N_cov, dim=-3)
@@ -135,27 +139,43 @@ def model_cities_interaction(
 
     with counties_plate:
         with covariates_plate:
-        
-            mean_X = pyro.deterministic("mean_X", torch.einsum("...xdd,...xcd->...xdc", bias_X, bias_stateX[...,state_index,:])) 
-            
-            X = pyro.sample("X", dist.Normal(mean_X[...,unit_index], sigma_X)) 
-        
-            XT_weighted =  torch.einsum("...xdc, ...xdd -> ...dc", X, weight_XT).unsqueeze(-2)
-            XY_weighted =  torch.einsum("...xdc, ...xdd -> ...dc", X, weight_XY).unsqueeze(-2)
+            mean_X = pyro.deterministic(
+                "mean_X",
+                torch.einsum(
+                    "...xdd,...xcd->...xdc", bias_X, bias_stateX[..., state_index, :]
+                ),
+            )
+
+            X = pyro.sample("X", dist.Normal(mean_X[..., unit_index], sigma_X))
+
+            XT_weighted = torch.einsum(
+                "...xdc, ...xdd -> ...dc", X, weight_XT
+            ).unsqueeze(-2)
+            XY_weighted = torch.einsum(
+                "...xdc, ...xdd -> ...dc", X, weight_XY
+            ).unsqueeze(-2)
 
         with time_plate:
-            
-            bias_stateT_tiled = pyro.deterministic("bias_stateT_tiled", torch.einsum("...cd -> ...dc", bias_stateT[...,state_index,:]))
-            
-            mean_T = pyro.deterministic("mean_T",  bias_T + bias_timeT + bias_stateT_tiled +  XT_weighted)
+            bias_stateT_tiled = pyro.deterministic(
+                "bias_stateT_tiled",
+                torch.einsum("...cd -> ...dc", bias_stateT[..., state_index, :]),
+            )
+
+            mean_T = pyro.deterministic(
+                "mean_T", bias_T + bias_timeT + bias_stateT_tiled + XT_weighted
+            )
 
             T = pyro.sample("T", dist.Normal(mean_T, sigma_T))
-            
-            bias_stateY_tiled = pyro.deterministic("bias_stateY_tiled", torch.einsum("...cd -> ...dc", 
-                                                                        bias_stateY[...,state_index,:]))
 
-            mean_Y = pyro.deterministic("mean_Y", 
-                                        bias_Y + bias_timeY + bias_stateY_tiled + XY_weighted + weight_TY * T)
+            bias_stateY_tiled = pyro.deterministic(
+                "bias_stateY_tiled",
+                torch.einsum("...cd -> ...dc", bias_stateY[..., state_index, :]),
+            )
+
+            mean_Y = pyro.deterministic(
+                "mean_Y",
+                bias_Y + bias_timeY + bias_stateY_tiled + XY_weighted + weight_TY * T,
+            )
             Y = pyro.sample("Y", dist.Normal(mean_Y, sigma_Y))
 
     return Y

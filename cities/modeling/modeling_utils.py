@@ -13,40 +13,12 @@ from cities.utils.data_grabber import (
 )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def prep_wide_data_for_inference(
-    outcome_dataset, intervention_dataset, forward_shift
-    ):
-
+def prep_wide_data_for_inference(outcome_dataset, intervention_dataset, forward_shift):
     if torch.cuda.is_available():
         device = torch.device("cuda")
     else:
         device = torch.device("cpu")
-    
+
     dg = DataGrabber()
 
     tensed_covariates_datasets = [
@@ -61,7 +33,10 @@ def prep_wide_data_for_inference(
         not in tensed_covariates_datasets + [outcome_dataset, intervention_dataset]
     ]
 
-    features_needed = [outcome_dataset, intervention_dataset] + fixed_covariates_datasets
+    features_needed = [
+        outcome_dataset,
+        intervention_dataset,
+    ] + fixed_covariates_datasets
 
     dg.get_features_std_wide(features_needed)
 
@@ -81,12 +56,12 @@ def prep_wide_data_for_inference(
                 f_covariates[dataset], on=["GeoFIPS"]
             )
 
-    assert f_covariates_joint['GeoFIPS'].equals(intervention['GeoFIPS'])
+    assert f_covariates_joint["GeoFIPS"].equals(intervention["GeoFIPS"])
 
     # extract data for which intervention and outcome overlap
-    year_min =  max(
-    intervention.columns[2:].astype(int).min(),
-    outcome.columns[2:].astype(int).min(),
+    year_min = max(
+        intervention.columns[2:].astype(int).min(),
+        outcome.columns[2:].astype(int).min(),
     )
 
     year_max = min(
@@ -94,39 +69,47 @@ def prep_wide_data_for_inference(
         outcome.columns[2:].astype(int).max(),
     )
 
-    assert all(intervention['GeoFIPS'] == outcome['GeoFIPS'])
+    assert all(intervention["GeoFIPS"] == outcome["GeoFIPS"])
 
+    outcome_years_to_keep = [
+        year
+        for year in outcome.columns[2:]
+        if year_min <= int(year) <= year_max + forward_shift
+    ]
 
-    outcome_years_to_keep = [year for year in outcome.columns[2:] 
-                            if year_min <= int(year) <= year_max +forward_shift]
-
-    outcome_years_to_keep = [year for year in outcome_years_to_keep if year in intervention.columns[2:]]
+    outcome_years_to_keep = [
+        year for year in outcome_years_to_keep if year in intervention.columns[2:]
+    ]
 
     outcome = outcome[outcome_years_to_keep]
-    
+
     # shift outcome `forward_shift` steps ahead
     # for the prediction task
     outcome_shifted = outcome.copy()
-    
-    for i in range(len(outcome_years_to_keep)  - forward_shift):
+
+    for i in range(len(outcome_years_to_keep) - forward_shift):
         outcome_shifted.iloc[:, i] = outcome_shifted.iloc[:, i + forward_shift]
 
-    years_to_drop = [f"{year}" for year in range(year_max - forward_shift + 1, year_max + 1) ] 
-    outcome_shifted.drop(columns= years_to_drop, inplace=True)
+    years_to_drop = [
+        f"{year}" for year in range(year_max - forward_shift + 1, year_max + 1)
+    ]
+    outcome_shifted.drop(columns=years_to_drop, inplace=True)
 
-    intervention.drop(columns = ['GeoFIPS', "GeoName"], inplace=True)
-    intervention  = intervention[outcome_shifted.columns]
+    intervention.drop(columns=["GeoFIPS", "GeoName"], inplace=True)
+    intervention = intervention[outcome_shifted.columns]
 
     assert intervention.shape == outcome_shifted.shape
 
     years_available = outcome_shifted.columns.astype(int).values
 
-    unit_index = pd.factorize(f_covariates_joint['GeoFIPS'].values)[0]
-    state_index = pd.factorize(f_covariates_joint['GeoFIPS'].values // 1000)[0]
+    unit_index = pd.factorize(f_covariates_joint["GeoFIPS"].values)[0]
+    state_index = pd.factorize(f_covariates_joint["GeoFIPS"].values // 1000)[0]
 
     # prepare tensors
-    x = torch.tensor(f_covariates_joint.iloc[:, 2:].values, dtype=torch.float32, device=device)
-    x = x.unsqueeze(1).unsqueeze(1).permute(2,3, 1, 0)
+    x = torch.tensor(
+        f_covariates_joint.iloc[:, 2:].values, dtype=torch.float32, device=device
+    )
+    x = x.unsqueeze(1).unsqueeze(1).permute(2, 3, 1, 0)
 
     t = torch.tensor(intervention.values, dtype=torch.float32, device=device)
     t = t.unsqueeze(1).unsqueeze(1).permute(3, 1, 2, 0)
@@ -148,24 +131,32 @@ def prep_wide_data_for_inference(
 
     model_args = (N_t, N_cov, N_s, N_u, state_index, unit_index)
 
-    return {"model_args": model_args, "x": x, "t": t, "y": y, "years_available": years_available,
-            "outcome_years": outcome_years_to_keep}
+    return {
+        "model_args": model_args,
+        "x": x,
+        "t": t,
+        "y": y,
+        "years_available": years_available,
+        "outcome_years": outcome_years_to_keep,
+    }
 
 
-
-def train_interactions_model(conditioned_model, model_args,
-                            num_iterations = 1000,
-                            plot_loss = True,
-                            print_interval = 100,
-                            lr = 0.01):
-    
+def train_interactions_model(
+    conditioned_model,
+    model_args,
+    num_iterations=1000,
+    plot_loss=True,
+    print_interval=100,
+    lr=0.01,
+):
     guide = None
     pyro.clear_param_store()
-    
+
     guide = AutoNormal(conditioned_model)
 
-    svi = SVI(model=conditioned_model, guide=guide, 
-              optim=Adam({"lr": lr}), loss=Trace_ELBO())
+    svi = SVI(
+        model=conditioned_model, guide=guide, optim=Adam({"lr": lr}), loss=Trace_ELBO()
+    )
 
     losses = []
     for step in range(num_iterations):
@@ -173,7 +164,6 @@ def train_interactions_model(conditioned_model, model_args,
         losses.append(loss)
         if step % print_interval == 0:
             print("[iteration %04d] loss: %.4f" % (step + 1, loss))
-
 
     if plot_loss:
         plt.plot(range(num_iterations), losses, label="Loss")
