@@ -491,7 +491,8 @@ class FipsQuery:
     def plot_weights(self):
         plot_weights(self)
 
-    def plot_kins_other_var(self, var):
+
+    def plot_kins_other_var(self, var, fips_top_custom=None):
         # assert self.outcome_var, "Outcome comparison requires an outcome variable"
         assert hasattr(self, "euclidean_kins"), "Run `find_euclidean_kins` first"
 
@@ -501,7 +502,11 @@ class FipsQuery:
         # up = my_plot_data["Year"].max()
         # possibly remove
 
-        fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
+        if fips_top_custom is None:
+            fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
+        else:
+            fips_top = fips_top_custom
+
         others_plot_data = plot_data[plot_data["GeoFIPS"].isin(fips_top)]
 
         value_column_name = my_plot_data.columns[-1]
