@@ -257,6 +257,8 @@ class CausalInsight:
 
         if show_figure:
             fig.show()
+        else:
+            return fig
 
     def plot_residuals(self):
         predictions = self.samples["Y"].squeeze()
