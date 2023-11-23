@@ -172,9 +172,9 @@ def train_interactions_model(
     return guide
 
 
-def revert_standardize_and_scale_approx(predictions: pd.DataFrame, variable_name: str) -> pd.DataFrame:
-   
-
+def revert_standardize_and_scale_approx(
+    predictions: pd.DataFrame, variable_name: str
+) -> pd.DataFrame:
     dg = DataGrabber()
     dg.get_features_wide([variable_name])
     dg.get_features_std_wide([variable_name])
@@ -184,19 +184,21 @@ def revert_standardize_and_scale_approx(predictions: pd.DataFrame, variable_name
 
     descaled_rows = []
     for r in range(len(predictions)):
-        year = predictions['year'][r]
+        year = predictions["year"][r]
         transformed_row = transformed_data[str(year)]
-        prediction_row = predictions.iloc[r].drop('year')
-        
-        nearest_indices = [min(range(len(transformed_row)),
-                               key=lambda i: abs(transformed_row[i] - n)) for n in prediction_row]
-        
+        prediction_row = predictions.iloc[r].drop("year")
+
+        nearest_indices = [
+            min(range(len(transformed_row)), key=lambda i: abs(transformed_row[i] - n))
+            for n in prediction_row
+        ]
+
         descaled_rows.append(original_data[str(year)][nearest_indices].values)
-   
-    print(predictions['year'])
-    predictions_descaled = pd.DataFrame(descaled_rows, columns=['observed', 'mean', 'low', 'high'])
-    predictions_descaled['year'] = predictions['year'].values
+
+    print(predictions["year"])
+    predictions_descaled = pd.DataFrame(
+        descaled_rows, columns=["observed", "mean", "low", "high"]
+    )
+    predictions_descaled["year"] = predictions["year"].values
 
     return predictions_descaled
-
-

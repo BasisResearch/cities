@@ -1,8 +1,8 @@
 import os
 import random
-import torch
 
 import pytest
+import torch
 
 from cities.modeling.model_interactions import InteractionsModel
 from cities.queries.causal_insight import CausalInsight

@@ -491,7 +491,6 @@ class FipsQuery:
     def plot_weights(self):
         plot_weights(self)
 
-
     def plot_kins_other_var(self, var, fips_top_custom=None):
         # assert self.outcome_var, "Outcome comparison requires an outcome variable"
         assert hasattr(self, "euclidean_kins"), "Run `find_euclidean_kins` first"

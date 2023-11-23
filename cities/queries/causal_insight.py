@@ -9,7 +9,10 @@ import pyro
 import torch
 
 from cities.modeling.model_interactions import model_cities_interaction
-from cities.modeling.modeling_utils import prep_wide_data_for_inference, revert_standardize_and_scale_approx
+from cities.modeling.modeling_utils import (
+    prep_wide_data_for_inference,
+    revert_standardize_and_scale_approx,
+)
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import DataGrabber
 
@@ -106,25 +109,36 @@ class CausalInsight:
         outcome_years = self.data["outcome_years"]
         year_id = [int(x) for x in outcome_years].index(year)
         self.year_id = year_id
-        
-    
+
         self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
 
         # find fips unit index
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
-        
+
         dg.get_features_wide([self.intervention_dataset])
-        
+
         interventions_this_year = dg.std_wide[self.intervention_dataset][str(year)]
         interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
-        
-        nearest_intervention_index = min(range(len(interventions_this_year)),
-                               key=lambda i: abs(interventions_this_year[i] - self.intervened_value)) 
-        self.intervened_value_original = interventions_this_year_original[nearest_intervention_index]
-        
-        self.intervened_value_percentile = round((np.mean(interventions_this_year_original.values <= self.intervened_value_original) * 100),1)   
 
+        nearest_intervention_index = min(
+            range(len(interventions_this_year)),
+            key=lambda i: abs(interventions_this_year[i] - self.intervened_value),
+        )
+        self.intervened_value_original = interventions_this_year_original[
+            nearest_intervention_index
+        ]
+
+        self.intervened_value_percentile = round(
+            (
+                np.mean(
+                    interventions_this_year_original.values
+                    <= self.intervened_value_original
+                )
+                * 100
+            ),
+            1,
+        )
 
         self.fips_id = (
             dg.std_wide[self.intervention_dataset]
@@ -136,10 +150,13 @@ class CausalInsight:
 
         # get observed values at the prediction times
         self.observed_intervention = dg.std_wide[self.intervention_dataset].iloc[
-            self.fips_id][str(year)]
-        
-        self.observed_intervention_original = dg.wide[self.intervention_dataset].iloc[self.fips_id][str(year)]
-        
+            self.fips_id
+        ][str(year)]
+
+        self.observed_intervention_original = dg.wide[self.intervention_dataset].iloc[
+            self.fips_id
+        ][str(year)]
+
         self.observed_outcomes = dg.std_wide[self.outcome_dataset].iloc[self.fips_id][
             outcome_years[year_id : (year_id + 4)]
         ]
@@ -182,9 +199,10 @@ class CausalInsight:
                 "high": predicted_high,
             }
         )
-        
-        self.predictions_original = revert_standardize_and_scale_approx(self.predictions,
-                                                                              self.outcome_dataset)
+
+        self.predictions_original = revert_standardize_and_scale_approx(
+            self.predictions, self.outcome_dataset
+        )
 
         # TODO for some reason indexing using gather doesn't pick the right indices
         # look into this some time, do this by hand for now
@@ -202,34 +220,49 @@ class CausalInsight:
         #     )
         return
 
-    def plot_predictions(self, range_multiplier=1.5, show_figure=True, scaling="transformed"):
-        
+    def plot_predictions(
+        self, range_multiplier=1.5, show_figure=True, scaling="transformed"
+    ):
         assert scaling in ["transformed", "original"]
-        
+
         dg = DataGrabber()
-        
+
         if scaling == "transformed":
             dg.get_features_std_long([self.outcome_dataset])
             plot_data = dg.std_long[self.outcome_dataset]
-            self.fips_observed_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-            
-            y_min =   min(
-            self.fips_observed_data["Value"].min(), self.predictions["low"].min()
-            ) - 0.05
-            y_max =  max(
-            self.fips_observed_data["Value"].max(), self.predictions["high"].max()
-            ) + 0.05
+            self.fips_observed_data = plot_data[
+                plot_data["GeoFIPS"] == self.fips
+            ].copy()
+
+            y_min = (
+                min(
+                    self.fips_observed_data["Value"].min(),
+                    self.predictions["low"].min(),
+                )
+                - 0.05
+            )
+            y_max = (
+                max(
+                    self.fips_observed_data["Value"].max(),
+                    self.predictions["high"].max(),
+                )
+                + 0.05
+            )
         else:
             dg.get_features_long([self.outcome_dataset])
             plot_data = dg.long[self.outcome_dataset]
-            
-            self.fips_observed_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
 
-            y_min = .8 * min(
-                self.fips_observed_data["Value"].min(), self.predictions_original["low"].min()
+            self.fips_observed_data = plot_data[
+                plot_data["GeoFIPS"] == self.fips
+            ].copy()
+
+            y_min = 0.8 * min(
+                self.fips_observed_data["Value"].min(),
+                self.predictions_original["low"].min(),
             )
             y_max = 1.3 * max(
-                self.fips_observed_data["Value"].max(), self.predictions_original["high"].max()
+                self.fips_observed_data["Value"].max(),
+                self.predictions_original["high"].max(),
             )
 
         fig = go.Figure()
@@ -267,9 +300,8 @@ class CausalInsight:
                 line=dict(color="rgba(255,255,255,0)"),
                 name="95% credible interval around mean",
             )
-            
+
         else:
-           
             fig.add_trace(
                 go.Scatter(
                     x=self.predictions_original["year"],
@@ -282,8 +314,18 @@ class CausalInsight:
             )
 
             credible_interval_trace = go.Scatter(
-                x=pd.concat([self.predictions_original["year"], self.predictions_original["year"][::-1]]),
-                y=pd.concat([self.predictions_original["high"], self.predictions_original["low"][::-1]]),
+                x=pd.concat(
+                    [
+                        self.predictions_original["year"],
+                        self.predictions_original["year"][::-1],
+                    ]
+                ),
+                y=pd.concat(
+                    [
+                        self.predictions_original["high"],
+                        self.predictions_original["low"][::-1],
+                    ]
+                ),
                 fill="toself",
                 fillcolor="rgba(0,100,80,0.2)",
                 line=dict(color="rgba(255,255,255,0)"),
@@ -297,16 +339,18 @@ class CausalInsight:
                 f"Predicted {self.outcome_dataset} in {self.name} under intervention {self.intervened_value} "
                 f"in year {self.year}<br>"
                 f"compared to the observed values under observed intervention "
-                f"{round(self.observed_intervention, 3)}.")
-            
+                f"{round(self.observed_intervention, 3)}."
+            )
+
         else:
             title = (
                 f"Predicted {self.outcome_dataset} in {self.name}<br>"
                 f"under intervention {self.intervened_value_original}"
                 f" in year {self.year}<br>"
                 f"{self.intervened_value_percentile}% of counties received a lower intervention <br>"
-                f"observed intervention: {self.observed_intervention_original}")
-            
+                f"observed intervention: {self.observed_intervention_original}"
+            )
+
         fig.update_yaxes(range=[y_min, y_max])
 
         fig.update_layout(
