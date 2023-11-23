@@ -20,4 +20,5 @@ tests/.coverage
 
 *.DS_Store
 
-data/model_guides/
+data/model_guides/*.pkl
+data/model_guides/*.pth
