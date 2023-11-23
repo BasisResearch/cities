@@ -1,5 +1,6 @@
 import os
 import random
+import torch
 
 import pytest
 
@@ -7,6 +8,9 @@ from cities.modeling.model_interactions import InteractionsModel
 from cities.queries.causal_insight import CausalInsight
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import list_interventions, list_outcomes
+
+# if you run into NVML warning, use export CUDA_VISIBLE_DEVICES="" to disable GPU
+device = torch.device("cpu")
 
 root = find_repo_root()
 
