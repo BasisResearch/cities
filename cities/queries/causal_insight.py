@@ -9,7 +9,7 @@ import pyro
 import torch
 
 from cities.modeling.model_interactions import model_cities_interaction
-from cities.modeling.modeling_utils import prep_wide_data_for_inference
+from cities.modeling.modeling_utils import prep_wide_data_for_inference, revert_standardize_and_scale_approx
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import DataGrabber
 
@@ -168,6 +168,9 @@ class CausalInsight:
                 "high": predicted_high,
             }
         )
+        
+        self.predictions_original = revert_standardize_and_scale_approx(self.predictions,
+                                                                              self.outcome_dataset)
 
         # TODO for some reason indexing using gather doesn't pick the right indices
         # look into this some time, do this by hand for now
@@ -185,19 +188,35 @@ class CausalInsight:
         #     )
         return
 
-    def plot_predictions(self, range_multiplier=1.5, show_figure=True):
-        # range_multiplier = 1
+    def plot_predictions(self, range_multiplier=1.5, show_figure=True, scaling="transformed"):
+        
+        assert scaling in ["transformed", "original"]
+        
         dg = DataGrabber()
-        dg.get_features_std_long([self.outcome_dataset])
-        plot_data = dg.std_long[self.outcome_dataset]
-        self.fips_observed_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-
-        y_min = 1.5 * min(
+        
+        if scaling == "transformed":
+            dg.get_features_std_long([self.outcome_dataset])
+            plot_data = dg.std_long[self.outcome_dataset]
+            self.fips_observed_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
+            
+            y_min =   min(
             self.fips_observed_data["Value"].min(), self.predictions["low"].min()
-        )
-        y_max = 1.5 * max(
+            ) - 0.05
+            y_max =  max(
             self.fips_observed_data["Value"].max(), self.predictions["high"].max()
-        )
+            ) + 0.05
+        else:
+            dg.get_features_long([self.outcome_dataset])
+            plot_data = dg.long[self.outcome_dataset]
+            
+            self.fips_observed_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
+
+            y_min = .8 * min(
+                self.fips_observed_data["Value"].min(), self.predictions_original["low"].min()
+            )
+            y_max = 1.3 * max(
+                self.fips_observed_data["Value"].max(), self.predictions_original["high"].max()
+            )
 
         fig = go.Figure()
 
@@ -214,25 +233,48 @@ class CausalInsight:
             )
         )
 
-        fig.add_trace(
-            go.Scatter(
-                x=self.predictions["year"],
-                y=self.predictions["mean"],
-                mode="lines",
-                line=dict(color="blue", width=2),
-                name="mean prediction",
-                text=self.predictions["mean"],
+        if scaling == "transformed":
+            fig.add_trace(
+                go.Scatter(
+                    x=self.predictions["year"],
+                    y=self.predictions["mean"],
+                    mode="lines",
+                    line=dict(color="blue", width=2),
+                    name="mean prediction",
+                    text=self.predictions["mean"],
+                )
             )
-        )
 
-        credible_interval_trace = go.Scatter(
-            x=pd.concat([self.predictions["year"], self.predictions["year"][::-1]]),
-            y=pd.concat([self.predictions["high"], self.predictions["low"][::-1]]),
-            fill="toself",
-            fillcolor="rgba(0,100,80,0.2)",
-            line=dict(color="rgba(255,255,255,0)"),
-            name="95% credible interval around mean",
-        )
+            credible_interval_trace = go.Scatter(
+                x=pd.concat([self.predictions["year"], self.predictions["year"][::-1]]),
+                y=pd.concat([self.predictions["high"], self.predictions["low"][::-1]]),
+                fill="toself",
+                fillcolor="rgba(0,100,80,0.2)",
+                line=dict(color="rgba(255,255,255,0)"),
+                name="95% credible interval around mean",
+            )
+            
+        else:
+            print("here")
+            fig.add_trace(
+                go.Scatter(
+                    x=self.predictions_original["year"],
+                    y=self.predictions_original["mean"],
+                    mode="lines",
+                    line=dict(color="blue", width=2),
+                    name="mean prediction",
+                    text=self.predictions_original["mean"],
+                )
+            )
+
+            credible_interval_trace = go.Scatter(
+                x=pd.concat([self.predictions_original["year"], self.predictions_original["year"][::-1]]),
+                y=pd.concat([self.predictions_original["high"], self.predictions_original["low"][::-1]]),
+                fill="toself",
+                fillcolor="rgba(0,100,80,0.2)",
+                line=dict(color="rgba(255,255,255,0)"),
+                name="95% credible interval around mean",
+            )
 
         fig.add_trace(credible_interval_trace)
 

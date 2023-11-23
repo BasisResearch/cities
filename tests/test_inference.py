@@ -1,4 +1,5 @@
 import os
+import random
 
 import pytest
 
@@ -25,8 +26,8 @@ intervened_value = 0.9
 # intervention = [random.choice(interventions)]
 # outcome = [random.choice(outcomes)]
 
-# interventions = [random.choice(interventions)]
-# outcomes = [random.choice(outcomes)]
+interventions = [random.choice(interventions)]
+outcomes = [random.choice(outcomes)]
 
 
 # forward shifts caused some shape troubles,
