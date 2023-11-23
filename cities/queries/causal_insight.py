@@ -107,12 +107,24 @@ class CausalInsight:
         year_id = [int(x) for x in outcome_years].index(year)
         self.year_id = year_id
         
-
+    
         self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
 
         # find fips unit index
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
+        
+        dg.get_features_wide([self.intervention_dataset])
+        
+        interventions_this_year = dg.std_wide[self.intervention_dataset][str(year)]
+        interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
+        
+        nearest_intervention_index = min(range(len(interventions_this_year)),
+                               key=lambda i: abs(interventions_this_year[i] - self.intervened_value)) 
+        self.intervened_value_original = interventions_this_year_original[nearest_intervention_index]
+        
+        self.intervened_value_percentile = round((np.mean(interventions_this_year_original.values <= self.intervened_value_original) * 100),1)   
+
 
         self.fips_id = (
             dg.std_wide[self.intervention_dataset]
@@ -124,8 +136,10 @@ class CausalInsight:
 
         # get observed values at the prediction times
         self.observed_intervention = dg.std_wide[self.intervention_dataset].iloc[
-            self.fips_id
-        ][str(year)]
+            self.fips_id][str(year)]
+        
+        self.observed_intervention_original = dg.wide[self.intervention_dataset].iloc[self.fips_id][str(year)]
+        
         self.observed_outcomes = dg.std_wide[self.outcome_dataset].iloc[self.fips_id][
             outcome_years[year_id : (year_id + 4)]
         ]
@@ -255,7 +269,7 @@ class CausalInsight:
             )
             
         else:
-            print("here")
+           
             fig.add_trace(
                 go.Scatter(
                     x=self.predictions_original["year"],
@@ -278,17 +292,26 @@ class CausalInsight:
 
         fig.add_trace(credible_interval_trace)
 
-        title = (
-            f"Predicted {self.outcome_dataset} in {self.name} under intervention {self.intervened_value} "
-            f"in year {self.year}<br>"
-            f"compared to the observed values under observed intervention "
-            f"{round(self.observed_intervention, 3)}."
-        )
-
+        if scaling == "transformed":
+            title = (
+                f"Predicted {self.outcome_dataset} in {self.name} under intervention {self.intervened_value} "
+                f"in year {self.year}<br>"
+                f"compared to the observed values under observed intervention "
+                f"{round(self.observed_intervention, 3)}.")
+            
+        else:
+            title = (
+                f"Predicted {self.outcome_dataset} in {self.name}<br>"
+                f"under intervention {self.intervened_value_original}"
+                f" in year {self.year}<br>"
+                f"{self.intervened_value_percentile}% of counties received a lower intervention <br>"
+                f"observed intervention: {self.observed_intervention_original}")
+            
         fig.update_yaxes(range=[y_min, y_max])
 
         fig.update_layout(
             title=title,
+            title_font=dict(size=12),
             xaxis_title="Year",
             yaxis_title="Value",
             template="simple_white",
