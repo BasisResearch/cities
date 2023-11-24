@@ -10,8 +10,7 @@ import torch
 
 from cities.modeling.model_interactions import model_cities_interaction
 from cities.modeling.modeling_utils import (
-    prep_wide_data_for_inference,
-    revert_standardize_and_scale_approx,
+    prep_wide_data_for_inference, revert_standardize_and_scale_scaler, revert_prediction_df,
 )
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import DataGrabber
@@ -68,9 +67,12 @@ class CausalInsight:
         )
         self.samples = self.predictive(*self.model_args)
 
-        # TODO idexing and gathering with mwc in this context
-        # seems to fail, calculating the expected mean diff manually
+        # idexing and gathering with mwc in this context
+        # seems to fail, calculating the expected diff made by the intervention manually
+        # wrt to actual observed outcomes rather than predicting outcomes themselves
+        # effectively keeping the noise fixed and focusing on a counterfactual claim
 
+        #TODO possible delete in the current strategy deemed uncontroversial
         # else:
         #     if not isinstance(intervened_value, torch.Tensor):
         #         intervened_value = torch.tensor(intervened_value, device=self.device)
@@ -115,19 +117,20 @@ class CausalInsight:
         # find fips unit index
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
-
         dg.get_features_wide([self.intervention_dataset])
-
-        interventions_this_year = dg.std_wide[self.intervention_dataset][str(year)]
         interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
 
-        nearest_intervention_index = min(
-            range(len(interventions_this_year)),
-            key=lambda i: abs(interventions_this_year[i] - self.intervened_value),
-        )
-        self.intervened_value_original = interventions_this_year_original[
-            nearest_intervention_index
-        ]
+        self.intervened_value_original = revert_standardize_and_scale_scaler(self.intervened_value, self.year, self.intervention_dataset)
+
+        # interventions_this_year = dg.std_wide[self.intervention_dataset][str(year)]
+        
+        # nearest_intervention_index = min(
+        #     range(len(interventions_this_year)),
+        #     key=lambda i: abs(interventions_this_year[i] - self.intervened_value),
+        # )
+        # self.intervened_value_original = interventions_this_year_original[
+        #     nearest_intervention_index
+        # ]
 
         self.intervened_value_percentile = round(
             (
@@ -200,7 +203,7 @@ class CausalInsight:
             }
         )
 
-        self.predictions_original = revert_standardize_and_scale_approx(
+        self.predictions_original = revert_prediction_df(
             self.predictions, self.outcome_dataset
         )
 
