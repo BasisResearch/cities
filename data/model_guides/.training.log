@@ -1,0 +1,4 @@
+2023-11-27 09:35:32 → root → INFO: 207.0 guides already exist. Starting to train 45.0 out of 252 guides needed.
+2023-11-27 09:35:32 → root → INFO: Training spending_HHS_medianHouseholdIncome_1 for 4000 iterations.
+2023-11-27 09:37:09 → root → INFO: Training of spending_HHS_medianHouseholdIncome_1 completed in 96.39 seconds. -165 out of 252 guides remain to be trained.
+2023-11-27 09:37:09 → root → INFO: Training spending_HHS_medianHouseholdIncome_2 for 4000 iterations.

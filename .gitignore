@@ -3,6 +3,7 @@ venv
 
 
 
+
 cities.egg-info/*
 cities.egg-info/
 */__pycache__
@@ -19,5 +20,6 @@ tests/.coverage
 
 *.DS_Store
 
-data/model_guides/*.pkl
-data/model_guides/*.pth
+# testing storing guides directly on github
+#data/model_guides/*.pkl
+#data/model_guides/*.pth
