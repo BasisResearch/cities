@@ -17,13 +17,13 @@ from cities.utils.data_grabber import DataGrabber
 class InteractionsModel:
     def __init__(
         self,
-        outcome_dataset,
-        intervention_dataset,
-        intervention_variable=None,
-        forward_shift=2,
-        num_iterations=1500,
-        num_samples=1000,
-        plot_loss=False,
+        outcome_dataset: str,
+        intervention_dataset: str,
+        intervention_variable: str = None,
+        forward_shift: int = 2,
+        num_iterations: int = 1500,
+        num_samples: int =1000,
+        plot_loss: bool = False,
     ):
         self.outcome_dataset = outcome_dataset
         self.intervention_dataset = intervention_dataset

@@ -17,7 +17,7 @@ from cities.utils.data_grabber import (
 )
 
 
-def prep_wide_data_for_inference(outcome_dataset, intervention_dataset, forward_shift):
+def prep_wide_data_for_inference(outcome_dataset: str, intervention_dataset: str, forward_shift: int):
     if torch.cuda.is_available():
         device = torch.device("cuda")
     else:
@@ -146,12 +146,12 @@ def prep_wide_data_for_inference(outcome_dataset, intervention_dataset, forward_
 
 
 def train_interactions_model(
-    conditioned_model,
+    conditioned_model: callable,
     model_args,
-    num_iterations=1000,
-    plot_loss=True,
-    print_interval=100,
-    lr=0.01,
+    num_iterations: int = 1000,
+    plot_loss: bool = True,
+    print_interval: int = 100,
+    lr: float = 0.01,
 ):
     guide = None
     pyro.clear_param_store()
