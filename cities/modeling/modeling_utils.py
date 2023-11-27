@@ -191,6 +191,11 @@ def revert_standardize_and_scale_scaler(
     def inverse_sigmoid(y, scale=1 / 3):
         return -np.log((2 / (y + 1)) - 1) / scale
 
+    # needed to avoid lint issues
+    dg: DataGrabber
+
+    # normally this will be deployed in a context in which dg already exists
+    # and we want to avoid wasting time by reloading the data
     try:
         original_column = dg.wide[variable_name][str(year)].values
     except NameError:
