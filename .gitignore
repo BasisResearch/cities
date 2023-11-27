@@ -19,6 +19,3 @@ cities.egg-info/SOURCES.txt
 tests/.coverage
 
 *.DS_Store
-
-data/model_guides/*.pkl
-data/model_guides/*.pth
