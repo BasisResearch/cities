@@ -80,9 +80,9 @@ for intervention_dataset in interventions:
                     if os.path.isfile(os.path.join(log_dir, f))
                 ]
                 num_files = len(files)
+                remaining -= 1
                 logging.info(
                     f"Training of {guide_name} completed in {duration:.2f} seconds. "
-                    remaining -= 1
                     f"{remaining} out of {N_combinations} guides remain to be trained."
                 )
 
