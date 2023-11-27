@@ -1,14 +1,14 @@
-import matplotlib.pyplot as plt
-import pandas as pd
-from typing import Union, List
-import numpy as np
-from sklearn.preprocessing import StandardScaler
+from typing import List, Union
 
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import pyro
 import torch
 from pyro.infer import SVI, Trace_ELBO
 from pyro.infer.autoguide import AutoNormal
 from pyro.optim import Adam
+from sklearn.preprocessing import StandardScaler
 
 from cities.utils.data_grabber import (
     DataGrabber,
@@ -175,10 +175,16 @@ def train_interactions_model(
 
     return guide
 
+
 # reverting the standardization using the scaler is necessary, as doing this using the obvious formula
 # leads to some numerical issues and inaccuracies
 
-def revert_standardize_and_scale_scaler(transformed_values: Union[np.ndarray, List, pd.Series, float], year: int, variable_name: str) -> List:
+
+def revert_standardize_and_scale_scaler(
+    transformed_values: Union[np.ndarray, List, pd.Series, float],
+    year: int,
+    variable_name: str,
+) -> List:
     if not isinstance(transformed_values, np.ndarray):
         transformed_values = np.array(transformed_values)
 
@@ -200,15 +206,19 @@ def revert_standardize_and_scale_scaler(transformed_values: Union[np.ndarray, Li
     scaler.fit(original_column)
 
     inverted_values_sigmoid = inverse_sigmoid(transformed_values)
-    inverted_values = scaler.inverse_transform(inverted_values_sigmoid.reshape(-1, 1)).flatten()
+    inverted_values = scaler.inverse_transform(
+        inverted_values_sigmoid.reshape(-1, 1)
+    ).flatten()
 
     return inverted_values
 
 
 def revert_prediction_df(df: pd.DataFrame, variable_name: str) -> pd.DataFrame:
     df_copy = df.copy()
-    
+
     for i in range(len(df)):
-        df_copy.iloc[i, 1:] = revert_standardize_and_scale_scaler(df.iloc[i, 1:].tolist(), df.iloc[i, 0], variable_name)
-    
+        df_copy.iloc[i, 1:] = revert_standardize_and_scale_scaler(
+            df.iloc[i, 1:].tolist(), df.iloc[i, 0], variable_name
+        )
+
     return df_copy

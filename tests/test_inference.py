@@ -133,22 +133,3 @@ def test_CausalInsigth(intervention, outcome, shift):
     assert (
         ci.predictions_plot is not None
     ), f"Plotting failed for {intervention}, {outcome}."
-
-
-interventions = list_interventions()
-outcomes = list_outcomes()
-shifts = [1, 2, 3]
-
-N_combinations = len(interventions) * len(outcomes) * len(shifts)
-
-print(len(interventions), len(outcomes), N_combinations)
-
-    # root = find_repo_root()
-    # _dir = os.path.join(root, "data", "model_guides")
-    # files = [f for f in os.listdir(_dir) if os.path.isfile(os.path.join(_dir, f))]
-    # num_files = len(files)
-
-    # assert (
-    #     num_files == 2 * N_combinations + 2
-    # ), f"{N_combinations + 2 - num_files} guides are missing"
-    # # two extra files: .gitkeep and .training.log

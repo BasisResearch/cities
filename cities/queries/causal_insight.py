@@ -10,7 +10,9 @@ import torch
 
 from cities.modeling.model_interactions import model_cities_interaction
 from cities.modeling.modeling_utils import (
-    prep_wide_data_for_inference, revert_standardize_and_scale_scaler, revert_prediction_df,
+    prep_wide_data_for_inference,
+    revert_prediction_df,
+    revert_standardize_and_scale_scaler,
 )
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import DataGrabber
@@ -72,7 +74,7 @@ class CausalInsight:
         # wrt to actual observed outcomes rather than predicting outcomes themselves
         # effectively keeping the noise fixed and focusing on a counterfactual claim
 
-        #TODO possible delete in the current strategy deemed uncontroversial
+        # TODO possible delete in the current strategy deemed uncontroversial
         # else:
         #     if not isinstance(intervened_value, torch.Tensor):
         #         intervened_value = torch.tensor(intervened_value, device=self.device)
@@ -120,10 +122,12 @@ class CausalInsight:
         dg.get_features_wide([self.intervention_dataset])
         interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
 
-        self.intervened_value_original = revert_standardize_and_scale_scaler(self.intervened_value, self.year, self.intervention_dataset)
+        self.intervened_value_original = revert_standardize_and_scale_scaler(
+            self.intervened_value, self.year, self.intervention_dataset
+        )
 
         # interventions_this_year = dg.std_wide[self.intervention_dataset][str(year)]
-        
+
         # nearest_intervention_index = min(
         #     range(len(interventions_this_year)),
         #     key=lambda i: abs(interventions_this_year[i] - self.intervened_value),
