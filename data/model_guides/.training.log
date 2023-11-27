@@ -1,4 +1,44 @@
-2023-11-27 09:35:32 → root → INFO: 207.0 guides already exist. Starting to train 45.0 out of 252 guides needed.
-2023-11-27 09:35:32 → root → INFO: Training spending_HHS_medianHouseholdIncome_1 for 4000 iterations.
-2023-11-27 09:37:09 → root → INFO: Training of spending_HHS_medianHouseholdIncome_1 completed in 96.39 seconds. -165 out of 252 guides remain to be trained.
-2023-11-27 09:37:09 → root → INFO: Training spending_HHS_medianHouseholdIncome_2 for 4000 iterations.
+2023-11-27 04:07:09 → root → INFO: 227.0 guides already exist. Starting to train 25.0 out of 252 guides needed.
+2023-11-27 04:07:09 → root → INFO: Training spending_commerce_povertyUnder18_1 for 4000 iterations.
+2023-11-27 04:09:13 → root → INFO: Training of spending_commerce_povertyUnder18_1 completed in 124.00 seconds. 24.0 out of 252 guides remain to be trained.
+2023-11-27 04:09:13 → root → INFO: Training spending_commerce_povertyUnder18_2 for 4000 iterations.
+2023-11-27 04:11:17 → root → INFO: Training of spending_commerce_povertyUnder18_2 completed in 123.90 seconds. 23.0 out of 252 guides remain to be trained.
+2023-11-27 04:11:17 → root → INFO: Training spending_commerce_povertyUnder18_3 for 4000 iterations.
+2023-11-27 04:14:32 → root → INFO: Training of spending_commerce_povertyUnder18_3 completed in 195.12 seconds. 22.0 out of 252 guides remain to be trained.
+2023-11-27 04:14:32 → root → INFO: Training spending_commerce_povertyUnder18prct_1 for 4000 iterations.
+2023-11-27 04:16:34 → root → INFO: Training of spending_commerce_povertyUnder18prct_1 completed in 122.05 seconds. 21.0 out of 252 guides remain to be trained.
+2023-11-27 04:16:34 → root → INFO: Training spending_commerce_povertyUnder18prct_2 for 4000 iterations.
+2023-11-27 04:18:37 → root → INFO: Training of spending_commerce_povertyUnder18prct_2 completed in 123.13 seconds. 20.0 out of 252 guides remain to be trained.
+2023-11-27 04:18:37 → root → INFO: Training spending_commerce_povertyUnder18prct_3 for 4000 iterations.
+2023-11-27 04:20:38 → root → INFO: Training of spending_commerce_povertyUnder18prct_3 completed in 120.98 seconds. 19.0 out of 252 guides remain to be trained.
+2023-11-27 04:20:38 → root → INFO: Training spending_transportation_medianHouseholdIncome_1 for 4000 iterations.
+2023-11-27 04:21:52 → root → INFO: Training of spending_transportation_medianHouseholdIncome_1 completed in 73.92 seconds. 18.0 out of 252 guides remain to be trained.
+2023-11-27 04:21:52 → root → INFO: Training spending_transportation_medianHouseholdIncome_2 for 4000 iterations.
+2023-11-27 04:23:02 → root → INFO: Training of spending_transportation_medianHouseholdIncome_2 completed in 70.37 seconds. 17.0 out of 252 guides remain to be trained.
+2023-11-27 04:23:02 → root → INFO: Training spending_transportation_medianHouseholdIncome_3 for 4000 iterations.
+2023-11-27 04:24:11 → root → INFO: Training of spending_transportation_medianHouseholdIncome_3 completed in 68.13 seconds. 16.0 out of 252 guides remain to be trained.
+2023-11-27 04:24:11 → root → INFO: Training spending_transportation_povertyAll_1 for 4000 iterations.
+2023-11-27 04:25:20 → root → INFO: Training of spending_transportation_povertyAll_1 completed in 69.54 seconds. 15.0 out of 252 guides remain to be trained.
+2023-11-27 04:25:20 → root → INFO: Training spending_transportation_povertyAll_2 for 4000 iterations.
+2023-11-27 04:26:29 → root → INFO: Training of spending_transportation_povertyAll_2 completed in 68.46 seconds. 14.0 out of 252 guides remain to be trained.
+2023-11-27 04:26:29 → root → INFO: Training spending_transportation_povertyAll_3 for 4000 iterations.
+2023-11-27 04:27:35 → root → INFO: Training of spending_transportation_povertyAll_3 completed in 66.78 seconds. 13.0 out of 252 guides remain to be trained.
+2023-11-27 04:27:35 → root → INFO: Training spending_transportation_povertyAllprct_1 for 4000 iterations.
+2023-11-27 04:29:38 → root → INFO: Training of spending_transportation_povertyAllprct_1 completed in 123.01 seconds. 12.0 out of 252 guides remain to be trained.
+2023-11-27 04:29:38 → root → INFO: Training spending_transportation_povertyAllprct_2 for 4000 iterations.
+2023-11-27 04:30:46 → root → INFO: Training of spending_transportation_povertyAllprct_2 completed in 67.98 seconds. 11.0 out of 252 guides remain to be trained.
+2023-11-27 04:30:46 → root → INFO: Training spending_transportation_povertyAllprct_3 for 4000 iterations.
+2023-11-27 04:31:57 → root → INFO: Training of spending_transportation_povertyAllprct_3 completed in 71.16 seconds. 10.0 out of 252 guides remain to be trained.
+2023-11-27 04:31:57 → root → INFO: Training spending_transportation_povertyUnder18_1 for 4000 iterations.
+2023-11-27 04:33:05 → root → INFO: Training of spending_transportation_povertyUnder18_1 completed in 67.58 seconds. 9.0 out of 252 guides remain to be trained.
+2023-11-27 04:33:05 → root → INFO: Training spending_transportation_povertyUnder18_2 for 4000 iterations.
+2023-11-27 04:34:13 → root → INFO: Training of spending_transportation_povertyUnder18_2 completed in 68.02 seconds. 8.0 out of 252 guides remain to be trained.
+2023-11-27 04:34:13 → root → INFO: Training spending_transportation_povertyUnder18_3 for 4000 iterations.
+2023-11-27 04:35:24 → root → INFO: Training of spending_transportation_povertyUnder18_3 completed in 70.62 seconds. 7.0 out of 252 guides remain to be trained.
+2023-11-27 04:35:24 → root → INFO: Training spending_transportation_povertyUnder18prct_1 for 4000 iterations.
+2023-11-27 04:36:31 → root → INFO: Training of spending_transportation_povertyUnder18prct_1 completed in 67.05 seconds. 6.0 out of 252 guides remain to be trained.
+2023-11-27 04:36:31 → root → INFO: Training spending_transportation_povertyUnder18prct_2 for 4000 iterations.
+2023-11-27 04:37:38 → root → INFO: Training of spending_transportation_povertyUnder18prct_2 completed in 67.30 seconds. 5.0 out of 252 guides remain to be trained.
+2023-11-27 04:37:38 → root → INFO: Training spending_transportation_povertyUnder18prct_3 for 4000 iterations.
+2023-11-27 04:38:46 → root → INFO: Training of spending_transportation_povertyUnder18prct_3 completed in 67.45 seconds. 4.0 out of 252 guides remain to be trained.
+2023-11-27 04:38:46 → root → INFO: All guides are now available.

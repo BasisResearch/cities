@@ -44,6 +44,8 @@ logging.info(
     f"Starting to train {N_combinations - (num_files -2)/2} out of {N_combinations} guides needed."
 )
 
+remaining = N_combinations - (num_files -2)/2
+
 for intervention_dataset in interventions:
     for outcome_dataset in outcomes:
         for forward_shift in shifts:
@@ -79,9 +81,10 @@ for intervention_dataset in interventions:
                 if os.path.isfile(os.path.join(log_dir, f))
             ]
             num_files = len(files)
+            remaining -= 1
             logging.info(
                 f"Training of {guide_name} completed in {duration:.2f} seconds. "
-                f"{N_combinations - num_files+1} out of {N_combinations} guides remain to be trained."
+                f"{remaining} out of {N_combinations} guides remain to be trained."
             )
 
 logging.info("All guides are now available.")
