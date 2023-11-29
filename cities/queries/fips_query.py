@@ -15,6 +15,13 @@ from cities.utils.similarity_utils import (
 
 
 class FipsQuery:
+    """
+    Class for querying and analyzing data for a specific FIPS code.
+
+    This class allows querying and analysis of data for a specific FIPS code, considering
+    specified feature groups, outcome variable, lag, and other, listed parameters.
+    """
+
     def __init__(
         self,
         fips,
@@ -26,6 +33,22 @@ class FipsQuery:
         outcome_comparison_period=None,
         outcome_percentile_range=None,
     ):
+        """
+        Initialize the FipsQuery instance.
+
+        :param fips: The FIPS code of the interest.
+        :param outcome_var: The outcome variable for analysis (default is None).
+        :param feature_groups_with_weights: Dictionary specifying feature groups and their weights (int between -4 and 4).
+        :param lag: time lag for comparing outcomes with historical data  (int between 0 and 6).
+        :param top: The number of top locations to consider in comparisons (default is 5).
+        :param time_decay: Adjusts the weight decay over time in the generalized Euclidean distance calculation
+          (default is 1.08).
+        :param outcome_comparison_period: Specifies the years to consider for the outcome comparison,
+          can be used only when lag=0 (default is None).
+        :param outcome_percentile_range: Percentile range for filtering locations based on the most recent value
+          of the outcome variable (default is None).
+        """
+
         if feature_groups_with_weights is None and outcome_var:
             feature_groups_with_weights = {outcome_var: 4}
 
@@ -118,6 +141,16 @@ class FipsQuery:
             self.outcome_percentile_range = outcome_percentile_range
 
     def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
+        """
+        Compare the outcome of the choosen location to a sample of other locations.
+
+        This method generates a plot comparing the outcome of the current location to a
+        random sample of other locations. The plot creates a line for the current location
+        and lines for the sampled locations, providing a visual comparison.
+
+        :param range_multiplier: Multiplier for adjusting the y-axis range (default is 2).
+        :param sample_size: Size of the random sample of other locations (default is 250).
+        """
         # TODO add shading by population and warning about
         # locations with low population
 
@@ -198,6 +231,15 @@ class FipsQuery:
         fig.show()
 
     def find_euclidean_kins(self):
+        """
+        Find Euclidean kin locations based on the specified features and outcome variable.
+
+        This method calculates the Euclidean distance between the specified location and other
+        locations in the dataset based on the selected feature groups and outcome variable. It
+        adds information about the distance and the percentiles of the outcome variable to the
+        resulting dataframe, allowing for the identification of similar locations.
+        """
+
         # cut the relevant years from the outcome variable
         if self.outcome_comparison_period and self.outcome_var:
             start_year, end_year = self.outcome_comparison_period
@@ -489,9 +531,27 @@ class FipsQuery:
             self.euclidean_kins = pd.concat([myself, self.euclidean_kins])
 
     def plot_weights(self):
+        """
+        This method calls the external function `plot_weights` to visualize the feature weights.
+
+        """
         plot_weights(self)
 
     def plot_kins_other_var(self, var, fips_top_custom=None):
+        """
+        For a specified variable plot the time series for the current location and its Euclidean kin locations.
+
+        Parameters:
+        - var (str): The variable for which the time series will be plotted.
+        - fips_top_custom (list or None): Custom list of FIPS codes to use instead of the top Euclidean kin locations.
+
+        Returns:
+        - fig: Plotly figure object.
+
+        Note:
+        - The method requires running `find_euclidean_kins` first.
+        """
+
         # assert self.outcome_var, "Outcome comparison requires an outcome variable"
         assert hasattr(self, "euclidean_kins"), "Run `find_euclidean_kins` first"
 
@@ -603,10 +663,18 @@ class FipsQuery:
         return fig
 
     def plot_kins(self):
+        """
+        Creates the time series plot of the outcome variable for the current location and its Euclidean kin locations.
+        """
+
         fig = self.plot_kins_other_var(self.outcome_var)
         return fig
 
     def show_kins_plot(self):
+        """
+        Plot the time series of the outcome variable for the current location and its Euclidean kin locations.
+        """
+
         fig = self.plot_kins()
         fig.show()
 
