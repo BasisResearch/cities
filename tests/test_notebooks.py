@@ -1,28 +1,20 @@
+import glob
 import os
-import sys
 import subprocess
 
 from cities.utils.cleaning_utils import find_repo_root
 
-
-
-sys.path.insert(0, os.path.dirname(os.getcwd()))
 root = find_repo_root()
 
 
-
 def test_notebook_execution():
-    notebook_path = f"{root}/docs/guides/causal_insights_demo.ipynb"
+    os.environ["CI"] = "1"  # possibly redundant
 
-    try:
+    notebook_path = f"{root}/docs/guides/"
+    notebooks = glob.glob(os.path.join(notebook_path, "*.ipynb"))
 
-        result = subprocess.check_output([
-            'jupyter', 'nbconvert', '--to', 'script', '--execute', '--stdout', notebook_path
-            ], stderr=subprocess.STDOUT, text=True)
-        
-        # check for error messages
-        if 'Traceback (most recent call last):' in result:
-            raise AssertionError("Notebook execution failed with an error.")
-    except subprocess.CalledProcessError as e:
-        # if the CalledProcessError occurs, test failed
-        raise AssertionError(f"Notebook execution failed")
+    # run this command from terminal if the test fails to identify the source of trouble, if any
+    pytest_command = f"C1=1 python -m pytest --nbval-lax --dist loadscope -n auto {' '.join(notebooks)}"
+    # print(pytest_command)
+
+    subprocess.run(pytest_command, shell=True, check=True)
