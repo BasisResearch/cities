@@ -9,7 +9,7 @@ from cities.queries.causal_insight import CausalInsight
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import list_interventions, list_outcomes
 
-# if you run into NVML warning, use export CUDA_VISIBLE_DEVICES="" to disable GPU
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
 device = torch.device("cpu")
 
 root = find_repo_root()

@@ -1,10 +1,14 @@
+from typing import List, Union
+
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import pyro
 import torch
 from pyro.infer import SVI, Trace_ELBO
 from pyro.infer.autoguide import AutoNormal
 from pyro.optim import Adam
+from sklearn.preprocessing import StandardScaler
 
 from cities.utils.data_grabber import (
     DataGrabber,
@@ -172,33 +176,54 @@ def train_interactions_model(
     return guide
 
 
-def revert_standardize_and_scale_approx(
-    predictions: pd.DataFrame, variable_name: str
-) -> pd.DataFrame:
-    dg = DataGrabber()
-    dg.get_features_wide([variable_name])
-    dg.get_features_std_wide([variable_name])
+# reverting the standardization using the scaler is necessary, as doing this using the obvious formula
+# leads to some numerical issues and inaccuracies
 
-    original_data = dg.wide[variable_name]
-    transformed_data = dg.std_wide[variable_name]
 
-    descaled_rows = []
-    for r in range(len(predictions)):
-        year = predictions["year"][r]
-        transformed_row = transformed_data[str(year)]
-        prediction_row = predictions.iloc[r].drop("year")
+def revert_standardize_and_scale_scaler(
+    transformed_values: Union[np.ndarray, List, pd.Series, float],
+    year: int,
+    variable_name: str,
+) -> List:
+    if not isinstance(transformed_values, np.ndarray):
+        transformed_values = np.array(transformed_values)
 
-        nearest_indices = [
-            min(range(len(transformed_row)), key=lambda i: abs(transformed_row[i] - n))
-            for n in prediction_row
-        ]
+    def inverse_sigmoid(y, scale=1 / 3):
+        return -np.log((2 / (y + 1)) - 1) / scale
 
-        descaled_rows.append(original_data[str(year)][nearest_indices].values)
+    # needed to avoid lint issues
+    dg: DataGrabber
 
-    print(predictions["year"])
-    predictions_descaled = pd.DataFrame(
-        descaled_rows, columns=["observed", "mean", "low", "high"]
-    )
-    predictions_descaled["year"] = predictions["year"].values
+    # normally this will be deployed in a context in which dg already exists
+    # and we want to avoid wasting time by reloading the data
+    try:
+        original_column = dg.wide[variable_name][str(year)].values
+    except NameError:
+        dg = DataGrabber()
+        dg.get_features_wide([variable_name])
+        original_column = dg.wide[variable_name][str(year)].values.reshape(-1, 1)
 
-    return predictions_descaled
+    # dg = DataGrabber()
+    # dg.get_features_wide([variable_name])
+
+    # original_column = dg.wide[variable_name][str(year)].values.reshape(-1, 1)
+    scaler = StandardScaler()
+    scaler.fit(original_column)
+
+    inverted_values_sigmoid = inverse_sigmoid(transformed_values)
+    inverted_values = scaler.inverse_transform(
+        inverted_values_sigmoid.reshape(-1, 1)
+    ).flatten()
+
+    return inverted_values
+
+
+def revert_prediction_df(df: pd.DataFrame, variable_name: str) -> pd.DataFrame:
+    df_copy = df.copy()
+
+    for i in range(len(df)):
+        df_copy.iloc[i, 1:] = revert_standardize_and_scale_scaler(
+            df.iloc[i, 1:].tolist(), df.iloc[i, 0], variable_name
+        )
+
+    return df_copy

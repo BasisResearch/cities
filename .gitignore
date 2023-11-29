@@ -10,6 +10,7 @@ cities.egg-info/
 *.pyc
 **/*.pyc 
 tests/__pycache__/
+.mypy_cache/
 
 .vscode/settings.json
 tests/.coverage
@@ -19,6 +20,3 @@ cities.egg-info/SOURCES.txt
 tests/.coverage
 
 *.DS_Store
-
-data/model_guides/*.pkl
-data/model_guides/*.pth
