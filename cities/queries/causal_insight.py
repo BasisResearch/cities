@@ -19,7 +19,22 @@ from cities.utils.data_grabber import DataGrabber
 
 
 class CausalInsight:
+    """
+    Class for conducting causal analysis using observational and interventional datasets.
+
+    This class is designed for conducting causal analysis by comparing observational and
+    interventional datasets. It includes methods for loading pre-trained guides for inference.
+    """
+
     def __init__(self, outcome_dataset, intervention_dataset, num_samples=1000):
+        """
+        Initialize the CausalInsight instance.
+
+        :param outcome_dataset: The dataset representing the outcome variable.
+        :param intervention_dataset: The dataset representing the intervention variable.
+        :param num_samples: The number of samples to use during inference (default is 1000).
+        """
+
         self.outcome_dataset = outcome_dataset
         self.intervention_dataset = intervention_dataset
         self.root = find_repo_root()
@@ -28,6 +43,16 @@ class CausalInsight:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     def load_guide(self, forward_shift):
+        """
+        Load a pre-trained guide for inference.
+
+        This method loads a pre-trained guide for conducting inference in the causal analysis.
+        The guide is specific to the combination of intervention and outcome datasets, as well
+        as the forward shift parameter.
+
+        :param forward_shift: The forward shift parameter for the causal analysis.
+        """
+
         pyro.clear_param_store()
         guide_name = (
             f"{self.intervention_dataset}_{self.outcome_dataset}_{forward_shift}"
@@ -47,6 +72,17 @@ class CausalInsight:
         self.forward_shift = forward_shift
 
     def generate_samples(self):
+        """
+        Generate samples from the causal model.
+
+        This method prepares the data for inference, conditions the model on the observed data,
+        and uses the pre-trained guide to generate samples from the causal model.
+
+        The generated samples are stored in the `samples` attribute of the CausalInsight instance.
+
+        Note: Make sure to call this method after loading the guide using the `load_guide` method.
+
+        """
         self.data = prep_wide_data_for_inference(
             outcome_dataset=self.outcome_dataset,
             intervention_dataset=self.intervention_dataset,
@@ -88,6 +124,19 @@ class CausalInsight:
         #     self.mwc = mwc
 
     def generate_tensed_samples(self):
+        """
+        Generate tensed samples and compute intervention impact for multiple shifts.
+
+        This method iterates over different shifts, loads the corresponding pre-trained guide,
+        generates samples, and computes the impact of the intervention for each shift.
+
+        The results are stored in the `tensed_samples` and `tensed_tau_samples` attributes of
+        the CausalInsight instance.
+
+        Note: Make sure to call this method after loading the guide using the `load_guide` method
+        and generating samples using the `generate_samples` method.
+
+        """
         self.tensed_samples = {}
         self.tensed_tau_samples = {}
 
@@ -100,6 +149,16 @@ class CausalInsight:
             )
 
     def get_fips_predictions(self, fips, intervened_value, year=None):
+        """
+        Get predictions for a specific FIPS code, intervened value, and year.
+
+        This method computes predictions for a specific FIPS code, intervened value,
+        and year using the generated samples and intervention impact.
+
+        :param fips: The FIPS code of the location.
+        :param intervened_value: The intervened value for the intervention.
+        :param year: The year for which predictions are needed (default is None).
+        """
         self.fips = fips
         self.intervened_value = intervened_value
         # start with the latest year possible by default
@@ -230,6 +289,17 @@ class CausalInsight:
     def plot_predictions(
         self, range_multiplier=1.5, show_figure=True, scaling="transformed"
     ):
+        """
+        Plot predictions and credible intervals.
+
+        This method generates a plot displaying the observed values, mean predictions,
+        and a 95% credible interval around the mean. The plot can be shown or returned
+        as a figure.
+
+        :param range_multiplier: Multiplier for y-axis range adjustment (default is 1.5).
+        :param show_figure: Whether to show the figure (default is True).
+        :param scaling: Whether to use "transformed" or "original" scaling (default is "transformed").
+        """
         assert scaling in ["transformed", "original"]
 
         dg = DataGrabber()
