@@ -2,21 +2,20 @@ import os
 
 import numpy as np
 
-from cities.utils.data_grabber import DataGrabber, list_available_features
-
-# features = [
-#     "gdp",
-#     "population",
-#     "transport",
-#     "spending_transportation",
-#     "spending_commerce",
-#     "spending_HHS",
-# ]
+from cities.utils.data_grabber import (
+    DataGrabber,
+    list_available_features,
+    list_interventions,
+    list_outcomes,
+    list_tensed_features,
+)
 
 features = list_available_features()
 
 
 def test_DataGrabber():
+    assert features is not None
+
     data = DataGrabber()
 
     data.get_features_wide(features)
@@ -124,3 +123,15 @@ def test_DataGrabber():
         assert data2.std_long[feature].shape[1] == 4
 
     assert all(data.wide[feature].equals(data2.wide[feature]) for feature in features)
+
+
+def test_feature_listing_runtime():
+    features = list_available_features()
+    tensed_features = list_tensed_features()
+    interventions = list_interventions()
+    outcomes = list_outcomes()
+
+    assert len(features) > 2
+    assert len(tensed_features) > 2
+    assert len(interventions) > 2
+    assert len(outcomes) > 2

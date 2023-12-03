@@ -3,12 +3,14 @@ venv
 
 
 
+
 cities.egg-info/*
 cities.egg-info/
 */__pycache__
 *.pyc
 **/*.pyc 
 tests/__pycache__/
+.mypy_cache/
 
 .vscode/settings.json
 tests/.coverage

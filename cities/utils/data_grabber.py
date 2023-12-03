@@ -60,7 +60,7 @@ def list_available_features():
 
     feature_names = list(set(processed_file_names))
 
-    return feature_names
+    return sorted(feature_names)
 
 
 def list_tensed_features():
@@ -73,4 +73,22 @@ def list_tensed_features():
         if check_if_tensed(data.wide[feature]):
             tensed_features.append(feature)
 
-    return tensed_features
+    return sorted(tensed_features)
+
+
+# TODO this only will pick up spending-based interventions
+# needs to be modified/expanded when we add other types of interventions
+def list_interventions():
+    interventions = [
+        feature for feature in list_tensed_features() if feature.startswith("spending_")
+    ]
+    return sorted(interventions)
+
+
+def list_outcomes():
+    outcomes = [
+        feature
+        for feature in list_tensed_features()
+        if feature not in list_interventions()
+    ]
+    return sorted(outcomes)
