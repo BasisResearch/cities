@@ -37,15 +37,13 @@ N_combinations = len(interventions) * len(outcomes) * len(shifts)
 files = [f for f in os.listdir(log_dir) if os.path.isfile(os.path.join(log_dir, f))]
 num_files = len(files)
 
+
 logging.info(
     f"{(num_files-2)/2} guides already exist. "
     f"Starting to train {N_combinations - (num_files -2)/2} out of {N_combinations} guides needed."
 )
 
-remaining = N_combinations - (num_files -2)/2
-
-tests = 0
-
+remaining = N_combinations - (num_files - 2) / 2
 for intervention_dataset in interventions:
     for outcome_dataset in outcomes:
         for forward_shift in shifts:
@@ -56,9 +54,8 @@ for intervention_dataset in interventions:
             guide_path = os.path.join(
                 root, "data/model_guides", f"{guide_name}_guide.pkl"
             )
-
-
             if not os.path.exists(guide_path):
+                existing_guides += 1
 
                 logging.info(f"Training {guide_name} for {num_iterations} iterations.")
 

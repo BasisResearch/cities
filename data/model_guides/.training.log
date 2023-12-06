@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2023-11-27 05:02:59 → root → INFO: 248.0 guides already exist. Starting to train 4.0 out of 252 guides needed.
 2023-11-27 05:02:59 → root → INFO: Training spending_HHS_medianHouseholdIncome_2 for 4000 iterations.
 2023-11-27 05:05:35 → root → INFO: Training of spending_HHS_medianHouseholdIncome_2 completed in 156.07 seconds. 3.0 out of 252 guides remain to be trained.
@@ -8,3 +9,7 @@
 2023-11-27 05:07:50 → root → INFO: Training spending_commerce_povertyAllprct_3 for 4000 iterations.
 2023-11-27 05:08:58 → root → INFO: Training of spending_commerce_povertyAllprct_3 completed in 67.89 seconds. 0.0 out of 252 guides remain to be trained.
 2023-11-27 05:08:58 → root → INFO: All guides are now available.
+=======
+2023-11-27 16:33:36 → root → INFO: 252.0 guides already exist. Starting to train -45.0 out of 207 guides needed.
+2023-11-27 16:33:36 → root → INFO: All guides are now available.
+>>>>>>> 07d87a3d4df13b6d63c34887d05dd2ed00cfacb9
