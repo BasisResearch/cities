@@ -47,7 +47,6 @@ remaining = N_combinations - (num_files - 2) / 2
 for intervention_dataset in interventions:
     for outcome_dataset in outcomes:
         for forward_shift in shifts:
-            tests += 1
             # check if the corresponding guide already exists
             existing_guides = 0
             guide_name = f"{intervention_dataset}_{outcome_dataset}_{forward_shift}"
@@ -86,6 +85,3 @@ for intervention_dataset in interventions:
                 )
 
 logging.info("All guides are now available.")
-
-
-print("tests", tests)

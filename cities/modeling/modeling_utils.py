@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import Callable, List, Union
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,7 +17,9 @@ from cities.utils.data_grabber import (
 )
 
 
-def prep_wide_data_for_inference(outcome_dataset: str, intervention_dataset: str, forward_shift: int):
+def prep_wide_data_for_inference(
+    outcome_dataset: str, intervention_dataset: str, forward_shift: int
+):
     if torch.cuda.is_available():
         device = torch.device("cuda")
     else:
@@ -146,7 +148,7 @@ def prep_wide_data_for_inference(outcome_dataset: str, intervention_dataset: str
 
 
 def train_interactions_model(
-    conditioned_model: callable,
+    conditioned_model: Callable,
     model_args,
     num_iterations: int = 1000,
     plot_loss: bool = True,

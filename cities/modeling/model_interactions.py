@@ -1,5 +1,6 @@
 import logging
 import os
+from typing import Optional
 
 import dill
 import pyro
@@ -19,10 +20,10 @@ class InteractionsModel:
         self,
         outcome_dataset: str,
         intervention_dataset: str,
-        intervention_variable: str = None,
+        intervention_variable: Optional[str] = None,
         forward_shift: int = 2,
         num_iterations: int = 1500,
-        num_samples: int =1000,
+        num_samples: int = 1000,
         plot_loss: bool = False,
     ):
         self.outcome_dataset = outcome_dataset
