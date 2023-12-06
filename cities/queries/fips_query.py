@@ -16,10 +16,8 @@ from cities.utils.similarity_utils import (
 
 class FipsQuery:
     """
-    Class for querying and analyzing data for a specific FIPS code.
-
-    This class allows querying and analysis of data for a specific FIPS code, considering
-    specified feature groups, outcome variable, lag, and other, listed parameters.
+    Class for querying and analyzing jurisdiction data for a specific FIPS code,
+    in terms of specified feature groups, outcome variable, time lag, and other, listed parameters.
     """
 
     def __init__(
@@ -36,17 +34,18 @@ class FipsQuery:
         """
         Initialize the FipsQuery instance.
 
-        :param fips: The FIPS code of the interest.
-        :param outcome_var: The outcome variable for analysis (default is None).
-        :param feature_groups_with_weights: Dictionary specifying feature groups and their weights (int between -4 and 4).
-        :param lag: time lag for comparing outcomes with historical data  (int between 0 and 6).
-        :param top: The number of top locations to consider in comparisons (default is 5).
-        :param time_decay: Adjusts the weight decay over time in the generalized Euclidean distance calculation
-          (default is 1.08).
-        :param outcome_comparison_period: Specifies the years to consider for the outcome comparison,
-          can be used only when lag=0 (default is None).
-        :param outcome_percentile_range: Percentile range for filtering locations based on the most recent value
-          of the outcome variable (default is None).
+        :param fips: the FIPS code of interest.
+        :param outcome_var: the outcome variable for analysis (optional, defaults to None).
+        :param feature_groups_with_weights: a dictionary specifying feature groups and their weights
+                                                (weights should beint between -4 and 4).
+        :param lag: time lag for comparing outcomes with historical data (int between 0 and 6).
+        :param top: the number of top locations to consider in comparisons (defaults to 5).
+        :param time_decay: adjusts the weight decay over time in the generalized Euclidean distance calculation
+          (default is 1.08, giving somewhat more weight to more recent data).
+        :param outcome_comparison_period: specifies the years to consider for the outcome comparison,
+          can be used only when lag=0 (defaults to None).
+        :param outcome_percentile_range: percentile range for filtering locations based on the most recent value
+          of the outcome variable (defaults to None).
         """
 
         if feature_groups_with_weights is None and outcome_var:
@@ -61,7 +60,7 @@ class FipsQuery:
 
         assert not (
             lag > 0 and outcome_var is None
-        ), "Lag will be idle with no outcome variable"
+        ), "lag will be idle with no outcome variable"
 
         assert not (
             lag > 0 and outcome_comparison_period is not None
@@ -142,17 +141,16 @@ class FipsQuery:
 
     def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
         """
-        Compare the outcome of the choosen location to a sample of other locations.
+        Compare the outcome of the selected location to a sample of other locations.
 
         This method generates a plot comparing the outcome of the current location to a
         random sample of other locations. The plot creates a line for the current location
         and lines for the sampled locations, providing a visual comparison.
+        It also marks the precentile at which the current location falls among *all* locations.
 
-        :param range_multiplier: Multiplier for adjusting the y-axis range (default is 2).
-        :param sample_size: Size of the random sample of other locations (default is 250).
+        :param range_multiplier: multiplier for adjusting the y-axis range (defaults to 2).
+        :param sample_size: random sample size of other locations (defaults to 250).
         """
-        # TODO add shading by population and warning about
-        # locations with low population
 
         assert self.outcome_var, "Outcome comparison requires an outcome variable."
 
@@ -232,7 +230,7 @@ class FipsQuery:
 
     def find_euclidean_kins(self):
         """
-        Find Euclidean kin locations based on the specified features and outcome variable.
+        Find Euclidean kin locations based on the specified features, weights and outcome variable.
 
         This method calculates the Euclidean distance between the specified location and other
         locations in the dataset based on the selected feature groups and outcome variable. It
@@ -558,8 +556,6 @@ class FipsQuery:
         self.data.get_features_long([var])
         plot_data = self.data.long[var]
         my_plot_data = plot_data[plot_data["GeoFIPS"] == self.fips].copy()
-        # up = my_plot_data["Year"].max()
-        # possibly remove
 
         if fips_top_custom is None:
             fips_top = self.euclidean_kins["GeoFIPS"].iloc[1 : (self.top + 1)].values
@@ -582,16 +578,12 @@ class FipsQuery:
             )
         )
 
-        # TODO_Nikodem maybe add more shades and test on largish top
-        # shades_of_grey = ["#333333", "#444444", "#555555", "#666666", "#777777"][: self.top]
-
         pastel_colors = ["#FFC0CB", "#A9A9A9", "#87CEFA", "#FFD700", "#98FB98"][
             : self.top
         ]
 
         for i, fips in enumerate(fips_top):
             subset = others_plot_data[others_plot_data["GeoFIPS"] == fips]
-            # line_color = shades_of_grey[i % len(shades_of_grey)]
             line_color = pastel_colors[i % len(pastel_colors)]
             fig.add_trace(
                 go.Scatter(
@@ -649,9 +641,6 @@ class FipsQuery:
             else:
                 title = f"Top {top} locations matching your search (lag of {lag} years)"
 
-        # TODO will need to mention how_far_back if we implement it  \
-        # TODO adding info about feature cluster weights at the bottom of the plot
-
         fig.update_layout(
             title=title,
             xaxis_title="Year",
@@ -677,7 +666,3 @@ class FipsQuery:
 
         fig = self.plot_kins()
         fig.show()
-
-
-# TODO_Nikodem add population clustering and warning if a population is much different,
-# especially if small
