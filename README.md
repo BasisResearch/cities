@@ -1,3 +1,6 @@
+<p align="center">
+  <img width="665" alt="Screenshot 2023-12-07 at 6 12 27 PM" src="https://github.com/BasisResearch/cities/assets/31873755/e2d1f973-ba8c-4d19-9a1a-0b3e431ebd89">
+</p>
 
 
 ## Evaluating Policy Transfer via Similarity Analysis and Causal Inference 
@@ -10,9 +13,9 @@ cd tests && python -m pytest
 ```
 
 
-Welcome to the repository for [Polis](http://polis.basis.ai/), developed by the [Basis Research Institute](https://www.basis.ai/) team for The Opportunity Project (TOP) sprint in collaboration with the U.S. Department of Commerce. The primary goal of this project is to enhance access to data for local policymakers, facilitating more informed decision-making.
+Welcome to the repository for [polis](http://polis.basis.ai/), developed by the [Basis Research Institute](https://www.basis.ai/) for [The Opportunity Project (TOP)](https://opportunity.census.gov/) 2023 in collaboration with the U.S. Department of Commerce. The primary goal of this project is to enhance access to data for local policymakers, facilitating more informed decision-making.
 
-This is the backend repository for more advanced users. For a more pleasant frontend experience and more information, please use [Polis Web App](http://polis.basis.ai/).
+This is the backend repository for more advanced users. For a more pleasant frontend experience and more information, please use the [app](http://polis.basis.ai/).
 
 
 ### The repository is structured as follows:
