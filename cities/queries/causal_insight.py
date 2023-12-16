@@ -334,7 +334,7 @@ class CausalInsight:
                     ]
                 ),
                 fill="toself",
-                fillcolor="rgba(0,100,80,0.2)",
+                fillcolor="rgba(255, 255, 255, 0.31)",
                 line=dict(color="rgba(255,255,255,0)"),
                 name="95% credible interval around mean",
             )
