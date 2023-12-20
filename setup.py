@@ -26,7 +26,7 @@ DEV_REQUIRES = [
     "jupyter", "pyro-ppl>=1.8.5",
     "torch",   "plotly.express", 
     "scipy",  
-    "chirho",
+    "chirho", "graphviz",
 ]
 
 setup(
