@@ -10,6 +10,9 @@ from cities.utils.clean_transport import clean_transport
 from cities.utils.clean_unemployment import clean_unemployment
 from cities.utils.clean_urbanization import clean_urbanization
 from cities.utils.cleaning_poverty import clean_poverty
+from cities.utils.clean_population_ma import clean_population_ma
+
+clean_population_ma()
 
 clean_poverty()
 
