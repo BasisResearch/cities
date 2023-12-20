@@ -6,5 +6,7 @@ format:
 
 test: FORCE 
 	./scripts/test.sh
+	./scripts/test_notebooks.sh
+	
 
 FORCE:
