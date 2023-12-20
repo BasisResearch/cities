@@ -100,7 +100,10 @@ class CausalInsight:
             )
 
     """Returns the intervened and observed value, in the original scale"""
-    def get_intervened_and_observed_values_original_scale(self, fips, intervened_value, year):
+
+    def get_intervened_and_observed_values_original_scale(
+        self, fips, intervened_value, year
+    ):
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
         dg.get_features_wide([self.intervention_dataset])
@@ -117,7 +120,9 @@ class CausalInsight:
         )
 
         # observed value, in the original scale
-        observed_original_scale = dg.wide[self.intervention_dataset].iloc[fips_id][str(year)]
+        observed_original_scale = dg.wide[self.intervention_dataset].iloc[fips_id][
+            str(year)
+        ]
 
         return (intervened_original_scale[0], observed_original_scale)
 
