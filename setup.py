@@ -17,7 +17,7 @@ TEST_REQUIRES = [
         ]
 
 DEV_REQUIRES = [
-    "jupyter", "pyro-ppl>=1.8.5",
+    "pyro-ppl>=1.8.5",
     "torch",   "plotly.express", 
     "scipy",  
     "chirho", "graphviz",
@@ -34,7 +34,7 @@ setup(
     #     "Documentation": "",
         "Source": "https://github.com/BasisResearch/cities",
     },
-    install_requires=["pandas", "numpy", "scikit-learn","dill",  "plotly", "matplotlib>=3.8.2"],
+    install_requires=["jupyter","pandas", "numpy", "scikit-learn","dill",  "plotly", "matplotlib>=3.8.2"],
     extras_require={
         "test": TEST_REQUIRES,
         "dev": DEV_REQUIRES + TEST_REQUIRES 
