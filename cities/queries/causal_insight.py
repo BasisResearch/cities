@@ -19,13 +19,25 @@ from cities.utils.data_grabber import DataGrabber
 
 
 class CausalInsight:
-    def __init__(self, outcome_dataset, intervention_dataset, num_samples=1000):
+    def __init__(self, outcome_dataset, intervention_dataset, num_samples=1000, 
+                 sites= None
+                ):
         self.outcome_dataset = outcome_dataset
         self.intervention_dataset = intervention_dataset
         self.root = find_repo_root()
         self.num_samples = num_samples
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        if sites is None:
+            self.sites = ["weight_TY"]
+        else:
+            self.sites = sites
+
+        self.tau_samples_path = os.path.join(self.root, 
+                        "data/tau_samples",
+                        f"{self.intervention_dataset}_{self.outcome_dataset}_{self.num_samples}_tau.pkl")
+        
 
     def load_guide(self, forward_shift):
         pyro.clear_param_store()
@@ -65,7 +77,7 @@ class CausalInsight:
             model=self.model,
             guide=self.guide,
             num_samples=self.num_samples,
-            parallel=True,
+            parallel=True, return_sites =  self.sites
         )
         self.samples = self.predictive(*self.model_args)
 
@@ -98,6 +110,14 @@ class CausalInsight:
             self.tensed_tau_samples[shift] = (
                 self.samples["weight_TY"].squeeze().detach().numpy()
             )
+
+        
+        if not os.path.exists(self.tau_samples_path):
+            with open(self.tau_samples_path, "wb") as file:
+                dill.dump(self.tensed_tau_samples, file)
+
+    def get_tau_samples(self):
+        pass
 
     def get_fips_predictions(self, fips, intervened_value, year=None):
         self.fips = fips
