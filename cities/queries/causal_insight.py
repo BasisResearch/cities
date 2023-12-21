@@ -20,7 +20,12 @@ from cities.utils.data_grabber import DataGrabber
 
 class CausalInsight:
     def __init__(
-        self, outcome_dataset, intervention_dataset, num_samples=1000, sites=None, smoke_test = None
+        self,
+        outcome_dataset,
+        intervention_dataset,
+        num_samples=1000,
+        sites=None,
+        smoke_test=None,
     ):
         self.outcome_dataset = outcome_dataset
         self.intervention_dataset = intervention_dataset
@@ -28,14 +33,13 @@ class CausalInsight:
         self.num_samples = num_samples
         self.data = None
         self.smoke_test = smoke_test
-        print("smoke test:", smoke_test, self.smoke_test)
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-        if sites is None:
-            self.sites = ["weight_TY"]
-        else:
-            self.sites = sites
+        # if sites is None:
+        #     self.sites = ["weight_TY"]
+        # else:
+        #    self.sites = sites
 
         self.tau_samples_path = os.path.join(
             self.root,
@@ -82,7 +86,7 @@ class CausalInsight:
             guide=self.guide,
             num_samples=self.num_samples,
             parallel=True,
-            return_sites=self.sites,
+            # return_sites=self.sites,
         )
         self.samples = self.predictive(*self.model_args)
 
@@ -116,7 +120,6 @@ class CausalInsight:
                 self.samples["weight_TY"].squeeze().detach().numpy()
             )
 
-        
         if not self.smoke_test:
             if not os.path.exists(self.tau_samples_path):
                 with open(self.tau_samples_path, "wb") as file:
