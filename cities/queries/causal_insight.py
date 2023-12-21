@@ -28,7 +28,7 @@ class CausalInsight:
         self.num_samples = num_samples
         self.data = None
         self.smoke_test = smoke_test
-        print(smoke_test, self.smoke_test)
+        print("smoke test:", smoke_test, self.smoke_test)
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -117,8 +117,9 @@ class CausalInsight:
             )
 
         
-        if self.smoke_test is None and not os.path.exists(self.tau_samples_path):
-            with open(self.tau_samples_path, "wb") as file:
+        if not self.smoke_test:
+            if not os.path.exists(self.tau_samples_path):
+                with open(self.tau_samples_path, "wb") as file:
                     dill.dump(self.tensed_tau_samples, file)
 
     def get_tau_samples(self):
