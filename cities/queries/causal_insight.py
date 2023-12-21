@@ -20,13 +20,15 @@ from cities.utils.data_grabber import DataGrabber
 
 class CausalInsight:
     def __init__(
-        self, outcome_dataset, intervention_dataset, num_samples=1000, sites=None
+        self, outcome_dataset, intervention_dataset, num_samples=1000, sites=None, smoke_test = None
     ):
         self.outcome_dataset = outcome_dataset
         self.intervention_dataset = intervention_dataset
         self.root = find_repo_root()
         self.num_samples = num_samples
         self.data = None
+        self.smoke_test = smoke_test
+        print(smoke_test, self.smoke_test)
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -114,9 +116,10 @@ class CausalInsight:
                 self.samples["weight_TY"].squeeze().detach().numpy()
             )
 
-        if not os.path.exists(self.tau_samples_path):
+        
+        if self.smoke_test is None and not os.path.exists(self.tau_samples_path):
             with open(self.tau_samples_path, "wb") as file:
-                dill.dump(self.tensed_tau_samples, file)
+                    dill.dump(self.tensed_tau_samples, file)
 
     def get_tau_samples(self):
         if os.path.exists(self.tau_samples_path):
