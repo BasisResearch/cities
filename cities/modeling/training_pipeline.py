@@ -48,13 +48,13 @@ for intervention_dataset in interventions:
     for outcome_dataset in outcomes:
         for forward_shift in shifts:
             # check if the corresponding guide already exists
-            existing_guides = 0
+            # existing_guides = 0  seems rendundant, remove if all works
             guide_name = f"{intervention_dataset}_{outcome_dataset}_{forward_shift}"
             guide_path = os.path.join(
                 root, "data/model_guides", f"{guide_name}_guide.pkl"
             )
             if not os.path.exists(guide_path):
-                existing_guides += 1
+                # existing_guides += 1 seems redundat remove if all works
 
                 logging.info(f"Training {guide_name} for {num_iterations} iterations.")
 
