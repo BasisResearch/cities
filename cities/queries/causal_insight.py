@@ -100,6 +100,7 @@ class CausalInsight:
             )
 
     """Returns the intervened and observed value, in the original scale"""
+
     def get_intervened_and_observed_values_original_scale(
         self, fips, intervened_value, year
     ):
