@@ -132,6 +132,31 @@ class CausalInsight:
         else:
             raise ValueError("No tau samples found. Run generate_tensed_samples first.")
 
+    def get_intervened_and_observed_values_original_scale(
+        self, fips, intervened_value, year
+    ):
+        dg = DataGrabber()
+        dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
+        dg.get_features_wide([self.intervention_dataset])
+
+        # intervened value, in the original scale
+        intervened_original_scale = revert_standardize_and_scale_scaler(
+            intervened_value, year, self.intervention_dataset
+        )
+
+        fips_id = (
+            dg.std_wide[self.intervention_dataset]
+            .loc[dg.std_wide[self.intervention_dataset]["GeoFIPS"] == fips]
+            .index[0]
+        )
+
+        # observed value, in the original scale
+        observed_original_scale = dg.wide[self.intervention_dataset].iloc[fips_id][
+            str(year)
+        ]
+
+        return (intervened_original_scale[0], observed_original_scale)
+
     def get_fips_predictions(self, fips, intervened_value, year=None):
         self.fips = fips
         self.intervened_value = intervened_value
