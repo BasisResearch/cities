@@ -2,8 +2,6 @@ venv
 
 
 
-
-
 cities.egg-info/*
 cities.egg-info/
 */__pycache__
