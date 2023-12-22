@@ -447,6 +447,16 @@ class CausalInsight:
         predictions = self.samples["Y"].squeeze()
         self.average_predictions = torch.mean(predictions, dim=0)
         plt.hist(self.average_predictions - self.data["y"].squeeze(), bins=70)
+        plt.xlabel("residuals")
+        plt.ylabel("counts")
+        plt.text(
+            0.7,
+            -0.1,
+            "(colored by year)",
+            ha="left",
+            va="bottom",
+            transform=plt.gca().transAxes,
+        )
         plt.show()
 
     def predictive_check(self):
@@ -456,11 +466,14 @@ class CausalInsight:
         average_predictions_flat = self.average_predictions.view(-1)
         rss = torch.sum((y_flat - average_predictions_flat) ** 2)
         r_squared = 1 - (rss / tss)
-        plt.scatter(average_predictions_flat, y_flat)
+        rounded_r_squared = np.round(r_squared.item(), 2)
+        plt.scatter(y=average_predictions_flat, x=y_flat)
         plt.title(
-            f"{self.intervention_dataset}, {self.outcome_dataset}." f"R2={r_squared}"
+            f"{self.intervention_dataset}, {self.outcome_dataset}, "
+            f"R2={rounded_r_squared}"
         )
-        # TODO round r2
+        plt.ylabel("average prediction")
+        plt.xlabel("observed outcome")
         plt.show
 
     def estimate_ATE(self):
@@ -476,5 +489,7 @@ class CausalInsight:
         plt.title(
             f"ATE for {self.intervention_dataset}  and  {self.outcome_dataset} with forward shift = {self.forward_shift}"
         )
+        plt.ylabel("counts")
+        plt.xlabel("ATE")
         plt.legend()
         plt.show()
