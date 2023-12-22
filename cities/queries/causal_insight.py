@@ -131,7 +131,8 @@ class CausalInsight:
                 self.tensed_tau_samples = dill.load(file)
         else:
             raise ValueError("No tau samples found. Run generate_tensed_samples first.")
-
+            
+    """Returns the intervened and observed value, in the original scale"""
     def get_intervened_and_observed_values_original_scale(
         self, fips, intervened_value, year
     ):
