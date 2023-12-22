@@ -53,8 +53,9 @@ def test_slim_full():
             assert len(ci.tensed_tau_samples[1]) == 1000
             assert ci.predictions is not None
 
+
 a = time.time()
 test_slim_full()
 b = time.time()
-print(b-a)
-print((b-a)/60)
+print(b - a)
+print((b - a) / 60)
