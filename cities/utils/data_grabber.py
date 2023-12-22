@@ -11,7 +11,7 @@ from cities.utils.cleaning_utils import check_if_tensed, find_repo_root
 class DataGrabber:
     def __init__(self):
         self.repo_root = find_repo_root()
-        sys.path.insert(0, self.repo_root)
+        sys.path.insert(0, self.repo_root)  # possibly redundant, test later
         self.wide = {}
         self.std_wide = {}
         self.long = {}
