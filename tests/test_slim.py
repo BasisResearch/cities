@@ -1,5 +1,4 @@
 import random
-import time
 
 from cities.queries.causal_insight import CausalInsight
 from cities.utils.data_grabber import DataGrabber, list_interventions, list_outcomes
@@ -21,7 +20,7 @@ intervened_value = random.uniform(-1, 1)
 # intervened_value = random.uniform(-1, 1)
 # fips = random.choice(fips_codes)
 # def test_slim_random():
-
+#     os.environ['CI'] = '1'
 #     ci = CausalInsight(
 #         outcome_dataset=outcome,
 #         intervention_dataset=intervention,
@@ -52,10 +51,3 @@ def test_slim_full():
 
             assert len(ci.tensed_tau_samples[1]) == 1000
             assert ci.predictions is not None
-
-
-a = time.time()
-test_slim_full()
-b = time.time()
-print(b - a)
-print((b - a) / 60)
