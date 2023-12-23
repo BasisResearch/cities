@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from cities.utils.clean_variable import VariableCleaner
+from cities.utils.clean_variable import VariableCleanerMSA
 from cities.utils.cleaning_utils import find_repo_root
 root = find_repo_root()
 
@@ -53,9 +53,8 @@ def clean_ethnic_initially():
 def clean_ethnic_composition_ma():
     clean_ethnic_initially()
 
-    cleaner = VariableCleaner(variable_name="ethnic_composition",
-                              path_to_raw_csv = f"{root}/data/raw/ethnic_composition_ma.csv",
-                              region_type="MA")
+    cleaner = VariableCleanerMSA(variable_name="ethnic_composition",
+                              path_to_raw_csv = f"{root}/data/raw/ethnic_composition_ma.csv")
     cleaner.clean_variable()
 
 

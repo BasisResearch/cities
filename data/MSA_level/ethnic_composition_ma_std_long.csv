@@ -328,7 +328,7 @@ GeoFIPS,GeoName,Year,Value
 43420,"Sierra Vista-Douglas, AZ (MA)",mexican,0.23328167900374996
 43580,"Sioux City, IA-NE-SD (MA)",mexican,0.06301043054367828
 43620,"Sioux Falls, SD (MA)",mexican,-0.08269989272130662
-43780,"South Bend-Mishawaka, IN-MI (MA)",mexican,-0.03772712556655844
+43780,"South Bend-Mishawaka, IN-MI (MA)",mexican,-0.03772712556655822
 43900,"Spartanburg, SC (MA)",mexican,-0.057933843813164576
 44060,"Spokane-Spokane Valley, WA (MA)",mexican,-0.06145866640346431
 44100,"Springfield, IL (MA)",mexican,-0.09240894440046443
@@ -763,7 +763,7 @@ GeoFIPS,GeoName,Year,Value
 49180,"Winston-Salem, NC (MA)",puerto_rican,-0.020629543976177556
 49340,"Worcester, MA-CT (MA)",puerto_rican,0.41040579755641593
 49420,"Yakima, WA (MA)",puerto_rican,-0.08420700089383104
-49620,"York-Hanover, PA (MA)",puerto_rican,0.20997566523031064
+49620,"York-Hanover, PA (MA)",puerto_rican,0.20997566523031042
 49660,"Youngstown-Warren-Boardman, OH-PA (MA)",puerto_rican,0.07339425518599452
 49700,"Yuba City, CA (MA)",puerto_rican,-0.05157975693798289
 49740,"Yuma, AZ (MA)",puerto_rican,-0.05262943268703568
@@ -999,7 +999,7 @@ GeoFIPS,GeoName,Year,Value
 33340,"Milwaukee-Waukesha, WI (MA)",cuban,-0.02457703802999478
 33460,"Minneapolis-St. Paul-Bloomington, MN-WI (MA)",cuban,-0.02973532273077717
 33540,"Missoula, MT (MA)",cuban,-0.04499459254163396
-33660,"Mobile, AL (MA)",cuban,-0.021556132949908435
+33660,"Mobile, AL (MA)",cuban,-0.021556132949908213
 33700,"Modesto, CA (MA)",cuban,-0.03862679348306275
 33740,"Monroe, LA (MA)",cuban,-0.04232367756804978
 33780,"Monroe, MI (MA)",cuban,-0.03212352810447083
@@ -2035,7 +2035,7 @@ GeoFIPS,GeoName,Year,Value
 21780,"Evansville, IN-KY (MA)",black_african_american,-0.04911574672805219
 21820,"Fairbanks, AK (MA)",black_african_american,-0.092724944586412
 22020,"Fargo, ND-MN (MA)",black_african_american,-0.07184941530513123
-22140,"Farmington, NM (MA)",black_african_american,-0.1500176170467663
+22140,"Farmington, NM (MA)",black_african_american,-0.15001761704676608
 22180,"Fayetteville, NC (MA)",black_african_american,0.3288867079272413
 22220,"Fayetteville-Springdale-Rogers, AR (MA)",black_african_american,-0.12259764555021024
 22380,"Flagstaff, AZ (MA)",black_african_american,-0.13909940035978396
@@ -2114,7 +2114,7 @@ GeoFIPS,GeoName,Year,Value
 29460,"Lakeland-Winter Haven, FL (MA)",black_african_american,0.06671097251965685
 29540,"Lancaster, PA (MA)",black_african_american,-0.10877840789074367
 29620,"Lansing-East Lansing, MI (MA)",black_african_american,-0.038867501792209214
-29700,"Laredo, TX (MA)",black_african_american,-0.1548542384502236
+29700,"Laredo, TX (MA)",black_african_american,-0.1548542384502234
 29740,"Las Cruces, NM (MA)",black_african_american,-0.13514026610500884
 29820,"Las Vegas-Henderson-Paradise, NV (MA)",black_african_american,0.0195554190460121
 29940,"Lawrence, KS (MA)",black_african_american,-0.09965937255117352
@@ -2868,7 +2868,7 @@ GeoFIPS,GeoName,Year,Value
 28020,"Kalamazoo-Portage, MI (MA)",asian,-0.0324334826836582
 28100,"Kankakee, IL (MA)",asian,-0.09341634318384961
 28140,"Kansas City, MO-KS (MA)",asian,-0.00784841530918945
-28420,"Kennewick-Richland, WA (MA)",asian,-0.02136360635237622
+28420,"Kennewick-Richland, WA (MA)",asian,-0.021363606352375997
 28660,"Killeen-Temple, TX (MA)",asian,-0.020549216000348647
 28700,"Kingsport-Bristol, TN-VA (MA)",asian,-0.10490996756804749
 28740,"Kingston, NY (MA)",asian,-0.05738165998762279
@@ -3123,7 +3123,7 @@ GeoFIPS,GeoName,Year,Value
 15380,"Buffalo-Cheektowaga, NY (MA)",native_hawaiian_other_pacific_islander,-0.03449634033871507
 15500,"Burlington, NC (MA)",native_hawaiian_other_pacific_islander,-0.03336576812712977
 15540,"Burlington-South Burlington, VT (MA)",native_hawaiian_other_pacific_islander,-0.033657718069529885
-15680,"California-Lexington Park, MD (MA)",native_hawaiian_other_pacific_islander,-0.03503467789816572
+15680,"California-Lexington Park, MD (MA)",native_hawaiian_other_pacific_islander,-0.035034677898165945
 15940,"Canton-Massillon, OH (MA)",native_hawaiian_other_pacific_islander,-0.03739404658994272
 15980,"Cape Coral-Fort Myers, FL (MA)",native_hawaiian_other_pacific_islander,-0.030319846282840013
 16020,"Cape Girardeau, MO-IL (MA)",native_hawaiian_other_pacific_islander,-0.021525586942760966
@@ -3214,7 +3214,7 @@ GeoFIPS,GeoName,Year,Value
 24540,"Greeley, CO (MA)",native_hawaiian_other_pacific_islander,-0.015982587605629095
 24580,"Green Bay, WI (MA)",native_hawaiian_other_pacific_islander,-0.036580597240454704
 24660,"Greensboro-High Point, NC (MA)",native_hawaiian_other_pacific_islander,-0.030823551371638835
-24780,"Greenville, NC (MA)",native_hawaiian_other_pacific_islander,-0.02685394985859524
+24780,"Greenville, NC (MA)",native_hawaiian_other_pacific_islander,-0.026853949858595016
 24860,"Greenville-Anderson, SC (MA)",native_hawaiian_other_pacific_islander,-0.009390633892162104
 25060,"Gulfport-Biloxi, MS (MA)",native_hawaiian_other_pacific_islander,-0.02701947455671394
 25180,"Hagerstown-Martinsburg, MD-WV (MA)",native_hawaiian_other_pacific_islander,-0.028883141632197185
@@ -3744,7 +3744,7 @@ GeoFIPS,GeoName,Year,Value
 39660,"Rapid City, SD (MA)",other_race_races,0.1962743356983272
 39740,"Reading, PA (MA)",other_race_races,-0.12994427226830818
 39820,"Redding, CA (MA)",other_race_races,0.13753997541715157
-39900,"Reno, NV (MA)",other_race_races,0.0967929051503158
+39900,"Reno, NV (MA)",other_race_races,0.09679290515031558
 40060,"Richmond, VA (MA)",other_race_races,0.025118391644720628
 40140,"Riverside-San Bernardino-Ontario, CA (MA)",other_race_races,-0.023590875532021993
 40220,"Roanoke, VA (MA)",other_race_races,-0.07054099774599698
