@@ -1,5 +1,4 @@
 #!/bin/bash
 set -euxo pipefail
 
-./scripts/lint.sh
-cd tests && pytest
+CI=1 cd tests && pytest

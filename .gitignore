@@ -2,14 +2,13 @@ venv
 
 
 
-
-
 cities.egg-info/*
 cities.egg-info/
 */__pycache__
 *.pyc
 **/*.pyc 
 tests/__pycache__/
+.mypy_cache/
 
 .vscode/settings.json
 tests/.coverage
@@ -17,7 +16,7 @@ tests/pytest_report/
 tests/.pytest_cache/
 cities.egg-info/SOURCES.txt
 tests/.coverage
+**/*_5_tau.pkl
+
 
 *.DS_Store
-
-data/model_guides/
