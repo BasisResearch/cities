@@ -76,11 +76,6 @@ class CausalInsight:
 
         self.model_args = self.data["model_args"]
 
-        self.model_conditioned = pyro.condition(
-            self.model,
-            data={"T": self.data["t"], "Y": self.data["y"], "X": self.data["x"]},
-        )
-
         self.predictive = pyro.infer.Predictive(
             model=self.model,
             guide=self.guide,
