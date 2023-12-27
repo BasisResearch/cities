@@ -12,6 +12,12 @@
 # from cities.utils.cleaning_poverty import clean_poverty
 from cities.utils.clean_population_ma import clean_population_ma
 from cities.utils.clean_ethnic_composition_ma import clean_ethnic_composition_ma
+from cities.utils.clean_urbanicity_ma import clean_urbanicity_ma
+from cities.utils.clean_industry_ma import clean_industry_ma
+
+clean_industry_ma()
+
+clean_urbanicity_ma()
 
 clean_ethnic_composition_ma()
 

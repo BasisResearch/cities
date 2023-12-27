@@ -1,0 +1,2305 @@
+GeoFIPS,GeoName,Year,Value
+10180,"Abilene, TX (MA)",urban_housing,-0.05724277744516992
+10420,"Akron, OH (MA)",urban_housing,0.003802672362945403
+10500,"Albany, GA (MA)",urban_housing,-0.05931964954489832
+10540,"Albany-Lebanon, OR (MA)",urban_housing,-0.06140937026666504
+10580,"Albany-Schenectady-Troy, NY (MA)",urban_housing,0.01587349533250415
+10740,"Albuquerque, NM (MA)",urban_housing,0.023218135627286474
+10780,"Alexandria, LA (MA)",urban_housing,-0.061167540130160125
+10900,"Allentown-Bethlehem-Easton, PA-NJ (MA)",urban_housing,0.003339548741291498
+11020,"Altoona, PA (MA)",urban_housing,-0.05943050312491638
+11100,"Amarillo, TX (MA)",urban_housing,-0.04567565730285117
+11180,"Ames, IA (MA)",urban_housing,-0.06082063366444912
+11260,"Anchorage, AK (MA)",urban_housing,-0.03541516530318134
+11460,"Ann Arbor, MI (MA)",urban_housing,-0.03590791150441153
+11500,"Anniston-Oxford, AL (MA)",urban_housing,-0.061517313787424865
+11540,"Appleton, WI (MA)",urban_housing,-0.05213056146208772
+11700,"Asheville, NC (MA)",urban_housing,-0.029371656008171154
+12020,"Athens-Clarke County, GA (MA)",urban_housing,-0.054527736400768245
+12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",urban_housing,0.4558722651910878
+12100,"Atlantic City-Hammonton, NJ (MA)",urban_housing,-0.03983951726622248
+12220,"Auburn-Opelika, AL (MA)",urban_housing,-0.05586071612812582
+12260,"Augusta-Richmond County, GA-SC (MA)",urban_housing,-0.020308022818472105
+12420,"Austin-Round Rock-Georgetown, TX (MA)",urban_housing,0.1491353807536424
+12540,"Bakersfield, CA (MA)",urban_housing,-0.0032639022807908757
+12580,"Baltimore-Columbia-Towson, MD (MA)",urban_housing,0.20919346389092497
+12620,"Bangor, ME (MA)",urban_housing,-0.06233470326978119
+12700,"Barnstable Town, MA (MA)",urban_housing,-0.02819652876351353
+12940,"Baton Rouge, LA (MA)",urban_housing,0.006245545464424573
+12980,"Battle Creek, MI (MA)",urban_housing,-0.05972689166078837
+13020,"Bay City, MI (MA)",urban_housing,-0.06119085884231934
+13140,"Beaumont-Port Arthur, TX (MA)",urban_housing,-0.0348698674626321
+13220,"Beckley, WV (MA)",urban_housing,-0.06314729415664755
+13380,"Bellingham, WA (MA)",urban_housing,-0.05122592332726417
+13460,"Bend, OR (MA)",urban_housing,-0.05444985957863413
+13740,"Billings, MT (MA)",urban_housing,-0.05447293426170163
+13780,"Binghamton, NY (MA)",urban_housing,-0.05028841026638664
+13820,"Birmingham-Hoover, AL (MA)",urban_housing,0.02399063946472202
+13900,"Bismarck, ND (MA)",urban_housing,-0.05863851007864773
+13980,"Blacksburg-Christiansburg, VA (MA)",urban_housing,-0.05866786389086365
+14010,"Bloomington, IL (MA)",urban_housing,-0.05490898236331132
+14020,"Bloomington, IN (MA)",urban_housing,-0.057346318415311126
+14100,"Bloomsburg-Berwick, PA (MA)",urban_housing,-0.06517761714497139
+14260,"Boise City, ID (MA)",urban_housing,-0.002488870263450238
+14460,"Boston-Cambridge-Newton, MA-NH (MA)",urban_housing,0.4066299210044797
+14500,"Boulder, CO (MA)",urban_housing,-0.03755990086177785
+14540,"Bowling Green, KY (MA)",urban_housing,-0.05893282986639614
+14740,"Bremerton-Silverdale-Port Orchard, WA (MA)",urban_housing,-0.046085849054031014
+14860,"Bridgeport-Stamford-Norwalk, CT (MA)",urban_housing,0.023646052091558678
+15180,"Brownsville-Harlingen, TX (MA)",urban_housing,-0.036081786872346644
+15260,"Brunswick, GA (MA)",urban_housing,-0.06150735789182937
+15380,"Buffalo-Cheektowaga, NY (MA)",urban_housing,0.052646877912704726
+15500,"Burlington, NC (MA)",urban_housing,-0.056361974311553764
+15540,"Burlington-South Burlington, VT (MA)",urban_housing,-0.054769491194001874
+15680,"California-Lexington Park, MD (MA)",urban_housing,-0.06511738562748126
+15940,"Canton-Massillon, OH (MA)",urban_housing,-0.03276754761658707
+15980,"Cape Coral-Fort Myers, FL (MA)",urban_housing,0.03493911845825548
+16020,"Cape Girardeau, MO-IL (MA)",urban_housing,-0.06397446863510992
+16060,"Carbondale-Marion, IL (MA)",urban_housing,-0.06070455820113674
+16180,"Carson City, NV (MA)",urban_housing,-0.06427042807625871
+16220,"Casper, WY (MA)",urban_housing,-0.06230588646641799
+16300,"Cedar Rapids, IA (MA)",urban_housing,-0.046224675634518375
+16540,"Chambersburg-Waynesboro, PA (MA)",urban_housing,-0.06055232130163135
+16580,"Champaign-Urbana, IL (MA)",urban_housing,-0.04901945278464659
+16620,"Charleston, WV (MA)",urban_housing,-0.05329054463396887
+16700,"Charleston-North Charleston, SC (MA)",urban_housing,0.011154442300397749
+16740,"Charlotte-Concord-Gastonia, NC-SC (MA)",urban_housing,0.16651469913024486
+16820,"Charlottesville, VA (MA)",urban_housing,-0.056483614282406336
+16860,"Chattanooga, TN-GA (MA)",urban_housing,-0.02282316206394619
+16940,"Cheyenne, WY (MA)",urban_housing,-0.061116710346444725
+16980,"Chicago-Naperville-Elgin, IL-IN-WI (MA)",urban_housing,0.7335850578443353
+17020,"Chico, CA (MA)",urban_housing,-0.0520773189514947
+17140,"Cincinnati, OH-KY-IN (MA)",urban_housing,0.14161215731954524
+17300,"Clarksville, TN-KY (MA)",urban_housing,-0.04647844285546887
+17420,"Cleveland, TN (MA)",urban_housing,-0.06246542546287004
+17460,"Cleveland-Elyria, OH (MA)",urban_housing,0.16134425962138432
+17660,"Coeur d'Alene, ID (MA)",urban_housing,-0.05609168640929307
+17780,"College Station-Bryan, TX (MA)",urban_housing,-0.04780386501050271
+17820,"Colorado Springs, CO (MA)",urban_housing,-0.0005277413666011643
+17860,"Columbia, MO (MA)",urban_housing,-0.05313004902062857
+17900,"Columbia, SC (MA)",urban_housing,0.0027646528257394554
+17980,"Columbus, GA-AL (MA)",urban_housing,-0.04254190304700012
+18020,"Columbus, IN (MA)",urban_housing,-0.06395194382677682
+18140,"Columbus, OH (MA)",urban_housing,0.13012957486380072
+18580,"Corpus Christi, TX (MA)",urban_housing,-0.027278866101346444
+18700,"Corvallis, OR (MA)",urban_housing,-0.06195378914929872
+18880,"Crestview-Fort Walton Beach-Destin, FL (MA)",urban_housing,-0.03661758237943491
+19060,"Cumberland, MD-WV (MA)",urban_housing,-0.06370992898899319
+19100,"Dallas-Fort Worth-Arlington, TX (MA)",urban_housing,0.5688077687941151
+19140,"Dalton, GA (MA)",urban_housing,-0.06261605459054853
+19180,"Danville, IL (MA)",urban_housing,-0.06493852141324297
+19300,"Daphne-Fairhope-Foley, AL (MA)",urban_housing,-0.048616196868661254
+19340,"Davenport-Moline-Rock Island, IA-IL (MA)",urban_housing,-0.03401169064389564
+19430,"Dayton-Kettering, OH (MA)",urban_housing,0.01596630810481403
+19460,"Decatur, AL (MA)",urban_housing,-0.061821224700531974
+19500,"Decatur, IL (MA)",urban_housing,-0.059459330056987114
+19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",urban_housing,0.009113305991282683
+19740,"Denver-Aurora-Lakewood, CO (MA)",urban_housing,0.23176949585377327
+19780,"Des Moines-West Des Moines, IA (MA)",urban_housing,-0.003311503382407599
+19820,"Detroit-Warren-Dearborn, MI (MA)",urban_housing,0.375873051248641
+20020,"Dothan, AL (MA)",urban_housing,-0.06181362706717952
+20100,"Dover, DE (MA)",urban_housing,-0.056488595193776026
+20220,"Dubuque, IA (MA)",urban_housing,-0.06255292168562143
+20260,"Duluth, MN-WI (MA)",urban_housing,-0.050485416084386725
+20500,"Durham-Chapel Hill, NC (MA)",urban_housing,-0.016449392626411874
+20700,"East Stroudsburg, PA (MA)",urban_housing,-0.06201640282285037
+20740,"Eau Claire, WI (MA)",urban_housing,-0.05841153878982874
+20940,"El Centro, CA (MA)",urban_housing,-0.058376417981016115
+21060,"Elizabethtown-Fort Knox, KY (MA)",urban_housing,-0.061859736731787685
+21140,"Elkhart-Goshen, IN (MA)",urban_housing,-0.05388136499170959
+21300,"Elmira, NY (MA)",urban_housing,-0.06275463086881139
+21340,"El Paso, TX (MA)",urban_housing,0.010251167106454684
+21420,"Enid, OK (MA)",urban_housing,-0.06458758975779133
+21500,"Erie, PA (MA)",urban_housing,-0.0460218150215691
+21660,"Eugene-Springfield, OR (MA)",urban_housing,-0.03484885364081758
+21780,"Evansville, IN-KY (MA)",urban_housing,-0.04046626788205987
+21820,"Fairbanks, AK (MA)",urban_housing,-0.06257125909550654
+22020,"Fargo, ND-MN (MA)",urban_housing,-0.04457753818734467
+22140,"Farmington, NM (MA)",urban_housing,-0.06231872305529518
+22180,"Fayetteville, NC (MA)",urban_housing,-0.03024059900934284
+22220,"Fayetteville-Springdale-Rogers, AR (MA)",urban_housing,-0.02807407133999751
+22380,"Flagstaff, AZ (MA)",urban_housing,-0.059465095431502135
+22420,"Flint, MI (MA)",urban_housing,-0.0301073832852633
+22500,"Florence, SC (MA)",urban_housing,-0.057298086825606886
+22520,"Florence-Muscle Shoals, AL (MA)",urban_housing,-0.060406632405254346
+22540,"Fond du Lac, WI (MA)",urban_housing,-0.06270774048948069
+22660,"Fort Collins, CO (MA)",urban_housing,-0.03397622770405562
+22900,"Fort Smith, AR-OK (MA)",urban_housing,-0.05427286433898071
+23060,"Fort Wayne, IN (MA)",urban_housing,-0.03137065557749319
+23420,"Fresno, CA (MA)",urban_housing,0.007881275930569753
+23460,"Gadsden, AL (MA)",urban_housing,-0.0631698212784707
+23540,"Gainesville, FL (MA)",urban_housing,-0.04540848637332506
+23580,"Gainesville, GA (MA)",urban_housing,-0.055285492924219914
+23900,"Gettysburg, PA (MA)",urban_housing,-0.06627688939542631
+24020,"Glens Falls, NY (MA)",urban_housing,-0.06247983358957654
+24140,"Goldsboro, NC (MA)",urban_housing,-0.06379767333115105
+24220,"Grand Forks, ND-MN (MA)",urban_housing,-0.06132605365416588
+24260,"Grand Island, NE (MA)",urban_housing,-0.06474210641548961
+24300,"Grand Junction, CO (MA)",urban_housing,-0.055127129667495445
+24340,"Grand Rapids-Kentwood, MI (MA)",urban_housing,0.016218189534790817
+24420,"Grants Pass, OR (MA)",urban_housing,-0.0648206730174169
+24500,"Great Falls, MT (MA)",urban_housing,-0.06241512779831393
+24540,"Greeley, CO (MA)",urban_housing,-0.04541924682143583
+24580,"Green Bay, WI (MA)",urban_housing,-0.04540166266906309
+24660,"Greensboro-High Point, NC (MA)",urban_housing,-0.006360037102970617
+24780,"Greenville, NC (MA)",urban_housing,-0.05449548446394259
+24860,"Greenville-Anderson, SC (MA)",urban_housing,0.007731642400524041
+25060,"Gulfport-Biloxi, MS (MA)",urban_housing,-0.0350248434450805
+25180,"Hagerstown-Martinsburg, MD-WV (MA)",urban_housing,-0.05010005750256197
+25220,"Hammond, LA (MA)",urban_housing,-0.06239128869029387
+25260,"Hanford-Corcoran, CA (MA)",urban_housing,-0.059819658324897884
+25420,"Harrisburg-Carlisle, PA (MA)",urban_housing,-0.018749073227540047
+25500,"Harrisonburg, VA (MA)",urban_housing,-0.06183956378600042
+25540,"Hartford-East Hartford-Middletown, CT (MA)",urban_housing,0.04809895681470899
+25620,"Hattiesburg, MS (MA)",urban_housing,-0.06106247409363785
+25860,"Hickory-Lenoir-Morganton, NC (MA)",urban_housing,-0.04700878906547046
+25940,"Hilton Head Island-Bluffton, SC (MA)",urban_housing,-0.04944027015282393
+25980,"Hinesville, GA (MA)",urban_housing,-0.06491207115304964
+26140,"Homosassa Springs, FL (MA)",urban_housing,-0.05452065671706274
+26300,"Hot Springs, AR (MA)",urban_housing,-0.06091653224207427
+26380,"Houma-Thibodaux, LA (MA)",urban_housing,-0.05260815709830413
+26420,"Houston-The Woodlands-Sugar Land, TX (MA)",urban_housing,0.5379448310294461
+26580,"Huntington-Ashland, WV-KY-OH (MA)",urban_housing,-0.04311627477854851
+26620,"Huntsville, AL (MA)",urban_housing,-0.027681991707515174
+26820,"Idaho Falls, ID (MA)",urban_housing,-0.05954816879640423
+26900,"Indianapolis-Carmel-Anderson, IN (MA)",urban_housing,0.13619666625860738
+26980,"Iowa City, IA (MA)",urban_housing,-0.05506761163332474
+27060,"Ithaca, NY (MA)",urban_housing,-0.06391998991712977
+27100,"Jackson, MI (MA)",urban_housing,-0.061010857614779535
+27140,"Jackson, MS (MA)",urban_housing,-0.025035500266518906
+27180,"Jackson, TN (MA)",urban_housing,-0.059651943828358145
+27260,"Jacksonville, FL (MA)",urban_housing,0.09451691401566142
+27340,"Jacksonville, NC (MA)",urban_housing,-0.056674984116740545
+27500,"Janesville-Beloit, WI (MA)",urban_housing,-0.05561138735569238
+27620,"Jefferson City, MO (MA)",urban_housing,-0.06238342962808874
+27740,"Johnson City, TN (MA)",urban_housing,-0.053288446669836675
+27780,"Johnstown, PA (MA)",urban_housing,-0.06073783508211039
+27860,"Jonesboro, AR (MA)",urban_housing,-0.061400200241142344
+27900,"Joplin, MO (MA)",urban_housing,-0.05728078629889577
+27980,"Kahului-Wailuku-Lahaina, HI (MA)",urban_housing,-0.05570000342525305
+28020,"Kalamazoo-Portage, MI (MA)",urban_housing,-0.0466091293239107
+28100,"Kankakee, IL (MA)",urban_housing,-0.062065917055900144
+28140,"Kansas City, MO-KS (MA)",urban_housing,0.14585723804376016
+28420,"Kennewick-Richland, WA (MA)",urban_housing,-0.04493974056289529
+28660,"Killeen-Temple, TX (MA)",urban_housing,-0.030287106021210763
+28700,"Kingsport-Bristol, TN-VA (MA)",urban_housing,-0.04876810841461654
+28740,"Kingston, NY (MA)",urban_housing,-0.06115915585778153
+28940,"Knoxville, TN (MA)",urban_housing,0.005518396794940372
+29020,"Kokomo, IN (MA)",urban_housing,-0.06246044810395679
+29100,"La Crosse-Onalaska, WI-MN (MA)",urban_housing,-0.058305389635079474
+29180,"Lafayette, LA (MA)",urban_housing,-0.030200135174976883
+29200,"Lafayette-West Lafayette, IN (MA)",urban_housing,-0.052760531542116795
+29340,"Lake Charles, LA (MA)",urban_housing,-0.05180559394811057
+29420,"Lake Havasu City-Kingman, AZ (MA)",urban_housing,-0.046992519559405976
+29460,"Lakeland-Winter Haven, FL (MA)",urban_housing,0.0034084519537291857
+29540,"Lancaster, PA (MA)",urban_housing,-0.027405008059354974
+29620,"Lansing-East Lansing, MI (MA)",urban_housing,-0.025967990242935612
+29700,"Laredo, TX (MA)",urban_housing,-0.04951713826672932
+29740,"Las Cruces, NM (MA)",urban_housing,-0.05190945885339193
+29820,"Las Vegas-Henderson-Paradise, NV (MA)",urban_housing,0.16612191702856416
+29940,"Lawrence, KS (MA)",urban_housing,-0.058454522269506426
+30020,"Lawton, OK (MA)",urban_housing,-0.05998736944418748
+30140,"Lebanon, PA (MA)",urban_housing,-0.05874911052051146
+30300,"Lewiston, ID-WA (MA)",urban_housing,-0.06418190333764406
+30340,"Lewiston-Auburn, ME (MA)",urban_housing,-0.06327433580351849
+30460,"Lexington-Fayette, KY (MA)",urban_housing,-0.018783513092876514
+30620,"Lima, OH (MA)",urban_housing,-0.062107833628171516
+30700,"Lincoln, NE (MA)",urban_housing,-0.03721323618812655
+30780,"Little Rock-North Little Rock-Conway, AR (MA)",urban_housing,-0.00496254075049829
+30860,"Logan, UT-ID (MA)",urban_housing,-0.06064612681596848
+30980,"Longview, TX (MA)",urban_housing,-0.05256645695236628
+31020,"Longview, WA (MA)",urban_housing,-0.0624350373284579
+31080,"Los Angeles-Long Beach-Anaheim, CA (MA)",urban_housing,0.8217447454332087
+31140,"Louisville/Jefferson County, KY-IN (MA)",urban_housing,0.05368774384987196
+31180,"Lubbock, TX (MA)",urban_housing,-0.03916179313231849
+31340,"Lynchburg, VA (MA)",urban_housing,-0.054900854177236114
+31420,"Macon-Bibb County, GA (MA)",urban_housing,-0.05285074864396322
+31460,"Madera, CA (MA)",urban_housing,-0.06335606048034825
+31540,"Madison, WI (MA)",urban_housing,-0.008955092021090016
+31700,"Manchester-Nashua, NH (MA)",urban_housing,-0.03512334425374519
+31740,"Manhattan, KS (MA)",urban_housing,-0.05874701384307335
+31860,"Mankato, MN (MA)",urban_housing,-0.06276537108430602
+31900,"Mansfield, OH (MA)",urban_housing,-0.06065870401022644
+32580,"McAllen-Edinburg-Mission, TX (MA)",urban_housing,0.0014946686768941841
+32780,"Medford, OR (MA)",urban_housing,-0.05055020941704502
+32820,"Memphis, TN-MS-AR (MA)",urban_housing,0.05524921661121596
+32900,"Merced, CA (MA)",urban_housing,-0.05159287722477879
+33100,"Miami-Fort Lauderdale-Pompano Beach, FL (MA)",urban_housing,0.5518591932348273
+33140,"Michigan City-La Porte, IN (MA)",urban_housing,-0.062022952342100535
+33220,"Midland, MI (MA)",urban_housing,-0.06480705486396299
+33260,"Midland, TX (MA)",urban_housing,-0.054315605724439386
+33340,"Milwaukee-Waukesha, WI (MA)",urban_housing,0.09714170685714318
+33460,"Minneapolis-St. Paul-Bloomington, MN-WI (MA)",urban_housing,0.2668783652399689
+33540,"Missoula, MT (MA)",urban_housing,-0.05972951220219047
+33660,"Mobile, AL (MA)",urban_housing,-0.032412885037373496
+33700,"Modesto, CA (MA)",urban_housing,-0.026568775901857022
+33740,"Monroe, LA (MA)",urban_housing,-0.05507049577616452
+33780,"Monroe, MI (MA)",urban_housing,-0.059471646988635385
+33860,"Montgomery, AL (MA)",urban_housing,-0.03955094409636506
+34060,"Morgantown, WV (MA)",urban_housing,-0.06053319323021622
+34100,"Morristown, TN (MA)",urban_housing,-0.06298567326921478
+34580,"Mount Vernon-Anacortes, WA (MA)",urban_housing,-0.06136299603127393
+34620,"Muncie, IN (MA)",urban_housing,-0.0599540895379953
+34740,"Muskegon, MI (MA)",urban_housing,-0.055813525095943506
+34820,"Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MA)",urban_housing,-0.010182890735163985
+34900,"Napa, CA (MA)",urban_housing,-0.05851270687840515
+34940,"Naples-Marco Island, FL (MA)",urban_housing,-0.014869722354498793
+34980,"Nashville-Davidson--Murfreesboro--Franklin, TN (MA)",urban_housing,0.10082293864094205
+35100,"New Bern, NC (MA)",urban_housing,-0.06252777316910452
+35300,"New Haven-Milford, CT (MA)",urban_housing,0.022041584817841686
+35380,"New Orleans-Metairie, LA (MA)",urban_housing,0.0677332529912813
+35620,"New York-Newark-Jersey City, NY-NJ-PA (MA)",urban_housing,0.9623266457235278
+35660,"Niles, MI (MA)",urban_housing,-0.056029028775560596
+35840,"North Port-Sarasota-Bradenton, FL (MA)",urban_housing,0.04737842566984307
+35980,"Norwich-New London, CT (MA)",urban_housing,-0.04701403728791298
+36100,"Ocala, FL (MA)",urban_housing,-0.03758038531043195
+36140,"Ocean City, NJ (MA)",urban_housing,-0.04646637133427045
+36220,"Odessa, TX (MA)",urban_housing,-0.054615052048809565
+36260,"Ogden-Clearfield, UT (MA)",urban_housing,-0.013667829200103898
+36420,"Oklahoma City, OK (MA)",urban_housing,0.06079905387323925
+36500,"Olympia-Lacey-Tumwater, WA (MA)",urban_housing,-0.04524077949245875
+36540,"Omaha-Council Bluffs, NE-IA (MA)",urban_housing,0.02100771520496747
+36740,"Orlando-Kissimmee-Sanford, FL (MA)",urban_housing,0.1978961605069236
+36780,"Oshkosh-Neenah, WI (MA)",urban_housing,-0.05406046555043331
+36980,"Owensboro, KY (MA)",urban_housing,-0.061658005002285465
+37100,"Oxnard-Thousand Oaks-Ventura, CA (MA)",urban_housing,0.003907078776048456
+37340,"Palm Bay-Melbourne-Titusville, FL (MA)",urban_housing,0.002460898732333794
+37460,"Panama City, FL (MA)",urban_housing,-0.04639892802055712
+37620,"Parkersburg-Vienna, WV (MA)",urban_housing,-0.0628350511535617
+37860,"Pensacola-Ferry Pass-Brent, FL (MA)",urban_housing,-0.018817164215953253
+37900,"Peoria, IL (MA)",urban_housing,-0.03656321584869415
+37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (MA)",urban_housing,0.5143985052667348
+38060,"Phoenix-Mesa-Chandler, AZ (MA)",urban_housing,0.4070618200865992
+38220,"Pine Bluff, AR (MA)",urban_housing,-0.06486493184937181
+38300,"Pittsburgh, PA (MA)",urban_housing,0.17098089058306964
+38340,"Pittsfield, MA (MA)",urban_housing,-0.05918494606280278
+38540,"Pocatello, ID (MA)",urban_housing,-0.062810689394449
+38860,"Portland-South Portland, ME (MA)",urban_housing,-0.029001678215941795
+38900,"Portland-Vancouver-Hillsboro, OR-WA (MA)",urban_housing,0.17437030935672504
+38940,"Port St. Lucie, FL (MA)",urban_housing,-0.012780122333506339
+39100,"Poughkeepsie-Newburgh-Middletown, NY (MA)",urban_housing,-0.02103514879442414
+39150,"Prescott Valley-Prescott, AZ (MA)",urban_housing,-0.04918368907334769
+39300,"Providence-Warwick, RI-MA (MA)",urban_housing,0.10237861727781383
+39340,"Provo-Orem, UT (MA)",urban_housing,-0.02149044560862956
+39380,"Pueblo, CO (MA)",urban_housing,-0.054125759033026966
+39460,"Punta Gorda, FL (MA)",urban_housing,-0.043212875644077275
+39540,"Racine, WI (MA)",urban_housing,-0.051376745944311186
+39580,"Raleigh-Cary, NC (MA)",urban_housing,0.057354350161346046
+39660,"Rapid City, SD (MA)",urban_housing,-0.05797094566408445
+39740,"Reading, PA (MA)",urban_housing,-0.037448548948143756
+39820,"Redding, CA (MA)",urban_housing,-0.05701341015458161
+39900,"Reno, NV (MA)",urban_housing,-0.0183247494288995
+40060,"Richmond, VA (MA)",urban_housing,0.04715380715604711
+40140,"Riverside-San Bernardino-Ontario, CA (MA)",urban_housing,0.30736085604198493
+40220,"Roanoke, VA (MA)",urban_housing,-0.043568821845419325
+40340,"Rochester, MN (MA)",urban_housing,-0.053840981663072274
+40380,"Rochester, NY (MA)",urban_housing,0.0266028462968817
+40420,"Rockford, IL (MA)",urban_housing,-0.03704751679978335
+40580,"Rocky Mount, NC (MA)",urban_housing,-0.06112640471110975
+40660,"Rome, GA (MA)",urban_housing,-0.0639770877946394
+40900,"Sacramento-Roseville-Folsom, CA (MA)",urban_housing,0.1511106699245346
+40980,"Saginaw, MI (MA)",urban_housing,-0.05492759850399642
+41060,"St. Cloud, MN (MA)",urban_housing,-0.05727790287443235
+41100,"St. George, UT (MA)",urban_housing,-0.0538346881414451
+41140,"St. Joseph, MO-KS (MA)",urban_housing,-0.06046689970723995
+41180,"St. Louis, MO-IL (MA)",urban_housing,0.21088908780395332
+41420,"Salem, OR (MA)",urban_housing,-0.034830466521452164
+41500,"Salinas, CA (MA)",urban_housing,-0.038481144334683304
+41540,"Salisbury, MD-DE (MA)",urban_housing,-0.02185451893115853
+41620,"Salt Lake City, UT (MA)",urban_housing,0.04587947982410845
+41660,"San Angelo, TX (MA)",urban_housing,-0.059104751915359355
+41700,"San Antonio-New Braunfels, TX (MA)",urban_housing,0.15611799352697897
+41740,"San Diego-Chula Vista-Carlsbad, CA (MA)",urban_housing,0.2351432939410547
+41860,"San Francisco-Oakland-Berkeley, CA (MA)",urban_housing,0.3881996880447063
+41940,"San Jose-Sunnyvale-Santa Clara, CA (MA)",urban_housing,0.11150608949209628
+42020,"San Luis Obispo-Paso Robles, CA (MA)",urban_housing,-0.04383656170366135
+42100,"Santa Cruz-Watsonville, CA (MA)",urban_housing,-0.04655900679045444
+42140,"Santa Fe, NM (MA)",urban_housing,-0.0573282316005298
+42200,"Santa Maria-Santa Barbara, CA (MA)",urban_housing,-0.03163023419220501
+42220,"Santa Rosa-Petaluma, CA (MA)",urban_housing,-0.02603737328012601
+42340,"Savannah, GA (MA)",urban_housing,-0.03239055415644165
+42540,"Scranton--Wilkes-Barre, PA (MA)",urban_housing,-0.017901470661492946
+42660,"Seattle-Tacoma-Bellevue, WA (MA)",urban_housing,0.3259967363089791
+42680,"Sebastian-Vero Beach, FL (MA)",urban_housing,-0.04974039352078963
+42700,"Sebring-Avon Park, FL (MA)",urban_housing,-0.0584238572482253
+43100,"Sheboygan, WI (MA)",urban_housing,-0.06059634189975405
+43300,"Sherman-Denison, TX (MA)",urban_housing,-0.06251834245493837
+43340,"Shreveport-Bossier City, LA (MA)",urban_housing,-0.034288561311485166
+43420,"Sierra Vista-Douglas, AZ (MA)",urban_housing,-0.06094849818479109
+43580,"Sioux City, IA-NE-SD (MA)",urban_housing,-0.05882878387891688
+43620,"Sioux Falls, SD (MA)",urban_housing,-0.04621995188604655
+43780,"South Bend-Mishawaka, IN-MI (MA)",urban_housing,-0.04084513857797223
+43900,"Spartanburg, SC (MA)",urban_housing,-0.04506388402543593
+44060,"Spokane-Spokane Valley, WA (MA)",urban_housing,-0.019133167203296053
+44100,"Springfield, IL (MA)",urban_housing,-0.05021968028446688
+44140,"Springfield, MA (MA)",urban_housing,-0.007447984506008587
+44180,"Springfield, MO (MA)",urban_housing,-0.03183831437481699
+44220,"Springfield, OH (MA)",urban_housing,-0.0583376276660339
+44300,"State College, PA (MA)",urban_housing,-0.05943024106144301
+44420,"Staunton, VA (MA)",urban_housing,-0.06327381192464643
+44700,"Stockton, CA (MA)",urban_housing,-0.01000907050842359
+44940,"Sumter, SC (MA)",urban_housing,-0.061851615162287876
+45060,"Syracuse, NY (MA)",urban_housing,-0.015349047955511952
+45220,"Tallahassee, FL (MA)",urban_housing,-0.03787556795269453
+45300,"Tampa-St. Petersburg-Clearwater, FL (MA)",urban_housing,0.29111855662563824
+45460,"Terre Haute, IN (MA)",urban_housing,-0.05838663972386626
+45500,"Texarkana, TX-AR (MA)",urban_housing,-0.06073416677114274
+45540,"The Villages, FL (MA)",urban_housing,-0.05404315876667232
+45780,"Toledo, OH (MA)",urban_housing,-0.004835781478355505
+45820,"Topeka, KS (MA)",urban_housing,-0.05242666833423393
+45940,"Trenton-Princeton, NJ (MA)",urban_housing,-0.03292202029870206
+46060,"Tucson, AZ (MA)",urban_housing,0.04327000643990053
+46140,"Tulsa, OK (MA)",urban_housing,0.01920011113920661
+46220,"Tuscaloosa, AL (MA)",urban_housing,-0.05170461310456431
+46300,"Twin Falls, ID (MA)",urban_housing,-0.06336418051402892
+46340,"Tyler, TX (MA)",urban_housing,-0.05366030344701733
+46520,"Urban Honolulu, HI (MA)",urban_housing,0.025589964115377617
+46540,"Utica-Rome, NY (MA)",urban_housing,-0.048681526980541734
+46660,"Valdosta, GA (MA)",urban_housing,-0.06199177658267807
+46700,"Vallejo, CA (MA)",urban_housing,-0.02991557178533566
+47020,"Victoria, TX (MA)",urban_housing,-0.06299248394060564
+47220,"Vineland-Bridgeton, NJ (MA)",urban_housing,-0.05922399457053085
+47260,"Virginia Beach-Norfolk-Newport News, VA-NC (MA)",urban_housing,0.10723162049989843
+47300,"Visalia, CA (MA)",urban_housing,-0.0393705496887059
+47380,"Waco, TX (MA)",urban_housing,-0.04857972726782056
+47460,"Walla Walla, WA (MA)",urban_housing,-0.0652210882929748
+47580,"Warner Robins, GA (MA)",urban_housing,-0.05257694757238207
+47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV (MA)",urban_housing,0.48622188462794647
+47940,"Waterloo-Cedar Falls, IA (MA)",urban_housing,-0.05603243694272453
+48060,"Watertown-Fort Drum, NY (MA)",urban_housing,-0.06321461338757373
+48140,"Wausau-Weston, WI (MA)",urban_housing,-0.060070437604390015
+48260,"Weirton-Steubenville, WV-OH (MA)",urban_housing,-0.06118457065685301
+48300,"Wenatchee, WA (MA)",urban_housing,-0.06125662249085706
+48540,"Wheeling, WV-OH (MA)",urban_housing,-0.060989634500869916
+48620,"Wichita, KS (MA)",urban_housing,-0.008223238326983129
+48660,"Wichita Falls, TX (MA)",urban_housing,-0.05728838804971881
+48700,"Williamsport, PA (MA)",urban_housing,-0.06217882932257346
+48900,"Wilmington, NC (MA)",urban_housing,-0.03777235982398397
+49020,"Winchester, VA-WV (MA)",urban_housing,-0.061754155689714096
+49180,"Winston-Salem, NC (MA)",urban_housing,-0.01651775205967243
+49340,"Worcester, MA-CT (MA)",urban_housing,0.009641611157516605
+49420,"Yakima, WA (MA)",urban_housing,-0.05360234931214469
+49620,"York-Hanover, PA (MA)",urban_housing,-0.0351932137471036
+49660,"Youngstown-Warren-Boardman, OH-PA (MA)",urban_housing,-0.020523060899533596
+49700,"Yuba City, CA (MA)",urban_housing,-0.05790594250189729
+49740,"Yuma, AZ (MA)",urban_housing,-0.04942793971824366
+10180,"Abilene, TX (MA)",rural_housing,-0.07006605337703764
+10420,"Akron, OH (MA)",rural_housing,-0.026087733430932736
+10500,"Albany, GA (MA)",rural_housing,-0.06864232062979958
+10540,"Albany-Lebanon, OR (MA)",rural_housing,-0.09739064941294717
+10580,"Albany-Schenectady-Troy, NY (MA)",rural_housing,0.2008873871295629
+10740,"Albuquerque, NM (MA)",rural_housing,-0.008512507465966213
+10780,"Alexandria, LA (MA)",rural_housing,-0.038338467285164435
+10900,"Allentown-Bethlehem-Easton, PA-NJ (MA)",rural_housing,0.15264481504359928
+11020,"Altoona, PA (MA)",rural_housing,-0.11313631988642736
+11100,"Amarillo, TX (MA)",rural_housing,-0.09019177728604844
+11180,"Ames, IA (MA)",rural_housing,-0.10109282927818608
+11260,"Anchorage, AK (MA)",rural_housing,-0.018706294807904977
+11460,"Ann Arbor, MI (MA)",rural_housing,-0.06486536015888322
+11500,"Anniston-Oxford, AL (MA)",rural_housing,-0.09093679415629752
+11540,"Appleton, WI (MA)",rural_housing,-0.0414437299534568
+11700,"Asheville, NC (MA)",rural_housing,0.14397346582094928
+12020,"Athens-Clarke County, GA (MA)",rural_housing,-0.0508933801753082
+12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",rural_housing,0.7568567229323628
+12100,"Atlantic City-Hammonton, NJ (MA)",rural_housing,-0.10621941998398965
+12220,"Auburn-Opelika, AL (MA)",rural_housing,-0.09001178612943417
+12260,"Augusta-Richmond County, GA-SC (MA)",rural_housing,0.13389596870301745
+12420,"Austin-Round Rock-Georgetown, TX (MA)",rural_housing,0.2737395265144078
+12540,"Bakersfield, CA (MA)",rural_housing,0.019202549788324585
+12580,"Baltimore-Columbia-Towson, MD (MA)",rural_housing,0.3020289856631473
+12620,"Bangor, ME (MA)",rural_housing,0.014084996446220854
+12700,"Barnstable Town, MA (MA)",rural_housing,-0.15382080571431744
+12940,"Baton Rouge, LA (MA)",rural_housing,0.17870522137042322
+12980,"Battle Creek, MI (MA)",rural_housing,-0.09247254610080413
+13020,"Bay City, MI (MA)",rural_housing,-0.114885722731628
+13140,"Beaumont-Port Arthur, TX (MA)",rural_housing,-0.02776189859197864
+13220,"Beckley, WV (MA)",rural_housing,-0.06224265501067505
+13380,"Bellingham, WA (MA)",rural_housing,-0.05839531660435193
+13460,"Bend, OR (MA)",rural_housing,-0.03169998378055605
+13740,"Billings, MT (MA)",rural_housing,-0.07881195380276462
+13780,"Binghamton, NY (MA)",rural_housing,-0.013230014073049023
+13820,"Birmingham-Hoover, AL (MA)",rural_housing,0.3541400628587268
+13900,"Bismarck, ND (MA)",rural_housing,-0.11318214657497372
+13980,"Blacksburg-Christiansburg, VA (MA)",rural_housing,-0.05344379993353421
+14010,"Bloomington, IL (MA)",rural_housing,-0.1051887018303247
+14020,"Bloomington, IN (MA)",rural_housing,-0.07235434459536705
+14100,"Bloomsburg-Berwick, PA (MA)",rural_housing,-0.09654620463471186
+14260,"Boise City, ID (MA)",rural_housing,-0.015892331650234293
+14460,"Boston-Cambridge-Newton, MA-NH (MA)",rural_housing,0.3348604741162273
+14500,"Boulder, CO (MA)",rural_housing,-0.10568113802660084
+14540,"Bowling Green, KY (MA)",rural_housing,-0.028099243298283283
+14740,"Bremerton-Silverdale-Port Orchard, WA (MA)",rural_housing,-0.08529228154454871
+14860,"Bridgeport-Stamford-Norwalk, CT (MA)",rural_housing,-0.0855352617113011
+15180,"Brownsville-Harlingen, TX (MA)",rural_housing,-0.07038939853343984
+15260,"Brunswick, GA (MA)",rural_housing,-0.07491045062806023
+15380,"Buffalo-Cheektowaga, NY (MA)",rural_housing,0.124538610163629
+15500,"Burlington, NC (MA)",rural_housing,-0.08816549298666843
+15540,"Burlington-South Burlington, VT (MA)",rural_housing,0.002476424959213741
+15680,"California-Lexington Park, MD (MA)",rural_housing,-0.06471407425270026
+15940,"Canton-Massillon, OH (MA)",rural_housing,-0.0170272311528622
+15980,"Cape Coral-Fort Myers, FL (MA)",rural_housing,-0.10696206335967517
+16020,"Cape Girardeau, MO-IL (MA)",rural_housing,-0.09090749765721595
+16060,"Carbondale-Marion, IL (MA)",rural_housing,-0.05343959188516478
+16180,"Carson City, NV (MA)",rural_housing,-0.16552074705173647
+16220,"Casper, WY (MA)",rural_housing,-0.1459869619506695
+16300,"Cedar Rapids, IA (MA)",rural_housing,-0.049765258053500516
+16540,"Chambersburg-Waynesboro, PA (MA)",rural_housing,-0.05049350084931847
+16580,"Champaign-Urbana, IL (MA)",rural_housing,-0.09212944596830674
+16620,"Charleston, WV (MA)",rural_housing,0.0872384975303695
+16700,"Charleston-North Charleston, SC (MA)",rural_housing,0.0372497001583334
+16740,"Charlotte-Concord-Gastonia, NC-SC (MA)",rural_housing,0.5889213116482457
+16820,"Charlottesville, VA (MA)",rural_housing,0.018139455157174966
+16860,"Chattanooga, TN-GA (MA)",rural_housing,0.10592581538923818
+16940,"Cheyenne, WY (MA)",rural_housing,-0.13426217233751703
+16980,"Chicago-Naperville-Elgin, IL-IN-WI (MA)",rural_housing,0.3038265880185662
+17020,"Chico, CA (MA)",rural_housing,-0.08645681789415727
+17140,"Cincinnati, OH-KY-IN (MA)",rural_housing,0.4213726258695103
+17300,"Clarksville, TN-KY (MA)",rural_housing,-0.012225792819576697
+17420,"Cleveland, TN (MA)",rural_housing,-0.07455374539023762
+17460,"Cleveland-Elyria, OH (MA)",rural_housing,0.16844018212855594
+17660,"Coeur d'Alene, ID (MA)",rural_housing,-0.0868253990333493
+17780,"College Station-Bryan, TX (MA)",rural_housing,-0.05261056952902132
+17820,"Colorado Springs, CO (MA)",rural_housing,-0.025682875193321242
+17860,"Columbia, MO (MA)",rural_housing,-0.06394078886605692
+17900,"Columbia, SC (MA)",rural_housing,0.1954464292481004
+17980,"Columbus, GA-AL (MA)",rural_housing,-0.013981052971984598
+18020,"Columbus, IN (MA)",rural_housing,-0.12613518572759874
+18140,"Columbus, OH (MA)",rural_housing,0.3828460478823783
+18580,"Corpus Christi, TX (MA)",rural_housing,-0.10277168273416448
+18700,"Corvallis, OR (MA)",rural_housing,-0.1377249252364049
+18880,"Crestview-Fort Walton Beach-Destin, FL (MA)",rural_housing,-0.051347960003199966
+19060,"Cumberland, MD-WV (MA)",rural_housing,-0.08808174641278599
+19100,"Dallas-Fort Worth-Arlington, TX (MA)",rural_housing,0.647990081931892
+19140,"Dalton, GA (MA)",rural_housing,-0.06553770579360652
+19180,"Danville, IL (MA)",rural_housing,-0.11425268720493686
+19300,"Daphne-Fairhope-Foley, AL (MA)",rural_housing,0.001193518738532795
+19340,"Davenport-Moline-Rock Island, IA-IL (MA)",rural_housing,-0.023169196935711178
+19430,"Dayton-Kettering, OH (MA)",rural_housing,0.00017225485171068478
+19460,"Decatur, AL (MA)",rural_housing,-0.021140325360218593
+19500,"Decatur, IL (MA)",rural_housing,-0.1374889343727187
+19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",rural_housing,-0.06587385633523946
+19740,"Denver-Aurora-Lakewood, CO (MA)",rural_housing,0.1509132046133359
+19780,"Des Moines-West Des Moines, IA (MA)",rural_housing,0.019860634382909303
+19820,"Detroit-Warren-Dearborn, MI (MA)",rural_housing,0.36074726288715797
+20020,"Dothan, AL (MA)",rural_housing,-0.011550672107083049
+20100,"Dover, DE (MA)",rural_housing,-0.088977769897858
+20220,"Dubuque, IA (MA)",rural_housing,-0.11793713457234511
+20260,"Duluth, MN-WI (MA)",rural_housing,0.13773169594248014
+20500,"Durham-Chapel Hill, NC (MA)",rural_housing,0.15034816886919433
+20700,"East Stroudsburg, PA (MA)",rural_housing,0.02682841374017575
+20740,"Eau Claire, WI (MA)",rural_housing,-0.054209632977553546
+20940,"El Centro, CA (MA)",rural_housing,-0.12601890114650416
+21060,"Elizabethtown-Fort Knox, KY (MA)",rural_housing,-0.03487419615613008
+21140,"Elkhart-Goshen, IN (MA)",rural_housing,-0.10176527557883941
+21300,"Elmira, NY (MA)",rural_housing,-0.12988348775117875
+21340,"El Paso, TX (MA)",rural_housing,-0.12114433422264093
+21420,"Enid, OK (MA)",rural_housing,-0.14702347180083142
+21500,"Erie, PA (MA)",rural_housing,-0.05884952121195042
+21660,"Eugene-Springfield, OR (MA)",rural_housing,-0.04251374658711826
+21780,"Evansville, IN-KY (MA)",rural_housing,-0.05763404920653126
+21820,"Fairbanks, AK (MA)",rural_housing,-0.1175251354040957
+22020,"Fargo, ND-MN (MA)",rural_housing,-0.11351125136052997
+22140,"Farmington, NM (MA)",rural_housing,-0.10034091661031741
+22180,"Fayetteville, NC (MA)",rural_housing,0.08959165309762729
+22220,"Fayetteville-Springdale-Rogers, AR (MA)",rural_housing,0.08049194866111886
+22380,"Flagstaff, AZ (MA)",rural_housing,-0.05642261298296225
+22420,"Flint, MI (MA)",rural_housing,-0.04751284625869778
+22500,"Florence, SC (MA)",rural_housing,-0.0033219765882368524
+22520,"Florence-Muscle Shoals, AL (MA)",rural_housing,-0.028048641998488555
+22540,"Fond du Lac, WI (MA)",rural_housing,-0.10250861727246796
+22660,"Fort Collins, CO (MA)",rural_housing,-0.0878011863240944
+22900,"Fort Smith, AR-OK (MA)",rural_housing,0.023188748352475308
+23060,"Fort Wayne, IN (MA)",rural_housing,-0.05176884828457495
+23420,"Fresno, CA (MA)",rural_housing,-0.0016719277434750213
+23460,"Gadsden, AL (MA)",rural_housing,-0.08858420713729942
+23540,"Gainesville, FL (MA)",rural_housing,0.06586812264253172
+23580,"Gainesville, GA (MA)",rural_housing,-0.09078612477102932
+23900,"Gettysburg, PA (MA)",rural_housing,-0.056830650167149166
+24020,"Glens Falls, NY (MA)",rural_housing,-0.00869395837902065
+24140,"Goldsboro, NC (MA)",rural_housing,-0.056506745908135536
+24220,"Grand Forks, ND-MN (MA)",rural_housing,-0.11486490067580812
+24260,"Grand Island, NE (MA)",rural_housing,-0.12915735913671245
+24300,"Grand Junction, CO (MA)",rural_housing,-0.13271197861527173
+24340,"Grand Rapids-Kentwood, MI (MA)",rural_housing,0.25311066885538724
+24420,"Grants Pass, OR (MA)",rural_housing,-0.09801762172272499
+24500,"Great Falls, MT (MA)",rural_housing,-0.1354554571224098
+24540,"Greeley, CO (MA)",rural_housing,-0.06778122524434516
+24580,"Green Bay, WI (MA)",rural_housing,0.041391639672974545
+24660,"Greensboro-High Point, NC (MA)",rural_housing,0.22019680246952222
+24780,"Greenville, NC (MA)",rural_housing,-0.08811943252519627
+24860,"Greenville-Anderson, SC (MA)",rural_housing,0.26657260296984475
+25060,"Gulfport-Biloxi, MS (MA)",rural_housing,0.033523806677944856
+25180,"Hagerstown-Martinsburg, MD-WV (MA)",rural_housing,0.02328997607797212
+25220,"Hammond, LA (MA)",rural_housing,-0.06170035271362073
+25260,"Hanford-Corcoran, CA (MA)",rural_housing,-0.146028263310521
+25420,"Harrisburg-Carlisle, PA (MA)",rural_housing,0.07544604073284433
+25500,"Harrisonburg, VA (MA)",rural_housing,-0.08155415352677575
+25540,"Hartford-East Hartford-Middletown, CT (MA)",rural_housing,0.12830091130876453
+25620,"Hattiesburg, MS (MA)",rural_housing,-0.007411131027035056
+25860,"Hickory-Lenoir-Morganton, NC (MA)",rural_housing,0.1390686788493114
+25940,"Hilton Head Island-Bluffton, SC (MA)",rural_housing,-0.04130891791440228
+25980,"Hinesville, GA (MA)",rural_housing,-0.12159339143867154
+26140,"Homosassa Springs, FL (MA)",rural_housing,-0.08280744170147403
+26300,"Hot Springs, AR (MA)",rural_housing,-0.10355661788009385
+26380,"Houma-Thibodaux, LA (MA)",rural_housing,-0.08584944511473136
+26420,"Houston-The Woodlands-Sugar Land, TX (MA)",rural_housing,0.5457426344845329
+26580,"Huntington-Ashland, WV-KY-OH (MA)",rural_housing,0.08810534388074731
+26620,"Huntsville, AL (MA)",rural_housing,0.03765847571408054
+26820,"Idaho Falls, ID (MA)",rural_housing,-0.1073583691830573
+26900,"Indianapolis-Carmel-Anderson, IN (MA)",rural_housing,0.2617873389197811
+26980,"Iowa City, IA (MA)",rural_housing,-0.10001505213876505
+27060,"Ithaca, NY (MA)",rural_housing,-0.07835060920862802
+27100,"Jackson, MI (MA)",rural_housing,-0.03192763858865799
+27140,"Jackson, MS (MA)",rural_housing,0.18349711667604174
+27180,"Jackson, TN (MA)",rural_housing,-0.010664560287773628
+27260,"Jacksonville, FL (MA)",rural_housing,0.08953723187001383
+27340,"Jacksonville, NC (MA)",rural_housing,-0.037782220904024166
+27500,"Janesville-Beloit, WI (MA)",rural_housing,-0.11397778759243082
+27620,"Jefferson City, MO (MA)",rural_housing,-0.02925038345657316
+27740,"Johnson City, TN (MA)",rural_housing,-0.038072989000369484
+27780,"Johnstown, PA (MA)",rural_housing,-0.05581683233928514
+27860,"Jonesboro, AR (MA)",rural_housing,-0.0759888424344477
+27900,"Joplin, MO (MA)",rural_housing,-0.05698208182476294
+27980,"Kahului-Wailuku-Lahaina, HI (MA)",rural_housing,-0.10685359478378753
+28020,"Kalamazoo-Portage, MI (MA)",rural_housing,-0.07368918078207409
+28100,"Kankakee, IL (MA)",rural_housing,-0.1146858268310893
+28140,"Kansas City, MO-KS (MA)",rural_housing,0.29114063877677787
+28420,"Kennewick-Richland, WA (MA)",rural_housing,-0.11786222864837259
+28660,"Killeen-Temple, TX (MA)",rural_housing,-0.032273330288154156
+28700,"Kingsport-Bristol, TN-VA (MA)",rural_housing,0.10553773349467632
+28740,"Kingston, NY (MA)",rural_housing,0.0414421940174905
+28940,"Knoxville, TN (MA)",rural_housing,0.2636417479111217
+29020,"Kokomo, IN (MA)",rural_housing,-0.1319698106931303
+29100,"La Crosse-Onalaska, WI-MN (MA)",rural_housing,-0.10683273515059821
+29180,"Lafayette, LA (MA)",rural_housing,0.07976236556923766
+29200,"Lafayette-West Lafayette, IN (MA)",rural_housing,-0.0562543447298528
+29340,"Lake Charles, LA (MA)",rural_housing,-0.060275059876814696
+29420,"Lake Havasu City-Kingman, AZ (MA)",rural_housing,-0.05229493275811292
+29460,"Lakeland-Winter Haven, FL (MA)",rural_housing,-0.022987829242596014
+29540,"Lancaster, PA (MA)",rural_housing,0.05002471819739873
+29620,"Lansing-East Lansing, MI (MA)",rural_housing,0.10800755037229792
+29700,"Laredo, TX (MA)",rural_housing,-0.14939672631624912
+29740,"Las Cruces, NM (MA)",rural_housing,-0.09051407230299635
+29820,"Las Vegas-Henderson-Paradise, NV (MA)",rural_housing,-0.1208698859440247
+29940,"Lawrence, KS (MA)",rural_housing,-0.14044803202670253
+30020,"Lawton, OK (MA)",rural_housing,-0.10597740942323353
+30140,"Lebanon, PA (MA)",rural_housing,-0.1098688985227465
+30300,"Lewiston, ID-WA (MA)",rural_housing,-0.151137395796471
+30340,"Lewiston-Auburn, ME (MA)",rural_housing,-0.07630351482275954
+30460,"Lexington-Fayette, KY (MA)",rural_housing,-0.047062305174515484
+30620,"Lima, OH (MA)",rural_housing,-0.11696325317770151
+30700,"Lincoln, NE (MA)",rural_housing,-0.10410766554740791
+30780,"Little Rock-North Little Rock-Conway, AR (MA)",rural_housing,0.19562095558892256
+30860,"Logan, UT-ID (MA)",rural_housing,-0.12271581634687434
+30980,"Longview, TX (MA)",rural_housing,0.05094656465280778
+31020,"Longview, WA (MA)",rural_housing,-0.10817173202005215
+31080,"Los Angeles-Long Beach-Anaheim, CA (MA)",rural_housing,-0.025805177013462632
+31140,"Louisville/Jefferson County, KY-IN (MA)",rural_housing,0.19809950943664734
+31180,"Lubbock, TX (MA)",rural_housing,-0.09465197088982935
+31340,"Lynchburg, VA (MA)",rural_housing,0.0748501705349991
+31420,"Macon-Bibb County, GA (MA)",rural_housing,-0.016753002840036002
+31460,"Madera, CA (MA)",rural_housing,-0.07610632190006661
+31540,"Madison, WI (MA)",rural_housing,0.11645389598845313
+31700,"Manchester-Nashua, NH (MA)",rural_housing,0.0013074612883317016
+31740,"Manhattan, KS (MA)",rural_housing,-0.12161417992056067
+31860,"Mankato, MN (MA)",rural_housing,-0.11493569525368086
+31900,"Mansfield, OH (MA)",rural_housing,-0.09849406867281607
+32580,"McAllen-Edinburg-Mission, TX (MA)",rural_housing,-0.08273619149877798
+32780,"Medford, OR (MA)",rural_housing,-0.08526714508569422
+32820,"Memphis, TN-MS-AR (MA)",rural_housing,0.1948415794744578
+32900,"Merced, CA (MA)",rural_housing,-0.10400747980643377
+33100,"Miami-Fort Lauderdale-Pompano Beach, FL (MA)",rural_housing,-0.12321041525267906
+33140,"Michigan City-La Porte, IN (MA)",rural_housing,-0.09655038539777139
+33220,"Midland, MI (MA)",rural_housing,-0.10609007107555768
+33260,"Midland, TX (MA)",rural_housing,-0.12473954286512712
+33340,"Milwaukee-Waukesha, WI (MA)",rural_housing,0.06051319528958499
+33460,"Minneapolis-St. Paul-Bloomington, MN-WI (MA)",rural_housing,0.5744533605572713
+33540,"Missoula, MT (MA)",rural_housing,-0.11320714274759003
+33660,"Mobile, AL (MA)",rural_housing,0.027735060088216246
+33700,"Modesto, CA (MA)",rural_housing,-0.1037778795254366
+33740,"Monroe, LA (MA)",rural_housing,-0.02966781087929926
+33780,"Monroe, MI (MA)",rural_housing,-0.07003245822956661
+33860,"Montgomery, AL (MA)",rural_housing,0.054123944531531576
+34060,"Morgantown, WV (MA)",rural_housing,-0.056325859128458444
+34100,"Morristown, TN (MA)",rural_housing,-0.021971298923393223
+34580,"Mount Vernon-Anacortes, WA (MA)",rural_housing,-0.08212843488007038
+34620,"Muncie, IN (MA)",rural_housing,-0.1224497883479837
+34740,"Muskegon, MI (MA)",rural_housing,-0.09187419874763991
+34820,"Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MA)",rural_housing,0.09209026177267599
+34900,"Napa, CA (MA)",rural_housing,-0.1287465164037489
+34940,"Naples-Marco Island, FL (MA)",rural_housing,-0.10066258221945135
+34980,"Nashville-Davidson--Murfreesboro--Franklin, TN (MA)",rural_housing,0.5134878533957683
+35100,"New Bern, NC (MA)",rural_housing,-0.05165100141309342
+35300,"New Haven-Milford, CT (MA)",rural_housing,-0.098911967427465
+35380,"New Orleans-Metairie, LA (MA)",rural_housing,0.021526860072006215
+35620,"New York-Newark-Jersey City, NY-NJ-PA (MA)",rural_housing,0.5834533791409449
+35660,"Niles, MI (MA)",rural_housing,-0.07908874436899693
+35840,"North Port-Sarasota-Bradenton, FL (MA)",rural_housing,-0.12298598298378915
+35980,"Norwich-New London, CT (MA)",rural_housing,-0.029988253200531112
+36100,"Ocala, FL (MA)",rural_housing,0.048382863763532846
+36140,"Ocean City, NJ (MA)",rural_housing,-0.13610165590287104
+36220,"Odessa, TX (MA)",rural_housing,-0.1462595415147392
+36260,"Ogden-Clearfield, UT (MA)",rural_housing,-0.09610720558266583
+36420,"Oklahoma City, OK (MA)",rural_housing,0.2769610400953739
+36500,"Olympia-Lacey-Tumwater, WA (MA)",rural_housing,-0.0644367090368071
+36540,"Omaha-Council Bluffs, NE-IA (MA)",rural_housing,0.05137588826103934
+36740,"Orlando-Kissimmee-Sanford, FL (MA)",rural_housing,0.06969076732142931
+36780,"Oshkosh-Neenah, WI (MA)",rural_housing,-0.11371536713391939
+36980,"Owensboro, KY (MA)",rural_housing,-0.09343478270540873
+37100,"Oxnard-Thousand Oaks-Ventura, CA (MA)",rural_housing,-0.12860955899713666
+37340,"Palm Bay-Melbourne-Titusville, FL (MA)",rural_housing,-0.12357197405657572
+37460,"Panama City, FL (MA)",rural_housing,-0.12320625921401462
+37620,"Parkersburg-Vienna, WV (MA)",rural_housing,-0.1118863161678546
+37860,"Pensacola-Ferry Pass-Brent, FL (MA)",rural_housing,-0.06769721051083366
+37900,"Peoria, IL (MA)",rural_housing,0.0581708776712655
+37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (MA)",rural_housing,0.4527912703112853
+38060,"Phoenix-Mesa-Chandler, AZ (MA)",rural_housing,0.14201817473991052
+38220,"Pine Bluff, AR (MA)",rural_housing,-0.09831018220602894
+38300,"Pittsburgh, PA (MA)",rural_housing,0.5858476667136816
+38340,"Pittsfield, MA (MA)",rural_housing,-0.05818082267937108
+38540,"Pocatello, ID (MA)",rural_housing,-0.133744132182533
+38860,"Portland-South Portland, ME (MA)",rural_housing,0.33296319166571453
+38900,"Portland-Vancouver-Hillsboro, OR-WA (MA)",rural_housing,0.22675205284282418
+38940,"Port St. Lucie, FL (MA)",rural_housing,-0.13014900861373957
+39100,"Poughkeepsie-Newburgh-Middletown, NY (MA)",rural_housing,0.16727954507434362
+39150,"Prescott Valley-Prescott, AZ (MA)",rural_housing,-0.002313380532650622
+39300,"Providence-Warwick, RI-MA (MA)",rural_housing,0.11518819507720046
+39340,"Provo-Orem, UT (MA)",rural_housing,-0.1290660645783438
+39380,"Pueblo, CO (MA)",rural_housing,-0.12958060527609172
+39460,"Punta Gorda, FL (MA)",rural_housing,-0.1441939944926387
+39540,"Racine, WI (MA)",rural_housing,-0.12116096685682609
+39580,"Raleigh-Cary, NC (MA)",rural_housing,0.20424229628209267
+39660,"Rapid City, SD (MA)",rural_housing,-0.11213217833226807
+39740,"Reading, PA (MA)",rural_housing,0.01828710969657177
+39820,"Redding, CA (MA)",rural_housing,-0.05256006835042393
+39900,"Reno, NV (MA)",rural_housing,-0.12587769378532843
+40060,"Richmond, VA (MA)",rural_housing,0.26240438098457575
+40140,"Riverside-San Bernardino-Ontario, CA (MA)",rural_housing,0.26304477729762055
+40220,"Roanoke, VA (MA)",rural_housing,0.019000058846842638
+40340,"Rochester, MN (MA)",rural_housing,-0.028031774866599357
+40380,"Rochester, NY (MA)",rural_housing,0.3231341913115402
+40420,"Rockford, IL (MA)",rural_housing,-0.09590232655176323
+40580,"Rocky Mount, NC (MA)",rural_housing,-0.04191977286064952
+40660,"Rome, GA (MA)",rural_housing,-0.10425794019684109
+40900,"Sacramento-Roseville-Folsom, CA (MA)",rural_housing,0.19040829127437275
+40980,"Saginaw, MI (MA)",rural_housing,-0.05837849374600568
+41060,"St. Cloud, MN (MA)",rural_housing,-0.03306586246668364
+41100,"St. George, UT (MA)",rural_housing,-0.12360521919754375
+41140,"St. Joseph, MO-KS (MA)",rural_housing,-0.10608172586134934
+41180,"St. Louis, MO-IL (MA)",rural_housing,0.5179176375110592
+41420,"Salem, OR (MA)",rural_housing,-0.05904297134206693
+41500,"Salinas, CA (MA)",rural_housing,-0.07936132922052441
+41540,"Salisbury, MD-DE (MA)",rural_housing,0.11496749170317999
+41620,"Salt Lake City, UT (MA)",rural_housing,-0.1349002968950581
+41660,"San Angelo, TX (MA)",rural_housing,-0.13048503168865444
+41700,"San Antonio-New Braunfels, TX (MA)",rural_housing,0.42764139694313497
+41740,"San Diego-Chula Vista-Carlsbad, CA (MA)",rural_housing,0.03577463415584026
+41860,"San Francisco-Oakland-Berkeley, CA (MA)",rural_housing,-0.08186435604437658
+41940,"San Jose-Sunnyvale-Santa Clara, CA (MA)",rural_housing,-0.11023993838634671
+42020,"San Luis Obispo-Paso Robles, CA (MA)",rural_housing,-0.07733972810339074
+42100,"Santa Cruz-Watsonville, CA (MA)",rural_housing,-0.10661578939378624
+42140,"Santa Fe, NM (MA)",rural_housing,-0.05803782374381272
+42200,"Santa Maria-Santa Barbara, CA (MA)",rural_housing,-0.12709024904054966
+42220,"Santa Rosa-Petaluma, CA (MA)",rural_housing,-0.02151996164565617
+42340,"Savannah, GA (MA)",rural_housing,-0.044274426664286604
+42540,"Scranton--Wilkes-Barre, PA (MA)",rural_housing,0.09480937086851893
+42660,"Seattle-Tacoma-Bellevue, WA (MA)",rural_housing,0.2274924984865785
+42680,"Sebastian-Vero Beach, FL (MA)",rural_housing,-0.1509765673674699
+42700,"Sebring-Avon Park, FL (MA)",rural_housing,-0.12168901757183126
+43100,"Sheboygan, WI (MA)",rural_housing,-0.10875142540556537
+43300,"Sherman-Denison, TX (MA)",rural_housing,-0.0517225514711146
+43340,"Shreveport-Bossier City, LA (MA)",rural_housing,0.006228019320262401
+43420,"Sierra Vista-Douglas, AZ (MA)",rural_housing,-0.07658460930479893
+43580,"Sioux City, IA-NE-SD (MA)",rural_housing,-0.10394068813968327
+43620,"Sioux Falls, SD (MA)",rural_housing,-0.07050277580339681
+43780,"South Bend-Mishawaka, IN-MI (MA)",rural_housing,-0.04242528430947634
+43900,"Spartanburg, SC (MA)",rural_housing,-0.0016592674754757342
+44060,"Spokane-Spokane Valley, WA (MA)",rural_housing,0.042819717361817444
+44100,"Springfield, IL (MA)",rural_housing,-0.08076600052749716
+44140,"Springfield, MA (MA)",rural_housing,0.07193300036703842
+44180,"Springfield, MO (MA)",rural_housing,0.08425588026905961
+44220,"Springfield, OH (MA)",rural_housing,-0.1084803549471659
+44300,"State College, PA (MA)",rural_housing,-0.07253065867569519
+44420,"Staunton, VA (MA)",rural_housing,-0.05388563442043781
+44700,"Stockton, CA (MA)",rural_housing,-0.08150384892532614
+44940,"Sumter, SC (MA)",rural_housing,-0.04560949648878698
+45060,"Syracuse, NY (MA)",rural_housing,0.1911646586617004
+45220,"Tallahassee, FL (MA)",rural_housing,0.03352802203564731
+45300,"Tampa-St. Petersburg-Clearwater, FL (MA)",rural_housing,0.06900619902304062
+45460,"Terre Haute, IN (MA)",rural_housing,-0.018659889900123683
+45500,"Texarkana, TX-AR (MA)",rural_housing,-0.0518235624135851
+45540,"The Villages, FL (MA)",rural_housing,-0.11707979788049261
+45780,"Toledo, OH (MA)",rural_housing,0.05402295825018899
+45820,"Topeka, KS (MA)",rural_housing,-0.021055960909466265
+45940,"Trenton-Princeton, NJ (MA)",rural_housing,-0.13919433994778785
+46060,"Tucson, AZ (MA)",rural_housing,-0.014217331650638765
+46140,"Tulsa, OK (MA)",rural_housing,0.2295163718643649
+46220,"Tuscaloosa, AL (MA)",rural_housing,0.040565888898385305
+46300,"Twin Falls, ID (MA)",rural_housing,-0.10239169468459663
+46340,"Tyler, TX (MA)",rural_housing,-0.029937657452655753
+46520,"Urban Honolulu, HI (MA)",rural_housing,-0.14881904785509115
+46540,"Utica-Rome, NY (MA)",rural_housing,0.0574895077027997
+46660,"Valdosta, GA (MA)",rural_housing,-0.04744968745452183
+46700,"Vallejo, CA (MA)",rural_housing,-0.1377373453752776
+47020,"Victoria, TX (MA)",rural_housing,-0.11165294279719262
+47220,"Vineland-Bridgeton, NJ (MA)",rural_housing,-0.11050673458408755
+47260,"Virginia Beach-Norfolk-Newport News, VA-NC (MA)",rural_housing,0.17498912736095007
+47300,"Visalia, CA (MA)",rural_housing,-0.03559072275345565
+47380,"Waco, TX (MA)",rural_housing,-0.045407351154705955
+47460,"Walla Walla, WA (MA)",rural_housing,-0.14890570611001874
+47580,"Warner Robins, GA (MA)",rural_housing,-0.12652139176423483
+47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV (MA)",rural_housing,0.6200228028072508
+47940,"Waterloo-Cedar Falls, IA (MA)",rural_housing,-0.08872656282458491
+48060,"Watertown-Fort Drum, NY (MA)",rural_housing,-0.027749248041998076
+48140,"Wausau-Weston, WI (MA)",rural_housing,-0.018229586043420953
+48260,"Weirton-Steubenville, WV-OH (MA)",rural_housing,-0.08355342226224305
+48300,"Wenatchee, WA (MA)",rural_housing,-0.08868469388079026
+48540,"Wheeling, WV-OH (MA)",rural_housing,-0.03862922300515492
+48620,"Wichita, KS (MA)",rural_housing,-0.009141253508477054
+48660,"Wichita Falls, TX (MA)",rural_housing,-0.1104692173302031
+48700,"Williamsport, PA (MA)",rural_housing,-0.08214939302435909
+48900,"Wilmington, NC (MA)",rural_housing,-0.09207505003366412
+49020,"Winchester, VA-WV (MA)",rural_housing,-0.05540033428047575
+49180,"Winston-Salem, NC (MA)",rural_housing,0.23008398069634173
+49340,"Worcester, MA-CT (MA)",rural_housing,0.23131459392344422
+49420,"Yakima, WA (MA)",rural_housing,-0.06049370497259565
+49620,"York-Hanover, PA (MA)",rural_housing,0.05140535095143828
+49660,"Youngstown-Warren-Boardman, OH-PA (MA)",rural_housing,0.09420710414810496
+49700,"Yuba City, CA (MA)",rural_housing,-0.10295957783623333
+49740,"Yuma, AZ (MA)",rural_housing,-0.12062453017144359
+10180,"Abilene, TX (MA)",urban_pop,-0.05488307050989494
+10420,"Akron, OH (MA)",urban_pop,-0.0028974696204953077
+10500,"Albany, GA (MA)",urban_pop,-0.05757229441199596
+10540,"Albany-Lebanon, OR (MA)",urban_pop,-0.058350953117479065
+10580,"Albany-Schenectady-Troy, NY (MA)",urban_pop,0.006398454726373792
+10740,"Albuquerque, NM (MA)",urban_pop,0.01812710469191381
+10780,"Alexandria, LA (MA)",urban_pop,-0.058997664115292836
+10900,"Allentown-Bethlehem-Easton, PA-NJ (MA)",urban_pop,0.003976635483996294
+11020,"Altoona, PA (MA)",urban_pop,-0.05766494392486876
+11100,"Amarillo, TX (MA)",urban_pop,-0.044142904904419744
+11180,"Ames, IA (MA)",urban_pop,-0.05824633044890304
+11260,"Anchorage, AK (MA)",urban_pop,-0.032736940369513245
+11460,"Ann Arbor, MI (MA)",urban_pop,-0.035222069392059296
+11500,"Anniston-Oxford, AL (MA)",urban_pop,-0.05944770942623201
+11540,"Appleton, WI (MA)",urban_pop,-0.049820775652053784
+11700,"Asheville, NC (MA)",urban_pop,-0.03413461844780907
+12020,"Athens-Clarke County, GA (MA)",urban_pop,-0.052308387989881244
+12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",urban_pop,0.45351444247821404
+12100,"Atlantic City-Hammonton, NJ (MA)",urban_pop,-0.04295329089369171
+12220,"Auburn-Opelika, AL (MA)",urban_pop,-0.053837308058558464
+12260,"Augusta-Richmond County, GA-SC (MA)",urban_pop,-0.02091969999935206
+12420,"Austin-Round Rock-Georgetown, TX (MA)",urban_pop,0.13866008967260757
+12540,"Bakersfield, CA (MA)",urban_pop,0.014461987840932888
+12580,"Baltimore-Columbia-Towson, MD (MA)",urban_pop,0.19387320222556048
+12620,"Bangor, ME (MA)",urban_pop,-0.06033533678132563
+12700,"Barnstable Town, MA (MA)",urban_pop,-0.04408415633625973
+12940,"Baton Rouge, LA (MA)",urban_pop,0.002491290302689464
+12980,"Battle Creek, MI (MA)",urban_pop,-0.05769985507794673
+13020,"Bay City, MI (MA)",urban_pop,-0.059462786249694255
+13140,"Beaumont-Port Arthur, TX (MA)",urban_pop,-0.034710130988636956
+13220,"Beckley, WV (MA)",urban_pop,-0.06114925555703721
+13380,"Bellingham, WA (MA)",urban_pop,-0.050350351821807915
+13460,"Bend, OR (MA)",urban_pop,-0.05259496959513332
+13740,"Billings, MT (MA)",urban_pop,-0.0528745152487724
+13780,"Binghamton, NY (MA)",urban_pop,-0.04999930271766084
+13820,"Birmingham-Hoover, AL (MA)",urban_pop,0.016235235434577833
+13900,"Bismarck, ND (MA)",urban_pop,-0.05694303655739463
+13980,"Blacksburg-Christiansburg, VA (MA)",urban_pop,-0.05587788484849476
+14010,"Bloomington, IL (MA)",urban_pop,-0.05323372699211648
+14020,"Bloomington, IN (MA)",urban_pop,-0.05571320930743684
+14100,"Bloomsburg-Berwick, PA (MA)",urban_pop,-0.06253261673462995
+14260,"Boise City, ID (MA)",urban_pop,0.00177747467097511
+14460,"Boston-Cambridge-Newton, MA-NH (MA)",urban_pop,0.3900096485258491
+14500,"Boulder, CO (MA)",urban_pop,-0.036111241397085214
+14540,"Bowling Green, KY (MA)",urban_pop,-0.05650370674474592
+14740,"Bremerton-Silverdale-Port Orchard, WA (MA)",urban_pop,-0.043610019443200865
+14860,"Bridgeport-Stamford-Norwalk, CT (MA)",urban_pop,0.026527233502266157
+15180,"Brownsville-Harlingen, TX (MA)",urban_pop,-0.031211066539781895
+15260,"Brunswick, GA (MA)",urban_pop,-0.05997176797853676
+15380,"Buffalo-Cheektowaga, NY (MA)",urban_pop,0.036930970070120805
+15500,"Burlington, NC (MA)",urban_pop,-0.05406194882195525
+15540,"Burlington-South Burlington, VT (MA)",urban_pop,-0.05305629298798109
+15680,"California-Lexington Park, MD (MA)",urban_pop,-0.062001289640247204
+15940,"Canton-Massillon, OH (MA)",urban_pop,-0.0340542933057435
+15980,"Cape Coral-Fort Myers, FL (MA)",urban_pop,0.008567251718518465
+16020,"Cape Girardeau, MO-IL (MA)",urban_pop,-0.06134634738177447
+16060,"Carbondale-Marion, IL (MA)",urban_pop,-0.05976452353696804
+16180,"Carson City, NV (MA)",urban_pop,-0.06139032845668657
+16220,"Casper, WY (MA)",urban_pop,-0.06008752109507243
+16300,"Cedar Rapids, IA (MA)",urban_pop,-0.04549496764932681
+16540,"Chambersburg-Waynesboro, PA (MA)",urban_pop,-0.05814397870283683
+16580,"Champaign-Urbana, IL (MA)",urban_pop,-0.04859136505344186
+16620,"Charleston, WV (MA)",urban_pop,-0.05390044361766411
+16700,"Charleston-North Charleston, SC (MA)",urban_pop,0.004132703081060951
+16740,"Charlotte-Concord-Gastonia, NC-SC (MA)",urban_pop,0.15705280163919455
+16820,"Charlottesville, VA (MA)",urban_pop,-0.054340003933431746
+16860,"Chattanooga, TN-GA (MA)",urban_pop,-0.02482210122161943
+16940,"Cheyenne, WY (MA)",urban_pop,-0.05890007195474101
+16980,"Chicago-Naperville-Elgin, IL-IN-WI (MA)",urban_pop,0.7160792680776975
+17020,"Chico, CA (MA)",urban_pop,-0.04981736427581607
+17140,"Cincinnati, OH-KY-IN (MA)",urban_pop,0.12870719526098928
+17300,"Clarksville, TN-KY (MA)",urban_pop,-0.043045249619901305
+17420,"Cleveland, TN (MA)",urban_pop,-0.05945070413990061
+17460,"Cleveland-Elyria, OH (MA)",urban_pop,0.12715266863949748
+17660,"Coeur d'Alene, ID (MA)",urban_pop,-0.053546630945950136
+17780,"College Station-Bryan, TX (MA)",urban_pop,-0.04578670523158446
+17820,"Colorado Springs, CO (MA)",urban_pop,0.0017746766091457644
+17860,"Columbia, MO (MA)",urban_pop,-0.051604454180045556
+17900,"Columbia, SC (MA)",urban_pop,-0.0012231945444417525
+17980,"Columbus, GA-AL (MA)",urban_pop,-0.042164629754144034
+18020,"Columbus, IN (MA)",urban_pop,-0.06120015505555587
+18140,"Columbus, OH (MA)",urban_pop,0.1172072053745834
+18580,"Corpus Christi, TX (MA)",urban_pop,-0.027728737308083007
+18700,"Corvallis, OR (MA)",urban_pop,-0.05916207079122704
+18880,"Crestview-Fort Walton Beach-Destin, FL (MA)",urban_pop,-0.044128838373629686
+19060,"Cumberland, MD-WV (MA)",urban_pop,-0.06165503580038967
+19100,"Dallas-Fort Worth-Arlington, TX (MA)",urban_pop,0.5791522458476848
+19140,"Dalton, GA (MA)",urban_pop,-0.05884533723421881
+19180,"Danville, IL (MA)",urban_pop,-0.062451273435225274
+19300,"Daphne-Fairhope-Foley, AL (MA)",urban_pop,-0.052143028651068124
+19340,"Davenport-Moline-Rock Island, IA-IL (MA)",urban_pop,-0.035642391585004374
+19430,"Dayton-Kettering, OH (MA)",urban_pop,0.006753897955928068
+19460,"Decatur, AL (MA)",urban_pop,-0.059237457201836485
+19500,"Decatur, IL (MA)",urban_pop,-0.058173310710716075
+19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",urban_pop,-0.0036716977425749198
+19740,"Denver-Aurora-Lakewood, CO (MA)",urban_pop,0.21900155171975233
+19780,"Des Moines-West Des Moines, IA (MA)",urban_pop,-0.005258068214056055
+19820,"Detroit-Warren-Dearborn, MI (MA)",urban_pop,0.3396172708077141
+20020,"Dothan, AL (MA)",urban_pop,-0.0597971542944874
+20100,"Dover, DE (MA)",urban_pop,-0.05327382227157196
+20220,"Dubuque, IA (MA)",urban_pop,-0.06008514615886418
+20260,"Duluth, MN-WI (MA)",urban_pop,-0.05035334953750359
+20500,"Durham-Chapel Hill, NC (MA)",urban_pop,-0.018669794119673955
+20700,"East Stroudsburg, PA (MA)",urban_pop,-0.059567806931323575
+20740,"Eau Claire, WI (MA)",urban_pop,-0.056191317841043587
+20940,"El Centro, CA (MA)",urban_pop,-0.05193911598037404
+21060,"Elizabethtown-Fort Knox, KY (MA)",urban_pop,-0.05919016005327982
+21140,"Elkhart-Goshen, IN (MA)",urban_pop,-0.050671308977713436
+21300,"Elmira, NY (MA)",urban_pop,-0.060645405679836895
+21340,"El Paso, TX (MA)",urban_pop,0.018916925845062105
+21420,"Enid, OK (MA)",urban_pop,-0.061900223048492076
+21500,"Erie, PA (MA)",urban_pop,-0.045809870164615574
+21660,"Eugene-Springfield, OR (MA)",urban_pop,-0.034635294950404294
+21780,"Evansville, IN-KY (MA)",urban_pop,-0.04140415920197649
+21820,"Fairbanks, AK (MA)",urban_pop,-0.05971113686398033
+22020,"Fargo, ND-MN (MA)",urban_pop,-0.0447445429296951
+22140,"Farmington, NM (MA)",urban_pop,-0.05894323984303629
+22180,"Fayetteville, NC (MA)",urban_pop,-0.029226665329650348
+22220,"Fayetteville-Springdale-Rogers, AR (MA)",urban_pop,-0.025418128439837262
+22380,"Flagstaff, AZ (MA)",urban_pop,-0.05695501891047561
+22420,"Flint, MI (MA)",urban_pop,-0.03273414529731444
+22500,"Florence, SC (MA)",urban_pop,-0.05569316703325089
+22520,"Florence-Muscle Shoals, AL (MA)",urban_pop,-0.0589336355233141
+22540,"Fond du Lac, WI (MA)",urban_pop,-0.060227950895336724
+22660,"Fort Collins, CO (MA)",urban_pop,-0.03376942534469851
+22900,"Fort Smith, AR-OK (MA)",urban_pop,-0.052563035758443455
+23060,"Fort Wayne, IN (MA)",urban_pop,-0.03129451254593574
+23420,"Fresno, CA (MA)",urban_pop,0.02556711086144814
+23460,"Gadsden, AL (MA)",urban_pop,-0.061013487591365934
+23540,"Gainesville, FL (MA)",urban_pop,-0.044999585483357474
+23580,"Gainesville, GA (MA)",urban_pop,-0.05154647113767996
+23900,"Gettysburg, PA (MA)",urban_pop,-0.06314266492554432
+24020,"Glens Falls, NY (MA)",urban_pop,-0.0609271730944575
+24140,"Goldsboro, NC (MA)",urban_pop,-0.06146022277299035
+24220,"Grand Forks, ND-MN (MA)",urban_pop,-0.05925862723676367
+24260,"Grand Island, NE (MA)",urban_pop,-0.06139383867305237
+24300,"Grand Junction, CO (MA)",urban_pop,-0.05304017185228416
+24340,"Grand Rapids-Kentwood, MI (MA)",urban_pop,0.017916903158630593
+24420,"Grants Pass, OR (MA)",urban_pop,-0.061911372438618106
+24500,"Great Falls, MT (MA)",urban_pop,-0.06015505160506984
+24540,"Greeley, CO (MA)",urban_pop,-0.039890214300879245
+24580,"Green Bay, WI (MA)",urban_pop,-0.04392311336449495
+24660,"Greensboro-High Point, NC (MA)",urban_pop,-0.00938779316074112
+24780,"Greenville, NC (MA)",urban_pop,-0.05422262457730542
+24860,"Greenville-Anderson, SC (MA)",urban_pop,0.004140786257960993
+25060,"Gulfport-Biloxi, MS (MA)",urban_pop,-0.03640268617303588
+25180,"Hagerstown-Martinsburg, MD-WV (MA)",urban_pop,-0.047730420968733256
+25220,"Hammond, LA (MA)",urban_pop,-0.059656820478621087
+25260,"Hanford-Corcoran, CA (MA)",urban_pop,-0.053053502793396934
+25420,"Harrisburg-Carlisle, PA (MA)",urban_pop,-0.02031743828209731
+25500,"Harrisonburg, VA (MA)",urban_pop,-0.05824457467750088
+25540,"Hartford-East Hartford-Middletown, CT (MA)",urban_pop,0.0403934218789721
+25620,"Hattiesburg, MS (MA)",urban_pop,-0.058737828951609394
+25860,"Hickory-Lenoir-Morganton, NC (MA)",urban_pop,-0.046256612777552886
+25940,"Hilton Head Island-Bluffton, SC (MA)",urban_pop,-0.05102874266100077
+25980,"Hinesville, GA (MA)",urban_pop,-0.06159949340156934
+26140,"Homosassa Springs, FL (MA)",urban_pop,-0.055163683533410945
+26300,"Hot Springs, AR (MA)",urban_pop,-0.06023373324781012
+26380,"Houma-Thibodaux, LA (MA)",urban_pop,-0.050385910873667394
+26420,"Houston-The Woodlands-Sugar Land, TX (MA)",urban_pop,0.550702746500169
+26580,"Huntington-Ashland, WV-KY-OH (MA)",urban_pop,-0.04416131548444835
+26620,"Huntsville, AL (MA)",urban_pop,-0.028569771416821044
+26820,"Idaho Falls, ID (MA)",urban_pop,-0.055164406751613715
+26900,"Indianapolis-Carmel-Anderson, IN (MA)",urban_pop,0.124646377532323
+26980,"Iowa City, IA (MA)",urban_pop,-0.053219052903630604
+27060,"Ithaca, NY (MA)",urban_pop,-0.06098055190408902
+27100,"Jackson, MI (MA)",urban_pop,-0.05835394821943585
+27140,"Jackson, MS (MA)",urban_pop,-0.026337041536155126
+27180,"Jackson, TN (MA)",urban_pop,-0.05743316334814996
+27260,"Jacksonville, FL (MA)",urban_pop,0.08295687364039339
+27340,"Jacksonville, NC (MA)",urban_pop,-0.05361782856289021
+27500,"Janesville-Beloit, WI (MA)",urban_pop,-0.05356585125616076
+27620,"Jefferson City, MO (MA)",urban_pop,-0.06001658248992392
+27740,"Johnson City, TN (MA)",urban_pop,-0.05253688920369615
+27780,"Johnstown, PA (MA)",urban_pop,-0.059652586677084396
+27860,"Jonesboro, AR (MA)",urban_pop,-0.058717896910803535
+27900,"Joplin, MO (MA)",urban_pop,-0.055153661789498765
+27980,"Kahului-Wailuku-Lahaina, HI (MA)",urban_pop,-0.05371051898307633
+28020,"Kalamazoo-Portage, MI (MA)",urban_pop,-0.04589932357278381
+28100,"Kankakee, IL (MA)",urban_pop,-0.059135840292805164
+28140,"Kansas City, MO-KS (MA)",urban_pop,0.13076319221015864
+28420,"Kennewick-Richland, WA (MA)",urban_pop,-0.03944664196598102
+28660,"Killeen-Temple, TX (MA)",urban_pop,-0.026334348966524646
+28700,"Kingsport-Bristol, TN-VA (MA)",urban_pop,-0.0493434818440025
+28740,"Kingston, NY (MA)",urban_pop,-0.05884430450024103
+28940,"Knoxville, TN (MA)",urban_pop,0.00016454425690004548
+29020,"Kokomo, IN (MA)",urban_pop,-0.060661616086707504
+29100,"La Crosse-Onalaska, WI-MN (MA)",urban_pop,-0.05630526255830193
+29180,"Lafayette, LA (MA)",urban_pop,-0.03202614748958987
+29200,"Lafayette-West Lafayette, IN (MA)",urban_pop,-0.05074263137112445
+29340,"Lake Charles, LA (MA)",urban_pop,-0.050298356815627
+29420,"Lake Havasu City-Kingman, AZ (MA)",urban_pop,-0.05032668017290021
+29460,"Lakeland-Winter Haven, FL (MA)",urban_pop,-0.0002215894884460834
+29540,"Lancaster, PA (MA)",urban_pop,-0.025843052213341045
+29620,"Lansing-East Lansing, MI (MA)",urban_pop,-0.028103697228381463
+29700,"Laredo, TX (MA)",urban_pop,-0.041098447023973694
+29740,"Las Cruces, NM (MA)",urban_pop,-0.04950351269954045
+29820,"Las Vegas-Henderson-Paradise, NV (MA)",urban_pop,0.16314355187982232
+29940,"Lawrence, KS (MA)",urban_pop,-0.05661248242996186
+30020,"Lawton, OK (MA)",urban_pop,-0.058051747474888615
+30140,"Lebanon, PA (MA)",urban_pop,-0.05604514001818561
+30300,"Lewiston, ID-WA (MA)",urban_pop,-0.06142491434580999
+30340,"Lewiston-Auburn, ME (MA)",urban_pop,-0.06081112202391248
+30460,"Lexington-Fayette, KY (MA)",urban_pop,-0.020948911485458077
+30620,"Lima, OH (MA)",urban_pop,-0.05979880648134317
+30700,"Lincoln, NE (MA)",urban_pop,-0.036211426234172284
+30780,"Little Rock-North Little Rock-Conway, AR (MA)",urban_pop,-0.011351205194712333
+30860,"Logan, UT-ID (MA)",urban_pop,-0.05531814096303911
+30980,"Longview, TX (MA)",urban_pop,-0.05001801324444355
+31020,"Longview, WA (MA)",urban_pop,-0.05942003409066532
+31080,"Los Angeles-Long Beach-Anaheim, CA (MA)",urban_pop,0.8593350544799154
+31140,"Louisville/Jefferson County, KY-IN (MA)",urban_pop,0.042914246143084034
+31180,"Lubbock, TX (MA)",urban_pop,-0.03835694248244803
+31340,"Lynchburg, VA (MA)",urban_pop,-0.05295481204503316
+31420,"Macon-Bibb County, GA (MA)",urban_pop,-0.05211109329904651
+31460,"Madera, CA (MA)",urban_pop,-0.05717741253341946
+31540,"Madison, WI (MA)",urban_pop,-0.013225628894122265
+31700,"Manchester-Nashua, NH (MA)",urban_pop,-0.0340489106773908
+31740,"Manhattan, KS (MA)",urban_pop,-0.056129231299969495
+31860,"Mankato, MN (MA)",urban_pop,-0.059682119979651116
+31900,"Mansfield, OH (MA)",urban_pop,-0.05852415090633312
+32580,"McAllen-Edinburg-Mission, TX (MA)",urban_pop,0.015022516431399291
+32780,"Medford, OR (MA)",urban_pop,-0.0487707408978999
+32820,"Memphis, TN-MS-AR (MA)",urban_pop,0.049414456220628455
+32900,"Merced, CA (MA)",urban_pop,-0.04290870771712907
+33100,"Miami-Fort Lauderdale-Pompano Beach, FL (MA)",urban_pop,0.5118267888927113
+33140,"Michigan City-La Porte, IN (MA)",urban_pop,-0.05971475105958868
+33220,"Midland, MI (MA)",urban_pop,-0.062187521376508514
+33260,"Midland, TX (MA)",urban_pop,-0.05193580869402148
+33340,"Milwaukee-Waukesha, WI (MA)",urban_pop,0.08140558066914805
+33460,"Minneapolis-St. Paul-Bloomington, MN-WI (MA)",urban_pop,0.2573116805916562
+33540,"Missoula, MT (MA)",urban_pop,-0.05798512967808844
+33660,"Mobile, AL (MA)",urban_pop,-0.03380834658264542
+33700,"Modesto, CA (MA)",urban_pop,-0.014565542134962972
+33740,"Monroe, LA (MA)",urban_pop,-0.05339204034257583
+33780,"Monroe, MI (MA)",urban_pop,-0.057127418362168725
+33860,"Montgomery, AL (MA)",urban_pop,-0.040128600786043966
+34060,"Morgantown, WV (MA)",urban_pop,-0.05906840481778397
+34100,"Morristown, TN (MA)",urban_pop,-0.0601888166536142
+34580,"Mount Vernon-Anacortes, WA (MA)",urban_pop,-0.0582696718462421
+34620,"Muncie, IN (MA)",urban_pop,-0.05819272761843031
+34740,"Muskegon, MI (MA)",urban_pop,-0.05364851880441224
+34820,"Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MA)",urban_pop,-0.030666482716051657
+34900,"Napa, CA (MA)",urban_pop,-0.05492884119462038
+34940,"Naples-Marco Island, FL (MA)",urban_pop,-0.03275536712896965
+34980,"Nashville-Davidson--Murfreesboro--Franklin, TN (MA)",urban_pop,0.09259653800539747
+35100,"New Bern, NC (MA)",urban_pop,-0.060362389544002304
+35300,"New Haven-Milford, CT (MA)",urban_pop,0.01782179913413473
+35380,"New Orleans-Metairie, LA (MA)",urban_pop,0.053806054419734295
+35620,"New York-Newark-Jersey City, NY-NJ-PA (MA)",urban_pop,0.9619886454023696
+35660,"Niles, MI (MA)",urban_pop,-0.05594369222946216
+35840,"North Port-Sarasota-Bradenton, FL (MA)",urban_pop,0.01618975283638746
+35980,"Norwich-New London, CT (MA)",urban_pop,-0.047573878023209115
+36100,"Ocala, FL (MA)",urban_pop,-0.03963599246041338
+36140,"Ocean City, NJ (MA)",urban_pop,-0.059075840302434846
+36220,"Odessa, TX (MA)",urban_pop,-0.05157437745815818
+36260,"Ogden-Clearfield, UT (MA)",urban_pop,-0.00017568040506610316
+36420,"Oklahoma City, OK (MA)",urban_pop,0.05181525130051279
+36500,"Olympia-Lacey-Tumwater, WA (MA)",urban_pop,-0.04312313984902438
+36540,"Omaha-Council Bluffs, NE-IA (MA)",urban_pop,0.02027699087811974
+36740,"Orlando-Kissimmee-Sanford, FL (MA)",urban_pop,0.19269043873364877
+36780,"Oshkosh-Neenah, WI (MA)",urban_pop,-0.05243540268462821
+36980,"Owensboro, KY (MA)",urban_pop,-0.059110435873970024
+37100,"Oxnard-Thousand Oaks-Ventura, CA (MA)",urban_pop,0.01732213515059655
+37340,"Palm Bay-Melbourne-Titusville, FL (MA)",urban_pop,-0.0067559143747135675
+37460,"Panama City, FL (MA)",urban_pop,-0.05155753031876065
+37620,"Parkersburg-Vienna, WV (MA)",urban_pop,-0.060957940806789845
+37860,"Pensacola-Ferry Pass-Brent, FL (MA)",urban_pop,-0.020757275199601577
+37900,"Peoria, IL (MA)",urban_pop,-0.03831544702573797
+37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (MA)",urban_pop,0.4912281778734755
+38060,"Phoenix-Mesa-Chandler, AZ (MA)",urban_pop,0.3921132994356611
+38220,"Pine Bluff, AR (MA)",urban_pop,-0.06226267353449977
+38300,"Pittsburgh, PA (MA)",urban_pop,0.1323586964097374
+38340,"Pittsfield, MA (MA)",urban_pop,-0.05838152376394601
+38540,"Pocatello, ID (MA)",urban_pop,-0.0596269772952116
+38860,"Portland-South Portland, ME (MA)",urban_pop,-0.03556466242333012
+38900,"Portland-Vancouver-Hillsboro, OR-WA (MA)",urban_pop,0.16621881416481776
+38940,"Port St. Lucie, FL (MA)",urban_pop,-0.019051128718937882
+39100,"Poughkeepsie-Newburgh-Middletown, NY (MA)",urban_pop,-0.01612950210465347
+39150,"Prescott Valley-Prescott, AZ (MA)",urban_pop,-0.05048783233162202
+39300,"Providence-Warwick, RI-MA (MA)",urban_pop,0.08987900381344649
+39340,"Provo-Orem, UT (MA)",urban_pop,-0.0010801822342056955
+39380,"Pueblo, CO (MA)",urban_pop,-0.05199823353166022
+39460,"Punta Gorda, FL (MA)",urban_pop,-0.049037059112011616
+39540,"Racine, WI (MA)",urban_pop,-0.049589419688382486
+39580,"Raleigh-Cary, NC (MA)",urban_pop,0.05578754526249985
+39660,"Rapid City, SD (MA)",urban_pop,-0.055779017902205075
+39740,"Reading, PA (MA)",urban_pop,-0.03452650770719601
+39820,"Redding, CA (MA)",urban_pop,-0.054628486244643004
+39900,"Reno, NV (MA)",urban_pop,-0.01881969729076305
+40060,"Richmond, VA (MA)",urban_pop,0.04255519553753828
+40140,"Riverside-San Bernardino-Ontario, CA (MA)",urban_pop,0.36585304037224553
+40220,"Roanoke, VA (MA)",urban_pop,-0.04409377540087467
+40340,"Rochester, MN (MA)",urban_pop,-0.051979423441216976
+40380,"Rochester, NY (MA)",urban_pop,0.017981238050288617
+40420,"Rockford, IL (MA)",urban_pop,-0.03654944118015968
+40580,"Rocky Mount, NC (MA)",urban_pop,-0.059360449196268705
+40660,"Rome, GA (MA)",urban_pop,-0.06084622661385586
+40900,"Sacramento-Roseville-Folsom, CA (MA)",urban_pop,0.16073118911633255
+40980,"Saginaw, MI (MA)",urban_pop,-0.05385218783631762
+41060,"St. Cloud, MN (MA)",urban_pop,-0.0545973859747555
+41100,"St. George, UT (MA)",urban_pop,-0.0512309174118325
+41140,"St. Joseph, MO-KS (MA)",urban_pop,-0.05822794647165275
+41180,"St. Louis, MO-IL (MA)",urban_pop,0.17930567936442432
+41420,"Salem, OR (MA)",urban_pop,-0.029615985278633183
+41500,"Salinas, CA (MA)",urban_pop,-0.028160546304775047
+41540,"Salisbury, MD-DE (MA)",urban_pop,-0.03971752611426482
+41620,"Salt Lake City, UT (MA)",urban_pop,0.060769568491960024
+41660,"San Angelo, TX (MA)",urban_pop,-0.05675875416658904
+41700,"San Antonio-New Braunfels, TX (MA)",urban_pop,0.15723544077246654
+41740,"San Diego-Chula Vista-Carlsbad, CA (MA)",urban_pop,0.253959556646296
+41860,"San Francisco-Oakland-Berkeley, CA (MA)",urban_pop,0.3968630470944665
+41940,"San Jose-Sunnyvale-Santa Clara, CA (MA)",urban_pop,0.13514070444446258
+42020,"San Luis Obispo-Paso Robles, CA (MA)",urban_pop,-0.04347224298796848
+42100,"Santa Cruz-Watsonville, CA (MA)",urban_pop,-0.04281643758403131
+42140,"Santa Fe, NM (MA)",urban_pop,-0.05669739470897961
+42200,"Santa Maria-Santa Barbara, CA (MA)",urban_pop,-0.023313054296971836
+42220,"Santa Rosa-Petaluma, CA (MA)",urban_pop,-0.02342129086232647
+42340,"Savannah, GA (MA)",urban_pop,-0.033292010798632976
+42540,"Scranton--Wilkes-Barre, PA (MA)",urban_pop,-0.022360859980867343
+42660,"Seattle-Tacoma-Bellevue, WA (MA)",urban_pop,0.31397443023813154
+42680,"Sebastian-Vero Beach, FL (MA)",urban_pop,-0.05177499052201684
+42700,"Sebring-Avon Park, FL (MA)",urban_pop,-0.05870767268517585
+43100,"Sheboygan, WI (MA)",urban_pop,-0.05847354487988754
+43300,"Sherman-Denison, TX (MA)",urban_pop,-0.05976204524636708
+43340,"Shreveport-Bossier City, LA (MA)",urban_pop,-0.03615398563651451
+43420,"Sierra Vista-Douglas, AZ (MA)",urban_pop,-0.05889253304255959
+43580,"Sioux City, IA-NE-SD (MA)",urban_pop,-0.05540709484360784
+43620,"Sioux Falls, SD (MA)",urban_pop,-0.044611537886912966
+43780,"South Bend-Mishawaka, IN-MI (MA)",urban_pop,-0.0403260111373579
+43900,"Spartanburg, SC (MA)",urban_pop,-0.04319575417215871
+44060,"Spokane-Spokane Valley, WA (MA)",urban_pop,-0.01893675999461364
+44100,"Springfield, IL (MA)",urban_pop,-0.0506328566902593
+44140,"Springfield, MA (MA)",urban_pop,-0.008163990742359295
+44180,"Springfield, MO (MA)",urban_pop,-0.03340411970708512
+44220,"Springfield, OH (MA)",urban_pop,-0.05660432171765317
+44300,"State College, PA (MA)",urban_pop,-0.0564090821706138
+44420,"Staunton, VA (MA)",urban_pop,-0.06098437203763574
+44700,"Stockton, CA (MA)",urban_pop,0.0073128626265122065
+44940,"Sumter, SC (MA)",urban_pop,-0.05950966880133379
+45060,"Syracuse, NY (MA)",urban_pop,-0.018312488717781794
+45220,"Tallahassee, FL (MA)",urban_pop,-0.03901495365672847
+45300,"Tampa-St. Petersburg-Clearwater, FL (MA)",urban_pop,0.2429181856581999
+45460,"Terre Haute, IN (MA)",urban_pop,-0.05657023258446303
+45500,"Texarkana, TX-AR (MA)",urban_pop,-0.05848738410882215
+45540,"The Villages, FL (MA)",urban_pop,-0.05657560421420704
+45780,"Toledo, OH (MA)",urban_pop,-0.012770242127555953
+45820,"Topeka, KS (MA)",urban_pop,-0.05169840457410724
+45940,"Trenton-Princeton, NJ (MA)",urban_pop,-0.029070417137207483
+46060,"Tucson, AZ (MA)",urban_pop,0.031380705979999535
+46140,"Tulsa, OK (MA)",urban_pop,0.014266266918991244
+46220,"Tuscaloosa, AL (MA)",urban_pop,-0.050923829267216614
+46300,"Twin Falls, ID (MA)",urban_pop,-0.059730033926566284
+46340,"Tyler, TX (MA)",urban_pop,-0.051390297615165004
+46520,"Urban Honolulu, HI (MA)",urban_pop,0.03636672595431967
+46540,"Utica-Rome, NY (MA)",urban_pop,-0.04839864883834333
+46660,"Valdosta, GA (MA)",urban_pop,-0.059156287696231824
+46700,"Vallejo, CA (MA)",urban_pop,-0.022275509544159577
+47020,"Victoria, TX (MA)",urban_pop,-0.060269769603356615
+47220,"Vineland-Bridgeton, NJ (MA)",urban_pop,-0.055062742368190754
+47260,"Virginia Beach-Norfolk-Newport News, VA-NC (MA)",urban_pop,0.09870355362581584
+47300,"Visalia, CA (MA)",urban_pop,-0.027977261746036652
+47380,"Waco, TX (MA)",urban_pop,-0.04607192003246019
+47460,"Walla Walla, WA (MA)",urban_pop,-0.06192964501679976
+47580,"Warner Robins, GA (MA)",urban_pop,-0.04996560300631514
+47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV (MA)",urban_pop,0.49001915617790504
+47940,"Waterloo-Cedar Falls, IA (MA)",urban_pop,-0.05434992324686594
+48060,"Watertown-Fort Drum, NY (MA)",urban_pop,-0.060982410347659055
+48140,"Wausau-Weston, WI (MA)",urban_pop,-0.05803253681441434
+48260,"Weirton-Steubenville, WV-OH (MA)",urban_pop,-0.059616960701107
+48300,"Wenatchee, WA (MA)",urban_pop,-0.05835560068903123
+48540,"Wheeling, WV-OH (MA)",urban_pop,-0.05989132842207823
+48620,"Wichita, KS (MA)",urban_pop,-0.010181850991366814
+48660,"Wichita Falls, TX (MA)",urban_pop,-0.055316591236078794
+48700,"Williamsport, PA (MA)",urban_pop,-0.06006057069208004
+48900,"Wilmington, NC (MA)",urban_pop,-0.041734381716113766
+49020,"Winchester, VA-WV (MA)",urban_pop,-0.05846001546271051
+49180,"Winston-Salem, NC (MA)",urban_pop,-0.0191757527665688
+49340,"Worcester, MA-CT (MA)",urban_pop,0.009203917948425122
+49420,"Yakima, WA (MA)",urban_pop,-0.048634064026171764
+49620,"York-Hanover, PA (MA)",urban_pop,-0.03332762073675033
+49660,"Youngstown-Warren-Boardman, OH-PA (MA)",urban_pop,-0.025977787250717754
+49700,"Yuba City, CA (MA)",urban_pop,-0.052404605135612736
+49740,"Yuma, AZ (MA)",urban_pop,-0.04920329769477516
+10180,"Abilene, TX (MA)",rural_pop,-0.06459376775549275
+10420,"Akron, OH (MA)",rural_pop,-0.025096985239099312
+10500,"Albany, GA (MA)",rural_pop,-0.06732213321974823
+10540,"Albany-Lebanon, OR (MA)",rural_pop,-0.0887296692379893
+10580,"Albany-Schenectady-Troy, NY (MA)",rural_pop,0.1546591274037179
+10740,"Albuquerque, NM (MA)",rural_pop,-0.0058560880720543995
+10780,"Alexandria, LA (MA)",rural_pop,-0.03861753886988151
+10900,"Allentown-Bethlehem-Easton, PA-NJ (MA)",rural_pop,0.13153008386222576
+11020,"Altoona, PA (MA)",rural_pop,-0.10948410388559904
+11100,"Amarillo, TX (MA)",rural_pop,-0.08434959737741388
+11180,"Ames, IA (MA)",rural_pop,-0.09603768107641508
+11260,"Anchorage, AK (MA)",rural_pop,-0.0517707932172955
+11460,"Ann Arbor, MI (MA)",rural_pop,-0.05523805093944878
+11500,"Anniston-Oxford, AL (MA)",rural_pop,-0.0913206251630363
+11540,"Appleton, WI (MA)",rural_pop,-0.03501536891292223
+11700,"Asheville, NC (MA)",rural_pop,0.0899099890035926
+12020,"Athens-Clarke County, GA (MA)",rural_pop,-0.04118678208336679
+12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",rural_pop,0.7833558953706603
+12100,"Atlantic City-Hammonton, NJ (MA)",rural_pop,-0.09381507123635524
+12220,"Auburn-Opelika, AL (MA)",rural_pop,-0.08548468552544097
+12260,"Augusta-Richmond County, GA-SC (MA)",rural_pop,0.11388807716416083
+12420,"Austin-Round Rock-Georgetown, TX (MA)",rural_pop,0.3123543516699414
+12540,"Bakersfield, CA (MA)",rural_pop,0.041477282538730176
+12580,"Baltimore-Columbia-Towson, MD (MA)",rural_pop,0.3320796554896295
+12620,"Bangor, ME (MA)",rural_pop,-0.016778635679666087
+12700,"Barnstable Town, MA (MA)",rural_pop,-0.1512771752114771
+12940,"Baton Rouge, LA (MA)",rural_pop,0.16945364223908221
+12980,"Battle Creek, MI (MA)",rural_pop,-0.0897401028439958
+13020,"Bay City, MI (MA)",rural_pop,-0.11207916303468335
+13140,"Beaumont-Port Arthur, TX (MA)",rural_pop,-0.02095587153367351
+13220,"Beckley, WV (MA)",rural_pop,-0.06598745612983015
+13380,"Bellingham, WA (MA)",rural_pop,-0.053825745058869834
+13460,"Bend, OR (MA)",rural_pop,-0.06538131695972438
+13740,"Billings, MT (MA)",rural_pop,-0.084465125254235
+13780,"Binghamton, NY (MA)",rural_pop,-0.02538179371425009
+13820,"Birmingham-Hoover, AL (MA)",rural_pop,0.345315219203578
+13900,"Bismarck, ND (MA)",rural_pop,-0.1031234719922377
+13980,"Blacksburg-Christiansburg, VA (MA)",rural_pop,-0.06555426465367264
+14010,"Bloomington, IL (MA)",rural_pop,-0.10074375048931472
+14020,"Bloomington, IN (MA)",rural_pop,-0.07718591438248301
+14100,"Bloomsburg-Berwick, PA (MA)",rural_pop,-0.09750274428680095
+14260,"Boise City, ID (MA)",rural_pop,0.0042196506471205986
+14460,"Boston-Cambridge-Newton, MA-NH (MA)",rural_pop,0.35896731229698764
+14500,"Boulder, CO (MA)",rural_pop,-0.11033874117514708
+14540,"Bowling Green, KY (MA)",rural_pop,-0.033058122440126625
+14740,"Bremerton-Silverdale-Port Orchard, WA (MA)",rural_pop,-0.0813886399003616
+14860,"Bridgeport-Stamford-Norwalk, CT (MA)",rural_pop,-0.07352556092110363
+15180,"Brownsville-Harlingen, TX (MA)",rural_pop,-0.03839190547381821
+15260,"Brunswick, GA (MA)",rural_pop,-0.08775921337604198
+15380,"Buffalo-Cheektowaga, NY (MA)",rural_pop,0.10969163491242018
+15500,"Burlington, NC (MA)",rural_pop,-0.08657603599365404
+15540,"Burlington-South Burlington, VT (MA)",rural_pop,-0.011894347147224926
+15680,"California-Lexington Park, MD (MA)",rural_pop,-0.05430830740668369
+15940,"Canton-Massillon, OH (MA)",rural_pop,-0.024877899021906846
+15980,"Cape Coral-Fort Myers, FL (MA)",rural_pop,-0.11236222913326144
+16020,"Cape Girardeau, MO-IL (MA)",rural_pop,-0.09221688680766738
+16060,"Carbondale-Marion, IL (MA)",rural_pop,-0.05768047887105865
+16180,"Carson City, NV (MA)",rural_pop,-0.15603724375408567
+16220,"Casper, WY (MA)",rural_pop,-0.1416948592440429
+16300,"Cedar Rapids, IA (MA)",rural_pop,-0.04926289070628287
+16540,"Chambersburg-Waynesboro, PA (MA)",rural_pop,-0.04623609957953423
+16580,"Champaign-Urbana, IL (MA)",rural_pop,-0.08959624438768388
+16620,"Charleston, WV (MA)",rural_pop,0.057965461419445585
+16700,"Charleston-North Charleston, SC (MA)",rural_pop,0.02477267358890778
+16740,"Charlotte-Concord-Gastonia, NC-SC (MA)",rural_pop,0.5735776706667022
+16820,"Charlottesville, VA (MA)",rural_pop,0.002244977734607412
+16860,"Chattanooga, TN-GA (MA)",rural_pop,0.09608206092783456
+16940,"Cheyenne, WY (MA)",rural_pop,-0.12669544953381606
+16980,"Chicago-Naperville-Elgin, IL-IN-WI (MA)",rural_pop,0.31476135493442015
+17020,"Chico, CA (MA)",rural_pop,-0.08800184303227077
+17140,"Cincinnati, OH-KY-IN (MA)",rural_pop,0.41645127850390695
+17300,"Clarksville, TN-KY (MA)",rural_pop,-0.015018551050354656
+17420,"Cleveland, TN (MA)",rural_pop,-0.07498961024178519
+17460,"Cleveland-Elyria, OH (MA)",rural_pop,0.1826631679330324
+17660,"Coeur d'Alene, ID (MA)",rural_pop,-0.09500503725267273
+17780,"College Station-Bryan, TX (MA)",rural_pop,-0.05842836720854605
+17820,"Colorado Springs, CO (MA)",rural_pop,-0.011944929904481816
+17860,"Columbia, MO (MA)",rural_pop,-0.0602969592144359
+17900,"Columbia, SC (MA)",rural_pop,0.1608320678894457
+17980,"Columbus, GA-AL (MA)",rural_pop,-0.015296731818063014
+18020,"Columbus, IN (MA)",rural_pop,-0.12010102017506297
+18140,"Columbus, OH (MA)",rural_pop,0.40905884249714175
+18580,"Corpus Christi, TX (MA)",rural_pop,-0.0933085856394884
+18700,"Corvallis, OR (MA)",rural_pop,-0.13132365845737415
+18880,"Crestview-Fort Walton Beach-Destin, FL (MA)",rural_pop,-0.053898046947722156
+19060,"Cumberland, MD-WV (MA)",rural_pop,-0.09135239816986596
+19100,"Dallas-Fort Worth-Arlington, TX (MA)",rural_pop,0.6981819218241938
+19140,"Dalton, GA (MA)",rural_pop,-0.05683839680910552
+19180,"Danville, IL (MA)",rural_pop,-0.11328290012884368
+19300,"Daphne-Fairhope-Foley, AL (MA)",rural_pop,-0.01633188031857402
+19340,"Davenport-Moline-Rock Island, IA-IL (MA)",rural_pop,-0.02809147470519413
+19430,"Dayton-Kettering, OH (MA)",rural_pop,0.0064286813919669505
+19460,"Decatur, AL (MA)",rural_pop,-0.027459588278341607
+19500,"Decatur, IL (MA)",rural_pop,-0.1325829552045683
+19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",rural_pop,-0.06854747372145875
+19740,"Denver-Aurora-Lakewood, CO (MA)",rural_pop,0.11867570616249234
+19780,"Des Moines-West Des Moines, IA (MA)",rural_pop,0.02552598696944175
+19820,"Detroit-Warren-Dearborn, MI (MA)",rural_pop,0.3758046074688024
+20020,"Dothan, AL (MA)",rural_pop,-0.027572486944667518
+20100,"Dover, DE (MA)",rural_pop,-0.08187274220445473
+20220,"Dubuque, IA (MA)",rural_pop,-0.10968569963698727
+20260,"Duluth, MN-WI (MA)",rural_pop,0.055373490476861686
+20500,"Durham-Chapel Hill, NC (MA)",rural_pop,0.14238810587371997
+20700,"East Stroudsburg, PA (MA)",rural_pop,-0.002117554917144937
+20740,"Eau Claire, WI (MA)",rural_pop,-0.050995446943362444
+20940,"El Centro, CA (MA)",rural_pop,-0.10704758687607419
+21060,"Elizabethtown-Fort Knox, KY (MA)",rural_pop,-0.02978481823320589
+21140,"Elkhart-Goshen, IN (MA)",rural_pop,-0.08184761673583008
+21300,"Elmira, NY (MA)",rural_pop,-0.12580266369154003
+21340,"El Paso, TX (MA)",rural_pop,-0.09877535267170123
+21420,"Enid, OK (MA)",rural_pop,-0.14095447164604835
+21500,"Erie, PA (MA)",rural_pop,-0.05363405825183487
+21660,"Eugene-Springfield, OR (MA)",rural_pop,-0.04675436684854328
+21780,"Evansville, IN-KY (MA)",rural_pop,-0.052660430320419005
+21820,"Fairbanks, AK (MA)",rural_pop,-0.12171949468283849
+22020,"Fargo, ND-MN (MA)",rural_pop,-0.10612397261479833
+22140,"Farmington, NM (MA)",rural_pop,-0.09076038640287332
+22180,"Fayetteville, NC (MA)",rural_pop,0.09652312364574356
+22220,"Fayetteville-Springdale-Rogers, AR (MA)",rural_pop,0.07906904758540434
+22380,"Flagstaff, AZ (MA)",rural_pop,-0.08374848103006516
+22420,"Flint, MI (MA)",rural_pop,-0.038550186028582734
+22500,"Florence, SC (MA)",rural_pop,-0.012025862188827507
+22520,"Florence-Muscle Shoals, AL (MA)",rural_pop,-0.04202007133139363
+22540,"Fond du Lac, WI (MA)",rural_pop,-0.0992261996100321
+22660,"Fort Collins, CO (MA)",rural_pop,-0.10086226342431115
+22900,"Fort Smith, AR-OK (MA)",rural_pop,0.011671044626055505
+23060,"Fort Wayne, IN (MA)",rural_pop,-0.039419010578544134
+23420,"Fresno, CA (MA)",rural_pop,0.02836707550005646
+23460,"Gadsden, AL (MA)",rural_pop,-0.08770901283577659
+23540,"Gainesville, FL (MA)",rural_pop,0.048360434622400694
+23580,"Gainesville, GA (MA)",rural_pop,-0.07421150703468748
+23900,"Gettysburg, PA (MA)",rural_pop,-0.05240481530081642
+24020,"Glens Falls, NY (MA)",rural_pop,-0.049501765829684574
+24140,"Goldsboro, NC (MA)",rural_pop,-0.057140950633515986
+24220,"Grand Forks, ND-MN (MA)",rural_pop,-0.11452791027031006
+24260,"Grand Island, NE (MA)",rural_pop,-0.12557196650289626
+24300,"Grand Junction, CO (MA)",rural_pop,-0.12923660296754513
+24340,"Grand Rapids-Kentwood, MI (MA)",rural_pop,0.27848230285491593
+24420,"Grants Pass, OR (MA)",rural_pop,-0.09882377891967442
+24500,"Great Falls, MT (MA)",rural_pop,-0.13323563298528618
+24540,"Greeley, CO (MA)",rural_pop,-0.052157602137592685
+24580,"Green Bay, WI (MA)",rural_pop,0.01233199133552576
+24660,"Greensboro-High Point, NC (MA)",rural_pop,0.2030273647766827
+24780,"Greenville, NC (MA)",rural_pop,-0.08593497629555846
+24860,"Greenville-Anderson, SC (MA)",rural_pop,0.236854767229276
+25060,"Gulfport-Biloxi, MS (MA)",rural_pop,0.03812343452035338
+25180,"Hagerstown-Martinsburg, MD-WV (MA)",rural_pop,0.016364860361616884
+25220,"Hammond, LA (MA)",rural_pop,-0.059900422410208876
+25260,"Hanford-Corcoran, CA (MA)",rural_pop,-0.13435353039270848
+25420,"Harrisburg-Carlisle, PA (MA)",rural_pop,0.07192960860504183
+25500,"Harrisonburg, VA (MA)",rural_pop,-0.07879829714783315
+25540,"Hartford-East Hartford-Middletown, CT (MA)",rural_pop,0.13157316971365196
+25620,"Hattiesburg, MS (MA)",rural_pop,-0.00908691604747669
+25860,"Hickory-Lenoir-Morganton, NC (MA)",rural_pop,0.11231321421229512
+25940,"Hilton Head Island-Bluffton, SC (MA)",rural_pop,-0.06118069716110541
+25980,"Hinesville, GA (MA)",rural_pop,-0.11497223206369622
+26140,"Homosassa Springs, FL (MA)",rural_pop,-0.0981273979572086
+26300,"Hot Springs, AR (MA)",rural_pop,-0.10576381336970697
+26380,"Houma-Thibodaux, LA (MA)",rural_pop,-0.08631995544093451
+26420,"Houston-The Woodlands-Sugar Land, TX (MA)",rural_pop,0.5883663383659288
+26580,"Huntington-Ashland, WV-KY-OH (MA)",rural_pop,0.06938253829687446
+26620,"Huntsville, AL (MA)",rural_pop,0.037786654084629445
+26820,"Idaho Falls, ID (MA)",rural_pop,-0.09212325449580694
+26900,"Indianapolis-Carmel-Anderson, IN (MA)",rural_pop,0.25859872375366444
+26980,"Iowa City, IA (MA)",rural_pop,-0.09352255245852581
+27060,"Ithaca, NY (MA)",rural_pop,-0.08438643259903511
+27100,"Jackson, MI (MA)",rural_pop,-0.03534884925951465
+27140,"Jackson, MS (MA)",rural_pop,0.16887540200669093
+27180,"Jackson, TN (MA)",rural_pop,-0.0164364048053266
+27260,"Jacksonville, FL (MA)",rural_pop,0.09824357252189797
+27340,"Jacksonville, NC (MA)",rural_pop,-0.03810228075334432
+27500,"Janesville-Beloit, WI (MA)",rural_pop,-0.10750432431108026
+27620,"Jefferson City, MO (MA)",rural_pop,-0.025167766425809646
+27740,"Johnson City, TN (MA)",rural_pop,-0.05114682092269529
+27780,"Johnstown, PA (MA)",rural_pop,-0.05944001275005095
+27860,"Jonesboro, AR (MA)",rural_pop,-0.07341989553994333
+27900,"Joplin, MO (MA)",rural_pop,-0.05207519632776059
+27980,"Kahului-Wailuku-Lahaina, HI (MA)",rural_pop,-0.1033904082849657
+28020,"Kalamazoo-Portage, MI (MA)",rural_pop,-0.06764779162221246
+28100,"Kankakee, IL (MA)",rural_pop,-0.11127981953499277
+28140,"Kansas City, MO-KS (MA)",rural_pop,0.2913177310866357
+28420,"Kennewick-Richland, WA (MA)",rural_pop,-0.1018436405112847
+28660,"Killeen-Temple, TX (MA)",rural_pop,-0.02617384281392965
+28700,"Kingsport-Bristol, TN-VA (MA)",rural_pop,0.06580203054630851
+28740,"Kingston, NY (MA)",rural_pop,0.00887371770435852
+28940,"Knoxville, TN (MA)",rural_pop,0.22079015997082618
+29020,"Kokomo, IN (MA)",rural_pop,-0.12635528574409105
+29100,"La Crosse-Onalaska, WI-MN (MA)",rural_pop,-0.10341209620508973
+29180,"Lafayette, LA (MA)",rural_pop,0.07148335086978475
+29200,"Lafayette-West Lafayette, IN (MA)",rural_pop,-0.0527091981926312
+29340,"Lake Charles, LA (MA)",rural_pop,-0.06214161126949469
+29420,"Lake Havasu City-Kingman, AZ (MA)",rural_pop,-0.07701157839468864
+29460,"Lakeland-Winter Haven, FL (MA)",rural_pop,-0.03014199953957064
+29540,"Lancaster, PA (MA)",rural_pop,0.09640784954180459
+29620,"Lansing-East Lansing, MI (MA)",rural_pop,0.11332378890426797
+29700,"Laredo, TX (MA)",rural_pop,-0.13599249408134728
+29740,"Las Cruces, NM (MA)",rural_pop,-0.07980875988335268
+29820,"Las Vegas-Henderson-Paradise, NV (MA)",rural_pop,-0.11425663510102868
+29940,"Lawrence, KS (MA)",rural_pop,-0.13311968342884173
+30020,"Lawton, OK (MA)",rural_pop,-0.0968462740994197
+30140,"Lebanon, PA (MA)",rural_pop,-0.10155659144743145
+30300,"Lewiston, ID-WA (MA)",rural_pop,-0.14603315764652047
+30340,"Lewiston-Auburn, ME (MA)",rural_pop,-0.07809104435966507
+30460,"Lexington-Fayette, KY (MA)",rural_pop,-0.04394566978445158
+30620,"Lima, OH (MA)",rural_pop,-0.10940746181452654
+30700,"Lincoln, NE (MA)",rural_pop,-0.09293746651135071
+30780,"Little Rock-North Little Rock-Conway, AR (MA)",rural_pop,0.1874772187245024
+30860,"Logan, UT-ID (MA)",rural_pop,-0.1064707663142872
+30980,"Longview, TX (MA)",rural_pop,0.04073991757078366
+31020,"Longview, WA (MA)",rural_pop,-0.1013095822031812
+31080,"Los Angeles-Long Beach-Anaheim, CA (MA)",rural_pop,0.0006463391549114128
+31140,"Louisville/Jefferson County, KY-IN (MA)",rural_pop,0.20936800214776374
+31180,"Lubbock, TX (MA)",rural_pop,-0.08978861240975444
+31340,"Lynchburg, VA (MA)",rural_pop,0.04717428371096544
+31420,"Macon-Bibb County, GA (MA)",rural_pop,-0.0134219183887333
+31460,"Madera, CA (MA)",rural_pop,-0.06142765626674507
+31540,"Madison, WI (MA)",rural_pop,0.10644169415814408
+31700,"Manchester-Nashua, NH (MA)",rural_pop,0.01105392700088803
+31740,"Manhattan, KS (MA)",rural_pop,-0.11554961521851304
+31860,"Mankato, MN (MA)",rural_pop,-0.10902423196323785
+31900,"Mansfield, OH (MA)",rural_pop,-0.09206974958604364
+32580,"McAllen-Edinburg-Mission, TX (MA)",rural_pop,-0.03245674811081534
+32780,"Medford, OR (MA)",rural_pop,-0.08548635953360995
+32820,"Memphis, TN-MS-AR (MA)",rural_pop,0.19234723869024628
+32900,"Merced, CA (MA)",rural_pop,-0.08338007874406328
+33100,"Miami-Fort Lauderdale-Pompano Beach, FL (MA)",rural_pop,-0.10192040657477552
+33140,"Michigan City-La Porte, IN (MA)",rural_pop,-0.09372481002470767
+33220,"Midland, MI (MA)",rural_pop,-0.10203054706719672
+33260,"Midland, TX (MA)",rural_pop,-0.11456618698758503
+33340,"Milwaukee-Waukesha, WI (MA)",rural_pop,0.0713810095291203
+33460,"Minneapolis-St. Paul-Bloomington, MN-WI (MA)",rural_pop,0.5936432831244582
+33540,"Missoula, MT (MA)",rural_pop,-0.11248211045694434
+33660,"Mobile, AL (MA)",rural_pop,0.019375684336672583
+33700,"Modesto, CA (MA)",rural_pop,-0.08683879956986496
+33740,"Monroe, LA (MA)",rural_pop,-0.037524696113007905
+33780,"Monroe, MI (MA)",rural_pop,-0.06466933568359745
+33860,"Montgomery, AL (MA)",rural_pop,0.047875895644945876
+34060,"Morgantown, WV (MA)",rural_pop,-0.05791241525306934
+34100,"Morristown, TN (MA)",rural_pop,-0.03516189912090384
+34580,"Mount Vernon-Anacortes, WA (MA)",rural_pop,-0.08851886032561262
+34620,"Muncie, IN (MA)",rural_pop,-0.11915190446935053
+34740,"Muskegon, MI (MA)",rural_pop,-0.08589312918786818
+34820,"Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MA)",rural_pop,0.06511359710105702
+34900,"Napa, CA (MA)",rural_pop,-0.12825152503866655
+34940,"Naples-Marco Island, FL (MA)",rural_pop,-0.0893486652714115
+34980,"Nashville-Davidson--Murfreesboro--Franklin, TN (MA)",rural_pop,0.5280804763973468
+35100,"New Bern, NC (MA)",rural_pop,-0.06688062496706126
+35300,"New Haven-Milford, CT (MA)",rural_pop,-0.08783116670635072
+35380,"New Orleans-Metairie, LA (MA)",rural_pop,0.011934075692963342
+35620,"New York-Newark-Jersey City, NY-NJ-PA (MA)",rural_pop,0.5508265457020212
+35660,"Niles, MI (MA)",rural_pop,-0.08471124228528004
+35840,"North Port-Sarasota-Bradenton, FL (MA)",rural_pop,-0.1134793292105325
+35980,"Norwich-New London, CT (MA)",rural_pop,-0.02882443480170771
+36100,"Ocala, FL (MA)",rural_pop,0.02278224270931184
+36140,"Ocean City, NJ (MA)",rural_pop,-0.13257632844360467
+36220,"Odessa, TX (MA)",rural_pop,-0.13704666676122124
+36260,"Ogden-Clearfield, UT (MA)",rural_pop,-0.08161478244847542
+36420,"Oklahoma City, OK (MA)",rural_pop,0.2948430952723753
+36500,"Olympia-Lacey-Tumwater, WA (MA)",rural_pop,-0.05709724906162883
+36540,"Omaha-Council Bluffs, NE-IA (MA)",rural_pop,0.04524755797802471
+36740,"Orlando-Kissimmee-Sanford, FL (MA)",rural_pop,0.07641907330233622
+36780,"Oshkosh-Neenah, WI (MA)",rural_pop,-0.11232892818492124
+36980,"Owensboro, KY (MA)",rural_pop,-0.08822271060621989
+37100,"Oxnard-Thousand Oaks-Ventura, CA (MA)",rural_pop,-0.11481580940405489
+37340,"Palm Bay-Melbourne-Titusville, FL (MA)",rural_pop,-0.12291548749031378
+37460,"Panama City, FL (MA)",rural_pop,-0.12065941661066493
+37620,"Parkersburg-Vienna, WV (MA)",rural_pop,-0.1118893320471227
+37860,"Pensacola-Ferry Pass-Brent, FL (MA)",rural_pop,-0.058672047035770225
+37900,"Peoria, IL (MA)",rural_pop,0.045892081710999344
+37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (MA)",rural_pop,0.4819830755155734
+38060,"Phoenix-Mesa-Chandler, AZ (MA)",rural_pop,0.1720109091719595
+38220,"Pine Bluff, AR (MA)",rural_pop,-0.09370475176838888
+38300,"Pittsburgh, PA (MA)",rural_pop,0.5192133106094898
+38340,"Pittsfield, MA (MA)",rural_pop,-0.08753832766802838
+38540,"Pocatello, ID (MA)",rural_pop,-0.12433360483087841
+38860,"Portland-South Portland, ME (MA)",rural_pop,0.2476930487537743
+38900,"Portland-Vancouver-Hillsboro, OR-WA (MA)",rural_pop,0.24585919835748493
+38940,"Port St. Lucie, FL (MA)",rural_pop,-0.1233987668260913
+39100,"Poughkeepsie-Newburgh-Middletown, NY (MA)",rural_pop,0.17983023625338634
+39150,"Prescott Valley-Prescott, AZ (MA)",rural_pop,-0.035832213343276464
+39300,"Providence-Warwick, RI-MA (MA)",rural_pop,0.10397354965881989
+39340,"Provo-Orem, UT (MA)",rural_pop,-0.10660080727834265
+39380,"Pueblo, CO (MA)",rural_pop,-0.1252931201214581
+39460,"Punta Gorda, FL (MA)",rural_pop,-0.1417923538524526
+39540,"Racine, WI (MA)",rural_pop,-0.11488736515752429
+39580,"Raleigh-Cary, NC (MA)",rural_pop,0.21583578612585708
+39660,"Rapid City, SD (MA)",rural_pop,-0.11282342128046385
+39740,"Reading, PA (MA)",rural_pop,0.028796738735906935
+39820,"Redding, CA (MA)",rural_pop,-0.05936607599028065
+39900,"Reno, NV (MA)",rural_pop,-0.12222783502169676
+40060,"Richmond, VA (MA)",rural_pop,0.26107223259669854
+40140,"Riverside-San Bernardino-Ontario, CA (MA)",rural_pop,0.25237726206305666
+40220,"Roanoke, VA (MA)",rural_pop,-0.006835807138780958
+40340,"Rochester, MN (MA)",rural_pop,-0.028165614584087395
+40380,"Rochester, NY (MA)",rural_pop,0.2814693680992999
+40420,"Rockford, IL (MA)",rural_pop,-0.08984883058835336
+40580,"Rocky Mount, NC (MA)",rural_pop,-0.046712300634959125
+40660,"Rome, GA (MA)",rural_pop,-0.0985282045383934
+40900,"Sacramento-Roseville-Folsom, CA (MA)",rural_pop,0.14694496551086744
+40980,"Saginaw, MI (MA)",rural_pop,-0.05859978409083888
+41060,"St. Cloud, MN (MA)",rural_pop,-0.03039640229076701
+41100,"St. George, UT (MA)",rural_pop,-0.11749583381190398
+41140,"St. Joseph, MO-KS (MA)",rural_pop,-0.10265462919726764
+41180,"St. Louis, MO-IL (MA)",rural_pop,0.5004159512431248
+41420,"Salem, OR (MA)",rural_pop,-0.04356023912914353
+41500,"Salinas, CA (MA)",rural_pop,-0.0576451836577514
+41540,"Salisbury, MD-DE (MA)",rural_pop,0.09488732706190373
+41620,"Salt Lake City, UT (MA)",rural_pop,-0.12455607378675182
+41660,"San Angelo, TX (MA)",rural_pop,-0.12396666977508719
+41700,"San Antonio-New Braunfels, TX (MA)",rural_pop,0.44421653459657295
+41740,"San Diego-Chula Vista-Carlsbad, CA (MA)",rural_pop,0.08104281405618274
+41860,"San Francisco-Oakland-Berkeley, CA (MA)",rural_pop,-0.08089612271769098
+41940,"San Jose-Sunnyvale-Santa Clara, CA (MA)",rural_pop,-0.09526405297997975
+42020,"San Luis Obispo-Paso Robles, CA (MA)",rural_pop,-0.07220043191731418
+42100,"Santa Cruz-Watsonville, CA (MA)",rural_pop,-0.10215904114663399
+42140,"Santa Fe, NM (MA)",rural_pop,-0.07163339984737627
+42200,"Santa Maria-Santa Barbara, CA (MA)",rural_pop,-0.12054807578546745
+42220,"Santa Rosa-Petaluma, CA (MA)",rural_pop,-0.05080874914254452
+42340,"Savannah, GA (MA)",rural_pop,-0.03185366565943071
+42540,"Scranton--Wilkes-Barre, PA (MA)",rural_pop,0.0645006712478795
+42660,"Seattle-Tacoma-Bellevue, WA (MA)",rural_pop,0.22877172452614203
+42680,"Sebastian-Vero Beach, FL (MA)",rural_pop,-0.1427374129383684
+42700,"Sebring-Avon Park, FL (MA)",rural_pop,-0.12858654636810707
+43100,"Sheboygan, WI (MA)",rural_pop,-0.10441463774629911
+43300,"Sherman-Denison, TX (MA)",rural_pop,-0.05417716055861199
+43340,"Shreveport-Bossier City, LA (MA)",rural_pop,-0.00444803887882983
+43420,"Sierra Vista-Douglas, AZ (MA)",rural_pop,-0.0852469714697307
+43580,"Sioux City, IA-NE-SD (MA)",rural_pop,-0.100710366047708
+43620,"Sioux Falls, SD (MA)",rural_pop,-0.06326869048643002
+43780,"South Bend-Mishawaka, IN-MI (MA)",rural_pop,-0.05260829886891594
+43900,"Spartanburg, SC (MA)",rural_pop,1.733759572419835e-05
+44060,"Spokane-Spokane Valley, WA (MA)",rural_pop,0.039561388603806646
+44100,"Springfield, IL (MA)",rural_pop,-0.07980205751768465
+44140,"Springfield, MA (MA)",rural_pop,0.05538693975345388
+44180,"Springfield, MO (MA)",rural_pop,0.08883935783574137
+44220,"Springfield, OH (MA)",rural_pop,-0.10463146581299765
+44300,"State College, PA (MA)",rural_pop,-0.0706971924980252
+44420,"Staunton, VA (MA)",rural_pop,-0.05127128221215005
+44700,"Stockton, CA (MA)",rural_pop,-0.06130165766089113
+44940,"Sumter, SC (MA)",rural_pop,-0.0563408411794496
+45060,"Syracuse, NY (MA)",rural_pop,0.15673897677773585
+45220,"Tallahassee, FL (MA)",rural_pop,0.026806721241533937
+45300,"Tampa-St. Petersburg-Clearwater, FL (MA)",rural_pop,0.06459639165430531
+45460,"Terre Haute, IN (MA)",rural_pop,-0.022887478130571237
+45500,"Texarkana, TX-AR (MA)",rural_pop,-0.05479420692536807
+45540,"The Villages, FL (MA)",rural_pop,-0.11550469194793112
+45780,"Toledo, OH (MA)",rural_pop,0.041751678557591765
+45820,"Topeka, KS (MA)",rural_pop,-0.021249162546985945
+45940,"Trenton-Princeton, NJ (MA)",rural_pop,-0.12933774976211343
+46060,"Tucson, AZ (MA)",rural_pop,-0.007653634943529997
+46140,"Tulsa, OK (MA)",rural_pop,0.219946224787547
+46220,"Tuscaloosa, AL (MA)",rural_pop,0.02600627236728248
+46300,"Twin Falls, ID (MA)",rural_pop,-0.09035731341348485
+46340,"Tyler, TX (MA)",rural_pop,-0.025722210268967705
+46520,"Urban Honolulu, HI (MA)",rural_pop,-0.13348408403538037
+46540,"Utica-Rome, NY (MA)",rural_pop,0.024595716669225887
+46660,"Valdosta, GA (MA)",rural_pop,-0.04287686738737129
+46700,"Vallejo, CA (MA)",rural_pop,-0.12844225859709757
+47020,"Victoria, TX (MA)",rural_pop,-0.1082643414046125
+47220,"Vineland-Bridgeton, NJ (MA)",rural_pop,-0.09924289686360377
+47260,"Virginia Beach-Norfolk-Newport News, VA-NC (MA)",rural_pop,0.16550850277386475
+47300,"Visalia, CA (MA)",rural_pop,-0.0032204077496279515
+47380,"Waco, TX (MA)",rural_pop,-0.03814437776845825
+47460,"Walla Walla, WA (MA)",rural_pop,-0.14091645641286932
+47580,"Warner Robins, GA (MA)",rural_pop,-0.1190022866330448
+47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV (MA)",rural_pop,0.657131568402668
+47940,"Waterloo-Cedar Falls, IA (MA)",rural_pop,-0.08685553569447446
+48060,"Watertown-Fort Drum, NY (MA)",rural_pop,-0.06594380229915031
+48140,"Wausau-Weston, WI (MA)",rural_pop,-0.030379554547853793
+48260,"Weirton-Steubenville, WV-OH (MA)",rural_pop,-0.08780606681146086
+48300,"Wenatchee, WA (MA)",rural_pop,-0.0996820145412145
+48540,"Wheeling, WV-OH (MA)",rural_pop,-0.04539302087140662
+48620,"Wichita, KS (MA)",rural_pop,0.0013478523323504632
+48660,"Wichita Falls, TX (MA)",rural_pop,-0.10519517218500585
+48700,"Williamsport, PA (MA)",rural_pop,-0.085159918822996
+48900,"Wilmington, NC (MA)",rural_pop,-0.09450367997569353
+49020,"Winchester, VA-WV (MA)",rural_pop,-0.06345176271017072
+49180,"Winston-Salem, NC (MA)",rural_pop,0.1930941401957642
+49340,"Worcester, MA-CT (MA)",rural_pop,0.23920117882579506
+49420,"Yakima, WA (MA)",rural_pop,-0.03147462149459557
+49620,"York-Hanover, PA (MA)",rural_pop,0.055739976060955154
+49660,"Youngstown-Warren-Boardman, OH-PA (MA)",rural_pop,0.0789383347081749
+49700,"Yuba City, CA (MA)",rural_pop,-0.09701833425430362
+49740,"Yuma, AZ (MA)",rural_pop,-0.11086010648333322
+10180,"Abilene, TX (MA)",rural_pop_prct,0.09580834798801319
+10420,"Akron, OH (MA)",rural_pop_prct,-0.16750356839268665
+10500,"Albany, GA (MA)",rural_pop_prct,0.15734117007352189
+10540,"Albany-Lebanon, OR (MA)",rural_pop_prct,0.10987784900719677
+10580,"Albany-Schenectady-Troy, NY (MA)",rural_pop_prct,-0.05296813069432593
+10740,"Albuquerque, NM (MA)",rural_pop_prct,-0.18527515279867401
+10780,"Alexandria, LA (MA)",rural_pop_prct,0.2796627704697916
+10900,"Allentown-Bethlehem-Easton, PA-NJ (MA)",rural_pop_prct,-0.061751123068697567
+11020,"Altoona, PA (MA)",rural_pop_prct,0.005060152671333418
+11100,"Amarillo, TX (MA)",rural_pop_prct,-0.09823531480590775
+11180,"Ames, IA (MA)",rural_pop_prct,0.07833982242852655
+11260,"Anchorage, AK (MA)",rural_pop_prct,-0.10776759287273918
+11460,"Ann Arbor, MI (MA)",rural_pop_prct,-0.1003289821248805
+11500,"Anniston-Oxford, AL (MA)",rural_pop_prct,0.13727646171946106
+11540,"Appleton, WI (MA)",rural_pop_prct,0.07334175994170966
+11700,"Asheville, NC (MA)",rural_pop_prct,0.08281004830454552
+12020,"Athens-Clarke County, GA (MA)",rural_pop_prct,0.10187632838292493
+12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",rural_pop_prct,-0.1652406733304067
+12100,"Atlantic City-Hammonton, NJ (MA)",rural_pop_prct,-0.12792495384284153
+12220,"Auburn-Opelika, AL (MA)",rural_pop_prct,0.013115316455706738
+12260,"Augusta-Richmond County, GA-SC (MA)",rural_pop_prct,0.019972599204246322
+12420,"Austin-Round Rock-Georgetown, TX (MA)",rural_pop_prct,-0.15585240069895911
+12540,"Bakersfield, CA (MA)",rural_pop_prct,-0.14713340575581402
+12580,"Baltimore-Columbia-Towson, MD (MA)",rural_pop_prct,-0.18029732623023587
+12620,"Bangor, ME (MA)",rural_pop_prct,0.3736569650278958
+12700,"Barnstable Town, MA (MA)",rural_pop_prct,-0.27186362055307156
+12940,"Baton Rouge, LA (MA)",rural_pop_prct,-0.03161692824658224
+12980,"Battle Creek, MI (MA)",rural_pop_prct,0.08655701608458699
+13020,"Bay City, MI (MA)",rural_pop_prct,0.044631501902936854
+13140,"Beaumont-Port Arthur, TX (MA)",rural_pop_prct,-0.05079353825581878
+13220,"Beckley, WV (MA)",rural_pop_prct,0.29683567002917566
+13380,"Bellingham, WA (MA)",rural_pop_prct,0.04028358867672366
+13460,"Bend, OR (MA)",rural_pop_prct,0.04836438670419141
+13740,"Billings, MT (MA)",rural_pop_prct,-0.00039245253081188203
+13780,"Binghamton, NY (MA)",rural_pop_prct,0.09556340110183514
+13820,"Birmingham-Hoover, AL (MA)",rural_pop_prct,0.030885825446214765
+13900,"Bismarck, ND (MA)",rural_pop_prct,0.014636073772145819
+13980,"Blacksburg-Christiansburg, VA (MA)",rural_pop_prct,0.11642861913628377
+14010,"Bloomington, IL (MA)",rural_pop_prct,-0.04664365190062525
+14020,"Bloomington, IN (MA)",rural_pop_prct,0.07779693946170463
+14100,"Bloomsburg-Berwick, PA (MA)",rural_pop_prct,0.25981009527446397
+14260,"Boise City, ID (MA)",rural_pop_prct,-0.15158031830319785
+14460,"Boston-Cambridge-Newton, MA-NH (MA)",rural_pop_prct,-0.22926545165238854
+14500,"Boulder, CO (MA)",rural_pop_prct,-0.19457790696331345
+14540,"Bowling Green, KY (MA)",rural_pop_prct,0.2148639947744595
+14740,"Bremerton-Silverdale-Port Orchard, WA (MA)",rural_pop_prct,-0.09571667028725483
+14860,"Bridgeport-Stamford-Norwalk, CT (MA)",rural_pop_prct,-0.24001306105149423
+15180,"Brownsville-Harlingen, TX (MA)",rural_pop_prct,-0.09558997064391728
+15260,"Brunswick, GA (MA)",rural_pop_prct,0.17137529593215928
+15380,"Buffalo-Cheektowaga, NY (MA)",rural_pop_prct,-0.14059705495770414
+15500,"Burlington, NC (MA)",rural_pop_prct,0.01379217578747638
+15540,"Burlington-South Burlington, VT (MA)",rural_pop_prct,0.17701640190183898
+15680,"California-Lexington Park, MD (MA)",rural_pop_prct,0.3702684571996786
+15940,"Canton-Massillon, OH (MA)",rural_pop_prct,-0.06055534751953695
+15980,"Cape Coral-Fort Myers, FL (MA)",rural_pop_prct,-0.2588136322765271
+16020,"Cape Girardeau, MO-IL (MA)",rural_pop_prct,0.21554783739636618
+16060,"Carbondale-Marion, IL (MA)",rural_pop_prct,0.2605370375857152
+16180,"Carson City, NV (MA)",rural_pop_prct,-0.23498275202029406
+16220,"Casper, WY (MA)",rural_pop_prct,-0.12392492309780045
+16300,"Cedar Rapids, IA (MA)",rural_pop_prct,-0.011099347286848804
+16540,"Chambersburg-Waynesboro, PA (MA)",rural_pop_prct,0.23265049388427905
+16580,"Champaign-Urbana, IL (MA)",rural_pop_prct,-0.07129757786458335
+16620,"Charleston, WV (MA)",rural_pop_prct,0.30388406773310295
+16700,"Charleston-North Charleston, SC (MA)",rural_pop_prct,-0.13998336568084568
+16740,"Charlotte-Concord-Gastonia, NC-SC (MA)",rural_pop_prct,-0.08811411311001116
+16820,"Charlottesville, VA (MA)",rural_pop_prct,0.2304970467294225
+16860,"Chattanooga, TN-GA (MA)",rural_pop_prct,0.025141267586187954
+16940,"Cheyenne, WY (MA)",rural_pop_prct,-0.051632715559383424
+16980,"Chicago-Naperville-Elgin, IL-IN-WI (MA)",rural_pop_prct,-0.26932167942871865
+17020,"Chico, CA (MA)",rural_pop_prct,-0.05332361873834679
+17140,"Cincinnati, OH-KY-IN (MA)",rural_pop_prct,-0.11568370487055768
+17300,"Clarksville, TN-KY (MA)",rural_pop_prct,0.025862382883533597
+17420,"Cleveland, TN (MA)",rural_pop_prct,0.19640983749690544
+17460,"Cleveland-Elyria, OH (MA)",rural_pop_prct,-0.18887163309756927
+17660,"Coeur d'Alene, ID (MA)",rural_pop_prct,-0.022496815136529236
+17780,"College Station-Bryan, TX (MA)",rural_pop_prct,-0.026915611983029497
+17820,"Colorado Springs, CO (MA)",rural_pop_prct,-0.16490152916153178
+17860,"Columbia, MO (MA)",rural_pop_prct,0.04449585502979714
+17900,"Columbia, SC (MA)",rural_pop_prct,-0.025499538010484657
+17980,"Columbus, GA-AL (MA)",rural_pop_prct,0.016633100441077353
+18020,"Columbus, IN (MA)",rural_pop_prct,0.06628074375324089
+18140,"Columbus, OH (MA)",rural_pop_prct,-0.10796112082356868
+18580,"Corpus Christi, TX (MA)",rural_pop_prct,-0.18996815989672022
+18700,"Corvallis, OR (MA)",rural_pop_prct,-0.07317956588163232
+18880,"Crestview-Fort Walton Beach-Destin, FL (MA)",rural_pop_prct,-0.03398356183438722
+19060,"Cumberland, MD-WV (MA)",rural_pop_prct,0.23508662029687222
+19100,"Dallas-Fort Worth-Arlington, TX (MA)",rural_pop_prct,-0.21152764065751706
+19140,"Dalton, GA (MA)",rural_pop_prct,0.22872047299365006
+19180,"Danville, IL (MA)",rural_pop_prct,0.17401936218636993
+19300,"Daphne-Fairhope-Foley, AL (MA)",rural_pop_prct,0.15051459217809682
+19340,"Davenport-Moline-Rock Island, IA-IL (MA)",rural_pop_prct,-0.05536570094004123
+19430,"Dayton-Kettering, OH (MA)",rural_pop_prct,-0.15913943805182074
+19460,"Decatur, AL (MA)",rural_pop_prct,0.3123786882809696
+19500,"Decatur, IL (MA)",rural_pop_prct,-0.10234562365035715
+19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",rural_pop_prct,-0.20666898996015726
+19740,"Denver-Aurora-Lakewood, CO (MA)",rural_pop_prct,-0.2388047975937937
+19780,"Des Moines-West Des Moines, IA (MA)",rural_pop_prct,-0.11765318843844341
+19820,"Detroit-Warren-Dearborn, MI (MA)",rural_pop_prct,-0.21665868386924436
+20020,"Dothan, AL (MA)",rural_pop_prct,0.3326121260057502
+20100,"Dover, DE (MA)",rural_pop_prct,0.014127188631574139
+20220,"Dubuque, IA (MA)",rural_pop_prct,0.07896842374579438
+20260,"Duluth, MN-WI (MA)",rural_pop_prct,0.2324250969600159
+20500,"Durham-Chapel Hill, NC (MA)",rural_pop_prct,0.03272424334311541
+20700,"East Stroudsburg, PA (MA)",rural_pop_prct,0.3704395059441794
+20740,"Eau Claire, WI (MA)",rural_pop_prct,0.1637101504318712
+20940,"El Centro, CA (MA)",rural_pop_prct,-0.08547717778489439
+21060,"Elizabethtown-Fort Knox, KY (MA)",rural_pop_prct,0.3058633349499251
+21140,"Elkhart-Goshen, IN (MA)",rural_pop_prct,-0.025639439029465638
+21300,"Elmira, NY (MA)",rural_pop_prct,0.007137261486855229
+21340,"El Paso, TX (MA)",rural_pop_prct,-0.2536181001864225
+21420,"Enid, OK (MA)",rural_pop_prct,-0.06423602687953633
+21500,"Erie, PA (MA)",rural_pop_prct,-0.01667159093099846
+21660,"Eugene-Springfield, OR (MA)",rural_pop_prct,-0.09007693044465559
+21780,"Evansville, IN-KY (MA)",rural_pop_prct,-0.055133343157682146
+21820,"Fairbanks, AK (MA)",rural_pop_prct,0.00038339468701664714
+22020,"Fargo, ND-MN (MA)",rural_pop_prct,-0.14583558473177582
+22140,"Farmington, NM (MA)",rural_pop_prct,0.12157562341795569
+22180,"Fayetteville, NC (MA)",rural_pop_prct,0.053226775473217636
+22220,"Fayetteville-Springdale-Rogers, AR (MA)",rural_pop_prct,0.01199489892826855
+22380,"Flagstaff, AZ (MA)",rural_pop_prct,0.0873182204395131
+22420,"Flint, MI (MA)",rural_pop_prct,-0.08801091413524875
+22500,"Florence, SC (MA)",rural_pop_prct,0.23685979732831375
+22520,"Florence-Muscle Shoals, AL (MA)",rural_pop_prct,0.26948913062489566
+22540,"Fond du Lac, WI (MA)",rural_pop_prct,0.1343962702465311
+22660,"Fort Collins, CO (MA)",rural_pop_prct,-0.1845399182112445
+22900,"Fort Smith, AR-OK (MA)",rural_pop_prct,0.20878732927930121
+23060,"Fort Wayne, IN (MA)",rural_pop_prct,-0.09664489089066175
+23420,"Fresno, CA (MA)",rural_pop_prct,-0.17230882824878213
+23460,"Gadsden, AL (MA)",rural_pop_prct,0.2172385890509576
+23540,"Gainesville, FL (MA)",rural_pop_prct,0.14333434195127803
+23580,"Gainesville, GA (MA)",rural_pop_prct,0.007649502967139732
+23900,"Gettysburg, PA (MA)",rural_pop_prct,0.43765665928825803
+24020,"Glens Falls, NY (MA)",rural_pop_prct,0.3303939602679027
+24140,"Goldsboro, NC (MA)",rural_pop_prct,0.3360941026978421
+24220,"Grand Forks, ND-MN (MA)",rural_pop_prct,0.025477460147044217
+24260,"Grand Island, NE (MA)",rural_pop_prct,0.03893744236127272
+24300,"Grand Junction, CO (MA)",rural_pop_prct,-0.15537131872838916
+24340,"Grand Rapids-Kentwood, MI (MA)",rural_pop_prct,-0.010316457809937507
+24420,"Grants Pass, OR (MA)",rural_pop_prct,0.21691493488062585
+24500,"Great Falls, MT (MA)",rural_pop_prct,-0.05951948302173049
+24540,"Greeley, CO (MA)",rural_pop_prct,-0.0656916801568147
+24580,"Green Bay, WI (MA)",rural_pop_prct,0.07885392333372576
+24660,"Greensboro-High Point, NC (MA)",rural_pop_prct,0.035340107367664686
+24780,"Greenville, NC (MA)",rural_pop_prct,0.01882750902015906
+24860,"Greenville-Anderson, SC (MA)",rural_pop_prct,0.006481338619417132
+25060,"Gulfport-Biloxi, MS (MA)",rural_pop_prct,0.04153179467486856
+25180,"Hagerstown-Martinsburg, MD-WV (MA)",rural_pop_prct,0.13425280900551861
+25220,"Hammond, LA (MA)",rural_pop_prct,0.2501937237001499
+25260,"Hanford-Corcoran, CA (MA)",rural_pop_prct,-0.17652279005862503
+25420,"Harrisburg-Carlisle, PA (MA)",rural_pop_prct,-0.021648454832280284
+25500,"Harrisonburg, VA (MA)",rural_pop_prct,0.14173975238107217
+25540,"Hartford-East Hartford-Middletown, CT (MA)",rural_pop_prct,-0.13390360175267024
+25620,"Hattiesburg, MS (MA)",rural_pop_prct,0.33043532174511814
+25860,"Hickory-Lenoir-Morganton, NC (MA)",rural_pop_prct,0.23650003611312354
+25940,"Hilton Head Island-Bluffton, SC (MA)",rural_pop_prct,0.033135657932581
+25980,"Hinesville, GA (MA)",rural_pop_prct,0.11637458918581389
+26140,"Homosassa Springs, FL (MA)",rural_pop_prct,-0.004402630627839299
+26300,"Hot Springs, AR (MA)",rural_pop_prct,0.10423614498375922
+26380,"Houma-Thibodaux, LA (MA)",rural_pop_prct,-0.04170250709121792
+26420,"Houston-The Woodlands-Sugar Land, TX (MA)",rural_pop_prct,-0.22323914761640362
+26580,"Huntington-Ashland, WV-KY-OH (MA)",rural_pop_prct,0.15974200532578942
+26620,"Huntsville, AL (MA)",rural_pop_prct,-0.013427918314474097
+26820,"Idaho Falls, ID (MA)",rural_pop_prct,0.01679835814445174
+26900,"Indianapolis-Carmel-Anderson, IN (MA)",rural_pop_prct,-0.16324988633508775
+26980,"Iowa City, IA (MA)",rural_pop_prct,-0.02296826321884471
+27060,"Ithaca, NY (MA)",rural_pop_prct,0.22825337697408554
+27100,"Jackson, MI (MA)",rural_pop_prct,0.26518031038345913
+27140,"Jackson, MS (MA)",rural_pop_prct,0.09992533736249198
+27180,"Jackson, TN (MA)",rural_pop_prct,0.27598678046339464
+27260,"Jacksonville, FL (MA)",rural_pop_prct,-0.1914220886696134
+27340,"Jacksonville, NC (MA)",rural_pop_prct,0.13451569533093188
+27500,"Janesville-Beloit, WI (MA)",rural_pop_prct,-0.06538073072719486
+27620,"Jefferson City, MO (MA)",rural_pop_prct,0.34571743919130093
+27740,"Johnson City, TN (MA)",rural_pop_prct,0.08300788325365982
+27780,"Johnstown, PA (MA)",rural_pop_prct,0.25131572503083244
+27860,"Jonesboro, AR (MA)",rural_pop_prct,0.17513153075345067
+27900,"Joplin, MO (MA)",rural_pop_prct,0.13517812187509826
+27980,"Kahului-Wailuku-Lahaina, HI (MA)",rural_pop_prct,-0.04851271476023222
+28020,"Kalamazoo-Portage, MI (MA)",rural_pop_prct,-0.045645197531744564
+28100,"Kankakee, IL (MA)",rural_pop_prct,0.038022710560294604
+28140,"Kansas City, MO-KS (MA)",rural_pop_prct,-0.1570577101559777
+28420,"Kennewick-Richland, WA (MA)",rural_pop_prct,-0.16442065016375762
+28660,"Killeen-Temple, TX (MA)",rural_pop_prct,-0.10152551095257534
+28700,"Kingsport-Bristol, TN-VA (MA)",rural_pop_prct,0.2290114817850195
+28740,"Kingston, NY (MA)",rural_pop_prct,0.3636196289931726
+28940,"Knoxville, TN (MA)",rural_pop_prct,0.00994948792469108
+29020,"Kokomo, IN (MA)",rural_pop_prct,0.0040894363818611
+29100,"La Crosse-Onalaska, WI-MN (MA)",rural_pop_prct,-0.0009965734734593834
+29180,"Lafayette, LA (MA)",rural_pop_prct,0.046750594368556886
+29200,"Lafayette-West Lafayette, IN (MA)",rural_pop_prct,0.04889003159189387
+29340,"Lake Charles, LA (MA)",rural_pop_prct,0.019842358494967183
+29420,"Lake Havasu City-Kingman, AZ (MA)",rural_pop_prct,-0.017291602089124947
+29460,"Lakeland-Winter Haven, FL (MA)",rural_pop_prct,-0.1768716435972597
+29540,"Lancaster, PA (MA)",rural_pop_prct,0.03148912367772261
+29620,"Lansing-East Lansing, MI (MA)",rural_pop_prct,0.062054817824617414
+29700,"Laredo, TX (MA)",rural_pop_prct,-0.23637685008891218
+29740,"Las Cruces, NM (MA)",rural_pop_prct,-0.03517476069349679
+29820,"Las Vegas-Henderson-Paradise, NV (MA)",rural_pop_prct,-0.28924374337083314
+29940,"Lawrence, KS (MA)",rural_pop_prct,-0.13154748993033794
+30020,"Lawton, OK (MA)",rural_pop_prct,0.06932790128971655
+30140,"Lebanon, PA (MA)",rural_pop_prct,0.000691671879175848
+30300,"Lewiston, ID-WA (MA)",rural_pop_prct,-0.12863369720508955
+30340,"Lewiston-Auburn, ME (MA)",rural_pop_prct,0.24273140038821528
+30460,"Lexington-Fayette, KY (MA)",rural_pop_prct,-0.14311851015124866
+30620,"Lima, OH (MA)",rural_pop_prct,0.0697490487597574
+30700,"Lincoln, NE (MA)",rural_pop_prct,-0.16098778934049174
+30780,"Little Rock-North Little Rock-Conway, AR (MA)",rural_pop_prct,0.032789176261610375
+30860,"Logan, UT-ID (MA)",rural_pop_prct,-0.03275903928772017
+30980,"Longview, TX (MA)",rural_pop_prct,0.2066098301229935
+31020,"Longview, WA (MA)",rural_pop_prct,0.09434144399347955
+31080,"Los Angeles-Long Beach-Anaheim, CA (MA)",rural_pop_prct,-0.295273120714598
+31140,"Louisville/Jefferson County, KY-IN (MA)",rural_pop_prct,-0.09862344642879217
+31180,"Lubbock, TX (MA)",rural_pop_prct,-0.14525630465993278
+31340,"Lynchburg, VA (MA)",rural_pop_prct,0.27001764270092
+31420,"Macon-Bibb County, GA (MA)",rural_pop_prct,0.15548238550320193
+31460,"Madera, CA (MA)",rural_pop_prct,0.16283792729988433
+31540,"Madison, WI (MA)",rural_pop_prct,-0.022328293914744002
+31700,"Manchester-Nashua, NH (MA)",rural_pop_prct,-0.011046676963117341
+31740,"Manhattan, KS (MA)",rural_pop_prct,-0.05518293989577405
+31860,"Mankato, MN (MA)",rural_pop_prct,0.06747446188566553
+31900,"Mansfield, OH (MA)",rural_pop_prct,0.10264275627240949
+32580,"McAllen-Edinburg-Mission, TX (MA)",rural_pop_prct,-0.20049298819335593
+32780,"Medford, OR (MA)",rural_pop_prct,-0.058520738349396084
+32820,"Memphis, TN-MS-AR (MA)",rural_pop_prct,-0.11653445712027322
+32900,"Merced, CA (MA)",rural_pop_prct,-0.10517552769453875
+33100,"Miami-Fort Lauderdale-Pompano Beach, FL (MA)",rural_pop_prct,-0.29693566859038734
+33140,"Michigan City-La Porte, IN (MA)",rural_pop_prct,0.13760605961694883
+33220,"Midland, MI (MA)",rural_pop_prct,0.21778783052479556
+33260,"Midland, TX (MA)",rural_pop_prct,-0.11127649239891213
+33340,"Milwaukee-Waukesha, WI (MA)",rural_pop_prct,-0.2012722188897904
+33460,"Minneapolis-St. Paul-Bloomington, MN-WI (MA)",rural_pop_prct,-0.14410525631623883
+33540,"Missoula, MT (MA)",rural_pop_prct,-0.0005937680067861217
+33660,"Mobile, AL (MA)",rural_pop_prct,-0.0019521962568744833
+33700,"Modesto, CA (MA)",rural_pop_prct,-0.20920295582806758
+33740,"Monroe, LA (MA)",rural_pop_prct,0.13114762075648656
+33780,"Monroe, MI (MA)",rural_pop_prct,0.1521452559502532
+33860,"Montgomery, AL (MA)",rural_pop_prct,0.08768425740797503
+34060,"Morgantown, WV (MA)",rural_pop_prct,0.2337108738652991
+34100,"Morristown, TN (MA)",rural_pop_prct,0.3319602125711718
+34580,"Mount Vernon-Anacortes, WA (MA)",rural_pop_prct,0.10811571470560732
+34620,"Muncie, IN (MA)",rural_pop_prct,-0.028091072222985902
+34740,"Muskegon, MI (MA)",rural_pop_prct,0.008458491777727506
+34820,"Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MA)",rural_pop_prct,0.030249882892944058
+34900,"Napa, CA (MA)",rural_pop_prct,-0.13047554577781018
+34940,"Naples-Marco Island, FL (MA)",rural_pop_prct,-0.16800931378546635
+34980,"Nashville-Davidson--Murfreesboro--Franklin, TN (MA)",rural_pop_prct,-0.03653632202660928
+35100,"New Bern, NC (MA)",rural_pop_prct,0.2586960560920464
+35300,"New Haven-Milford, CT (MA)",rural_pop_prct,-0.2445953869187084
+35380,"New Orleans-Metairie, LA (MA)",rural_pop_prct,-0.2092404797179398
+35620,"New York-Newark-Jersey City, NY-NJ-PA (MA)",rural_pop_prct,-0.27745438793772004
+35660,"Niles, MI (MA)",rural_pop_prct,0.0589171765797436
+35840,"North Port-Sarasota-Bradenton, FL (MA)",rural_pop_prct,-0.26370129423476407
+35980,"Norwich-New London, CT (MA)",rural_pop_prct,0.053749198926503094
+36100,"Ocala, FL (MA)",rural_pop_prct,0.049645620139762814
+36140,"Ocean City, NJ (MA)",rural_pop_prct,-0.08313764412365032
+36220,"Odessa, TX (MA)",rural_pop_prct,-0.198290524939573
+36260,"Ogden-Clearfield, UT (MA)",rural_pop_prct,-0.2235985226378837
+36420,"Oklahoma City, OK (MA)",rural_pop_prct,-0.07289835915406606
+36500,"Olympia-Lacey-Tumwater, WA (MA)",rural_pop_prct,-0.0493575525322415
+36540,"Omaha-Council Bluffs, NE-IA (MA)",rural_pop_prct,-0.15407503993590466
+36740,"Orlando-Kissimmee-Sanford, FL (MA)",rural_pop_prct,-0.24268032485258773
+36780,"Oshkosh-Neenah, WI (MA)",rural_pop_prct,-0.09764347530443829
+36980,"Owensboro, KY (MA)",rural_pop_prct,0.13711901015494976
+37100,"Oxnard-Thousand Oaks-Ventura, CA (MA)",rural_pop_prct,-0.2652804362626844
+37340,"Palm Bay-Melbourne-Titusville, FL (MA)",rural_pop_prct,-0.2593629276914149
+37460,"Panama City, FL (MA)",rural_pop_prct,-0.1367490335856999
+37620,"Parkersburg-Vienna, WV (MA)",rural_pop_prct,0.10335427454401458
+37860,"Pensacola-Ferry Pass-Brent, FL (MA)",rural_pop_prct,-0.161633478068691
+37900,"Peoria, IL (MA)",rural_pop_prct,0.06787796401450152
+37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (MA)",rural_pop_prct,-0.22840658144493098
+38060,"Phoenix-Mesa-Chandler, AZ (MA)",rural_pop_prct,-0.2565530053703521
+38220,"Pine Bluff, AR (MA)",rural_pop_prct,0.259606581123079
+38300,"Pittsburgh, PA (MA)",rural_pop_prct,-0.08467397150434552
+38340,"Pittsfield, MA (MA)",rural_pop_prct,0.11527084924257869
+38540,"Pocatello, ID (MA)",rural_pop_prct,-0.017629620997943962
+38860,"Portland-South Portland, ME (MA)",rural_pop_prct,0.23557250550105646
+38900,"Portland-Vancouver-Hillsboro, OR-WA (MA)",rural_pop_prct,-0.19013550061313478
+38940,"Port St. Lucie, FL (MA)",rural_pop_prct,-0.24909775783544408
+39100,"Poughkeepsie-Newburgh-Middletown, NY (MA)",rural_pop_prct,0.049663357416224185
+39150,"Prescott Valley-Prescott, AZ (MA)",rural_pop_prct,0.08211222772015003
+39300,"Providence-Warwick, RI-MA (MA)",rural_pop_prct,-0.19384193814053285
+39340,"Provo-Orem, UT (MA)",rural_pop_prct,-0.24676925601012545
+39380,"Pueblo, CO (MA)",rural_pop_prct,-0.14963392920969976
+39460,"Punta Gorda, FL (MA)",rural_pop_prct,-0.22888234799849416
+39540,"Racine, WI (MA)",rural_pop_prct,-0.1350761238353494
+39580,"Raleigh-Cary, NC (MA)",rural_pop_prct,-0.11442593965132353
+39660,"Rapid City, SD (MA)",rural_pop_prct,-0.049957936004392356
+39740,"Reading, PA (MA)",rural_pop_prct,0.015155645491408354
+39820,"Redding, CA (MA)",rural_pop_prct,0.10432626309984849
+39900,"Reno, NV (MA)",rural_pop_prct,-0.24776086260710406
+40060,"Richmond, VA (MA)",rural_pop_prct,-0.07298239927292449
+40140,"Riverside-San Bernardino-Ontario, CA (MA)",rural_pop_prct,-0.24139217706354443
+40220,"Roanoke, VA (MA)",rural_pop_prct,0.05056153118616691
+40340,"Rochester, MN (MA)",rural_pop_prct,0.12381659345777929
+40380,"Rochester, NY (MA)",rural_pop_prct,-0.008841996114249073
+40420,"Rockford, IL (MA)",rural_pop_prct,-0.15379192906770212
+40580,"Rocky Mount, NC (MA)",rural_pop_prct,0.27355629414466054
+40660,"Rome, GA (MA)",rural_pop_prct,0.16430725748324537
+40900,"Sacramento-Roseville-Folsom, CA (MA)",rural_pop_prct,-0.21477619669038284
+40980,"Saginaw, MI (MA)",rural_pop_prct,0.08990509321158391
+41060,"St. Cloud, MN (MA)",rural_pop_prct,0.17295721264825215
+41100,"St. George, UT (MA)",rural_pop_prct,-0.12876812534754545
+41140,"St. Joseph, MO-KS (MA)",rural_pop_prct,0.05029854187977101
+41180,"St. Louis, MO-IL (MA)",rural_pop_prct,-0.12720860141833867
+41420,"Salem, OR (MA)",rural_pop_prct,-0.11039055561524369
+41500,"Salinas, CA (MA)",rural_pop_prct,-0.1362148628172538
+41540,"Salisbury, MD-DE (MA)",rural_pop_prct,0.13923693363870737
+41620,"Salt Lake City, UT (MA)",rural_pop_prct,-0.2832935330456844
+41660,"San Angelo, TX (MA)",rural_pop_prct,-0.08259875509316739
+41700,"San Antonio-New Braunfels, TX (MA)",rural_pop_prct,-0.12893396206417185
+41740,"San Diego-Chula Vista-Carlsbad, CA (MA)",rural_pop_prct,-0.2534179299464199
+41860,"San Francisco-Oakland-Berkeley, CA (MA)",rural_pop_prct,-0.2919965735049531
+41940,"San Jose-Sunnyvale-Santa Clara, CA (MA)",rural_pop_prct,-0.28086087835585427
+42020,"San Luis Obispo-Paso Robles, CA (MA)",rural_pop_prct,-0.07708755046034799
+42100,"Santa Cruz-Watsonville, CA (MA)",rural_pop_prct,-0.14785618829075697
+42140,"Santa Fe, NM (MA)",rural_pop_prct,0.11955765396544948
+42200,"Santa Maria-Santa Barbara, CA (MA)",rural_pop_prct,-0.23976431657917063
+42220,"Santa Rosa-Petaluma, CA (MA)",rural_pop_prct,-0.14374948773266172
+42340,"Savannah, GA (MA)",rural_pop_prct,-0.07515676212441791
+42540,"Scranton--Wilkes-Barre, PA (MA)",rural_pop_prct,-0.01888209071885405
+42660,"Seattle-Tacoma-Bellevue, WA (MA)",rural_pop_prct,-0.23654580649354173
+42680,"Sebastian-Vero Beach, FL (MA)",rural_pop_prct,-0.22015462962569532
+42700,"Sebring-Avon Park, FL (MA)",rural_pop_prct,-0.06738061187173283
+43100,"Sheboygan, WI (MA)",rural_pop_prct,0.04981997640774183
+43300,"Sherman-Denison, TX (MA)",rural_pop_prct,0.2698370391250309
+43340,"Shreveport-Bossier City, LA (MA)",rural_pop_prct,-0.017262234786479147
+43420,"Sierra Vista-Douglas, AZ (MA)",rural_pop_prct,0.14059795571554967
+43580,"Sioux City, IA-NE-SD (MA)",rural_pop_prct,-0.009125198584327476
+43620,"Sioux Falls, SD (MA)",rural_pop_prct,-0.04854884204665466
+43780,"South Bend-Mishawaka, IN-MI (MA)",rural_pop_prct,-0.06330453497753452
+43900,"Spartanburg, SC (MA)",rural_pop_prct,0.051743822390848404
+44060,"Spokane-Spokane Valley, WA (MA)",rural_pop_prct,-0.059306657852134737
+44100,"Springfield, IL (MA)",rural_pop_prct,-0.020597800022815194
+44140,"Springfield, MA (MA)",rural_pop_prct,-0.083732364642782
+44180,"Springfield, MO (MA)",rural_pop_prct,0.07583758458800194
+44220,"Springfield, OH (MA)",rural_pop_prct,0.0006825450532796928
+44300,"State College, PA (MA)",rural_pop_prct,0.11480907228444948
+44420,"Staunton, VA (MA)",rural_pop_prct,0.32863784887657355
+44700,"Stockton, CA (MA)",rural_pop_prct,-0.2141576007667022
+44940,"Sumter, SC (MA)",rural_pop_prct,0.25433583511517566
+45060,"Syracuse, NY (MA)",rural_pop_prct,0.042625333928639986
+45220,"Tallahassee, FL (MA)",rural_pop_prct,0.04940772119782055
+45300,"Tampa-St. Petersburg-Clearwater, FL (MA)",rural_pop_prct,-0.2550159437941092
+45460,"Terre Haute, IN (MA)",rural_pop_prct,0.23845744011332903
+45500,"Texarkana, TX-AR (MA)",rural_pop_prct,0.22194510562376357
+45540,"The Villages, FL (MA)",rural_pop_prct,-0.04640323444574457
+45780,"Toledo, OH (MA)",rural_pop_prct,-0.08060894161693422
+45820,"Topeka, KS (MA)",rural_pop_prct,0.1326361003485803
+45940,"Trenton-Princeton, NJ (MA)",rural_pop_prct,-0.24548836021339937
+46060,"Tucson, AZ (MA)",rural_pop_prct,-0.20124417602216393
+46140,"Tulsa, OK (MA)",rural_pop_prct,-0.03385484293822816
+46220,"Tuscaloosa, AL (MA)",rural_pop_prct,0.20067000088854337
+46300,"Twin Falls, ID (MA)",rural_pop_prct,0.15173211089918537
+46340,"Tyler, TX (MA)",rural_pop_prct,0.11817535448118743
+46520,"Urban Honolulu, HI (MA)",rural_pop_prct,-0.28447536284858777
+46540,"Utica-Rome, NY (MA)",rural_pop_prct,0.15686154957517195
+46660,"Valdosta, GA (MA)",rural_pop_prct,0.27537557659750744
+46700,"Vallejo, CA (MA)",rural_pop_prct,-0.2527035500194963
+47020,"Victoria, TX (MA)",rural_pop_prct,0.0933282092411929
+47220,"Vineland-Bridgeton, NJ (MA)",rural_pop_prct,-0.010384066293430805
+47260,"Virginia Beach-Norfolk-Newport News, VA-NC (MA)",rural_pop_prct,-0.17689289977967748
+47300,"Visalia, CA (MA)",rural_pop_prct,-0.06516776668068036
+47380,"Waco, TX (MA)",rural_pop_prct,0.017232512662478383
+47460,"Walla Walla, WA (MA)",rural_pop_prct,-0.06274439506493601
+47580,"Warner Robins, GA (MA)",rural_pop_prct,-0.14518668227733733
+47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV (MA)",rural_pop_prct,-0.20136279237194654
+47940,"Waterloo-Cedar Falls, IA (MA)",rural_pop_prct,0.018302452034841377
+48060,"Watertown-Fort Drum, NY (MA)",rural_pop_prct,0.2891209530129719
+48140,"Wausau-Weston, WI (MA)",rural_pop_prct,0.26575825684228516
+48260,"Weirton-Steubenville, WV-OH (MA)",rural_pop_prct,0.15728680554732866
+48300,"Wenatchee, WA (MA)",rural_pop_prct,0.06667981474165452
+48540,"Wheeling, WV-OH (MA)",rural_pop_prct,0.29698787293788875
+48620,"Wichita, KS (MA)",rural_pop_prct,-0.12627697149106087
+48660,"Wichita Falls, TX (MA)",rural_pop_prct,-0.02785080069965129
+48700,"Williamsport, PA (MA)",rural_pop_prct,0.18481187546175804
+48900,"Wilmington, NC (MA)",rural_pop_prct,-0.13689833221663927
+49020,"Winchester, VA-WV (MA)",rural_pop_prct,0.19687194774206662
+49180,"Winston-Salem, NC (MA)",rural_pop_prct,0.0758945471433452
+49340,"Worcester, MA-CT (MA)",rural_pop_prct,-0.00810952867827508
+49420,"Yakima, WA (MA)",rural_pop_prct,0.06305363325695446
+49620,"York-Hanover, PA (MA)",rural_pop_prct,0.038671845515042325
+49660,"Youngstown-Warren-Boardman, OH-PA (MA)",rural_pop_prct,0.015112208059855137
+49700,"Yuba City, CA (MA)",rural_pop_prct,-0.046504247338502336
+49740,"Yuma, AZ (MA)",rural_pop_prct,-0.12591182072982687
+10180,"Abilene, TX (MA)",rural_housing_prct,0.08769777357313568
+10420,"Akron, OH (MA)",rural_housing_prct,-0.17054382714910032
+10500,"Albany, GA (MA)",rural_housing_prct,0.13785501185180427
+10540,"Albany-Lebanon, OR (MA)",rural_housing_prct,0.10323481219050334
+10580,"Albany-Schenectady-Troy, NY (MA)",rural_housing_prct,-0.04431633403333879
+10740,"Albuquerque, NM (MA)",rural_housing_prct,-0.1833449116780247
+10780,"Alexandria, LA (MA)",rural_housing_prct,0.26321863208762486
+10900,"Allentown-Bethlehem-Easton, PA-NJ (MA)",rural_housing_prct,-0.0414701566578739
+11020,"Altoona, PA (MA)",rural_housing_prct,-0.007039666477716255
+11100,"Amarillo, TX (MA)",rural_housing_prct,-0.09920737949925573
+11180,"Ames, IA (MA)",rural_housing_prct,0.07268634726873913
+11260,"Anchorage, AK (MA)",rural_housing_prct,-0.044608763671927676
+11460,"Ann Arbor, MI (MA)",rural_housing_prct,-0.10848771065123675
+11500,"Anniston-Oxford, AL (MA)",rural_housing_prct,0.1297828229228848
+11540,"Appleton, WI (MA)",rural_housing_prct,0.06803697386861796
+11700,"Asheville, NC (MA)",rural_housing_prct,0.09090475578986745
+12020,"Athens-Clarke County, GA (MA)",rural_housing_prct,0.08469203580076856
+12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",rural_housing_prct,-0.1637128529446764
+12100,"Atlantic City-Hammonton, NJ (MA)",rural_housing_prct,-0.16222414124198337
+12220,"Auburn-Opelika, AL (MA)",rural_housing_prct,0.00740225999055899
+12260,"Augusta-Richmond County, GA-SC (MA)",rural_housing_prct,0.03170991678664126
+12420,"Austin-Round Rock-Georgetown, TX (MA)",rural_housing_prct,-0.164631873583998
+12540,"Bakersfield, CA (MA)",rural_housing_prct,-0.12086965415881501
+12580,"Baltimore-Columbia-Towson, MD (MA)",rural_housing_prct,-0.18477771822989042
+12620,"Bangor, ME (MA)",rural_housing_prct,0.3898934133226801
+12700,"Barnstable Town, MA (MA)",rural_housing_prct,-0.27009848025406846
+12940,"Baton Rouge, LA (MA)",rural_housing_prct,-0.03296192176627377
+12980,"Battle Creek, MI (MA)",rural_housing_prct,0.07555597979279849
+13020,"Bay City, MI (MA)",rural_housing_prct,0.0260961089644951
+13140,"Beaumont-Port Arthur, TX (MA)",rural_housing_prct,-0.059955705333438414
+13220,"Beckley, WV (MA)",rural_housing_prct,0.2743642064278793
+13380,"Bellingham, WA (MA)",rural_housing_prct,0.021009429648956246
+13460,"Bend, OR (MA)",rural_housing_prct,0.12346273824090903
+13740,"Billings, MT (MA)",rural_housing_prct,0.016917136307720515
+13780,"Binghamton, NY (MA)",rural_housing_prct,0.09481071911558137
+13820,"Birmingham-Hoover, AL (MA)",rural_housing_prct,0.017183389104627356
+13900,"Bismarck, ND (MA)",rural_housing_prct,-0.02252420136046096
+13980,"Blacksburg-Christiansburg, VA (MA)",rural_housing_prct,0.16095896824674472
+14010,"Bloomington, IL (MA)",rural_housing_prct,-0.051947860868091
+14020,"Bloomington, IN (MA)",rural_housing_prct,0.0836615009890398
+14100,"Bloomsburg-Berwick, PA (MA)",rural_housing_prct,0.25763766779816577
+14260,"Boise City, ID (MA)",rural_housing_prct,-0.15141469546175723
+14460,"Boston-Cambridge-Newton, MA-NH (MA)",rural_housing_prct,-0.22646773867752712
+14500,"Boulder, CO (MA)",rural_housing_prct,-0.16970381879937357
+14540,"Bowling Green, KY (MA)",rural_housing_prct,0.22315385239002494
+14740,"Bremerton-Silverdale-Port Orchard, WA (MA)",rural_housing_prct,-0.08595900953868396
+14860,"Bridgeport-Stamford-Norwalk, CT (MA)",rural_housing_prct,-0.2349362535389622
+15180,"Brownsville-Harlingen, TX (MA)",rural_housing_prct,-0.11628647880425791
+15260,"Brunswick, GA (MA)",rural_housing_prct,0.18124944652306074
+15380,"Buffalo-Cheektowaga, NY (MA)",rural_housing_prct,-0.14421282491715337
+15500,"Burlington, NC (MA)",rural_housing_prct,0.02101179066527803
+15540,"Burlington-South Burlington, VT (MA)",rural_housing_prct,0.19074904506237678
+15680,"California-Lexington Park, MD (MA)",rural_housing_prct,0.3540885129196192
+15940,"Canton-Massillon, OH (MA)",rural_housing_prct,-0.056984888806261735
+15980,"Cape Coral-Fort Myers, FL (MA)",rural_housing_prct,-0.2546758996475449
+16020,"Cape Girardeau, MO-IL (MA)",rural_housing_prct,0.22040319270441677
+16060,"Carbondale-Marion, IL (MA)",rural_housing_prct,0.21474418723304
+16180,"Carson City, NV (MA)",rural_housing_prct,-0.2553676425644288
+16220,"Casper, WY (MA)",rural_housing_prct,-0.1172182705380087
+16300,"Cedar Rapids, IA (MA)",rural_housing_prct,-0.014986273602590527
+16540,"Chambersburg-Waynesboro, PA (MA)",rural_housing_prct,0.21743917883397357
+16580,"Champaign-Urbana, IL (MA)",rural_housing_prct,-0.07806145235729667
+16620,"Charleston, WV (MA)",rural_housing_prct,0.27885923645131405
+16700,"Charleston-North Charleston, SC (MA)",rural_housing_prct,-0.13611229824020343
+16740,"Charlotte-Concord-Gastonia, NC-SC (MA)",rural_housing_prct,-0.08265338118198273
+16820,"Charlottesville, VA (MA)",rural_housing_prct,0.248438233418113
+16860,"Chattanooga, TN-GA (MA)",rural_housing_prct,0.020570961979636593
+16940,"Cheyenne, WY (MA)",rural_housing_prct,-0.07026713073580737
+16980,"Chicago-Naperville-Elgin, IL-IN-WI (MA)",rural_housing_prct,-0.26262296229839843
+17020,"Chico, CA (MA)",rural_housing_prct,-0.033926862266171476
+17140,"Cincinnati, OH-KY-IN (MA)",rural_housing_prct,-0.11610888611025272
+17300,"Clarksville, TN-KY (MA)",rural_housing_prct,0.05162245595369774
+17420,"Cleveland, TN (MA)",rural_housing_prct,0.21450950061207563
+17460,"Cleveland-Elyria, OH (MA)",rural_housing_prct,-0.19969515424011053
+17660,"Coeur d'Alene, ID (MA)",rural_housing_prct,0.02036987192757289
+17780,"College Station-Bryan, TX (MA)",rural_housing_prct,-0.005286042486598919
+17820,"Colorado Springs, CO (MA)",rural_housing_prct,-0.16316157294205813
+17860,"Columbia, MO (MA)",rural_housing_prct,0.03387519557863694
+17900,"Columbia, SC (MA)",rural_housing_prct,-0.01246374009139195
+17980,"Columbus, GA-AL (MA)",rural_housing_prct,0.011972657937027398
+18020,"Columbus, IN (MA)",rural_housing_prct,0.05626088851483635
+18140,"Columbus, OH (MA)",rural_housing_prct,-0.11931457303032111
+18580,"Corpus Christi, TX (MA)",rural_housing_prct,-0.19353130740389557
+18700,"Corvallis, OR (MA)",rural_housing_prct,-0.0722434534953772
+18880,"Crestview-Fort Walton Beach-Destin, FL (MA)",rural_housing_prct,-0.08434573812209034
+19060,"Cumberland, MD-WV (MA)",rural_housing_prct,0.21905681495707152
+19100,"Dallas-Fort Worth-Arlington, TX (MA)",rural_housing_prct,-0.20865453152531943
+19140,"Dalton, GA (MA)",rural_housing_prct,0.24568521064010485
+19180,"Danville, IL (MA)",rural_housing_prct,0.16599892449196463
+19300,"Daphne-Fairhope-Foley, AL (MA)",rural_housing_prct,0.09698248978649993
+19340,"Davenport-Moline-Rock Island, IA-IL (MA)",rural_housing_prct,-0.05841884667168484
+19430,"Dayton-Kettering, OH (MA)",rural_housing_prct,-0.16876616888103024
+19460,"Decatur, AL (MA)",rural_housing_prct,0.3178170619394596
+19500,"Decatur, IL (MA)",rural_housing_prct,-0.11517206491380605
+19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",rural_housing_prct,-0.20873969443444762
+19740,"Denver-Aurora-Lakewood, CO (MA)",rural_housing_prct,-0.22524795309492052
+19780,"Des Moines-West Des Moines, IA (MA)",rural_housing_prct,-0.12022918603875121
+19820,"Detroit-Warren-Dearborn, MI (MA)",rural_housing_prct,-0.217334595212768
+20020,"Dothan, AL (MA)",rural_housing_prct,0.3345357898838992
+20100,"Dover, DE (MA)",rural_housing_prct,0.020776016952410048
+20220,"Dubuque, IA (MA)",rural_housing_prct,0.05101465613360401
+20260,"Duluth, MN-WI (MA)",rural_housing_prct,0.28721443132367663
+20500,"Durham-Chapel Hill, NC (MA)",rural_housing_prct,0.026749256202152072
+20700,"East Stroudsburg, PA (MA)",rural_housing_prct,0.39700282785945595
+20740,"Eau Claire, WI (MA)",rural_housing_prct,0.15308572278311527
+20940,"El Centro, CA (MA)",rural_housing_prct,-0.07871348528289213
+21060,"Elizabethtown-Fort Knox, KY (MA)",rural_housing_prct,0.29230415008148625
+21140,"Elkhart-Goshen, IN (MA)",rural_housing_prct,-0.05436312346006089
+21300,"Elmira, NY (MA)",rural_housing_prct,-0.005999515842793679
+21340,"El Paso, TX (MA)",rural_housing_prct,-0.25429890818450485
+21420,"Enid, OK (MA)",rural_housing_prct,-0.06856724948271808
+21500,"Erie, PA (MA)",rural_housing_prct,-0.03369495661724298
+21660,"Eugene-Springfield, OR (MA)",rural_housing_prct,-0.08060568710575755
+21780,"Evansville, IN-KY (MA)",rural_housing_prct,-0.072216133871567
+21820,"Fairbanks, AK (MA)",rural_housing_prct,0.05360771782581941
+22020,"Fargo, ND-MN (MA)",rural_housing_prct,-0.15660139276960683
+22140,"Farmington, NM (MA)",rural_housing_prct,0.120615575952004
+22180,"Fayetteville, NC (MA)",rural_housing_prct,0.046857004537498304
+22220,"Fayetteville-Springdale-Rogers, AR (MA)",rural_housing_prct,0.025212991899310033
+22380,"Flagstaff, AZ (MA)",rural_housing_prct,0.17339306950782007
+22420,"Flint, MI (MA)",rural_housing_prct,-0.10889595974522115
+22500,"Florence, SC (MA)",rural_housing_prct,0.2311127187797717
+22520,"Florence-Muscle Shoals, AL (MA)",rural_housing_prct,0.26219403038107614
+22540,"Fond du Lac, WI (MA)",rural_housing_prct,0.12530290726939208
+22660,"Fort Collins, CO (MA)",rural_housing_prct,-0.15221655449976723
+22900,"Fort Smith, AR-OK (MA)",rural_housing_prct,0.2141084670813196
+23060,"Fort Wayne, IN (MA)",rural_housing_prct,-0.1094642928135906
+23420,"Fresno, CA (MA)",rural_housing_prct,-0.15827312991267173
+23460,"Gadsden, AL (MA)",rural_housing_prct,0.1953705835578976
+23540,"Gainesville, FL (MA)",rural_housing_prct,0.14706420134220521
+23580,"Gainesville, GA (MA)",rural_housing_prct,-0.0036988470793341
+23900,"Gettysburg, PA (MA)",rural_housing_prct,0.4329733856822018
+24020,"Glens Falls, NY (MA)",rural_housing_prct,0.36063854386821026
+24140,"Goldsboro, NC (MA)",rural_housing_prct,0.3147810106804234
+24220,"Grand Forks, ND-MN (MA)",rural_housing_prct,0.029737217899338253
+24260,"Grand Island, NE (MA)",rural_housing_prct,0.07077262599455958
+24300,"Grand Junction, CO (MA)",rural_housing_prct,-0.1432875077518383
+24340,"Grand Rapids-Kentwood, MI (MA)",rural_housing_prct,-0.01598992026656798
+24420,"Grants Pass, OR (MA)",rural_housing_prct,0.23325408817503224
+24500,"Great Falls, MT (MA)",rural_housing_prct,-0.047864388005462555
+24540,"Greeley, CO (MA)",rural_housing_prct,-0.05572829877216956
+24580,"Green Bay, WI (MA)",rural_housing_prct,0.11675424271350465
+24660,"Greensboro-High Point, NC (MA)",rural_housing_prct,0.03445554462408773
+24780,"Greenville, NC (MA)",rural_housing_prct,-0.007649675406109502
+24860,"Greenville-Anderson, SC (MA)",rural_housing_prct,0.01506381705933646
+25060,"Gulfport-Biloxi, MS (MA)",rural_housing_prct,0.018307705016035403
+25180,"Hagerstown-Martinsburg, MD-WV (MA)",rural_housing_prct,0.14935583360931393
+25220,"Hammond, LA (MA)",rural_housing_prct,0.24791284288022197
+25260,"Hanford-Corcoran, CA (MA)",rural_housing_prct,-0.1550203000584729
+25420,"Harrisburg-Carlisle, PA (MA)",rural_housing_prct,-0.024785365925434455
+25500,"Harrisonburg, VA (MA)",rural_housing_prct,0.17142069053835463
+25540,"Hartford-East Hartford-Middletown, CT (MA)",rural_housing_prct,-0.13721949697226765
+25620,"Hattiesburg, MS (MA)",rural_housing_prct,0.31886487546358366
+25860,"Hickory-Lenoir-Morganton, NC (MA)",rural_housing_prct,0.24306331356980015
+25940,"Hilton Head Island-Bluffton, SC (MA)",rural_housing_prct,0.03391611580277898
+25980,"Hinesville, GA (MA)",rural_housing_prct,0.12490006375616569
+26140,"Homosassa Springs, FL (MA)",rural_housing_prct,0.007098900754374027
+26300,"Hot Springs, AR (MA)",rural_housing_prct,0.06580654477555314
+26380,"Houma-Thibodaux, LA (MA)",rural_housing_prct,-0.026160033800218252
+26420,"Houston-The Woodlands-Sugar Land, TX (MA)",rural_housing_prct,-0.21808733299484095
+26580,"Huntington-Ashland, WV-KY-OH (MA)",rural_housing_prct,0.14788014270528294
+26620,"Huntsville, AL (MA)",rural_housing_prct,-0.019987653808185457
+26820,"Idaho Falls, ID (MA)",rural_housing_prct,0.01800364005805144
+26900,"Indianapolis-Carmel-Anderson, IN (MA)",rural_housing_prct,-0.16066800016114313
+26980,"Iowa City, IA (MA)",rural_housing_prct,-0.03400366376717412
+27060,"Ithaca, NY (MA)",rural_housing_prct,0.2601055051273813
+27100,"Jackson, MI (MA)",rural_housing_prct,0.27190764647387566
+27140,"Jackson, MS (MA)",rural_housing_prct,0.09647711356756661
+27180,"Jackson, TN (MA)",rural_housing_prct,0.27431055235030244
+27260,"Jacksonville, FL (MA)",rural_housing_prct,-0.19266849900061667
+27340,"Jacksonville, NC (MA)",rural_housing_prct,0.1524717634625945
+27500,"Janesville-Beloit, WI (MA)",rural_housing_prct,-0.07145878385292537
+27620,"Jefferson City, MO (MA)",rural_housing_prct,0.3209393781561216
+27740,"Johnson City, TN (MA)",rural_housing_prct,0.09186572187717457
+27780,"Johnstown, PA (MA)",rural_housing_prct,0.20984790021605604
+27860,"Jonesboro, AR (MA)",rural_housing_prct,0.17465084984114743
+27900,"Joplin, MO (MA)",rural_housing_prct,0.12156163589538749
+27980,"Kahului-Wailuku-Lahaina, HI (MA)",rural_housing_prct,-0.04672284403495919
+28020,"Kalamazoo-Portage, MI (MA)",rural_housing_prct,-0.057869909937074415
+28100,"Kankakee, IL (MA)",rural_housing_prct,0.05140124041276928
+28140,"Kansas City, MO-KS (MA)",rural_housing_prct,-0.15775007620316572
+28420,"Kennewick-Richland, WA (MA)",rural_housing_prct,-0.16479834903917268
+28660,"Killeen-Temple, TX (MA)",rural_housing_prct,-0.088365695296175
+28700,"Kingsport-Bristol, TN-VA (MA)",rural_housing_prct,0.23215329474236923
+28740,"Kingston, NY (MA)",rural_housing_prct,0.39072634786545857
+28940,"Knoxville, TN (MA)",rural_housing_prct,0.020176108433481943
+29020,"Kokomo, IN (MA)",rural_housing_prct,-0.026220327368604024
+29100,"La Crosse-Onalaska, WI-MN (MA)",rural_housing_prct,-0.005016769138198041
+29180,"Lafayette, LA (MA)",rural_housing_prct,0.03700094025839995
+29200,"Lafayette-West Lafayette, IN (MA)",rural_housing_prct,0.04592233584446759
+29340,"Lake Charles, LA (MA)",rural_housing_prct,0.02426910115593306
+29420,"Lake Havasu City-Kingman, AZ (MA)",rural_housing_prct,-0.012561106831406543
+29460,"Lakeland-Winter Haven, FL (MA)",rural_housing_prct,-0.16746973815322697
+29540,"Lancaster, PA (MA)",rural_housing_prct,-0.008627974385836734
+29620,"Lansing-East Lansing, MI (MA)",rural_housing_prct,0.0389559708042162
+29700,"Laredo, TX (MA)",rural_housing_prct,-0.23112805133188374
+29740,"Las Cruces, NM (MA)",rural_housing_prct,-0.046129176463579946
+29820,"Las Vegas-Henderson-Paradise, NV (MA)",rural_housing_prct,-0.2812035698345111
+29940,"Lawrence, KS (MA)",rural_housing_prct,-0.14242694713691018
+30020,"Lawton, OK (MA)",rural_housing_prct,0.0331710274871011
+30140,"Lebanon, PA (MA)",rural_housing_prct,-0.007831041293350771
+30300,"Lewiston, ID-WA (MA)",rural_housing_prct,-0.11573237020957783
+30340,"Lewiston-Auburn, ME (MA)",rural_housing_prct,0.23963940834459452
+30460,"Lexington-Fayette, KY (MA)",rural_housing_prct,-0.14498786192430968
+30620,"Lima, OH (MA)",rural_housing_prct,0.042038514061708554
+30700,"Lincoln, NE (MA)",rural_housing_prct,-0.16809803769324416
+30780,"Little Rock-North Little Rock-Conway, AR (MA)",rural_housing_prct,0.01312461982005697
+30860,"Logan, UT-ID (MA)",rural_housing_prct,-0.022496819228044806
+30980,"Longview, TX (MA)",rural_housing_prct,0.2238010875759644
+31020,"Longview, WA (MA)",rural_housing_prct,0.09211471969567686
+31080,"Los Angeles-Long Beach-Anaheim, CA (MA)",rural_housing_prct,-0.28733790329132325
+31140,"Louisville/Jefferson County, KY-IN (MA)",rural_housing_prct,-0.11186886790537609
+31180,"Lubbock, TX (MA)",rural_housing_prct,-0.14347882450548222
+31340,"Lynchburg, VA (MA)",rural_housing_prct,0.2925726708854852
+31420,"Macon-Bibb County, GA (MA)",rural_housing_prct,0.1254246876614702
+31460,"Madera, CA (MA)",rural_housing_prct,0.24349605949381226
+31540,"Madison, WI (MA)",rural_housing_prct,-0.02859549559080443
+31700,"Manchester-Nashua, NH (MA)",rural_housing_prct,-0.02022049563692796
+31740,"Manhattan, KS (MA)",rural_housing_prct,-0.054335198750418146
+31860,"Mankato, MN (MA)",rural_housing_prct,0.07243949752405254
+31900,"Mansfield, OH (MA)",rural_housing_prct,0.07804325593665684
+32580,"McAllen-Edinburg-Mission, TX (MA)",rural_housing_prct,-0.21477020526112978
+32780,"Medford, OR (MA)",rural_housing_prct,-0.047460821332790726
+32820,"Memphis, TN-MS-AR (MA)",rural_housing_prct,-0.11531141704420389
+32900,"Merced, CA (MA)",rural_housing_prct,-0.08503800511883475
+33100,"Miami-Fort Lauderdale-Pompano Beach, FL (MA)",rural_housing_prct,-0.2907781217911761
+33140,"Michigan City-La Porte, IN (MA)",rural_housing_prct,0.12543948447189357
+33220,"Midland, MI (MA)",rural_housing_prct,0.19841718867671165
+33260,"Midland, TX (MA)",rural_housing_prct,-0.12228499174654717
+33340,"Milwaukee-Waukesha, WI (MA)",rural_housing_prct,-0.2048736271792686
+33460,"Minneapolis-St. Paul-Bloomington, MN-WI (MA)",rural_housing_prct,-0.1443835125899945
+33540,"Missoula, MT (MA)",rural_housing_prct,-0.001104535208568902
+33660,"Mobile, AL (MA)",rural_housing_prct,-0.004840647788176833
+33700,"Modesto, CA (MA)",rural_housing_prct,-0.1964848989275031
+33740,"Monroe, LA (MA)",rural_housing_prct,0.1383642481153211
+33780,"Monroe, MI (MA)",rural_housing_prct,0.1378328715213215
+33860,"Montgomery, AL (MA)",rural_housing_prct,0.07641061069641975
+34060,"Morgantown, WV (MA)",rural_housing_prct,0.2026394998856429
+34100,"Morristown, TN (MA)",rural_housing_prct,0.3553181720102432
+34580,"Mount Vernon-Anacortes, WA (MA)",rural_housing_prct,0.15446020866162335
+34620,"Muncie, IN (MA)",rural_housing_prct,-0.035788215534804935
+34740,"Muskegon, MI (MA)",rural_housing_prct,0.0012050066871833742
+34820,"Myrtle Beach-Conway-North Myrtle Beach, SC-NC (MA)",rural_housing_prct,-0.04312503666787548
+34900,"Napa, CA (MA)",rural_housing_prct,-0.08836486552308442
+34940,"Naples-Marco Island, FL (MA)",rural_housing_prct,-0.21267842928081904
+34980,"Nashville-Davidson--Murfreesboro--Franklin, TN (MA)",rural_housing_prct,-0.04583460352433588
+35100,"New Bern, NC (MA)",rural_housing_prct,0.27785654090637
+35300,"New Haven-Milford, CT (MA)",rural_housing_prct,-0.24338653320588532
+35380,"New Orleans-Metairie, LA (MA)",rural_housing_prct,-0.20410962160883128
+35620,"New York-Newark-Jersey City, NY-NJ-PA (MA)",rural_housing_prct,-0.26742643016561085
+35660,"Niles, MI (MA)",rural_housing_prct,0.04095724261697242
+35840,"North Port-Sarasota-Bradenton, FL (MA)",rural_housing_prct,-0.26811726824124915
+35980,"Norwich-New London, CT (MA)",rural_housing_prct,0.027817193726634715
+36100,"Ocala, FL (MA)",rural_housing_prct,0.05389810139027196
+36140,"Ocean City, NJ (MA)",rural_housing_prct,-0.203280856877753
+36220,"Odessa, TX (MA)",rural_housing_prct,-0.19905110042244611
+36260,"Ogden-Clearfield, UT (MA)",rural_housing_prct,-0.20927668380749043
+36420,"Oklahoma City, OK (MA)",rural_housing_prct,-0.08703411567996522
+36500,"Olympia-Lacey-Tumwater, WA (MA)",rural_housing_prct,-0.050739364633503925
+36540,"Omaha-Council Bluffs, NE-IA (MA)",rural_housing_prct,-0.1428036585155944
+36740,"Orlando-Kissimmee-Sanford, FL (MA)",rural_housing_prct,-0.23588479735163803
+36780,"Oshkosh-Neenah, WI (MA)",rural_housing_prct,-0.0886482056479394
+36980,"Owensboro, KY (MA)",rural_housing_prct,0.1252791129444084
+37100,"Oxnard-Thousand Oaks-Ventura, CA (MA)",rural_housing_prct,-0.2576322061009695
+37340,"Palm Bay-Melbourne-Titusville, FL (MA)",rural_housing_prct,-0.2522540840492412
+37460,"Panama City, FL (MA)",rural_housing_prct,-0.1707184231085096
+37620,"Parkersburg-Vienna, WV (MA)",rural_housing_prct,0.08908684349067841
+37860,"Pensacola-Ferry Pass-Brent, FL (MA)",rural_housing_prct,-0.16795741266924902
+37900,"Peoria, IL (MA)",rural_housing_prct,0.05729717039492965
+37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (MA)",rural_housing_prct,-0.2266495926513794
+38060,"Phoenix-Mesa-Chandler, AZ (MA)",rural_housing_prct,-0.2531011832943102
+38220,"Pine Bluff, AR (MA)",rural_housing_prct,0.2343308821478136
+38300,"Pittsburgh, PA (MA)",rural_housing_prct,-0.08705967017301364
+38340,"Pittsfield, MA (MA)",rural_housing_prct,0.16191057516486107
+38540,"Pocatello, ID (MA)",rural_housing_prct,-0.027087833027750197
+38860,"Portland-South Portland, ME (MA)",rural_housing_prct,0.2260205905590824
+38900,"Portland-Vancouver-Hillsboro, OR-WA (MA)",rural_housing_prct,-0.18951121917809077
+38940,"Port St. Lucie, FL (MA)",rural_housing_prct,-0.24880492151315758
+39100,"Poughkeepsie-Newburgh-Middletown, NY (MA)",rural_housing_prct,0.06184352719127939
+39150,"Prescott Valley-Prescott, AZ (MA)",rural_housing_prct,0.09849918865500418
+39300,"Providence-Warwick, RI-MA (MA)",rural_housing_prct,-0.18796717289488118
+39340,"Provo-Orem, UT (MA)",rural_housing_prct,-0.23933683162701724
+39380,"Pueblo, CO (MA)",rural_housing_prct,-0.14068199565819295
+39460,"Punta Gorda, FL (MA)",rural_housing_prct,-0.23290172199715997
+39540,"Racine, WI (MA)",rural_housing_prct,-0.13552795495463466
+39580,"Raleigh-Cary, NC (MA)",rural_housing_prct,-0.11379146336705948
+39660,"Rapid City, SD (MA)",rural_housing_prct,-0.030335887155208963
+39740,"Reading, PA (MA)",rural_housing_prct,0.016677926719097735
+39820,"Redding, CA (MA)",rural_housing_prct,0.12656374413494298
+39900,"Reno, NV (MA)",rural_housing_prct,-0.23859086256745976
+40060,"Richmond, VA (MA)",rural_housing_prct,-0.07342372807144548
+40140,"Riverside-San Bernardino-Ontario, CA (MA)",rural_housing_prct,-0.22010040300253475
+40220,"Roanoke, VA (MA)",rural_housing_prct,0.06834041520244183
+40340,"Rochester, MN (MA)",rural_housing_prct,0.12039598129744977
+40380,"Rochester, NY (MA)",rural_housing_prct,-0.004658077623419965
+40420,"Rockford, IL (MA)",rural_housing_prct,-0.15430660387317952
+40580,"Rocky Mount, NC (MA)",rural_housing_prct,0.2541571231289017
+40660,"Rome, GA (MA)",rural_housing_prct,0.16769288020968487
+40900,"Sacramento-Roseville-Folsom, CA (MA)",rural_housing_prct,-0.18927326217471452
+40980,"Saginaw, MI (MA)",rural_housing_prct,0.07438286936743865
+41060,"St. Cloud, MN (MA)",rural_housing_prct,0.17488402214695098
+41100,"St. George, UT (MA)",rural_housing_prct,-0.12292546378972857
+41140,"St. Joseph, MO-KS (MA)",rural_housing_prct,0.04430590079759744
+41180,"St. Louis, MO-IL (MA)",rural_housing_prct,-0.1322388695291824
+41420,"Salem, OR (MA)",rural_housing_prct,-0.10469734813649745
+41500,"Salinas, CA (MA)",rural_housing_prct,-0.11972899529006442
+41540,"Salisbury, MD-DE (MA)",rural_housing_prct,0.023543390801972208
+41620,"Salt Lake City, UT (MA)",rural_housing_prct,-0.2748099625938184
+41660,"San Angelo, TX (MA)",rural_housing_prct,-0.08713747308541742
+41700,"San Antonio-New Braunfels, TX (MA)",rural_housing_prct,-0.1245723614542732
+41740,"San Diego-Chula Vista-Carlsbad, CA (MA)",rural_housing_prct,-0.250350325049953
+41860,"San Francisco-Oakland-Berkeley, CA (MA)",rural_housing_prct,-0.28272066525842965
+41940,"San Jose-Sunnyvale-Santa Clara, CA (MA)",rural_housing_prct,-0.272880101402709
+42020,"San Luis Obispo-Paso Robles, CA (MA)",rural_housing_prct,-0.08566146448641987
+42100,"Santa Cruz-Watsonville, CA (MA)",rural_housing_prct,-0.12998337993264508
+42140,"Santa Fe, NM (MA)",rural_housing_prct,0.11998472832304041
+42200,"Santa Maria-Santa Barbara, CA (MA)",rural_housing_prct,-0.22206043370911244
+42220,"Santa Rosa-Petaluma, CA (MA)",rural_housing_prct,-0.09282576965779787
+42340,"Savannah, GA (MA)",rural_housing_prct,-0.09483881591673204
+42540,"Scranton--Wilkes-Barre, PA (MA)",rural_housing_prct,-0.011631727194587493
+42660,"Seattle-Tacoma-Bellevue, WA (MA)",rural_housing_prct,-0.2296614077154211
+42680,"Sebastian-Vero Beach, FL (MA)",rural_housing_prct,-0.23547094918430023
+42700,"Sebring-Avon Park, FL (MA)",rural_housing_prct,-0.059987789818799264
+43100,"Sheboygan, WI (MA)",rural_housing_prct,0.03689832801499038
+43300,"Sherman-Denison, TX (MA)",rural_housing_prct,0.27735188863141524
+43340,"Shreveport-Bossier City, LA (MA)",rural_housing_prct,-0.019149994687597593
+43420,"Sierra Vista-Douglas, AZ (MA)",rural_housing_prct,0.1591547542827909
+43580,"Sioux City, IA-NE-SD (MA)",rural_housing_prct,0.015567217932966892
+43620,"Sioux Falls, SD (MA)",rural_housing_prct,-0.05464173499795255
+43780,"South Bend-Mishawaka, IN-MI (MA)",rural_housing_prct,-0.044974731760337394
+43900,"Spartanburg, SC (MA)",rural_housing_prct,0.0534729351408505
+44060,"Spokane-Spokane Valley, WA (MA)",rural_housing_prct,-0.05284964444146156
+44100,"Springfield, IL (MA)",rural_housing_prct,-0.04021924668499277
+44140,"Springfield, MA (MA)",rural_housing_prct,-0.06774564503586766
+44180,"Springfield, MO (MA)",rural_housing_prct,0.05177745968229086
+44220,"Springfield, OH (MA)",rural_housing_prct,-0.010403559000773721
+44300,"State College, PA (MA)",rural_housing_prct,0.12980124231468126
+44420,"Staunton, VA (MA)",rural_housing_prct,0.30016492646725257
+44700,"Stockton, CA (MA)",rural_housing_prct,-0.1991099834280815
+44940,"Sumter, SC (MA)",rural_housing_prct,0.26880825500903605
+45060,"Syracuse, NY (MA)",rural_housing_prct,0.05206210829507407
+45220,"Tallahassee, FL (MA)",rural_housing_prct,0.03858481431233973
+45300,"Tampa-St. Petersburg-Clearwater, FL (MA)",rural_housing_prct,-0.25154870846503297
+45460,"Terre Haute, IN (MA)",rural_housing_prct,0.22827303838070212
+45500,"Texarkana, TX-AR (MA)",rural_housing_prct,0.21953463930987027
+45540,"The Villages, FL (MA)",rural_housing_prct,-0.09956493477896988
+45780,"Toledo, OH (MA)",rural_housing_prct,-0.08924272815283718
+45820,"Topeka, KS (MA)",rural_housing_prct,0.11119289625408668
+45940,"Trenton-Princeton, NJ (MA)",rural_housing_prct,-0.24067345138498086
+46060,"Tucson, AZ (MA)",rural_housing_prct,-0.20501555572272812
+46140,"Tulsa, OK (MA)",rural_housing_prct,-0.03616988808516097
+46220,"Tuscaloosa, AL (MA)",rural_housing_prct,0.19666623329711452
+46300,"Twin Falls, ID (MA)",rural_housing_prct,0.15027130941973188
+46340,"Tyler, TX (MA)",rural_housing_prct,0.11377918367571205
+46520,"Urban Honolulu, HI (MA)",rural_housing_prct,-0.28055488281453433
+46540,"Utica-Rome, NY (MA)",rural_housing_prct,0.1762115956049639
+46660,"Valdosta, GA (MA)",rural_housing_prct,0.26924134228202035
+46700,"Vallejo, CA (MA)",rural_housing_prct,-0.24221622516303032
+47020,"Victoria, TX (MA)",rural_housing_prct,0.09570065610843614
+47220,"Vineland-Bridgeton, NJ (MA)",rural_housing_prct,-0.00090308941341255
+47260,"Virginia Beach-Norfolk-Newport News, VA-NC (MA)",rural_housing_prct,-0.17021178730720643
+47300,"Visalia, CA (MA)",rural_housing_prct,-0.044262177822486315
+47380,"Waco, TX (MA)",rural_housing_prct,0.01650895782400741
+47460,"Walla Walla, WA (MA)",rural_housing_prct,-0.06379143739658766
+47580,"Warner Robins, GA (MA)",rural_housing_prct,-0.1429245518575042
+47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV (MA)",rural_housing_prct,-0.19795133690029953
+47940,"Waterloo-Cedar Falls, IA (MA)",rural_housing_prct,0.013904349413047745
+48060,"Watertown-Fort Drum, NY (MA)",rural_housing_prct,0.35303894951191217
+48140,"Wausau-Weston, WI (MA)",rural_housing_prct,0.27176277714294805
+48260,"Weirton-Steubenville, WV-OH (MA)",rural_housing_prct,0.14446643054372466
+48300,"Wenatchee, WA (MA)",rural_housing_prct,0.12963583361595954
+48540,"Wheeling, WV-OH (MA)",rural_housing_prct,0.25721591579310954
+48620,"Wichita, KS (MA)",rural_housing_prct,-0.1335234300043644
+48660,"Wichita Falls, TX (MA)",rural_housing_prct,-0.035521168951834214
+48700,"Williamsport, PA (MA)",rural_housing_prct,0.18085830896773492
+48900,"Wilmington, NC (MA)",rural_housing_prct,-0.14478624750134295
+49020,"Winchester, VA-WV (MA)",rural_housing_prct,0.24236864558460525
+49180,"Winston-Salem, NC (MA)",rural_housing_prct,0.08493940844382109
+49340,"Worcester, MA-CT (MA)",rural_housing_prct,-0.010804136218223293
+49420,"Yakima, WA (MA)",rural_housing_prct,0.04861366864115846
+49620,"York-Hanover, PA (MA)",rural_housing_prct,0.03984315039737174
+49660,"Youngstown-Warren-Boardman, OH-PA (MA)",rural_housing_prct,-0.0006256117317631205
+49700,"Yuba City, CA (MA)",rural_housing_prct,0.0012673621501972931
+49740,"Yuma, AZ (MA)",rural_housing_prct,-0.14738051685795972
