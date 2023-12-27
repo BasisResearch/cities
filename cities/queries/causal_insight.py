@@ -161,7 +161,7 @@ class CausalInsight:
         return (intervened_original_scale[0], observed_original_scale)
 
     def get_fips_predictions(
-        self, fips, intervened_value, year=None, intervention_percentile=False
+        self, fips, intervened_value, year=None, intervention_is_percentile=False
     ):
         self.fips = fips
 
@@ -179,7 +179,7 @@ class CausalInsight:
 
         self.year = year
 
-        if intervention_percentile:
+        if intervention_is_percentile:
             self.intervened_percentile = intervened_value
             intervened_value = transformed_intervention_from_percentile(
                 self.intervention_dataset, year, intervened_value
@@ -222,7 +222,7 @@ class CausalInsight:
                 )
                 * 100
             ),
-            1,
+            3,
         )
 
         self.fips_id = (
@@ -242,7 +242,7 @@ class CausalInsight:
             self.fips_id
         ][str(year)]
 
-        if intervention_percentile:
+        if intervention_is_percentile:
             self.observed_intervention_percentile = round(
                 (
                     np.mean(
@@ -431,7 +431,7 @@ class CausalInsight:
 
         fig.add_trace(credible_interval_trace)
 
-        if self.intervened_percentile:
+        if hasattr(self, "intervened_percentile"):
             intervened_value = self.intervened_percentile
             observed_intervention = self.observed_intervention_percentile
 
