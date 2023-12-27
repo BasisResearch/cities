@@ -20,6 +20,34 @@ from cities.utils.data_grabber import (
 def prep_wide_data_for_inference(
     outcome_dataset: str, intervention_dataset: str, forward_shift: int
 ):
+    """
+    Prepares wide-format data for causal inference modeling.
+
+    Parameters:
+        - outcome_dataset (str): Name of the outcome variable.
+        - intervention_dataset (str): Name of the intervention variable.
+        - forward_shift (int): Number of time steps to shift the outcome variable for prediction.
+
+    Returns:
+        dict: A dictionary containing the necessary inputs for causal inference modeling.
+
+    The function performs the following steps:
+        1. Identifies available device (GPU if available, otherwise CPU), to be used with tensors.
+        2. Uses a DataGrabber class to obtain standardized wide-format data.
+        3. Separates covariate datasets into time series (tensed) and fixed covariates.
+        4. Loads the required transformed features.
+        5. Merges fixed covariates into a joint dataframe based on a common ID column.
+        6. Ensures that the GeoFIPS (geographical identifier) is consistent across datasets.
+        7. Extracts common years for which both intervention and outcome data are available.
+        8. Shifts the outcome variable forward by the specified number of time steps.
+        9. Prepares tensors for input features (x), interventions (t), and outcomes (y).
+        10. Creates indices for states and units, preparing them as tensors.
+        11. Validates the shapes of the tensors.
+        12. Constructs a dictionary containing model arguments and prepared tensors.
+
+    Example usage:
+        prep_data = prep_wide_data_for_inference("outcome_data", "intervention_data", 2)
+    """
     if torch.cuda.is_available():
         device = torch.device("cuda")
     else:
