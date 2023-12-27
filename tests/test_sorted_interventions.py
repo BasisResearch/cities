@@ -66,4 +66,3 @@ def test_transformed_intervention_from_percentile_accuracy():
                     pandas_run(intervention, year, percentile),
                     rtol=0.01,
                 )
-

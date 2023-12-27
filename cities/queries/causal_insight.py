@@ -16,6 +16,7 @@ from cities.modeling.modeling_utils import (
 )
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import DataGrabber
+from cities.utils.percentiles import transformed_intervention_from_percentile
 
 
 class CausalInsight:
@@ -159,9 +160,11 @@ class CausalInsight:
 
         return (intervened_original_scale[0], observed_original_scale)
 
-    def get_fips_predictions(self, fips, intervened_value, year=None):
+    def get_fips_predictions(
+        self, fips, intervened_value, year=None, intervention_percentile=False
+    ):
         self.fips = fips
-        self.intervened_value = intervened_value
+
         if self.data is None:
             self.data = prep_wide_data_for_inference(
                 outcome_dataset=self.outcome_dataset,
@@ -175,6 +178,14 @@ class CausalInsight:
         assert year in self.data["years_available"]
 
         self.year = year
+
+        if intervention_percentile:
+            self.intervened_percentile = intervened_value
+            intervened_value = transformed_intervention_from_percentile(
+                self.intervention_dataset, year, intervened_value
+            )
+
+        self.intervened_value = intervened_value
 
         # find years for prediction
         outcome_years = self.data["outcome_years"]
@@ -230,6 +241,18 @@ class CausalInsight:
         self.observed_intervention_original = dg.wide[self.intervention_dataset].iloc[
             self.fips_id
         ][str(year)]
+
+        if intervention_percentile:
+            self.observed_intervention_percentile = round(
+                (
+                    np.mean(
+                        interventions_this_year_original.values
+                        <= self.observed_intervention_original
+                    )
+                    * 100
+                ),
+                1,
+            )
 
         self.observed_outcomes = dg.std_wide[self.outcome_dataset].iloc[self.fips_id][
             outcome_years[year_id : (year_id + 4)]
@@ -408,12 +431,20 @@ class CausalInsight:
 
         fig.add_trace(credible_interval_trace)
 
+        if self.intervened_percentile:
+            intervened_value = self.intervened_percentile
+            observed_intervention = self.observed_intervention_percentile
+
+        else:
+            intervened_value = round(self.intervened_value, 3)
+            observed_intervention = round(self.observed_intervention, 3)
+
         if scaling == "transformed":
             title = (
-                f"Predicted {self.outcome_dataset} in {self.name} under intervention {self.intervened_value} "
+                f"Predicted {self.outcome_dataset} in {self.name} under intervention {intervened_value} "
                 f"in year {self.year}<br>"
                 f"compared to the observed values under observed intervention "
-                f"{round(self.observed_intervention, 3)}."
+                f"{observed_intervention}."
             )
 
         else:

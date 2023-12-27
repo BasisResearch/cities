@@ -36,6 +36,8 @@ def export_sorted_interventions():
 
 def transformed_intervention_from_percentile(intervention, year, percentile):
     root = find_repo_root()
+    if not isinstance(percentile, int) or not (0 <= percentile <= 100):
+        raise ValueError("Percentile must be an integer between 0 and 100.")
 
     with open(
         os.path.join(root, "data/sorted_interventions", "interventions_sorted.pkl"),
