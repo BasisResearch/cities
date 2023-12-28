@@ -19,13 +19,33 @@ from cities.utils.data_grabber import DataGrabber
 
 
 class CausalInsight:
-    def __init__(self, outcome_dataset, intervention_dataset, num_samples=1000):
+    def __init__(
+        self,
+        outcome_dataset,
+        intervention_dataset,
+        num_samples=1000,
+        sites=None,
+        smoke_test=None,
+    ):
         self.outcome_dataset = outcome_dataset
         self.intervention_dataset = intervention_dataset
         self.root = find_repo_root()
         self.num_samples = num_samples
+        self.data = None
+        self.smoke_test = smoke_test
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        # if sites is None:
+        #     self.sites = ["weight_TY"]
+        # else:
+        #    self.sites = sites
+
+        self.tau_samples_path = os.path.join(
+            self.root,
+            "data/tau_samples",
+            f"{self.intervention_dataset}_{self.outcome_dataset}_{self.num_samples}_tau.pkl",
+        )
 
     def load_guide(self, forward_shift):
         pyro.clear_param_store()
@@ -56,16 +76,12 @@ class CausalInsight:
 
         self.model_args = self.data["model_args"]
 
-        self.model_conditioned = pyro.condition(
-            self.model,
-            data={"T": self.data["t"], "Y": self.data["y"], "X": self.data["x"]},
-        )
-
         self.predictive = pyro.infer.Predictive(
             model=self.model,
             guide=self.guide,
             num_samples=self.num_samples,
             parallel=True,
+            # return_sites=self.sites,
         )
         self.samples = self.predictive(*self.model_args)
 
@@ -99,9 +115,55 @@ class CausalInsight:
                 self.samples["weight_TY"].squeeze().detach().numpy()
             )
 
+        if not self.smoke_test:
+            if not os.path.exists(self.tau_samples_path):
+                with open(self.tau_samples_path, "wb") as file:
+                    dill.dump(self.tensed_tau_samples, file)
+
+    def get_tau_samples(self):
+        if os.path.exists(self.tau_samples_path):
+            with open(self.tau_samples_path, "rb") as file:
+                self.tensed_tau_samples = dill.load(file)
+        else:
+            raise ValueError("No tau samples found. Run generate_tensed_samples first.")
+
+    """Returns the intervened and observed value, in the original scale"""
+
+    def get_intervened_and_observed_values_original_scale(
+        self, fips, intervened_value, year
+    ):
+        dg = DataGrabber()
+        dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
+        dg.get_features_wide([self.intervention_dataset])
+
+        # intervened value, in the original scale
+        intervened_original_scale = revert_standardize_and_scale_scaler(
+            intervened_value, year, self.intervention_dataset
+        )
+
+        fips_id = (
+            dg.std_wide[self.intervention_dataset]
+            .loc[dg.std_wide[self.intervention_dataset]["GeoFIPS"] == fips]
+            .index[0]
+        )
+
+        # observed value, in the original scale
+        observed_original_scale = dg.wide[self.intervention_dataset].iloc[fips_id][
+            str(year)
+        ]
+
+        return (intervened_original_scale[0], observed_original_scale)
+
     def get_fips_predictions(self, fips, intervened_value, year=None):
         self.fips = fips
         self.intervened_value = intervened_value
+        if self.data is None:
+            self.data = prep_wide_data_for_inference(
+                outcome_dataset=self.outcome_dataset,
+                intervention_dataset=self.intervention_dataset,
+                forward_shift=3,  # shift doesn't matter here, as long as data exists
+            )
+
         # start with the latest year possible by default
         if year is None:
             year = self.data["years_available"][-1]
@@ -380,6 +442,16 @@ class CausalInsight:
         predictions = self.samples["Y"].squeeze()
         self.average_predictions = torch.mean(predictions, dim=0)
         plt.hist(self.average_predictions - self.data["y"].squeeze(), bins=70)
+        plt.xlabel("residuals")
+        plt.ylabel("counts")
+        plt.text(
+            0.7,
+            -0.1,
+            "(colored by year)",
+            ha="left",
+            va="bottom",
+            transform=plt.gca().transAxes,
+        )
         plt.show()
 
     def predictive_check(self):
@@ -389,11 +461,14 @@ class CausalInsight:
         average_predictions_flat = self.average_predictions.view(-1)
         rss = torch.sum((y_flat - average_predictions_flat) ** 2)
         r_squared = 1 - (rss / tss)
-        plt.scatter(average_predictions_flat, y_flat)
+        rounded_r_squared = np.round(r_squared.item(), 2)
+        plt.scatter(y=average_predictions_flat, x=y_flat)
         plt.title(
-            f"{self.intervention_dataset}, {self.outcome_dataset}." f"R2={r_squared}"
+            f"{self.intervention_dataset}, {self.outcome_dataset}, "
+            f"R2={rounded_r_squared}"
         )
-        # TODO round r2
+        plt.ylabel("average prediction")
+        plt.xlabel("observed outcome")
         plt.show
 
     def estimate_ATE(self):
@@ -409,5 +484,7 @@ class CausalInsight:
         plt.title(
             f"ATE for {self.intervention_dataset}  and  {self.outcome_dataset} with forward shift = {self.forward_shift}"
         )
+        plt.ylabel("counts")
+        plt.xlabel("ATE")
         plt.legend()
         plt.show()
