@@ -11,7 +11,8 @@ from cities.utils.cleaning_utils import check_if_tensed, find_repo_root
 class DataGrabber:
     def __init__(self):
         self.repo_root = find_repo_root()
-        sys.path.insert(0, self.repo_root)  # possibly redundant, test later
+        self.data_path = os.path.join(self.repo_root, "data\\processed")
+        sys.path.insert(0, self.data_path)  
         self.wide = {}
         self.std_wide = {}
         self.long = {}
@@ -20,30 +21,39 @@ class DataGrabber:
     def get_features_wide(self, features: List[str]) -> None:
         for feature in features:
             file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_wide.csv"
+                self.data_path, f"{feature}_wide.csv"
             )
             self.wide[feature] = pd.read_csv(file_path)
 
     def get_features_std_wide(self, features: List[str]) -> None:
         for feature in features:
             file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_std_wide.csv"
+                self.data_path, f"{feature}_std_wide.csv"
             )
             self.std_wide[feature] = pd.read_csv(file_path)
 
     def get_features_long(self, features: List[str]) -> None:
         for feature in features:
             file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_long.csv"
+                self.data_path, f"{feature}_long.csv"
             )
             self.long[feature] = pd.read_csv(file_path)
 
     def get_features_std_long(self, features: List[str]) -> None:
         for feature in features:
             file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_std_long.csv"
+                self.data_path, f"{feature}_std_long.csv"
             )
             self.std_long[feature] = pd.read_csv(file_path)
+            
+            
+class MSADataGrabber(DataGrabber):
+    def __init__(self):
+        super().__init__()
+        self.repo_root = find_repo_root()
+        self.data_path = os.path.join(self.repo_root, "data\\MSA_level")
+        sys.path.insert(0, self.data_path)
+
 
 
 def list_available_features():
