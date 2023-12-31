@@ -81,9 +81,21 @@ def list_available_features(level='county'):
 
 
 
-def list_tensed_features():
-    data = DataGrabber()
-    all_features = list_available_features()
+def list_tensed_features(level='county'):
+    
+    if level == 'county':
+            
+        data = DataGrabber()
+        all_features = list_available_features(level='county')
+        
+    elif level == 'msa':
+        
+        data = MSADataGrabber()
+        all_features = list_available_features(level='msa')
+        
+    else:
+        raise ValueError("Invalid level. Please choose 'county' or 'msa'.")
+    
     data.get_features_wide(all_features)
 
     tensed_features = []
