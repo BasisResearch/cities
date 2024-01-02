@@ -46,9 +46,16 @@ class MSADataGrabber(DataGrabber):
         sys.path.insert(0, self.data_path)
 
 
-def list_available_features():
+def list_available_features(level="county"):
     root = find_repo_root()
-    folder_path = f"{root}/data/processed"
+
+    if level == "county":
+        folder_path = f"{root}/data/processed"
+    elif level == "msa":
+        folder_path = f"{root}/data/MSA_level"
+    else:
+        raise ValueError("Invalid level. Please choose 'county' or 'msa'.")
+
     file_names = [f for f in os.listdir(folder_path) if f != ".gitkeep"]
     processed_file_names = []
 
@@ -63,9 +70,18 @@ def list_available_features():
     return sorted(feature_names)
 
 
-def list_tensed_features():
-    data = DataGrabber()
-    all_features = list_available_features()
+def list_tensed_features(level="county"):
+    if level == "county":
+        data = DataGrabber()
+        all_features = list_available_features(level="county")
+
+    elif level == "msa":
+        data = MSADataGrabber()
+        all_features = list_available_features(level="msa")
+
+    else:
+        raise ValueError("Invalid level. Please choose 'county' or 'msa'.")
+
     data.get_features_wide(all_features)
 
     tensed_features = []
