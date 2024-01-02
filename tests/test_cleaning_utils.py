@@ -10,31 +10,31 @@ from cities.utils.data_grabber import list_available_features
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 
 root = find_repo_root()
-folder_path = f"{root}/data/processed"
-
+folder_paths = [f"{root}/data/processed", f"{root}/data/MSA_level"]
 
 def test_data_folder():
-    file_names = os.listdir(folder_path)
+    for folder in folder_paths:
+    
+        file_names = os.listdir(folder)
 
-    allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
+        allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
+        for file_name in file_names:
+            if file_name != ".gitkeep":
+                ends_with_allowed_extension = any(
+                    file_name.endswith(ext) for ext in allowed_extensions
+                )
+                assert (
+                    ends_with_allowed_extension
+                ), f"File '{file_name}' does not have an allowed extension."
 
-    for file_name in file_names:
-        if file_name != ".gitkeep":
-            ends_with_allowed_extension = any(
-                file_name.endswith(ext) for ext in allowed_extensions
-            )
+        all_features = list_available_features()
+        for feature in all_features:
+            valid_files = [
+                feature + ext for ext in allowed_extensions if feature + ext in file_names
+            ]
             assert (
-                ends_with_allowed_extension
-            ), f"File '{file_name}' does not have an allowed extension."
-
-    all_features = list_available_features()
-    for feature in all_features:
-        valid_files = [
-            feature + ext for ext in allowed_extensions if feature + ext in file_names
-        ]
-        assert (
-            len(valid_files) == 4
-        ), f"For feature '{feature}' some data formats are missing."
+                len(valid_files) == 4
+            ), f"For feature '{feature}' some data formats are missing."
 
 
 # set up gdp data
@@ -63,12 +63,20 @@ def test_standardize_and_scale():
     assert not gdp_scaled.isna().any().any()
 
 
-all_features = list_available_features()
-assert "spending_commerce" in all_features
-assert ".gitkeep" not in all_features
-unique_features = []
-for item in all_features:
-    if item not in unique_features:
-        unique_features.append(item)
+def test_features_presence():
+    
+    all_features = list_available_features()
+    all_features_msa = list_available_features("msa")
+    all_features.extend(all_features_msa)
 
-assert len(unique_features) == len(all_features)
+    assert "spending_commerce" in all_features
+    assert ".gitkeep" not in all_features
+    unique_features = []
+    for item in all_features:
+        if item not in unique_features:
+            unique_features.append(item)
+
+    assert len(unique_features) == len(all_features)
+
+
+
