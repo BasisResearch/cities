@@ -8,6 +8,6 @@ def clean_population_ma():
     cleaner = VariableCleanerMSA(
         variable_name="population",
         path_to_raw_csv=f"{root}/data/raw/population_ma.csv",
-        YearOrCategory="Year",
+        year_or_category="Year",
     )
     cleaner.clean_variable()

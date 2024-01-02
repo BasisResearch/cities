@@ -8,16 +8,16 @@ from cities.utils.data_grabber import DataGrabber
 
 class VariableCleaner:
     def __init__(
-        self, variable_name: str, path_to_raw_csv: str, YearOrCategory: str = "Year"
-    ):  # why are we using this parameter?
+        self, variable_name: str, path_to_raw_csv: str, year_or_category: str = "Year"
+    ):
         self.variable_name = variable_name
         self.path_to_raw_csv = path_to_raw_csv
-        self.YearOrCategory = YearOrCategory
+        self.year_or_category = year_or_category
         self.root = find_repo_root()
         self.data_grabber = DataGrabber()
         self.metro_areas = None
         self.gdp = None
-        self.variable_db = None
+        self.variable_df = None
 
     def clean_variable(self):
         self.load_raw_csv()
@@ -28,35 +28,19 @@ class VariableCleaner:
         self.save_csv_files(self.region_type)
 
     def load_raw_csv(self):
-        self.variable_db = pd.read_csv(self.path_to_raw_csv)
-        self.variable_db["GeoFIPS"] = self.variable_db["GeoFIPS"].astype(int)
+        self.variable_df = pd.read_csv(self.path_to_raw_csv)
+        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(int)
 
     def drop_nans(self):
-        self.variable_db = self.variable_db.dropna()
+        self.variable_df = self.variable_df.dropna()
 
     def load_gdp_data(self):
         self.data_grabber.get_features_wide(["gdp"])
         self.gdp = self.data_grabber.wide["gdp"]
 
-    def check_exclusions(self):
-        common_fips = np.intersect1d(
-            self.gdp["GeoFIPS"].unique(), self.variable_db["GeoFIPS"].unique()
-        )
-        if (
-            len(
-                np.setdiff1d(
-                    self.gdp["GeoFIPS"].unique(), self.variable_db["GeoFIPS"].unique()
-                )
-            )
-            > 0
-        ):
-            self.add_new_exclusions(common_fips)
-            clean_gdp()
-            self.clean_variable()
-
     def add_new_exclusions(self, common_fips):
         new_exclusions = np.setdiff1d(
-            self.gdp["GeoFIPS"].unique(), self.variable_db["GeoFIPS"].unique()
+            self.gdp["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
         )
         print("Adding new exclusions to exclusions.csv: " + str(new_exclusions))
         exclusions = pd.read_csv((f"{self.root}/data/raw/exclusions.csv"))
@@ -74,35 +58,51 @@ class VariableCleaner:
         exclusions.to_csv((f"{self.root}/data/raw/exclusions.csv"), index=False)
         print("Rerunning gdp cleaning with new exclusions")
 
+    def check_exclusions(self):
+        common_fips = np.intersect1d(
+            self.gdp["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
+        )
+        if (
+            len(
+                np.setdiff1d(
+                    self.gdp["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
+                )
+            )
+            > 0
+        ):
+            self.add_new_exclusions(common_fips)
+            clean_gdp()
+            self.clean_variable()
+
     def restrict_common_fips(self):
         common_fips = np.intersect1d(
-            self.gdp["GeoFIPS"].unique(), self.variable_db["GeoFIPS"].unique()
+            self.gdp["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
         )
-        self.variable_db = self.variable_db[
-            self.variable_db["GeoFIPS"].isin(common_fips)
+        self.variable_df = self.variable_df[
+            self.variable_df["GeoFIPS"].isin(common_fips)
         ]
-        self.variable_db = self.variable_db.merge(
+        self.variable_df = self.variable_df.merge(
             self.gdp[["GeoFIPS", "GeoName"]], on=["GeoFIPS", "GeoName"], how="left"
         )
-        self.variable_db = self.variable_db.sort_values(by=["GeoFIPS", "GeoName"])
-        for column in self.variable_db.columns:
+        self.variable_df = self.variable_df.sort_values(by=["GeoFIPS", "GeoName"])
+        for column in self.variable_df.columns:
             if column not in ["GeoFIPS", "GeoName"]:
-                self.variable_db[column] = self.variable_db[column].astype(float)
+                self.variable_df[column] = self.variable_df[column].astype(float)
 
-    def save_csv_files(self, regions):
+    def save_csv_files(self):
         # it would be great to make sure that a db is wide, if not make it wide
-        variable_db_wide = self.variable_db.copy()
+        variable_db_wide = self.variable_df.copy()
         variable_db_long = pd.melt(
-            self.variable_db,
+            self.variable_df,
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.YearOrCategory,
+            var_name=self.year_or_category,
             value_name="Value",
         )
-        variable_db_std_wide = standardize_and_scale(self.variable_db)
+        variable_db_std_wide = standardize_and_scale(self.variable_df)
         variable_db_std_long = pd.melt(
             variable_db_std_wide.copy(),
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.YearOrCategory,
+            var_name=self.year_or_category,
             value_name="Value",
         )
 
@@ -126,12 +126,16 @@ class VariableCleaner:
 
 class VariableCleanerMSA(
     VariableCleaner
-):  # this class inherits functionalites of VariableCleaner, but its adjusted to MSA level
+):  # this class inherits functionalites of VariableCleaner, but works at the MSA level
     def clean_variable(self):
         self.load_raw_csv()
         self.drop_nans()
         self.process_data()
-        # self.check_exclusions('MA') functionality to implement in the future
+        # TODO self.check_exclusions('MA') functionality needs to be implemented in the future
+        # TODO but only if data missigness turns out to be a serious problem
+        # for now, process_data runs a check and reports missingness
+        # but we need to be more careful about MSA missingnes handling
+        # as there are much fewer MSAs than counties
         self.save_csv_files()
 
     def load_metro_areas(self):
@@ -141,28 +145,28 @@ class VariableCleanerMSA(
         self.load_metro_areas()
         assert (
             self.metro_areas["GeoFIPS"].nunique()
-            == self.variable_db["GeoFIPS"].nunique()
+            == self.variable_df["GeoFIPS"].nunique()
         )
         assert (
             self.metro_areas["GeoName"].nunique()
-            == self.variable_db["GeoName"].nunique()
+            == self.variable_df["GeoName"].nunique()
         )
-        self.variable_db["GeoFIPS"] = self.variable_db["GeoFIPS"].astype(np.int64)
+        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)
 
     def save_csv_files(self):
         # wrangling
-        variable_db_wide = self.variable_db.copy()
+        variable_db_wide = self.variable_df.copy()
         variable_db_long = pd.melt(
-            self.variable_db,
+            self.variable_df,
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.YearOrCategory,
+            var_name=self.year_or_category,
             value_name="Value",
         )
-        variable_db_std_wide = standardize_and_scale(self.variable_db)
+        variable_db_std_wide = standardize_and_scale(self.variable_df)
         variable_db_std_long = pd.melt(
             variable_db_std_wide.copy(),
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.YearOrCategory,
+            var_name=self.year_or_category,
             value_name="Value",
         )
         # saving
