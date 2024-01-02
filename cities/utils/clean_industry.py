@@ -1,13 +1,12 @@
-import os
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
 from cities.utils.clean_variable import VariableCleaner
-from cities.utils.cleaning_utils import find_repo_root
+from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
+from cities.utils.data_grabber import DataGrabber
+
 root = find_repo_root()
 
 path = Path(__file__).parent.absolute()
@@ -106,13 +105,10 @@ def clean_industry_step_one():
 
 
 def clean_industry():
-    
     clean_industry_step_one()
-    
-    cleaner = VariableCleaner(variable_name="industry",
-                              path_to_raw_csv = f"{root}/data/raw/industry_percent.csv")
+
+    cleaner = VariableCleaner(
+        variable_name="industry",
+        path_to_raw_csv=f"{root}/data/raw/industry_percent.csv",
+    )
     cleaner.clean_variable()
-    
-
-
-
