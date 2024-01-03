@@ -6,7 +6,8 @@ root = find_repo_root()
 
 def clean_industry_ma():
     cleaner = VariableCleanerMSA(
-        variable_name="industry_compostion",
+        variable_name="industry_ma",
         path_to_raw_csv=f"{root}/data/raw/industry_ma.csv",
+        year_or_category = "Category"
     )
     cleaner.clean_variable()

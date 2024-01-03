@@ -1,4 +1,4 @@
-GeoFIPS,GeoName,Year,Value
+GeoFIPS,GeoName,Category,Value
 10180,"Abilene, TX (MA)",urban_housing,50514.0
 10420,"Akron, OH (MA)",urban_housing,282871.0
 10500,"Albany, GA (MA)",urban_housing,42590.0

@@ -1,4 +1,4 @@
-GeoFIPS,GeoName,Year,Value
+GeoFIPS,GeoName,Category,Value
 10180,"Abilene, TX (MA)",mexican,0.1085961618570996
 10420,"Akron, OH (MA)",mexican,0.0047098498997813
 10500,"Albany, GA (MA)",mexican,0.0063028305804498

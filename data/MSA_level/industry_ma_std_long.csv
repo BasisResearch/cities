@@ -1,4 +1,4 @@
-GeoFIPS,GeoName,Year,Value
+GeoFIPS,GeoName,Category,Value
 10180,"Abilene, TX (MA)",agri_forestry_mining,0.047368233098520784
 10420,"Akron, OH (MA)",agri_forestry_mining,-0.10414975572279372
 10500,"Albany, GA (MA)",agri_forestry_mining,0.02932028990806801
