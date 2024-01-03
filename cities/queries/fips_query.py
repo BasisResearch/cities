@@ -3,7 +3,11 @@ import pandas as pd
 import plotly.graph_objects as go
 
 from cities.utils.cleaning_utils import check_if_tensed
-from cities.utils.data_grabber import DataGrabber, MSADataGrabber, list_available_features
+from cities.utils.data_grabber import (
+    DataGrabber,
+    MSADataGrabber,
+    list_available_features,
+)
 from cities.utils.similarity_utils import (
     compute_weight_array,
     generalized_euclidean_distance,
@@ -615,7 +619,6 @@ class FipsQuery:
 # especially if small
 
 
-
 class MSAFipsQuery(FipsQuery):
     def __init__(
         self,
@@ -629,17 +632,15 @@ class MSAFipsQuery(FipsQuery):
         outcome_percentile_range=None,
     ):
         super().__init__(
-        fips,
-        outcome_var=None,
-        feature_groups_with_weights=None,
-        lag=0,
-        top=5,
-        time_decay=1.08,
-        outcome_comparison_period=None,
-        outcome_percentile_range=None,
+            fips,
+            outcome_var=None,
+            feature_groups_with_weights=None,
+            lag=0,
+            top=5,
+            time_decay=1.08,
+            outcome_comparison_period=None,
+            outcome_percentile_range=None,
         )
-        
+
         self.data = MSADataGrabber()
-        self.all_available_features = list_available_features(level='msa')
-        
-        
+        self.all_available_features = list_available_features(level="msa")
