@@ -1,9 +1,7 @@
-import os
-from pathlib import Path
+from cities.utils.clean_variable import VariableCleaner
+from cities.utils.cleaning_utils import find_repo_root
 
-from cities.utils.clean_variable import clean_variable
-
-path = Path(__file__).parent.absolute()
+root = find_repo_root()
 
 
 poverty_variables = [
@@ -17,6 +15,10 @@ poverty_variables = [
 
 def clean_poverty():
     for variable_name in poverty_variables:
-        path_to_raw_csv = os.path.join(path, f"../../data/raw/{variable_name}_wide.csv")
-
-        clean_variable(variable_name, path_to_raw_csv)
+        cleaner = VariableCleaner(
+            variable_name,
+            path_to_raw_csv=f"{root}data/raw/{variable_name}_wide.csv",
+            year_or_category="Year",
+            region_type="MA",
+        )
+        cleaner.clean_variable()
