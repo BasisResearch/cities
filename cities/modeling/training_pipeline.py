@@ -1,10 +1,14 @@
 import logging
 import os
+import sys
 import time
 
 from cities.modeling.model_interactions import InteractionsModel
 from cities.utils.cleaning_utils import find_repo_root
 from cities.utils.data_grabber import list_interventions, list_outcomes
+
+if __name__ != "__main__":
+    sys.exit()
 
 root = find_repo_root()
 log_dir = os.path.join(root, "data", "model_guides")
