@@ -37,16 +37,53 @@ class CausalInsight:
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-        # if sites is None:
-        #     self.sites = ["weight_TY"]
-        # else:
-        #    self.sites = sites
-
         self.tau_samples_path = os.path.join(
             self.root,
             "data/tau_samples",
             f"{self.intervention_dataset}_{self.outcome_dataset}_{self.num_samples}_tau.pkl",
         )
+
+        # these are loaded/computed as need be
+
+        self.guide = None
+        self.data = None
+        self.fips_id = None
+        self.name = None
+        self.model = None
+        self.model_args = None
+        self.predictive = None
+        self.samples = None
+        self.tensed_samples = None
+        self.tensed_tau_samples = None
+
+        self.intervened_value = None  # possibly in the transformed scale
+        self.intervention_is_percentile = None  # flag for the sort of input
+        self.intervened_percentile = None  # possible passed at input
+        self.intervened_value_percentile = (
+            None  # calculated if input was on the transformed scale
+        )
+        self.intervened_value_original = None  # in the original scale
+        self.observed_intervention = None  # in the transformed scale
+        self.observed_intervention_original = None  # in the original scale
+        self.observed_intervention_percentile = None  # calculated if input
+        # was on the transformed scale
+        self.observed_outcomes = None
+        self.intervention_diff = (
+            None  # difference between observed and counterfactual value of the
+        )
+        # intervention variable
+        self.intervention_impact = None  # dictionary with preds for each shift
+        self.predictions = None  # df with preds, can be passed to plotting
+        self.prediction_original = None  # df with preds on the original scale
+        # can be passed to plotting
+        self.fips_observed_data = None  # to be used for plotting in
+        # contrast with the counterfactual prediction
+        self.year_id = None  # year of intervention as index in the outcome years
+        self.prediction_years = None
+
+        # these are used in posterior predictive checks
+        self.average_predictions = None
+        self.r_squared = None
 
     def load_guide(self, forward_shift):
         pyro.clear_param_store()
@@ -198,16 +235,6 @@ class CausalInsight:
         self.intervened_value_original = revert_standardize_and_scale_scaler(
             self.intervened_value, self.year, self.intervention_dataset
         )
-
-        # interventions_this_year = dg.std_wide[self.intervention_dataset][str(year)]
-
-        # nearest_intervention_index = min(
-        #     range(len(interventions_this_year)),
-        #     key=lambda i: abs(interventions_this_year[i] - self.intervened_value),
-        # )
-        # self.intervened_value_original = interventions_this_year_original[
-        #     nearest_intervention_index
-        # ]
 
         self.intervened_value_percentile = round(
             (
@@ -492,6 +519,7 @@ class CausalInsight:
         average_predictions_flat = self.average_predictions.view(-1)
         rss = torch.sum((y_flat - average_predictions_flat) ** 2)
         r_squared = 1 - (rss / tss)
+        self.r_squared = r_squared
         rounded_r_squared = np.round(r_squared.item(), 2)
         plt.scatter(y=average_predictions_flat, x=y_flat)
         plt.title(
