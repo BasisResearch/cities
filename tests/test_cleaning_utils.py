@@ -6,6 +6,7 @@ import pandas as pd
 
 from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
 from cities.utils.data_grabber import list_available_features
+from cities.utils.clean_variable import VariableCleaner, VariableCleanerMSA
 
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 
@@ -14,7 +15,6 @@ folder_paths = [f"{root}/data/processed", f"{root}/data/MSA_level"]
 
 def test_data_folder():
     for folder in folder_paths:
-    
         file_names = os.listdir(folder)
 
         allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
@@ -27,7 +27,12 @@ def test_data_folder():
                     ends_with_allowed_extension
                 ), f"File '{file_name}' does not have an allowed extension."
 
-        all_features = list_available_features()
+        all_features = []
+        if folder.endswith("processed"):
+            all_features = list_available_features()
+        elif folder.endswith("MSA_level"):
+            all_features = list_available_features("msa")
+
         for feature in all_features:
             valid_files = [
                 feature + ext for ext in allowed_extensions if feature + ext in file_names
@@ -80,3 +85,16 @@ def test_features_presence():
 
 
 
+def test_variable_cleaner_drop_nans():
+    data = {"GeoFIPS": [1, 2, 3], "GeoName": ["New York", np.nan, "Chicago"], "Value": [100, np.nan, 300]}
+    df = pd.DataFrame(data)
+
+    cleaner = VariableCleaner("variable", "path/to/raw.csv")
+
+    cleaner.variable_df = df
+    cleaner.drop_nans()
+    
+    assert len(cleaner.variable_df) == 2
+    assert set(cleaner.variable_df.columns) == {"GeoFIPS", "GeoName", "Value"}
+    assert not cleaner.variable_df["GeoName"].isna().any()
+    assert not cleaner.variable_df["Value"].isna().any()
