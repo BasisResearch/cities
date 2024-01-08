@@ -8,14 +8,17 @@ from cities.utils.data_grabber import DataGrabber
 
 class VariableCleaner:
     def __init__(
-        self, variable_name: str, path_to_raw_csv: str, year_or_category: str = "Year" # Year or Category
+        self,
+        variable_name: str,
+        path_to_raw_csv: str,
+        year_or_category: str = "Year",  # Year or Category
     ):
         self.variable_name = variable_name
         self.path_to_raw_csv = path_to_raw_csv
         self.year_or_category = year_or_category
         self.root = find_repo_root()
         self.data_grabber = DataGrabber()
-        self.folder = 'processed'
+        self.folder = "processed"
         self.gdp = None
         self.variable_df = None
 
@@ -124,13 +127,16 @@ class VariableCleaner:
         )
 
 
-class VariableCleanerMSA(VariableCleaner):  # this class inherits functionalites of VariableCleaner, but works at the MSA level
-    
-    def __init__(self, variable_name: str, path_to_raw_csv: str, year_or_category: str = "Year"):
+class VariableCleanerMSA(
+    VariableCleaner
+):  # this class inherits functionalites of VariableCleaner, but works at the MSA level
+    def __init__(
+        self, variable_name: str, path_to_raw_csv: str, year_or_category: str = "Year"
+    ):
         super().__init__(variable_name, path_to_raw_csv, year_or_category)
-        self.folder = 'MSA_level'
+        self.folder = "MSA_level"
         self.metro_areas = None
-    
+
     def clean_variable(self):
         self.load_raw_csv()
         self.drop_nans()
@@ -156,5 +162,3 @@ class VariableCleanerMSA(VariableCleaner):  # this class inherits functionalites
             == self.variable_df["GeoName"].nunique()
         )
         self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)
-
-   

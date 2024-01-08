@@ -70,6 +70,6 @@ def clean_ethnic_composition_ma():
     cleaner = VariableCleanerMSA(
         variable_name="ethnic_composition_ma",
         path_to_raw_csv=f"{root}/data/raw/ethnic_composition_ma.csv",
-        year_or_category="Category"
+        year_or_category="Category",
     )
     cleaner.clean_variable()

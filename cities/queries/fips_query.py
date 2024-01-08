@@ -86,7 +86,6 @@ class FipsQuery:
             self.all_features = [self.gdpVAR] + feature_groups
         else:
             self.all_features = feature_groups
-     
 
         self.data.get_features_std_wide(self.all_features)
         self.data.get_features_wide(self.all_features)
@@ -122,7 +121,6 @@ class FipsQuery:
                 self.outcome_with_percentiles["percentile"] * 100, 2
             )
             self.outcome_percentile_range = outcome_percentile_range
-            
 
     def compare_my_outcome_to_others(self, range_multiplier=2, sample_size=250):
         # TODO add shading by population and warning about
@@ -203,8 +201,6 @@ class FipsQuery:
         )
 
         fig.show()
-        
-        
 
     def find_euclidean_kins(self):
         # cut the relevant years from the outcome variable
@@ -650,7 +646,7 @@ class MSAFipsQuery(FipsQuery):
         # self.all_available_features = list_available_features(level="msa")
         # self.gdpVAR = "gdp_ma"
         # print("MSAFipsQuery __init__ data:", self.data)
-        
+
         if feature_groups_with_weights is None and outcome_var:
             feature_groups_with_weights = {outcome_var: 4}
 
@@ -677,7 +673,7 @@ class MSAFipsQuery(FipsQuery):
             outcome_var is None and outcome_percentile_range is not None
         ), "outcome_percentile_range requires an outcome variable"
 
-        self.all_available_features = list_available_features('msa')
+        self.all_available_features = list_available_features("msa")
 
         feature_groups = list(feature_groups_with_weights.keys())
 
@@ -742,5 +738,3 @@ class MSAFipsQuery(FipsQuery):
                 self.outcome_with_percentiles["percentile"] * 100, 2
             )
             self.outcome_percentile_range = outcome_percentile_range
-            
-            

@@ -4,20 +4,26 @@ import sys
 import numpy as np
 import pandas as pd
 
+from cities.utils.clean_variable import VariableCleaner
 from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
 from cities.utils.data_grabber import list_available_features
-from cities.utils.clean_variable import VariableCleaner, VariableCleanerMSA
 
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 
 root = find_repo_root()
 folder_paths = [f"{root}/data/processed", f"{root}/data/MSA_level"]
 
+
 def test_data_folder():
     for folder in folder_paths:
         file_names = os.listdir(folder)
 
-        allowed_extensions = ["_wide.csv", "_long.csv", "_std_wide.csv", "_std_long.csv"]
+        allowed_extensions = [
+            "_wide.csv",
+            "_long.csv",
+            "_std_wide.csv",
+            "_std_long.csv",
+        ]
         for file_name in file_names:
             if file_name != ".gitkeep":
                 ends_with_allowed_extension = any(
@@ -35,7 +41,9 @@ def test_data_folder():
 
         for feature in all_features:
             valid_files = [
-                feature + ext for ext in allowed_extensions if feature + ext in file_names
+                feature + ext
+                for ext in allowed_extensions
+                if feature + ext in file_names
             ]
             assert (
                 len(valid_files) == 4
@@ -69,7 +77,6 @@ def test_standardize_and_scale():
 
 
 def test_features_presence():
-    
     all_features = list_available_features()
     all_features_msa = list_available_features("msa")
     all_features.extend(all_features_msa)
@@ -84,16 +91,19 @@ def test_features_presence():
     assert len(unique_features) == len(all_features)
 
 
-
 def test_variable_cleaner_drop_nans():
-    data = {"GeoFIPS": [1, 2, 3], "GeoName": ["New York", np.nan, "Chicago"], "Value": [100, np.nan, 300]}
+    data = {
+        "GeoFIPS": [1, 2, 3],
+        "GeoName": ["New York", np.nan, "Chicago"],
+        "Value": [100, np.nan, 300],
+    }
     df = pd.DataFrame(data)
 
     cleaner = VariableCleaner("variable", "path/to/raw.csv")
 
     cleaner.variable_df = df
     cleaner.drop_nans()
-    
+
     assert len(cleaner.variable_df) == 2
     assert set(cleaner.variable_df.columns) == {"GeoFIPS", "GeoName", "Value"}
     assert not cleaner.variable_df["GeoName"].isna().any()

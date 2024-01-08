@@ -66,11 +66,9 @@ def test_euclidean_kins_dont_die(query):
     f.find_euclidean_kins()
 
 
-
-
 def test_fips_query_MSA_init():
     f1007 = MSAFipsQuery(
-        fips=10780, 
+        fips=10780,
         outcome_var="gdp_ma",
         feature_groups_with_weights={"gdp_ma": 4, "population_ma": 4},
         lag=0,

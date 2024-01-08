@@ -1,8 +1,10 @@
 import os
+
 import numpy as np
 
 from cities.utils.data_grabber import (
-    DataGrabber, MSADataGrabber,
+    DataGrabber,
+    MSADataGrabber,
     list_available_features,
     list_interventions,
     list_outcomes,
@@ -10,7 +12,6 @@ from cities.utils.data_grabber import (
 )
 
 features = list_available_features()
-
 
 
 def test_DataGrabber():
@@ -141,19 +142,20 @@ def test_no_ma_strings_in_features():
     features = list_available_features()
     assert all(not feature.endswith("_ma") for feature in features)
 
+
 def test_ma_strings_in_features():
-    feature_ma = list_available_features('msa')
+    feature_ma = list_available_features("msa")
     assert all(feature.endswith("_ma") for feature in feature_ma)
 
 
-feature_ma = list_available_features('msa')
+feature_ma = list_available_features("msa")
 data = MSADataGrabber()
 data.get_features_long(feature_ma)
 
+
 def test_GeoFIPS_column_values():
     for feature in feature_ma:
+        data.long[feature]["GeoFIPS"]
+        column_values = data.long[feature]["GeoFIPS"]
 
-        data.long[feature]['GeoFIPS']
-        column_values = data.long[feature]['GeoFIPS']
-        
-        assert all(value > 9999 and str(value)[-1] == '0' for value in column_values)
+        assert all(value > 9999 and str(value)[-1] == "0" for value in column_values)
