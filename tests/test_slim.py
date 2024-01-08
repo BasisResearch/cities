@@ -1,6 +1,6 @@
 import random
 
-from cities.queries.causal_insight import CausalInsight
+from cities.queries.causal_insight_slim import CausalInsightSlim as CausalInsight
 from cities.utils.data_grabber import DataGrabber, list_interventions, list_outcomes
 
 data = DataGrabber()
@@ -51,3 +51,5 @@ def test_slim_full():
 
             assert len(ci.tensed_tau_samples[1]) == 1000
             assert ci.predictions is not None
+
+

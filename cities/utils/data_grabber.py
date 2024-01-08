@@ -5,7 +5,14 @@ from typing import List
 
 import pandas as pd
 
-from cities.utils.cleaning_utils import check_if_tensed, find_repo_root
+from cities.utils.cleaning_utils import  find_repo_root
+
+
+
+def check_if_tensed(df):
+    years_to_check = ["2015", "2018", "2019", "2020"]
+    check = df.columns[2:].isin(years_to_check).any().any()
+    return check
 
 
 class DataGrabber:

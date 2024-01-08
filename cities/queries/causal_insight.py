@@ -36,8 +36,6 @@ class CausalInsight:
         self.data = None
         self.smoke_test = smoke_test
 
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
         # if sites is None:
         #     self.sites = ["weight_TY"]
         # else:

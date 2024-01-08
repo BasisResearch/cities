@@ -1,19 +1,21 @@
 import os
-
 import dill
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 from sklearn.preprocessing import StandardScaler
 
-from cities.modeling.modeling_utils import (
-    prep_wide_data_for_inference,
+from cities.utils.cleaning_utils import (
     revert_prediction_df,
     revert_standardize_and_scale_scaler,
 )
 from cities.utils.cleaning_utils import find_repo_root, sigmoid
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import  (
+    DataGrabber
+)
 from cities.utils.percentiles import transformed_intervention_from_percentile
+
 
 
 class CausalInsightSlim:
@@ -29,8 +31,8 @@ class CausalInsightSlim:
         self.intervention_dataset = intervention_dataset
         self.root = find_repo_root()
         self.num_samples = num_samples
-        self.data = None
         self.smoke_test = smoke_test
+
 
         self.tau_samples_path = os.path.join(
             self.root,
@@ -44,6 +46,7 @@ class CausalInsightSlim:
                 self.tensed_tau_samples = dill.load(file)
         else:
             raise ValueError("No tau samples found. Run generate_tensed_samples first.")
+
 
     def slider_values_to_interventions(self, intervened_percent, year):
         try:
@@ -108,13 +111,17 @@ class CausalInsightSlim:
         self, fips, intervened_value, year=None, intervention_is_percentile=False
     ):
         self.fips = fips
-
+    
         if self.data is None:
-            self.data = prep_wide_data_for_inference(
-                outcome_dataset=self.outcome_dataset,
-                intervention_dataset=self.intervention_dataset,
-                forward_shift=3,  # shift doesn't matter here, as long as data exists
-            )
+
+            file_path = os.path.join(self.root, "data/years_available", f"{self.intervention.dataset}_{self.outcome_dataset}.pkl")
+            with open(file_path, "rb") as file:
+                self.data = dill.load(file)
+            # self.data = prep_wide_data_for_inference(
+            #     outcome_dataset=self.outcome_dataset,
+            #     intervention_dataset=self.intervention_dataset,
+            #     forward_shift=3,  # shift doesn't matter here, as long as data exists
+            # )
 
         # start with the latest year possible by default
         if year is None:
@@ -138,11 +145,6 @@ class CausalInsightSlim:
 
         self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
 
-        # find fips unit index
-        dg = DataGrabber()
-        dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
-        dg.get_features_wide([self.intervention_dataset])
-        interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
 
         self.intervened_value_original = revert_standardize_and_scale_scaler(
             self.intervened_value, self.year, self.intervention_dataset
@@ -234,7 +236,6 @@ class CausalInsightSlim:
         self.predictions_original = revert_prediction_df(
             self.predictions, self.outcome_dataset
         )
-
     def plot_predictions(
         self, range_multiplier=1.5, show_figure=True, scaling="transformed"
     ):
@@ -391,3 +392,4 @@ class CausalInsightSlim:
             fig.show()
         else:
             return fig
+
