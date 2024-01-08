@@ -74,7 +74,7 @@ class FipsQuery:
         self.fips = fips
         self.lag = lag
         self.top = top
-        self.gdpVAR = "gdp"
+        self.gdp_var = "gdp"
 
         # it's fine if they're None (by default)
         self.outcome_var = outcome_var
@@ -82,8 +82,8 @@ class FipsQuery:
 
         self.time_decay = time_decay
 
-        if self.gdpVAR not in self.feature_groups:
-            self.all_features = [self.gdpVAR] + feature_groups
+        if self.gdp_var not in self.feature_groups:
+            self.all_features = [self.gdp_var] + feature_groups
         else:
             self.all_features = feature_groups
 
@@ -91,10 +91,10 @@ class FipsQuery:
         self.data.get_features_wide(self.all_features)
 
         assert (
-            fips in self.data.std_wide[self.gdpVAR]["GeoFIPS"].values
+            fips in self.data.std_wide[self.gdp_var]["GeoFIPS"].values
         ), "FIPS not found in the data set."
-        self.name = self.data.std_wide[self.gdpVAR]["GeoName"][
-            self.data.std_wide[self.gdpVAR]["GeoFIPS"] == self.fips
+        self.name = self.data.std_wide[self.gdp_var]["GeoName"][
+            self.data.std_wide[self.gdp_var]["GeoFIPS"] == self.fips
         ].values[0]
 
         assert (
@@ -245,13 +245,13 @@ class FipsQuery:
             ].copy()
         else:
             self.my_df = pd.DataFrame(
-                self.data.wide[self.gdpVAR][
-                    self.data.wide[self.gdpVAR]["GeoFIPS"] == self.fips
+                self.data.wide[self.gdp_var][
+                    self.data.wide[self.gdp_var]["GeoFIPS"] == self.fips
                 ].iloc[:, :2]
             )
             self.other_df = pd.DataFrame(
-                self.data.wide[self.gdpVAR][
-                    self.data.wide[self.gdpVAR]["GeoFIPS"] != self.fips
+                self.data.wide[self.gdp_var][
+                    self.data.wide[self.gdp_var]["GeoFIPS"] != self.fips
                 ].iloc[:, :2]
             )
 
@@ -644,7 +644,7 @@ class MSAFipsQuery(FipsQuery):
     ):
         # self.data = MSADataGrabber()
         # self.all_available_features = list_available_features(level="msa")
-        # self.gdpVAR = "gdp_ma"
+        # self.gdp_var = "gdp_ma"
         # print("MSAFipsQuery __init__ data:", self.data)
 
         if feature_groups_with_weights is None and outcome_var:
@@ -691,7 +691,7 @@ class MSAFipsQuery(FipsQuery):
         self.fips = fips
         self.lag = lag
         self.top = top
-        self.gdpVAR = "gdp_ma"
+        self.gdp_var = "gdp_ma"
 
         # it's fine if they're None (by default)
         self.outcome_var = outcome_var
@@ -699,8 +699,8 @@ class MSAFipsQuery(FipsQuery):
 
         self.time_decay = time_decay
 
-        if self.gdpVAR not in self.feature_groups:
-            self.all_features = [self.gdpVAR] + feature_groups
+        if self.gdp_var not in self.feature_groups:
+            self.all_features = [self.gdp_var] + feature_groups
         else:
             self.all_features = feature_groups
 
@@ -708,10 +708,10 @@ class MSAFipsQuery(FipsQuery):
         self.data.get_features_wide(self.all_features)
 
         assert (
-            fips in self.data.std_wide[self.gdpVAR]["GeoFIPS"].values
+            fips in self.data.std_wide[self.gdp_var]["GeoFIPS"].values
         ), "FIPS not found in the data set."
-        self.name = self.data.std_wide[self.gdpVAR]["GeoName"][
-            self.data.std_wide[self.gdpVAR]["GeoFIPS"] == self.fips
+        self.name = self.data.std_wide[self.gdp_var]["GeoName"][
+            self.data.std_wide[self.gdp_var]["GeoFIPS"] == self.fips
         ].values[0]
 
         assert (

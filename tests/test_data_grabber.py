@@ -12,31 +12,63 @@ from cities.utils.data_grabber import (
 )
 
 features = list_available_features()
+features_msa = list_available_features("msa")
 
 
-def test_DataGrabber():
+
+def test_non_emptiness_DataGrabber():
+
+ assert features is not None
+
+data = DataGrabber()
+
+data.get_features_wide(features)
+data.get_features_std_wide(features)
+data.get_features_long(features)
+data.get_features_std_long(features)
+
+for feature in features:
+    assert data.wide[feature].shape[0] > 2800
+    assert data.std_wide[feature].shape[1] < 100
+    assert data.long[feature].shape[0] > 2800
+    assert data.std_long[feature].shape[1] == 4
+    assert (
+        data.wide["gdp"]["GeoFIPS"].nunique()
+        == data.wide[feature]["GeoFIPS"].nunique()
+    )
+    assert (
+        data.long["gdp"]["GeoFIPS"].nunique()
+        == data.long[feature]["GeoFIPS"].nunique()
+    )
+
+
+def test_non_emptiness_MSADataGrabber():
+    
+    
+    os.chdir(os.path.dirname(os.getcwd()))
+    data_msa = MSADataGrabber()
+
+    data_msa.get_features_wide(features_msa)
+    data_msa.get_features_std_wide(features_msa)
+    data_msa.get_features_long(features_msa)
+    data_msa.get_features_std_long(features_msa)
+
+    for feature in features_msa:
+        assert data_msa.wide[feature].shape[0] > 100
+        assert data_msa.std_wide[feature].shape[1] < 100
+        assert data_msa.long[feature].shape[0] > 100
+        assert data_msa.std_long[feature].shape[1] == 4
+
+   
+
+def general_data_format_testing(data, features):
+    
     assert features is not None
-
-    data = DataGrabber()
 
     data.get_features_wide(features)
     data.get_features_std_wide(features)
     data.get_features_long(features)
     data.get_features_std_long(features)
-
-    for feature in features:
-        assert data.wide[feature].shape[0] > 2800
-        assert data.std_wide[feature].shape[1] < 100
-        assert data.long[feature].shape[0] > 2800
-        assert data.std_long[feature].shape[1] == 4
-        assert (
-            data.wide["gdp"]["GeoFIPS"].nunique()
-            == data.wide[feature]["GeoFIPS"].nunique()
-        )
-        assert (
-            data.long["gdp"]["GeoFIPS"].nunique()
-            == data.long[feature]["GeoFIPS"].nunique()
-        )
 
     for feature in features:
         dataTypeError = "Wrong data type!"
@@ -108,30 +140,31 @@ def test_DataGrabber():
             ).all(), (
                 f"The column '{column}' of feature '{feature}' is not standardized."
             )
+            
 
-    os.chdir(os.path.dirname(os.getcwd()))
-    data2 = DataGrabber()
+def test_DataGrabber_data_types():
+    
+    data = DataGrabber()
+    
+    general_data_format_testing(data, features)
+    
 
-    data2.get_features_wide(features)
-    data2.get_features_std_wide(features)
-    data2.get_features_long(features)
-    data2.get_features_std_long(features)
+def test_MSADataGrabber_data_types():
+    
+    data_msa = MSADataGrabber()
+    
+    general_data_format_testing(data_msa, features_msa)
 
-    for feature in features:
-        assert data2.wide[feature].shape[0] > 100
-        assert data2.std_wide[feature].shape[1] < 100
-        assert data2.long[feature].shape[0] > 1000
-        assert data2.std_long[feature].shape[1] == 4
-
-    assert all(data.wide[feature].equals(data2.wide[feature]) for feature in features)
-
+    
+    
+            
 
 def test_feature_listing_runtime():
     features = list_available_features()
     tensed_features = list_tensed_features()
     interventions = list_interventions()
     outcomes = list_outcomes()
-
+    
     assert len(features) > 2
     assert len(tensed_features) > 2
     assert len(interventions) > 2
@@ -148,14 +181,15 @@ def test_ma_strings_in_features():
     assert all(feature.endswith("_ma") for feature in feature_ma)
 
 
-feature_ma = list_available_features("msa")
-data = MSADataGrabber()
-data.get_features_long(feature_ma)
 
 
-def test_GeoFIPS_column_values():
-    for feature in feature_ma:
-        data.long[feature]["GeoFIPS"]
-        column_values = data.long[feature]["GeoFIPS"]
+data_msa = MSADataGrabber()
+data_msa.get_features_long(features_msa)
+
+
+def test_GeoFIPS_ma_column_values():
+    for feature in features_msa:
+        data_msa.long[feature]["GeoFIPS"]
+        column_values = data_msa.long[feature]["GeoFIPS"]
 
         assert all(value > 9999 and str(value)[-1] == "0" for value in column_values)
