@@ -6,8 +6,7 @@ import torch
 
 from cities.modeling.model_interactions import InteractionsModel
 from cities.queries.causal_insight import CausalInsight
-from cities.utils.cleaning_utils import find_repo_root
-from cities.utils.data_grabber import list_interventions, list_outcomes
+from cities.utils.data_grabber import find_repo_root, list_interventions, list_outcomes
 
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 device = torch.device("cpu")
