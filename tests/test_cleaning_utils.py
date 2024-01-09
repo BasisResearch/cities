@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.clean_variable import VariableCleaner
-from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
-from cities.utils.data_grabber import list_available_features
+from cities.utils.cleaning_utils import standardize_and_scale
+from cities.utils.data_grabber import list_available_features, find_repo_root
 
 sys.path.insert(0, os.path.dirname(os.getcwd()))
 
