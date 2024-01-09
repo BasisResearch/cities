@@ -3,8 +3,7 @@ import os
 import time
 
 from cities.modeling.model_interactions import InteractionsModel
-from cities.utils.cleaning_utils import find_repo_root
-from cities.utils.data_grabber import list_interventions, list_outcomes
+from cities.utils.data_grabber import find_repo_root, list_interventions, list_outcomes
 
 root = find_repo_root()
 log_dir = os.path.join(root, "data", "model_guides")

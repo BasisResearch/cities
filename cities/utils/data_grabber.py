@@ -1,12 +1,14 @@
 import os
 import re
 import sys
+from pathlib import Path
 from typing import List
 
 import pandas as pd
 
-from cities.utils.cleaning_utils import  find_repo_root
 
+def find_repo_root() -> Path:
+    return Path(__file__).parent.parent.parent
 
 
 def check_if_tensed(df):

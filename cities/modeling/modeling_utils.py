@@ -1,14 +1,12 @@
-from typing import Callable, List, Union
+from typing import Callable
 
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import pyro
 import torch
 from pyro.infer import SVI, Trace_ELBO
 from pyro.infer.autoguide import AutoNormal
 from pyro.optim import Adam
-from sklearn.preprocessing import StandardScaler
 
 from cities.utils.data_grabber import (
     DataGrabber,
@@ -180,4 +178,3 @@ def train_interactions_model(
 
 # reverting the standardization using the scaler is necessary, as doing this using the obvious formula
 # leads to some numerical issues and inaccuracies
-

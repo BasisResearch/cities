@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from plotly import graph_objs as go
 
-from cities.utils.cleaning_utils import check_if_tensed
+from cities.utils.data_grabber import check_if_tensed
 
 
 def slice_with_lag(df: pd.DataFrame, fips: int, lag: int) -> Dict[str, np.ndarray]:

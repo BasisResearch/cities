@@ -1,19 +1,10 @@
-from pathlib import Path
+from typing import List, Union
 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
-from typing import Callable, List, Union
-
-
-from cities.utils.data_grabber import (
-    DataGrabber
-)
-
-
-def find_repo_root() -> Path:
-    return Path(__file__).parent.parent.parent
+from cities.utils.data_grabber import DataGrabber
 
 
 def sigmoid(x, scale=1 / 3):
@@ -41,7 +32,6 @@ def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
     new_data[float_cols.columns] = sigmoid(standardized_floats, scale=1 / 3)
 
     return new_data
-
 
 
 def revert_standardize_and_scale_scaler(
