@@ -1,14 +1,10 @@
 from typing import List, Union
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 from cities.utils.data_grabber import DataGrabber
-
-def find_repo_root() -> Path:
-    return Path(__file__).parent.parent.parent
 
 
 def sigmoid(x, scale=1 / 3):
@@ -85,9 +81,3 @@ def revert_prediction_df(df: pd.DataFrame, variable_name: str) -> pd.DataFrame:
         )
 
     return df_copy
-
-
-def check_if_tensed(df):
-    years_to_check = ["2015", "2018", "2019", "2020"]
-    check = df.columns[2:].isin(years_to_check).any().any()
-    return check
