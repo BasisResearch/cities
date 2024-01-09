@@ -8,7 +8,7 @@ import pandas as pd
 
 
 def find_repo_root() -> Path:
-    return Path(__file__).parent.parent.parent
+    return Path("/app")
 
 
 def check_if_tensed(df):
