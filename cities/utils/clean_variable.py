@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.clean_gdp import clean_gdp
-from cities.utils.cleaning_utils import find_repo_root, standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.cleaning_utils import standardize_and_scale
+from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 
 class VariableCleaner:
