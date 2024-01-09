@@ -10,13 +10,13 @@ import torch
 from sklearn.preprocessing import StandardScaler
 
 from cities.modeling.model_interactions import model_cities_interaction
-from cities.modeling.modeling_utils import (
-    prep_wide_data_for_inference,
+from cities.modeling.modeling_utils import prep_wide_data_for_inference
+from cities.utils.cleaning_utils import (
     revert_prediction_df,
     revert_standardize_and_scale_scaler,
+    sigmoid,
 )
-from cities.utils.cleaning_utils import find_repo_root, sigmoid
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber, find_repo_root
 from cities.utils.percentiles import transformed_intervention_from_percentile
 
 
@@ -35,8 +35,6 @@ class CausalInsight:
         self.num_samples = num_samples
         self.data = None
         self.smoke_test = smoke_test
-
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # if sites is None:
         #     self.sites = ["weight_TY"]
