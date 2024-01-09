@@ -15,8 +15,8 @@ from chirho.interventional.handlers import do
 from chirho.observational.handlers import condition
 
 
-from cities.utils.data_grabber import (DataGrabber, list_available_features, list_tensed_features)
-from cities.utils.cleaning_utils import check_if_tensed 
+from cities.utils.data_grabber import (DataGrabber, list_available_features, list_tensed_features, check_if_tensed )
+
 
 from pyro.infer import Predictive
 

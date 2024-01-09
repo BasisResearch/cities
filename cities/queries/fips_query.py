@@ -2,11 +2,11 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
-from cities.utils.cleaning_utils import check_if_tensed
 from cities.utils.data_grabber import (
     DataGrabber,
     MSADataGrabber,
     list_available_features,
+    check_if_tensed, 
 )
 from cities.utils.similarity_utils import (
     compute_weight_array,
