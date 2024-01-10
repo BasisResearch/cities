@@ -1,16 +1,11 @@
 import os
 
 import dill
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
-import pyro
-import torch
 from sklearn.preprocessing import StandardScaler
 
-from cities.modeling.model_interactions import model_cities_interaction
-from cities.modeling.modeling_utils import prep_wide_data_for_inference
 from cities.utils.cleaning_utils import (
     revert_prediction_df,
     revert_standardize_and_scale_scaler,
@@ -20,7 +15,7 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 from cities.utils.percentiles import transformed_intervention_from_percentile
 
 
-class CausalInsight:
+class CausalInsightSlim:
     def __init__(
         self,
         outcome_dataset,
@@ -33,13 +28,8 @@ class CausalInsight:
         self.intervention_dataset = intervention_dataset
         self.root = find_repo_root()
         self.num_samples = num_samples
-        self.data = None
         self.smoke_test = smoke_test
-
-        # if sites is None:
-        #     self.sites = ["weight_TY"]
-        # else:
-        #    self.sites = sites
+        self.data = None
 
         self.tau_samples_path = os.path.join(
             self.root,
@@ -47,87 +37,12 @@ class CausalInsight:
             f"{self.intervention_dataset}_{self.outcome_dataset}_{self.num_samples}_tau.pkl",
         )
 
-    def load_guide(self, forward_shift):
-        pyro.clear_param_store()
-        guide_name = (
-            f"{self.intervention_dataset}_{self.outcome_dataset}_{forward_shift}"
-        )
-        guide_path = os.path.join(
-            self.root, "data/model_guides", f"{guide_name}_guide.pkl"
-        )
-
-        with open(guide_path, "rb") as file:
-            self.guide = dill.load(file)
-        param_path = os.path.join(
-            self.root, "data/model_guides", f"{guide_name}_params.pth"
-        )
-
-        pyro.get_param_store().load(param_path)
-
-        self.forward_shift = forward_shift
-
-    def generate_samples(self):
-        self.data = prep_wide_data_for_inference(
-            outcome_dataset=self.outcome_dataset,
-            intervention_dataset=self.intervention_dataset,
-            forward_shift=self.forward_shift,
-        )
-        self.model = model_cities_interaction
-
-        self.model_args = self.data["model_args"]
-
-        self.predictive = pyro.infer.Predictive(
-            model=self.model,
-            guide=self.guide,
-            num_samples=self.num_samples,
-            parallel=True,
-            # return_sites=self.sites,
-        )
-        self.samples = self.predictive(*self.model_args)
-
-        # idexing and gathering with mwc in this context
-        # seems to fail, calculating the expected diff made by the intervention manually
-        # wrt to actual observed outcomes rather than predicting outcomes themselves
-        # effectively keeping the noise fixed and focusing on a counterfactual claim
-
-        # TODO possible delete in the current strategy deemed uncontroversial
-        # else:
-        #     if not isinstance(intervened_value, torch.Tensor):
-        #         intervened_value = torch.tensor(intervened_value, device=self.device)
-        #     intervened_expanded = intervened_value.expand_as(self.data['t'])
-
-        #     with MultiWorldCounterfactual(first_available_dim=-6) as mwc:
-        #         with do(actions = dict(T = intervened_expanded)):
-        #                 self.predictive = pyro.infer.Predictive(model=self.model, guide=self.guide,
-        #                         num_samples=self.num_samples, parallel=True)
-        #                 self.samples = self.predictive(*self.model_args)
-        #     self.mwc = mwc
-
-    def generate_tensed_samples(self):
-        self.tensed_samples = {}
-        self.tensed_tau_samples = {}
-
-        for shift in [1, 2, 3]:
-            self.load_guide(shift)
-            self.generate_samples()
-            self.tensed_samples[shift] = self.samples
-            self.tensed_tau_samples[shift] = (
-                self.samples["weight_TY"].squeeze().detach().numpy()
-            )
-
-        if not self.smoke_test:
-            if not os.path.exists(self.tau_samples_path):
-                with open(self.tau_samples_path, "wb") as file:
-                    dill.dump(self.tensed_tau_samples, file)
-
     def get_tau_samples(self):
         if os.path.exists(self.tau_samples_path):
             with open(self.tau_samples_path, "rb") as file:
                 self.tensed_tau_samples = dill.load(file)
         else:
             raise ValueError("No tau samples found. Run generate_tensed_samples first.")
-
-    """Returns the intervened and observed value, in the original scale"""
 
     def slider_values_to_interventions(self, intervened_percent, year):
         try:
@@ -194,11 +109,13 @@ class CausalInsight:
         self.fips = fips
 
         if self.data is None:
-            self.data = prep_wide_data_for_inference(
-                outcome_dataset=self.outcome_dataset,
-                intervention_dataset=self.intervention_dataset,
-                forward_shift=3,  # shift doesn't matter here, as long as data exists
+            file_path = os.path.join(
+                self.root,
+                "data/years_available",
+                f"{self.intervention_dataset}_{self.outcome_dataset}.pkl",
             )
+            with open(file_path, "rb") as file:
+                self.data = dill.load(file)
 
         # start with the latest year possible by default
         if year is None:
@@ -231,16 +148,6 @@ class CausalInsight:
         self.intervened_value_original = revert_standardize_and_scale_scaler(
             self.intervened_value, self.year, self.intervention_dataset
         )
-
-        # interventions_this_year = dg.std_wide[self.intervention_dataset][str(year)]
-
-        # nearest_intervention_index = min(
-        #     range(len(interventions_this_year)),
-        #     key=lambda i: abs(interventions_this_year[i] - self.intervened_value),
-        # )
-        # self.intervened_value_original = interventions_this_year_original[
-        #     nearest_intervention_index
-        # ]
 
         self.intervened_value_percentile = round(
             (
@@ -328,22 +235,6 @@ class CausalInsight:
         self.predictions_original = revert_prediction_df(
             self.predictions, self.outcome_dataset
         )
-
-        # TODO for some reason indexing using gather doesn't pick the right indices
-        # look into this some time, do this by hand for now
-        # with self.mwc:
-        #     self.tau_samples = self.samples['weight_TY'].squeeze().detach().numpy()
-        #     self.tensed_observed_samples[shift] = self.tensed_intervened_samples[shift] = gather(
-        #     self.samples['Y'], IndexSet(**{"T": {0}}),
-        #     event_dim=0,).squeeze()
-        #     self.tensed_intervened_samples[shift] = gather(
-        #     self.samples['Y'], IndexSet(**{"T": {1}}),
-        #     event_dim=0,).squeeze()#[:,self.fips_id]
-
-        #     self.tensed_outcome_difference[shift] = (
-        #     self.tensed_intervened_samples[shift] - self.tensed_observed_samples[shift]
-        #     )
-        return
 
     def plot_predictions(
         self, range_multiplier=1.5, show_figure=True, scaling="transformed"
@@ -501,54 +392,3 @@ class CausalInsight:
             fig.show()
         else:
             return fig
-
-    def plot_residuals(self):
-        predictions = self.samples["Y"].squeeze()
-        self.average_predictions = torch.mean(predictions, dim=0)
-        plt.hist(self.average_predictions - self.data["y"].squeeze(), bins=70)
-        plt.xlabel("residuals")
-        plt.ylabel("counts")
-        plt.text(
-            0.7,
-            -0.1,
-            "(colored by year)",
-            ha="left",
-            va="bottom",
-            transform=plt.gca().transAxes,
-        )
-        plt.show()
-
-    def predictive_check(self):
-        y_flat = self.data["y"].view(-1)
-        observed_mean = torch.mean(y_flat)
-        tss = torch.sum((y_flat - observed_mean) ** 2)
-        average_predictions_flat = self.average_predictions.view(-1)
-        rss = torch.sum((y_flat - average_predictions_flat) ** 2)
-        r_squared = 1 - (rss / tss)
-        rounded_r_squared = np.round(r_squared.item(), 2)
-        plt.scatter(y=average_predictions_flat, x=y_flat)
-        plt.title(
-            f"{self.intervention_dataset}, {self.outcome_dataset}, "
-            f"R2={rounded_r_squared}"
-        )
-        plt.ylabel("average prediction")
-        plt.xlabel("observed outcome")
-        plt.show
-
-    def estimate_ATE(self):
-        tau_samples = self.samples["weight_TY"].squeeze().detach().numpy()
-        plt.hist(tau_samples, bins=70)
-        plt.axvline(
-            x=tau_samples.mean(),
-            color="red",
-            linestyle="dashed",
-            linewidth=2,
-            label=f"mean = {tau_samples.mean():.3f}",
-        )
-        plt.title(
-            f"ATE for {self.intervention_dataset}  and  {self.outcome_dataset} with forward shift = {self.forward_shift}"
-        )
-        plt.ylabel("counts")
-        plt.xlabel("ATE")
-        plt.legend()
-        plt.show()
