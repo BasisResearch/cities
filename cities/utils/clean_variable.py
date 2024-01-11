@@ -162,9 +162,8 @@ class VariableCleanerMSA(
             == self.variable_df["GeoName"].nunique()
         )
         self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)
-        
-        
-        
+
+
 def weighted_mean(group, column):
     values = group[column]
     weights = group["Total population"]

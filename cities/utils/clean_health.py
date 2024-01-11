@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from cities.utils.clean_variable import clean_variable, communities_tracts_to_counties
+from cities.utils.clean_variable import VariableCleaner, communities_tracts_to_counties
 from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
@@ -66,7 +66,9 @@ def clean_health_first():
 def clean_health():
     clean_health_first()
 
-    variable_name = "health"
-    path_to_raw_csv = f"{root}/data/raw/health_raw.csv"
-
-    clean_variable(variable_name, path_to_raw_csv)
+    cleaner = VariableCleaner(
+        variable_name="health",
+        path_to_raw_csv=f"{root}/data/raw/health_raw.csv",
+        year_or_category="Category",
+    )
+    cleaner.clean_variable()

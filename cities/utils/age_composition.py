@@ -1,6 +1,6 @@
 import pandas as pd
 
-from cities.utils.clean_variable import clean_variable
+from cities.utils.clean_variable import VariableCleaner
 from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
@@ -22,7 +22,9 @@ def clean_age_first():
 def clean_age_composition():
     clean_age_first()
 
-    variable_name = "age_composition"
-    path_to_raw_csv = f"{root}/data/raw/age_percentages.csv"
-
-    clean_variable(variable_name, path_to_raw_csv)
+    cleaner = VariableCleaner(
+        variable_name="age_composition",
+        path_to_raw_csv=f"{root}/data/raw/age_percentages.csv",
+        year_or_category="Category",
+    )
+    cleaner.clean_variable()
