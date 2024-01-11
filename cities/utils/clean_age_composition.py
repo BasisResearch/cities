@@ -11,7 +11,7 @@ gdp = data.wide["gdp"]
 
 
 def clean_age_first():
-    age = pd.read_csv(f"{root}/data/raw/age_composition.csv")
+    age = pd.read_csv(f"{root}/data/raw/age.csv")
 
     age.iloc[:, 2:] = age.iloc[:, 2:].div(age["total_pop"], axis=0) * 100
     age.drop("total_pop", axis=1, inplace=True)

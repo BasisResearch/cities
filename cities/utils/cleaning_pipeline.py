@@ -9,28 +9,38 @@ from cities.utils.clean_transport import clean_transport
 from cities.utils.clean_unemployment import clean_unemployment
 from cities.utils.clean_urbanicity_ma import clean_urbanicity_ma
 from cities.utils.cleaning_poverty import clean_poverty
+from cities.utils.clean_age_composition import clean_age_composition
+from cities.utils.clean_burdens import clean_burdens
+from cities.utils.clean_hazard import clean_hazard
 
-clean_gdp_ma()
 
-clean_industry_ma()
+clean_hazard()
 
-clean_urbanicity_ma()
+# clean_burdens()
 
-clean_ethnic_composition_ma()
+# clean_age_composition()
 
-clean_population_ma()
+# clean_gdp_ma()
 
-clean_poverty()
+# clean_industry_ma()
 
-clean_unemployment()
+# clean_urbanicity_ma()
 
-clean_gdp()
+# clean_ethnic_composition_ma()
 
-clean_population()
+# clean_population_ma()
 
-clean_transport()
+# clean_poverty()
 
-clean_spending_transportation()
+# clean_unemployment()
+
+# clean_gdp()
+
+# clean_population()
+
+# clean_transport()
+
+# clean_spending_transportation()
 
 # clean_spending_commerce()
 

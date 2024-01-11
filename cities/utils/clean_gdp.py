@@ -42,7 +42,7 @@ def clean_gdp():
 
     # subsetting GeoFIPS to values in exclusions.csv
 
-    exclusions_df = pd.read_csv("../data/raw/exclusions.csv")
+    exclusions_df = pd.read_csv(f"{root}/data/raw/exclusions.csv")
     gdp = gdp[~gdp["GeoFIPS"].isin(exclusions_df["exclusions"])]
 
     assert len(gdp) == len(gdp["GeoFIPS"].unique())
@@ -74,7 +74,7 @@ def clean_gdp():
         value_name="Value",
     )
 
-    gdp_wide.to_csv("../data/processed/gdp_wide.csv", index=False)
-    gdp_long.to_csv("../data/processed/gdp_long.csv", index=False)
-    gdp_std_wide.to_csv("../data/processed/gdp_std_wide.csv", index=False)
-    gdp_std_long.to_csv("../data/processed/gdp_std_long.csv", index=False)
+    gdp_wide.to_csv(f"{root}/data/processed/gdp_wide.csv", index=False)
+    gdp_long.to_csv(f"{root}/data/processed/gdp_long.csv", index=False)
+    gdp_std_wide.to_csv(f"{root}/data/processed/gdp_std_wide.csv", index=False)
+    gdp_std_long.to_csv(f"{root}/data/processed/gdp_std_long.csv", index=False)
