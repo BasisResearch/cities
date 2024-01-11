@@ -2,8 +2,9 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber, find_repo_root
 
+root = find_repo_root()
 
 def clean_spending_commerce():
     data = DataGrabber()
@@ -11,7 +12,7 @@ def clean_spending_commerce():
     gdp = data.wide
     gdp = gdp.get("gdp")
 
-    spending_commerce = pd.read_csv("../data/raw/spending_commerce.csv")
+    spending_commerce = pd.read_csv(f"{root}/data/raw/spending_commerce.csv")
 
     transportUnwanted = spending_commerce[
         (
@@ -30,7 +31,7 @@ def clean_spending_commerce():
 
     # loading names and repearing fips of value 3 and shorter
 
-    names_commerce = pd.read_csv("../data/raw/spending_commerce_names.csv")
+    names_commerce = pd.read_csv(f"{root}/data/raw/spending_commerce_names.csv")
 
     spending_only_fips = np.setdiff1d(spending_commerce["GeoFIPS"], gdp["GeoFIPS"])
 
@@ -132,14 +133,14 @@ def clean_spending_commerce():
     spending_commerce_std_wide = standardize_and_scale(spending_commerce_wide)
 
     spending_commerce_wide.to_csv(
-        "../data/processed/spending_commerce_wide.csv", index=False
+        f"{root}/data/processed/spending_commerce_wide.csv", index=False
     )
     spending_commerce_long.to_csv(
-        "../data/processed/spending_commerce_long.csv", index=False
+        f"{root}/data/processed/spending_commerce_long.csv", index=False
     )
     spending_commerce_std_wide.to_csv(
-        "../data/processed/spending_commerce_std_wide.csv", index=False
+        f"{root}/data/processed/spending_commerce_std_wide.csv", index=False
     )
     spending_commerce_std_long.to_csv(
-        "../data/processed/spending_commerce_std_long.csv", index=False
+        f"{root}/data/processed/spending_commerce_std_long.csv", index=False
     )

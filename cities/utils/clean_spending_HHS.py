@@ -2,8 +2,9 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber, find_repo_root
 
+root = find_repo_root()
 
 def clean_spending_HHS():
     data = DataGrabber()
@@ -11,7 +12,7 @@ def clean_spending_HHS():
     gdp = data.wide
     gdp = gdp.get("gdp")
 
-    spending_HHS = pd.read_csv("../data/raw/spending_HHS.csv")
+    spending_HHS = pd.read_csv(f"{root}/data/raw/spending_HHS.csv")
 
     transportUnwanted = spending_HHS[
         (
@@ -30,7 +31,7 @@ def clean_spending_HHS():
 
     # loading names and repearing fips of value 3 and shorter
 
-    names_HHS = pd.read_csv("../data/raw/spending_HHS_names.csv")
+    names_HHS = pd.read_csv(f"{root}/data/raw/spending_HHS_names.csv")
 
     spending_only_fips = np.setdiff1d(spending_HHS["GeoFIPS"], gdp["GeoFIPS"])
 
@@ -126,11 +127,11 @@ def clean_spending_HHS():
     spending_HHS_std_long = standardize_and_scale(spending_HHS)
     spending_HHS_std_wide = standardize_and_scale(spending_HHS_wide)
 
-    spending_HHS_wide.to_csv("../data/processed/spending_HHS_wide.csv", index=False)
-    spending_HHS_long.to_csv("../data/processed/spending_HHS_long.csv", index=False)
+    spending_HHS_wide.to_csv(f"{root}/data/processed/spending_HHS_wide.csv", index=False)
+    spending_HHS_long.to_csv(f"{root}/data/processed/spending_HHS_long.csv", index=False)
     spending_HHS_std_wide.to_csv(
-        "../data/processed/spending_HHS_std_wide.csv", index=False
+        f"{root}/data/processed/spending_HHS_std_wide.csv", index=False
     )
     spending_HHS_std_long.to_csv(
-        "../data/processed/spending_HHS_std_long.csv", index=False
+        f"{root}/data/processed/spending_HHS_std_long.csv", index=False
     )

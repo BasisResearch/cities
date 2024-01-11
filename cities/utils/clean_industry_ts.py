@@ -2,15 +2,16 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber, find_repo_root
 
+root = find_repo_root()
 
 def clean_industry_ts():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
     gdp = data.wide["gdp"]
 
-    industry_ts = pd.read_csv("../data/raw/industry_time_series_people.csv")
+    industry_ts = pd.read_csv(f"{root}/data/raw/industry_time_series_people.csv")
 
     industry_ts["GEO_ID"] = industry_ts["GEO_ID"].str.split("US").str[1]
     industry_ts["GEO_ID"] = industry_ts["GEO_ID"].astype("int64")
@@ -89,14 +90,14 @@ def clean_industry_ts():
 
         file_name_long = f"industry_{column}_long.csv"
         subsetindustry_ts_long.to_csv(
-            f"../data/processed/{file_name_long}", index=False
+            f"{root}/data/processed/{file_name_long}", index=False
         )
 
         subsetindustry_ts_std_long = standardize_and_scale(subsetindustry_ts)
 
         file_name_std = f"industry_{column}_std_long.csv"
         subsetindustry_ts_std_long.to_csv(
-            f"../data/processed/{file_name_std}", index=False
+            f"{root}/data/processed/{file_name_std}", index=False
         )
 
         subsetindustry_ts_wide = subsetindustry_ts.pivot_table(
@@ -107,7 +108,7 @@ def clean_industry_ts():
 
         file_name_wide = f"industry_{column}_wide.csv"
         subsetindustry_ts_wide.to_csv(
-            f"../data/processed/{file_name_wide}", index=False
+            f"{root}/data/processed/{file_name_wide}", index=False
         )
 
         subsetindustry_ts_std_wide = subsetindustry_ts_std_long.pivot_table(
@@ -118,5 +119,5 @@ def clean_industry_ts():
 
         file_name_std_wide = f"industry_{column}_std_wide.csv"
         subsetindustry_ts_std_wide.to_csv(
-            f"../data/processed/{file_name_std_wide}", index=False
+            f"{root}/data/processed/{file_name_std_wide}", index=False
         )

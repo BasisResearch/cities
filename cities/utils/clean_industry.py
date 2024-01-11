@@ -17,7 +17,7 @@ def clean_industry_step_one():
     data.get_features_wide(["gdp"])
     gdp = data.wide["gdp"]
 
-    industry = pd.read_csv("../data/raw/ACSDP5Y2021_DP03_industry.csv")
+    industry = pd.read_csv(f"{root}/data/raw/ACSDP5Y2021_DP03_industry.csv")
 
     industry["GEO_ID"] = industry["GEO_ID"].str.split("US").str[1]
     industry["GEO_ID"] = industry["GEO_ID"].astype("int64")
@@ -71,14 +71,14 @@ def clean_industry_step_one():
 
     industry = industry.sort_values(by=["GeoFIPS", "GeoName"])
 
-    industry.to_csv("../data/raw/industry_absolute.csv", index=False)
+    industry.to_csv(f"{root}/data/raw/industry_absolute.csv", index=False)
 
     row_sums = industry.iloc[:, 3:].sum(axis=1)
 
     industry.iloc[:, 3:] = industry.iloc[:, 3:].div(row_sums, axis=0)
     industry = industry.drop(["employed_sum"], axis=1)
 
-    industry.to_csv("../data/raw/industry_percent.csv", index=False)
+    industry.to_csv(f"{root}/data/raw/industry_percent.csv", index=False)
 
     industry_wide = industry.copy()
 
@@ -98,10 +98,10 @@ def clean_industry_step_one():
         value_name="Value",
     )
 
-    industry_wide.to_csv("../data/processed/industry_wide.csv", index=False)
-    industry_long.to_csv("../data/processed/industry_long.csv", index=False)
-    industry_std_wide.to_csv("../data/processed/industry_std_wide.csv", index=False)
-    industry_std_long.to_csv("../data/processed/industry_std_long.csv", index=False)
+    industry_wide.to_csv(f"{root}/data/processed/industry_wide.csv", index=False)
+    industry_long.to_csv(f"{root}/data/processed/industry_long.csv", index=False)
+    industry_std_wide.to_csv(f"{root}/data/processed/industry_std_wide.csv", index=False)
+    industry_std_long.to_csv(f"{root}/data/processed/industry_std_long.csv", index=False)
 
 
 def clean_industry():
