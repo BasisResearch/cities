@@ -113,6 +113,6 @@ def clean_urbanicity_ma():
     cleaner = VariableCleanerMSA(
         variable_name="urbanicity_ma",
         path_to_raw_csv=f"{root}/data/raw/urbanicity_ma.csv",
-        year_or_category="Category"
+        year_or_category="Category",
     )
     cleaner.clean_variable()
