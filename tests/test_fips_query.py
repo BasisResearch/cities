@@ -81,3 +81,46 @@ def test_fips_query_MSA_init():
 
     assert f1007.data.std_wide["gdp_ma"].shape[0] > 100
     assert f1007.data.std_wide["population_ma"].shape[0] > 100
+
+
+queries_msa = [
+    MSAFipsQuery(10180, "gdp_ma", lag=0, top=5, time_decay=1.06),
+    MSAFipsQuery(
+        16580,
+        outcome_var="gdp_ma",
+        feature_groups_with_weights={"gdp_ma": 4, "population_ma": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+    ),
+    MSAFipsQuery(
+        11020,
+        feature_groups_with_weights={"gdp_ma": 4, "population_ma": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+    ),
+    MSAFipsQuery(
+        25220,
+        outcome_var="gdp_ma",
+        feature_groups_with_weights={"gdp_ma": 0, "population_ma": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+    ),
+    MSAFipsQuery(39100, "gdp_ma", lag=2, top=5, time_decay=1.06),
+    MSAFipsQuery(
+        10580,
+        outcome_var="gdp_ma",
+        feature_groups_with_weights={"gdp_ma": 4, "population_ma": 4},
+        lag=2,
+        top=5,
+        time_decay=1.03,
+    ),
+]
+
+
+@pytest.mark.parametrize("query", queries_msa)
+def test_euclidean_kins_dont_die_msa(query):
+    f = query
+    f.find_euclidean_kins()
