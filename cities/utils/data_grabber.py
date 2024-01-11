@@ -1,11 +1,20 @@
 import os
 import re
 import sys
+from pathlib import Path
 from typing import List
 
 import pandas as pd
 
-from cities.utils.cleaning_utils import check_if_tensed, find_repo_root
+
+def find_repo_root() -> Path:
+    return Path(__file__).parent.parent.parent
+
+
+def check_if_tensed(df):
+    years_to_check = ["2015", "2018", "2019", "2020"]
+    check = df.columns[2:].isin(years_to_check).any().any()
+    return check
 
 
 class DataGrabber:
