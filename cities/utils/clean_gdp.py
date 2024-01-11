@@ -6,6 +6,7 @@ from cities.utils.data_grabber import find_repo_root
 
 root = find_repo_root()
 
+
 def clean_gdp():
     gdp = pd.read_csv(f"{root}/data/raw/CAGDP1_2001_2021.csv", encoding="ISO-8859-1")
 

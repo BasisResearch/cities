@@ -119,11 +119,10 @@ def clean_variable(variable_name, path_to_raw_csv, YearOrCategory="Year"):
     )
 
 
-
 def weighted_mean(group, column):
     values = group[column]
-    weights = group['Total population']
-    
+    weights = group["Total population"]
+
     not_nan_indices = ~np.isnan(values)
 
     if np.any(not_nan_indices) and np.sum(weights[not_nan_indices]) != 0:
@@ -131,28 +130,34 @@ def weighted_mean(group, column):
         return np.sum(weighted_values) / np.sum(weights[not_nan_indices])
     else:
         return np.nan
-    
-    
-    
-def communities_tracts_to_counties(data, list_variables)-> pd.DataFrame:  # using the weighted mean function for total population
-    
+
+
+def communities_tracts_to_counties(
+    data, list_variables
+) -> pd.DataFrame:  # using the weighted mean function for total population
     all_results = pd.DataFrame()
 
     for variable in list_variables:
-        weighted_avg = data.groupby('GeoFIPS').apply(weighted_mean, column=variable).reset_index()
-        weighted_avg.columns = ['GeoFIPS', variable]
+        weighted_avg = (
+            data.groupby("GeoFIPS").apply(weighted_mean, column=variable).reset_index()
+        )
+        weighted_avg.columns = ["GeoFIPS", variable]
 
-        nan_counties = data.groupby('GeoFIPS').apply(lambda x: all(np.isnan(x[variable]))).reset_index()
-        nan_counties.columns = ['GeoFIPS', 'all_nan']
+        nan_counties = (
+            data.groupby("GeoFIPS")
+            .apply(lambda x: all(np.isnan(x[variable])))
+            .reset_index()
+        )
+        nan_counties.columns = ["GeoFIPS", "all_nan"]
 
-        result_df = pd.merge(weighted_avg, nan_counties, on='GeoFIPS')
-        result_df.loc[result_df['all_nan'], variable] = np.nan
+        result_df = pd.merge(weighted_avg, nan_counties, on="GeoFIPS")
+        result_df.loc[result_df["all_nan"], variable] = np.nan
 
-        result_df = result_df.drop(columns=['all_nan'])
+        result_df = result_df.drop(columns=["all_nan"])
 
-        if 'GeoFIPS' not in all_results.columns:
+        if "GeoFIPS" not in all_results.columns:
             all_results = result_df.copy()
         else:
-            all_results = pd.merge(all_results, result_df, on='GeoFIPS', how='left')
+            all_results = pd.merge(all_results, result_df, on="GeoFIPS", how="left")
 
     return all_results
