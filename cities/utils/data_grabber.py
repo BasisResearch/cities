@@ -20,7 +20,7 @@ def check_if_tensed(df):
 class DataGrabber:
     def __init__(self):
         self.repo_root = find_repo_root()
-        sys.path.insert(0, self.repo_root)  # possibly redundant, test later
+        self.data_path = os.path.join(self.repo_root, "data/processed")
         self.wide = {}
         self.std_wide = {}
         self.long = {}
@@ -28,36 +28,43 @@ class DataGrabber:
 
     def get_features_wide(self, features: List[str]) -> None:
         for feature in features:
-            file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_wide.csv"
-            )
+            file_path = os.path.join(self.data_path, f"{feature}_wide.csv")
             self.wide[feature] = pd.read_csv(file_path)
 
     def get_features_std_wide(self, features: List[str]) -> None:
         for feature in features:
-            file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_std_wide.csv"
-            )
+            file_path = os.path.join(self.data_path, f"{feature}_std_wide.csv")
             self.std_wide[feature] = pd.read_csv(file_path)
 
     def get_features_long(self, features: List[str]) -> None:
         for feature in features:
-            file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_long.csv"
-            )
+            file_path = os.path.join(self.data_path, f"{feature}_long.csv")
             self.long[feature] = pd.read_csv(file_path)
 
     def get_features_std_long(self, features: List[str]) -> None:
         for feature in features:
-            file_path = os.path.join(
-                self.repo_root, f"data/processed/{feature}_std_long.csv"
-            )
+            file_path = os.path.join(self.data_path, f"{feature}_std_long.csv")
             self.std_long[feature] = pd.read_csv(file_path)
 
 
-def list_available_features():
+class MSADataGrabber(DataGrabber):
+    def __init__(self):
+        super().__init__()
+        self.repo_root = find_repo_root()
+        self.data_path = os.path.join(self.repo_root, "data/MSA_level")
+        sys.path.insert(0, self.data_path)
+
+
+def list_available_features(level="county"):
     root = find_repo_root()
-    folder_path = f"{root}/data/processed"
+
+    if level == "county":
+        folder_path = f"{root}/data/processed"
+    elif level == "msa":
+        folder_path = f"{root}/data/MSA_level"
+    else:
+        raise ValueError("Invalid level. Please choose 'county' or 'msa'.")
+
     file_names = [f for f in os.listdir(folder_path) if f != ".gitkeep"]
     processed_file_names = []
 
@@ -72,9 +79,18 @@ def list_available_features():
     return sorted(feature_names)
 
 
-def list_tensed_features():
-    data = DataGrabber()
-    all_features = list_available_features()
+def list_tensed_features(level="county"):
+    if level == "county":
+        data = DataGrabber()
+        all_features = list_available_features(level="county")
+
+    elif level == "msa":
+        data = MSADataGrabber()
+        all_features = list_available_features(level="msa")
+
+    else:
+        raise ValueError("Invalid level. Please choose 'county' or 'msa'.")
+
     data.get_features_wide(all_features)
 
     tensed_features = []

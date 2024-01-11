@@ -38,7 +38,7 @@ outcomes = [random.choice(outcomes)]
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
-def test_InteractionsModel(intervention, outcome, shift):
+def test_smoke_InteractionsModel(intervention, outcome, shift):
     model = InteractionsModel(
         outcome_dataset="unemployment_rate",
         intervention_dataset="spending_commerce",
@@ -62,7 +62,7 @@ def test_InteractionsModel(intervention, outcome, shift):
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
-def test_training_pipeline(intervention, outcome, shift):
+def test_smoke_training_pipeline(intervention, outcome, shift):
     # guide_name = f"{intervention}_{outcome}_{shift}"
     # file_path = os.path.join(root, "data/model_guides", f"{guide_name}_guide.pkl")
 
@@ -79,7 +79,7 @@ def test_training_pipeline(intervention, outcome, shift):
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
-def test_guide_presence(intervention, outcome, shift):
+def test_smoke_guide_presence(intervention, outcome, shift):
     interventions = list_interventions()
     outcomes = list_outcomes()
     shifts = [1, 2, 3]
@@ -100,7 +100,7 @@ def test_guide_presence(intervention, outcome, shift):
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
-def test_CausalInsigth(intervention, outcome, shift):
+def test_smoke_CausalInsigth(intervention, outcome, shift):
     ci = CausalInsight(
         outcome_dataset=outcome,
         intervention_dataset=intervention,
