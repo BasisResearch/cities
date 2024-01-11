@@ -7,6 +7,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import pyro
 import torch
+from sklearn.preprocessing import StandardScaler
 
 from cities.modeling.model_interactions import model_cities_interaction
 from cities.modeling.modeling_utils import (
@@ -14,7 +15,7 @@ from cities.modeling.modeling_utils import (
     revert_prediction_df,
     revert_standardize_and_scale_scaler,
 )
-from cities.utils.cleaning_utils import find_repo_root
+from cities.utils.cleaning_utils import find_repo_root, sigmoid
 from cities.utils.data_grabber import DataGrabber
 from cities.utils.percentiles import transformed_intervention_from_percentile
 
@@ -166,6 +167,40 @@ class CausalInsight:
             raise ValueError("No tau samples found. Run generate_tensed_samples first.")
 
     """Returns the intervened and observed value, in the original scale"""
+
+    def slider_values_to_interventions(self, intervened_percent, year):
+        try:
+            original_column = dg.wide[self.intervention_dataset][
+                str(year)
+            ].values.reshape(-1, 1)
+        except NameError:
+            dg = DataGrabber()
+            dg.get_features_wide([self.intervention_dataset])
+            original_column = dg.wide[self.intervention_dataset][
+                str(year)
+            ].values.reshape(-1, 1)
+
+        max = original_column.max()
+
+        intervened_original = intervened_percent * max / 100
+
+        scaler = StandardScaler()
+        scaler.fit(original_column)
+
+        intervened_scaled = scaler.transform(intervened_original.reshape(-1, 1))
+        intervened_transformed = sigmoid(intervened_scaled, scale=1 / 3)
+
+        # TODO this output is a bit verbose
+        # consider deleting what ends up not needed in the frontend
+        percent_calcs = {
+            "max": max,
+            "intervened_percent": intervened_percent,
+            "intervened_original": intervened_original,
+            "intervened_scaled": intervened_scaled[0, 0],
+            "intervened_transformed": intervened_transformed[0, 0],
+        }
+
+        return percent_calcs
 
     def get_intervened_and_observed_values_original_scale(
         self, fips, intervened_value, year

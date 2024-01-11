@@ -9,16 +9,17 @@ def find_repo_root() -> Path:
     return Path(__file__).parent.parent.parent
 
 
+def sigmoid(x, scale=1 / 3):
+    range_0_1 = 1 / (1 + np.exp(-x * scale))
+    range_minus1_1 = 2 * range_0_1 - 1
+    return range_minus1_1
+
+
 def standardize_and_scale(data: pd.DataFrame) -> pd.DataFrame:
     """
     Standardizes and scales float columns in a DataFrame to [-1,1], copying other columns. Returns a new DataFrame.
     """
     standard_scaler = StandardScaler()  # Standardize to mean 0, std 1
-
-    def sigmoid(x, scale=1 / 3):
-        range_0_1 = 1 / (1 + np.exp(-x * scale))
-        range_minus1_1 = 2 * range_0_1 - 1
-        return range_minus1_1
 
     # Copy all columns first
     new_data = data.copy()
