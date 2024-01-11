@@ -6,12 +6,15 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
 
+
 def clean_population():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
     gdp = data.wide["gdp"]
 
-    cainc30 = pd.read_csv(f"{root}/data/raw/CAINC30_1969_2021.csv", encoding="ISO-8859-1")
+    cainc30 = pd.read_csv(
+        f"{root}/data/raw/CAINC30_1969_2021.csv", encoding="ISO-8859-1"
+    )
 
     population = cainc30[cainc30["Description"] == " Population (persons) 3/"].copy()
 
@@ -73,5 +76,9 @@ def clean_population():
 
     population.to_csv(f"{root}/data/processed/population_wide.csv", index=False)
     population_long.to_csv(f"{root}/data/processed/population_long.csv", index=False)
-    population_std_wide.to_csv(f"{root}/data/processed/population_std_wide.csv", index=False)
-    population_std_long.to_csv(f"{root}/data/processed/population_std_long.csv", index=False)
+    population_std_wide.to_csv(
+        f"{root}/data/processed/population_std_wide.csv", index=False
+    )
+    population_std_long.to_csv(
+        f"{root}/data/processed/population_std_long.csv", index=False
+    )

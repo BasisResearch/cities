@@ -6,6 +6,7 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
 
+
 def clean_spending_HHS():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
@@ -127,8 +128,12 @@ def clean_spending_HHS():
     spending_HHS_std_long = standardize_and_scale(spending_HHS)
     spending_HHS_std_wide = standardize_and_scale(spending_HHS_wide)
 
-    spending_HHS_wide.to_csv(f"{root}/data/processed/spending_HHS_wide.csv", index=False)
-    spending_HHS_long.to_csv(f"{root}/data/processed/spending_HHS_long.csv", index=False)
+    spending_HHS_wide.to_csv(
+        f"{root}/data/processed/spending_HHS_wide.csv", index=False
+    )
+    spending_HHS_long.to_csv(
+        f"{root}/data/processed/spending_HHS_long.csv", index=False
+    )
     spending_HHS_std_wide.to_csv(
         f"{root}/data/processed/spending_HHS_std_wide.csv", index=False
     )

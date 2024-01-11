@@ -6,6 +6,7 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
 
+
 def clean_ethnic_composition():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
@@ -94,7 +95,9 @@ def clean_ethnic_composition():
     ethnic_composition = ethnic_composition.drop("totalALT", axis=1)
 
     # copy with nominal values
-    ethnic_composition.to_csv(f"{root}/data/raw/ethnic_composition_nominal.csv", index=False)
+    ethnic_composition.to_csv(
+        f"{root}/data/raw/ethnic_composition_nominal.csv", index=False
+    )
 
     row_sums = ethnic_composition.iloc[:, 2:].sum(axis=1)
     ethnic_composition.iloc[:, 3:] = ethnic_composition.iloc[:, 3:].div(

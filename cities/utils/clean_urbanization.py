@@ -6,13 +6,16 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
 
+
 def clean_urbanization():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
     gdp = data.wide["gdp"]
 
     dtype_mapping = {"STATE": str, "COUNTY": str}
-    urbanization = pd.read_csv(f"{root}/data/raw/2020_UA_COUNTY.csv", dtype=dtype_mapping)
+    urbanization = pd.read_csv(
+        f"{root}/data/raw/2020_UA_COUNTY.csv", dtype=dtype_mapping
+    )
 
     urbanization["GeoFIPS"] = urbanization["STATE"].astype(str) + urbanization[
         "COUNTY"
@@ -61,8 +64,12 @@ def clean_urbanization():
         value_name="Value",
     )
 
-    urbanization_wide.to_csv(f"{root}/data/processed/urbanization_wide.csv", index=False)
-    urbanization_long.to_csv(f"{root}/data/processed/urbanization_long.csv", index=False)
+    urbanization_wide.to_csv(
+        f"{root}/data/processed/urbanization_wide.csv", index=False
+    )
+    urbanization_long.to_csv(
+        f"{root}/data/processed/urbanization_long.csv", index=False
+    )
     urbanization_std_wide.to_csv(
         f"{root}/data/processed/urbanization_std_wide.csv", index=False
     )

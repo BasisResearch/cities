@@ -6,13 +6,16 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
 
+
 def clean_spending_transportation():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
     gdp = data.wide
     gdp = gdp.get("gdp")
 
-    spending_transportation = pd.read_csv(f"{root}/data/raw/spending_transportation.csv")
+    spending_transportation = pd.read_csv(
+        f"{root}/data/raw/spending_transportation.csv"
+    )
 
     transportUnwanted = spending_transportation[
         (
@@ -33,7 +36,9 @@ def clean_spending_transportation():
 
     # loading names and repearing fips of value 3 and shorter
 
-    names_transportation = pd.read_csv(f"{root}/data/raw/spending_transportation_names.csv")
+    names_transportation = pd.read_csv(
+        f"{root}/data/raw/spending_transportation_names.csv"
+    )
 
     short_geofips = spending_transportation[
         spending_transportation["GeoFIPS"].astype(str).str.len().between(1, 3)

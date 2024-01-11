@@ -100,8 +100,12 @@ def clean_industry_step_one():
 
     industry_wide.to_csv(f"{root}/data/processed/industry_wide.csv", index=False)
     industry_long.to_csv(f"{root}/data/processed/industry_long.csv", index=False)
-    industry_std_wide.to_csv(f"{root}/data/processed/industry_std_wide.csv", index=False)
-    industry_std_long.to_csv(f"{root}/data/processed/industry_std_long.csv", index=False)
+    industry_std_wide.to_csv(
+        f"{root}/data/processed/industry_std_wide.csv", index=False
+    )
+    industry_std_long.to_csv(
+        f"{root}/data/processed/industry_std_long.csv", index=False
+    )
 
 
 def clean_industry():

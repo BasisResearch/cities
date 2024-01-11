@@ -6,6 +6,7 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
 
+
 def clean_transport():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
@@ -84,5 +85,9 @@ def clean_transport():
 
     transport_wide.to_csv(f"{root}/data/processed/transport_wide.csv", index=False)
     transport_long.to_csv(f"{root}/data/processed/transport_long.csv", index=False)
-    transport_std_wide.to_csv(f"{root}/data/processed/transport_std_wide.csv", index=False)
-    transport_std_long.to_csv(f"{root}/data/processed/transport_std_long.csv", index=False)
+    transport_std_wide.to_csv(
+        f"{root}/data/processed/transport_std_wide.csv", index=False
+    )
+    transport_std_long.to_csv(
+        f"{root}/data/processed/transport_std_long.csv", index=False
+    )

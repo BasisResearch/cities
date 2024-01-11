@@ -6,6 +6,7 @@ from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()
 
+
 def clean_spending_commerce():
     data = DataGrabber()
     data.get_features_wide(["gdp"])
