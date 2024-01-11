@@ -1,5 +1,5 @@
 from cities.utils.clean_variable import VariableCleaner
-from cities.utils.cleaning_utils import find_repo_root
+from cities.utils.data_grabber import find_repo_root
 
 root = find_repo_root()
 
