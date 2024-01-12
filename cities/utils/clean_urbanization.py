@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber, find_repo_root
+
+root = find_repo_root()
 
 
 def clean_urbanization():
@@ -11,7 +13,9 @@ def clean_urbanization():
     gdp = data.wide["gdp"]
 
     dtype_mapping = {"STATE": str, "COUNTY": str}
-    urbanization = pd.read_csv("../data/raw/2020_UA_COUNTY.csv", dtype=dtype_mapping)
+    urbanization = pd.read_csv(
+        f"{root}/data/raw/2020_UA_COUNTY.csv", dtype=dtype_mapping
+    )
 
     urbanization["GeoFIPS"] = urbanization["STATE"].astype(str) + urbanization[
         "COUNTY"
@@ -60,11 +64,15 @@ def clean_urbanization():
         value_name="Value",
     )
 
-    urbanization_wide.to_csv("../data/processed/urbanization_wide.csv", index=False)
-    urbanization_long.to_csv("../data/processed/urbanization_long.csv", index=False)
+    urbanization_wide.to_csv(
+        f"{root}/data/processed/urbanization_wide.csv", index=False
+    )
+    urbanization_long.to_csv(
+        f"{root}/data/processed/urbanization_long.csv", index=False
+    )
     urbanization_std_wide.to_csv(
-        "../data/processed/urbanization_std_wide.csv", index=False
+        f"{root}/data/processed/urbanization_std_wide.csv", index=False
     )
     urbanization_std_long.to_csv(
-        "../data/processed/urbanization_std_long.csv", index=False
+        f"{root}/data/processed/urbanization_std_long.csv", index=False
     )

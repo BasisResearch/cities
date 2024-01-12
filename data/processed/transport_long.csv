@@ -79,7 +79,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",roadDensity,0.1665058360548704
 2130,"Ketchikan Gateway Borough, AK*",roadDensity,0.0870229653047946
 2150,"Kodiak Island Borough, AK",roadDensity,0.0436269231917039
-2158,"Kusilvak Census Area, AK*",roadDensity,0.0299182741638252
 2164,"Lake and Peninsula Borough, AK",roadDensity,0.0174981596227632
 2170,"Matanuska-Susitna Borough, AK",roadDensity,0.1186657014595542
 2180,"Nome Census Area, AK",roadDensity,0.0371939809208151
@@ -299,14 +298,6 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",roadDensity,1.176450911796425
 8123,"Weld, CO*",roadDensity,2.124073594340115
 8125,"Yuma, CO",roadDensity,1.4548927309721922
-9001,"Fairfield, CT",roadDensity,8.495320789250078
-9003,"Hartford, CT",roadDensity,7.208995404136362
-9005,"Litchfield, CT",roadDensity,3.0981745806832928
-9007,"Middlesex, CT",roadDensity,4.607359351474979
-9009,"New Haven, CT",roadDensity,7.856483446692381
-9011,"New London, CT",roadDensity,4.084742302803303
-9013,"Tolland, CT",roadDensity,3.80766816457664
-9015,"Windham, CT",roadDensity,3.190265667364986
 10001,"Kent, DE",roadDensity,3.3154129877543066
 10003,"New Castle, DE",roadDensity,8.116737999731052
 10005,"Sussex, DE",roadDensity,3.933198943550196
@@ -1798,7 +1789,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",roadDensity,0.9562301842541384
 35035,"Otero, NM",roadDensity,0.7562905715207427
 35037,"Quay, NM",roadDensity,0.9317794193990322
-35039,"Rio Arriba, NM",roadDensity,1.6987903851849515
 35041,"Roosevelt, NM",roadDensity,1.0835519298928185
 35043,"Sandoval, NM",roadDensity,1.8388197508669548
 35045,"San Juan, NM",roadDensity,1.7691550303740626
@@ -2394,7 +2384,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",roadDensity,1.9520591139423815
 46099,"Minnehaha, SD",roadDensity,3.2404658249691005
 46101,"Moody, SD",roadDensity,2.085639635494423
-46102,"Oglala Lakota, SD*",roadDensity,0.8062493733860224
 46103,"Pennington, SD",roadDensity,1.246034351758879
 46105,"Perkins, SD",roadDensity,0.6463824215698313
 46107,"Potter, SD",roadDensity,1.3960533973600329
@@ -3153,7 +3142,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",WeightAvgNatWalkInd,5.879766403364274
 2130,"Ketchikan Gateway Borough, AK*",WeightAvgNatWalkInd,7.793091374108156
 2150,"Kodiak Island Borough, AK",WeightAvgNatWalkInd,6.683786357849219
-2158,"Kusilvak Census Area, AK*",WeightAvgNatWalkInd,5.430592827416443
 2164,"Lake and Peninsula Borough, AK",WeightAvgNatWalkInd,6.097212121406546
 2170,"Matanuska-Susitna Borough, AK",WeightAvgNatWalkInd,5.533805639248173
 2180,"Nome Census Area, AK",WeightAvgNatWalkInd,6.993366919269521
@@ -3373,14 +3361,6 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",WeightAvgNatWalkInd,5.690323691573761
 8123,"Weld, CO*",WeightAvgNatWalkInd,7.354840185304481
 8125,"Yuma, CO",WeightAvgNatWalkInd,6.020773330565697
-9001,"Fairfield, CT",WeightAvgNatWalkInd,10.259984313703171
-9003,"Hartford, CT",WeightAvgNatWalkInd,10.334377037409991
-9005,"Litchfield, CT",WeightAvgNatWalkInd,7.274339683971856
-9007,"Middlesex, CT",WeightAvgNatWalkInd,8.675915723973239
-9009,"New Haven, CT",WeightAvgNatWalkInd,10.72599831573445
-9011,"New London, CT",WeightAvgNatWalkInd,9.070090485936747
-9013,"Tolland, CT",WeightAvgNatWalkInd,7.127601601358955
-9015,"Windham, CT",WeightAvgNatWalkInd,6.726705738421545
 10001,"Kent, DE",WeightAvgNatWalkInd,8.545455758608968
 10003,"New Castle, DE",WeightAvgNatWalkInd,11.01374085154774
 10005,"Sussex, DE",WeightAvgNatWalkInd,7.374496674692798
@@ -4872,7 +4852,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",WeightAvgNatWalkInd,4.838921761838702
 35035,"Otero, NM",WeightAvgNatWalkInd,5.67559256728463
 35037,"Quay, NM",WeightAvgNatWalkInd,7.980453042657349
-35039,"Rio Arriba, NM",WeightAvgNatWalkInd,4.924262853962119
 35041,"Roosevelt, NM",WeightAvgNatWalkInd,6.701077574832244
 35043,"Sandoval, NM",WeightAvgNatWalkInd,8.076809051242723
 35045,"San Juan, NM",WeightAvgNatWalkInd,7.718909942020846
@@ -5468,7 +5447,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",WeightAvgNatWalkInd,5.826229998567519
 46099,"Minnehaha, SD",WeightAvgNatWalkInd,10.958965420682508
 46101,"Moody, SD",WeightAvgNatWalkInd,5.668844143458655
-46102,"Oglala Lakota, SD*",WeightAvgNatWalkInd,3.819474479658179
 46103,"Pennington, SD",WeightAvgNatWalkInd,7.464011443253042
 46105,"Perkins, SD",WeightAvgNatWalkInd,6.527061116583419
 46107,"Potter, SD",WeightAvgNatWalkInd,8.172828890799655

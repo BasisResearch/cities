@@ -1,7 +1,10 @@
+from cities.utils.clean_age_composition import clean_age_composition
+from cities.utils.clean_burdens import clean_burdens
 from cities.utils.clean_ethnic_composition import clean_ethnic_composition
 from cities.utils.clean_ethnic_composition_ma import clean_ethnic_composition_ma
 from cities.utils.clean_gdp import clean_gdp
 from cities.utils.clean_gdp_ma import clean_gdp_ma
+from cities.utils.clean_hazard import clean_hazard
 from cities.utils.clean_industry import clean_industry
 from cities.utils.clean_industry_ma import clean_industry_ma
 from cities.utils.clean_industry_ts import clean_industry_ts
@@ -15,6 +18,17 @@ from cities.utils.clean_unemployment import clean_unemployment
 from cities.utils.clean_urbanicity_ma import clean_urbanicity_ma
 from cities.utils.clean_urbanization import clean_urbanization
 from cities.utils.cleaning_poverty import clean_poverty
+
+# from cities.utils.clean_health import clean_health
+
+
+# clean_health() lost of another 15-ish fips
+
+clean_hazard()
+
+clean_burdens()
+
+clean_age_composition()
 
 clean_gdp_ma()
 
