@@ -79,7 +79,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1998,15.1
 2130,"Ketchikan Gateway Borough, AK*",1998,11.2
 2150,"Kodiak Island Borough, AK",1998,11.9
-2158,"Kusilvak Census Area, AK*",1998,0.0
 2164,"Lake and Peninsula Borough, AK",1998,25.7
 2170,"Matanuska-Susitna Borough, AK",1998,13.5
 2180,"Nome Census Area, AK",1998,25.7
@@ -299,14 +298,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",1998,18.0
 8123,"Weld, CO*",1998,15.2
 8125,"Yuma, CO",1998,17.7
-9001,"Fairfield, CT",1998,12.0
-9003,"Hartford, CT",1998,16.0
-9005,"Litchfield, CT",1998,7.3
-9007,"Middlesex, CT",1998,7.6
-9009,"New Haven, CT",1998,16.1
-9011,"New London, CT",1998,11.6
-9013,"Tolland, CT",1998,6.6
-9015,"Windham, CT",1998,14.0
 10001,"Kent, DE",1998,17.2
 10003,"New Castle, DE",1998,13.1
 10005,"Sussex, DE",1998,19.7
@@ -1798,7 +1789,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",1998,36.6
 35035,"Otero, NM",1998,25.0
 35037,"Quay, NM",1998,38.2
-35039,"Rio Arriba, NM",1998,28.4
 35041,"Roosevelt, NM",1998,34.3
 35043,"Sandoval, NM",1998,17.5
 35045,"San Juan, NM",1998,29.1
@@ -2394,7 +2384,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",1998,18.6
 46099,"Minnehaha, SD",1998,11.3
 46101,"Moody, SD",1998,15.3
-46102,"Oglala Lakota, SD*",1998,0.0
 46103,"Pennington, SD",1998,18.2
 46105,"Perkins, SD",1998,24.7
 46107,"Potter, SD",1998,18.9
@@ -3153,7 +3142,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1999,11.7
 2130,"Ketchikan Gateway Borough, AK*",1999,9.8
 2150,"Kodiak Island Borough, AK",1999,8.7
-2158,"Kusilvak Census Area, AK*",1999,0.0
 2164,"Lake and Peninsula Borough, AK",1999,19.0
 2170,"Matanuska-Susitna Borough, AK",1999,11.8
 2180,"Nome Census Area, AK",1999,19.0
@@ -3373,14 +3361,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",1999,16.5
 8123,"Weld, CO*",1999,14.0
 8125,"Yuma, CO",1999,15.9
-9001,"Fairfield, CT",1999,8.7
-9003,"Hartford, CT",1999,12.1
-9005,"Litchfield, CT",1999,6.2
-9007,"Middlesex, CT",1999,6.0
-9009,"New Haven, CT",1999,12.5
-9011,"New London, CT",1999,9.2
-9013,"Tolland, CT",1999,5.8
-9015,"Windham, CT",1999,11.8
 10001,"Kent, DE",1999,17.2
 10003,"New Castle, DE",1999,12.1
 10005,"Sussex, DE",1999,17.4
@@ -4872,7 +4852,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",1999,35.2
 35035,"Otero, NM",1999,25.3
 35037,"Quay, NM",1999,32.9
-35039,"Rio Arriba, NM",1999,26.1
 35041,"Roosevelt, NM",1999,31.1
 35043,"Sandoval, NM",1999,19.0
 35045,"San Juan, NM",1999,27.5
@@ -5468,7 +5447,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",1999,13.9
 46099,"Minnehaha, SD",1999,10.1
 46101,"Moody, SD",1999,11.8
-46102,"Oglala Lakota, SD*",1999,0.0
 46103,"Pennington, SD",1999,16.2
 46105,"Perkins, SD",1999,20.2
 46107,"Potter, SD",1999,15.6
@@ -6227,7 +6205,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2000,12.4
 2130,"Ketchikan Gateway Borough, AK*",2000,8.2
 2150,"Kodiak Island Borough, AK",2000,9.8
-2158,"Kusilvak Census Area, AK*",2000,0.0
 2164,"Lake and Peninsula Borough, AK",2000,24.6
 2170,"Matanuska-Susitna Borough, AK",2000,12.3
 2180,"Nome Census Area, AK",2000,20.1
@@ -6447,14 +6424,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2000,18.5
 8123,"Weld, CO*",2000,14.3
 8125,"Yuma, CO",2000,18.9
-9001,"Fairfield, CT",2000,8.1
-9003,"Hartford, CT",2000,12.2
-9005,"Litchfield, CT",2000,5.8
-9007,"Middlesex, CT",2000,5.3
-9009,"New Haven, CT",2000,12.9
-9011,"New London, CT",2000,8.6
-9013,"Tolland, CT",2000,5.0
-9015,"Windham, CT",2000,11.7
 10001,"Kent, DE",2000,16.3
 10003,"New Castle, DE",2000,10.2
 10005,"Sussex, DE",2000,17.6
@@ -7946,7 +7915,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2000,32.3
 35035,"Otero, NM",2000,27.5
 35037,"Quay, NM",2000,33.1
-35039,"Rio Arriba, NM",2000,24.7
 35041,"Roosevelt, NM",2000,30.3
 35043,"Sandoval, NM",2000,15.4
 35045,"San Juan, NM",2000,28.2
@@ -8542,7 +8510,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2000,13.6
 46099,"Minnehaha, SD",2000,8.3
 46101,"Moody, SD",2000,11.8
-46102,"Oglala Lakota, SD*",2000,0.0
 46103,"Pennington, SD",2000,15.1
 46105,"Perkins, SD",2000,21.7
 46107,"Potter, SD",2000,16.9
@@ -9301,7 +9268,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2001,12.7
 2130,"Ketchikan Gateway Borough, AK*",2001,8.6
 2150,"Kodiak Island Borough, AK",2001,10.3
-2158,"Kusilvak Census Area, AK*",2001,0.0
 2164,"Lake and Peninsula Borough, AK",2001,22.4
 2170,"Matanuska-Susitna Borough, AK",2001,11.8
 2180,"Nome Census Area, AK",2001,20.0
@@ -9521,14 +9487,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2001,15.9
 8123,"Weld, CO*",2001,12.6
 8125,"Yuma, CO",2001,15.9
-9001,"Fairfield, CT",2001,7.4
-9003,"Hartford, CT",2001,11.1
-9005,"Litchfield, CT",2001,5.6
-9007,"Middlesex, CT",2001,4.8
-9009,"New Haven, CT",2001,12.1
-9011,"New London, CT",2001,7.9
-9013,"Tolland, CT",2001,4.5
-9015,"Windham, CT",2001,10.5
 10001,"Kent, DE",2001,14.7
 10003,"New Castle, DE",2001,9.5
 10005,"Sussex, DE",2001,15.8
@@ -11020,7 +10978,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2001,32.2
 35035,"Otero, NM",2001,28.1
 35037,"Quay, NM",2001,34.9
-35039,"Rio Arriba, NM",2001,23.6
 35041,"Roosevelt, NM",2001,30.7
 35043,"Sandoval, NM",2001,14.4
 35045,"San Juan, NM",2001,30.0
@@ -11616,7 +11573,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2001,14.7
 46099,"Minnehaha, SD",2001,8.8
 46101,"Moody, SD",2001,11.1
-46102,"Oglala Lakota, SD*",2001,0.0
 46103,"Pennington, SD",2001,14.7
 46105,"Perkins, SD",2001,20.6
 46107,"Potter, SD",2001,14.2
@@ -12375,7 +12331,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2002,11.8
 2130,"Ketchikan Gateway Borough, AK*",2002,9.5
 2150,"Kodiak Island Borough, AK",2002,10.8
-2158,"Kusilvak Census Area, AK*",2002,0.0
 2164,"Lake and Peninsula Borough, AK",2002,19.3
 2170,"Matanuska-Susitna Borough, AK",2002,12.0
 2180,"Nome Census Area, AK",2002,21.0
@@ -12595,14 +12550,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2002,13.8
 8123,"Weld, CO*",2002,12.2
 8125,"Yuma, CO",2002,14.8
-9001,"Fairfield, CT",2002,8.0
-9003,"Hartford, CT",2002,12.1
-9005,"Litchfield, CT",2002,5.9
-9007,"Middlesex, CT",2002,5.0
-9009,"New Haven, CT",2002,13.3
-9011,"New London, CT",2002,8.2
-9013,"Tolland, CT",2002,4.6
-9015,"Windham, CT",2002,11.2
 10001,"Kent, DE",2002,15.8
 10003,"New Castle, DE",2002,10.4
 10005,"Sussex, DE",2002,15.9
@@ -14094,7 +14041,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2002,28.9
 35035,"Otero, NM",2002,23.8
 35037,"Quay, NM",2002,33.1
-35039,"Rio Arriba, NM",2002,23.0
 35041,"Roosevelt, NM",2002,30.2
 35043,"Sandoval, NM",2002,14.9
 35045,"San Juan, NM",2002,26.7
@@ -14690,7 +14636,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2002,13.2
 46099,"Minnehaha, SD",2002,11.0
 46101,"Moody, SD",2002,12.3
-46102,"Oglala Lakota, SD*",2002,0.0
 46103,"Pennington, SD",2002,17.0
 46105,"Perkins, SD",2002,16.9
 46107,"Potter, SD",2002,13.1
@@ -15449,7 +15394,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2003,12.5
 2130,"Ketchikan Gateway Borough, AK*",2003,11.0
 2150,"Kodiak Island Borough, AK",2003,11.0
-2158,"Kusilvak Census Area, AK*",2003,0.0
 2164,"Lake and Peninsula Borough, AK",2003,20.9
 2170,"Matanuska-Susitna Borough, AK",2003,13.8
 2180,"Nome Census Area, AK",2003,21.7
@@ -15669,14 +15613,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2003,14.7
 8123,"Weld, CO*",2003,13.1
 8125,"Yuma, CO",2003,15.7
-9001,"Fairfield, CT",2003,8.6
-9003,"Hartford, CT",2003,12.8
-9005,"Litchfield, CT",2003,6.5
-9007,"Middlesex, CT",2003,5.6
-9009,"New Haven, CT",2003,13.6
-9011,"New London, CT",2003,8.5
-9013,"Tolland, CT",2003,5.3
-9015,"Windham, CT",2003,10.8
 10001,"Kent, DE",2003,16.4
 10003,"New Castle, DE",2003,11.2
 10005,"Sussex, DE",2003,15.8
@@ -17168,7 +17104,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2003,32.2
 35035,"Otero, NM",2003,24.1
 35037,"Quay, NM",2003,34.4
-35039,"Rio Arriba, NM",2003,24.0
 35041,"Roosevelt, NM",2003,29.7
 35043,"Sandoval, NM",2003,16.8
 35045,"San Juan, NM",2003,26.3
@@ -17764,7 +17699,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2003,13.5
 46099,"Minnehaha, SD",2003,12.0
 46101,"Moody, SD",2003,12.0
-46102,"Oglala Lakota, SD*",2003,0.0
 46103,"Pennington, SD",2003,18.0
 46105,"Perkins, SD",2003,18.6
 46107,"Potter, SD",2003,13.4
@@ -18523,7 +18457,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2004,12.4
 2130,"Ketchikan Gateway Borough, AK*",2004,10.8
 2150,"Kodiak Island Borough, AK",2004,10.6
-2158,"Kusilvak Census Area, AK*",2004,0.0
 2164,"Lake and Peninsula Borough, AK",2004,22.7
 2170,"Matanuska-Susitna Borough, AK",2004,13.4
 2180,"Nome Census Area, AK",2004,22.9
@@ -18743,14 +18676,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2004,14.7
 8123,"Weld, CO*",2004,12.6
 8125,"Yuma, CO",2004,15.5
-9001,"Fairfield, CT",2004,9.7
-9003,"Hartford, CT",2004,14.1
-9005,"Litchfield, CT",2004,6.3
-9007,"Middlesex, CT",2004,6.0
-9009,"New Haven, CT",2004,14.2
-9011,"New London, CT",2004,9.3
-9013,"Tolland, CT",2004,5.5
-9015,"Windham, CT",2004,12.2
 10001,"Kent, DE",2004,16.0
 10003,"New Castle, DE",2004,11.8
 10005,"Sussex, DE",2004,16.0
@@ -20242,7 +20167,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2004,27.2
 35035,"Otero, NM",2004,22.6
 35037,"Quay, NM",2004,30.5
-35039,"Rio Arriba, NM",2004,23.8
 35041,"Roosevelt, NM",2004,26.7
 35043,"Sandoval, NM",2004,16.0
 35045,"San Juan, NM",2004,23.5
@@ -20838,7 +20762,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2004,14.5
 46099,"Minnehaha, SD",2004,13.6
 46101,"Moody, SD",2004,12.8
-46102,"Oglala Lakota, SD*",2004,0.0
 46103,"Pennington, SD",2004,19.9
 46105,"Perkins, SD",2004,21.0
 46107,"Potter, SD",2004,13.6
@@ -21597,7 +21520,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2005,14.3
 2130,"Ketchikan Gateway Borough, AK*",2005,12.8
 2150,"Kodiak Island Borough, AK",2005,11.2
-2158,"Kusilvak Census Area, AK*",2005,0.0
 2164,"Lake and Peninsula Borough, AK",2005,30.0
 2170,"Matanuska-Susitna Borough, AK",2005,13.5
 2180,"Nome Census Area, AK",2005,27.6
@@ -21817,14 +21739,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2005,18.8
 8123,"Weld, CO*",2005,13.2
 8125,"Yuma, CO",2005,18.4
-9001,"Fairfield, CT",2005,8.9
-9003,"Hartford, CT",2005,13.2
-9005,"Litchfield, CT",2005,5.4
-9007,"Middlesex, CT",2005,6.2
-9009,"New Haven, CT",2005,16.3
-9011,"New London, CT",2005,9.0
-9013,"Tolland, CT",2005,5.1
-9015,"Windham, CT",2005,12.6
 10001,"Kent, DE",2005,16.1
 10003,"New Castle, DE",2005,12.7
 10005,"Sussex, DE",2005,18.6
@@ -23316,7 +23230,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2005,33.7
 35035,"Otero, NM",2005,24.9
 35037,"Quay, NM",2005,35.1
-35039,"Rio Arriba, NM",2005,27.1
 35041,"Roosevelt, NM",2005,32.2
 35043,"Sandoval, NM",2005,15.1
 35045,"San Juan, NM",2005,23.5
@@ -23912,7 +23825,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2005,14.2
 46099,"Minnehaha, SD",2005,12.6
 46101,"Moody, SD",2005,12.3
-46102,"Oglala Lakota, SD*",2005,0.0
 46103,"Pennington, SD",2005,19.2
 46105,"Perkins, SD",2005,22.4
 46107,"Potter, SD",2005,13.2
@@ -24671,7 +24583,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2006,14.9
 2130,"Ketchikan Gateway Borough, AK*",2006,13.7
 2150,"Kodiak Island Borough, AK",2006,10.7
-2158,"Kusilvak Census Area, AK*",2006,0.0
 2164,"Lake and Peninsula Borough, AK",2006,29.3
 2170,"Matanuska-Susitna Borough, AK",2006,13.8
 2180,"Nome Census Area, AK",2006,31.5
@@ -24891,14 +24802,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2006,17.9
 8123,"Weld, CO*",2006,15.3
 8125,"Yuma, CO",2006,17.6
-9001,"Fairfield, CT",2006,8.4
-9003,"Hartford, CT",2006,13.6
-9005,"Litchfield, CT",2006,6.8
-9007,"Middlesex, CT",2006,5.8
-9009,"New Haven, CT",2006,14.6
-9011,"New London, CT",2006,8.3
-9013,"Tolland, CT",2006,5.0
-9015,"Windham, CT",2006,11.9
 10001,"Kent, DE",2006,18.7
 10003,"New Castle, DE",2006,12.4
 10005,"Sussex, DE",2006,19.1
@@ -26390,7 +26293,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2006,34.0
 35035,"Otero, NM",2006,26.2
 35037,"Quay, NM",2006,33.5
-35039,"Rio Arriba, NM",2006,22.9
 35041,"Roosevelt, NM",2006,29.7
 35043,"Sandoval, NM",2006,14.6
 35045,"San Juan, NM",2006,23.8
@@ -26986,7 +26888,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2006,13.6
 46099,"Minnehaha, SD",2006,11.2
 46101,"Moody, SD",2006,11.0
-46102,"Oglala Lakota, SD*",2006,0.0
 46103,"Pennington, SD",2006,20.2
 46105,"Perkins, SD",2006,20.4
 46107,"Potter, SD",2006,15.4
@@ -27745,7 +27646,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2007,14.3
 2130,"Ketchikan Gateway Borough, AK*",2007,11.8
 2150,"Kodiak Island Borough, AK",2007,9.0
-2158,"Kusilvak Census Area, AK*",2007,0.0
 2164,"Lake and Peninsula Borough, AK",2007,25.1
 2170,"Matanuska-Susitna Borough, AK",2007,11.6
 2180,"Nome Census Area, AK",2007,28.5
@@ -27965,14 +27865,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2007,19.4
 8123,"Weld, CO*",2007,13.2
 8125,"Yuma, CO",2007,18.1
-9001,"Fairfield, CT",2007,8.3
-9003,"Hartford, CT",2007,14.0
-9005,"Litchfield, CT",2007,6.2
-9007,"Middlesex, CT",2007,5.7
-9009,"New Haven, CT",2007,13.5
-9011,"New London, CT",2007,9.6
-9013,"Tolland, CT",2007,5.3
-9015,"Windham, CT",2007,11.8
 10001,"Kent, DE",2007,18.0
 10003,"New Castle, DE",2007,12.9
 10005,"Sussex, DE",2007,15.8
@@ -29464,7 +29356,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2007,32.9
 35035,"Otero, NM",2007,31.2
 35037,"Quay, NM",2007,36.1
-35039,"Rio Arriba, NM",2007,25.3
 35041,"Roosevelt, NM",2007,31.1
 35043,"Sandoval, NM",2007,13.8
 35045,"San Juan, NM",2007,23.9
@@ -30060,7 +29951,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2007,14.5
 46099,"Minnehaha, SD",2007,11.5
 46101,"Moody, SD",2007,11.6
-46102,"Oglala Lakota, SD*",2007,0.0
 46103,"Pennington, SD",2007,18.4
 46105,"Perkins, SD",2007,21.6
 46107,"Potter, SD",2007,16.7
@@ -30819,7 +30709,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2008,12.9
 2130,"Ketchikan Gateway Borough, AK*",2008,11.3
 2150,"Kodiak Island Borough, AK",2008,9.4
-2158,"Kusilvak Census Area, AK*",2008,0.0
 2164,"Lake and Peninsula Borough, AK",2008,25.6
 2170,"Matanuska-Susitna Borough, AK",2008,12.3
 2180,"Nome Census Area, AK",2008,26.3
@@ -31039,14 +30928,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2008,18.8
 8123,"Weld, CO*",2008,14.0
 8125,"Yuma, CO",2008,17.9
-9001,"Fairfield, CT",2008,9.6
-9003,"Hartford, CT",2008,14.3
-9005,"Litchfield, CT",2008,6.7
-9007,"Middlesex, CT",2008,6.3
-9009,"New Haven, CT",2008,15.0
-9011,"New London, CT",2008,9.0
-9013,"Tolland, CT",2008,5.7
-9015,"Windham, CT",2008,15.1
 10001,"Kent, DE",2008,16.6
 10003,"New Castle, DE",2008,11.7
 10005,"Sussex, DE",2008,20.0
@@ -32538,7 +32419,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2008,35.5
 35035,"Otero, NM",2008,27.4
 35037,"Quay, NM",2008,34.8
-35039,"Rio Arriba, NM",2008,23.5
 35041,"Roosevelt, NM",2008,28.8
 35043,"Sandoval, NM",2008,13.7
 35045,"San Juan, NM",2008,20.3
@@ -33134,7 +33014,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2008,14.8
 46099,"Minnehaha, SD",2008,11.0
 46101,"Moody, SD",2008,12.7
-46102,"Oglala Lakota, SD*",2008,0.0
 46103,"Pennington, SD",2008,19.5
 46105,"Perkins, SD",2008,24.5
 46107,"Potter, SD",2008,18.1
@@ -33893,7 +33772,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2009,11.6
 2130,"Ketchikan Gateway Borough, AK*",2009,11.1
 2150,"Kodiak Island Borough, AK",2009,8.2
-2158,"Kusilvak Census Area, AK*",2009,0.0
 2164,"Lake and Peninsula Borough, AK",2009,21.0
 2170,"Matanuska-Susitna Borough, AK",2009,11.3
 2180,"Nome Census Area, AK",2009,28.0
@@ -34113,14 +33991,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2009,18.1
 8123,"Weld, CO*",2009,18.5
 8125,"Yuma, CO",2009,18.8
-9001,"Fairfield, CT",2009,9.6
-9003,"Hartford, CT",2009,13.7
-9005,"Litchfield, CT",2009,7.5
-9007,"Middlesex, CT",2009,6.4
-9009,"New Haven, CT",2009,15.8
-9011,"New London, CT",2009,11.1
-9013,"Tolland, CT",2009,5.8
-9015,"Windham, CT",2009,13.8
 10001,"Kent, DE",2009,21.3
 10003,"New Castle, DE",2009,14.0
 10005,"Sussex, DE",2009,20.5
@@ -35612,7 +35482,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2009,35.0
 35035,"Otero, NM",2009,29.2
 35037,"Quay, NM",2009,37.2
-35039,"Rio Arriba, NM",2009,25.5
 35041,"Roosevelt, NM",2009,28.9
 35043,"Sandoval, NM",2009,15.7
 35045,"San Juan, NM",2009,24.9
@@ -36208,7 +36077,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2009,15.5
 46099,"Minnehaha, SD",2009,13.1
 46101,"Moody, SD",2009,13.0
-46102,"Oglala Lakota, SD*",2009,0.0
 46103,"Pennington, SD",2009,20.4
 46105,"Perkins, SD",2009,22.9
 46107,"Potter, SD",2009,19.4
@@ -36967,7 +36835,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2010,14.4
 2130,"Ketchikan Gateway Borough, AK*",2010,14.8
 2150,"Kodiak Island Borough, AK",2010,10.3
-2158,"Kusilvak Census Area, AK*",2010,0.0
 2164,"Lake and Peninsula Borough, AK",2010,25.3
 2170,"Matanuska-Susitna Borough, AK",2010,14.1
 2180,"Nome Census Area, AK",2010,30.7
@@ -37187,14 +37054,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2010,20.5
 8123,"Weld, CO*",2010,18.5
 8125,"Yuma, CO",2010,17.3
-9001,"Fairfield, CT",2010,10.8
-9003,"Hartford, CT",2010,14.8
-9005,"Litchfield, CT",2010,8.4
-9007,"Middlesex, CT",2010,6.7
-9009,"New Haven, CT",2010,16.1
-9011,"New London, CT",2010,11.5
-9013,"Tolland, CT",2010,6.1
-9015,"Windham, CT",2010,15.3
 10001,"Kent, DE",2010,19.6
 10003,"New Castle, DE",2010,15.2
 10005,"Sussex, DE",2010,24.0
@@ -38686,7 +38545,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2010,32.7
 35035,"Otero, NM",2010,30.6
 35037,"Quay, NM",2010,38.3
-35039,"Rio Arriba, NM",2010,27.7
 35041,"Roosevelt, NM",2010,28.8
 35043,"Sandoval, NM",2010,17.5
 35045,"San Juan, NM",2010,34.7
@@ -39282,7 +39140,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2010,18.4
 46099,"Minnehaha, SD",2010,13.8
 46101,"Moody, SD",2010,15.2
-46102,"Oglala Lakota, SD*",2010,0.0
 46103,"Pennington, SD",2010,21.6
 46105,"Perkins, SD",2010,26.7
 46107,"Potter, SD",2010,17.7
@@ -40041,7 +39898,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2011,13.9
 2130,"Ketchikan Gateway Borough, AK*",2011,15.1
 2150,"Kodiak Island Borough, AK",2011,10.8
-2158,"Kusilvak Census Area, AK*",2011,0.0
 2164,"Lake and Peninsula Borough, AK",2011,22.0
 2170,"Matanuska-Susitna Borough, AK",2011,14.7
 2180,"Nome Census Area, AK",2011,32.2
@@ -40261,14 +40117,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2011,19.7
 8123,"Weld, CO*",2011,18.3
 8125,"Yuma, CO",2011,19.7
-9001,"Fairfield, CT",2011,12.4
-9003,"Hartford, CT",2011,16.8
-9005,"Litchfield, CT",2011,8.9
-9007,"Middlesex, CT",2011,7.9
-9009,"New Haven, CT",2011,19.1
-9011,"New London, CT",2011,12.2
-9013,"Tolland, CT",2011,7.4
-9015,"Windham, CT",2011,15.0
 10001,"Kent, DE",2011,22.7
 10003,"New Castle, DE",2011,16.2
 10005,"Sussex, DE",2011,23.1
@@ -41760,7 +41608,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2011,32.8
 35035,"Otero, NM",2011,30.2
 35037,"Quay, NM",2011,35.7
-35039,"Rio Arriba, NM",2011,30.6
 35041,"Roosevelt, NM",2011,32.9
 35043,"Sandoval, NM",2011,19.3
 35045,"San Juan, NM",2011,24.6
@@ -42356,7 +42203,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2011,17.3
 46099,"Minnehaha, SD",2011,14.5
 46101,"Moody, SD",2011,16.3
-46102,"Oglala Lakota, SD*",2011,0.0
 46103,"Pennington, SD",2011,19.6
 46105,"Perkins, SD",2011,22.3
 46107,"Potter, SD",2011,15.9
@@ -43115,7 +42961,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2012,14.8
 2130,"Ketchikan Gateway Borough, AK*",2012,15.6
 2150,"Kodiak Island Borough, AK",2012,11.8
-2158,"Kusilvak Census Area, AK*",2012,0.0
 2164,"Lake and Peninsula Borough, AK",2012,23.5
 2170,"Matanuska-Susitna Borough, AK",2012,12.6
 2180,"Nome Census Area, AK",2012,33.3
@@ -43335,14 +43180,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2012,21.4
 8123,"Weld, CO*",2012,18.7
 8125,"Yuma, CO",2012,19.9
-9001,"Fairfield, CT",2012,11.1
-9003,"Hartford, CT",2012,16.7
-9005,"Litchfield, CT",2012,8.6
-9007,"Middlesex, CT",2012,7.5
-9009,"New Haven, CT",2012,20.4
-9011,"New London, CT",2012,13.3
-9013,"Tolland, CT",2012,7.2
-9015,"Windham, CT",2012,16.1
 10001,"Kent, DE",2012,21.7
 10003,"New Castle, DE",2012,15.2
 10005,"Sussex, DE",2012,28.4
@@ -44834,7 +44671,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2012,35.7
 35035,"Otero, NM",2012,36.4
 35037,"Quay, NM",2012,36.5
-35039,"Rio Arriba, NM",2012,29.7
 35041,"Roosevelt, NM",2012,28.5
 35043,"Sandoval, NM",2012,17.2
 35045,"San Juan, NM",2012,27.5
@@ -45430,7 +45266,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2012,18.0
 46099,"Minnehaha, SD",2012,15.3
 46101,"Moody, SD",2012,14.2
-46102,"Oglala Lakota, SD*",2012,0.0
 46103,"Pennington, SD",2012,20.3
 46105,"Perkins, SD",2012,19.6
 46107,"Potter, SD",2012,14.7
@@ -46189,7 +46024,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2013,13.9
 2130,"Ketchikan Gateway Borough, AK*",2013,14.3
 2150,"Kodiak Island Borough, AK",2013,9.8
-2158,"Kusilvak Census Area, AK*",2013,0.0
 2164,"Lake and Peninsula Borough, AK",2013,24.4
 2170,"Matanuska-Susitna Borough, AK",2013,12.0
 2180,"Nome Census Area, AK",2013,28.4
@@ -46409,14 +46243,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2013,19.9
 8123,"Weld, CO*",2013,16.6
 8125,"Yuma, CO",2013,18.9
-9001,"Fairfield, CT",2013,11.9
-9003,"Hartford, CT",2013,17.4
-9005,"Litchfield, CT",2013,9.2
-9007,"Middlesex, CT",2013,7.6
-9009,"New Haven, CT",2013,17.7
-9011,"New London, CT",2013,13.4
-9013,"Tolland, CT",2013,7.0
-9015,"Windham, CT",2013,18.0
 10001,"Kent, DE",2013,20.2
 10003,"New Castle, DE",2013,16.9
 10005,"Sussex, DE",2013,24.6
@@ -47908,7 +47734,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2013,37.3
 35035,"Otero, NM",2013,33.6
 35037,"Quay, NM",2013,39.7
-35039,"Rio Arriba, NM",2013,32.6
 35041,"Roosevelt, NM",2013,31.5
 35043,"Sandoval, NM",2013,20.9
 35045,"San Juan, NM",2013,27.0
@@ -48504,7 +48329,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2013,15.5
 46099,"Minnehaha, SD",2013,13.6
 46101,"Moody, SD",2013,15.0
-46102,"Oglala Lakota, SD*",2013,0.0
 46103,"Pennington, SD",2013,22.1
 46105,"Perkins, SD",2013,18.7
 46107,"Potter, SD",2013,14.8
@@ -49263,7 +49087,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2014,14.5
 2130,"Ketchikan Gateway Borough, AK*",2014,17.6
 2150,"Kodiak Island Borough, AK",2014,11.0
-2158,"Kusilvak Census Area, AK*",2014,0.0
 2164,"Lake and Peninsula Borough, AK",2014,22.4
 2170,"Matanuska-Susitna Borough, AK",2014,13.1
 2180,"Nome Census Area, AK",2014,34.0
@@ -49483,14 +49306,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2014,17.4
 8123,"Weld, CO*",2014,12.8
 8125,"Yuma, CO",2014,19.7
-9001,"Fairfield, CT",2014,11.8
-9003,"Hartford, CT",2014,17.6
-9005,"Litchfield, CT",2014,9.1
-9007,"Middlesex, CT",2014,9.1
-9009,"New Haven, CT",2014,18.4
-9011,"New London, CT",2014,16.7
-9013,"Tolland, CT",2014,7.3
-9015,"Windham, CT",2014,15.5
 10001,"Kent, DE",2014,21.2
 10003,"New Castle, DE",2014,16.8
 10005,"Sussex, DE",2014,24.3
@@ -50982,7 +50797,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2014,35.3
 35035,"Otero, NM",2014,29.7
 35037,"Quay, NM",2014,36.0
-35039,"Rio Arriba, NM",2014,30.9
 35041,"Roosevelt, NM",2014,28.5
 35043,"Sandoval, NM",2014,16.3
 35045,"San Juan, NM",2014,29.4
@@ -51578,7 +51392,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2014,15.1
 46099,"Minnehaha, SD",2014,14.1
 46101,"Moody, SD",2014,14.8
-46102,"Oglala Lakota, SD*",2014,0.0
 46103,"Pennington, SD",2014,20.2
 46105,"Perkins, SD",2014,18.7
 46107,"Potter, SD",2014,16.3
@@ -52337,7 +52150,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2015,14.0
 2130,"Ketchikan Gateway Borough, AK*",2015,14.4
 2150,"Kodiak Island Borough, AK",2015,9.3
-2158,"Kusilvak Census Area, AK*",2015,43.4
 2164,"Lake and Peninsula Borough, AK",2015,31.4
 2170,"Matanuska-Susitna Borough, AK",2015,11.8
 2180,"Nome Census Area, AK",2015,27.6
@@ -52557,14 +52369,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2015,15.6
 8123,"Weld, CO*",2015,13.5
 8125,"Yuma, CO",2015,18.6
-9001,"Fairfield, CT",2015,11.2
-9003,"Hartford, CT",2015,15.7
-9005,"Litchfield, CT",2015,9.4
-9007,"Middlesex, CT",2015,7.4
-9009,"New Haven, CT",2015,20.0
-9011,"New London, CT",2015,17.4
-9013,"Tolland, CT",2015,7.2
-9015,"Windham, CT",2015,16.8
 10001,"Kent, DE",2015,21.3
 10003,"New Castle, DE",2015,17.6
 10005,"Sussex, DE",2015,21.4
@@ -54056,7 +53860,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2015,35.5
 35035,"Otero, NM",2015,33.6
 35037,"Quay, NM",2015,35.7
-35039,"Rio Arriba, NM",2015,30.6
 35041,"Roosevelt, NM",2015,26.6
 35043,"Sandoval, NM",2015,15.7
 35045,"San Juan, NM",2015,23.5
@@ -54652,7 +54455,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2015,14.3
 46099,"Minnehaha, SD",2015,14.5
 46101,"Moody, SD",2015,14.6
-46102,"Oglala Lakota, SD*",2015,47.0
 46103,"Pennington, SD",2015,18.4
 46105,"Perkins, SD",2015,15.0
 46107,"Potter, SD",2015,13.0
@@ -55411,7 +55213,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2016,16.2
 2130,"Ketchikan Gateway Borough, AK*",2016,12.9
 2150,"Kodiak Island Borough, AK",2016,9.3
-2158,"Kusilvak Census Area, AK*",2016,45.4
 2164,"Lake and Peninsula Borough, AK",2016,32.7
 2170,"Matanuska-Susitna Borough, AK",2016,10.2
 2180,"Nome Census Area, AK",2016,30.6
@@ -55631,14 +55432,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2016,21.0
 8123,"Weld, CO*",2016,12.8
 8125,"Yuma, CO",2016,16.3
-9001,"Fairfield, CT",2016,10.3
-9003,"Hartford, CT",2016,15.1
-9005,"Litchfield, CT",2016,8.8
-9007,"Middlesex, CT",2016,8.7
-9009,"New Haven, CT",2016,16.5
-9011,"New London, CT",2016,13.5
-9013,"Tolland, CT",2016,6.9
-9015,"Windham, CT",2016,15.2
 10001,"Kent, DE",2016,20.8
 10003,"New Castle, DE",2016,15.0
 10005,"Sussex, DE",2016,22.7
@@ -57130,7 +56923,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2016,35.4
 35035,"Otero, NM",2016,32.4
 35037,"Quay, NM",2016,38.3
-35039,"Rio Arriba, NM",2016,28.2
 35041,"Roosevelt, NM",2016,28.8
 35043,"Sandoval, NM",2016,18.6
 35045,"San Juan, NM",2016,25.0
@@ -57726,7 +57518,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2016,16.9
 46099,"Minnehaha, SD",2016,11.3
 46101,"Moody, SD",2016,14.5
-46102,"Oglala Lakota, SD*",2016,43.9
 46103,"Pennington, SD",2016,19.8
 46105,"Perkins, SD",2016,16.7
 46107,"Potter, SD",2016,15.0
@@ -58485,7 +58276,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2017,13.9
 2130,"Ketchikan Gateway Borough, AK*",2017,12.8
 2150,"Kodiak Island Borough, AK",2017,10.0
-2158,"Kusilvak Census Area, AK*",2017,45.3
 2164,"Lake and Peninsula Borough, AK",2017,22.3
 2170,"Matanuska-Susitna Borough, AK",2017,12.7
 2180,"Nome Census Area, AK",2017,28.8
@@ -58705,14 +58495,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2017,19.8
 8123,"Weld, CO*",2017,10.6
 8125,"Yuma, CO",2017,17.1
-9001,"Fairfield, CT",2017,11.3
-9003,"Hartford, CT",2017,15.3
-9005,"Litchfield, CT",2017,7.9
-9007,"Middlesex, CT",2017,7.4
-9009,"New Haven, CT",2017,15.3
-9011,"New London, CT",2017,12.3
-9013,"Tolland, CT",2017,6.5
-9015,"Windham, CT",2017,15.6
 10001,"Kent, DE",2017,20.2
 10003,"New Castle, DE",2017,15.6
 10005,"Sussex, DE",2017,21.2
@@ -60204,7 +59986,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2017,34.1
 35035,"Otero, NM",2017,29.4
 35037,"Quay, NM",2017,37.5
-35039,"Rio Arriba, NM",2017,32.6
 35041,"Roosevelt, NM",2017,32.4
 35043,"Sandoval, NM",2017,18.6
 35045,"San Juan, NM",2017,29.2
@@ -60800,7 +60581,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2017,15.7
 46099,"Minnehaha, SD",2017,10.0
 46101,"Moody, SD",2017,13.2
-46102,"Oglala Lakota, SD*",2017,45.8
 46103,"Pennington, SD",2017,16.6
 46105,"Perkins, SD",2017,18.8
 46107,"Potter, SD",2017,14.2
@@ -61559,7 +61339,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2018,14.5
 2130,"Ketchikan Gateway Borough, AK*",2018,12.5
 2150,"Kodiak Island Borough, AK",2018,9.9
-2158,"Kusilvak Census Area, AK*",2018,47.4
 2164,"Lake and Peninsula Borough, AK",2018,23.7
 2170,"Matanuska-Susitna Borough, AK",2018,11.8
 2180,"Nome Census Area, AK",2018,26.9
@@ -61779,14 +61558,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2018,19.6
 8123,"Weld, CO*",2018,13.2
 8125,"Yuma, CO",2018,16.6
-9001,"Fairfield, CT",2018,12.7
-9003,"Hartford, CT",2018,15.5
-9005,"Litchfield, CT",2018,8.1
-9007,"Middlesex, CT",2018,8.1
-9009,"New Haven, CT",2018,16.7
-9011,"New London, CT",2018,12.5
-9013,"Tolland, CT",2018,6.4
-9015,"Windham, CT",2018,14.8
 10001,"Kent, DE",2018,19.6
 10003,"New Castle, DE",2018,15.5
 10005,"Sussex, DE",2018,21.6
@@ -63278,7 +63049,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2018,31.8
 35035,"Otero, NM",2018,29.6
 35037,"Quay, NM",2018,37.7
-35039,"Rio Arriba, NM",2018,28.7
 35041,"Roosevelt, NM",2018,27.6
 35043,"Sandoval, NM",2018,15.9
 35045,"San Juan, NM",2018,26.9
@@ -63874,7 +63644,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2018,13.7
 46099,"Minnehaha, SD",2018,9.8
 46101,"Moody, SD",2018,11.4
-46102,"Oglala Lakota, SD*",2018,56.6
 46103,"Pennington, SD",2018,19.2
 46105,"Perkins, SD",2018,16.6
 46107,"Potter, SD",2018,15.0
@@ -64633,7 +64402,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2019,12.5
 2130,"Ketchikan Gateway Borough, AK*",2019,12.0
 2150,"Kodiak Island Borough, AK",2019,8.7
-2158,"Kusilvak Census Area, AK*",2019,35.5
 2164,"Lake and Peninsula Borough, AK",2019,25.3
 2170,"Matanuska-Susitna Borough, AK",2019,12.8
 2180,"Nome Census Area, AK",2019,26.1
@@ -64853,14 +64621,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2019,17.2
 8123,"Weld, CO*",2019,9.8
 8125,"Yuma, CO",2019,15.9
-9001,"Fairfield, CT",2019,11.8
-9003,"Hartford, CT",2019,14.0
-9005,"Litchfield, CT",2019,9.4
-9007,"Middlesex, CT",2019,7.2
-9009,"New Haven, CT",2019,18.5
-9011,"New London, CT",2019,11.6
-9013,"Tolland, CT",2019,6.3
-9015,"Windham, CT",2019,14.0
 10001,"Kent, DE",2019,17.8
 10003,"New Castle, DE",2019,13.4
 10005,"Sussex, DE",2019,22.8
@@ -66352,7 +66112,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2019,29.7
 35035,"Otero, NM",2019,27.7
 35037,"Quay, NM",2019,34.2
-35039,"Rio Arriba, NM",2019,27.0
 35041,"Roosevelt, NM",2019,25.2
 35043,"Sandoval, NM",2019,14.2
 35045,"San Juan, NM",2019,26.8
@@ -66948,7 +66707,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2019,14.5
 46099,"Minnehaha, SD",2019,9.4
 46101,"Moody, SD",2019,10.9
-46102,"Oglala Lakota, SD*",2019,44.0
 46103,"Pennington, SD",2019,15.6
 46105,"Perkins, SD",2019,21.8
 46107,"Potter, SD",2019,14.5
@@ -67707,7 +67465,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2020,14.7
 2130,"Ketchikan Gateway Borough, AK*",2020,9.8
 2150,"Kodiak Island Borough, AK",2020,8.1
-2158,"Kusilvak Census Area, AK*",2020,42.5
 2164,"Lake and Peninsula Borough, AK",2020,23.0
 2170,"Matanuska-Susitna Borough, AK",2020,9.5
 2180,"Nome Census Area, AK",2020,23.1
@@ -67927,14 +67684,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2020,17.6
 8123,"Weld, CO*",2020,9.8
 8125,"Yuma, CO",2020,16.1
-9001,"Fairfield, CT",2020,10.8
-9003,"Hartford, CT",2020,13.6
-9005,"Litchfield, CT",2020,8.2
-9007,"Middlesex, CT",2020,6.5
-9009,"New Haven, CT",2020,13.9
-9011,"New London, CT",2020,10.9
-9013,"Tolland, CT",2020,5.6
-9015,"Windham, CT",2020,12.5
 10001,"Kent, DE",2020,16.4
 10003,"New Castle, DE",2020,13.9
 10005,"Sussex, DE",2020,17.4
@@ -69426,7 +69175,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2020,26.1
 35035,"Otero, NM",2020,24.7
 35037,"Quay, NM",2020,34.9
-35039,"Rio Arriba, NM",2020,27.1
 35041,"Roosevelt, NM",2020,24.1
 35043,"Sandoval, NM",2020,12.2
 35045,"San Juan, NM",2020,29.7
@@ -70022,7 +69770,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2020,14.6
 46099,"Minnehaha, SD",2020,8.4
 46101,"Moody, SD",2020,10.6
-46102,"Oglala Lakota, SD*",2020,41.7
 46103,"Pennington, SD",2020,13.8
 46105,"Perkins, SD",2020,24.6
 46107,"Potter, SD",2020,12.9
@@ -70781,7 +70528,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2021,13.8
 2130,"Ketchikan Gateway Borough, AK*",2021,13.4
 2150,"Kodiak Island Borough, AK",2021,8.9
-2158,"Kusilvak Census Area, AK*",2021,40.6
 2164,"Lake and Peninsula Borough, AK",2021,28.0
 2170,"Matanuska-Susitna Borough, AK",2021,11.6
 2180,"Nome Census Area, AK",2021,23.6
@@ -71001,14 +70747,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2021,16.9
 8123,"Weld, CO*",2021,11.3
 8125,"Yuma, CO",2021,18.2
-9001,"Fairfield, CT",2021,11.3
-9003,"Hartford, CT",2021,13.8
-9005,"Litchfield, CT",2021,10.1
-9007,"Middlesex, CT",2021,7.9
-9009,"New Haven, CT",2021,15.5
-9011,"New London, CT",2021,12.2
-9013,"Tolland, CT",2021,9.4
-9015,"Windham, CT",2021,16.7
 10001,"Kent, DE",2021,17.5
 10003,"New Castle, DE",2021,14.8
 10005,"Sussex, DE",2021,18.9
@@ -72500,7 +72238,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2021,31.8
 35035,"Otero, NM",2021,27.7
 35037,"Quay, NM",2021,33.7
-35039,"Rio Arriba, NM",2021,26.0
 35041,"Roosevelt, NM",2021,26.9
 35043,"Sandoval, NM",2021,11.3
 35045,"San Juan, NM",2021,32.2
@@ -73096,7 +72833,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2021,13.4
 46099,"Minnehaha, SD",2021,10.0
 46101,"Moody, SD",2021,12.4
-46102,"Oglala Lakota, SD*",2021,41.4
 46103,"Pennington, SD",2021,15.6
 46105,"Perkins, SD",2021,19.2
 46107,"Potter, SD",2021,12.4

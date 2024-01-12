@@ -79,7 +79,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1990,12.1
 2130,"Ketchikan Gateway Borough, AK",1990,7.9
 2150,"Kodiak Island Borough, AK",1990,5.4
-2158,"Kusilvak Census Area, AK",1990,12.1
 2164,"Lake and Peninsula Borough, AK",1990,6.1
 2170,"Matanuska-Susitna Borough, AK",1990,12.2
 2180,"Nome Census Area, AK",1990,9.2
@@ -299,14 +298,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1990,2.0
 8123,"Weld County, CO",1990,5.7
 8125,"Yuma County, CO",1990,2.1
-9001,"Fairfield County, CT",1990,4.5
-9003,"Hartford County, CT",1990,5.0
-9005,"Litchfield County, CT",1990,4.6
-9007,"Middlesex County, CT",1990,3.9
-9009,"New Haven County, CT",1990,5.4
-9011,"New London County, CT",1990,5.5
-9013,"Tolland County, CT",1990,3.9
-9015,"Windham County, CT",1990,6.9
 10001,"Kent County, DE",1990,4.3
 10003,"New Castle County, DE",1990,4.8
 10005,"Sussex County, DE",1990,3.2
@@ -1798,7 +1789,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1990,20.4
 35035,"Otero County, NM",1990,7.3
 35037,"Quay County, NM",1990,7.3
-35039,"Rio Arriba County, NM",1990,13.8
 35041,"Roosevelt County, NM",1990,6.4
 35043,"Sandoval County, NM",1990,5.7
 35045,"San Juan County, NM",1990,8.8
@@ -2394,7 +2384,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1990,2.5
 46099,"Minnehaha County, SD",1990,2.6
 46101,"Moody County, SD",1990,4.3
-46102,"Oglala Lakota County, SD",1990,13.5
 46103,"Pennington County, SD",1990,3.1
 46105,"Perkins County, SD",1990,2.4
 46107,"Potter County, SD",1990,2.6
@@ -3153,7 +3142,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1991,13.1
 2130,"Ketchikan Gateway Borough, AK",1991,9.2
 2150,"Kodiak Island Borough, AK",1991,7.9
-2158,"Kusilvak Census Area, AK",1991,12.4
 2164,"Lake and Peninsula Borough, AK",1991,7.0
 2170,"Matanuska-Susitna Borough, AK",1991,11.9
 2180,"Nome Census Area, AK",1991,10.9
@@ -3373,14 +3361,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1991,2.9
 8123,"Weld County, CO",1991,5.2
 8125,"Yuma County, CO",1991,2.7
-9001,"Fairfield County, CT",1991,5.8
-9003,"Hartford County, CT",1991,6.9
-9005,"Litchfield County, CT",1991,6.4
-9007,"Middlesex County, CT",1991,5.7
-9009,"New Haven County, CT",1991,7.0
-9011,"New London County, CT",1991,6.6
-9013,"Tolland County, CT",1991,5.7
-9015,"Windham County, CT",1991,8.8
 10001,"Kent County, DE",1991,6.0
 10003,"New Castle County, DE",1991,6.2
 10005,"Sussex County, DE",1991,4.6
@@ -4872,7 +4852,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1991,25.4
 35035,"Otero County, NM",1991,8.6
 35037,"Quay County, NM",1991,6.7
-35039,"Rio Arriba County, NM",1991,14.8
 35041,"Roosevelt County, NM",1991,5.8
 35043,"Sandoval County, NM",1991,6.0
 35045,"San Juan County, NM",1991,9.8
@@ -5468,7 +5447,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1991,2.2
 46099,"Minnehaha County, SD",1991,2.5
 46101,"Moody County, SD",1991,5.3
-46102,"Oglala Lakota County, SD",1991,16.1
 46103,"Pennington County, SD",1991,3.7
 46105,"Perkins County, SD",1991,2.4
 46107,"Potter County, SD",1991,2.9
@@ -6227,7 +6205,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1992,14.9
 2130,"Ketchikan Gateway Borough, AK",1992,9.2
 2150,"Kodiak Island Borough, AK",1992,10.3
-2158,"Kusilvak Census Area, AK",1992,10.7
 2164,"Lake and Peninsula Borough, AK",1992,8.8
 2170,"Matanuska-Susitna Borough, AK",1992,13.0
 2180,"Nome Census Area, AK",1992,12.4
@@ -6447,14 +6424,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1992,3.8
 8123,"Weld County, CO",1992,5.9
 8125,"Yuma County, CO",1992,3.7
-9001,"Fairfield County, CT",1992,6.6
-9003,"Hartford County, CT",1992,7.8
-9005,"Litchfield County, CT",1992,7.1
-9007,"Middlesex County, CT",1992,6.4
-9009,"New Haven County, CT",1992,7.9
-9011,"New London County, CT",1992,6.9
-9013,"Tolland County, CT",1992,6.4
-9015,"Windham County, CT",1992,9.0
 10001,"Kent County, DE",1992,5.5
 10003,"New Castle County, DE",1992,5.4
 10005,"Sussex County, DE",1992,4.4
@@ -7946,7 +7915,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1992,24.1
 35035,"Otero County, NM",1992,8.9
 35037,"Quay County, NM",1992,6.3
-35039,"Rio Arriba County, NM",1992,15.4
 35041,"Roosevelt County, NM",1992,5.2
 35043,"Sandoval County, NM",1992,5.5
 35045,"San Juan County, NM",1992,11.8
@@ -8542,7 +8510,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1992,4.9
 46099,"Minnehaha County, SD",1992,2.5
 46101,"Moody County, SD",1992,5.9
-46102,"Oglala Lakota County, SD",1992,15.3
 46103,"Pennington County, SD",1992,3.4
 46105,"Perkins County, SD",1992,2.6
 46107,"Potter County, SD",1992,4.4
@@ -9301,7 +9268,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1993,13.0
 2130,"Ketchikan Gateway Borough, AK",1993,8.8
 2150,"Kodiak Island Borough, AK",1993,10.0
-2158,"Kusilvak Census Area, AK",1993,10.6
 2164,"Lake and Peninsula Borough, AK",1993,7.5
 2170,"Matanuska-Susitna Borough, AK",1993,11.0
 2180,"Nome Census Area, AK",1993,11.9
@@ -9521,14 +9487,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1993,3.3
 8123,"Weld County, CO",1993,5.3
 8125,"Yuma County, CO",1993,3.1
-9001,"Fairfield County, CT",1993,5.6
-9003,"Hartford County, CT",1993,7.1
-9005,"Litchfield County, CT",1993,6.2
-9007,"Middlesex County, CT",1993,6.1
-9009,"New Haven County, CT",1993,6.9
-9011,"New London County, CT",1993,6.1
-9013,"Tolland County, CT",1993,5.9
-9015,"Windham County, CT",1993,7.7
 10001,"Kent County, DE",1993,5.5
 10003,"New Castle County, DE",1993,4.7
 10005,"Sussex County, DE",1993,5.0
@@ -11020,7 +10978,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1993,20.9
 35035,"Otero County, NM",1993,8.1
 35037,"Quay County, NM",1993,6.1
-35039,"Rio Arriba County, NM",1993,12.9
 35041,"Roosevelt County, NM",1993,5.0
 35043,"Sandoval County, NM",1993,5.7
 35045,"San Juan County, NM",1993,10.2
@@ -11616,7 +11573,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1993,5.4
 46099,"Minnehaha County, SD",1993,2.4
 46101,"Moody County, SD",1993,6.5
-46102,"Oglala Lakota County, SD",1993,15.6
 46103,"Pennington County, SD",1993,3.7
 46105,"Perkins County, SD",1993,2.7
 46107,"Potter County, SD",1993,3.4
@@ -12375,7 +12331,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1994,12.5
 2130,"Ketchikan Gateway Borough, AK",1994,8.2
 2150,"Kodiak Island Borough, AK",1994,11.7
-2158,"Kusilvak Census Area, AK",1994,10.6
 2164,"Lake and Peninsula Borough, AK",1994,6.1
 2170,"Matanuska-Susitna Borough, AK",1994,10.5
 2180,"Nome Census Area, AK",1994,12.0
@@ -12595,14 +12550,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1994,3.1
 8123,"Weld County, CO",1994,4.4
 8125,"Yuma County, CO",1994,2.5
-9001,"Fairfield County, CT",1994,4.8
-9003,"Hartford County, CT",1994,6.1
-9005,"Litchfield County, CT",1994,5.0
-9007,"Middlesex County, CT",1994,5.3
-9009,"New Haven County, CT",1994,6.0
-9011,"New London County, CT",1994,5.2
-9013,"Tolland County, CT",1994,4.9
-9015,"Windham County, CT",1994,6.7
 10001,"Kent County, DE",1994,5.1
 10003,"New Castle County, DE",1994,4.5
 10005,"Sussex County, DE",1994,5.0
@@ -14094,7 +14041,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1994,19.5
 35035,"Otero County, NM",1994,7.8
 35037,"Quay County, NM",1994,6.1
-35039,"Rio Arriba County, NM",1994,11.1
 35041,"Roosevelt County, NM",1994,5.1
 35043,"Sandoval County, NM",1994,4.7
 35045,"San Juan County, NM",1994,10.1
@@ -14690,7 +14636,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1994,5.3
 46099,"Minnehaha County, SD",1994,2.4
 46101,"Moody County, SD",1994,5.9
-46102,"Oglala Lakota County, SD",1994,15.6
 46103,"Pennington County, SD",1994,3.4
 46105,"Perkins County, SD",1994,2.3
 46107,"Potter County, SD",1994,4.2
@@ -15449,7 +15394,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1995,12.3
 2130,"Ketchikan Gateway Borough, AK",1995,7.6
 2150,"Kodiak Island Borough, AK",1995,9.9
-2158,"Kusilvak Census Area, AK",1995,11.7
 2164,"Lake and Peninsula Borough, AK",1995,7.1
 2170,"Matanuska-Susitna Borough, AK",1995,10.2
 2180,"Nome Census Area, AK",1995,12.9
@@ -15669,14 +15613,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1995,2.8
 8123,"Weld County, CO",1995,4.5
 8125,"Yuma County, CO",1995,1.9
-9001,"Fairfield County, CT",1995,4.6
-9003,"Hartford County, CT",1995,5.9
-9005,"Litchfield County, CT",1995,4.5
-9007,"Middlesex County, CT",1995,5.1
-9009,"New Haven County, CT",1995,5.6
-9011,"New London County, CT",1995,5.1
-9013,"Tolland County, CT",1995,4.7
-9015,"Windham County, CT",1995,6.4
 10001,"Kent County, DE",1995,4.5
 10003,"New Castle County, DE",1995,4.1
 10005,"Sussex County, DE",1995,4.6
@@ -17168,7 +17104,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1995,21.6
 35035,"Otero County, NM",1995,7.0
 35037,"Quay County, NM",1995,6.1
-35039,"Rio Arriba County, NM",1995,12.6
 35041,"Roosevelt County, NM",1995,5.6
 35043,"Sandoval County, NM",1995,4.5
 35045,"San Juan County, NM",1995,10.6
@@ -17764,7 +17699,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1995,5.0
 46099,"Minnehaha County, SD",1995,2.2
 46101,"Moody County, SD",1995,5.7
-46102,"Oglala Lakota County, SD",1995,14.6
 46103,"Pennington County, SD",1995,3.2
 46105,"Perkins County, SD",1995,2.5
 46107,"Potter County, SD",1995,3.9
@@ -18523,7 +18457,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1996,13.3
 2130,"Ketchikan Gateway Borough, AK",1996,8.3
 2150,"Kodiak Island Borough, AK",1996,9.0
-2158,"Kusilvak Census Area, AK",1996,10.2
 2164,"Lake and Peninsula Borough, AK",1996,7.7
 2170,"Matanuska-Susitna Borough, AK",1996,10.3
 2180,"Nome Census Area, AK",1996,12.4
@@ -18743,14 +18676,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1996,2.5
 8123,"Weld County, CO",1996,4.6
 8125,"Yuma County, CO",1996,2.1
-9001,"Fairfield County, CT",1996,4.4
-9003,"Hartford County, CT",1996,5.8
-9005,"Litchfield County, CT",1996,4.4
-9007,"Middlesex County, CT",1996,5.2
-9009,"New Haven County, CT",1996,5.6
-9011,"New London County, CT",1996,5.4
-9013,"Tolland County, CT",1996,4.2
-9015,"Windham County, CT",1996,6.3
 10001,"Kent County, DE",1996,4.9
 10003,"New Castle County, DE",1996,5.2
 10005,"Sussex County, DE",1996,4.3
@@ -20242,7 +20167,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1996,20.9
 35035,"Otero County, NM",1996,8.6
 35037,"Quay County, NM",1996,6.2
-35039,"Rio Arriba County, NM",1996,14.2
 35041,"Roosevelt County, NM",1996,6.0
 35043,"Sandoval County, NM",1996,5.0
 35045,"San Juan County, NM",1996,12.1
@@ -20838,7 +20762,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1996,8.9
 46099,"Minnehaha County, SD",1996,2.2
 46101,"Moody County, SD",1996,5.0
-46102,"Oglala Lakota County, SD",1996,15.4
 46103,"Pennington County, SD",1996,3.4
 46105,"Perkins County, SD",1996,3.3
 46107,"Potter County, SD",1996,3.7
@@ -21597,7 +21520,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1997,12.0
 2130,"Ketchikan Gateway Borough, AK",1997,8.3
 2150,"Kodiak Island Borough, AK",1997,8.7
-2158,"Kusilvak Census Area, AK",1997,11.1
 2164,"Lake and Peninsula Borough, AK",1997,6.5
 2170,"Matanuska-Susitna Borough, AK",1997,9.2
 2180,"Nome Census Area, AK",1997,10.4
@@ -21817,14 +21739,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1997,3.0
 8123,"Weld County, CO",1997,4.0
 8125,"Yuma County, CO",1997,2.2
-9001,"Fairfield County, CT",1997,3.9
-9003,"Hartford County, CT",1997,5.1
-9005,"Litchfield County, CT",1997,3.9
-9007,"Middlesex County, CT",1997,4.5
-9009,"New Haven County, CT",1997,5.0
-9011,"New London County, CT",1997,5.2
-9013,"Tolland County, CT",1997,3.7
-9015,"Windham County, CT",1997,6.1
 10001,"Kent County, DE",1997,4.5
 10003,"New Castle County, DE",1997,3.9
 10005,"Sussex County, DE",1997,3.8
@@ -23316,7 +23230,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1997,20.1
 35035,"Otero County, NM",1997,7.2
 35037,"Quay County, NM",1997,6.2
-35039,"Rio Arriba County, NM",1997,11.0
 35041,"Roosevelt County, NM",1997,4.4
 35043,"Sandoval County, NM",1997,4.4
 35045,"San Juan County, NM",1997,10.0
@@ -23912,7 +23825,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1997,3.4
 46099,"Minnehaha County, SD",1997,1.9
 46101,"Moody County, SD",1997,4.9
-46102,"Oglala Lakota County, SD",1997,11.6
 46103,"Pennington County, SD",1997,3.0
 46105,"Perkins County, SD",1997,2.7
 46107,"Potter County, SD",1997,3.5
@@ -24671,7 +24583,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1998,10.6
 2130,"Ketchikan Gateway Borough, AK",1998,7.6
 2150,"Kodiak Island Borough, AK",1998,7.9
-2158,"Kusilvak Census Area, AK",1998,14.1
 2164,"Lake and Peninsula Borough, AK",1998,7.9
 2170,"Matanuska-Susitna Borough, AK",1998,7.6
 2180,"Nome Census Area, AK",1998,9.9
@@ -24891,14 +24802,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1998,3.0
 8123,"Weld County, CO",1998,4.3
 8125,"Yuma County, CO",1998,2.4
-9001,"Fairfield County, CT",1998,2.8
-9003,"Hartford County, CT",1998,3.5
-9005,"Litchfield County, CT",1998,2.6
-9007,"Middlesex County, CT",1998,3.0
-9009,"New Haven County, CT",1998,3.5
-9011,"New London County, CT",1998,3.7
-9013,"Tolland County, CT",1998,2.5
-9015,"Windham County, CT",1998,4.4
 10001,"Kent County, DE",1998,3.9
 10003,"New Castle County, DE",1998,3.4
 10005,"Sussex County, DE",1998,3.6
@@ -26390,7 +26293,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1998,19.6
 35035,"Otero County, NM",1998,6.1
 35037,"Quay County, NM",1998,4.9
-35039,"Rio Arriba County, NM",1998,9.1
 35041,"Roosevelt County, NM",1998,3.4
 35043,"Sandoval County, NM",1998,5.1
 35045,"San Juan County, NM",1998,8.3
@@ -26986,7 +26888,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1998,3.5
 46099,"Minnehaha County, SD",1998,1.8
 46101,"Moody County, SD",1998,4.9
-46102,"Oglala Lakota County, SD",1998,12.7
 46103,"Pennington County, SD",1998,2.6
 46105,"Perkins County, SD",1998,3.0
 46107,"Potter County, SD",1998,3.3
@@ -27745,7 +27646,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",1999,11.0
 2130,"Ketchikan Gateway Borough, AK",1999,7.2
 2150,"Kodiak Island Borough, AK",1999,7.3
-2158,"Kusilvak Census Area, AK",1999,14.6
 2164,"Lake and Peninsula Borough, AK",1999,7.5
 2170,"Matanuska-Susitna Borough, AK",1999,8.2
 2180,"Nome Census Area, AK",1999,11.6
@@ -27965,14 +27865,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",1999,2.5
 8123,"Weld County, CO",1999,3.7
 8125,"Yuma County, CO",1999,2.5
-9001,"Fairfield County, CT",1999,2.2
-9003,"Hartford County, CT",1999,2.7
-9005,"Litchfield County, CT",1999,2.1
-9007,"Middlesex County, CT",1999,2.1
-9009,"New Haven County, CT",1999,2.6
-9011,"New London County, CT",1999,2.6
-9013,"Tolland County, CT",1999,1.9
-9015,"Windham County, CT",1999,2.9
 10001,"Kent County, DE",1999,3.6
 10003,"New Castle County, DE",1999,3.0
 10005,"Sussex County, DE",1999,4.0
@@ -29464,7 +29356,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",1999,16.8
 35035,"Otero County, NM",1999,4.9
 35037,"Quay County, NM",1999,3.8
-35039,"Rio Arriba County, NM",1999,7.3
 35041,"Roosevelt County, NM",1999,3.4
 35043,"Sandoval County, NM",1999,4.0
 35045,"San Juan County, NM",1999,7.6
@@ -30060,7 +29951,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",1999,3.5
 46099,"Minnehaha County, SD",1999,1.7
 46101,"Moody County, SD",1999,5.1
-46102,"Oglala Lakota County, SD",1999,12.5
 46103,"Pennington County, SD",1999,2.4
 46105,"Perkins County, SD",1999,3.0
 46107,"Potter County, SD",1999,3.5
@@ -30819,7 +30709,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2000,8.2
 2130,"Ketchikan Gateway Borough, AK",2000,6.2
 2150,"Kodiak Island Borough, AK",2000,8.3
-2158,"Kusilvak Census Area, AK",2000,15.2
 2164,"Lake and Peninsula Borough, AK",2000,5.2
 2170,"Matanuska-Susitna Borough, AK",2000,7.3
 2180,"Nome Census Area, AK",2000,9.6
@@ -31039,14 +30928,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2000,2.5
 8123,"Weld County, CO",2000,2.7
 8125,"Yuma County, CO",2000,2.6
-9001,"Fairfield County, CT",2000,1.9
-9003,"Hartford County, CT",2000,2.3
-9005,"Litchfield County, CT",2000,1.8
-9007,"Middlesex County, CT",2000,1.9
-9009,"New Haven County, CT",2000,2.3
-9011,"New London County, CT",2000,2.1
-9013,"Tolland County, CT",2000,1.7
-9015,"Windham County, CT",2000,2.3
 10001,"Kent County, DE",2000,3.9
 10003,"New Castle County, DE",2000,3.5
 10005,"Sussex County, DE",2000,3.7
@@ -32538,7 +32419,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2000,10.7
 35035,"Otero County, NM",2000,5.4
 35037,"Quay County, NM",2000,5.0
-35039,"Rio Arriba County, NM",2000,6.2
 35041,"Roosevelt County, NM",2000,4.5
 35043,"Sandoval County, NM",2000,4.3
 35045,"San Juan County, NM",2000,5.8
@@ -33134,7 +33014,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2000,2.7
 46099,"Minnehaha County, SD",2000,2.0
 46101,"Moody County, SD",2000,3.8
-46102,"Oglala Lakota County, SD",2000,8.7
 46103,"Pennington County, SD",2000,2.3
 46105,"Perkins County, SD",2000,2.6
 46107,"Potter County, SD",2000,2.8
@@ -33893,7 +33772,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2001,8.1
 2130,"Ketchikan Gateway Borough, AK",2001,6.6
 2150,"Kodiak Island Borough, AK",2001,8.8
-2158,"Kusilvak Census Area, AK",2001,15.3
 2164,"Lake and Peninsula Borough, AK",2001,6.2
 2170,"Matanuska-Susitna Borough, AK",2001,7.0
 2180,"Nome Census Area, AK",2001,9.6
@@ -34113,14 +33991,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2001,2.7
 8123,"Weld County, CO",2001,3.5
 8125,"Yuma County, CO",2001,2.3
-9001,"Fairfield County, CT",2001,2.8
-9003,"Hartford County, CT",2001,3.1
-9005,"Litchfield County, CT",2001,2.7
-9007,"Middlesex County, CT",2001,2.5
-9009,"New Haven County, CT",2001,3.1
-9011,"New London County, CT",2001,2.6
-9013,"Tolland County, CT",2001,2.2
-9015,"Windham County, CT",2001,3.0
 10001,"Kent County, DE",2001,3.8
 10003,"New Castle County, DE",2001,3.5
 10005,"Sussex County, DE",2001,3.7
@@ -35612,7 +35482,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2001,9.9
 35035,"Otero County, NM",2001,5.4
 35037,"Quay County, NM",2001,5.4
-35039,"Rio Arriba County, NM",2001,6.1
 35041,"Roosevelt County, NM",2001,4.0
 35043,"Sandoval County, NM",2001,4.7
 35045,"San Juan County, NM",2001,5.4
@@ -36208,7 +36077,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2001,4.6
 46099,"Minnehaha County, SD",2001,2.4
 46101,"Moody County, SD",2001,4.3
-46102,"Oglala Lakota County, SD",2001,7.6
 46103,"Pennington County, SD",2001,2.8
 46105,"Perkins County, SD",2001,2.8
 46107,"Potter County, SD",2001,3.4
@@ -36967,7 +36835,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2002,9.5
 2130,"Ketchikan Gateway Borough, AK",2002,8.3
 2150,"Kodiak Island Borough, AK",2002,8.9
-2158,"Kusilvak Census Area, AK",2002,17.2
 2164,"Lake and Peninsula Borough, AK",2002,7.5
 2170,"Matanuska-Susitna Borough, AK",2002,8.2
 2180,"Nome Census Area, AK",2002,9.9
@@ -37187,14 +37054,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2002,3.4
 8123,"Weld County, CO",2002,5.2
 8125,"Yuma County, CO",2002,2.5
-9001,"Fairfield County, CT",2002,4.2
-9003,"Hartford County, CT",2002,4.8
-9005,"Litchfield County, CT",2002,4.2
-9007,"Middlesex County, CT",2002,3.8
-9009,"New Haven County, CT",2002,4.7
-9011,"New London County, CT",2002,3.9
-9013,"Tolland County, CT",2002,3.5
-9015,"Windham County, CT",2002,4.7
 10001,"Kent County, DE",2002,4.2
 10003,"New Castle County, DE",2002,4.4
 10005,"Sussex County, DE",2002,3.9
@@ -38686,7 +38545,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2002,10.2
 35035,"Otero County, NM",2002,5.6
 35037,"Quay County, NM",2002,5.4
-35039,"Rio Arriba County, NM",2002,6.5
 35041,"Roosevelt County, NM",2002,4.1
 35043,"Sandoval County, NM",2002,5.9
 35045,"San Juan County, NM",2002,6.1
@@ -39282,7 +39140,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2002,5.1
 46099,"Minnehaha County, SD",2002,2.8
 46101,"Moody County, SD",2002,4.6
-46102,"Oglala Lakota County, SD",2002,7.4
 46103,"Pennington County, SD",2002,3.0
 46105,"Perkins County, SD",2002,3.1
 46107,"Potter County, SD",2002,3.3
@@ -40041,7 +39898,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2003,10.1
 2130,"Ketchikan Gateway Borough, AK",2003,8.0
 2150,"Kodiak Island Borough, AK",2003,9.6
-2158,"Kusilvak Census Area, AK",2003,17.8
 2164,"Lake and Peninsula Borough, AK",2003,8.1
 2170,"Matanuska-Susitna Borough, AK",2003,8.6
 2180,"Nome Census Area, AK",2003,10.7
@@ -40261,14 +40117,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2003,3.6
 8123,"Weld County, CO",2003,5.9
 8125,"Yuma County, CO",2003,3.1
-9001,"Fairfield County, CT",2003,5.0
-9003,"Hartford County, CT",2003,6.1
-9005,"Litchfield County, CT",2003,5.0
-9007,"Middlesex County, CT",2003,4.8
-9009,"New Haven County, CT",2003,5.9
-9011,"New London County, CT",2003,4.9
-9013,"Tolland County, CT",2003,4.4
-9015,"Windham County, CT",2003,6.0
 10001,"Kent County, DE",2003,4.5
 10003,"New Castle County, DE",2003,4.6
 10005,"Sussex County, DE",2003,3.9
@@ -41760,7 +41608,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2003,10.8
 35035,"Otero County, NM",2003,6.1
 35037,"Quay County, NM",2003,6.6
-35039,"Rio Arriba County, NM",2003,6.7
 35041,"Roosevelt County, NM",2003,4.0
 35043,"Sandoval County, NM",2003,6.1
 35045,"San Juan County, NM",2003,6.8
@@ -42356,7 +42203,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2003,4.7
 46099,"Minnehaha County, SD",2003,3.1
 46101,"Moody County, SD",2003,5.0
-46102,"Oglala Lakota County, SD",2003,9.2
 46103,"Pennington County, SD",2003,3.2
 46105,"Perkins County, SD",2003,3.2
 46107,"Potter County, SD",2003,3.1
@@ -43115,7 +42961,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2004,9.6
 2130,"Ketchikan Gateway Borough, AK",2004,7.5
 2150,"Kodiak Island Borough, AK",2004,8.8
-2158,"Kusilvak Census Area, AK",2004,20.2
 2164,"Lake and Peninsula Borough, AK",2004,9.8
 2170,"Matanuska-Susitna Borough, AK",2004,8.3
 2180,"Nome Census Area, AK",2004,11.6
@@ -43335,14 +43180,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2004,4.0
 8123,"Weld County, CO",2004,5.7
 8125,"Yuma County, CO",2004,3.3
-9001,"Fairfield County, CT",2004,4.6
-9003,"Hartford County, CT",2004,5.6
-9005,"Litchfield County, CT",2004,4.9
-9007,"Middlesex County, CT",2004,4.3
-9009,"New Haven County, CT",2004,5.5
-9011,"New London County, CT",2004,4.7
-9013,"Tolland County, CT",2004,4.3
-9015,"Windham County, CT",2004,5.7
 10001,"Kent County, DE",2004,3.8
 10003,"New Castle County, DE",2004,4.6
 10005,"Sussex County, DE",2004,3.9
@@ -44834,7 +44671,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2004,11.0
 35035,"Otero County, NM",2004,5.1
 35037,"Quay County, NM",2004,6.1
-35039,"Rio Arriba County, NM",2004,6.5
 35041,"Roosevelt County, NM",2004,3.7
 35043,"Sandoval County, NM",2004,5.6
 35045,"San Juan County, NM",2004,5.9
@@ -45430,7 +45266,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2004,4.4
 46099,"Minnehaha County, SD",2004,3.4
 46101,"Moody County, SD",2004,5.1
-46102,"Oglala Lakota County, SD",2004,8.9
 46103,"Pennington County, SD",2004,3.4
 46105,"Perkins County, SD",2004,3.7
 46107,"Potter County, SD",2004,3.5
@@ -46189,7 +46024,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2005,8.8
 2130,"Ketchikan Gateway Borough, AK",2005,6.8
 2150,"Kodiak Island Borough, AK",2005,8.3
-2158,"Kusilvak Census Area, AK",2005,21.0
 2164,"Lake and Peninsula Borough, AK",2005,7.3
 2170,"Matanuska-Susitna Borough, AK",2005,7.7
 2180,"Nome Census Area, AK",2005,12.5
@@ -46409,14 +46243,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2005,3.8
 8123,"Weld County, CO",2005,5.5
 8125,"Yuma County, CO",2005,3.2
-9001,"Fairfield County, CT",2005,4.3
-9003,"Hartford County, CT",2005,5.2
-9005,"Litchfield County, CT",2005,4.5
-9007,"Middlesex County, CT",2005,4.2
-9009,"New Haven County, CT",2005,5.3
-9011,"New London County, CT",2005,4.4
-9013,"Tolland County, CT",2005,4.1
-9015,"Windham County, CT",2005,5.4
 10001,"Kent County, DE",2005,4.0
 10003,"New Castle County, DE",2005,4.8
 10005,"Sussex County, DE",2005,4.0
@@ -47908,7 +47734,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2005,11.5
 35035,"Otero County, NM",2005,5.0
 35037,"Quay County, NM",2005,5.4
-35039,"Rio Arriba County, NM",2005,6.1
 35041,"Roosevelt County, NM",2005,3.9
 35043,"Sandoval County, NM",2005,5.3
 35045,"San Juan County, NM",2005,5.4
@@ -48504,7 +48329,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2005,4.6
 46099,"Minnehaha County, SD",2005,3.2
 46101,"Moody County, SD",2005,4.6
-46102,"Oglala Lakota County, SD",2005,10.2
 46103,"Pennington County, SD",2005,3.4
 46105,"Perkins County, SD",2005,3.8
 46107,"Potter County, SD",2005,3.5
@@ -49263,7 +49087,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2006,8.2
 2130,"Ketchikan Gateway Borough, AK",2006,6.1
 2150,"Kodiak Island Borough, AK",2006,7.5
-2158,"Kusilvak Census Area, AK",2006,20.7
 2164,"Lake and Peninsula Borough, AK",2006,6.0
 2170,"Matanuska-Susitna Borough, AK",2006,7.5
 2180,"Nome Census Area, AK",2006,12.1
@@ -49483,14 +49306,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2006,3.4
 8123,"Weld County, CO",2006,4.6
 8125,"Yuma County, CO",2006,2.6
-9001,"Fairfield County, CT",2006,3.9
-9003,"Hartford County, CT",2006,4.8
-9005,"Litchfield County, CT",2006,4.1
-9007,"Middlesex County, CT",2006,3.7
-9009,"New Haven County, CT",2006,4.8
-9011,"New London County, CT",2006,4.2
-9013,"Tolland County, CT",2006,3.8
-9015,"Windham County, CT",2006,5.2
 10001,"Kent County, DE",2006,3.5
 10003,"New Castle County, DE",2006,4.1
 10005,"Sussex County, DE",2006,3.5
@@ -50982,7 +50797,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2006,8.8
 35035,"Otero County, NM",2006,4.2
 35037,"Quay County, NM",2006,4.7
-35039,"Rio Arriba County, NM",2006,5.0
 35041,"Roosevelt County, NM",2006,3.1
 35043,"Sandoval County, NM",2006,4.3
 35045,"San Juan County, NM",2006,4.3
@@ -51578,7 +51392,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2006,3.7
 46099,"Minnehaha County, SD",2006,2.7
 46101,"Moody County, SD",2006,3.8
-46102,"Oglala Lakota County, SD",2006,7.9
 46103,"Pennington County, SD",2006,2.8
 46105,"Perkins County, SD",2006,2.9
 46107,"Potter County, SD",2006,2.9
@@ -52337,7 +52150,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2007,7.8
 2130,"Ketchikan Gateway Borough, AK",2007,5.6
 2150,"Kodiak Island Borough, AK",2007,6.2
-2158,"Kusilvak Census Area, AK",2007,20.2
 2164,"Lake and Peninsula Borough, AK",2007,5.4
 2170,"Matanuska-Susitna Borough, AK",2007,7.1
 2180,"Nome Census Area, AK",2007,11.0
@@ -52557,14 +52369,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2007,2.7
 8123,"Weld County, CO",2007,4.0
 8125,"Yuma County, CO",2007,2.1
-9001,"Fairfield County, CT",2007,3.9
-9003,"Hartford County, CT",2007,4.9
-9005,"Litchfield County, CT",2007,4.2
-9007,"Middlesex County, CT",2007,3.9
-9009,"New Haven County, CT",2007,4.9
-9011,"New London County, CT",2007,4.2
-9013,"Tolland County, CT",2007,3.8
-9015,"Windham County, CT",2007,5.2
 10001,"Kent County, DE",2007,3.5
 10003,"New Castle County, DE",2007,3.7
 10005,"Sussex County, DE",2007,3.5
@@ -54056,7 +53860,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2007,7.6
 35035,"Otero County, NM",2007,3.6
 35037,"Quay County, NM",2007,4.3
-35039,"Rio Arriba County, NM",2007,4.6
 35041,"Roosevelt County, NM",2007,2.7
 35043,"Sandoval County, NM",2007,4.1
 35045,"San Juan County, NM",2007,3.2
@@ -54652,7 +54455,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2007,3.5
 46099,"Minnehaha County, SD",2007,2.5
 46101,"Moody County, SD",2007,3.7
-46102,"Oglala Lakota County, SD",2007,7.9
 46103,"Pennington County, SD",2007,2.7
 46105,"Perkins County, SD",2007,3.0
 46107,"Potter County, SD",2007,3.0
@@ -55411,7 +55213,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2008,7.9
 2130,"Ketchikan Gateway Borough, AK",2008,5.7
 2150,"Kodiak Island Borough, AK",2008,6.6
-2158,"Kusilvak Census Area, AK",2008,19.9
 2164,"Lake and Peninsula Borough, AK",2008,6.6
 2170,"Matanuska-Susitna Borough, AK",2008,7.3
 2180,"Nome Census Area, AK",2008,10.0
@@ -55631,14 +55432,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2008,3.3
 8123,"Weld County, CO",2008,5.2
 8125,"Yuma County, CO",2008,2.7
-9001,"Fairfield County, CT",2008,5.1
-9003,"Hartford County, CT",2008,6.0
-9005,"Litchfield County, CT",2008,5.3
-9007,"Middlesex County, CT",2008,4.8
-9009,"New Haven County, CT",2008,6.2
-9011,"New London County, CT",2008,5.4
-9013,"Tolland County, CT",2008,4.8
-9015,"Windham County, CT",2008,6.5
 10001,"Kent County, DE",2008,5.0
 10003,"New Castle County, DE",2008,5.0
 10005,"Sussex County, DE",2008,5.1
@@ -57130,7 +56923,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2008,8.3
 35035,"Otero County, NM",2008,4.2
 35037,"Quay County, NM",2008,4.7
-35039,"Rio Arriba County, NM",2008,5.2
 35041,"Roosevelt County, NM",2008,3.0
 35043,"Sandoval County, NM",2008,5.0
 35045,"San Juan County, NM",2008,3.8
@@ -57726,7 +57518,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2008,3.5
 46099,"Minnehaha County, SD",2008,2.9
 46101,"Moody County, SD",2008,4.3
-46102,"Oglala Lakota County, SD",2008,8.5
 46103,"Pennington County, SD",2008,3.0
 46105,"Perkins County, SD",2008,3.1
 46107,"Potter County, SD",2008,3.1
@@ -58485,7 +58276,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2009,10.1
 2130,"Ketchikan Gateway Borough, AK",2009,7.3
 2150,"Kodiak Island Borough, AK",2009,7.4
-2158,"Kusilvak Census Area, AK",2009,21.3
 2164,"Lake and Peninsula Borough, AK",2009,8.4
 2170,"Matanuska-Susitna Borough, AK",2009,9.1
 2180,"Nome Census Area, AK",2009,12.0
@@ -58705,14 +58495,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2009,4.3
 8123,"Weld County, CO",2009,8.8
 8125,"Yuma County, CO",2009,3.6
-9001,"Fairfield County, CT",2009,7.8
-9003,"Hartford County, CT",2009,8.7
-9005,"Litchfield County, CT",2009,8.3
-9007,"Middlesex County, CT",2009,7.0
-9009,"New Haven County, CT",2009,9.0
-9011,"New London County, CT",2009,7.8
-9013,"Tolland County, CT",2009,7.0
-9015,"Windham County, CT",2009,9.2
 10001,"Kent County, DE",2009,8.2
 10003,"New Castle County, DE",2009,8.4
 10005,"Sussex County, DE",2009,8.3
@@ -60204,7 +59986,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2009,12.1
 35035,"Otero County, NM",2009,6.3
 35037,"Quay County, NM",2009,6.4
-35039,"Rio Arriba County, NM",2009,7.2
 35041,"Roosevelt County, NM",2009,4.5
 35043,"Sandoval County, NM",2009,8.0
 35045,"San Juan County, NM",2009,7.4
@@ -60800,7 +60581,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2009,5.0
 46099,"Minnehaha County, SD",2009,4.7
 46101,"Moody County, SD",2009,6.2
-46102,"Oglala Lakota County, SD",2009,10.1
 46103,"Pennington County, SD",2009,4.5
 46105,"Perkins County, SD",2009,3.8
 46107,"Potter County, SD",2009,3.5
@@ -61559,7 +61339,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2010,10.3
 2130,"Ketchikan Gateway Borough, AK",2010,9.1
 2150,"Kodiak Island Borough, AK",2010,7.6
-2158,"Kusilvak Census Area, AK",2010,21.0
 2164,"Lake and Peninsula Borough, AK",2010,14.9
 2170,"Matanuska-Susitna Borough, AK",2010,9.8
 2180,"Nome Census Area, AK",2010,13.0
@@ -61779,14 +61558,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2010,6.2
 8123,"Weld County, CO",2010,9.6
 8125,"Yuma County, CO",2010,5.9
-9001,"Fairfield County, CT",2010,8.8
-9003,"Hartford County, CT",2010,9.9
-9005,"Litchfield County, CT",2010,9.2
-9007,"Middlesex County, CT",2010,8.3
-9009,"New Haven County, CT",2010,10.5
-9011,"New London County, CT",2010,9.4
-9013,"Tolland County, CT",2010,8.2
-9015,"Windham County, CT",2010,10.8
 10001,"Kent County, DE",2010,9.2
 10003,"New Castle County, DE",2010,8.5
 10005,"Sussex County, DE",2010,8.8
@@ -63278,7 +63049,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2010,11.8
 35035,"Otero County, NM",2010,6.9
 35037,"Quay County, NM",2010,9.0
-35039,"Rio Arriba County, NM",2010,8.8
 35041,"Roosevelt County, NM",2010,6.0
 35043,"Sandoval County, NM",2010,8.1
 35045,"San Juan County, NM",2010,9.0
@@ -63874,7 +63644,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2010,5.0
 46099,"Minnehaha County, SD",2010,4.9
 46101,"Moody County, SD",2010,6.9
-46102,"Oglala Lakota County, SD",2010,12.8
 46103,"Pennington County, SD",2010,5.2
 46105,"Perkins County, SD",2010,4.1
 46107,"Potter County, SD",2010,4.8
@@ -64633,7 +64402,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2011,9.7
 2130,"Ketchikan Gateway Borough, AK",2011,8.8
 2150,"Kodiak Island Borough, AK",2011,7.6
-2158,"Kusilvak Census Area, AK",2011,21.5
 2164,"Lake and Peninsula Borough, AK",2011,15.4
 2170,"Matanuska-Susitna Borough, AK",2011,9.4
 2180,"Nome Census Area, AK",2011,12.6
@@ -64853,14 +64621,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2011,5.7
 8123,"Weld County, CO",2011,8.9
 8125,"Yuma County, CO",2011,5.5
-9001,"Fairfield County, CT",2011,8.4
-9003,"Hartford County, CT",2011,9.2
-9005,"Litchfield County, CT",2011,8.3
-9007,"Middlesex County, CT",2011,7.8
-9009,"New Haven County, CT",2011,9.9
-9011,"New London County, CT",2011,9.1
-9013,"Tolland County, CT",2011,7.7
-9015,"Windham County, CT",2011,10.1
 10001,"Kent County, DE",2011,8.3
 10003,"New Castle County, DE",2011,7.3
 10005,"Sussex County, DE",2011,7.8
@@ -66352,7 +66112,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2011,11.8
 35035,"Otero County, NM",2011,6.6
 35037,"Quay County, NM",2011,9.3
-35039,"Rio Arriba County, NM",2011,8.9
 35041,"Roosevelt County, NM",2011,5.5
 35043,"Sandoval County, NM",2011,7.7
 35045,"San Juan County, NM",2011,7.6
@@ -66948,7 +66707,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2011,4.3
 46099,"Minnehaha County, SD",2011,4.4
 46101,"Moody County, SD",2011,6.2
-46102,"Oglala Lakota County, SD",2011,13.7
 46103,"Pennington County, SD",2011,4.7
 46105,"Perkins County, SD",2011,4.2
 46107,"Potter County, SD",2011,5.2
@@ -67707,7 +67465,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2012,8.8
 2130,"Ketchikan Gateway Borough, AK",2012,8.3
 2150,"Kodiak Island Borough, AK",2012,6.8
-2158,"Kusilvak Census Area, AK",2012,22.4
 2164,"Lake and Peninsula Borough, AK",2012,15.4
 2170,"Matanuska-Susitna Borough, AK",2012,8.8
 2180,"Nome Census Area, AK",2012,11.8
@@ -67927,14 +67684,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2012,4.9
 8123,"Weld County, CO",2012,7.9
 8125,"Yuma County, CO",2012,5.2
-9001,"Fairfield County, CT",2012,7.8
-9003,"Hartford County, CT",2012,8.5
-9005,"Litchfield County, CT",2012,7.6
-9007,"Middlesex County, CT",2012,7.2
-9009,"New Haven County, CT",2012,9.1
-9011,"New London County, CT",2012,8.7
-9013,"Tolland County, CT",2012,7.4
-9015,"Windham County, CT",2012,9.5
 10001,"Kent County, DE",2012,7.8
 10003,"New Castle County, DE",2012,6.9
 10005,"Sussex County, DE",2012,7.1
@@ -69426,7 +69175,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2012,10.8
 35035,"Otero County, NM",2012,6.4
 35037,"Quay County, NM",2012,8.0
-35039,"Rio Arriba County, NM",2012,9.1
 35041,"Roosevelt County, NM",2012,5.5
 35043,"Sandoval County, NM",2012,7.6
 35045,"San Juan County, NM",2012,7.0
@@ -70022,7 +69770,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2012,3.4
 46099,"Minnehaha County, SD",2012,3.8
 46101,"Moody County, SD",2012,5.2
-46102,"Oglala Lakota County, SD",2012,13.5
 46103,"Pennington County, SD",2012,4.2
 46105,"Perkins County, SD",2012,3.8
 46107,"Potter County, SD",2012,3.8
@@ -70781,7 +70528,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2013,8.1
 2130,"Ketchikan Gateway Borough, AK",2013,7.9
 2150,"Kodiak Island Borough, AK",2013,6.2
-2158,"Kusilvak Census Area, AK",2013,23.7
 2164,"Lake and Peninsula Borough, AK",2013,15.6
 2170,"Matanuska-Susitna Borough, AK",2013,8.4
 2180,"Nome Census Area, AK",2013,12.4
@@ -71001,14 +70747,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2013,4.5
 8123,"Weld County, CO",2013,6.5
 8125,"Yuma County, CO",2013,4.7
-9001,"Fairfield County, CT",2013,7.4
-9003,"Hartford County, CT",2013,8.1
-9005,"Litchfield County, CT",2013,7.3
-9007,"Middlesex County, CT",2013,6.8
-9009,"New Haven County, CT",2013,8.7
-9011,"New London County, CT",2013,8.3
-9013,"Tolland County, CT",2013,7.0
-9015,"Windham County, CT",2013,9.0
 10001,"Kent County, DE",2013,7.3
 10003,"New Castle County, DE",2013,6.4
 10005,"Sussex County, DE",2013,6.7
@@ -72500,7 +72238,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2013,11.6
 35035,"Otero County, NM",2013,6.4
 35037,"Quay County, NM",2013,7.2
-35039,"Rio Arriba County, NM",2013,9.5
 35041,"Roosevelt County, NM",2013,5.6
 35043,"Sandoval County, NM",2013,7.4
 35045,"San Juan County, NM",2013,6.8
@@ -73096,7 +72833,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2013,3.5
 46099,"Minnehaha County, SD",2013,3.2
 46101,"Moody County, SD",2013,4.5
-46102,"Oglala Lakota County, SD",2013,13.3
 46103,"Pennington County, SD",2013,3.8
 46105,"Perkins County, SD",2013,3.6
 46107,"Potter County, SD",2013,3.8
@@ -73855,7 +73591,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2014,7.7
 2130,"Ketchikan Gateway Borough, AK",2014,7.7
 2150,"Kodiak Island Borough, AK",2014,5.6
-2158,"Kusilvak Census Area, AK",2014,23.5
 2164,"Lake and Peninsula Borough, AK",2014,16.1
 2170,"Matanuska-Susitna Borough, AK",2014,7.9
 2180,"Nome Census Area, AK",2014,12.1
@@ -74075,14 +73810,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2014,3.1
 8123,"Weld County, CO",2014,4.4
 8125,"Yuma County, CO",2014,3.3
-9001,"Fairfield County, CT",2014,6.2
-9003,"Hartford County, CT",2014,6.8
-9005,"Litchfield County, CT",2014,6.0
-9007,"Middlesex County, CT",2014,5.7
-9009,"New Haven County, CT",2014,7.2
-9011,"New London County, CT",2014,6.8
-9013,"Tolland County, CT",2014,5.8
-9015,"Windham County, CT",2014,7.4
 10001,"Kent County, DE",2014,6.3
 10003,"New Castle County, DE",2014,5.4
 10005,"Sussex County, DE",2014,5.6
@@ -75574,7 +75301,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2014,10.9
 35035,"Otero County, NM",2014,6.2
 35037,"Quay County, NM",2014,6.5
-35039,"Rio Arriba County, NM",2014,8.6
 35041,"Roosevelt County, NM",2014,5.5
 35043,"Sandoval County, NM",2014,7.1
 35045,"San Juan County, NM",2014,6.3
@@ -76170,7 +75896,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2014,3.1
 46099,"Minnehaha County, SD",2014,2.9
 46101,"Moody County, SD",2014,4.0
-46102,"Oglala Lakota County, SD",2014,13.0
 46103,"Pennington County, SD",2014,3.3
 46105,"Perkins County, SD",2014,3.3
 46107,"Potter County, SD",2014,3.2
@@ -76929,7 +76654,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2015,7.6
 2130,"Ketchikan Gateway Borough, AK",2015,6.7
 2150,"Kodiak Island Borough, AK",2015,4.7
-2158,"Kusilvak Census Area, AK",2015,22.5
 2164,"Lake and Peninsula Borough, AK",2015,12.1
 2170,"Matanuska-Susitna Borough, AK",2015,7.4
 2180,"Nome Census Area, AK",2015,11.5
@@ -77149,14 +76873,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2015,2.5
 8123,"Weld County, CO",2015,3.7
 8125,"Yuma County, CO",2015,2.5
-9001,"Fairfield County, CT",2015,5.3
-9003,"Hartford County, CT",2015,5.8
-9005,"Litchfield County, CT",2015,5.1
-9007,"Middlesex County, CT",2015,4.8
-9009,"New Haven County, CT",2015,6.1
-9011,"New London County, CT",2015,5.8
-9013,"Tolland County, CT",2015,4.9
-9015,"Windham County, CT",2015,6.3
 10001,"Kent County, DE",2015,5.3
 10003,"New Castle County, DE",2015,4.6
 10005,"Sussex County, DE",2015,4.9
@@ -78648,7 +78364,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2015,9.8
 35035,"Otero County, NM",2015,6.3
 35037,"Quay County, NM",2015,7.2
-35039,"Rio Arriba County, NM",2015,8.1
 35041,"Roosevelt County, NM",2015,5.5
 35043,"Sandoval County, NM",2015,6.7
 35045,"San Juan County, NM",2015,7.0
@@ -79244,7 +78959,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2015,2.4
 46099,"Minnehaha County, SD",2015,2.7
 46101,"Moody County, SD",2015,3.3
-46102,"Oglala Lakota County, SD",2015,11.3
 46103,"Pennington County, SD",2015,3.1
 46105,"Perkins County, SD",2015,3.1
 46107,"Potter County, SD",2015,3.2
@@ -80003,7 +79717,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2016,8.2
 2130,"Ketchikan Gateway Borough, AK",2016,6.2
 2150,"Kodiak Island Borough, AK",2016,4.9
-2158,"Kusilvak Census Area, AK",2016,20.8
 2164,"Lake and Peninsula Borough, AK",2016,11.9
 2170,"Matanuska-Susitna Borough, AK",2016,7.9
 2180,"Nome Census Area, AK",2016,12.2
@@ -80223,14 +79936,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2016,2.1
 8123,"Weld County, CO",2016,3.3
 8125,"Yuma County, CO",2016,2.0
-9001,"Fairfield County, CT",2016,4.6
-9003,"Hartford County, CT",2016,5.0
-9005,"Litchfield County, CT",2016,4.5
-9007,"Middlesex County, CT",2016,4.2
-9009,"New Haven County, CT",2016,5.2
-9011,"New London County, CT",2016,4.8
-9013,"Tolland County, CT",2016,4.2
-9015,"Windham County, CT",2016,5.3
 10001,"Kent County, DE",2016,4.9
 10003,"New Castle County, DE",2016,4.4
 10005,"Sussex County, DE",2016,4.5
@@ -81722,7 +81427,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2016,8.8
 35035,"Otero County, NM",2016,6.1
 35037,"Quay County, NM",2016,6.9
-35039,"Rio Arriba County, NM",2016,7.5
 35041,"Roosevelt County, NM",2016,5.8
 35043,"Sandoval County, NM",2016,6.7
 35045,"San Juan County, NM",2016,8.9
@@ -82318,7 +82022,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2016,2.7
 46099,"Minnehaha County, SD",2016,2.6
 46101,"Moody County, SD",2016,3.7
-46102,"Oglala Lakota County, SD",2016,10.9
 46103,"Pennington County, SD",2016,3.1
 46105,"Perkins County, SD",2016,2.9
 46107,"Potter County, SD",2016,2.8
@@ -83077,7 +82780,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2017,7.7
 2130,"Ketchikan Gateway Borough, AK",2017,5.8
 2150,"Kodiak Island Borough, AK",2017,4.7
-2158,"Kusilvak Census Area, AK",2017,18.6
 2164,"Lake and Peninsula Borough, AK",2017,11.0
 2170,"Matanuska-Susitna Borough, AK",2017,7.7
 2180,"Nome Census Area, AK",2017,11.4
@@ -83297,14 +82999,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2017,1.8
 8123,"Weld County, CO",2017,2.5
 8125,"Yuma County, CO",2017,1.5
-9001,"Fairfield County, CT",2017,4.3
-9003,"Hartford County, CT",2017,4.6
-9005,"Litchfield County, CT",2017,4.1
-9007,"Middlesex County, CT",2017,3.8
-9009,"New Haven County, CT",2017,4.7
-9011,"New London County, CT",2017,4.2
-9013,"Tolland County, CT",2017,3.8
-9015,"Windham County, CT",2017,4.8
 10001,"Kent County, DE",2017,4.9
 10003,"New Castle County, DE",2017,4.4
 10005,"Sussex County, DE",2017,4.4
@@ -84796,7 +84490,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2017,7.8
 35035,"Otero County, NM",2017,6.0
 35037,"Quay County, NM",2017,6.1
-35039,"Rio Arriba County, NM",2017,6.3
 35041,"Roosevelt County, NM",2017,5.1
 35043,"Sandoval County, NM",2017,6.1
 35045,"San Juan County, NM",2017,7.4
@@ -85392,7 +85085,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2017,2.8
 46099,"Minnehaha County, SD",2017,2.6
 46101,"Moody County, SD",2017,3.4
-46102,"Oglala Lakota County, SD",2017,10.7
 46103,"Pennington County, SD",2017,3.1
 46105,"Perkins County, SD",2017,2.6
 46107,"Potter County, SD",2017,3.1
@@ -86151,7 +85843,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2018,7.1
 2130,"Ketchikan Gateway Borough, AK",2018,5.5
 2150,"Kodiak Island Borough, AK",2018,5.4
-2158,"Kusilvak Census Area, AK",2018,18.4
 2164,"Lake and Peninsula Borough, AK",2018,10.2
 2170,"Matanuska-Susitna Borough, AK",2018,6.9
 2180,"Nome Census Area, AK",2018,10.6
@@ -86371,14 +86062,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2018,2.3
 8123,"Weld County, CO",2018,2.8
 8125,"Yuma County, CO",2018,1.9
-9001,"Fairfield County, CT",2018,3.7
-9003,"Hartford County, CT",2018,4.0
-9005,"Litchfield County, CT",2018,3.6
-9007,"Middlesex County, CT",2018,3.3
-9009,"New Haven County, CT",2018,4.1
-9011,"New London County, CT",2018,3.7
-9013,"Tolland County, CT",2018,3.4
-9015,"Windham County, CT",2018,4.3
 10001,"Kent County, DE",2018,4.1
 10003,"New Castle County, DE",2018,3.6
 10005,"Sussex County, DE",2018,3.7
@@ -87870,7 +87553,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2018,6.0
 35035,"Otero County, NM",2018,4.9
 35037,"Quay County, NM",2018,4.8
-35039,"Rio Arriba County, NM",2018,5.2
 35041,"Roosevelt County, NM",2018,4.3
 35043,"Sandoval County, NM",2018,4.9
 35045,"San Juan County, NM",2018,5.7
@@ -88466,7 +88148,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2018,2.5
 46099,"Minnehaha County, SD",2018,2.4
 46101,"Moody County, SD",2018,2.7
-46102,"Oglala Lakota County, SD",2018,9.6
 46103,"Pennington County, SD",2018,2.8
 46105,"Perkins County, SD",2018,2.6
 46107,"Potter County, SD",2018,3.2
@@ -89225,7 +88906,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2019,6.3
 2130,"Ketchikan Gateway Borough, AK",2019,5.7
 2150,"Kodiak Island Borough, AK",2019,5.1
-2158,"Kusilvak Census Area, AK",2019,18.2
 2164,"Lake and Peninsula Borough, AK",2019,9.3
 2170,"Matanuska-Susitna Borough, AK",2019,6.3
 2180,"Nome Census Area, AK",2019,10.2
@@ -89445,14 +89125,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2019,1.9
 8123,"Weld County, CO",2019,2.5
 8125,"Yuma County, CO",2019,1.5
-9001,"Fairfield County, CT",2019,3.5
-9003,"Hartford County, CT",2019,3.7
-9005,"Litchfield County, CT",2019,3.4
-9007,"Middlesex County, CT",2019,3.1
-9009,"New Haven County, CT",2019,3.8
-9011,"New London County, CT",2019,3.5
-9013,"Tolland County, CT",2019,3.2
-9015,"Windham County, CT",2019,3.9
 10001,"Kent County, DE",2019,4.0
 10003,"New Castle County, DE",2019,3.5
 10005,"Sussex County, DE",2019,3.6
@@ -90944,7 +90616,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2019,6.1
 35035,"Otero County, NM",2019,5.0
 35037,"Quay County, NM",2019,5.3
-35039,"Rio Arriba County, NM",2019,5.4
 35041,"Roosevelt County, NM",2019,4.5
 35043,"Sandoval County, NM",2019,4.9
 35045,"San Juan County, NM",2019,5.8
@@ -91540,7 +91211,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2019,2.6
 46099,"Minnehaha County, SD",2019,2.4
 46101,"Moody County, SD",2019,3.1
-46102,"Oglala Lakota County, SD",2019,8.3
 46103,"Pennington County, SD",2019,2.9
 46105,"Perkins County, SD",2019,2.6
 46107,"Potter County, SD",2019,2.7
@@ -92299,7 +91969,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2020,9.6
 2130,"Ketchikan Gateway Borough, AK",2020,10.2
 2150,"Kodiak Island Borough, AK",2020,6.7
-2158,"Kusilvak Census Area, AK",2020,20.8
 2164,"Lake and Peninsula Borough, AK",2020,11.4
 2170,"Matanuska-Susitna Borough, AK",2020,8.8
 2180,"Nome Census Area, AK",2020,11.1
@@ -92519,14 +92188,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2020,2.9
 8123,"Weld County, CO",2020,6.5
 8125,"Yuma County, CO",2020,2.6
-9001,"Fairfield County, CT",2020,8.0
-9003,"Hartford County, CT",2020,8.2
-9005,"Litchfield County, CT",2020,6.9
-9007,"Middlesex County, CT",2020,6.6
-9009,"New Haven County, CT",2020,8.0
-9011,"New London County, CT",2020,9.6
-9013,"Tolland County, CT",2020,6.2
-9015,"Windham County, CT",2020,7.8
 10001,"Kent County, DE",2020,8.3
 10003,"New Castle County, DE",2020,7.4
 10005,"Sussex County, DE",2020,7.2
@@ -94018,7 +93679,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2020,7.7
 35035,"Otero County, NM",2020,7.9
 35037,"Quay County, NM",2020,7.0
-35039,"Rio Arriba County, NM",2020,7.7
 35041,"Roosevelt County, NM",2020,5.8
 35043,"Sandoval County, NM",2020,8.0
 35045,"San Juan County, NM",2020,9.4
@@ -94614,7 +94274,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2020,4.4
 46099,"Minnehaha County, SD",2020,4.1
 46101,"Moody County, SD",2020,4.7
-46102,"Oglala Lakota County, SD",2020,8.9
 46103,"Pennington County, SD",2020,4.8
 46105,"Perkins County, SD",2020,3.3
 46107,"Potter County, SD",2020,2.9
@@ -95373,7 +95032,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2021,7.3
 2130,"Ketchikan Gateway Borough, AK",2021,7.4
 2150,"Kodiak Island Borough, AK",2021,6.6
-2158,"Kusilvak Census Area, AK",2021,19.5
 2164,"Lake and Peninsula Borough, AK",2021,8.7
 2170,"Matanuska-Susitna Borough, AK",2021,6.9
 2180,"Nome Census Area, AK",2021,9.7
@@ -95593,14 +95251,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2021,3.4
 8123,"Weld County, CO",2021,5.8
 8125,"Yuma County, CO",2021,3.0
-9001,"Fairfield County, CT",2021,6.1
-9003,"Hartford County, CT",2021,6.6
-9005,"Litchfield County, CT",2021,5.5
-9007,"Middlesex County, CT",2021,5.2
-9009,"New Haven County, CT",2021,6.6
-9011,"New London County, CT",2021,6.8
-9013,"Tolland County, CT",2021,5.2
-9015,"Windham County, CT",2021,6.3
 10001,"Kent County, DE",2021,6.4
 10003,"New Castle County, DE",2021,5.5
 10005,"Sussex County, DE",2021,5.0
@@ -97092,7 +96742,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2021,6.6
 35035,"Otero County, NM",2021,6.9
 35037,"Quay County, NM",2021,7.4
-35039,"Rio Arriba County, NM",2021,7.4
 35041,"Roosevelt County, NM",2021,5.9
 35043,"Sandoval County, NM",2021,6.9
 35045,"San Juan County, NM",2021,8.4
@@ -97688,7 +97337,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2021,2.7
 46099,"Minnehaha County, SD",2021,2.4
 46101,"Moody County, SD",2021,2.4
-46102,"Oglala Lakota County, SD",2021,7.4
 46103,"Pennington County, SD",2021,2.7
 46105,"Perkins County, SD",2021,2.6
 46107,"Potter County, SD",2021,2.6
@@ -98447,7 +98095,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2022,4.5
 2130,"Ketchikan Gateway Borough, AK",2022,3.8
 2150,"Kodiak Island Borough, AK",2022,4.3
-2158,"Kusilvak Census Area, AK",2022,12.9
 2164,"Lake and Peninsula Borough, AK",2022,5.8
 2170,"Matanuska-Susitna Borough, AK",2022,4.6
 2180,"Nome Census Area, AK",2022,6.9
@@ -98667,14 +98314,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington County, CO",2022,2.3
 8123,"Weld County, CO",2022,3.2
 8125,"Yuma County, CO",2022,2.0
-9001,"Fairfield County, CT",2022,4.1
-9003,"Hartford County, CT",2022,4.3
-9005,"Litchfield County, CT",2022,3.9
-9007,"Middlesex County, CT",2022,3.6
-9009,"New Haven County, CT",2022,4.3
-9011,"New London County, CT",2022,4.2
-9013,"Tolland County, CT",2022,3.8
-9015,"Windham County, CT",2022,4.3
 10001,"Kent County, DE",2022,5.2
 10003,"New Castle County, DE",2022,4.4
 10005,"Sussex County, DE",2022,4.4
@@ -100166,7 +99805,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora County, NM",2022,5.5
 35035,"Otero County, NM",2022,4.1
 35037,"Quay County, NM",2022,4.3
-35039,"Rio Arriba County, NM",2022,4.3
 35041,"Roosevelt County, NM",2022,3.8
 35043,"Sandoval County, NM",2022,3.8
 35045,"San Juan County, NM",2022,4.6
@@ -100762,7 +100400,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner County, SD",2022,1.9
 46099,"Minnehaha County, SD",2022,1.9
 46101,"Moody County, SD",2022,2.2
-46102,"Oglala Lakota County, SD",2022,4.9
 46103,"Pennington County, SD",2022,2.0
 46105,"Perkins County, SD",2022,2.1
 46107,"Potter County, SD",2022,2.3

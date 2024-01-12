@@ -959,18 +959,6 @@ GeoFIPS,GeoName,Year,Value
 2150,"Kodiak Island Borough, AK",2019,570.0
 2150,"Kodiak Island Borough, AK",2020,646.0
 2150,"Kodiak Island Borough, AK",2021,528.0
-2158,"Kusilvak Census Area, AK*",2010,0.0
-2158,"Kusilvak Census Area, AK*",2011,0.0
-2158,"Kusilvak Census Area, AK*",2012,0.0
-2158,"Kusilvak Census Area, AK*",2013,0.0
-2158,"Kusilvak Census Area, AK*",2014,0.0
-2158,"Kusilvak Census Area, AK*",2015,263.0
-2158,"Kusilvak Census Area, AK*",2016,258.0
-2158,"Kusilvak Census Area, AK*",2017,223.0
-2158,"Kusilvak Census Area, AK*",2018,220.0
-2158,"Kusilvak Census Area, AK*",2019,225.0
-2158,"Kusilvak Census Area, AK*",2020,244.0
-2158,"Kusilvak Census Area, AK*",2021,264.0
 2164,"Lake and Peninsula Borough, AK",2010,7.0
 2164,"Lake and Peninsula Borough, AK",2011,9.0
 2164,"Lake and Peninsula Borough, AK",2012,14.0
@@ -3599,102 +3587,6 @@ GeoFIPS,GeoName,Year,Value
 8125,"Yuma, CO",2019,559.0
 8125,"Yuma, CO",2020,607.0
 8125,"Yuma, CO",2021,765.0
-9001,"Fairfield, CT",2010,47850.0
-9001,"Fairfield, CT",2011,47886.0
-9001,"Fairfield, CT",2012,47984.0
-9001,"Fairfield, CT",2013,48422.0
-9001,"Fairfield, CT",2014,48583.0
-9001,"Fairfield, CT",2015,48861.0
-9001,"Fairfield, CT",2016,49420.0
-9001,"Fairfield, CT",2017,48985.0
-9001,"Fairfield, CT",2018,48231.0
-9001,"Fairfield, CT",2019,47316.0
-9001,"Fairfield, CT",2020,48246.0
-9001,"Fairfield, CT",2021,49967.0
-9003,"Hartford, CT",2010,47101.0
-9003,"Hartford, CT",2011,46851.0
-9003,"Hartford, CT",2012,46784.0
-9003,"Hartford, CT",2013,47231.0
-9003,"Hartford, CT",2014,46979.0
-9003,"Hartford, CT",2015,47266.0
-9003,"Hartford, CT",2016,46843.0
-9003,"Hartford, CT",2017,47212.0
-9003,"Hartford, CT",2018,47079.0
-9003,"Hartford, CT",2019,46487.0
-9003,"Hartford, CT",2020,47028.0
-9003,"Hartford, CT",2021,48153.0
-9005,"Litchfield, CT",2010,12593.0
-9005,"Litchfield, CT",2011,11850.0
-9005,"Litchfield, CT",2012,11857.0
-9005,"Litchfield, CT",2013,11176.0
-9005,"Litchfield, CT",2014,10679.0
-9005,"Litchfield, CT",2015,10909.0
-9005,"Litchfield, CT",2016,11353.0
-9005,"Litchfield, CT",2017,11499.0
-9005,"Litchfield, CT",2018,11478.0
-9005,"Litchfield, CT",2019,11495.0
-9005,"Litchfield, CT",2020,11626.0
-9005,"Litchfield, CT",2021,11349.0
-9007,"Middlesex, CT",2010,8827.0
-9007,"Middlesex, CT",2011,9232.0
-9007,"Middlesex, CT",2012,9033.0
-9007,"Middlesex, CT",2013,9050.0
-9007,"Middlesex, CT",2014,9189.0
-9007,"Middlesex, CT",2015,9219.0
-9007,"Middlesex, CT",2016,9006.0
-9007,"Middlesex, CT",2017,8839.0
-9007,"Middlesex, CT",2018,8693.0
-9007,"Middlesex, CT",2019,8280.0
-9007,"Middlesex, CT",2020,8659.0
-9007,"Middlesex, CT",2021,8767.0
-9009,"New Haven, CT",2010,48567.0
-9009,"New Haven, CT",2011,47343.0
-9009,"New Haven, CT",2012,46653.0
-9009,"New Haven, CT",2013,45349.0
-9009,"New Haven, CT",2014,45399.0
-9009,"New Haven, CT",2015,46877.0
-9009,"New Haven, CT",2016,46506.0
-9009,"New Haven, CT",2017,46409.0
-9009,"New Haven, CT",2018,46099.0
-9009,"New Haven, CT",2019,48108.0
-9009,"New Haven, CT",2020,46359.0
-9009,"New Haven, CT",2021,46840.0
-9011,"New London, CT",2010,14583.0
-9011,"New London, CT",2011,14932.0
-9011,"New London, CT",2012,14846.0
-9011,"New London, CT",2013,14891.0
-9011,"New London, CT",2014,14800.0
-9011,"New London, CT",2015,14993.0
-9011,"New London, CT",2016,14950.0
-9011,"New London, CT",2017,14617.0
-9011,"New London, CT",2018,15039.0
-9011,"New London, CT",2019,15014.0
-9011,"New London, CT",2020,13844.0
-9011,"New London, CT",2021,13719.0
-9013,"Tolland, CT",2010,8225.0
-9013,"Tolland, CT",2011,8048.0
-9013,"Tolland, CT",2012,7950.0
-9013,"Tolland, CT",2013,7707.0
-9013,"Tolland, CT",2014,7890.0
-9013,"Tolland, CT",2015,7708.0
-9013,"Tolland, CT",2016,7762.0
-9013,"Tolland, CT",2017,7978.0
-9013,"Tolland, CT",2018,7850.0
-9013,"Tolland, CT",2019,7698.0
-9013,"Tolland, CT",2020,7139.0
-9013,"Tolland, CT",2021,7566.0
-9015,"Windham, CT",2010,7921.0
-9015,"Windham, CT",2011,7798.0
-9015,"Windham, CT",2012,8026.0
-9015,"Windham, CT",2013,8015.0
-9015,"Windham, CT",2014,7748.0
-9015,"Windham, CT",2015,7966.0
-9015,"Windham, CT",2016,8013.0
-9015,"Windham, CT",2017,7477.0
-9015,"Windham, CT",2018,7470.0
-9015,"Windham, CT",2019,7358.0
-9015,"Windham, CT",2020,7413.0
-9015,"Windham, CT",2021,7720.0
 10001,"Kent, DE",2010,9601.0
 10001,"Kent, DE",2011,9599.0
 10001,"Kent, DE",2012,10293.0
@@ -21587,18 +21479,6 @@ GeoFIPS,GeoName,Year,Value
 35037,"Quay, NM",2019,247.0
 35037,"Quay, NM",2020,177.0
 35037,"Quay, NM",2021,330.0
-35039,"Rio Arriba, NM",2010,1399.0
-35039,"Rio Arriba, NM",2011,1288.0
-35039,"Rio Arriba, NM",2012,1325.0
-35039,"Rio Arriba, NM",2013,1251.0
-35039,"Rio Arriba, NM",2014,1295.0
-35039,"Rio Arriba, NM",2015,1306.0
-35039,"Rio Arriba, NM",2016,1224.0
-35039,"Rio Arriba, NM",2017,1240.0
-35039,"Rio Arriba, NM",2018,0.0
-35039,"Rio Arriba, NM",2019,1295.0
-35039,"Rio Arriba, NM",2020,1357.0
-35039,"Rio Arriba, NM",2021,1566.0
 35041,"Roosevelt, NM",2010,985.0
 35041,"Roosevelt, NM",2011,1145.0
 35041,"Roosevelt, NM",2012,1212.0
@@ -28739,18 +28619,6 @@ GeoFIPS,GeoName,Year,Value
 46101,"Moody, SD",2019,303.0
 46101,"Moody, SD",2020,313.0
 46101,"Moody, SD",2021,320.0
-46102,"Oglala Lakota, SD*",2010,0.0
-46102,"Oglala Lakota, SD*",2011,0.0
-46102,"Oglala Lakota, SD*",2012,0.0
-46102,"Oglala Lakota, SD*",2013,0.0
-46102,"Oglala Lakota, SD*",2014,0.0
-46102,"Oglala Lakota, SD*",2015,224.0
-46102,"Oglala Lakota, SD*",2016,179.0
-46102,"Oglala Lakota, SD*",2017,220.0
-46102,"Oglala Lakota, SD*",2018,259.0
-46102,"Oglala Lakota, SD*",2019,318.0
-46102,"Oglala Lakota, SD*",2020,322.0
-46102,"Oglala Lakota, SD*",2021,290.0
 46103,"Pennington, SD",2010,6352.0
 46103,"Pennington, SD",2011,6309.0
 46103,"Pennington, SD",2012,6409.0

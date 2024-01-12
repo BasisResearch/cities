@@ -79,7 +79,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",agri_forestry_mining,0.0814052433242838
 2130,"Ketchikan Gateway Borough, AK*",agri_forestry_mining,0.0418098510882016
 2150,"Kodiak Island Borough, AK",agri_forestry_mining,0.0697412823397075
-2158,"Kusilvak Census Area, AK*",agri_forestry_mining,0.0778761061946902
 2164,"Lake and Peninsula Borough, AK",agri_forestry_mining,0.05720823798627
 2170,"Matanuska-Susitna Borough, AK",agri_forestry_mining,0.0498399122316011
 2180,"Nome Census Area, AK",agri_forestry_mining,0.0161954433159483
@@ -299,14 +298,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",agri_forestry_mining,0.2097278000892458
 8123,"Weld, CO*",agri_forestry_mining,0.0548949310283437
 8125,"Yuma, CO",agri_forestry_mining,0.2051335998316852
-9001,"Fairfield, CT",agri_forestry_mining,0.0023719116163855
-9003,"Hartford, CT",agri_forestry_mining,0.0028440195182129
-9005,"Litchfield, CT",agri_forestry_mining,0.0094875676572447
-9007,"Middlesex, CT",agri_forestry_mining,0.0038366800231562
-9009,"New Haven, CT",agri_forestry_mining,0.002717711575926
-9011,"New London, CT",agri_forestry_mining,0.0064186702882331
-9013,"Tolland, CT",agri_forestry_mining,0.0066862762883391
-9015,"Windham, CT",agri_forestry_mining,0.0186593546829461
 10001,"Kent, DE",agri_forestry_mining,0.0093856868275879
 10003,"New Castle, DE",agri_forestry_mining,0.0064841218520206
 10005,"Sussex, DE",agri_forestry_mining,0.0239697639535801
@@ -1798,7 +1789,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",agri_forestry_mining,0.0192455735180908
 35035,"Otero, NM",agri_forestry_mining,0.0231685501112614
 35037,"Quay, NM",agri_forestry_mining,0.0455974842767295
-35039,"Rio Arriba, NM",agri_forestry_mining,0.0349560643961259
 35041,"Roosevelt, NM",agri_forestry_mining,0.1215743088253048
 35043,"Sandoval, NM",agri_forestry_mining,0.0127107532355345
 35045,"San Juan, NM",agri_forestry_mining,0.1059245175812408
@@ -2394,7 +2384,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",agri_forestry_mining,0.1657706093189964
 46099,"Minnehaha, SD",agri_forestry_mining,0.013334805775655
 46101,"Moody, SD",agri_forestry_mining,0.1212785960513945
-46102,"Oglala Lakota, SD*",agri_forestry_mining,0.0628125
 46103,"Pennington, SD",agri_forestry_mining,0.0223379801275396
 46105,"Perkins, SD",agri_forestry_mining,0.3358348968105065
 46107,"Potter, SD",agri_forestry_mining,0.235393734123624
@@ -3153,7 +3142,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",construction,0.0842011426719072
 2130,"Ketchikan Gateway Borough, AK*",construction,0.0605670103092783
 2150,"Kodiak Island Borough, AK",construction,0.0430660453157641
-2158,"Kusilvak Census Area, AK*",construction,0.0265486725663716
 2164,"Lake and Peninsula Borough, AK",construction,0.0183066361556064
 2170,"Matanuska-Susitna Borough, AK",construction,0.1271970087096701
 2180,"Nome Census Area, AK",construction,0.0293713972001098
@@ -3373,14 +3361,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",construction,0.0843373493975903
 8123,"Weld, CO*",construction,0.1057810955658008
 8125,"Yuma, CO",construction,0.0660635388175888
-9001,"Fairfield, CT",construction,0.068725623451812
-9003,"Hartford, CT",construction,0.0513796028065692
-9005,"Litchfield, CT",construction,0.0830343626220941
-9007,"Middlesex, CT",construction,0.0650759957773817
-9009,"New Haven, CT",construction,0.0611669982921863
-9011,"New London, CT",construction,0.0608256261238363
-9013,"Tolland, CT",construction,0.0651134464126054
-9015,"Windham, CT",construction,0.0650145722317071
 10001,"Kent, DE",construction,0.0759966051771049
 10003,"New Castle, DE",construction,0.0578941975059982
 10005,"Sussex, DE",construction,0.0979711060235257
@@ -4872,7 +4852,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",construction,0.0284834488067744
 35035,"Otero, NM",construction,0.1002225227976787
 35037,"Quay, NM",construction,0.0729559748427673
-35039,"Rio Arriba, NM",construction,0.0834455775768071
 35041,"Roosevelt, NM",construction,0.0348907400700229
 35043,"Sandoval, NM",construction,0.0698628657812331
 35045,"San Juan, NM",construction,0.0701064271509429
@@ -5468,7 +5447,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",construction,0.0582437275985663
 46099,"Minnehaha, SD",construction,0.0747632588829684
 46101,"Moody, SD",construction,0.0962080852397367
-46102,"Oglala Lakota, SD*",construction,0.0571875
 46103,"Pennington, SD",construction,0.0865712590834939
 46105,"Perkins, SD",construction,0.0850531582238899
 46107,"Potter, SD",construction,0.0702794242167654
@@ -6227,7 +6205,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",manufacturing,0.0365898132015073
 2130,"Ketchikan Gateway Borough, AK*",manufacturing,0.0504009163802978
 2150,"Kodiak Island Borough, AK",manufacturing,0.2090631528201832
-2158,"Kusilvak Census Area, AK*",manufacturing,0.0504424778761061
 2164,"Lake and Peninsula Borough, AK",manufacturing,0.0366132723112128
 2170,"Matanuska-Susitna Borough, AK",manufacturing,0.0268678772138011
 2180,"Nome Census Area, AK",manufacturing,0.0142739500411748
@@ -6447,14 +6424,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",manufacturing,0.0504239178937974
 8123,"Weld, CO*",manufacturing,0.1038595888098322
 8125,"Yuma, CO",manufacturing,0.0267199663370502
-9001,"Fairfield, CT",manufacturing,0.0798674204533032
-9003,"Hartford, CT",manufacturing,0.1098174848821968
-9005,"Litchfield, CT",manufacturing,0.1180605960058895
-9007,"Middlesex, CT",manufacturing,0.1098221278817666
-9009,"New Haven, CT",manufacturing,0.1095935680826036
-9011,"New London, CT",manufacturing,0.1421667185117182
-9013,"Tolland, CT",manufacturing,0.112526401720809
-9015,"Windham, CT",manufacturing,0.141566213116733
 10001,"Kent, DE",manufacturing,0.0820748358752901
 10003,"New Castle, DE",manufacturing,0.0743571532054883
 10005,"Sussex, DE",manufacturing,0.0807116917975842
@@ -7946,7 +7915,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",manufacturing,0.0177059276366435
 35035,"Otero, NM",manufacturing,0.0225140712945591
 35037,"Quay, NM",manufacturing,0.0094339622641509
-35039,"Rio Arriba, NM",manufacturing,0.0178307998204092
 35041,"Roosevelt, NM",manufacturing,0.0804056501267656
 35043,"Sandoval, NM",manufacturing,0.0529717555956623
 35045,"San Juan, NM",manufacturing,0.0318844380340479
@@ -8542,7 +8510,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",manufacturing,0.1227598566308243
 46099,"Minnehaha, SD",manufacturing,0.1086294322814573
 46101,"Moody, SD",manufacturing,0.0839862112190535
-46102,"Oglala Lakota, SD*",manufacturing,0.0084375
 46103,"Pennington, SD",manufacturing,0.0611189381580898
 46105,"Perkins, SD",manufacturing,0.0494058786741713
 46107,"Potter, SD",manufacturing,0.0279424216765453
@@ -9301,7 +9268,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",wholesale_trade,0.0115888001944973
 2130,"Ketchikan Gateway Borough, AK*",wholesale_trade,0.0144616265750286
 2150,"Kodiak Island Borough, AK",wholesale_trade,0.0223364936525791
-2158,"Kusilvak Census Area, AK*",wholesale_trade,0.0022123893805309
 2164,"Lake and Peninsula Borough, AK",wholesale_trade,0.0
 2170,"Matanuska-Susitna Borough, AK",wholesale_trade,0.0211808432035465
 2180,"Nome Census Area, AK",wholesale_trade,0.0041174855888004
@@ -9521,14 +9487,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",wholesale_trade,0.0419455600178491
 8123,"Weld, CO*",wholesale_trade,0.0306949961017354
 8125,"Yuma, CO",wholesale_trade,0.0302966547443719
-9001,"Fairfield, CT",wholesale_trade,0.0237088035046541
-9003,"Hartford, CT",wholesale_trade,0.0226177756727284
-9005,"Litchfield, CT",wholesale_trade,0.0203645714522718
-9007,"Middlesex, CT",wholesale_trade,0.0223957683008502
-9009,"New Haven, CT",wholesale_trade,0.0244570932041033
-9011,"New London, CT",wholesale_trade,0.0154169480209099
-9013,"Tolland, CT",wholesale_trade,0.0214064504425122
-9015,"Windham, CT",wholesale_trade,0.0206770483039301
 10001,"Kent, DE",wholesale_trade,0.0158133845885025
 10003,"New Castle, DE",wholesale_trade,0.0213216301117671
 10005,"Sussex, DE",wholesale_trade,0.0189863424646719
@@ -11020,7 +10978,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",wholesale_trade,0.0
 35035,"Otero, NM",wholesale_trade,0.0144857978096775
 35037,"Quay, NM",wholesale_trade,0.0044025157232704
-35039,"Rio Arriba, NM",wholesale_trade,0.0051953049836444
 35041,"Roosevelt, NM",wholesale_trade,0.0187130266811541
 35043,"Sandoval, NM",wholesale_trade,0.0276428031530072
 35045,"San Juan, NM",wholesale_trade,0.0163465110688607
@@ -11616,7 +11573,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",wholesale_trade,0.0412186379928315
 46099,"Minnehaha, SD",wholesale_trade,0.0316391043869578
 46101,"Moody, SD",wholesale_trade,0.0278909432779692
-46102,"Oglala Lakota, SD*",wholesale_trade,0.0196875
 46103,"Pennington, SD",wholesale_trade,0.0225975085273617
 46105,"Perkins, SD",wholesale_trade,0.0293933708567854
 46107,"Potter, SD",wholesale_trade,0.0381033022861981
@@ -12375,7 +12331,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",retail_trade,0.1036508772640706
 2130,"Ketchikan Gateway Borough, AK*",retail_trade,0.1121134020618556
 2150,"Kodiak Island Borough, AK",retail_trade,0.0848465370400128
-2158,"Kusilvak Census Area, AK*",retail_trade,0.1168141592920354
 2164,"Lake and Peninsula Borough, AK",retail_trade,0.0320366132723112
 2170,"Matanuska-Susitna Borough, AK",retail_trade,0.1120614378792289
 2180,"Nome Census Area, AK",retail_trade,0.0815262146582486
@@ -12595,14 +12550,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",retail_trade,0.0566711289602855
 8123,"Weld, CO*",retail_trade,0.1082735292492617
 8125,"Yuma, CO",retail_trade,0.1609509783294761
-9001,"Fairfield, CT",retail_trade,0.1030585284660332
-9003,"Hartford, CT",retail_trade,0.106079064183198
-9005,"Litchfield, CT",retail_trade,0.1176769457290392
-9007,"Middlesex, CT",retail_trade,0.0995153069911574
-9009,"New Haven, CT",retail_trade,0.1082462671907967
-9011,"New London, CT",retail_trade,0.1040871603832993
-9013,"Tolland, CT",retail_trade,0.0980394697627408
-9015,"Windham, CT",retail_trade,0.1331332884956973
 10001,"Kent, DE",retail_trade,0.1441551633758518
 10003,"New Castle, DE",retail_trade,0.1058201619086993
 10005,"Sussex, DE",retail_trade,0.1322234941185758
@@ -14094,7 +14041,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",retail_trade,0.0307929176289453
 35035,"Otero, NM",retail_trade,0.128757799205899
 35037,"Quay, NM",retail_trade,0.1037735849056603
-35039,"Rio Arriba, NM",retail_trade,0.1004425630171252
 35041,"Roosevelt, NM",retail_trade,0.0965833635156344
 35043,"Sandoval, NM",retail_trade,0.1226495133200672
 35045,"San Juan, NM",retail_trade,0.1263576564173168
@@ -14690,7 +14636,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",retail_trade,0.1012544802867383
 46099,"Minnehaha, SD",retail_trade,0.1220102518796646
 46101,"Moody, SD",retail_trade,0.1002820432466311
-46102,"Oglala Lakota, SD*",retail_trade,0.090625
 46103,"Pennington, SD",retail_trade,0.122163725344802
 46105,"Perkins, SD",retail_trade,0.1100687929956222
 46107,"Potter, SD",retail_trade,0.1507197290431837
@@ -15449,7 +15394,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",transport_utilities,0.0662911787349568
 2130,"Ketchikan Gateway Borough, AK*",transport_utilities,0.1122565864833906
 2150,"Kodiak Island Borough, AK",transport_utilities,0.0768118270930419
-2158,"Kusilvak Census Area, AK*",transport_utilities,0.0845132743362831
 2164,"Lake and Peninsula Borough, AK",transport_utilities,0.091533180778032
 2170,"Matanuska-Susitna Borough, AK",transport_utilities,0.0769092985245057
 2180,"Nome Census Area, AK",transport_utilities,0.1136426022508921
@@ -15669,14 +15613,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",transport_utilities,0.0647032574743418
 8123,"Weld, CO*",transport_utilities,0.0561718428661759
 8125,"Yuma, CO",transport_utilities,0.0784767515253524
-9001,"Fairfield, CT",transport_utilities,0.0376948319139676
-9003,"Hartford, CT",transport_utilities,0.0517871501426415
-9005,"Litchfield, CT",transport_utilities,0.0366023101968022
-9007,"Middlesex, CT",transport_utilities,0.0399900110105906
-9009,"New Haven, CT",transport_utilities,0.0462819810638361
-9011,"New London, CT",transport_utilities,0.0383906284378959
-9013,"Tolland, CT",transport_utilities,0.0420613426975755
-9015,"Windham, CT",transport_utilities,0.0570990049493852
 10001,"Kent, DE",transport_utilities,0.0584109233419036
 10003,"New Castle, DE",transport_utilities,0.0623712451280746
 10005,"Sussex, DE",transport_utilities,0.0470217889002921
@@ -17168,7 +17104,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",transport_utilities,0.0215550423402617
 35035,"Otero, NM",transport_utilities,0.0532309437584536
 35037,"Quay, NM",transport_utilities,0.0770440251572327
-35039,"Rio Arriba, NM",transport_utilities,0.0253351292412289
 35041,"Roosevelt, NM",transport_utilities,0.0720753350235422
 35043,"Sandoval, NM",transport_utilities,0.0413099480154873
 35045,"San Juan, NM",transport_utilities,0.0712865228698179
@@ -17764,7 +17699,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",transport_utilities,0.0734767025089605
 46099,"Minnehaha, SD",transport_utilities,0.0440628364760774
 46101,"Moody, SD",transport_utilities,0.039486054528361
-46102,"Oglala Lakota, SD*",transport_utilities,0.00375
 46103,"Pennington, SD",transport_utilities,0.0490879430520539
 46105,"Perkins, SD",transport_utilities,0.0575359599749843
 46107,"Potter, SD",transport_utilities,0.0499576629974597
@@ -18523,7 +18457,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",information,0.017626321974148
 2130,"Ketchikan Gateway Borough, AK*",information,0.0156071019473081
 2150,"Kodiak Island Borough, AK",information,0.0043387433713642
-2158,"Kusilvak Census Area, AK*",information,0.0216814159292035
 2164,"Lake and Peninsula Borough, AK",information,0.0
 2170,"Matanuska-Susitna Borough, AK",information,0.0190761928217988
 2180,"Nome Census Area, AK",information,0.0134504529234147
@@ -18743,14 +18676,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",information,0.0147255689424364
 8123,"Weld, CO*",information,0.0138188872450013
 8125,"Yuma, CO",information,0.0117820324005891
-9001,"Fairfield, CT",information,0.02608277765288
-9003,"Hartford, CT",information,0.0192494520140548
-9005,"Litchfield, CT",information,0.0224176188797411
-9007,"Middlesex, CT",information,0.0164591302768539
-9009,"New Haven, CT",information,0.0175287774688768
-9011,"New London, CT",information,0.0127614697692768
-9013,"Tolland, CT",information,0.0159382167338317
-9015,"Windham, CT",information,0.0132098573818269
 10001,"Kent, DE",information,0.0085369811038166
 10003,"New Castle, DE",information,0.0131555235177509
 10005,"Sussex, DE",information,0.0123253335438541
@@ -20242,7 +20167,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",information,0.0123171670515781
 35035,"Otero, NM",information,0.0191544133688206
 35037,"Quay, NM",information,0.0053459119496855
-35039,"Rio Arriba, NM",information,0.007376050285421
 35041,"Roosevelt, NM",information,0.0153326089581069
 35043,"Sandoval, NM",information,0.018186866583368
 35045,"San Juan, NM",information,0.0081076946611595
@@ -20838,7 +20762,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",information,0.0116487455197132
 46099,"Minnehaha, SD",information,0.0167766397025666
 46101,"Moody, SD",information,0.0068943904732058
-46102,"Oglala Lakota, SD*",information,0.0
 46103,"Pennington, SD",information,0.0147560433041672
 46105,"Perkins, SD",information,0.0125078173858661
 46107,"Potter, SD",information,0.0228619813717188
@@ -21597,7 +21520,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",finance_real_estate,0.03691397544471
 2130,"Ketchikan Gateway Borough, AK*",finance_real_estate,0.0491122565864833
 2150,"Kodiak Island Borough, AK",finance_real_estate,0.0056242969628796
-2158,"Kusilvak Census Area, AK*",finance_real_estate,0.0101769911504424
 2164,"Lake and Peninsula Borough, AK",finance_real_estate,0.0022883295194508
 2170,"Matanuska-Susitna Borough, AK",finance_real_estate,0.0375254685086089
 2180,"Nome Census Area, AK",finance_real_estate,0.0139994510019214
@@ -21817,14 +21739,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",finance_real_estate,0.0450691655510932
 8123,"Weld, CO*",finance_real_estate,0.0489892137783698
 8125,"Yuma, CO",finance_real_estate,0.0387123921733641
-9001,"Fairfield, CT",finance_real_estate,0.1197547237135473
-9003,"Hartford, CT",finance_real_estate,0.1058984215801821
-9005,"Litchfield, CT",finance_real_estate,0.0646813628916861
-9007,"Middlesex, CT",finance_real_estate,0.0898441490629646
-9009,"New Haven, CT",finance_real_estate,0.0660454754493121
-9011,"New London, CT",finance_real_estate,0.0454845489101158
-9013,"Tolland, CT",finance_real_estate,0.0905757194873854
-9015,"Windham, CT",finance_real_estate,0.0484074016589925
 10001,"Kent, DE",finance_real_estate,0.0535308654302189
 10003,"New Castle, DE",finance_real_estate,0.1194244502630751
 10005,"Sussex, DE",finance_real_estate,0.0559228704507776
@@ -23316,7 +23230,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",finance_real_estate,0.0192455735180908
 35035,"Otero, NM",finance_real_estate,0.0473406344081329
 35037,"Quay, NM",finance_real_estate,0.0528301886792452
-35039,"Rio Arriba, NM",finance_real_estate,0.0352767622346225
 35041,"Roosevelt, NM",finance_real_estate,0.0383918869974646
 35043,"Sandoval, NM",finance_real_estate,0.0727166149906674
 35045,"San Juan, NM",finance_real_estate,0.0327804366354159
@@ -23912,7 +23825,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",finance_real_estate,0.0206093189964157
 46099,"Minnehaha, SD",finance_real_estate,0.1139118191104607
 46101,"Moody, SD",finance_real_estate,0.0366656220620495
-46102,"Oglala Lakota, SD*",finance_real_estate,0.026875
 46103,"Pennington, SD",finance_real_estate,0.0737246032923031
 46105,"Perkins, SD",finance_real_estate,0.0312695434646654
 46107,"Potter, SD",finance_real_estate,0.069432684165961
@@ -24671,7 +24583,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",prof_sci_mgmt_admin,0.0610235422829125
 2130,"Ketchikan Gateway Borough, AK*",prof_sci_mgmt_admin,0.0693012600229095
 2150,"Kodiak Island Borough, AK",prof_sci_mgmt_admin,0.0848465370400128
-2158,"Kusilvak Census Area, AK*",prof_sci_mgmt_admin,0.0380530973451327
 2164,"Lake and Peninsula Borough, AK",prof_sci_mgmt_admin,0.022883295194508
 2170,"Matanuska-Susitna Borough, AK",prof_sci_mgmt_admin,0.0757674137429191
 2180,"Nome Census Area, AK",prof_sci_mgmt_admin,0.0230579192972824
@@ -24891,14 +24802,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",prof_sci_mgmt_admin,0.0513163766175814
 8123,"Weld, CO*",prof_sci_mgmt_admin,0.1103853449810611
 8125,"Yuma, CO",prof_sci_mgmt_admin,0.0643803913317904
-9001,"Fairfield, CT",prof_sci_mgmt_admin,0.1561810985457088
-9003,"Hartford, CT",prof_sci_mgmt_admin,0.1111656955290955
-9005,"Litchfield, CT",prof_sci_mgmt_admin,0.1126791232035835
-9007,"Middlesex, CT",prof_sci_mgmt_admin,0.1132161140560972
-9009,"New Haven, CT",prof_sci_mgmt_admin,0.0978722814218068
-9011,"New London, CT",prof_sci_mgmt_admin,0.0941860200450672
-9013,"Tolland, CT",prof_sci_mgmt_admin,0.09271377295168
-9015,"Windham, CT",prof_sci_mgmt_admin,0.0676013589252763
 10001,"Kent, DE",prof_sci_mgmt_admin,0.0691944784204088
 10003,"New Castle, DE",prof_sci_mgmt_admin,0.118336107194725
 10005,"Sussex, DE",prof_sci_mgmt_admin,0.1030433409647114
@@ -26390,7 +26293,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",prof_sci_mgmt_admin,0.060816012317167
 35035,"Otero, NM",prof_sci_mgmt_admin,0.0842096077490291
 35037,"Quay, NM",prof_sci_mgmt_admin,0.0660377358490566
-35039,"Rio Arriba, NM",prof_sci_mgmt_admin,0.1908793534731576
 35041,"Roosevelt, NM",prof_sci_mgmt_admin,0.0352529276832065
 35043,"Sandoval, NM",prof_sci_mgmt_admin,0.1194872506825859
 35045,"San Juan, NM",prof_sci_mgmt_admin,0.0601630280382001
@@ -26986,7 +26888,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",prof_sci_mgmt_admin,0.0161290322580645
 46099,"Minnehaha, SD",prof_sci_mgmt_admin,0.0773676412394283
 46101,"Moody, SD",prof_sci_mgmt_admin,0.028204324663115
-46102,"Oglala Lakota, SD*",prof_sci_mgmt_admin,0.0390625
 46103,"Pennington, SD",prof_sci_mgmt_admin,0.0831603144001186
 46105,"Perkins, SD",prof_sci_mgmt_admin,0.0300187617260788
 46107,"Potter, SD",prof_sci_mgmt_admin,0.0203217612193056
@@ -27745,7 +27646,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",education_health,0.2645163904534219
 2130,"Ketchikan Gateway Borough, AK*",education_health,0.2352520045819014
 2150,"Kodiak Island Borough, AK",education_health,0.1902619315442712
-2158,"Kusilvak Census Area, AK*",education_health,0.315929203539823
 2164,"Lake and Peninsula Borough, AK",education_health,0.3684210526315789
 2170,"Matanuska-Susitna Borough, AK",education_health,0.2386539193515885
 2180,"Nome Census Area, AK",education_health,0.4106505627230304
@@ -27965,14 +27865,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",education_health,0.2124051762605979
 8123,"Weld, CO*",education_health,0.195932299116598
 8125,"Yuma, CO",education_health,0.1790448138018094
-9001,"Fairfield, CT",education_health,0.2297660470133507
-9003,"Hartford, CT",education_health,0.2570345974643946
-9005,"Litchfield, CT",education_health,0.2565998216544659
-9007,"Middlesex, CT",education_health,0.2705540483784919
-9009,"New Haven, CT",education_health,0.3085411481407016
-9011,"New London, CT",education_health,0.251686228689787
-9013,"Tolland, CT",education_health,0.3020745597553548
-9015,"Windham, CT",education_health,0.2693534757790539
 10001,"Kent, DE",education_health,0.2581937545243503
 10003,"New Castle, DE",education_health,0.2515167898119781
 10005,"Sussex, DE",education_health,0.2316649561853635
@@ -29464,7 +29356,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",education_health,0.3056197074672825
 35035,"Otero, NM",education_health,0.231598237270387
 35037,"Quay, NM",education_health,0.2015723270440251
-35039,"Rio Arriba, NM",education_health,0.2307100250144314
 35041,"Roosevelt, NM",education_health,0.2432693468550042
 35043,"Sandoval, NM",education_health,0.2361670291699446
 35045,"San Juan, NM",education_health,0.257523110207828
@@ -30060,7 +29951,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",education_health,0.239247311827957
 46099,"Minnehaha, SD",education_health,0.2360877207513137
 46101,"Moody, SD",education_health,0.2344092760890003
-46102,"Oglala Lakota, SD*",education_health,0.40125
 46103,"Pennington, SD",education_health,0.2573409461663948
 46105,"Perkins, SD",education_health,0.1382113821138211
 46107,"Potter, SD",education_health,0.1388653683319221
@@ -30819,7 +30709,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",arts_entertainment,0.0939665302483893
 2130,"Ketchikan Gateway Borough, AK*",arts_entertainment,0.0979381443298969
 2150,"Kodiak Island Borough, AK",arts_entertainment,0.0674915635545556
-2158,"Kusilvak Census Area, AK*",arts_entertainment,0.0305309734513274
 2164,"Lake and Peninsula Borough, AK",arts_entertainment,0.0594965675057208
 2170,"Matanuska-Susitna Borough, AK",arts_entertainment,0.0716252826724581
 2180,"Nome Census Area, AK",arts_entertainment,0.0441943453197913
@@ -31039,14 +30928,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",arts_entertainment,0.0397144132083891
 8123,"Weld, CO*",arts_entertainment,0.0839999263320093
 8125,"Yuma, CO",arts_entertainment,0.0616452766673679
-9001,"Fairfield, CT",arts_entertainment,0.0779265779915477
-9003,"Hartford, CT",arts_entertainment,0.0757641512551356
-9005,"Litchfield, CT",arts_entertainment,0.072416581987101
-9007,"Middlesex, CT",arts_entertainment,0.0825340249951757
-9009,"New Haven, CT",arts_entertainment,0.0770804012784337
-9011,"New London, CT",arts_entertainment,0.1370909615107395
-9013,"Tolland, CT",arts_entertainment,0.07606287172975
-9015,"Windham, CT",arts_entertainment,0.0881749357614637
 10001,"Kent, DE",arts_entertainment,0.0943311450038691
 10003,"New Castle, DE",arts_entertainment,0.0790921522690892
 10005,"Sussex, DE",arts_entertainment,0.0956520881029446
@@ -32538,7 +32419,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",arts_entertainment,0.1501154734411085
 35035,"Otero, NM",arts_entertainment,0.1182425062175487
 35037,"Quay, NM",arts_entertainment,0.2179245283018868
-35039,"Rio Arriba, NM",arts_entertainment,0.1162208966711564
 35041,"Roosevelt, NM",arts_entertainment,0.1062416998671978
 35043,"Sandoval, NM",arts_entertainment,0.0924923257284773
 35045,"San Juan, NM",arts_entertainment,0.1052470552241089
@@ -33134,7 +33014,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",arts_entertainment,0.0268817204301075
 46099,"Minnehaha, SD",arts_entertainment,0.0898557926801211
 46101,"Moody, SD",arts_entertainment,0.1059229081792541
-46102,"Oglala Lakota, SD*",arts_entertainment,0.085625
 46103,"Pennington, SD",arts_entertainment,0.1096507489248109
 46105,"Perkins, SD",arts_entertainment,0.0412757973733583
 46107,"Potter, SD",arts_entertainment,0.0906011854360711
@@ -33893,7 +33772,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",other_services,0.0513797155476315
 2130,"Ketchikan Gateway Borough, AK*",other_services,0.0307846506300114
 2150,"Kodiak Island Borough, AK",other_services,0.0358348063634902
-2158,"Kusilvak Census Area, AK*",other_services,0.0314159292035398
 2164,"Lake and Peninsula Borough, AK",other_services,0.0091533180778032
 2170,"Matanuska-Susitna Borough, AK",other_services,0.0492129950966124
 2180,"Nome Census Area, AK",other_services,0.0430963491627779
@@ -34113,14 +33991,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",other_services,0.0249888442659527
 8123,"Weld, CO*",other_services,0.0493698317300313
 8125,"Yuma, CO",other_services,0.0357668840732169
-9001,"Fairfield, CT",other_services,0.0491171332457444
-9003,"Hartford, CT",other_services,0.0440327359644001
-9005,"Litchfield, CT",other_services,0.0505692540594346
-9007,"Middlesex, CT",other_services,0.0424191516169676
-9009,"New Haven, CT",other_services,0.0443823561357654
-9011,"New London, CT",other_services,0.041213022465346
-9013,"Tolland, CT",other_services,0.0375260777733145
-9015,"Windham, CT",other_services,0.039112214806767
 10001,"Kent, DE",other_services,0.0356955642644966
 10003,"New Castle, DE",other_services,0.0401944883197467
 10005,"Sussex, DE",other_services,0.0466467987684534
@@ -35612,7 +35482,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",other_services,0.1516551193225558
 35035,"Otero, NM",other_services,0.0422793315589685
 35037,"Quay, NM",other_services,0.0663522012578616
-35039,"Rio Arriba, NM",other_services,0.0592649605541658
 35041,"Roosevelt, NM",other_services,0.0610889774236387
 35043,"Sandoval, NM",other_services,0.0539281472226078
 35045,"San Juan, NM",other_services,0.0499355318079503
@@ -36208,7 +36077,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",other_services,0.0905017921146953
 46099,"Minnehaha, SD",other_services,0.0453696290365625
 46101,"Moody, SD",other_services,0.0542149796302099
-46102,"Oglala Lakota, SD*",other_services,0.0278125
 46103,"Pennington, SD",other_services,0.0448427999406792
 46105,"Perkins, SD",other_services,0.0512820512820512
 46107,"Potter, SD",other_services,0.056731583403895
@@ -36967,7 +36835,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",public_admin,0.0908464686575631
 2130,"Ketchikan Gateway Borough, AK*",public_admin,0.1103951890034364
 2150,"Kodiak Island Borough, AK",public_admin,0.1057367829021372
-2158,"Kusilvak Census Area, AK*",public_admin,0.1938053097345132
 2164,"Lake and Peninsula Borough, AK",public_admin,0.3020594965675057
 2170,"Matanuska-Susitna Borough, AK",public_admin,0.0940823500436603
 2180,"Nome Census Area, AK",public_admin,0.1924238265166072
@@ -37187,14 +37054,6 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",public_admin,0.1039714413208389
 8123,"Weld, CO*",public_admin,0.0378285131957788
 8125,"Yuma, CO",public_admin,0.041026719966337
-9001,"Fairfield, CT",public_admin,0.025744522431065
-9003,"Hartford, CT",public_admin,0.0423298489871898
-9005,"Litchfield, CT",public_admin,0.0354098836606457
-9007,"Middlesex, CT",public_admin,0.0443374916285458
-9009,"New Haven, CT",public_admin,0.0360859406956509
-9011,"New London, CT",public_admin,0.0502719968437744
-9013,"Tolland, CT",public_admin,0.0392753942441009
-9015,"Windham, CT",public_admin,0.0379912739062203
 10001,"Kent, DE",public_admin,0.0946806120665984
 10003,"New Castle, DE",public_admin,0.0500319789115862
 10005,"Sussex, DE",public_admin,0.0538604247256651
@@ -38686,7 +38545,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",public_admin,0.1824480369515011
 35035,"Otero, NM",public_admin,0.1147955844495833
 35037,"Quay, NM",public_admin,0.0767295597484276
-35039,"Rio Arriba, NM",public_admin,0.0930665127317041
 35041,"Roosevelt, NM",public_admin,0.0761801279729566
 35043,"Sandoval, NM",public_admin,0.0798741265213568
 35045,"San Juan, NM",public_admin,0.0643370703031097
@@ -39282,7 +39140,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",public_admin,0.032258064516129
 46099,"Minnehaha, SD",public_admin,0.0261910677967661
 46101,"Moody, SD",public_admin,0.0645565653400188
-46102,"Oglala Lakota, SD*",public_admin,0.176875
 46103,"Pennington, SD",public_admin,0.0526471896781847
 46105,"Perkins, SD",public_admin,0.0281425891181988
 46107,"Potter, SD",public_admin,0.0287891617273497
