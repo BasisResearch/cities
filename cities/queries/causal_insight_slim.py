@@ -209,9 +209,27 @@ class CausalInsightSlim:
                               axis = 0, q = 97.5)
             )
 
-#self.observed_outcomes.iloc[:,1] * self.intervention_impacts_means[0]
-        predicted_mean = self.observed_outcomes.iloc[:,0]
+        intervention_impacts_means_array = np.column_stack(self.intervention_impacts_means)
+        intervention_impacts_lows_array = np.column_stack(self.intervention_impacts_lows)
+        intervention_impacts_highs_array = np.column_stack(self.intervention_impacts_highs)
+        
+        future_predicted_means = self.observed_outcomes.iloc[:,1:] + intervention_impacts_means_array
+        predicted_means = np.insert(future_predicted_means, 0, self.observed_outcomes.iloc[:,0], axis = 1)
+        
+        future_predicted_lows = self.observed_outcomes.iloc[:,1:] + intervention_impacts_lows_array
+        predicted_lows = np.insert(future_predicted_lows, 0, self.observed_outcomes.iloc[:,0], axis = 1)
 
+        future_predicted_highs = self.observed_outcomes.iloc[:,1:] + intervention_impacts_highs_array
+        predicted_highs = np.insert(future_predicted_highs, 0, self.observed_outcomes.iloc[:,0], axis = 1)
+
+        print("blah")
+
+        assert int(predicted_means.shape[0]) == len(self.group)
+        assert int(predicted_means.shape[1]) == 4
+        assert int(predicted_lows.shape[0]) == len(self.group)
+        assert int(predicted_lows.shape[1]) == 4
+        assert int(predicted_highs.shape[0]) == len(self.group)
+        assert int(predicted_highs.shape[1]) == 4
 
 
 
