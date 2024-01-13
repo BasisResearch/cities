@@ -190,18 +190,29 @@ class CausalInsightSlim:
         self.intervention_diffs = self.intervened_value - self.observed_interventions       
         
         self.intervention_impacts = {}
+        self.intervention_impacts_means = []
+        self.intervention_impacts_lows = []
+        self.intervention_impacts_highs = []
         for shift in [1, 2, 3]:
-           print ("taushapes", self.tensed_tau_samples[shift].shape)
-           print ("intervention_diffs", self.intervention_diffs.shape)
-           self.intervention_impacts[shift] = (
-            np.outer(self.tensed_tau_samples[shift], 
+            self.intervention_impacts[shift] =  np.outer(
+               self.tensed_tau_samples[shift], 
                      self.intervention_diffs)
-)
+            self.intervention_impacts_means.append(
+                np.mean(self.intervention_impacts[shift], axis = 0)
+            )
+            self.intervention_impacts_lows.append(
+                np.percentile(self.intervention_impacts[shift],
+                               axis = 0, q= 2.5)
+            )
+            self.intervention_impacts_highs.append(
+                np.percentile(self.intervention_impacts[shift], 
+                              axis = 0, q = 97.5)
+            )
 
-            # self.intervention_impacts[shift] = (
-            #     self.tensed_tau_samples[shift] * self.intervention_diffs
-            # )
-        
+#self.observed_outcomes.iloc[:,1] * self.intervention_impacts_means[0]
+        predicted_mean = self.observed_outcomes.iloc[:,0]
+
+
 
 
     def get_fips_predictions(
