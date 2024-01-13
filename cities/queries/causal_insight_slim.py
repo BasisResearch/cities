@@ -164,7 +164,7 @@ class CausalInsightSlim:
             loc[dg.std_wide[self.intervention_dataset]["GeoFIPS"].isin(self.group)].index.tolist())
 
         assert len(self.fips_ids) == len(self.group)
-        assert list(dg.std_wide[self.intervention_dataset]["GeoFIPS"].iloc[self.fips_ids]) == self.group
+        assert set(dg.std_wide[self.intervention_dataset]["GeoFIPS"].iloc[self.fips_ids]) == set(self.group)
 
 
         self.names = dg.std_wide[self.intervention_dataset]["GeoName"].iloc[self.fips_ids]
@@ -222,7 +222,6 @@ class CausalInsightSlim:
         future_predicted_highs = self.observed_outcomes.iloc[:,1:] + intervention_impacts_highs_array
         predicted_highs = np.insert(future_predicted_highs, 0, self.observed_outcomes.iloc[:,0], axis = 1)
 
-        print("blah")
 
         assert int(predicted_means.shape[0]) == len(self.group)
         assert int(predicted_means.shape[1]) == 4
@@ -231,6 +230,12 @@ class CausalInsightSlim:
         assert int(predicted_highs.shape[0]) == len(self.group)
         assert int(predicted_highs.shape[1]) == 4
 
+        self.group_predictions = {self.group[i]: pd.DataFrame({"year": self.prediction_years,
+                        "observed": self.observed_outcomes.loc[self.fips_ids[i]],
+                        "mean": predicted_means[i,],
+                        "low": predicted_lows[i,],
+                        "high": predicted_highs[i,]})
+                        for i in range(len(self.group))}
 
 
     def get_fips_predictions(
