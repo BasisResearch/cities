@@ -103,6 +103,107 @@ class CausalInsightSlim:
 
         return (intervened_original_scale[0], observed_original_scale)
 
+    def get_group_predictions(self, group, intervened_value, year = None,
+                              intervention_is_percentile=False):
+        self.group = group
+        
+        if self.data is None:
+            file_path = os.path.join(
+                self.root,
+                "data/years_available",
+                f"{self.intervention_dataset}_{self.outcome_dataset}.pkl",
+            )
+            with open(file_path, "rb") as file:
+                self.data = dill.load(file)
+
+        if year is None:
+            year = self.data["years_available"][-1]
+            assert year in self.data["years_available"]
+
+        self.year = year
+
+        if intervention_is_percentile:
+            self.intervened_percentile = intervened_value
+            intervened_value = transformed_intervention_from_percentile(
+                self.intervention_dataset, year, intervened_value
+            )
+
+        self.intervened_value = intervened_value
+
+        # find years for prediction
+        outcome_years = self.data["outcome_years"]
+        year_id = [int(x) for x in outcome_years].index(year)
+        self.year_id = year_id
+
+        self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
+
+
+        dg = DataGrabber()
+        dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
+        dg.get_features_wide([self.intervention_dataset])
+        interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
+
+        self.intervened_value_original = revert_standardize_and_scale_scaler(
+            self.intervened_value, self.year, self.intervention_dataset
+        )
+
+        self.intervened_value_percentile = round(
+            (
+                np.mean(
+                    interventions_this_year_original.values
+                    <= self.intervened_value_original
+                )
+                * 100
+            ),
+            3,
+        )
+
+
+        self.fips_ids = (
+            dg.std_wide[self.intervention_dataset].
+            loc[dg.std_wide[self.intervention_dataset]["GeoFIPS"].isin(self.group)].index.tolist())
+
+        assert len(self.fips_ids) == len(self.group)
+        assert list(dg.std_wide[self.intervention_dataset]["GeoFIPS"].iloc[self.fips_ids]) == self.group
+
+
+        self.names = dg.std_wide[self.intervention_dataset]["GeoName"].iloc[self.fips_ids]
+
+        self.observed_interventions = dg.std_wide[self.intervention_dataset].iloc[
+            self.fips_ids
+        ][str(year)]
+
+        self.observed_interventions_original = dg.wide[self.intervention_dataset].iloc[
+            self.fips_ids
+        ][str(year)]
+
+        if intervention_is_percentile:
+            self.observed_interventions_percentile =(
+                np.round([np.mean(interventions_this_year_original.values <= 
+                        obs) for obs in self.observed_interventions_original],3) * 100
+            )
+            
+        self.observed_outcomes = dg.std_wide[self.outcome_dataset].iloc[self.fips_ids][
+            outcome_years[year_id : (year_id + 4)]
+        ]
+        
+        self.intervention_diffs = self.intervened_value - self.observed_interventions       
+        
+        self.intervention_impacts = {}
+        for shift in [1, 2, 3]:
+           print ("taushapes", self.tensed_tau_samples[shift].shape)
+           print ("intervention_diffs", self.intervention_diffs.shape)
+           self.intervention_impacts[shift] = (
+            np.outer(self.tensed_tau_samples[shift], 
+                     self.intervention_diffs)
+)
+
+            # self.intervention_impacts[shift] = (
+            #     self.tensed_tau_samples[shift] * self.intervention_diffs
+            # )
+        
+
+
     def get_fips_predictions(
         self, fips, intervened_value, year=None, intervention_is_percentile=False
     ):
@@ -139,7 +240,7 @@ class CausalInsightSlim:
 
         self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
 
-        # find fips unit index
+        
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
         dg.get_features_wide([self.intervention_dataset])
