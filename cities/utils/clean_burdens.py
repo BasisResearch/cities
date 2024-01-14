@@ -27,20 +27,34 @@ def clean_burdens_first():
         ["GeoFIPS", "GeoName", "Housing burden (percent)", "Energy burden"]
     ]
 
-    burdens.columns = ["GeoFIPS", "GeoName", "Housing_burden", "Energy_burden"]
+    burdens.columns = ["GeoFIPS", "GeoName", "burdens_housing", "burdens_energy"]
 
     columns_to_trans = burdens.columns[-2:]
     burdens[columns_to_trans] = burdens[columns_to_trans].astype("float64")
+    
+    burdens_housing = burdens[["GeoFIPS", "GeoName", "burdens_housing"]]
+    burdens_energy = burdens[["GeoFIPS", "GeoName", "burdens_energy"]]
+    
+    burdens_housing.to_csv(f"{root}/data/raw/burdens_housing_raw.csv", index=False)
+    burdens_energy.to_csv(f"{root}/data/raw/burdens_energy_raw.csv", index=False)
 
-    burdens.to_csv(f"{root}/data/raw/burdens_raw.csv", index=False)
 
 
 def clean_burdens():
     clean_burdens_first()
+    
 
-    cleaner = VariableCleaner(
-        variable_name="burdens",
-        path_to_raw_csv=f"{root}/data/raw/burdens_raw.csv",
+    cleaner_housing = VariableCleaner(
+        variable_name="burdens_housing",
+        path_to_raw_csv=f"{root}/data/raw/burdens_housing_raw.csv",
         year_or_category="Category",
     )
-    cleaner.clean_variable()
+    cleaner_housing.clean_variable()
+    
+    
+    cleaner_energy = VariableCleaner(
+        variable_name="burdens_energy",
+        path_to_raw_csv=f"{root}/data/raw/burdens_energy_raw.csv",
+        year_or_category="Category",
+    )
+    cleaner_energy.clean_variable()
