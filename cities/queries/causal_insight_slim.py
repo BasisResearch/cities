@@ -104,8 +104,10 @@ class CausalInsightSlim:
         return (intervened_original_scale[0], observed_original_scale)
 
     def get_group_predictions(self, group, intervened_value, year = None,
-                              intervention_is_percentile=False):
-        self.group = group
+                              intervention_is_percentile=False,
+                              produce_original = True):
+        self.group_clean = list(set(group))
+        self.group_clean.sort()
         
         if self.data is None:
             file_path = os.path.join(
@@ -158,13 +160,13 @@ class CausalInsightSlim:
             3,
         )
 
-
+        # note: ids will be inceasingly sorted
         self.fips_ids = (
             dg.std_wide[self.intervention_dataset].
-            loc[dg.std_wide[self.intervention_dataset]["GeoFIPS"].isin(self.group)].index.tolist())
+            loc[dg.std_wide[self.intervention_dataset]["GeoFIPS"].isin(self.group_clean)].index.tolist())
 
-        assert len(self.fips_ids) == len(self.group)
-        assert set(dg.std_wide[self.intervention_dataset]["GeoFIPS"].iloc[self.fips_ids]) == set(self.group)
+        assert len(self.fips_ids) == len(self.group_clean)
+        assert set(dg.std_wide[self.intervention_dataset]["GeoFIPS"].iloc[self.fips_ids]) == set(self.group_clean)
 
 
         self.names = dg.std_wide[self.intervention_dataset]["GeoName"].iloc[self.fips_ids]
@@ -223,19 +225,26 @@ class CausalInsightSlim:
         predicted_highs = np.insert(future_predicted_highs, 0, self.observed_outcomes.iloc[:,0], axis = 1)
 
 
-        assert int(predicted_means.shape[0]) == len(self.group)
+        assert int(predicted_means.shape[0]) == len(self.group_clean)
         assert int(predicted_means.shape[1]) == 4
-        assert int(predicted_lows.shape[0]) == len(self.group)
+        assert int(predicted_lows.shape[0]) == len(self.group_clean)
         assert int(predicted_lows.shape[1]) == 4
-        assert int(predicted_highs.shape[0]) == len(self.group)
+        assert int(predicted_highs.shape[0]) == len(self.group_clean)
         assert int(predicted_highs.shape[1]) == 4
 
-        self.group_predictions = {self.group[i]: pd.DataFrame({"year": self.prediction_years,
+        self.group_predictions = {self.group_clean[i]: pd.DataFrame({"year": self.prediction_years,
                         "observed": self.observed_outcomes.loc[self.fips_ids[i]],
                         "mean": predicted_means[i,],
                         "low": predicted_lows[i,],
                         "high": predicted_highs[i,]})
-                        for i in range(len(self.group))}
+                        for i in range(len(self.group_clean))}
+        
+        # if produce_original:
+        #     self.group_predictions_original = {self.group_clean[i]: revert_prediction_df(
+        #         self.group_predictions[self.group_clean[i]], self.outcome_dataset)
+        #                     for i in range(len(self.group_clean))}
+
+        
 
 
     def get_fips_predictions(
