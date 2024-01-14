@@ -77,6 +77,7 @@ def test_smoke_training_pipeline(intervention, outcome, shift):
 
     model.train_interactions_model()
 
+
 @pytest.mark.skip(reason="adding variables for now, training later")
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
@@ -97,6 +98,7 @@ def test_smoke_guide_presence(intervention, outcome, shift):
         num_files == 2 * N_combinations + 2
     ), f"{N_combinations + 2 - num_files} guides are missing"
     # two extra files: .gitkeep and .training.log
+
 
 @pytest.mark.skip(reason="adding variables for now, training later")
 @pytest.mark.parametrize("intervention", interventions)
