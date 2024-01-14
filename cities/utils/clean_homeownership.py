@@ -1,12 +1,15 @@
-
 from cities.utils.clean_variable import VariableCleaner
 from cities.utils.data_grabber import find_repo_root
 
 root = find_repo_root()
 
-def clean_homeownership():
 
-    variables = ['median_owner_occupied_home_value', 'median_rent', 'homeownership_rate']
+def clean_homeownership():
+    variables = [
+        "median_owner_occupied_home_value",
+        "median_rent",
+        "homeownership_rate",
+    ]
 
     for variable in variables:
         cleaner = VariableCleaner(
