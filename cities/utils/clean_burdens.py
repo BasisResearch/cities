@@ -31,18 +31,16 @@ def clean_burdens_first():
 
     columns_to_trans = burdens.columns[-2:]
     burdens[columns_to_trans] = burdens[columns_to_trans].astype("float64")
-    
+
     burdens_housing = burdens[["GeoFIPS", "GeoName", "burdens_housing"]]
     burdens_energy = burdens[["GeoFIPS", "GeoName", "burdens_energy"]]
-    
+
     burdens_housing.to_csv(f"{root}/data/raw/burdens_housing_raw.csv", index=False)
     burdens_energy.to_csv(f"{root}/data/raw/burdens_energy_raw.csv", index=False)
 
 
-
 def clean_burdens():
     clean_burdens_first()
-    
 
     cleaner_housing = VariableCleaner(
         variable_name="burdens_housing",
@@ -50,8 +48,7 @@ def clean_burdens():
         year_or_category="Category",
     )
     cleaner_housing.clean_variable()
-    
-    
+
     cleaner_energy = VariableCleaner(
         variable_name="burdens_energy",
         path_to_raw_csv=f"{root}/data/raw/burdens_energy_raw.csv",

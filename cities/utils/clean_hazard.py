@@ -11,9 +11,15 @@ data.get_features_wide(["gdp"])
 gdp = data.wide["gdp"]
 
 
-variables_hazard = ["expected_agricultural_loss_rate", "expected_building_loss_rate", 
-            "expected_population_loss_rate", "diesel_matter_exposure", 
-            "proximity_to_hazardous_waste_sites", "proximity_to_risk_management_plan_facilities"]
+variables_hazard = [
+    "expected_agricultural_loss_rate",
+    "expected_building_loss_rate",
+    "expected_population_loss_rate",
+    "diesel_matter_exposure",
+    "proximity_to_hazardous_waste_sites",
+    "proximity_to_risk_management_plan_facilities",
+]
+
 
 def clean_hazard_first():
     hazard = pd.read_csv(f"{root}/data/raw/communities_raw.csv")
@@ -54,28 +60,23 @@ def clean_hazard_first():
         "GeoFIPS",
         "GeoName",
         "expected_agricultural_loss_rate",
-        "expected_building_loss_rate",       
+        "expected_building_loss_rate",
         "expected_population_loss_rate",
         "diesel_matter_exposure",
         "proximity_to_hazardous_waste_sites",
         "proximity_to_risk_management_plan_facilities",
     ]
-    
 
     columns_to_trans = hazard.columns[-6:]
     hazard[columns_to_trans] = hazard[columns_to_trans].astype("float64")
-    
 
     for variable in variables_hazard:
         hazard_variable = hazard[["GeoFIPS", "GeoName", variable]]
         hazard_variable.to_csv(f"{root}/data/raw/{variable}.csv", index=False)
-    
-   
 
 
 def clean_hazard():
     clean_hazard_first()
-
 
     for variable in variables_hazard:
         cleaner = VariableCleaner(
@@ -84,6 +85,3 @@ def clean_hazard():
             year_or_category="Category",
         )
         cleaner.clean_variable()
-
-
-   
