@@ -103,6 +103,239 @@ class CausalInsightSlim:
 
         return (intervened_original_scale[0], observed_original_scale)
 
+    def get_group_predictions(
+        self,
+        group,
+        intervened_value,
+        year=None,
+        intervention_is_percentile=False,
+        produce_original=True,
+    ):
+        self.group_clean = list(set(group))
+        self.group_clean.sort()
+        self.produce_original = produce_original
+
+        if self.data is None:
+            file_path = os.path.join(
+                self.root,
+                "data/years_available",
+                f"{self.intervention_dataset}_{self.outcome_dataset}.pkl",
+            )
+            with open(file_path, "rb") as file:
+                self.data = dill.load(file)
+
+        if year is None:
+            year = self.data["years_available"][-1]
+            assert year in self.data["years_available"]
+
+        self.year = year
+
+        if intervention_is_percentile:
+            self.intervened_percentile = intervened_value
+            intervened_value = transformed_intervention_from_percentile(
+                self.intervention_dataset, year, intervened_value
+            )
+
+        self.intervened_value = intervened_value
+
+        # find years for prediction
+        outcome_years = self.data["outcome_years"]
+        year_id = [int(x) for x in outcome_years].index(year)
+        self.year_id = year_id
+
+        self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
+
+        dg = DataGrabber()
+        dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
+        dg.get_features_wide([self.intervention_dataset])
+        interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
+
+        self.intervened_value_original = revert_standardize_and_scale_scaler(
+            self.intervened_value, self.year, self.intervention_dataset
+        )
+
+        self.intervened_value_percentile = round(
+            (
+                np.mean(
+                    interventions_this_year_original.values
+                    <= self.intervened_value_original
+                )
+                * 100
+            ),
+            3,
+        )
+
+        # note: ids will be inceasingly sorted
+        self.fips_ids = (
+            dg.std_wide[self.intervention_dataset]
+            .loc[
+                dg.std_wide[self.intervention_dataset]["GeoFIPS"].isin(self.group_clean)
+            ]
+            .index.tolist()
+        )
+
+        assert len(self.fips_ids) == len(self.group_clean)
+        assert set(
+            dg.std_wide[self.intervention_dataset]["GeoFIPS"].iloc[self.fips_ids]
+        ) == set(self.group_clean)
+
+        self.names = dg.std_wide[self.intervention_dataset]["GeoName"].iloc[
+            self.fips_ids
+        ]
+
+        self.observed_interventions = dg.std_wide[self.intervention_dataset].iloc[
+            self.fips_ids
+        ][str(year)]
+
+        self.observed_interventions_original = dg.wide[self.intervention_dataset].iloc[
+            self.fips_ids
+        ][str(year)]
+
+        if intervention_is_percentile:
+            self.observed_interventions_percentile = (
+                np.round(
+                    [
+                        np.mean(interventions_this_year_original.values <= obs)
+                        for obs in self.observed_interventions_original
+                    ],
+                    3,
+                )
+                * 100
+            )
+
+        self.observed_outcomes = dg.std_wide[self.outcome_dataset].iloc[self.fips_ids][
+            outcome_years[year_id : (year_id + 4)]
+        ]
+
+        self.intervention_diffs = self.intervened_value - self.observed_interventions
+
+        self.intervention_impacts = {}
+        self.intervention_impacts_means = []
+        self.intervention_impacts_lows = []
+        self.intervention_impacts_highs = []
+        for shift in [1, 2, 3]:
+            self.intervention_impacts[shift] = np.outer(
+                self.tensed_tau_samples[shift], self.intervention_diffs
+            )
+            self.intervention_impacts_means.append(
+                np.mean(self.intervention_impacts[shift], axis=0)
+            )
+            self.intervention_impacts_lows.append(
+                np.percentile(self.intervention_impacts[shift], axis=0, q=2.5)
+            )
+            self.intervention_impacts_highs.append(
+                np.percentile(self.intervention_impacts[shift], axis=0, q=97.5)
+            )
+
+        intervention_impacts_means_array = np.column_stack(
+            self.intervention_impacts_means
+        )
+        intervention_impacts_lows_array = np.column_stack(
+            self.intervention_impacts_lows
+        )
+        intervention_impacts_highs_array = np.column_stack(
+            self.intervention_impacts_highs
+        )
+
+        future_predicted_means = (
+            self.observed_outcomes.iloc[:, 1:] + intervention_impacts_means_array
+        )
+        predicted_means = np.insert(
+            future_predicted_means, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        )
+
+        future_predicted_lows = (
+            self.observed_outcomes.iloc[:, 1:] + intervention_impacts_lows_array
+        )
+        predicted_lows = np.insert(
+            future_predicted_lows, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        )
+
+        future_predicted_highs = (
+            self.observed_outcomes.iloc[:, 1:] + intervention_impacts_highs_array
+        )
+        predicted_highs = np.insert(
+            future_predicted_highs, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        )
+
+        if self.produce_original:
+            pred_means_original = []
+            pred_lows_original = []
+            pred_highs_original = []
+            observed_outcomes_original = []
+            for i in range(predicted_means.shape[1]):
+                y = self.prediction_years[i]
+                observed_outcomes_original.append(
+                    revert_standardize_and_scale_scaler(
+                        self.observed_outcomes.iloc[:, i], y, self.outcome_dataset
+                    )
+                )
+                pred_means_original.append(
+                    revert_standardize_and_scale_scaler(
+                        predicted_means[:, i], y, self.outcome_dataset
+                    )
+                )
+
+                pred_lows_original.append(
+                    revert_standardize_and_scale_scaler(
+                        predicted_lows[:, i], y, self.outcome_dataset
+                    )
+                )
+
+                pred_highs_original.append(
+                    revert_standardize_and_scale_scaler(
+                        predicted_highs[:, i], y, self.outcome_dataset
+                    )
+                )
+
+            pred_means_original = np.column_stack(pred_means_original)
+            pred_lows_original = np.column_stack(pred_lows_original)
+            pred_highs_original = np.column_stack(pred_highs_original)
+            observed_outcomes_original = np.column_stack(observed_outcomes_original)
+
+            self.observed_outcomes_original = pd.DataFrame(observed_outcomes_original)
+            self.observed_outcomes_original.index = self.observed_outcomes.index
+
+            assert predicted_means.shape == pred_means_original.shape
+            assert predicted_lows.shape == pred_lows_original.shape
+            assert predicted_highs.shape == pred_highs_original.shape
+
+        assert int(predicted_means.shape[0]) == len(self.group_clean)
+        assert int(predicted_means.shape[1]) == 4
+        assert int(predicted_lows.shape[0]) == len(self.group_clean)
+        assert int(predicted_lows.shape[1]) == 4
+        assert int(predicted_highs.shape[0]) == len(self.group_clean)
+        assert int(predicted_highs.shape[1]) == 4
+
+        self.group_predictions = {
+            self.group_clean[i]: pd.DataFrame(
+                {
+                    "year": self.prediction_years,
+                    "observed": self.observed_outcomes.loc[self.fips_ids[i]],
+                    "mean": predicted_means[i,],
+                    "low": predicted_lows[i,],
+                    "high": predicted_highs[i,],
+                }
+            )
+            for i in range(len(self.group_clean))
+        }
+
+        if self.produce_original:
+            self.group_predictions_original = {
+                self.group_clean[i]: pd.DataFrame(
+                    {
+                        "year": self.prediction_years,
+                        "observed": self.observed_outcomes_original.loc[
+                            self.fips_ids[i]
+                        ],
+                        "mean": pred_means_original[i,],
+                        "low": pred_lows_original[i,],
+                        "high": pred_highs_original[i,],
+                    }
+                )
+                for i in range(len(self.group_clean))
+            }
+
     def get_fips_predictions(
         self, fips, intervened_value, year=None, intervention_is_percentile=False
     ):
@@ -139,7 +372,6 @@ class CausalInsightSlim:
 
         self.prediction_years = outcome_years[(year_id) : (year_id + 4)]
 
-        # find fips unit index
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
         dg.get_features_wide([self.intervention_dataset])
