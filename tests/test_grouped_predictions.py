@@ -331,3 +331,4 @@ def test_grouped_predictions():
         check_dtype=False,
         rtol=0.01,
     )
+
