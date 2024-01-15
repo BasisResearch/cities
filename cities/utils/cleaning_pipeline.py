@@ -5,6 +5,7 @@ from cities.utils.clean_ethnic_composition_ma import clean_ethnic_composition_ma
 from cities.utils.clean_gdp import clean_gdp
 from cities.utils.clean_gdp_ma import clean_gdp_ma
 from cities.utils.clean_hazard import clean_hazard
+from cities.utils.clean_homeownership import clean_homeownership
 from cities.utils.clean_income_distribution import clean_income_distribution
 from cities.utils.clean_industry import clean_industry
 from cities.utils.clean_industry_ma import clean_industry_ma
@@ -24,6 +25,8 @@ from cities.utils.cleaning_poverty import clean_poverty
 
 
 # clean_health() lost of another 15-ish fips
+
+clean_homeownership()
 
 clean_income_distribution()
 
