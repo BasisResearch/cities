@@ -178,7 +178,7 @@ GeoFIPS,GeoName,median_owner_occupied_home_value
 5147,"Woodruff, AR",76800.0
 5149,"Yell, AR",112100.0
 6001,"Alameda, CA",870100.0
-6003,"Alpine, CA",378200.0
+6003,"Alpine, CA",343800.0
 6005,"Amador, CA",349500.0
 6007,"Butte, CA",325600.0
 6009,"Calaveras, CA",354600.0
@@ -1112,7 +1112,7 @@ GeoFIPS,GeoName,median_owner_occupied_home_value
 22017,"Caddo, LA",152800.0
 22019,"Calcasieu, LA",171900.0
 22021,"Caldwell, LA",84100.0
-22023,"Cameron, LA",152500.0
+22023,"Cameron, LA",110900.0
 22025,"Catahoula, LA",87100.0
 22027,"Claiborne, LA",73300.0
 22029,"Concordia, LA",88300.0
@@ -2518,7 +2518,7 @@ GeoFIPS,GeoName,median_owner_occupied_home_value
 48027,"Bell, TX",164200.0
 48029,"Bexar, TX",187300.0
 48031,"Blanco, TX",286900.0
-48033,"Borden, TX",143300.0
+48033,"Borden, TX",106900.0
 48035,"Bosque, TX",137800.0
 48037,"Bowie, TX",132700.0
 48039,"Brazoria, TX",225200.0
@@ -2632,11 +2632,11 @@ GeoFIPS,GeoName,median_owner_occupied_home_value
 48255,"Karnes, TX",111900.0
 48257,"Kaufman, TX",216300.0
 48259,"Kendall, TX",393200.0
-48261,"Kenedy, TX",-666666666.0
+48261,"Kenedy, TX",21300.0
 48263,"Kent, TX",91400.0
 48265,"Kerr, TX",212300.0
 48267,"Kimble, TX",131700.0
-48269,"King, TX",22600.0
+48269,"King, TX",38800.0
 48271,"Kinney, TX",98800.0
 48273,"Kleberg, TX",98000.0
 48275,"Knox, TX",47000.0
@@ -2652,7 +2652,7 @@ GeoFIPS,GeoName,median_owner_occupied_home_value
 48295,"Lipscomb, TX",110100.0
 48297,"Live Oak, TX",117500.0
 48299,"Llano, TX",246600.0
-48301,"Loving, TX",-666666666.0
+48301,"Loving, TX",92500.0
 48303,"Lubbock, TX",158700.0
 48305,"Lynn, TX",94300.0
 48307,"McCulloch, TX",86400.0
@@ -2710,7 +2710,7 @@ GeoFIPS,GeoName,median_owner_occupied_home_value
 48411,"San Saba, TX",121100.0
 48413,"Schleicher, TX",89300.0
 48415,"Scurry, TX",94900.0
-48417,"Shackelford, TX",153100.0
+48417,"Shackelford, TX",78900.0
 48419,"Shelby, TX",87200.0
 48421,"Sherman, TX",95300.0
 48423,"Smith, TX",171700.0
@@ -2723,7 +2723,7 @@ GeoFIPS,GeoName,median_owner_occupied_home_value
 48437,"Swisher, TX",78300.0
 48439,"Tarrant, TX",229200.0
 48441,"Taylor, TX",147200.0
-48443,"Terrell, TX",94800.0
+48443,"Terrell, TX",66600.0
 48445,"Terry, TX",85200.0
 48447,"Throckmorton, TX",62800.0
 48449,"Titus, TX",104800.0

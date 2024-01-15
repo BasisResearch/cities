@@ -178,7 +178,7 @@ GeoFIPS,GeoName,Category,Value
 5147,"Woodruff, AR",median_owner_occupied_home_value,76800.0
 5149,"Yell, AR",median_owner_occupied_home_value,112100.0
 6001,"Alameda, CA",median_owner_occupied_home_value,870100.0
-6003,"Alpine, CA",median_owner_occupied_home_value,378200.0
+6003,"Alpine, CA",median_owner_occupied_home_value,343800.0
 6005,"Amador, CA",median_owner_occupied_home_value,349500.0
 6007,"Butte, CA",median_owner_occupied_home_value,325600.0
 6009,"Calaveras, CA",median_owner_occupied_home_value,354600.0
@@ -1112,7 +1112,7 @@ GeoFIPS,GeoName,Category,Value
 22017,"Caddo, LA",median_owner_occupied_home_value,152800.0
 22019,"Calcasieu, LA",median_owner_occupied_home_value,171900.0
 22021,"Caldwell, LA",median_owner_occupied_home_value,84100.0
-22023,"Cameron, LA",median_owner_occupied_home_value,152500.0
+22023,"Cameron, LA",median_owner_occupied_home_value,110900.0
 22025,"Catahoula, LA",median_owner_occupied_home_value,87100.0
 22027,"Claiborne, LA",median_owner_occupied_home_value,73300.0
 22029,"Concordia, LA",median_owner_occupied_home_value,88300.0
@@ -2518,7 +2518,7 @@ GeoFIPS,GeoName,Category,Value
 48027,"Bell, TX",median_owner_occupied_home_value,164200.0
 48029,"Bexar, TX",median_owner_occupied_home_value,187300.0
 48031,"Blanco, TX",median_owner_occupied_home_value,286900.0
-48033,"Borden, TX",median_owner_occupied_home_value,143300.0
+48033,"Borden, TX",median_owner_occupied_home_value,106900.0
 48035,"Bosque, TX",median_owner_occupied_home_value,137800.0
 48037,"Bowie, TX",median_owner_occupied_home_value,132700.0
 48039,"Brazoria, TX",median_owner_occupied_home_value,225200.0
@@ -2632,11 +2632,11 @@ GeoFIPS,GeoName,Category,Value
 48255,"Karnes, TX",median_owner_occupied_home_value,111900.0
 48257,"Kaufman, TX",median_owner_occupied_home_value,216300.0
 48259,"Kendall, TX",median_owner_occupied_home_value,393200.0
-48261,"Kenedy, TX",median_owner_occupied_home_value,-666666666.0
+48261,"Kenedy, TX",median_owner_occupied_home_value,21300.0
 48263,"Kent, TX",median_owner_occupied_home_value,91400.0
 48265,"Kerr, TX",median_owner_occupied_home_value,212300.0
 48267,"Kimble, TX",median_owner_occupied_home_value,131700.0
-48269,"King, TX",median_owner_occupied_home_value,22600.0
+48269,"King, TX",median_owner_occupied_home_value,38800.0
 48271,"Kinney, TX",median_owner_occupied_home_value,98800.0
 48273,"Kleberg, TX",median_owner_occupied_home_value,98000.0
 48275,"Knox, TX",median_owner_occupied_home_value,47000.0
@@ -2652,7 +2652,7 @@ GeoFIPS,GeoName,Category,Value
 48295,"Lipscomb, TX",median_owner_occupied_home_value,110100.0
 48297,"Live Oak, TX",median_owner_occupied_home_value,117500.0
 48299,"Llano, TX",median_owner_occupied_home_value,246600.0
-48301,"Loving, TX",median_owner_occupied_home_value,-666666666.0
+48301,"Loving, TX",median_owner_occupied_home_value,92500.0
 48303,"Lubbock, TX",median_owner_occupied_home_value,158700.0
 48305,"Lynn, TX",median_owner_occupied_home_value,94300.0
 48307,"McCulloch, TX",median_owner_occupied_home_value,86400.0
@@ -2710,7 +2710,7 @@ GeoFIPS,GeoName,Category,Value
 48411,"San Saba, TX",median_owner_occupied_home_value,121100.0
 48413,"Schleicher, TX",median_owner_occupied_home_value,89300.0
 48415,"Scurry, TX",median_owner_occupied_home_value,94900.0
-48417,"Shackelford, TX",median_owner_occupied_home_value,153100.0
+48417,"Shackelford, TX",median_owner_occupied_home_value,78900.0
 48419,"Shelby, TX",median_owner_occupied_home_value,87200.0
 48421,"Sherman, TX",median_owner_occupied_home_value,95300.0
 48423,"Smith, TX",median_owner_occupied_home_value,171700.0
@@ -2723,7 +2723,7 @@ GeoFIPS,GeoName,Category,Value
 48437,"Swisher, TX",median_owner_occupied_home_value,78300.0
 48439,"Tarrant, TX",median_owner_occupied_home_value,229200.0
 48441,"Taylor, TX",median_owner_occupied_home_value,147200.0
-48443,"Terrell, TX",median_owner_occupied_home_value,94800.0
+48443,"Terrell, TX",median_owner_occupied_home_value,66600.0
 48445,"Terry, TX",median_owner_occupied_home_value,85200.0
 48447,"Throckmorton, TX",median_owner_occupied_home_value,62800.0
 48449,"Titus, TX",median_owner_occupied_home_value,104800.0

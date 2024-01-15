@@ -178,7 +178,7 @@ GeoFIPS,GeoName,median_rent
 5147,"Woodruff, AR",551.0
 5149,"Yell, AR",625.0
 6001,"Alameda, CA",2043.0
-6003,"Alpine, CA",-666666666.0
+6003,"Alpine, CA",1083.0
 6005,"Amador, CA",1126.0
 6007,"Butte, CA",1172.0
 6009,"Calaveras, CA",1430.0
@@ -1112,7 +1112,7 @@ GeoFIPS,GeoName,median_rent
 22017,"Caddo, LA",852.0
 22019,"Calcasieu, LA",927.0
 22021,"Caldwell, LA",713.0
-22023,"Cameron, LA",-666666666.0
+22023,"Cameron, LA",803.0
 22025,"Catahoula, LA",655.0
 22027,"Claiborne, LA",635.0
 22029,"Concordia, LA",735.0
@@ -2518,7 +2518,7 @@ GeoFIPS,GeoName,median_rent
 48027,"Bell, TX",990.0
 48029,"Bexar, TX",1114.0
 48031,"Blanco, TX",863.0
-48033,"Borden, TX",-666666666.0
+48033,"Borden, TX",675.0
 48035,"Bosque, TX",828.0
 48037,"Bowie, TX",808.0
 48039,"Brazoria, TX",1252.0
@@ -2632,11 +2632,11 @@ GeoFIPS,GeoName,median_rent
 48255,"Karnes, TX",783.0
 48257,"Kaufman, TX",1167.0
 48259,"Kendall, TX",1313.0
-48261,"Kenedy, TX",-666666666.0
+48261,"Kenedy, TX",474.0
 48263,"Kent, TX",823.0
 48265,"Kerr, TX",985.0
 48267,"Kimble, TX",645.0
-48269,"King, TX",-666666666.0
+48269,"King, TX",700.0
 48271,"Kinney, TX",693.0
 48273,"Kleberg, TX",914.0
 48275,"Knox, TX",823.0
@@ -2652,7 +2652,7 @@ GeoFIPS,GeoName,median_rent
 48295,"Lipscomb, TX",773.0
 48297,"Live Oak, TX",795.0
 48299,"Llano, TX",896.0
-48301,"Loving, TX",-666666666.0
+48301,"Loving, TX",871.0
 48303,"Lubbock, TX",989.0
 48305,"Lynn, TX",884.0
 48307,"McCulloch, TX",802.0
@@ -2710,7 +2710,7 @@ GeoFIPS,GeoName,median_rent
 48411,"San Saba, TX",786.0
 48413,"Schleicher, TX",489.0
 48415,"Scurry, TX",795.0
-48417,"Shackelford, TX",-666666666.0
+48417,"Shackelford, TX",628.0
 48419,"Shelby, TX",725.0
 48421,"Sherman, TX",838.0
 48423,"Smith, TX",1018.0
@@ -2723,7 +2723,7 @@ GeoFIPS,GeoName,median_rent
 48437,"Swisher, TX",702.0
 48439,"Tarrant, TX",1217.0
 48441,"Taylor, TX",964.0
-48443,"Terrell, TX",-666666666.0
+48443,"Terrell, TX",722.0
 48445,"Terry, TX",728.0
 48447,"Throckmorton, TX",503.0
 48449,"Titus, TX",734.0

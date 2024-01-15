@@ -178,7 +178,7 @@ GeoFIPS,GeoName,Category,Value
 5147,"Woodruff, AR",median_rent,551.0
 5149,"Yell, AR",median_rent,625.0
 6001,"Alameda, CA",median_rent,2043.0
-6003,"Alpine, CA",median_rent,-666666666.0
+6003,"Alpine, CA",median_rent,1083.0
 6005,"Amador, CA",median_rent,1126.0
 6007,"Butte, CA",median_rent,1172.0
 6009,"Calaveras, CA",median_rent,1430.0
@@ -1112,7 +1112,7 @@ GeoFIPS,GeoName,Category,Value
 22017,"Caddo, LA",median_rent,852.0
 22019,"Calcasieu, LA",median_rent,927.0
 22021,"Caldwell, LA",median_rent,713.0
-22023,"Cameron, LA",median_rent,-666666666.0
+22023,"Cameron, LA",median_rent,803.0
 22025,"Catahoula, LA",median_rent,655.0
 22027,"Claiborne, LA",median_rent,635.0
 22029,"Concordia, LA",median_rent,735.0
@@ -2518,7 +2518,7 @@ GeoFIPS,GeoName,Category,Value
 48027,"Bell, TX",median_rent,990.0
 48029,"Bexar, TX",median_rent,1114.0
 48031,"Blanco, TX",median_rent,863.0
-48033,"Borden, TX",median_rent,-666666666.0
+48033,"Borden, TX",median_rent,675.0
 48035,"Bosque, TX",median_rent,828.0
 48037,"Bowie, TX",median_rent,808.0
 48039,"Brazoria, TX",median_rent,1252.0
@@ -2632,11 +2632,11 @@ GeoFIPS,GeoName,Category,Value
 48255,"Karnes, TX",median_rent,783.0
 48257,"Kaufman, TX",median_rent,1167.0
 48259,"Kendall, TX",median_rent,1313.0
-48261,"Kenedy, TX",median_rent,-666666666.0
+48261,"Kenedy, TX",median_rent,474.0
 48263,"Kent, TX",median_rent,823.0
 48265,"Kerr, TX",median_rent,985.0
 48267,"Kimble, TX",median_rent,645.0
-48269,"King, TX",median_rent,-666666666.0
+48269,"King, TX",median_rent,700.0
 48271,"Kinney, TX",median_rent,693.0
 48273,"Kleberg, TX",median_rent,914.0
 48275,"Knox, TX",median_rent,823.0
@@ -2652,7 +2652,7 @@ GeoFIPS,GeoName,Category,Value
 48295,"Lipscomb, TX",median_rent,773.0
 48297,"Live Oak, TX",median_rent,795.0
 48299,"Llano, TX",median_rent,896.0
-48301,"Loving, TX",median_rent,-666666666.0
+48301,"Loving, TX",median_rent,871.0
 48303,"Lubbock, TX",median_rent,989.0
 48305,"Lynn, TX",median_rent,884.0
 48307,"McCulloch, TX",median_rent,802.0
@@ -2710,7 +2710,7 @@ GeoFIPS,GeoName,Category,Value
 48411,"San Saba, TX",median_rent,786.0
 48413,"Schleicher, TX",median_rent,489.0
 48415,"Scurry, TX",median_rent,795.0
-48417,"Shackelford, TX",median_rent,-666666666.0
+48417,"Shackelford, TX",median_rent,628.0
 48419,"Shelby, TX",median_rent,725.0
 48421,"Sherman, TX",median_rent,838.0
 48423,"Smith, TX",median_rent,1018.0
@@ -2723,7 +2723,7 @@ GeoFIPS,GeoName,Category,Value
 48437,"Swisher, TX",median_rent,702.0
 48439,"Tarrant, TX",median_rent,1217.0
 48441,"Taylor, TX",median_rent,964.0
-48443,"Terrell, TX",median_rent,-666666666.0
+48443,"Terrell, TX",median_rent,722.0
 48445,"Terry, TX",median_rent,728.0
 48447,"Throckmorton, TX",median_rent,503.0
 48449,"Titus, TX",median_rent,734.0
