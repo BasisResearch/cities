@@ -18,11 +18,14 @@ from cities.utils.clean_unemployment import clean_unemployment
 from cities.utils.clean_urbanicity_ma import clean_urbanicity_ma
 from cities.utils.clean_urbanization import clean_urbanization
 from cities.utils.cleaning_poverty import clean_poverty
+from cities.utils.clean_income_distribution import clean_income_distribution
 
 # from cities.utils.clean_health import clean_health
 
 
 # clean_health() lost of another 15-ish fips
+
+clean_income_distribution()
 
 clean_hazard()
 
