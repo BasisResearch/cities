@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",burdens_energy,4.419679539852095
 8123,"Weld, CO*",burdens_energy,1.5031977876193807
 8125,"Yuma, CO",burdens_energy,4.442067379786065
+9001,"Fairfield, CT",burdens_energy,2.7491932630312124
+9003,"Hartford, CT",burdens_energy,5.928553282876043
+9005,"Litchfield, CT",burdens_energy,3.6026417292117667
+9007,"Middlesex, CT",burdens_energy,3.05504958510423
+9009,"New Haven, CT",burdens_energy,3.626649391904263
+9011,"New London, CT",burdens_energy,3.296783724148248
+9013,"Tolland, CT",burdens_energy,2.9076641871489115
+9015,"Windham, CT",burdens_energy,4.082622720175695
 10001,"Kent, DE",burdens_energy,2.8516856348932365
 10003,"New Castle, DE",burdens_energy,2.123436390279863
 10005,"Sussex, DE",burdens_energy,3.474860061323445

@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Expected_agricultural_loss_rate,0.1328672760887428
 8123,"Weld, CO*",Expected_agricultural_loss_rate,0.0509453771962861
 8125,"Yuma, CO",Expected_agricultural_loss_rate,0.3472014195741277
+9001,"Fairfield, CT",Expected_agricultural_loss_rate,0.1833726386390458
+9003,"Hartford, CT",Expected_agricultural_loss_rate,1.741997477732354
+9005,"Litchfield, CT",Expected_agricultural_loss_rate,3.958298867045417
+9007,"Middlesex, CT",Expected_agricultural_loss_rate,1.0073547944533374
+9009,"New Haven, CT",Expected_agricultural_loss_rate,0.8091861483149526
+9011,"New London, CT",Expected_agricultural_loss_rate,0.2430675997606492
+9013,"Tolland, CT",Expected_agricultural_loss_rate,0.6853286688335329
+9015,"Windham, CT",Expected_agricultural_loss_rate,0.1286521550023163
 10001,"Kent, DE",Expected_agricultural_loss_rate,0.1995353397585725
 10003,"New Castle, DE",Expected_agricultural_loss_rate,0.3483284117123515
 10005,"Sussex, DE",Expected_agricultural_loss_rate,0.1078036557865088
@@ -3361,6 +3369,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Expected_building_loss_rate,0.0938442070665571
 8123,"Weld, CO*",Expected_building_loss_rate,0.0506769807922186
 8125,"Yuma, CO",Expected_building_loss_rate,0.0562682695191442
+9001,"Fairfield, CT",Expected_building_loss_rate,0.0035452763246271
+9003,"Hartford, CT",Expected_building_loss_rate,0.0048315479301357
+9005,"Litchfield, CT",Expected_building_loss_rate,0.0058072691508884
+9007,"Middlesex, CT",Expected_building_loss_rate,0.0044968942613751
+9009,"New Haven, CT",Expected_building_loss_rate,0.0029693555666211
+9011,"New London, CT",Expected_building_loss_rate,0.0040777759078499
+9013,"Tolland, CT",Expected_building_loss_rate,0.0062592468043134
+9015,"Windham, CT",Expected_building_loss_rate,0.0061091467494809
 10001,"Kent, DE",Expected_building_loss_rate,0.0096489629256532
 10003,"New Castle, DE",Expected_building_loss_rate,0.0071256779912436
 10005,"Sussex, DE",Expected_building_loss_rate,0.021496441814033
@@ -6424,6 +6440,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Expected_population_loss_rate,0.0005839359079704
 8123,"Weld, CO*",Expected_population_loss_rate,0.0003843966660662
 8125,"Yuma, CO",Expected_population_loss_rate,0.0011442067379786
+9001,"Fairfield, CT",Expected_population_loss_rate,5.861264548280268e-06
+9003,"Hartford, CT",Expected_population_loss_rate,0.0
+9005,"Litchfield, CT",Expected_population_loss_rate,9.97005527411787e-05
+9007,"Middlesex, CT",Expected_population_loss_rate,4.5602350156084224e-05
+9009,"New Haven, CT",Expected_population_loss_rate,4.237486778626098e-06
+9011,"New London, CT",Expected_population_loss_rate,6.168293503870751e-05
+9013,"Tolland, CT",Expected_population_loss_rate,1.2225362928049886e-05
+9015,"Windham, CT",Expected_population_loss_rate,0.0
 10001,"Kent, DE",Expected_population_loss_rate,0.0001220142728594
 10003,"New Castle, DE",Expected_population_loss_rate,0.0001249120315014
 10005,"Sussex, DE",Expected_population_loss_rate,0.0001006925627495
@@ -9487,6 +9511,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Diesel_particulate_matter_exposure,0.03
 8123,"Weld, CO*",Diesel_particulate_matter_exposure,0.2317380995267648
 8125,"Yuma, CO",Diesel_particulate_matter_exposure,0.03
+9001,"Fairfield, CT",Diesel_particulate_matter_exposure,0.2567991558660319
+9003,"Hartford, CT",Diesel_particulate_matter_exposure,0.187633088283844
+9005,"Litchfield, CT",Diesel_particulate_matter_exposure,0.1090287469368468
+9007,"Middlesex, CT",Diesel_particulate_matter_exposure,0.1563295983514563
+9009,"New Haven, CT",Diesel_particulate_matter_exposure,0.2048879258973333
+9011,"New London, CT",Diesel_particulate_matter_exposure,0.1434575339391899
+9013,"Tolland, CT",Diesel_particulate_matter_exposure,0.1254716906191456
+9015,"Windham, CT",Diesel_particulate_matter_exposure,0.1056368066159943
 10001,"Kent, DE",Diesel_particulate_matter_exposure,0.1636472758759246
 10003,"New Castle, DE",Diesel_particulate_matter_exposure,0.3099520466048744
 10005,"Sussex, DE",Diesel_particulate_matter_exposure,0.1295931082430119
@@ -12550,6 +12582,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Proximity_to_hazardous_waste_sites,0.0141967953985209
 8123,"Weld, CO*",Proximity_to_hazardous_waste_sites,0.4465262899343365
 8125,"Yuma, CO",Proximity_to_hazardous_waste_sites,0.0055793262021393
+9001,"Fairfield, CT",Proximity_to_hazardous_waste_sites,3.7994038939493135
+9003,"Hartford, CT",Proximity_to_hazardous_waste_sites,3.4531203353772155
+9005,"Litchfield, CT",Proximity_to_hazardous_waste_sites,0.9382022175580488
+9007,"Middlesex, CT",Proximity_to_hazardous_waste_sites,1.2528067560854446
+9009,"New Haven, CT",Proximity_to_hazardous_waste_sites,3.65488490553496
+9011,"New London, CT",Proximity_to_hazardous_waste_sites,1.538666068289764
+9013,"Tolland, CT",Proximity_to_hazardous_waste_sites,0.7992914214599206
+9015,"Windham, CT",Proximity_to_hazardous_waste_sites,0.9783767994097764
 10001,"Kent, DE",Proximity_to_hazardous_waste_sites,0.6669446912546194
 10003,"New Castle, DE",Proximity_to_hazardous_waste_sites,2.499103593358086
 10005,"Sussex, DE",Proximity_to_hazardous_waste_sites,0.3639560752994866
@@ -15613,6 +15653,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Proximity_to_Risk_Management_Plan_facilities,0.9434326211996712
 8123,"Weld, CO*",Proximity_to_Risk_Management_Plan_facilities,1.2411624883328694
 8125,"Yuma, CO",Proximity_to_Risk_Management_Plan_facilities,2.131408577426772
+9001,"Fairfield, CT",Proximity_to_Risk_Management_Plan_facilities,0.6757423357339453
+9003,"Hartford, CT",Proximity_to_Risk_Management_Plan_facilities,0.5699206097848943
+9005,"Litchfield, CT",Proximity_to_Risk_Management_Plan_facilities,0.1513198756057625
+9007,"Middlesex, CT",Proximity_to_Risk_Management_Plan_facilities,0.2742857843768591
+9009,"New Haven, CT",Proximity_to_Risk_Management_Plan_facilities,0.7097143366922718
+9011,"New London, CT",Proximity_to_Risk_Management_Plan_facilities,0.3854294476233217
+9013,"Tolland, CT",Proximity_to_Risk_Management_Plan_facilities,0.1904437883532036
+9015,"Windham, CT",Proximity_to_Risk_Management_Plan_facilities,0.1143406310587993
 10001,"Kent, DE",Proximity_to_Risk_Management_Plan_facilities,0.3854190459481944
 10003,"New Castle, DE",Proximity_to_Risk_Management_Plan_facilities,0.6619378062265695
 10005,"Sussex, DE",Proximity_to_Risk_Management_Plan_facilities,0.3962795029948659
