@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Housing_burden,14.740961380443714
 8123,"Weld, CO*",Housing_burden,19.206291952399496
 8125,"Yuma, CO",Housing_burden,17.557932620213936
+9001,"Fairfield, CT",Housing_burden,26.603802057981067
+9003,"Hartford, CT",Housing_burden,27.0111976652823
+9005,"Litchfield, CT",Housing_burden,22.876292568213536
+9007,"Middlesex, CT",Housing_burden,21.45197573795024
+9009,"New Haven, CT",Housing_burden,29.27790132627727
+9011,"New London, CT",Housing_burden,25.13229689559703
+9013,"Tolland, CT",Housing_burden,24.72530246322569
+9015,"Windham, CT",Housing_burden,26.308692071444504
 10001,"Kent, DE",Housing_burden,22.804311286424937
 10003,"New Castle, DE",Housing_burden,23.77877428460978
 10005,"Sussex, DE",Housing_burden,20.202697162007983
@@ -3361,6 +3369,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",Energy_burden,4.419679539852095
 8123,"Weld, CO*",Energy_burden,1.5031977876193807
 8125,"Yuma, CO",Energy_burden,4.442067379786065
+9001,"Fairfield, CT",Energy_burden,2.7491932630312124
+9003,"Hartford, CT",Energy_burden,5.928553282876043
+9005,"Litchfield, CT",Energy_burden,3.6026417292117667
+9007,"Middlesex, CT",Energy_burden,3.05504958510423
+9009,"New Haven, CT",Energy_burden,3.626649391904263
+9011,"New London, CT",Energy_burden,3.296783724148248
+9013,"Tolland, CT",Energy_burden,2.9076641871489115
+9015,"Windham, CT",Energy_burden,4.082622720175695
 10001,"Kent, DE",Energy_burden,2.8516856348932365
 10003,"New Castle, DE",Energy_burden,2.123436390279863
 10005,"Sussex, DE",Energy_burden,3.474860061323445

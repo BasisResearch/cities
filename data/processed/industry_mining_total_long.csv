@@ -3587,6 +3587,102 @@ GeoFIPS,GeoName,Year,Value
 8125,"Yuma, CO",2019,54.0
 8125,"Yuma, CO",2020,66.0
 8125,"Yuma, CO",2021,61.0
+9001,"Fairfield, CT",2010,171.0
+9001,"Fairfield, CT",2011,142.0
+9001,"Fairfield, CT",2012,103.0
+9001,"Fairfield, CT",2013,113.0
+9001,"Fairfield, CT",2014,144.0
+9001,"Fairfield, CT",2015,194.0
+9001,"Fairfield, CT",2016,183.0
+9001,"Fairfield, CT",2017,241.0
+9001,"Fairfield, CT",2018,287.0
+9001,"Fairfield, CT",2019,302.0
+9001,"Fairfield, CT",2020,318.0
+9001,"Fairfield, CT",2021,248.0
+9003,"Hartford, CT",2010,87.0
+9003,"Hartford, CT",2011,126.0
+9003,"Hartford, CT",2012,123.0
+9003,"Hartford, CT",2013,126.0
+9003,"Hartford, CT",2014,107.0
+9003,"Hartford, CT",2015,101.0
+9003,"Hartford, CT",2016,104.0
+9003,"Hartford, CT",2017,97.0
+9003,"Hartford, CT",2018,105.0
+9003,"Hartford, CT",2019,217.0
+9003,"Hartford, CT",2020,203.0
+9003,"Hartford, CT",2021,189.0
+9005,"Litchfield, CT",2010,107.0
+9005,"Litchfield, CT",2011,175.0
+9005,"Litchfield, CT",2012,150.0
+9005,"Litchfield, CT",2013,130.0
+9005,"Litchfield, CT",2014,82.0
+9005,"Litchfield, CT",2015,66.0
+9005,"Litchfield, CT",2016,56.0
+9005,"Litchfield, CT",2017,78.0
+9005,"Litchfield, CT",2018,103.0
+9005,"Litchfield, CT",2019,137.0
+9005,"Litchfield, CT",2020,132.0
+9005,"Litchfield, CT",2021,137.0
+9007,"Middlesex, CT",2010,86.0
+9007,"Middlesex, CT",2011,95.0
+9007,"Middlesex, CT",2012,78.0
+9007,"Middlesex, CT",2013,45.0
+9007,"Middlesex, CT",2014,26.0
+9007,"Middlesex, CT",2015,12.0
+9007,"Middlesex, CT",2016,0.0
+9007,"Middlesex, CT",2017,0.0
+9007,"Middlesex, CT",2018,0.0
+9007,"Middlesex, CT",2019,16.0
+9007,"Middlesex, CT",2020,15.0
+9007,"Middlesex, CT",2021,17.0
+9009,"New Haven, CT",2010,277.0
+9009,"New Haven, CT",2011,297.0
+9009,"New Haven, CT",2012,379.0
+9009,"New Haven, CT",2013,340.0
+9009,"New Haven, CT",2014,357.0
+9009,"New Haven, CT",2015,309.0
+9009,"New Haven, CT",2016,259.0
+9009,"New Haven, CT",2017,229.0
+9009,"New Haven, CT",2018,170.0
+9009,"New Haven, CT",2019,147.0
+9009,"New Haven, CT",2020,171.0
+9009,"New Haven, CT",2021,178.0
+9011,"New London, CT",2010,77.0
+9011,"New London, CT",2011,83.0
+9011,"New London, CT",2012,56.0
+9011,"New London, CT",2013,57.0
+9011,"New London, CT",2014,50.0
+9011,"New London, CT",2015,63.0
+9011,"New London, CT",2016,60.0
+9011,"New London, CT",2017,71.0
+9011,"New London, CT",2018,120.0
+9011,"New London, CT",2019,154.0
+9011,"New London, CT",2020,126.0
+9011,"New London, CT",2021,130.0
+9013,"Tolland, CT",2010,28.0
+9013,"Tolland, CT",2011,3.0
+9013,"Tolland, CT",2012,3.0
+9013,"Tolland, CT",2013,15.0
+9013,"Tolland, CT",2014,18.0
+9013,"Tolland, CT",2015,38.0
+9013,"Tolland, CT",2016,32.0
+9013,"Tolland, CT",2017,29.0
+9013,"Tolland, CT",2018,22.0
+9013,"Tolland, CT",2019,21.0
+9013,"Tolland, CT",2020,9.0
+9013,"Tolland, CT",2021,9.0
+9015,"Windham, CT",2010,95.0
+9015,"Windham, CT",2011,79.0
+9015,"Windham, CT",2012,57.0
+9015,"Windham, CT",2013,96.0
+9015,"Windham, CT",2014,108.0
+9015,"Windham, CT",2015,75.0
+9015,"Windham, CT",2016,85.0
+9015,"Windham, CT",2017,103.0
+9015,"Windham, CT",2018,78.0
+9015,"Windham, CT",2019,125.0
+9015,"Windham, CT",2020,145.0
+9015,"Windham, CT",2021,102.0
 10001,"Kent, DE",2010,13.0
 10001,"Kent, DE",2011,11.0
 10001,"Kent, DE",2012,25.0
