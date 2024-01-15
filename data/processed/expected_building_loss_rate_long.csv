@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",expected_building_loss_rate,0.0938442070665571
 8123,"Weld, CO*",expected_building_loss_rate,0.0506769807922186
 8125,"Yuma, CO",expected_building_loss_rate,0.0562682695191442
+9001,"Fairfield, CT",expected_building_loss_rate,0.0035452763246271
+9003,"Hartford, CT",expected_building_loss_rate,0.0048315479301357
+9005,"Litchfield, CT",expected_building_loss_rate,0.0058072691508884
+9007,"Middlesex, CT",expected_building_loss_rate,0.0044968942613751
+9009,"New Haven, CT",expected_building_loss_rate,0.0029693555666211
+9011,"New London, CT",expected_building_loss_rate,0.0040777759078499
+9013,"Tolland, CT",expected_building_loss_rate,0.0062592468043134
+9015,"Windham, CT",expected_building_loss_rate,0.0061091467494809
 10001,"Kent, DE",expected_building_loss_rate,0.0096489629256532
 10003,"New Castle, DE",expected_building_loss_rate,0.0071256779912436
 10005,"Sussex, DE",expected_building_loss_rate,0.021496441814033
