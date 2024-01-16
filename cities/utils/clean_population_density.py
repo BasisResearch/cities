@@ -7,7 +7,6 @@ root = find_repo_root()
 def clean_population_density():
     cleaner = VariableCleaner(
         variable_name="population_density",
-        path_to_raw_csv=f"{root}/data/raw/population_density.csv",
-        year_or_category="Year",
+        path_to_raw_csv=f"{root}/data/raw/population_density.csv"
     )
     cleaner.clean_variable()
