@@ -403,7 +403,7 @@ GeoFIPS,GeoName,Category,Value
 12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",rural_housing,0.7568567229323628
 12100,"Atlantic City-Hammonton, NJ (MA)",rural_housing,-0.10621941998398965
 12220,"Auburn-Opelika, AL (MA)",rural_housing,-0.09001178612943417
-12260,"Augusta-Richmond County, GA-SC (MA)",rural_housing,0.13389596870301768
+12260,"Augusta-Richmond County, GA-SC (MA)",rural_housing,0.13389596870301745
 12420,"Austin-Round Rock-Georgetown, TX (MA)",rural_housing,0.2737395265144078
 12540,"Bakersfield, CA (MA)",rural_housing,0.019202549788324585
 12580,"Baltimore-Columbia-Towson, MD (MA)",rural_housing,0.3020289856631473
@@ -439,7 +439,7 @@ GeoFIPS,GeoName,Category,Value
 15940,"Canton-Massillon, OH (MA)",rural_housing,-0.0170272311528622
 15980,"Cape Coral-Fort Myers, FL (MA)",rural_housing,-0.10696206335967517
 16020,"Cape Girardeau, MO-IL (MA)",rural_housing,-0.09090749765721595
-16060,"Carbondale-Marion, IL (MA)",rural_housing,-0.053439591885164894
+16060,"Carbondale-Marion, IL (MA)",rural_housing,-0.05343959188516478
 16180,"Carson City, NV (MA)",rural_housing,-0.16552074705173647
 16220,"Casper, WY (MA)",rural_housing,-0.1459869619506695
 16300,"Cedar Rapids, IA (MA)",rural_housing,-0.049765258053500516
@@ -461,7 +461,7 @@ GeoFIPS,GeoName,Category,Value
 17780,"College Station-Bryan, TX (MA)",rural_housing,-0.05261056952902132
 17820,"Colorado Springs, CO (MA)",rural_housing,-0.025682875193321242
 17860,"Columbia, MO (MA)",rural_housing,-0.06394078886605692
-17900,"Columbia, SC (MA)",rural_housing,0.19544642924810063
+17900,"Columbia, SC (MA)",rural_housing,0.1954464292481004
 17980,"Columbus, GA-AL (MA)",rural_housing,-0.013981052971984598
 18020,"Columbus, IN (MA)",rural_housing,-0.12613518572759874
 18140,"Columbus, OH (MA)",rural_housing,0.3828460478823783
@@ -572,7 +572,7 @@ GeoFIPS,GeoName,Category,Value
 29020,"Kokomo, IN (MA)",rural_housing,-0.1319698106931303
 29100,"La Crosse-Onalaska, WI-MN (MA)",rural_housing,-0.10683273515059821
 29180,"Lafayette, LA (MA)",rural_housing,0.07976236556923766
-29200,"Lafayette-West Lafayette, IN (MA)",rural_housing,-0.05625434472985302
+29200,"Lafayette-West Lafayette, IN (MA)",rural_housing,-0.0562543447298528
 29340,"Lake Charles, LA (MA)",rural_housing,-0.060275059876814696
 29420,"Lake Havasu City-Kingman, AZ (MA)",rural_housing,-0.05229493275811292
 29460,"Lakeland-Winter Haven, FL (MA)",rural_housing,-0.022987829242596014
@@ -1331,7 +1331,7 @@ GeoFIPS,GeoName,Category,Value
 27980,"Kahului-Wailuku-Lahaina, HI (MA)",rural_pop,-0.1033904082849657
 28020,"Kalamazoo-Portage, MI (MA)",rural_pop,-0.06764779162221246
 28100,"Kankakee, IL (MA)",rural_pop,-0.11127981953499277
-28140,"Kansas City, MO-KS (MA)",rural_pop,0.29131773108663594
+28140,"Kansas City, MO-KS (MA)",rural_pop,0.2913177310866357
 28420,"Kennewick-Richland, WA (MA)",rural_pop,-0.1018436405112847
 28660,"Killeen-Temple, TX (MA)",rural_pop,-0.02617384281392965
 28700,"Kingsport-Bristol, TN-VA (MA)",rural_pop,0.06580203054630851
@@ -1610,7 +1610,7 @@ GeoFIPS,GeoName,Category,Value
 17420,"Cleveland, TN (MA)",rural_pop_prct,0.19640983749690544
 17460,"Cleveland-Elyria, OH (MA)",rural_pop_prct,-0.18887163309756927
 17660,"Coeur d'Alene, ID (MA)",rural_pop_prct,-0.022496815136529236
-17780,"College Station-Bryan, TX (MA)",rural_pop_prct,-0.02691561198302972
+17780,"College Station-Bryan, TX (MA)",rural_pop_prct,-0.026915611983029497
 17820,"Colorado Springs, CO (MA)",rural_pop_prct,-0.16490152916153178
 17860,"Columbia, MO (MA)",rural_pop_prct,0.04449585502979714
 17900,"Columbia, SC (MA)",rural_pop_prct,-0.025499538010484657
@@ -2106,7 +2106,7 @@ GeoFIPS,GeoName,Category,Value
 28740,"Kingston, NY (MA)",rural_housing_prct,0.39072634786545857
 28940,"Knoxville, TN (MA)",rural_housing_prct,0.020176108433481943
 29020,"Kokomo, IN (MA)",rural_housing_prct,-0.026220327368604024
-29100,"La Crosse-Onalaska, WI-MN (MA)",rural_housing_prct,-0.005016769138198263
+29100,"La Crosse-Onalaska, WI-MN (MA)",rural_housing_prct,-0.005016769138198041
 29180,"Lafayette, LA (MA)",rural_housing_prct,0.03700094025839995
 29200,"Lafayette-West Lafayette, IN (MA)",rural_housing_prct,0.04592233584446759
 29340,"Lake Charles, LA (MA)",rural_housing_prct,0.02426910115593306

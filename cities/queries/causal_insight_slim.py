@@ -240,22 +240,33 @@ class CausalInsightSlim:
         future_predicted_means = (
             self.observed_outcomes.iloc[:, 1:] + intervention_impacts_means_array
         )
-        predicted_means = np.insert(
-            future_predicted_means, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # predicted_means = np.insert(
+        #    future_predicted_means, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # ) #TODO delete if the new version raises no index error
+
+        predicted_means = np.column_stack(
+            [self.observed_outcomes.iloc[:, 0], future_predicted_means]
         )
 
         future_predicted_lows = (
             self.observed_outcomes.iloc[:, 1:] + intervention_impacts_lows_array
         )
-        predicted_lows = np.insert(
-            future_predicted_lows, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        predicted_lows = np.column_stack(
+            [self.observed_outcomes.iloc[:, 0], future_predicted_lows]
         )
+        # predicted_lows = np.insert(
+        #     future_predicted_lows, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # ) #TODO as above
 
         future_predicted_highs = (
             self.observed_outcomes.iloc[:, 1:] + intervention_impacts_highs_array
         )
-        predicted_highs = np.insert(
-            future_predicted_highs, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # predicted_highs = np.insert(
+        #     future_predicted_highs, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # ) #TODO as above
+
+        predicted_highs = np.column_stack(
+            [self.observed_outcomes.iloc[:, 0], future_predicted_highs]
         )
 
         if self.produce_original:
