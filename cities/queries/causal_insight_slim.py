@@ -518,7 +518,7 @@ class CausalInsightSlim:
             self.fips = fips
             self.predictions = self.group_predictions[fips]
             self.predictions_original = self.group_predictions_original[fips]
-            
+
             self.observed_intervention = self.observed_interventions[
                 self.fips_ids[self.group_clean.index(fips)]
             ]
@@ -527,8 +527,6 @@ class CausalInsightSlim:
             ]
 
             self.name = self.names[self.fips_ids[self.group_clean.index(fips)]]
-
-            
 
         dg = DataGrabber()
 
