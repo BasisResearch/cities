@@ -11,6 +11,7 @@ from cities.utils.clean_industry import clean_industry
 from cities.utils.clean_industry_ma import clean_industry_ma
 from cities.utils.clean_industry_ts import clean_industry_ts
 from cities.utils.clean_population import clean_population
+from cities.utils.clean_population_density import clean_population_density
 from cities.utils.clean_population_ma import clean_population_ma
 from cities.utils.clean_spending_commerce import clean_spending_commerce
 from cities.utils.clean_spending_HHS import clean_spending_HHS
@@ -25,6 +26,8 @@ from cities.utils.cleaning_poverty import clean_poverty
 
 
 # clean_health() lost of another 15-ish fips
+
+clean_population_density()
 
 clean_homeownership()
 
