@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",diesel_matter_exposure,0.03
 8123,"Weld, CO*",diesel_matter_exposure,0.2317380995267648
 8125,"Yuma, CO",diesel_matter_exposure,0.03
+9001,"Fairfield, CT",diesel_matter_exposure,0.2567991558660319
+9003,"Hartford, CT",diesel_matter_exposure,0.187633088283844
+9005,"Litchfield, CT",diesel_matter_exposure,0.1090287469368468
+9007,"Middlesex, CT",diesel_matter_exposure,0.1563295983514563
+9009,"New Haven, CT",diesel_matter_exposure,0.2048879258973333
+9011,"New London, CT",diesel_matter_exposure,0.1434575339391899
+9013,"Tolland, CT",diesel_matter_exposure,0.1254716906191456
+9015,"Windham, CT",diesel_matter_exposure,0.1056368066159943
 10001,"Kent, DE",diesel_matter_exposure,0.1636472758759246
 10003,"New Castle, DE",diesel_matter_exposure,0.3099520466048744
 10005,"Sussex, DE",diesel_matter_exposure,0.1295931082430119

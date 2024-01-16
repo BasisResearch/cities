@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",roadDensity,1.176450911796425
 8123,"Weld, CO*",roadDensity,2.124073594340115
 8125,"Yuma, CO",roadDensity,1.4548927309721922
+9001,"Fairfield, CT",roadDensity,8.495320789250078
+9003,"Hartford, CT",roadDensity,7.208995404136362
+9005,"Litchfield, CT",roadDensity,3.0981745806832928
+9007,"Middlesex, CT",roadDensity,4.607359351474979
+9009,"New Haven, CT",roadDensity,7.856483446692381
+9011,"New London, CT",roadDensity,4.084742302803303
+9013,"Tolland, CT",roadDensity,3.80766816457664
+9015,"Windham, CT",roadDensity,3.190265667364986
 10001,"Kent, DE",roadDensity,3.3154129877543066
 10003,"New Castle, DE",roadDensity,8.116737999731052
 10005,"Sussex, DE",roadDensity,3.933198943550196
@@ -3361,6 +3369,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",WeightAvgNatWalkInd,5.690323691573761
 8123,"Weld, CO*",WeightAvgNatWalkInd,7.354840185304481
 8125,"Yuma, CO",WeightAvgNatWalkInd,6.020773330565697
+9001,"Fairfield, CT",WeightAvgNatWalkInd,10.259984313703171
+9003,"Hartford, CT",WeightAvgNatWalkInd,10.334377037409991
+9005,"Litchfield, CT",WeightAvgNatWalkInd,7.274339683971856
+9007,"Middlesex, CT",WeightAvgNatWalkInd,8.675915723973239
+9009,"New Haven, CT",WeightAvgNatWalkInd,10.72599831573445
+9011,"New London, CT",WeightAvgNatWalkInd,9.070090485936747
+9013,"Tolland, CT",WeightAvgNatWalkInd,7.127601601358955
+9015,"Windham, CT",WeightAvgNatWalkInd,6.726705738421545
 10001,"Kent, DE",WeightAvgNatWalkInd,8.545455758608968
 10003,"New Castle, DE",WeightAvgNatWalkInd,11.01374085154774
 10005,"Sussex, DE",WeightAvgNatWalkInd,7.374496674692798

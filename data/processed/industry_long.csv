@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",agri_forestry_mining,0.2097278000892458
 8123,"Weld, CO*",agri_forestry_mining,0.0548949310283437
 8125,"Yuma, CO",agri_forestry_mining,0.2051335998316852
+9001,"Fairfield, CT",agri_forestry_mining,0.0023719116163855
+9003,"Hartford, CT",agri_forestry_mining,0.0028440195182129
+9005,"Litchfield, CT",agri_forestry_mining,0.0094875676572447
+9007,"Middlesex, CT",agri_forestry_mining,0.0038366800231562
+9009,"New Haven, CT",agri_forestry_mining,0.002717711575926
+9011,"New London, CT",agri_forestry_mining,0.0064186702882331
+9013,"Tolland, CT",agri_forestry_mining,0.0066862762883391
+9015,"Windham, CT",agri_forestry_mining,0.0186593546829461
 10001,"Kent, DE",agri_forestry_mining,0.0093856868275879
 10003,"New Castle, DE",agri_forestry_mining,0.0064841218520206
 10005,"Sussex, DE",agri_forestry_mining,0.0239697639535801
@@ -3361,6 +3369,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",construction,0.0843373493975903
 8123,"Weld, CO*",construction,0.1057810955658008
 8125,"Yuma, CO",construction,0.0660635388175888
+9001,"Fairfield, CT",construction,0.068725623451812
+9003,"Hartford, CT",construction,0.0513796028065692
+9005,"Litchfield, CT",construction,0.0830343626220941
+9007,"Middlesex, CT",construction,0.0650759957773817
+9009,"New Haven, CT",construction,0.0611669982921863
+9011,"New London, CT",construction,0.0608256261238363
+9013,"Tolland, CT",construction,0.0651134464126054
+9015,"Windham, CT",construction,0.0650145722317071
 10001,"Kent, DE",construction,0.0759966051771049
 10003,"New Castle, DE",construction,0.0578941975059982
 10005,"Sussex, DE",construction,0.0979711060235257
@@ -6424,6 +6440,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",manufacturing,0.0504239178937974
 8123,"Weld, CO*",manufacturing,0.1038595888098322
 8125,"Yuma, CO",manufacturing,0.0267199663370502
+9001,"Fairfield, CT",manufacturing,0.0798674204533032
+9003,"Hartford, CT",manufacturing,0.1098174848821968
+9005,"Litchfield, CT",manufacturing,0.1180605960058895
+9007,"Middlesex, CT",manufacturing,0.1098221278817666
+9009,"New Haven, CT",manufacturing,0.1095935680826036
+9011,"New London, CT",manufacturing,0.1421667185117182
+9013,"Tolland, CT",manufacturing,0.112526401720809
+9015,"Windham, CT",manufacturing,0.141566213116733
 10001,"Kent, DE",manufacturing,0.0820748358752901
 10003,"New Castle, DE",manufacturing,0.0743571532054883
 10005,"Sussex, DE",manufacturing,0.0807116917975842
@@ -9487,6 +9511,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",wholesale_trade,0.0419455600178491
 8123,"Weld, CO*",wholesale_trade,0.0306949961017354
 8125,"Yuma, CO",wholesale_trade,0.0302966547443719
+9001,"Fairfield, CT",wholesale_trade,0.0237088035046541
+9003,"Hartford, CT",wholesale_trade,0.0226177756727284
+9005,"Litchfield, CT",wholesale_trade,0.0203645714522718
+9007,"Middlesex, CT",wholesale_trade,0.0223957683008502
+9009,"New Haven, CT",wholesale_trade,0.0244570932041033
+9011,"New London, CT",wholesale_trade,0.0154169480209099
+9013,"Tolland, CT",wholesale_trade,0.0214064504425122
+9015,"Windham, CT",wholesale_trade,0.0206770483039301
 10001,"Kent, DE",wholesale_trade,0.0158133845885025
 10003,"New Castle, DE",wholesale_trade,0.0213216301117671
 10005,"Sussex, DE",wholesale_trade,0.0189863424646719
@@ -12550,6 +12582,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",retail_trade,0.0566711289602855
 8123,"Weld, CO*",retail_trade,0.1082735292492617
 8125,"Yuma, CO",retail_trade,0.1609509783294761
+9001,"Fairfield, CT",retail_trade,0.1030585284660332
+9003,"Hartford, CT",retail_trade,0.106079064183198
+9005,"Litchfield, CT",retail_trade,0.1176769457290392
+9007,"Middlesex, CT",retail_trade,0.0995153069911574
+9009,"New Haven, CT",retail_trade,0.1082462671907967
+9011,"New London, CT",retail_trade,0.1040871603832993
+9013,"Tolland, CT",retail_trade,0.0980394697627408
+9015,"Windham, CT",retail_trade,0.1331332884956973
 10001,"Kent, DE",retail_trade,0.1441551633758518
 10003,"New Castle, DE",retail_trade,0.1058201619086993
 10005,"Sussex, DE",retail_trade,0.1322234941185758
@@ -15613,6 +15653,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",transport_utilities,0.0647032574743418
 8123,"Weld, CO*",transport_utilities,0.0561718428661759
 8125,"Yuma, CO",transport_utilities,0.0784767515253524
+9001,"Fairfield, CT",transport_utilities,0.0376948319139676
+9003,"Hartford, CT",transport_utilities,0.0517871501426415
+9005,"Litchfield, CT",transport_utilities,0.0366023101968022
+9007,"Middlesex, CT",transport_utilities,0.0399900110105906
+9009,"New Haven, CT",transport_utilities,0.0462819810638361
+9011,"New London, CT",transport_utilities,0.0383906284378959
+9013,"Tolland, CT",transport_utilities,0.0420613426975755
+9015,"Windham, CT",transport_utilities,0.0570990049493852
 10001,"Kent, DE",transport_utilities,0.0584109233419036
 10003,"New Castle, DE",transport_utilities,0.0623712451280746
 10005,"Sussex, DE",transport_utilities,0.0470217889002921
@@ -18676,6 +18724,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",information,0.0147255689424364
 8123,"Weld, CO*",information,0.0138188872450013
 8125,"Yuma, CO",information,0.0117820324005891
+9001,"Fairfield, CT",information,0.02608277765288
+9003,"Hartford, CT",information,0.0192494520140548
+9005,"Litchfield, CT",information,0.0224176188797411
+9007,"Middlesex, CT",information,0.0164591302768539
+9009,"New Haven, CT",information,0.0175287774688768
+9011,"New London, CT",information,0.0127614697692768
+9013,"Tolland, CT",information,0.0159382167338317
+9015,"Windham, CT",information,0.0132098573818269
 10001,"Kent, DE",information,0.0085369811038166
 10003,"New Castle, DE",information,0.0131555235177509
 10005,"Sussex, DE",information,0.0123253335438541
@@ -21739,6 +21795,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",finance_real_estate,0.0450691655510932
 8123,"Weld, CO*",finance_real_estate,0.0489892137783698
 8125,"Yuma, CO",finance_real_estate,0.0387123921733641
+9001,"Fairfield, CT",finance_real_estate,0.1197547237135473
+9003,"Hartford, CT",finance_real_estate,0.1058984215801821
+9005,"Litchfield, CT",finance_real_estate,0.0646813628916861
+9007,"Middlesex, CT",finance_real_estate,0.0898441490629646
+9009,"New Haven, CT",finance_real_estate,0.0660454754493121
+9011,"New London, CT",finance_real_estate,0.0454845489101158
+9013,"Tolland, CT",finance_real_estate,0.0905757194873854
+9015,"Windham, CT",finance_real_estate,0.0484074016589925
 10001,"Kent, DE",finance_real_estate,0.0535308654302189
 10003,"New Castle, DE",finance_real_estate,0.1194244502630751
 10005,"Sussex, DE",finance_real_estate,0.0559228704507776
@@ -24802,6 +24866,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",prof_sci_mgmt_admin,0.0513163766175814
 8123,"Weld, CO*",prof_sci_mgmt_admin,0.1103853449810611
 8125,"Yuma, CO",prof_sci_mgmt_admin,0.0643803913317904
+9001,"Fairfield, CT",prof_sci_mgmt_admin,0.1561810985457088
+9003,"Hartford, CT",prof_sci_mgmt_admin,0.1111656955290955
+9005,"Litchfield, CT",prof_sci_mgmt_admin,0.1126791232035835
+9007,"Middlesex, CT",prof_sci_mgmt_admin,0.1132161140560972
+9009,"New Haven, CT",prof_sci_mgmt_admin,0.0978722814218068
+9011,"New London, CT",prof_sci_mgmt_admin,0.0941860200450672
+9013,"Tolland, CT",prof_sci_mgmt_admin,0.09271377295168
+9015,"Windham, CT",prof_sci_mgmt_admin,0.0676013589252763
 10001,"Kent, DE",prof_sci_mgmt_admin,0.0691944784204088
 10003,"New Castle, DE",prof_sci_mgmt_admin,0.118336107194725
 10005,"Sussex, DE",prof_sci_mgmt_admin,0.1030433409647114
@@ -27865,6 +27937,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",education_health,0.2124051762605979
 8123,"Weld, CO*",education_health,0.195932299116598
 8125,"Yuma, CO",education_health,0.1790448138018094
+9001,"Fairfield, CT",education_health,0.2297660470133507
+9003,"Hartford, CT",education_health,0.2570345974643946
+9005,"Litchfield, CT",education_health,0.2565998216544659
+9007,"Middlesex, CT",education_health,0.2705540483784919
+9009,"New Haven, CT",education_health,0.3085411481407016
+9011,"New London, CT",education_health,0.251686228689787
+9013,"Tolland, CT",education_health,0.3020745597553548
+9015,"Windham, CT",education_health,0.2693534757790539
 10001,"Kent, DE",education_health,0.2581937545243503
 10003,"New Castle, DE",education_health,0.2515167898119781
 10005,"Sussex, DE",education_health,0.2316649561853635
@@ -30928,6 +31008,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",arts_entertainment,0.0397144132083891
 8123,"Weld, CO*",arts_entertainment,0.0839999263320093
 8125,"Yuma, CO",arts_entertainment,0.0616452766673679
+9001,"Fairfield, CT",arts_entertainment,0.0779265779915477
+9003,"Hartford, CT",arts_entertainment,0.0757641512551356
+9005,"Litchfield, CT",arts_entertainment,0.072416581987101
+9007,"Middlesex, CT",arts_entertainment,0.0825340249951757
+9009,"New Haven, CT",arts_entertainment,0.0770804012784337
+9011,"New London, CT",arts_entertainment,0.1370909615107395
+9013,"Tolland, CT",arts_entertainment,0.07606287172975
+9015,"Windham, CT",arts_entertainment,0.0881749357614637
 10001,"Kent, DE",arts_entertainment,0.0943311450038691
 10003,"New Castle, DE",arts_entertainment,0.0790921522690892
 10005,"Sussex, DE",arts_entertainment,0.0956520881029446
@@ -33991,6 +34079,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",other_services,0.0249888442659527
 8123,"Weld, CO*",other_services,0.0493698317300313
 8125,"Yuma, CO",other_services,0.0357668840732169
+9001,"Fairfield, CT",other_services,0.0491171332457444
+9003,"Hartford, CT",other_services,0.0440327359644001
+9005,"Litchfield, CT",other_services,0.0505692540594346
+9007,"Middlesex, CT",other_services,0.0424191516169676
+9009,"New Haven, CT",other_services,0.0443823561357654
+9011,"New London, CT",other_services,0.041213022465346
+9013,"Tolland, CT",other_services,0.0375260777733145
+9015,"Windham, CT",other_services,0.039112214806767
 10001,"Kent, DE",other_services,0.0356955642644966
 10003,"New Castle, DE",other_services,0.0401944883197467
 10005,"Sussex, DE",other_services,0.0466467987684534
@@ -37054,6 +37150,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",public_admin,0.1039714413208389
 8123,"Weld, CO*",public_admin,0.0378285131957788
 8125,"Yuma, CO",public_admin,0.041026719966337
+9001,"Fairfield, CT",public_admin,0.025744522431065
+9003,"Hartford, CT",public_admin,0.0423298489871898
+9005,"Litchfield, CT",public_admin,0.0354098836606457
+9007,"Middlesex, CT",public_admin,0.0443374916285458
+9009,"New Haven, CT",public_admin,0.0360859406956509
+9011,"New London, CT",public_admin,0.0502719968437744
+9013,"Tolland, CT",public_admin,0.0392753942441009
+9015,"Windham, CT",public_admin,0.0379912739062203
 10001,"Kent, DE",public_admin,0.0946806120665984
 10003,"New Castle, DE",public_admin,0.0500319789115862
 10005,"Sussex, DE",public_admin,0.0538604247256651

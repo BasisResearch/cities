@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",1998,205.0
 8123,"Weld, CO*",1998,7463.0
 8125,"Yuma, CO",1998,480.0
+9001,"Fairfield, CT",1998,24703.0
+9003,"Hartford, CT",1998,32708.0
+9005,"Litchfield, CT",1998,3370.0
+9007,"Middlesex, CT",1998,2725.0
+9009,"New Haven, CT",1998,31650.0
+9011,"New London, CT",1998,7328.0
+9013,"Tolland, CT",1998,2160.0
+9015,"Windham, CT",1998,4181.0
 10001,"Kent, DE",1998,5863.0
 10003,"New Castle, DE",1998,15425.0
 10005,"Sussex, DE",1998,6413.0
@@ -3361,6 +3369,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",1999,214.0
 8123,"Weld, CO*",1999,7054.0
 8125,"Yuma, CO",1999,443.0
+9001,"Fairfield, CT",1999,19582.0
+9003,"Hartford, CT",1999,25253.0
+9005,"Litchfield, CT",1999,2767.0
+9007,"Middlesex, CT",1999,2121.0
+9009,"New Haven, CT",1999,24832.0
+9011,"New London, CT",1999,5729.0
+9013,"Tolland, CT",1999,1825.0
+9015,"Windham, CT",1999,3168.0
 10001,"Kent, DE",1999,5822.0
 10003,"New Castle, DE",1999,14899.0
 10005,"Sussex, DE",1999,6015.0
@@ -6424,6 +6440,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2000,230.0
 8123,"Weld, CO*",2000,7742.0
 8125,"Yuma, CO",2000,513.0
+9001,"Fairfield, CT",2000,18570.0
+9003,"Hartford, CT",2000,25912.0
+9005,"Litchfield, CT",2000,2619.0
+9007,"Middlesex, CT",2000,1916.0
+9009,"New Haven, CT",2000,26251.0
+9011,"New London, CT",2000,5425.0
+9013,"Tolland, CT",2000,1602.0
+9015,"Windham, CT",2000,3185.0
 10001,"Kent, DE",2000,5453.0
 10003,"New Castle, DE",2000,12386.0
 10005,"Sussex, DE",2000,6022.0
@@ -9487,6 +9511,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2001,191.0
 8123,"Weld, CO*",2001,7177.0
 8125,"Yuma, CO",2001,423.0
+9001,"Fairfield, CT",2001,16689.0
+9003,"Hartford, CT",2001,22894.0
+9005,"Litchfield, CT",2001,2448.0
+9007,"Middlesex, CT",2001,1680.0
+9009,"New Haven, CT",2001,24102.0
+9011,"New London, CT",2001,4857.0
+9013,"Tolland, CT",2001,1384.0
+9015,"Windham, CT",2001,2781.0
 10001,"Kent, DE",2001,5064.0
 10003,"New Castle, DE",2001,11681.0
 10005,"Sussex, DE",2001,5599.0
@@ -12550,6 +12582,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2002,161.0
 8123,"Weld, CO*",2002,7149.0
 8125,"Yuma, CO",2002,390.0
+9001,"Fairfield, CT",2002,18332.0
+9003,"Hartford, CT",2002,25258.0
+9005,"Litchfield, CT",2002,2561.0
+9007,"Middlesex, CT",2002,1765.0
+9009,"New Haven, CT",2002,26620.0
+9011,"New London, CT",2002,5029.0
+9013,"Tolland, CT",2002,1422.0
+9015,"Windham, CT",2002,2956.0
 10001,"Kent, DE",2002,5597.0
 10003,"New Castle, DE",2002,13102.0
 10005,"Sussex, DE",2002,5773.0
@@ -15613,6 +15653,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2003,162.0
 8123,"Weld, CO*",2003,7853.0
 8125,"Yuma, CO",2003,420.0
+9001,"Fairfield, CT",2003,19841.0
+9003,"Hartford, CT",2003,26622.0
+9005,"Litchfield, CT",2003,2818.0
+9007,"Middlesex, CT",2003,2001.0
+9009,"New Haven, CT",2003,27168.0
+9011,"New London, CT",2003,5326.0
+9013,"Tolland, CT",2003,1622.0
+9015,"Windham, CT",2003,2857.0
 10001,"Kent, DE",2003,5705.0
 10003,"New Castle, DE",2003,13772.0
 10005,"Sussex, DE",2003,5629.0
@@ -18676,6 +18724,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2004,160.0
 8123,"Weld, CO*",2004,7838.0
 8125,"Yuma, CO",2004,408.0
+9001,"Fairfield, CT",2004,22370.0
+9003,"Hartford, CT",2004,29297.0
+9005,"Litchfield, CT",2004,2671.0
+9007,"Middlesex, CT",2004,2143.0
+9009,"New Haven, CT",2004,28298.0
+9011,"New London, CT",2004,5725.0
+9013,"Tolland, CT",2004,1677.0
+9015,"Windham, CT",2004,3226.0
 10001,"Kent, DE",2004,5719.0
 10003,"New Castle, DE",2004,14607.0
 10005,"Sussex, DE",2004,5799.0
@@ -21739,6 +21795,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2005,202.0
 8123,"Weld, CO*",2005,8105.0
 8125,"Yuma, CO",2005,476.0
+9001,"Fairfield, CT",2005,20332.0
+9003,"Hartford, CT",2005,26906.0
+9005,"Litchfield, CT",2005,2277.0
+9007,"Middlesex, CT",2005,2182.0
+9009,"New Haven, CT",2005,31796.0
+9011,"New London, CT",2005,5429.0
+9013,"Tolland, CT",2005,1530.0
+9015,"Windham, CT",2005,3264.0
 10001,"Kent, DE",2005,5642.0
 10003,"New Castle, DE",2005,15424.0
 10005,"Sussex, DE",2005,6626.0
@@ -24802,6 +24866,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2006,183.0
 8123,"Weld, CO*",2006,9532.0
 8125,"Yuma, CO",2006,449.0
+9001,"Fairfield, CT",2006,18787.0
+9003,"Hartford, CT",2006,27147.0
+9005,"Litchfield, CT",2006,2793.0
+9007,"Middlesex, CT",2006,2017.0
+9009,"New Haven, CT",2006,27987.0
+9011,"New London, CT",2006,4872.0
+9013,"Tolland, CT",2006,1472.0
+9015,"Windham, CT",2006,3013.0
 10001,"Kent, DE",2006,6804.0
 10003,"New Castle, DE",2006,15659.0
 10005,"Sussex, DE",2006,7158.0
@@ -27865,6 +27937,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2007,185.0
 8123,"Weld, CO*",2007,8607.0
 8125,"Yuma, CO",2007,446.0
+9001,"Fairfield, CT",2007,18497.0
+9003,"Hartford, CT",2007,28079.0
+9005,"Litchfield, CT",2007,2522.0
+9007,"Middlesex, CT",2007,1991.0
+9009,"New Haven, CT",2007,26225.0
+9011,"New London, CT",2007,5702.0
+9013,"Tolland, CT",2007,1549.0
+9015,"Windham, CT",2007,3020.0
 10001,"Kent, DE",2007,6811.0
 10003,"New Castle, DE",2007,16034.0
 10005,"Sussex, DE",2007,6159.0
@@ -30928,6 +31008,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2008,167.0
 8123,"Weld, CO*",2008,9311.0
 8125,"Yuma, CO",2008,444.0
+9001,"Fairfield, CT",2008,21301.0
+9003,"Hartford, CT",2008,28522.0
+9005,"Litchfield, CT",2008,2627.0
+9007,"Middlesex, CT",2008,2183.0
+9009,"New Haven, CT",2008,28873.0
+9011,"New London, CT",2008,5344.0
+9013,"Tolland, CT",2008,1669.0
+9015,"Windham, CT",2008,3828.0
 10001,"Kent, DE",2008,6471.0
 10003,"New Castle, DE",2008,14657.0
 10005,"Sussex, DE",2008,8021.0
@@ -33991,6 +34079,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2009,168.0
 8123,"Weld, CO*",2009,12875.0
 8125,"Yuma, CO",2009,491.0
+9001,"Fairfield, CT",2009,21350.0
+9003,"Hartford, CT",2009,27443.0
+9005,"Litchfield, CT",2009,3025.0
+9007,"Middlesex, CT",2009,2173.0
+9009,"New Haven, CT",2009,29986.0
+9011,"New London, CT",2009,6318.0
+9013,"Tolland, CT",2009,1743.0
+9015,"Windham, CT",2009,3530.0
 10001,"Kent, DE",2009,8297.0
 10003,"New Castle, DE",2009,17500.0
 10005,"Sussex, DE",2009,8054.0
@@ -37054,6 +37150,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2010,227.0
 8123,"Weld, CO*",2010,12884.0
 8125,"Yuma, CO",2010,453.0
+9001,"Fairfield, CT",2010,24304.0
+9003,"Hartford, CT",2010,29838.0
+9005,"Litchfield, CT",2010,3379.0
+9007,"Middlesex, CT",2010,2314.0
+9009,"New Haven, CT",2010,30659.0
+9011,"New London, CT",2010,6721.0
+9013,"Tolland, CT",2010,1855.0
+9015,"Windham, CT",2010,3933.0
 10001,"Kent, DE",2010,7831.0
 10003,"New Castle, DE",2010,18685.0
 10005,"Sussex, DE",2010,9501.0
@@ -40117,6 +40221,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2011,208.0
 8123,"Weld, CO*",2011,12823.0
 8125,"Yuma, CO",2011,519.0
+9001,"Fairfield, CT",2011,27715.0
+9003,"Hartford, CT",2011,33374.0
+9005,"Litchfield, CT",2011,3487.0
+9007,"Middlesex, CT",2011,2676.0
+9009,"New Haven, CT",2011,35545.0
+9011,"New London, CT",2011,6956.0
+9013,"Tolland, CT",2011,2181.0
+9015,"Windham, CT",2011,3763.0
 10001,"Kent, DE",2011,9027.0
 10003,"New Castle, DE",2011,19780.0
 10005,"Sussex, DE",2011,9133.0
@@ -43180,6 +43292,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2012,220.0
 8123,"Weld, CO*",2012,13176.0
 8125,"Yuma, CO",2012,523.0
+9001,"Fairfield, CT",2012,24854.0
+9003,"Hartford, CT",2012,32889.0
+9005,"Litchfield, CT",2012,3272.0
+9007,"Middlesex, CT",2012,2470.0
+9009,"New Haven, CT",2012,37634.0
+9011,"New London, CT",2012,7460.0
+9013,"Tolland, CT",2012,2068.0
+9015,"Windham, CT",2012,3965.0
 10001,"Kent, DE",2012,8643.0
 10003,"New Castle, DE",2012,18519.0
 10005,"Sussex, DE",2012,11299.0
@@ -46243,6 +46363,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2013,205.0
 8123,"Weld, CO*",2013,11948.0
 8125,"Yuma, CO",2013,503.0
+9001,"Fairfield, CT",2013,26512.0
+9003,"Hartford, CT",2013,33936.0
+9005,"Litchfield, CT",2013,3372.0
+9007,"Middlesex, CT",2013,2451.0
+9009,"New Haven, CT",2013,32169.0
+9011,"New London, CT",2013,7470.0
+9013,"Tolland, CT",2013,1995.0
+9015,"Windham, CT",2013,4321.0
 10001,"Kent, DE",2013,8042.0
 10003,"New Castle, DE",2013,20468.0
 10005,"Sussex, DE",2013,9744.0
@@ -49306,6 +49434,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2014,182.0
 8123,"Weld, CO*",2014,9400.0
 8125,"Yuma, CO",2014,526.0
+9001,"Fairfield, CT",2014,26068.0
+9003,"Hartford, CT",2014,33866.0
+9005,"Litchfield, CT",2014,3232.0
+9007,"Middlesex, CT",2014,2876.0
+9009,"New Haven, CT",2014,32909.0
+9011,"New London, CT",2014,9105.0
+9013,"Tolland, CT",2014,2018.0
+9015,"Windham, CT",2014,3660.0
 10001,"Kent, DE",2014,8453.0
 10003,"New Castle, DE",2014,20312.0
 10005,"Sussex, DE",2014,9778.0
@@ -52369,6 +52505,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2015,167.0
 8123,"Weld, CO*",2015,10165.0
 8125,"Yuma, CO",2015,490.0
+9001,"Fairfield, CT",2015,24471.0
+9003,"Hartford, CT",2015,29859.0
+9005,"Litchfield, CT",2015,3232.0
+9007,"Middlesex, CT",2015,2255.0
+9009,"New Haven, CT",2015,35167.0
+9011,"New London, CT",2015,9333.0
+9013,"Tolland, CT",2015,1942.0
+9015,"Windham, CT",2015,3884.0
 10001,"Kent, DE",2015,8473.0
 10003,"New Castle, DE",2015,21217.0
 10005,"Sussex, DE",2015,8755.0
@@ -55432,6 +55576,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2016,231.0
 8123,"Weld, CO*",2016,9855.0
 8125,"Yuma, CO",2016,427.0
+9001,"Fairfield, CT",2016,22197.0
+9003,"Hartford, CT",2016,28501.0
+9005,"Litchfield, CT",2016,2959.0
+9007,"Middlesex, CT",2016,2589.0
+9009,"New Haven, CT",2016,28778.0
+9011,"New London, CT",2016,7138.0
+9013,"Tolland, CT",2016,1834.0
+9015,"Windham, CT",2016,3466.0
 10001,"Kent, DE",2016,8247.0
 10003,"New Castle, DE",2016,18080.0
 10005,"Sussex, DE",2016,9375.0
@@ -58495,6 +58647,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2017,226.0
 8123,"Weld, CO*",2017,8407.0
 8125,"Yuma, CO",2017,445.0
+9001,"Fairfield, CT",2017,24161.0
+9003,"Hartford, CT",2017,28488.0
+9005,"Litchfield, CT",2017,2642.0
+9007,"Middlesex, CT",2017,2169.0
+9009,"New Haven, CT",2017,26499.0
+9011,"New London, CT",2017,6399.0
+9013,"Tolland, CT",2017,1708.0
+9015,"Windham, CT",2017,3503.0
 10001,"Kent, DE",2017,8012.0
 10003,"New Castle, DE",2017,18557.0
 10005,"Sussex, DE",2017,8721.0
@@ -61558,6 +61718,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2018,217.0
 8123,"Weld, CO*",2018,10772.0
 8125,"Yuma, CO",2018,445.0
+9001,"Fairfield, CT",2018,26730.0
+9003,"Hartford, CT",2018,28641.0
+9005,"Litchfield, CT",2018,2643.0
+9007,"Middlesex, CT",2018,2314.0
+9009,"New Haven, CT",2018,28530.0
+9011,"New London, CT",2018,6388.0
+9013,"Tolland, CT",2018,1652.0
+9015,"Windham, CT",2018,3351.0
 10001,"Kent, DE",2018,7848.0
 10003,"New Castle, DE",2018,18240.0
 10005,"Sussex, DE",2018,8943.0
@@ -64621,6 +64789,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2019,187.0
 8123,"Weld, CO*",2019,8061.0
 8125,"Yuma, CO",2019,432.0
+9001,"Fairfield, CT",2019,24441.0
+9003,"Hartford, CT",2019,25717.0
+9005,"Litchfield, CT",2019,2998.0
+9007,"Middlesex, CT",2019,1996.0
+9009,"New Haven, CT",2019,31191.0
+9011,"New London, CT",2019,5774.0
+9013,"Tolland, CT",2019,1614.0
+9015,"Windham, CT",2019,3110.0
 10001,"Kent, DE",2019,7094.0
 10003,"New Castle, DE",2019,15559.0
 10005,"Sussex, DE",2019,9383.0
@@ -67684,6 +67860,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2020,188.0
 8123,"Weld, CO*",2020,8220.0
 8125,"Yuma, CO",2020,438.0
+9001,"Fairfield, CT",2020,22049.0
+9003,"Hartford, CT",2020,24723.0
+9005,"Litchfield, CT",2020,2545.0
+9007,"Middlesex, CT",2020,1738.0
+9009,"New Haven, CT",2020,23263.0
+9011,"New London, CT",2020,5431.0
+9013,"Tolland, CT",2020,1416.0
+9015,"Windham, CT",2020,2770.0
 10001,"Kent, DE",2020,6726.0
 10003,"New Castle, DE",2020,16237.0
 10005,"Sussex, DE",2020,7417.0
@@ -70747,6 +70931,14 @@ GeoFIPS,GeoName,Year,Value
 8121,"Washington, CO",2021,184.0
 8123,"Weld, CO*",2021,9701.0
 8125,"Yuma, CO",2021,493.0
+9001,"Fairfield, CT",2021,23561.0
+9003,"Hartford, CT",2021,25537.0
+9005,"Litchfield, CT",2021,3255.0
+9007,"Middlesex, CT",2021,2151.0
+9009,"New Haven, CT",2021,26492.0
+9011,"New London, CT",2021,6212.0
+9013,"Tolland, CT",2021,2374.0
+9015,"Windham, CT",2021,3680.0
 10001,"Kent, DE",2021,7269.0
 10003,"New Castle, DE",2021,17746.0
 10005,"Sussex, DE",2021,8286.0

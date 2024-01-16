@@ -298,6 +298,14 @@ GeoFIPS,GeoName,Category,Value
 8121,"Washington, CO",expected_population_loss_rate,0.0005839359079704
 8123,"Weld, CO*",expected_population_loss_rate,0.0003843966660662
 8125,"Yuma, CO",expected_population_loss_rate,0.0011442067379786
+9001,"Fairfield, CT",expected_population_loss_rate,5.861264548280268e-06
+9003,"Hartford, CT",expected_population_loss_rate,0.0
+9005,"Litchfield, CT",expected_population_loss_rate,9.97005527411787e-05
+9007,"Middlesex, CT",expected_population_loss_rate,4.5602350156084224e-05
+9009,"New Haven, CT",expected_population_loss_rate,4.237486778626098e-06
+9011,"New London, CT",expected_population_loss_rate,6.168293503870751e-05
+9013,"Tolland, CT",expected_population_loss_rate,1.2225362928049886e-05
+9015,"Windham, CT",expected_population_loss_rate,0.0
 10001,"Kent, DE",expected_population_loss_rate,0.0001220142728594
 10003,"New Castle, DE",expected_population_loss_rate,0.0001249120315014
 10005,"Sussex, DE",expected_population_loss_rate,0.0001006925627495
