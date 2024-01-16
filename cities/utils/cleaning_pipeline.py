@@ -27,6 +27,8 @@ from cities.utils.cleaning_poverty import clean_poverty
 
 # clean_health() lost of another 15-ish fips
 
+clean_population_density()
+
 clean_homeownership()
 
 clean_income_distribution()
@@ -36,8 +38,6 @@ clean_hazard()
 clean_burdens()
 
 clean_age_composition()
-
-clean_population_density()
 
 clean_gdp_ma()
 

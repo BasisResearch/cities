@@ -183,7 +183,7 @@ GeoFIPS,GeoName,Category,Value
 28420,"Kennewick-Richland, WA (MA)",agri_forestry_mining,0.2885155796351726
 28660,"Killeen-Temple, TX (MA)",agri_forestry_mining,-0.064888456239652
 28700,"Kingsport-Bristol, TN-VA (MA)",agri_forestry_mining,-0.0722774289903203
-28740,"Kingston, NY (MA)",agri_forestry_mining,-0.08532671282895099
+28740,"Kingston, NY (MA)",agri_forestry_mining,-0.08532671282895077
 28940,"Knoxville, TN (MA)",agri_forestry_mining,-0.09215782002148809
 29020,"Kokomo, IN (MA)",agri_forestry_mining,-0.07560436679505178
 29100,"La Crosse-Onalaska, WI-MN (MA)",agri_forestry_mining,-0.04984922438068429
@@ -237,7 +237,7 @@ GeoFIPS,GeoName,Category,Value
 33780,"Monroe, MI (MA)",agri_forestry_mining,-0.07686897907992984
 33860,"Montgomery, AL (MA)",agri_forestry_mining,-0.08902472874363021
 34060,"Morgantown, WV (MA)",agri_forestry_mining,0.08285822857800507
-34100,"Morristown, TN (MA)",agri_forestry_mining,-0.055742919578048444
+34100,"Morristown, TN (MA)",agri_forestry_mining,-0.055742919578048666
 34580,"Mount Vernon-Anacortes, WA (MA)",agri_forestry_mining,0.1372832397452486
 34620,"Muncie, IN (MA)",agri_forestry_mining,-0.07321677046693786
 34740,"Muskegon, MI (MA)",agri_forestry_mining,-0.07359450018271407
@@ -413,7 +413,7 @@ GeoFIPS,GeoName,Category,Value
 12980,"Battle Creek, MI (MA)",construction,-0.24569716804153852
 13020,"Bay City, MI (MA)",construction,-0.09101731615783404
 13140,"Beaumont-Port Arthur, TX (MA)",construction,0.5951140960861385
-13220,"Beckley, WV (MA)",construction,-0.04228870731853829
+13220,"Beckley, WV (MA)",construction,-0.04228870731853851
 13380,"Bellingham, WA (MA)",construction,0.17928360299061907
 13460,"Bend, OR (MA)",construction,0.2881322727368991
 13740,"Billings, MT (MA)",construction,0.1561588715374802
@@ -818,7 +818,7 @@ GeoFIPS,GeoName,Category,Value
 15260,"Brunswick, GA (MA)",manufacturing,-0.08102918923779068
 15380,"Buffalo-Cheektowaga, NY (MA)",manufacturing,-0.0016409841868985087
 15500,"Burlington, NC (MA)",manufacturing,0.13142091891273
-15540,"Burlington-South Burlington, VT (MA)",manufacturing,0.010289601789984282
+15540,"Burlington-South Burlington, VT (MA)",manufacturing,0.01028960178998406
 15680,"California-Lexington Park, MD (MA)",manufacturing,-0.19301217127437142
 15940,"Canton-Massillon, OH (MA)",manufacturing,0.19152972154068748
 15980,"Cape Coral-Fort Myers, FL (MA)",manufacturing,-0.22504564305488173
@@ -1386,7 +1386,7 @@ GeoFIPS,GeoName,Category,Value
 33660,"Mobile, AL (MA)",wholesale_trade,0.03834371888825583
 33700,"Modesto, CA (MA)",wholesale_trade,0.24085131613826172
 33740,"Monroe, LA (MA)",wholesale_trade,0.12995555792553137
-33780,"Monroe, MI (MA)",wholesale_trade,-0.08832003838142377
+33780,"Monroe, MI (MA)",wholesale_trade,-0.08832003838142388
 33860,"Montgomery, AL (MA)",wholesale_trade,-0.016434389916902936
 34060,"Morgantown, WV (MA)",wholesale_trade,-0.29538166669774224
 34100,"Morristown, TN (MA)",wholesale_trade,0.035945974847436446
@@ -1481,7 +1481,7 @@ GeoFIPS,GeoName,Category,Value
 43580,"Sioux City, IA-NE-SD (MA)",wholesale_trade,0.13391794276980562
 43620,"Sioux Falls, SD (MA)",wholesale_trade,0.24232799061156296
 43780,"South Bend-Mishawaka, IN-MI (MA)",wholesale_trade,0.20754710875174087
-43900,"Spartanburg, SC (MA)",wholesale_trade,0.12825300997641764
+43900,"Spartanburg, SC (MA)",wholesale_trade,0.12825300997641742
 44060,"Spokane-Spokane Valley, WA (MA)",wholesale_trade,0.26764965951886177
 44100,"Springfield, IL (MA)",wholesale_trade,-0.021913159461924403
 44140,"Springfield, MA (MA)",wholesale_trade,0.007513542980003729
@@ -1639,7 +1639,7 @@ GeoFIPS,GeoName,Category,Value
 20260,"Duluth, MN-WI (MA)",retail_trade,-0.021243996767213336
 20500,"Durham-Chapel Hill, NC (MA)",retail_trade,-0.363107179032105
 20700,"East Stroudsburg, PA (MA)",retail_trade,0.08900717154453575
-20740,"Eau Claire, WI (MA)",retail_trade,0.36540076038385205
+20740,"Eau Claire, WI (MA)",retail_trade,0.36540076038385183
 20940,"El Centro, CA (MA)",retail_trade,0.06563684094059985
 21060,"Elizabethtown-Fort Knox, KY (MA)",retail_trade,0.0760514656342699
 21140,"Elkhart-Goshen, IN (MA)",retail_trade,-0.14740673952971228
@@ -2200,7 +2200,7 @@ GeoFIPS,GeoName,Category,Value
 39100,"Poughkeepsie-Newburgh-Middletown, NY (MA)",transport_utilities,0.09854313048267516
 39150,"Prescott Valley-Prescott, AZ (MA)",transport_utilities,-0.1529958986934008
 39300,"Providence-Warwick, RI-MA (MA)",transport_utilities,-0.06797478218381314
-39340,"Provo-Orem, UT (MA)",transport_utilities,-0.253823496060687
+39340,"Provo-Orem, UT (MA)",transport_utilities,-0.2538234960606869
 39380,"Pueblo, CO (MA)",transport_utilities,-0.008205261116140727
 39460,"Punta Gorda, FL (MA)",transport_utilities,-0.11067513590988443
 39540,"Racine, WI (MA)",transport_utilities,0.02497796929301055
@@ -2213,7 +2213,7 @@ GeoFIPS,GeoName,Category,Value
 40140,"Riverside-San Bernardino-Ontario, CA (MA)",transport_utilities,0.4208773933945076
 40220,"Roanoke, VA (MA)",transport_utilities,0.1541096296947242
 40340,"Rochester, MN (MA)",transport_utilities,-0.21108201777269853
-40380,"Rochester, NY (MA)",transport_utilities,-0.18165248765201747
+40380,"Rochester, NY (MA)",transport_utilities,-0.18165248765201736
 40420,"Rockford, IL (MA)",transport_utilities,0.08895842536442089
 40580,"Rocky Mount, NC (MA)",transport_utilities,0.11134607544088415
 40660,"Rome, GA (MA)",transport_utilities,-0.07741693185931953
@@ -2707,7 +2707,7 @@ GeoFIPS,GeoName,Category,Value
 12060,"Atlanta-Sandy Springs-Alpharetta, GA (MA)",finance_real_estate,0.1530281718544788
 12100,"Atlantic City-Hammonton, NJ (MA)",finance_real_estate,-0.07875986482358
 12220,"Auburn-Opelika, AL (MA)",finance_real_estate,0.05305880186073586
-12260,"Augusta-Richmond County, GA-SC (MA)",finance_real_estate,-0.11778378772162712
+12260,"Augusta-Richmond County, GA-SC (MA)",finance_real_estate,-0.11778378772162734
 12420,"Austin-Round Rock-Georgetown, TX (MA)",finance_real_estate,0.1405605306540456
 12540,"Bakersfield, CA (MA)",finance_real_estate,-0.18899065069004195
 12580,"Baltimore-Columbia-Towson, MD (MA)",finance_real_estate,0.1099413488645391
@@ -3169,7 +3169,7 @@ GeoFIPS,GeoName,Category,Value
 19740,"Denver-Aurora-Lakewood, CO (MA)",prof_sci_mgmt_admin,0.358389580774765
 19780,"Des Moines-West Des Moines, IA (MA)",prof_sci_mgmt_admin,0.03772967885683087
 19820,"Detroit-Warren-Dearborn, MI (MA)",prof_sci_mgmt_admin,0.11226681791347093
-20020,"Dothan, AL (MA)",prof_sci_mgmt_admin,-0.10782054186918233
+20020,"Dothan, AL (MA)",prof_sci_mgmt_admin,-0.10782054186918222
 20100,"Dover, DE (MA)",prof_sci_mgmt_admin,-0.16399661280869482
 20220,"Dubuque, IA (MA)",prof_sci_mgmt_admin,-0.14179950890157123
 20260,"Duluth, MN-WI (MA)",prof_sci_mgmt_admin,-0.15512647385245637
@@ -3201,7 +3201,7 @@ GeoFIPS,GeoName,Category,Value
 23420,"Fresno, CA (MA)",prof_sci_mgmt_admin,-0.021891780334713618
 23460,"Gadsden, AL (MA)",prof_sci_mgmt_admin,-0.22767424496677557
 23540,"Gainesville, FL (MA)",prof_sci_mgmt_admin,0.004046592961188589
-23580,"Gainesville, GA (MA)",prof_sci_mgmt_admin,0.06497882138109867
+23580,"Gainesville, GA (MA)",prof_sci_mgmt_admin,0.06497882138109845
 23900,"Gettysburg, PA (MA)",prof_sci_mgmt_admin,-0.08677112477131554
 24020,"Glens Falls, NY (MA)",prof_sci_mgmt_admin,-0.08738396317397157
 24140,"Goldsboro, NC (MA)",prof_sci_mgmt_admin,-0.11518533556535815
@@ -4576,7 +4576,7 @@ GeoFIPS,GeoName,Category,Value
 46140,"Tulsa, OK (MA)",other_services,0.14110047910042134
 46220,"Tuscaloosa, AL (MA)",other_services,-0.018325917180755713
 46300,"Twin Falls, ID (MA)",other_services,-0.1604916390459199
-46340,"Tyler, TX (MA)",other_services,0.1509381043758493
+46340,"Tyler, TX (MA)",other_services,0.1509381043758491
 46520,"Urban Honolulu, HI (MA)",other_services,-0.1775658789372968
 46540,"Utica-Rome, NY (MA)",other_services,-0.11200970731851878
 46660,"Valdosta, GA (MA)",other_services,-0.0954986421809697
@@ -4620,7 +4620,7 @@ GeoFIPS,GeoName,Category,Value
 11180,"Ames, IA (MA)",public_admin,-0.07931380482799244
 11260,"Anchorage, AK (MA)",public_admin,0.3108421776221584
 11460,"Ann Arbor, MI (MA)",public_admin,-0.1875952538514516
-11500,"Anniston-Oxford, AL (MA)",public_admin,0.13809184587764234
+11500,"Anniston-Oxford, AL (MA)",public_admin,0.13809184587764256
 11540,"Appleton, WI (MA)",public_admin,-0.15962491785310784
 11700,"Asheville, NC (MA)",public_admin,-0.12242613906067046
 12020,"Athens-Clarke County, GA (MA)",public_admin,-0.10828657533542574
@@ -4701,7 +4701,7 @@ GeoFIPS,GeoName,Category,Value
 19430,"Dayton-Kettering, OH (MA)",public_admin,0.04755405362743037
 19460,"Decatur, AL (MA)",public_admin,-0.09131408403247787
 19500,"Decatur, IL (MA)",public_admin,-0.03873784531638569
-19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",public_admin,-0.060572894878986094
+19660,"Deltona-Daytona Beach-Ormond Beach, FL (MA)",public_admin,-0.06057289487898598
 19740,"Denver-Aurora-Lakewood, CO (MA)",public_admin,-0.04537210813196302
 19780,"Des Moines-West Des Moines, IA (MA)",public_admin,-0.10654054444315653
 19820,"Detroit-Warren-Dearborn, MI (MA)",public_admin,-0.1282980609843528

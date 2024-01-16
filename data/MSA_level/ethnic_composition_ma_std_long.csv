@@ -763,7 +763,7 @@ GeoFIPS,GeoName,Category,Value
 49180,"Winston-Salem, NC (MA)",puerto_rican,-0.020629543976177556
 49340,"Worcester, MA-CT (MA)",puerto_rican,0.41040579755641593
 49420,"Yakima, WA (MA)",puerto_rican,-0.08420700089383104
-49620,"York-Hanover, PA (MA)",puerto_rican,0.20997566523031064
+49620,"York-Hanover, PA (MA)",puerto_rican,0.20997566523031042
 49660,"Youngstown-Warren-Boardman, OH-PA (MA)",puerto_rican,0.07339425518599452
 49700,"Yuba City, CA (MA)",puerto_rican,-0.05157975693798289
 49740,"Yuma, AZ (MA)",puerto_rican,-0.05262943268703568
@@ -1145,7 +1145,7 @@ GeoFIPS,GeoName,Category,Value
 48900,"Wilmington, NC (MA)",cuban,-0.0022173645192123947
 49020,"Winchester, VA-WV (MA)",cuban,-0.03836583424300155
 49180,"Winston-Salem, NC (MA)",cuban,-0.019013264228297633
-49340,"Worcester, MA-CT (MA)",cuban,-0.025683610677794455
+49340,"Worcester, MA-CT (MA)",cuban,-0.025683610677794233
 49420,"Yakima, WA (MA)",cuban,-0.03971629006955568
 49620,"York-Hanover, PA (MA)",cuban,-0.02663253433431778
 49660,"Youngstown-Warren-Boardman, OH-PA (MA)",cuban,-0.03385410934325095
@@ -2035,7 +2035,7 @@ GeoFIPS,GeoName,Category,Value
 21780,"Evansville, IN-KY (MA)",black_african_american,-0.04911574672805219
 21820,"Fairbanks, AK (MA)",black_african_american,-0.092724944586412
 22020,"Fargo, ND-MN (MA)",black_african_american,-0.07184941530513123
-22140,"Farmington, NM (MA)",black_african_american,-0.1500176170467663
+22140,"Farmington, NM (MA)",black_african_american,-0.15001761704676608
 22180,"Fayetteville, NC (MA)",black_african_american,0.3288867079272413
 22220,"Fayetteville-Springdale-Rogers, AR (MA)",black_african_american,-0.12259764555021024
 22380,"Flagstaff, AZ (MA)",black_african_american,-0.13909940035978396
@@ -2114,7 +2114,7 @@ GeoFIPS,GeoName,Category,Value
 29460,"Lakeland-Winter Haven, FL (MA)",black_african_american,0.06671097251965685
 29540,"Lancaster, PA (MA)",black_african_american,-0.10877840789074367
 29620,"Lansing-East Lansing, MI (MA)",black_african_american,-0.038867501792209214
-29700,"Laredo, TX (MA)",black_african_american,-0.1548542384502236
+29700,"Laredo, TX (MA)",black_african_american,-0.1548542384502234
 29740,"Las Cruces, NM (MA)",black_african_american,-0.13514026610500884
 29820,"Las Vegas-Henderson-Paradise, NV (MA)",black_african_american,0.0195554190460121
 29940,"Lawrence, KS (MA)",black_african_american,-0.09965937255117352
@@ -3040,7 +3040,7 @@ GeoFIPS,GeoName,Category,Value
 46140,"Tulsa, OK (MA)",asian,-0.018438301099399368
 46220,"Tuscaloosa, AL (MA)",asian,-0.07050003946341232
 46300,"Twin Falls, ID (MA)",asian,-0.07520387817357943
-46340,"Tyler, TX (MA)",asian,-0.059488513420957956
+46340,"Tyler, TX (MA)",asian,-0.059488513420957845
 46520,"Urban Honolulu, HI (MA)",asian,0.917489713740258
 46540,"Utica-Rome, NY (MA)",asian,0.007768076199330842
 46660,"Valdosta, GA (MA)",asian,-0.07350907917324911
@@ -3214,7 +3214,7 @@ GeoFIPS,GeoName,Category,Value
 24540,"Greeley, CO (MA)",native_hawaiian_other_pacific_islander,-0.015982587605629095
 24580,"Green Bay, WI (MA)",native_hawaiian_other_pacific_islander,-0.036580597240454704
 24660,"Greensboro-High Point, NC (MA)",native_hawaiian_other_pacific_islander,-0.030823551371638835
-24780,"Greenville, NC (MA)",native_hawaiian_other_pacific_islander,-0.02685394985859524
+24780,"Greenville, NC (MA)",native_hawaiian_other_pacific_islander,-0.026853949858595016
 24860,"Greenville-Anderson, SC (MA)",native_hawaiian_other_pacific_islander,-0.009390633892162104
 25060,"Gulfport-Biloxi, MS (MA)",native_hawaiian_other_pacific_islander,-0.02701947455671394
 25180,"Hagerstown-Martinsburg, MD-WV (MA)",native_hawaiian_other_pacific_islander,-0.028883141632197185
@@ -3744,7 +3744,7 @@ GeoFIPS,GeoName,Category,Value
 39660,"Rapid City, SD (MA)",other_race_races,0.1962743356983272
 39740,"Reading, PA (MA)",other_race_races,-0.12994427226830818
 39820,"Redding, CA (MA)",other_race_races,0.13753997541715157
-39900,"Reno, NV (MA)",other_race_races,0.0967929051503158
+39900,"Reno, NV (MA)",other_race_races,0.09679290515031558
 40060,"Richmond, VA (MA)",other_race_races,0.025118391644720628
 40140,"Riverside-San Bernardino-Ontario, CA (MA)",other_race_races,-0.023590875532021993
 40220,"Roanoke, VA (MA)",other_race_races,-0.07054099774599698
