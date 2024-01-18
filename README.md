@@ -3,19 +3,52 @@
 </p>
 
 
-## Evaluating Policy Transfer via Similarity Analysis and Causal Inference 
-```
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-pip install -e .
-cd tests && python -m pytest
-```
+# Evaluating Policy Transfer via Similarity Analysis and Causal Inference
+
+
+## Getting started
 
 
 Welcome to the repository for [polis](http://polis.basis.ai/), developed by the [Basis Research Institute](https://www.basis.ai/) for [The Opportunity Project (TOP)](https://opportunity.census.gov/) 2023 in collaboration with the U.S. Department of Commerce. The primary goal of this project is to enhance access to data for local policymakers, facilitating more informed decision-making.
 
 This is the backend repository for more advanced users. For a more pleasant frontend experience and more information, please use the [app](http://polis.basis.ai/).
+
+
+Installation
+------------
+
+**Basic Setup:**
+
+```sh
+
+    git clone git@github.com:BasisResearch/cities.git
+    cd cities
+    git checkout main
+    pip install .
+```
+
+The above will install the minimal version that's ported to [polis.basis.ai](http://polis.basis.ai)
+
+**Dev Setup:**
+
+To install dev dependencies, needed to run models, train models and run all the tests, run the following command:
+
+```sh
+pip install -e .[dev]
+```
+
+Details of which packages are available in which see `setup.py`.
+
+
+** Contributing: **
+
+Before submitting a pull request, please autoformat code and ensure that unit tests pass locally
+
+```sh
+make lint              # linting
+make format            # runs black and isort, including on notebooks in the docs/ folder
+make tests             # linting, unit and notebook tests
+```
 
 
 ### The repository is structured as follows:
@@ -36,9 +69,12 @@ This is the backend repository for more advanced users. For a more pleasant fron
 └── tests
 ```    
 
+**WARNING: during the beta testing, the most recent version lives on the `staging-county-data` branch, and so do the most recent versions of the notebooks. Please switch to the branch before inspecting the notebooks.
 
 If you're interested in downloading the data or exploring advanced features beyond the frontend, check out the `guides` folder in the `docs` directory. There, you'll find:
 - `data_sources.ipynb` for information on data sources,
+- `similarity-conceptual.ipynb` for  a conceptual account of how similarity comparison works.
+- `counterfactual-explained.ipynb` contains a rough explanation of how our causal model works. 
 - `similarity_demo.ipynb` demonstrating the use of the `DataGrabber` class for easy data acces, and of  our `FipsQuery` class, which is the key tool in the similarity-focused part of the project,
 - `causal_insights_demo.ipynb` for an overview of how the `CausalInsight` class can be used to explore the influence of a range of intervention variables thanks to causal inference tools we employed. [WIP]
 
