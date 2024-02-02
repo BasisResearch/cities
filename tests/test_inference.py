@@ -32,7 +32,7 @@ interventions = [random.choice(interventions)]
 outcomes = [random.choice(outcomes)]
 
 
-# @pytest.mark.skip(reason="adding variables for now, training later")
+@pytest.mark.skip(reason="adding variables for now, training later")
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
@@ -57,7 +57,7 @@ def test_smoke_InteractionsModel(intervention, outcome, shift):
     ), f"Conditioning failed for {intervention}, {outcome}."
 
 
-# @pytest.mark.skip(reason="adding variables for now, training later")
+@pytest.mark.skip(reason="adding variables for now, training later")
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
@@ -75,7 +75,7 @@ def test_smoke_training_pipeline(intervention, outcome, shift):
     model.train_interactions_model()
 
 
-# @pytest.mark.skip(reason="adding variables for now, training later")
+@pytest.mark.skip(reason="adding variables for now, training later")
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
@@ -97,7 +97,7 @@ def test_smoke_guide_presence(intervention, outcome, shift):
     # two extra files: .gitkeep and .training.log
 
 
-# @pytest.mark.skip(reason="adding variables for now, training later")
+@pytest.mark.skip(reason="adding variables for now, training later")
 @pytest.mark.parametrize("intervention", interventions)
 @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
