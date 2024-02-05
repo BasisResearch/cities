@@ -1,7 +1,5 @@
 import random
 
-import pytest
-
 from cities.queries.causal_insight_slim import CausalInsightSlim as CausalInsight
 from cities.utils.data_grabber import DataGrabber, list_interventions, list_outcomes
 
@@ -36,7 +34,7 @@ intervened_value = random.uniform(-1, 1)
 #     assert ci.predictions is not None
 
 
-#@pytest.mark.skip(reason="adding variables for now, training later")
+# @pytest.mark.skip(reason="adding variables for now, training later")
 def test_slim_full():
     for intervention in interventions:
         for outcome in outcomes:
