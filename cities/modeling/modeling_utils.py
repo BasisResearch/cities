@@ -9,36 +9,42 @@ from pyro.infer.autoguide import AutoNormal
 from pyro.optim import Adam
 from scipy.stats import spearmanr
 
-
 from cities.utils.data_grabber import (
     DataGrabber,
     list_available_features,
     list_tensed_features,
 )
 
+
 def drop_high_correlation(df, threshold=0.85):
-    df_var = df.iloc[:,2:].copy()
+    df_var = df.iloc[:, 2:].copy()
     correlation_matrix, _ = spearmanr(df_var)
 
-    high_correlation_pairs = [(df_var.columns[i], df_var.columns[j])
-                              for i in range(df_var.shape[1])
-                              for j in range(i + 1, df_var.shape[1])
-                              if abs(correlation_matrix[i, j]) > threshold and abs(correlation_matrix[i, j]) < 1.0]
-    high_correlation_pairs = [(var1, var2) for var1, var2 in high_correlation_pairs if var1 != var2]
+    high_correlation_pairs = [
+        (df_var.columns[i], df_var.columns[j])
+        for i in range(df_var.shape[1])
+        for j in range(i + 1, df_var.shape[1])
+        if abs(correlation_matrix[i, j]) > threshold
+        and abs(correlation_matrix[i, j]) < 1.0
+    ]
+    high_correlation_pairs = [
+        (var1, var2) for var1, var2 in high_correlation_pairs if var1 != var2
+    ]
 
     removed = set()
-    print(f"Highly correlated pairs: {high_correlation_pairs}, second elements will be dropped")
+    print(
+        f"Highly correlated pairs: {high_correlation_pairs}, second elements will be dropped"
+    )
     for var1, var2 in high_correlation_pairs:
         assert var2 in df_var.columns
     for var1, var2 in high_correlation_pairs:
         if var2 in df_var.columns:
             removed.add(var2)
-            df_var.drop(var2, axis =1, inplace=True)
+            df_var.drop(var2, axis=1, inplace=True)
 
     result = pd.concat([df.iloc[:, :2], df_var], axis=1)
     print(f"Removed {removed} due to correlation > {threshold}")
     return result
-
 
 
 def prep_wide_data_for_inference(
@@ -115,7 +121,7 @@ def prep_wide_data_for_inference(
             )
 
     f_covariates_joint = drop_high_correlation(f_covariates_joint)
-    
+
     assert f_covariates_joint["GeoFIPS"].equals(intervention["GeoFIPS"])
 
     # extract data for which intervention and outcome overlap
@@ -198,7 +204,7 @@ def prep_wide_data_for_inference(
         "y": y,
         "years_available": years_available,
         "outcome_years": outcome_years_to_keep,
-        "covariates_df": f_covariates_joint
+        "covariates_df": f_covariates_joint,
     }
 
 

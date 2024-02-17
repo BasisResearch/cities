@@ -20,8 +20,6 @@ fips = 1003
 intervened_value = 0.9
 
 
-# TODO run full tests before you smile
-
 # running for all is too inefficient
 # let's just run for random on a regular basis
 # comment out for a full battery of tests
