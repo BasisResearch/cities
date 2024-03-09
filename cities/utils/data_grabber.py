@@ -17,7 +17,7 @@ def check_if_tensed(df):
     return check
 
 
-class DataGrabber:
+class DataGrabberCSV:
     def __init__(self):
         self.repo_root = find_repo_root()
         self.data_path = os.path.join(self.repo_root, "data/processed")
@@ -47,7 +47,7 @@ class DataGrabber:
             self.std_long[feature] = pd.read_csv(file_path)
 
 
-class MSADataGrabber(DataGrabber):
+class MSADataGrabberCSV(DataGrabberCSV):
     def __init__(self):
         super().__init__()
         self.repo_root = find_repo_root()
@@ -117,3 +117,8 @@ def list_outcomes():
         if feature not in list_interventions()
     ]
     return sorted(outcomes)
+
+
+DataGrabber = DataGrabberCSV
+
+MSADataGrabber = MSADataGrabberCSV

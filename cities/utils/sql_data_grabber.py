@@ -17,6 +17,6 @@ def list_csvs(csv_dir):
 
     assert (
         len(csv_names) > 10
-    ), f"Expected to find more than 10 csv files in {data_dir}, but found {len(csv_names)}"
+    ), f"Expected to find more than 10 csv files in {csv_dir}, but found {len(csv_names)}"
 
     return csv_names

@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 VERSION = "0.1.0"
 
 TEST_REQUIRES = [
-            "pytest",
+            "pytest == 7.4.3",
             "pytest-cov",
             "pytest-xdist",
             "mypy",
