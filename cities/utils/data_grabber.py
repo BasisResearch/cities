@@ -2,7 +2,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import List
+from typing import Dict, List
 
 import pandas as pd
 
@@ -21,30 +21,39 @@ class DataGrabberCSV:
     def __init__(self):
         self.repo_root = find_repo_root()
         self.data_path = os.path.join(self.repo_root, "data/processed")
-        self.wide = {}
-        self.std_wide = {}
-        self.long = {}
-        self.std_long = {}
+        self.wide: Dict[str, pd.DataFrame] = {}
+        self.std_wide: Dict[str, pd.DataFrame] = {}
+        self.long: Dict[str, pd.DataFrame] = {}
+        self.std_long: Dict[str, pd.DataFrame] = {}
+
+    def _get_features(self, features: List[str], table_suffix: str) -> None:
+        for feature in features:
+            file_path = os.path.join(self.data_path, f"{feature}_{table_suffix}.csv")
+            df = pd.read_csv(file_path)
+            if table_suffix == "wide":
+                self.wide[feature] = df
+            elif table_suffix == "std_wide":
+                self.std_wide[feature] = df
+            elif table_suffix == "long":
+                self.long[feature] = df
+            elif table_suffix == "std_long":
+                self.std_long[feature] = df
+            else:
+                raise ValueError(
+                    "Invalid table suffix. Please choose 'wide', 'std_wide', 'long', or 'std_long'."
+                )
 
     def get_features_wide(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_wide.csv")
-            self.wide[feature] = pd.read_csv(file_path)
+        self._get_features(features, "wide")
 
     def get_features_std_wide(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_std_wide.csv")
-            self.std_wide[feature] = pd.read_csv(file_path)
+        self._get_features(features, "std_wide")
 
     def get_features_long(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_long.csv")
-            self.long[feature] = pd.read_csv(file_path)
+        self._get_features(features, "long")
 
     def get_features_std_long(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_std_long.csv")
-            self.std_long[feature] = pd.read_csv(file_path)
+        self._get_features(features, "std_long")
 
 
 class MSADataGrabberCSV(DataGrabberCSV):
