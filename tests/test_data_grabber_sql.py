@@ -4,8 +4,13 @@ import pandas as pd
 import pytest
 from sqlalchemy import MetaData, create_engine
 
-from cities.utils.data_grabber import find_repo_root
-from cities.utils.sql_data_grabber import list_csvs
+from cities.utils.data_grabber import (
+    DataGrabberCSV,
+    MSADataGrabberCSV,
+    find_repo_root,
+    list_available_features,
+)
+from cities.utils.sql_data_grabber import DataGrabberDB, list_csvs
 
 root = find_repo_root()
 
@@ -37,3 +42,36 @@ def test_database_tables(level):
         df_from_csv = pd.read_csv(os.path.join(data_dir, csv))
         assert df_from_sql.equals(df_from_csv)
     engine.dispose()
+
+
+@pytest.mark.parametrize("level", ["counties", "msa"])
+def test_data_grabber(level):
+    features = {
+        "counties": list_available_features(),
+        "msa": list_available_features("msa"),
+    }[level]
+
+    data_grabber_db = DataGrabberDB(level)
+    data_grabber_csv = DataGrabberCSV() if level == "counties" else MSADataGrabberCSV()
+
+    data_grabber_db.get_features_wide(features)
+    data_grabber_csv.get_features_wide(features)
+
+    data_grabber_db.get_features_std_wide(features)
+    data_grabber_csv.get_features_std_wide(features)
+
+    data_grabber_db.get_features_long(features)
+    data_grabber_csv.get_features_long(features)
+
+    data_grabber_db.get_features_std_long(features)
+    data_grabber_csv.get_features_std_long(features)
+
+    for feature in features:
+        assert data_grabber_db.wide[feature].equals(data_grabber_csv.wide[feature])
+        assert data_grabber_db.std_wide[feature].equals(
+            data_grabber_csv.std_wide[feature]
+        )
+        assert data_grabber_db.long[feature].equals(data_grabber_csv.long[feature])
+        assert data_grabber_db.std_long[feature].equals(
+            data_grabber_csv.std_long[feature]
+        )

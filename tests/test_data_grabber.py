@@ -18,7 +18,6 @@ features_msa = list_available_features("msa")
 def test_non_emptiness_DataGrabber():
     assert features is not None
 
-
     data = DataGrabber()
 
     data.get_features_wide(features)
@@ -32,10 +31,12 @@ def test_non_emptiness_DataGrabber():
         assert data.long[feature].shape[0] > 2800
         assert data.std_long[feature].shape[1] == 4
         assert (
-            data.wide["gdp"]["GeoFIPS"].nunique() == data.wide[feature]["GeoFIPS"].nunique()
+            data.wide["gdp"]["GeoFIPS"].nunique()
+            == data.wide[feature]["GeoFIPS"].nunique()
         )
         assert (
-            data.long["gdp"]["GeoFIPS"].nunique() == data.long[feature]["GeoFIPS"].nunique()
+            data.long["gdp"]["GeoFIPS"].nunique()
+            == data.long[feature]["GeoFIPS"].nunique()
         )
 
 
