@@ -82,6 +82,12 @@ class DataGrabberDB:
         self._get_features(features, "std_long")
 
 
+class MSADataGrabberDB(DataGrabberDB):
+    def __init__(self):
+        super().__init__()
+        self.engine = msa_engine
+
+
 # # Assuming you have already created the database engine
 # engine = create_engine('sqlite:///path/to/your/database.db')
 
