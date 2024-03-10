@@ -19,24 +19,24 @@ def test_non_emptiness_DataGrabber():
     assert features is not None
 
 
-data = DataGrabber()
+    data = DataGrabber()
 
-data.get_features_wide(features)
-data.get_features_std_wide(features)
-data.get_features_long(features)
-data.get_features_std_long(features)
+    data.get_features_wide(features)
+    data.get_features_std_wide(features)
+    data.get_features_long(features)
+    data.get_features_std_long(features)
 
-for feature in features:
-    assert data.wide[feature].shape[0] > 2800
-    assert data.std_wide[feature].shape[1] < 100
-    assert data.long[feature].shape[0] > 2800
-    assert data.std_long[feature].shape[1] == 4
-    assert (
-        data.wide["gdp"]["GeoFIPS"].nunique() == data.wide[feature]["GeoFIPS"].nunique()
-    )
-    assert (
-        data.long["gdp"]["GeoFIPS"].nunique() == data.long[feature]["GeoFIPS"].nunique()
-    )
+    for feature in features:
+        assert data.wide[feature].shape[0] > 2800
+        assert data.std_wide[feature].shape[1] < 100
+        assert data.long[feature].shape[0] > 2800
+        assert data.std_long[feature].shape[1] == 4
+        assert (
+            data.wide["gdp"]["GeoFIPS"].nunique() == data.wide[feature]["GeoFIPS"].nunique()
+        )
+        assert (
+            data.long["gdp"]["GeoFIPS"].nunique() == data.long[feature]["GeoFIPS"].nunique()
+        )
 
 
 def test_non_emptiness_MSADataGrabber():
