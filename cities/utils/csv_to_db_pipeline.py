@@ -5,8 +5,7 @@ import time
 import pandas as pd
 from sqlalchemy import create_engine
 
-from cities.utils.data_grabber import find_repo_root
-from cities.utils.sql_data_grabber import list_csvs
+from cities.utils.data_grabber import find_repo_root, list_csvs
 
 logging.disable(logging.WARNING)
 
