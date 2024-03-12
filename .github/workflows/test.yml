@@ -52,7 +52,7 @@ jobs:
         run: python cities/utils/csv_to_db_pipeline.py
 
       - name: Test
-        run: python pytest tests/
+        run: python -m pytest tests/
 
       - name: Test Notebooks
         run: |
