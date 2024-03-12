@@ -2,14 +2,10 @@ import os
 
 import numpy as np
 
-from cities.utils.data_grabber import (
-    DataGrabber,
-    MSADataGrabber,
-    list_available_features,
-    list_interventions,
-    list_outcomes,
-    list_tensed_features,
-)
+from cities.utils.data_grabber import (DataGrabber, MSADataGrabber,
+                                       list_available_features,
+                                       list_interventions, list_outcomes,
+                                       list_tensed_features)
 
 features = list_available_features()
 features_msa = list_available_features("msa")

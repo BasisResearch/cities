@@ -2,18 +2,12 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
-from cities.utils.data_grabber import (
-    DataGrabber,
-    MSADataGrabber,
-    check_if_tensed,
-    list_available_features,
-)
-from cities.utils.similarity_utils import (
-    compute_weight_array,
-    generalized_euclidean_distance,
-    plot_weights,
-    slice_with_lag,
-)
+from cities.utils.data_grabber import (DataGrabber, MSADataGrabber,
+                                       check_if_tensed,
+                                       list_available_features)
+from cities.utils.similarity_utils import (compute_weight_array,
+                                           generalized_euclidean_distance,
+                                           plot_weights, slice_with_lag)
 
 # from scipy.spatial import distance
 

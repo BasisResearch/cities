@@ -3,7 +3,8 @@ import os
 import dill
 import numpy as np
 
-from cities.utils.data_grabber import DataGrabber, find_repo_root, list_interventions
+from cities.utils.data_grabber import (DataGrabber, find_repo_root,
+                                       list_interventions)
 from cities.utils.percentiles import transformed_intervention_from_percentile
 
 

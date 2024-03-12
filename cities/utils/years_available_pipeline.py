@@ -3,7 +3,8 @@ import os
 import dill
 
 from cities.modeling.modeling_utils import prep_wide_data_for_inference
-from cities.utils.data_grabber import find_repo_root, list_interventions, list_outcomes
+from cities.utils.data_grabber import (find_repo_root, list_interventions,
+                                       list_outcomes)
 
 root = find_repo_root()
 interventions = list_interventions()

@@ -6,11 +6,8 @@ import torch
 from scipy.stats import spearmanr
 
 import pyro
-from cities.utils.data_grabber import (
-    DataGrabber,
-    list_available_features,
-    list_tensed_features,
-)
+from cities.utils.data_grabber import (DataGrabber, list_available_features,
+                                       list_tensed_features)
 from pyro.infer import SVI, Trace_ELBO
 from pyro.infer.autoguide import AutoNormal
 from pyro.optim import Adam  # type: ignore

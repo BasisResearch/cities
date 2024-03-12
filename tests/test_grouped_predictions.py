@@ -2,7 +2,8 @@ import random
 
 from pandas.testing import assert_frame_equal
 
-from cities.queries.causal_insight_slim import CausalInsightSlim as CausalInsight
+from cities.queries.causal_insight_slim import \
+    CausalInsightSlim as CausalInsight
 from cities.utils.data_grabber import list_interventions, list_outcomes
 
 

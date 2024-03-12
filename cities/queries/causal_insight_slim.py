@@ -6,11 +6,9 @@ import pandas as pd
 import plotly.graph_objects as go
 from sklearn.preprocessing import StandardScaler
 
-from cities.utils.cleaning_utils import (
-    revert_prediction_df,
-    revert_standardize_and_scale_scaler,
-    sigmoid,
-)
+from cities.utils.cleaning_utils import (revert_prediction_df,
+                                         revert_standardize_and_scale_scaler,
+                                         sigmoid)
 from cities.utils.data_grabber import DataGrabber, find_repo_root
 from cities.utils.percentiles import transformed_intervention_from_percentile
 
