@@ -48,6 +48,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .[test]
 
+      - name: Generate databases
+        run: python cities/utils/csv_to_db_pipeline.py
+
       - name: Test
         shell: bash
         run: |

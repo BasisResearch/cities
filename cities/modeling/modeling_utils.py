@@ -217,7 +217,7 @@ def train_interactions_model(
     lr: float = 0.01,
 ):
     guide = None
-    pyro.clear_param_store()
+    pyro.clear_param_store()  # type: ignore
 
     guide = AutoNormal(conditioned_model)
 
