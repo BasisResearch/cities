@@ -10,7 +10,7 @@ TEST_REQUIRES = [
             "mypy",
             "black",
             "flake8",
-            "isort==5.13.12",
+            "isort==5.13.2",
             "nbval",
             "nbqa",
             "autoflake",
