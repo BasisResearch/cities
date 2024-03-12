@@ -6,7 +6,6 @@ from pathlib import Path
 import pandas as pd
 from sqlalchemy import create_engine
 
-
 logging.disable(logging.WARNING)
 
 
@@ -29,7 +28,6 @@ def list_csvs(csv_dir):
 
 def find_repo_root() -> Path:
     return Path(__file__).parent.parent.parent
-
 
 
 def create_database(data_dir, database_path):
