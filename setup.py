@@ -8,7 +8,7 @@ TEST_REQUIRES = [
             "pytest-cov",
             "pytest-xdist",
             "mypy",
-            "black",
+            "black==24.2.0",
             "flake8",
             "isort==5.13.2",
             "nbval",
