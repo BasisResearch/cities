@@ -4,9 +4,14 @@ import pandas as pd
 import pytest
 from sqlalchemy import MetaData, create_engine
 
-from cities.utils.data_grabber import (DataGrabberCSV, DataGrabberDB,
-                                       MSADataGrabberCSV, find_repo_root,
-                                       list_available_features, list_csvs)
+from cities.utils.data_grabber import (
+    DataGrabberCSV,
+    DataGrabberDB,
+    MSADataGrabberCSV,
+    find_repo_root,
+    list_available_features,
+    list_csvs,
+)
 
 root = find_repo_root()
 

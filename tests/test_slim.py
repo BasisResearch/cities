@@ -1,9 +1,7 @@
 import random
 
-from cities.queries.causal_insight_slim import \
-    CausalInsightSlim as CausalInsight
-from cities.utils.data_grabber import (DataGrabber, list_interventions,
-                                       list_outcomes)
+from cities.queries.causal_insight_slim import CausalInsightSlim as CausalInsight
+from cities.utils.data_grabber import DataGrabber, list_interventions, list_outcomes
 
 data = DataGrabber()
 data.get_features_wide(["gdp"])

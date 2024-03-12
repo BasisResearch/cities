@@ -7,8 +7,10 @@ import pyro.distributions as dist
 import torch
 
 import pyro
-from cities.modeling.modeling_utils import (prep_wide_data_for_inference,
-                                            train_interactions_model)
+from cities.modeling.modeling_utils import (
+    prep_wide_data_for_inference,
+    train_interactions_model,
+)
 from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 

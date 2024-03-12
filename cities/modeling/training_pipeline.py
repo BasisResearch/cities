@@ -4,8 +4,7 @@ import sys
 import time
 
 from cities.modeling.model_interactions import InteractionsModel
-from cities.utils.data_grabber import (find_repo_root, list_interventions,
-                                       list_outcomes)
+from cities.utils.data_grabber import find_repo_root, list_interventions, list_outcomes
 
 if __name__ != "__main__":
     sys.exit()

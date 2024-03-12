@@ -1,8 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from cities.utils.clean_variable import (VariableCleaner,
-                                         communities_tracts_to_counties)
+from cities.utils.clean_variable import VariableCleaner, communities_tracts_to_counties
 from cities.utils.data_grabber import DataGrabber, find_repo_root
 
 root = find_repo_root()

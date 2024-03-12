@@ -9,9 +9,11 @@ from pyro.optim import Adam  # type: ignore
 from scipy.stats import spearmanr
 
 import pyro
-from cities.utils.data_grabber import (DataGrabber, list_available_features,
-                                       list_tensed_features)
-
+from cities.utils.data_grabber import (
+    DataGrabber,
+    list_available_features,
+    list_tensed_features,
+)
 
 
 def drop_high_correlation(df, threshold=0.85):
