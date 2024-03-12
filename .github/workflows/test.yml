@@ -52,6 +52,8 @@ jobs:
         run: python cities/utils/csv_to_db_pipeline.py
 
       - name: Test
-        shell: bash
+        run: python pytest tests/
+
+      - name: Test Notebooks
         run: |
-          MKL_NUM_THREADS=1 pytest tests/ -s -n auto --cov=cities/ --cov-report=term-missing ${@-}
+            ./scripts/test_notebooks.sh
