@@ -6,7 +6,7 @@ import pyro
 import torch
 from pyro.infer import SVI, Trace_ELBO
 from pyro.infer.autoguide import AutoNormal
-from pyro.optim import Adam
+from pyro.optim import Adam # type: ignore
 from scipy.stats import spearmanr
 
 from cities.utils.data_grabber import (
