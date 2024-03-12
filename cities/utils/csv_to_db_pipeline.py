@@ -1,13 +1,35 @@
 import logging
 import os
 import time
+from pathlib import Path
 
 import pandas as pd
 from sqlalchemy import create_engine
 
-from cities.utils.data_grabber import find_repo_root, list_csvs
 
 logging.disable(logging.WARNING)
+
+
+# defining util functions locally to avoid circular imports and major refactor
+# TODO refactor the two functions out of data_grabber.py
+
+
+def list_csvs(csv_dir):
+    csv_names = []
+    for filename in os.listdir(csv_dir):
+        if filename.endswith(".csv"):
+            csv_names.append(filename)
+
+    assert (
+        len(csv_names) > 10
+    ), f"Expected to find more than 10 csv files in {csv_dir}, but found {len(csv_names)}"
+
+    return csv_names
+
+
+def find_repo_root() -> Path:
+    return Path(__file__).parent.parent.parent
+
 
 
 def create_database(data_dir, database_path):
