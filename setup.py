@@ -4,20 +4,20 @@ from setuptools import setup, find_packages
 VERSION = "0.1.0"
 
 TEST_REQUIRES = [
-            "pytest",
+            "pytest == 7.4.3",
             "pytest-cov",
             "pytest-xdist",
             "mypy",
-            "black",
+            "black==24.2.0",
             "flake8",
-            "isort",
+            "isort==5.13.2",
             "nbval",
             "nbqa",
             "autoflake",
         ]
 
 DEV_REQUIRES = [
-    "pyro-ppl>=1.8.5",
+    "pyro-ppl==1.8.5",
     "torch",   "plotly.express", 
     "scipy",  
     "chirho", "graphviz", "seaborn"
@@ -34,7 +34,7 @@ setup(
     #     "Documentation": "",
         "Source": "https://github.com/BasisResearch/cities",
     },
-    install_requires=["jupyter","pandas", "numpy", "scikit-learn","dill",  "plotly", "matplotlib>=3.8.2"],
+    install_requires=["jupyter","pandas", "numpy", "scikit-learn", "sqlalchemy", "dill",  "plotly", "matplotlib>=3.8.2"],
     extras_require={
         "test": TEST_REQUIRES,
         "dev": DEV_REQUIRES + TEST_REQUIRES 

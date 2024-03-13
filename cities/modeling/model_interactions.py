@@ -3,10 +3,10 @@ import os
 from typing import Optional
 
 import dill
+import pyro.distributions as dist
 import torch
 
 import pyro
-import pyro.distributions as dist
 from cities.modeling.modeling_utils import (
     prep_wide_data_for_inference,
     train_interactions_model,
@@ -50,12 +50,12 @@ class InteractionsModel:
 
         self.model_args = self.data["model_args"]
 
-        self.model_conditioned = pyro.condition(
+        self.model_conditioned = pyro.condition(  # type: ignore
             self.model,
             data={"T": self.data["t"], "Y": self.data["y"], "X": self.data["x"]},
         )
 
-        self.model_rendering = pyro.render_model(
+        self.model_rendering = pyro.render_model(  # type: ignore
             self.model, model_args=self.model_args, render_distributions=True
         )
 
