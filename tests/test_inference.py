@@ -34,7 +34,7 @@ outcomes = [random.choice(outcomes)]
 # @pytest.mark.parametrize("intervention", interventions)
 # @pytest.mark.parametrize("outcome", outcomes)
 @pytest.mark.parametrize("shift", shifts)
-def test_smoke_InteractionsModel(shift): #(intervention, outcome, shift):
+def test_smoke_InteractionsModel(shift):  # (intervention, outcome, shift):
     model = InteractionsModel(
         outcome_dataset="unemployment_rate",
         intervention_dataset="spending_commerce",
