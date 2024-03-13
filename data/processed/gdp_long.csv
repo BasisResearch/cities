@@ -79,7 +79,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2001,94.882
 2130,"Ketchikan Gateway Borough, AK*",2001,84.133
 2150,"Kodiak Island Borough, AK",2001,80.794
-2158,"Kusilvak Census Area, AK*",2001,80.993
 2164,"Lake and Peninsula Borough, AK",2001,90.514
 2170,"Matanuska-Susitna Borough, AK",2001,59.132
 2180,"Nome Census Area, AK",2001,76.435
@@ -1798,7 +1797,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2001,53.599
 35035,"Otero, NM",2001,80.528
 35037,"Quay, NM",2001,98.875
-35039,"Rio Arriba, NM",2001,131.659
 35041,"Roosevelt, NM",2001,80.347
 35043,"Sandoval, NM",2001,54.514
 35045,"San Juan, NM",2001,101.334
@@ -2394,7 +2392,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2001,106.318
 46099,"Minnehaha, SD",2001,51.314
 46101,"Moody, SD",2001,80.164
-46102,"Oglala Lakota, SD*",2001,91.955
 46103,"Pennington, SD",2001,80.603
 46105,"Perkins, SD",2001,95.741
 46107,"Potter, SD",2001,40.812
@@ -3153,7 +3150,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2002,97.917
 2130,"Ketchikan Gateway Borough, AK*",2002,82.567
 2150,"Kodiak Island Borough, AK",2002,79.024
-2158,"Kusilvak Census Area, AK*",2002,83.404
 2164,"Lake and Peninsula Borough, AK",2002,93.564
 2170,"Matanuska-Susitna Borough, AK",2002,64.913
 2180,"Nome Census Area, AK",2002,81.929
@@ -4872,7 +4868,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2002,56.786
 35035,"Otero, NM",2002,84.622
 35037,"Quay, NM",2002,92.588
-35039,"Rio Arriba, NM",2002,144.936
 35041,"Roosevelt, NM",2002,89.201
 35043,"Sandoval, NM",2002,51.942
 35045,"San Juan, NM",2002,101.619
@@ -5468,7 +5463,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2002,122.09
 46099,"Minnehaha, SD",2002,60.229
 46101,"Moody, SD",2002,89.368
-46102,"Oglala Lakota, SD*",2002,93.721
 46103,"Pennington, SD",2002,92.56
 46105,"Perkins, SD",2002,87.62
 46107,"Potter, SD",2002,33.881
@@ -6227,7 +6221,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2003,101.853
 2130,"Ketchikan Gateway Borough, AK*",2003,83.095
 2150,"Kodiak Island Borough, AK",2003,83.559
-2158,"Kusilvak Census Area, AK*",2003,90.73
 2164,"Lake and Peninsula Borough, AK",2003,85.218
 2170,"Matanuska-Susitna Borough, AK",2003,69.523
 2180,"Nome Census Area, AK",2003,84.411
@@ -7946,7 +7939,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2003,56.325
 35035,"Otero, NM",2003,85.12
 35037,"Quay, NM",2003,95.601
-35039,"Rio Arriba, NM",2003,140.195
 35041,"Roosevelt, NM",2003,82.938
 35043,"Sandoval, NM",2003,78.684
 35045,"San Juan, NM",2003,99.877
@@ -8542,7 +8534,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2003,123.966
 46099,"Minnehaha, SD",2003,58.248
 46101,"Moody, SD",2003,87.427
-46102,"Oglala Lakota, SD*",2003,100.107
 46103,"Pennington, SD",2003,92.509
 46105,"Perkins, SD",2003,104.527
 46107,"Potter, SD",2003,45.812
@@ -9301,7 +9292,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2004,106.307
 2130,"Ketchikan Gateway Borough, AK*",2004,81.929
 2150,"Kodiak Island Borough, AK",2004,84.296
-2158,"Kusilvak Census Area, AK*",2004,90.469
 2164,"Lake and Peninsula Borough, AK",2004,86.279
 2170,"Matanuska-Susitna Borough, AK",2004,72.591
 2180,"Nome Census Area, AK",2004,86.319
@@ -11020,7 +11010,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2004,57.019
 35035,"Otero, NM",2004,87.638
 35037,"Quay, NM",2004,101.883
-35039,"Rio Arriba, NM",2004,134.295
 35041,"Roosevelt, NM",2004,93.191
 35043,"Sandoval, NM",2004,122.374
 35045,"San Juan, NM",2004,102.53
@@ -11616,7 +11605,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2004,126.637
 46099,"Minnehaha, SD",2004,69.276
 46101,"Moody, SD",2004,85.986
-46102,"Oglala Lakota, SD*",2004,99.023
 46103,"Pennington, SD",2004,90.604
 46105,"Perkins, SD",2004,81.978
 46107,"Potter, SD",2004,41.767
@@ -12375,7 +12363,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2005,91.035
 2130,"Ketchikan Gateway Borough, AK*",2005,86.412
 2150,"Kodiak Island Borough, AK",2005,85.77
-2158,"Kusilvak Census Area, AK*",2005,87.467
 2164,"Lake and Peninsula Borough, AK",2005,87.969
 2170,"Matanuska-Susitna Borough, AK",2005,78.33
 2180,"Nome Census Area, AK",2005,88.488
@@ -14094,7 +14081,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2005,55.958
 35035,"Otero, NM",2005,87.933
 35037,"Quay, NM",2005,112.109
-35039,"Rio Arriba, NM",2005,134.073
 35041,"Roosevelt, NM",2005,92.219
 35043,"Sandoval, NM",2005,113.312
 35045,"San Juan, NM",2005,102.93
@@ -14690,7 +14676,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2005,113.677
 46099,"Minnehaha, SD",2005,74.843
 46101,"Moody, SD",2005,87.486
-46102,"Oglala Lakota, SD*",2005,100.258
 46103,"Pennington, SD",2005,93.509
 46105,"Perkins, SD",2005,93.183
 46107,"Potter, SD",2005,39.994
@@ -15449,7 +15434,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2006,95.835
 2130,"Ketchikan Gateway Borough, AK*",2006,87.154
 2150,"Kodiak Island Borough, AK",2006,86.255
-2158,"Kusilvak Census Area, AK*",2006,83.098
 2164,"Lake and Peninsula Borough, AK",2006,97.085
 2170,"Matanuska-Susitna Borough, AK",2006,76.926
 2180,"Nome Census Area, AK",2006,89.022
@@ -17168,7 +17152,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2006,55.865
 35035,"Otero, NM",2006,89.863
 35037,"Quay, NM",2006,119.284
-35039,"Rio Arriba, NM",2006,133.848
 35041,"Roosevelt, NM",2006,91.884
 35043,"Sandoval, NM",2006,112.219
 35045,"San Juan, NM",2006,105.256
@@ -17764,7 +17747,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2006,132.354
 46099,"Minnehaha, SD",2006,81.198
 46101,"Moody, SD",2006,94.391
-46102,"Oglala Lakota, SD*",2006,97.955
 46103,"Pennington, SD",2006,90.278
 46105,"Perkins, SD",2006,66.036
 46107,"Potter, SD",2006,31.753
@@ -18523,7 +18505,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2007,97.635
 2130,"Ketchikan Gateway Borough, AK*",2007,94.334
 2150,"Kodiak Island Borough, AK",2007,86.1
-2158,"Kusilvak Census Area, AK*",2007,84.991
 2164,"Lake and Peninsula Borough, AK",2007,178.779
 2170,"Matanuska-Susitna Borough, AK",2007,78.3
 2180,"Nome Census Area, AK",2007,103.64
@@ -20242,7 +20223,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2007,56.891
 35035,"Otero, NM",2007,88.92
 35037,"Quay, NM",2007,108.742
-35039,"Rio Arriba, NM",2007,136.192
 35041,"Roosevelt, NM",2007,95.552
 35043,"Sandoval, NM",2007,98.842
 35045,"San Juan, NM",2007,108.329
@@ -20838,7 +20818,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2007,123.507
 46099,"Minnehaha, SD",2007,80.955
 46101,"Moody, SD",2007,100.085
-46102,"Oglala Lakota, SD*",2007,91.034
 46103,"Pennington, SD",2007,93.602
 46105,"Perkins, SD",2007,70.986
 46107,"Potter, SD",2007,44.299
@@ -21597,7 +21576,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2008,91.634
 2130,"Ketchikan Gateway Borough, AK*",2008,96.766
 2150,"Kodiak Island Borough, AK",2008,87.793
-2158,"Kusilvak Census Area, AK*",2008,86.644
 2164,"Lake and Peninsula Borough, AK",2008,114.377
 2170,"Matanuska-Susitna Borough, AK",2008,78.749
 2180,"Nome Census Area, AK",2008,110.354
@@ -23316,7 +23294,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2008,73.783
 35035,"Otero, NM",2008,89.227
 35037,"Quay, NM",2008,108.762
-35039,"Rio Arriba, NM",2008,123.952
 35041,"Roosevelt, NM",2008,108.997
 35043,"Sandoval, NM",2008,84.513
 35045,"San Juan, NM",2008,107.243
@@ -23912,7 +23889,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2008,98.826
 46099,"Minnehaha, SD",2008,82.913
 46101,"Moody, SD",2008,89.645
-46102,"Oglala Lakota, SD*",2008,96.414
 46103,"Pennington, SD",2008,94.019
 46105,"Perkins, SD",2008,69.792
 46107,"Potter, SD",2008,61.14
@@ -24671,7 +24647,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2009,98.786
 2130,"Ketchikan Gateway Borough, AK*",2009,99.959
 2150,"Kodiak Island Borough, AK",2009,89.745
-2158,"Kusilvak Census Area, AK*",2009,89.201
 2164,"Lake and Peninsula Borough, AK",2009,89.193
 2170,"Matanuska-Susitna Borough, AK",2009,82.656
 2180,"Nome Census Area, AK",2009,90.369
@@ -26390,7 +26365,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2009,96.889
 35035,"Otero, NM",2009,90.408
 35037,"Quay, NM",2009,103.02
-35039,"Rio Arriba, NM",2009,138.593
 35041,"Roosevelt, NM",2009,83.237
 35043,"Sandoval, NM",2009,121.595
 35045,"San Juan, NM",2009,108.171
@@ -26986,7 +26960,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2009,163.466
 46099,"Minnehaha, SD",2009,87.116
 46101,"Moody, SD",2009,88.767
-46102,"Oglala Lakota, SD*",2009,95.946
 46103,"Pennington, SD",2009,92.618
 46105,"Perkins, SD",2009,73.178
 46107,"Potter, SD",2009,58.844
@@ -27745,7 +27718,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2010,101.49
 2130,"Ketchikan Gateway Borough, AK*",2010,98.79
 2150,"Kodiak Island Borough, AK",2010,94.794
-2158,"Kusilvak Census Area, AK*",2010,90.582
 2164,"Lake and Peninsula Borough, AK",2010,93.595
 2170,"Matanuska-Susitna Borough, AK",2010,91.651
 2180,"Nome Census Area, AK",2010,105.518
@@ -29464,7 +29436,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2010,116.139
 35035,"Otero, NM",2010,98.588
 35037,"Quay, NM",2010,106.074
-35039,"Rio Arriba, NM",2010,116.774
 35041,"Roosevelt, NM",2010,101.228
 35043,"Sandoval, NM",2010,115.022
 35045,"San Juan, NM",2010,101.128
@@ -30060,7 +30031,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2010,126.247
 46099,"Minnehaha, SD",2010,83.711
 46101,"Moody, SD",2010,94.045
-46102,"Oglala Lakota, SD*",2010,103.311
 46103,"Pennington, SD",2010,95.325
 46105,"Perkins, SD",2010,87.47
 46107,"Potter, SD",2010,71.412
@@ -30819,7 +30789,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2011,102.319
 2130,"Ketchikan Gateway Borough, AK*",2011,101.393
 2150,"Kodiak Island Borough, AK",2011,99.315
-2158,"Kusilvak Census Area, AK*",2011,96.854
 2164,"Lake and Peninsula Borough, AK",2011,98.799
 2170,"Matanuska-Susitna Borough, AK",2011,97.316
 2180,"Nome Census Area, AK",2011,108.076
@@ -32538,7 +32507,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2011,116.889
 35035,"Otero, NM",2011,101.106
 35037,"Quay, NM",2011,105.176
-35039,"Rio Arriba, NM",2011,110.005
 35041,"Roosevelt, NM",2011,101.338
 35043,"Sandoval, NM",2011,105.419
 35045,"San Juan, NM",2011,100.385
@@ -33134,7 +33102,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2011,146.737
 46099,"Minnehaha, SD",2011,89.327
 46101,"Moody, SD",2011,103.768
-46102,"Oglala Lakota, SD*",2011,104.338
 46103,"Pennington, SD",2011,96.772
 46105,"Perkins, SD",2011,87.042
 46107,"Potter, SD",2011,81.154
@@ -33893,7 +33860,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2013,104.258
 2130,"Ketchikan Gateway Borough, AK*",2013,101.541
 2150,"Kodiak Island Borough, AK",2013,102.479
-2158,"Kusilvak Census Area, AK*",2013,97.878
 2164,"Lake and Peninsula Borough, AK",2013,102.844
 2170,"Matanuska-Susitna Borough, AK",2013,99.729
 2180,"Nome Census Area, AK",2013,101.229
@@ -35612,7 +35578,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2013,97.877
 35035,"Otero, NM",2013,97.925
 35037,"Quay, NM",2013,104.045
-35039,"Rio Arriba, NM",2013,91.304
 35041,"Roosevelt, NM",2013,97.262
 35043,"Sandoval, NM",2013,90.785
 35045,"San Juan, NM",2013,98.152
@@ -36208,7 +36173,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2013,124.466
 46099,"Minnehaha, SD",2013,95.741
 46101,"Moody, SD",2013,115.168
-46102,"Oglala Lakota, SD*",2013,91.838
 46103,"Pennington, SD",2013,98.47
 46105,"Perkins, SD",2013,94.936
 46107,"Potter, SD",2013,107.527
@@ -36967,7 +36931,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2014,115.269
 2130,"Ketchikan Gateway Borough, AK*",2014,99.28
 2150,"Kodiak Island Borough, AK",2014,102.628
-2158,"Kusilvak Census Area, AK*",2014,106.282
 2164,"Lake and Peninsula Borough, AK",2014,103.176
 2170,"Matanuska-Susitna Borough, AK",2014,104.071
 2180,"Nome Census Area, AK",2014,105.642
@@ -38686,7 +38649,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2014,113.474
 35035,"Otero, NM",2014,95.036
 35037,"Quay, NM",2014,105.447
-35039,"Rio Arriba, NM",2014,97.65
 35041,"Roosevelt, NM",2014,98.028
 35043,"Sandoval, NM",2014,90.143
 35045,"San Juan, NM",2014,101.251
@@ -39282,7 +39244,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2014,99.419
 46099,"Minnehaha, SD",2014,100.017
 46101,"Moody, SD",2014,106.119
-46102,"Oglala Lakota, SD*",2014,102.919
 46103,"Pennington, SD",2014,100.395
 46105,"Perkins, SD",2014,111.334
 46107,"Potter, SD",2014,84.309
@@ -40041,7 +40002,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2015,112.444
 2130,"Ketchikan Gateway Borough, AK*",2015,100.192
 2150,"Kodiak Island Borough, AK",2015,98.761
-2158,"Kusilvak Census Area, AK*",2015,99.644
 2164,"Lake and Peninsula Borough, AK",2015,102.277
 2170,"Matanuska-Susitna Borough, AK",2015,105.201
 2180,"Nome Census Area, AK",2015,105.19
@@ -41760,7 +41720,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2015,102.231
 35035,"Otero, NM",2015,94.038
 35037,"Quay, NM",2015,95.72
-35039,"Rio Arriba, NM",2015,97.554
 35041,"Roosevelt, NM",2015,92.024
 35043,"Sandoval, NM",2015,88.994
 35045,"San Juan, NM",2015,102.76
@@ -42356,7 +42315,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2015,97.543
 46099,"Minnehaha, SD",2015,100.64
 46101,"Moody, SD",2015,119.488
-46102,"Oglala Lakota, SD*",2015,108.074
 46103,"Pennington, SD",2015,102.03
 46105,"Perkins, SD",2015,107.96
 46107,"Potter, SD",2015,62.296
@@ -43115,7 +43073,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2016,106.143
 2130,"Ketchikan Gateway Borough, AK*",2016,96.98
 2150,"Kodiak Island Borough, AK",2016,92.095
-2158,"Kusilvak Census Area, AK*",2016,103.412
 2164,"Lake and Peninsula Borough, AK",2016,95.299
 2170,"Matanuska-Susitna Borough, AK",2016,107.132
 2180,"Nome Census Area, AK",2016,97.071
@@ -44834,7 +44791,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2016,84.953
 35035,"Otero, NM",2016,94.881
 35037,"Quay, NM",2016,101.037
-35039,"Rio Arriba, NM",2016,94.812
 35041,"Roosevelt, NM",2016,100.376
 35043,"Sandoval, NM",2016,90.115
 35045,"San Juan, NM",2016,94.218
@@ -45430,7 +45386,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2016,94.536
 46099,"Minnehaha, SD",2016,101.001
 46101,"Moody, SD",2016,127.705
-46102,"Oglala Lakota, SD*",2016,112.126
 46103,"Pennington, SD",2016,102.459
 46105,"Perkins, SD",2016,92.25
 46107,"Potter, SD",2016,51.862
@@ -46189,7 +46144,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2017,107.872
 2130,"Ketchikan Gateway Borough, AK*",2017,97.087
 2150,"Kodiak Island Borough, AK",2017,95.301
-2158,"Kusilvak Census Area, AK*",2017,101.089
 2164,"Lake and Peninsula Borough, AK",2017,103.653
 2170,"Matanuska-Susitna Borough, AK",2017,104.77
 2180,"Nome Census Area, AK",2017,106.39
@@ -47908,7 +47862,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2017,61.544
 35035,"Otero, NM",2017,93.001
 35037,"Quay, NM",2017,99.896
-35039,"Rio Arriba, NM",2017,92.517
 35041,"Roosevelt, NM",2017,103.205
 35043,"Sandoval, NM",2017,90.738
 35045,"San Juan, NM",2017,91.496
@@ -48504,7 +48457,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2017,107.559
 46099,"Minnehaha, SD",2017,98.897
 46101,"Moody, SD",2017,113.37
-46102,"Oglala Lakota, SD*",2017,114.298
 46103,"Pennington, SD",2017,102.66
 46105,"Perkins, SD",2017,141.207
 46107,"Potter, SD",2017,58.873
@@ -49263,7 +49215,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2018,96.789
 2130,"Ketchikan Gateway Borough, AK*",2018,96.753
 2150,"Kodiak Island Borough, AK",2018,93.255
-2158,"Kusilvak Census Area, AK*",2018,102.524
 2164,"Lake and Peninsula Borough, AK",2018,111.81
 2170,"Matanuska-Susitna Borough, AK",2018,106.58
 2180,"Nome Census Area, AK",2018,105.376
@@ -50982,7 +50933,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2018,69.82
 35035,"Otero, NM",2018,94.052
 35037,"Quay, NM",2018,101.157
-35039,"Rio Arriba, NM",2018,91.216
 35041,"Roosevelt, NM",2018,101.343
 35043,"Sandoval, NM",2018,90.879
 35045,"San Juan, NM",2018,86.192
@@ -51578,7 +51528,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2018,124.025
 46099,"Minnehaha, SD",2018,97.877
 46101,"Moody, SD",2018,122.243
-46102,"Oglala Lakota, SD*",2018,113.534
 46103,"Pennington, SD",2018,104.777
 46105,"Perkins, SD",2018,97.273
 46107,"Potter, SD",2018,46.593
@@ -52337,7 +52286,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2019,99.268
 2130,"Ketchikan Gateway Borough, AK*",2019,98.579
 2150,"Kodiak Island Borough, AK",2019,94.544
-2158,"Kusilvak Census Area, AK*",2019,103.699
 2164,"Lake and Peninsula Borough, AK",2019,100.691
 2170,"Matanuska-Susitna Borough, AK",2019,111.511
 2180,"Nome Census Area, AK",2019,104.909
@@ -54056,7 +54004,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2019,68.848
 35035,"Otero, NM",2019,93.623
 35037,"Quay, NM",2019,104.483
-35039,"Rio Arriba, NM",2019,92.638
 35041,"Roosevelt, NM",2019,105.539
 35043,"Sandoval, NM",2019,99.819
 35045,"San Juan, NM",2019,87.542
@@ -54652,7 +54599,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2019,133.285
 46099,"Minnehaha, SD",2019,101.432
 46101,"Moody, SD",2019,118.614
-46102,"Oglala Lakota, SD*",2019,112.71
 46103,"Pennington, SD",2019,106.355
 46105,"Perkins, SD",2019,87.533
 46107,"Potter, SD",2019,50.621
@@ -55411,7 +55357,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2020,96.801
 2130,"Ketchikan Gateway Borough, AK*",2020,85.611
 2150,"Kodiak Island Borough, AK",2020,91.44
-2158,"Kusilvak Census Area, AK*",2020,97.22
 2164,"Lake and Peninsula Borough, AK",2020,89.143
 2170,"Matanuska-Susitna Borough, AK",2020,111.388
 2180,"Nome Census Area, AK",2020,100.29
@@ -57130,7 +57075,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2020,69.323
 35035,"Otero, NM",2020,94.218
 35037,"Quay, NM",2020,100.301
-35039,"Rio Arriba, NM",2020,93.401
 35041,"Roosevelt, NM",2020,100.513
 35043,"Sandoval, NM",2020,98.191
 35045,"San Juan, NM",2020,82.814
@@ -57726,7 +57670,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2020,133.469
 46099,"Minnehaha, SD",2020,98.147
 46101,"Moody, SD",2020,133.289
-46102,"Oglala Lakota, SD*",2020,117.612
 46103,"Pennington, SD",2020,107.027
 46105,"Perkins, SD",2020,94.294
 46107,"Potter, SD",2020,57.424
@@ -58485,7 +58428,6 @@ GeoFIPS,GeoName,Year,Value
 2122,"Kenai Peninsula Borough, AK",2021,97.943
 2130,"Ketchikan Gateway Borough, AK*",2021,89.519
 2150,"Kodiak Island Borough, AK",2021,91.622
-2158,"Kusilvak Census Area, AK*",2021,99.837
 2164,"Lake and Peninsula Borough, AK",2021,119.961
 2170,"Matanuska-Susitna Borough, AK",2021,117.186
 2180,"Nome Census Area, AK",2021,102.648
@@ -60204,7 +60146,6 @@ GeoFIPS,GeoName,Year,Value
 35033,"Mora, NM",2021,70.523
 35035,"Otero, NM",2021,98.109
 35037,"Quay, NM",2021,102.325
-35039,"Rio Arriba, NM",2021,89.309
 35041,"Roosevelt, NM",2021,101.047
 35043,"Sandoval, NM",2021,104.347
 35045,"San Juan, NM",2021,79.451
@@ -60800,7 +60741,6 @@ GeoFIPS,GeoName,Year,Value
 46097,"Miner, SD",2021,133.087
 46099,"Minnehaha, SD",2021,103.11
 46101,"Moody, SD",2021,126.63
-46102,"Oglala Lakota, SD*",2021,121.215
 46103,"Pennington, SD",2021,113.06
 46105,"Perkins, SD",2021,97.765
 46107,"Potter, SD",2021,57.888

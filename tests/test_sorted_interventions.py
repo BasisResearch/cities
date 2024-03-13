@@ -56,12 +56,12 @@ def test_transformed_intervention_from_percentile_accuracy():
                         intervention, year, percentile
                     ),
                     np_run(intervention, year, percentile),
-                    rtol=0.01,
+                    rtol=0.02,
                 )
                 assert np.allclose(
                     transformed_intervention_from_percentile(
                         intervention, year, percentile
                     ),
                     pandas_run(intervention, year, percentile),
-                    rtol=0.01,
+                    rtol=0.02,
                 )

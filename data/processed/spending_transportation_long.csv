@@ -620,11 +620,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 2130,"Ketchikan Gateway Borough, AK*",2020,5792747.28
 2130,"Ketchikan Gateway Borough, AK*",2021,2592199.7800000003
 2150,"Kodiak Island Borough, AK",2021,102000.0
-2158,"Kusilvak Census Area, AK*",2017,31230.95
-2158,"Kusilvak Census Area, AK*",2018,566638.77
-2158,"Kusilvak Census Area, AK*",2019,242063.61
-2158,"Kusilvak Census Area, AK*",2020,23268927.86
-2158,"Kusilvak Census Area, AK*",2021,191140.21
 2164,"Lake and Peninsula Borough, AK",2017,164966.53
 2164,"Lake and Peninsula Borough, AK",2018,657491.7
 2164,"Lake and Peninsula Borough, AK",2019,487776.33
@@ -10340,17 +10335,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 35037,"Quay, NM",2019,100000.0
 35037,"Quay, NM",2020,2820000.0
 35037,"Quay, NM",2021,530617.0
-35039,"Rio Arriba, NM",2011,688415.0
-35039,"Rio Arriba, NM",2012,446067.0
-35039,"Rio Arriba, NM",2013,259229.0
-35039,"Rio Arriba, NM",2014,927737.0
-35039,"Rio Arriba, NM",2015,632532.0
-35039,"Rio Arriba, NM",2016,983362.0
-35039,"Rio Arriba, NM",2017,8359112.6
-35039,"Rio Arriba, NM",2018,19883430.75
-35039,"Rio Arriba, NM",2019,16223718.8
-35039,"Rio Arriba, NM",2020,11062206.51
-35039,"Rio Arriba, NM",2021,2799398.65
 35041,"Roosevelt, NM",2011,116301.0
 35041,"Roosevelt, NM",2012,717215.0
 35041,"Roosevelt, NM",2013,425782.0
@@ -14354,12 +14338,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 46101,"Moody, SD",2019,149642.78
 46101,"Moody, SD",2020,72450.0
 46101,"Moody, SD",2021,9000.0
-46102,"Oglala Lakota, SD*",2015,739796.0
-46102,"Oglala Lakota, SD*",2017,28026899.35
-46102,"Oglala Lakota, SD*",2018,28869706.42
-46102,"Oglala Lakota, SD*",2019,19842896.87
-46102,"Oglala Lakota, SD*",2020,41496754.14
-46102,"Oglala Lakota, SD*",2021,8872198.17
 46103,"Pennington, SD",2011,4928350.0
 46103,"Pennington, SD",2012,7400942.0
 46103,"Pennington, SD",2013,5337627.0

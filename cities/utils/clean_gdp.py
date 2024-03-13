@@ -2,10 +2,13 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
+from cities.utils.data_grabber import find_repo_root
+
+root = find_repo_root()
 
 
 def clean_gdp():
-    gdp = pd.read_csv("../data/raw/CAGDP1_2001_2021.csv", encoding="ISO-8859-1")
+    gdp = pd.read_csv(f"{root}/data/raw/CAGDP1_2001_2021.csv", encoding="ISO-8859-1")
 
     gdp = gdp.loc[:9533]  # drop notes at the bottom
 
@@ -39,7 +42,7 @@ def clean_gdp():
 
     # subsetting GeoFIPS to values in exclusions.csv
 
-    exclusions_df = pd.read_csv("../data/raw/exclusions.csv")
+    exclusions_df = pd.read_csv(f"{root}/data/raw/exclusions.csv")
     gdp = gdp[~gdp["GeoFIPS"].isin(exclusions_df["exclusions"])]
 
     assert len(gdp) == len(gdp["GeoFIPS"].unique())
@@ -71,7 +74,7 @@ def clean_gdp():
         value_name="Value",
     )
 
-    gdp_wide.to_csv("../data/processed/gdp_wide.csv", index=False)
-    gdp_long.to_csv("../data/processed/gdp_long.csv", index=False)
-    gdp_std_wide.to_csv("../data/processed/gdp_std_wide.csv", index=False)
-    gdp_std_long.to_csv("../data/processed/gdp_std_long.csv", index=False)
+    gdp_wide.to_csv(f"{root}/data/processed/gdp_wide.csv", index=False)
+    gdp_long.to_csv(f"{root}/data/processed/gdp_long.csv", index=False)
+    gdp_std_wide.to_csv(f"{root}/data/processed/gdp_std_wide.csv", index=False)
+    gdp_std_long.to_csv(f"{root}/data/processed/gdp_std_long.csv", index=False)

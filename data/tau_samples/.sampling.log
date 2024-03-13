@@ -1,164 +1,176 @@
-2023-12-21 18:54:10 → root → INFO: 3 sample dictionaries already exist. Starting to obtain 81 out of 84 sample dictionaries needed.
-2023-12-21 18:54:10 → root → INFO: Sampling gdp/spending_HHS pair now.
-2023-12-21 18:54:15 → root → INFO: Done sampling gdp/spending_HHS pair, completed in 5.13 seconds.80 out of 84  samples remain.
-2023-12-21 18:54:15 → root → INFO: Sampling industry_accommodation_food_services_total/spending_HHS pair now.
-2023-12-21 18:54:20 → root → INFO: Done sampling industry_accommodation_food_services_total/spending_HHS pair, completed in 5.45 seconds.79 out of 84  samples remain.
-2023-12-21 18:54:20 → root → INFO: Sampling industry_admin_support_services_total/spending_HHS pair now.
-2023-12-21 18:54:26 → root → INFO: Done sampling industry_admin_support_services_total/spending_HHS pair, completed in 5.49 seconds.78 out of 84  samples remain.
-2023-12-21 18:54:26 → root → INFO: Sampling industry_agriculture_total/spending_HHS pair now.
-2023-12-21 18:54:31 → root → INFO: Done sampling industry_agriculture_total/spending_HHS pair, completed in 5.50 seconds.77 out of 84  samples remain.
-2023-12-21 18:54:31 → root → INFO: Sampling industry_arts_recreation_total/spending_HHS pair now.
-2023-12-21 18:54:35 → root → INFO: Done sampling industry_arts_recreation_total/spending_HHS pair, completed in 3.66 seconds.76 out of 84  samples remain.
-2023-12-21 18:54:35 → root → INFO: Sampling industry_construction_total/spending_HHS pair now.
-2023-12-21 18:54:39 → root → INFO: Done sampling industry_construction_total/spending_HHS pair, completed in 3.67 seconds.75 out of 84  samples remain.
-2023-12-21 18:54:39 → root → INFO: Sampling industry_educational_services_total/spending_HHS pair now.
-2023-12-21 18:54:42 → root → INFO: Done sampling industry_educational_services_total/spending_HHS pair, completed in 3.70 seconds.74 out of 84  samples remain.
-2023-12-21 18:54:42 → root → INFO: Sampling industry_finance_insurance_total/spending_HHS pair now.
-2023-12-21 18:54:48 → root → INFO: Done sampling industry_finance_insurance_total/spending_HHS pair, completed in 5.53 seconds.73 out of 84  samples remain.
-2023-12-21 18:54:48 → root → INFO: Sampling industry_healthcare_social_services_total/spending_HHS pair now.
-2023-12-21 18:54:52 → root → INFO: Done sampling industry_healthcare_social_services_total/spending_HHS pair, completed in 4.31 seconds.72 out of 84  samples remain.
-2023-12-21 18:54:52 → root → INFO: Sampling industry_information_total/spending_HHS pair now.
-2023-12-21 18:54:58 → root → INFO: Done sampling industry_information_total/spending_HHS pair, completed in 5.50 seconds.71 out of 84  samples remain.
-2023-12-21 18:54:58 → root → INFO: Sampling industry_management_enterprises_total/spending_HHS pair now.
-2023-12-21 18:55:03 → root → INFO: Done sampling industry_management_enterprises_total/spending_HHS pair, completed in 5.44 seconds.70 out of 84  samples remain.
-2023-12-21 18:55:03 → root → INFO: Sampling industry_manufacturing_total/spending_HHS pair now.
-2023-12-21 18:55:09 → root → INFO: Done sampling industry_manufacturing_total/spending_HHS pair, completed in 5.40 seconds.69 out of 84  samples remain.
-2023-12-21 18:55:09 → root → INFO: Sampling industry_mining_total/spending_HHS pair now.
-2023-12-21 18:55:14 → root → INFO: Done sampling industry_mining_total/spending_HHS pair, completed in 5.49 seconds.68 out of 84  samples remain.
-2023-12-21 18:55:14 → root → INFO: Sampling industry_other_services_total/spending_HHS pair now.
-2023-12-21 18:55:20 → root → INFO: Done sampling industry_other_services_total/spending_HHS pair, completed in 5.50 seconds.67 out of 84  samples remain.
-2023-12-21 18:55:20 → root → INFO: Sampling industry_professional_services_total/spending_HHS pair now.
-2023-12-21 18:55:25 → root → INFO: Done sampling industry_professional_services_total/spending_HHS pair, completed in 5.59 seconds.66 out of 84  samples remain.
-2023-12-21 18:55:25 → root → INFO: Sampling industry_public_administration_total/spending_HHS pair now.
-2023-12-21 18:55:31 → root → INFO: Done sampling industry_public_administration_total/spending_HHS pair, completed in 5.58 seconds.65 out of 84  samples remain.
-2023-12-21 18:55:31 → root → INFO: Sampling industry_real_estate_total/spending_HHS pair now.
-2023-12-21 18:55:36 → root → INFO: Done sampling industry_real_estate_total/spending_HHS pair, completed in 5.59 seconds.64 out of 84  samples remain.
-2023-12-21 18:55:36 → root → INFO: Sampling industry_retail_trade_total/spending_HHS pair now.
-2023-12-21 18:55:42 → root → INFO: Done sampling industry_retail_trade_total/spending_HHS pair, completed in 5.64 seconds.63 out of 84  samples remain.
-2023-12-21 18:55:42 → root → INFO: Sampling industry_transportation_warehousing_total/spending_HHS pair now.
-2023-12-21 18:55:46 → root → INFO: Done sampling industry_transportation_warehousing_total/spending_HHS pair, completed in 4.50 seconds.62 out of 84  samples remain.
-2023-12-21 18:55:46 → root → INFO: Sampling industry_utilities_total/spending_HHS pair now.
-2023-12-21 18:55:52 → root → INFO: Done sampling industry_utilities_total/spending_HHS pair, completed in 5.46 seconds.61 out of 84  samples remain.
-2023-12-21 18:55:52 → root → INFO: Sampling industry_wholesale_trade_total/spending_HHS pair now.
-2023-12-21 18:55:58 → root → INFO: Done sampling industry_wholesale_trade_total/spending_HHS pair, completed in 5.61 seconds.60 out of 84  samples remain.
-2023-12-21 18:55:58 → root → INFO: Sampling medianHouseholdIncome/spending_HHS pair now.
-2023-12-21 18:56:03 → root → INFO: Done sampling medianHouseholdIncome/spending_HHS pair, completed in 5.36 seconds.59 out of 84  samples remain.
-2023-12-21 18:56:03 → root → INFO: Sampling population/spending_HHS pair now.
-2023-12-21 18:56:08 → root → INFO: Done sampling population/spending_HHS pair, completed in 5.44 seconds.58 out of 84  samples remain.
-2023-12-21 18:56:08 → root → INFO: Sampling povertyAll/spending_HHS pair now.
-2023-12-21 18:56:14 → root → INFO: Done sampling povertyAll/spending_HHS pair, completed in 5.42 seconds.57 out of 84  samples remain.
-2023-12-21 18:56:14 → root → INFO: Sampling povertyAllprct/spending_HHS pair now.
-2023-12-21 18:56:19 → root → INFO: Done sampling povertyAllprct/spending_HHS pair, completed in 5.47 seconds.56 out of 84  samples remain.
-2023-12-21 18:56:19 → root → INFO: Sampling povertyUnder18/spending_HHS pair now.
-2023-12-21 18:56:25 → root → INFO: Done sampling povertyUnder18/spending_HHS pair, completed in 5.47 seconds.55 out of 84  samples remain.
-2023-12-21 18:56:25 → root → INFO: Sampling povertyUnder18prct/spending_HHS pair now.
-2023-12-21 18:56:30 → root → INFO: Done sampling povertyUnder18prct/spending_HHS pair, completed in 5.49 seconds.54 out of 84  samples remain.
-2023-12-21 18:56:30 → root → INFO: Sampling unemployment_rate/spending_HHS pair now.
-2023-12-21 18:56:36 → root → INFO: Done sampling unemployment_rate/spending_HHS pair, completed in 5.48 seconds.53 out of 84  samples remain.
-2023-12-21 18:56:36 → root → INFO: Sampling gdp/spending_commerce pair now.
-2023-12-21 18:56:41 → root → INFO: Done sampling gdp/spending_commerce pair, completed in 5.38 seconds.52 out of 84  samples remain.
-2023-12-21 18:56:41 → root → INFO: Sampling industry_accommodation_food_services_total/spending_commerce pair now.
-2023-12-21 18:56:47 → root → INFO: Done sampling industry_accommodation_food_services_total/spending_commerce pair, completed in 5.67 seconds.51 out of 84  samples remain.
-2023-12-21 18:56:47 → root → INFO: Sampling industry_admin_support_services_total/spending_commerce pair now.
-2023-12-21 18:56:52 → root → INFO: Done sampling industry_admin_support_services_total/spending_commerce pair, completed in 5.61 seconds.50 out of 84  samples remain.
-2023-12-21 18:56:52 → root → INFO: Sampling industry_agriculture_total/spending_commerce pair now.
-2023-12-21 18:56:58 → root → INFO: Done sampling industry_agriculture_total/spending_commerce pair, completed in 5.50 seconds.49 out of 84  samples remain.
-2023-12-21 18:56:58 → root → INFO: Sampling industry_arts_recreation_total/spending_commerce pair now.
-2023-12-21 18:57:03 → root → INFO: Done sampling industry_arts_recreation_total/spending_commerce pair, completed in 5.68 seconds.48 out of 84  samples remain.
-2023-12-21 18:57:03 → root → INFO: Sampling industry_construction_total/spending_commerce pair now.
-2023-12-21 18:57:09 → root → INFO: Done sampling industry_construction_total/spending_commerce pair, completed in 5.59 seconds.47 out of 84  samples remain.
-2023-12-21 18:57:09 → root → INFO: Sampling industry_educational_services_total/spending_commerce pair now.
-2023-12-21 18:57:15 → root → INFO: Done sampling industry_educational_services_total/spending_commerce pair, completed in 5.65 seconds.46 out of 84  samples remain.
-2023-12-21 18:57:15 → root → INFO: Sampling industry_finance_insurance_total/spending_commerce pair now.
-2023-12-21 18:57:20 → root → INFO: Done sampling industry_finance_insurance_total/spending_commerce pair, completed in 5.63 seconds.45 out of 84  samples remain.
-2023-12-21 18:57:20 → root → INFO: Sampling industry_healthcare_social_services_total/spending_commerce pair now.
-2023-12-21 18:57:26 → root → INFO: Done sampling industry_healthcare_social_services_total/spending_commerce pair, completed in 5.47 seconds.44 out of 84  samples remain.
-2023-12-21 18:57:26 → root → INFO: Sampling industry_information_total/spending_commerce pair now.
-2023-12-21 18:57:32 → root → INFO: Done sampling industry_information_total/spending_commerce pair, completed in 6.59 seconds.43 out of 84  samples remain.
-2023-12-21 18:57:32 → root → INFO: Sampling industry_manufacturing_total/spending_commerce pair now.
-2023-12-21 18:57:38 → root → INFO: Done sampling industry_manufacturing_total/spending_commerce pair, completed in 5.59 seconds.42 out of 84  samples remain.
-2023-12-21 18:57:38 → root → INFO: Sampling industry_mining_total/spending_commerce pair now.
-2023-12-21 18:57:43 → root → INFO: Done sampling industry_mining_total/spending_commerce pair, completed in 5.44 seconds.41 out of 84  samples remain.
-2023-12-21 18:57:43 → root → INFO: Sampling industry_other_services_total/spending_commerce pair now.
-2023-12-21 18:57:49 → root → INFO: Done sampling industry_other_services_total/spending_commerce pair, completed in 5.40 seconds.40 out of 84  samples remain.
-2023-12-21 18:57:49 → root → INFO: Sampling industry_professional_services_total/spending_commerce pair now.
-2023-12-21 18:57:54 → root → INFO: Done sampling industry_professional_services_total/spending_commerce pair, completed in 5.38 seconds.39 out of 84  samples remain.
-2023-12-21 18:57:54 → root → INFO: Sampling industry_public_administration_total/spending_commerce pair now.
-2023-12-21 18:58:00 → root → INFO: Done sampling industry_public_administration_total/spending_commerce pair, completed in 5.44 seconds.38 out of 84  samples remain.
-2023-12-21 18:58:00 → root → INFO: Sampling industry_real_estate_total/spending_commerce pair now.
-2023-12-21 18:58:05 → root → INFO: Done sampling industry_real_estate_total/spending_commerce pair, completed in 5.41 seconds.37 out of 84  samples remain.
-2023-12-21 18:58:05 → root → INFO: Sampling industry_retail_trade_total/spending_commerce pair now.
-2023-12-21 18:58:11 → root → INFO: Done sampling industry_retail_trade_total/spending_commerce pair, completed in 5.44 seconds.36 out of 84  samples remain.
-2023-12-21 18:58:11 → root → INFO: Sampling industry_transportation_warehousing_total/spending_commerce pair now.
-2023-12-21 18:58:16 → root → INFO: Done sampling industry_transportation_warehousing_total/spending_commerce pair, completed in 5.62 seconds.35 out of 84  samples remain.
-2023-12-21 18:58:16 → root → INFO: Sampling industry_utilities_total/spending_commerce pair now.
-2023-12-21 18:58:22 → root → INFO: Done sampling industry_utilities_total/spending_commerce pair, completed in 5.65 seconds.34 out of 84  samples remain.
-2023-12-21 18:58:22 → root → INFO: Sampling industry_wholesale_trade_total/spending_commerce pair now.
-2023-12-21 18:58:27 → root → INFO: Done sampling industry_wholesale_trade_total/spending_commerce pair, completed in 5.55 seconds.33 out of 84  samples remain.
-2023-12-21 18:58:27 → root → INFO: Sampling medianHouseholdIncome/spending_commerce pair now.
-2023-12-21 18:58:33 → root → INFO: Done sampling medianHouseholdIncome/spending_commerce pair, completed in 5.61 seconds.32 out of 84  samples remain.
-2023-12-21 18:58:33 → root → INFO: Sampling population/spending_commerce pair now.
-2023-12-21 18:58:39 → root → INFO: Done sampling population/spending_commerce pair, completed in 5.64 seconds.31 out of 84  samples remain.
-2023-12-21 18:58:39 → root → INFO: Sampling povertyAll/spending_commerce pair now.
-2023-12-21 18:58:44 → root → INFO: Done sampling povertyAll/spending_commerce pair, completed in 5.63 seconds.30 out of 84  samples remain.
-2023-12-21 18:58:44 → root → INFO: Sampling povertyAllprct/spending_commerce pair now.
-2023-12-21 18:58:50 → root → INFO: Done sampling povertyAllprct/spending_commerce pair, completed in 5.59 seconds.29 out of 84  samples remain.
-2023-12-21 18:58:50 → root → INFO: Sampling povertyUnder18/spending_commerce pair now.
-2023-12-21 18:58:55 → root → INFO: Done sampling povertyUnder18/spending_commerce pair, completed in 5.62 seconds.28 out of 84  samples remain.
-2023-12-21 18:58:55 → root → INFO: Sampling povertyUnder18prct/spending_commerce pair now.
-2023-12-21 18:59:01 → root → INFO: Done sampling povertyUnder18prct/spending_commerce pair, completed in 5.65 seconds.27 out of 84  samples remain.
-2023-12-21 18:59:01 → root → INFO: Sampling gdp/spending_transportation pair now.
-2023-12-21 18:59:07 → root → INFO: Done sampling gdp/spending_transportation pair, completed in 5.46 seconds.26 out of 84  samples remain.
-2023-12-21 18:59:07 → root → INFO: Sampling industry_accommodation_food_services_total/spending_transportation pair now.
-2023-12-21 18:59:12 → root → INFO: Done sampling industry_accommodation_food_services_total/spending_transportation pair, completed in 5.66 seconds.25 out of 84  samples remain.
-2023-12-21 18:59:12 → root → INFO: Sampling industry_admin_support_services_total/spending_transportation pair now.
-2023-12-21 18:59:18 → root → INFO: Done sampling industry_admin_support_services_total/spending_transportation pair, completed in 5.54 seconds.24 out of 84  samples remain.
-2023-12-21 18:59:18 → root → INFO: Sampling industry_agriculture_total/spending_transportation pair now.
-2023-12-21 18:59:23 → root → INFO: Done sampling industry_agriculture_total/spending_transportation pair, completed in 5.60 seconds.23 out of 84  samples remain.
-2023-12-21 18:59:23 → root → INFO: Sampling industry_arts_recreation_total/spending_transportation pair now.
-2023-12-21 18:59:29 → root → INFO: Done sampling industry_arts_recreation_total/spending_transportation pair, completed in 5.64 seconds.22 out of 84  samples remain.
-2023-12-21 18:59:29 → root → INFO: Sampling industry_construction_total/spending_transportation pair now.
-2023-12-21 18:59:35 → root → INFO: Done sampling industry_construction_total/spending_transportation pair, completed in 5.64 seconds.21 out of 84  samples remain.
-2023-12-21 18:59:35 → root → INFO: Sampling industry_educational_services_total/spending_transportation pair now.
-2023-12-21 18:59:40 → root → INFO: Done sampling industry_educational_services_total/spending_transportation pair, completed in 5.67 seconds.20 out of 84  samples remain.
-2023-12-21 18:59:40 → root → INFO: Sampling industry_finance_insurance_total/spending_transportation pair now.
-2023-12-21 18:59:46 → root → INFO: Done sampling industry_finance_insurance_total/spending_transportation pair, completed in 5.62 seconds.19 out of 84  samples remain.
-2023-12-21 18:59:46 → root → INFO: Sampling industry_healthcare_social_services_total/spending_transportation pair now.
-2023-12-21 18:59:52 → root → INFO: Done sampling industry_healthcare_social_services_total/spending_transportation pair, completed in 5.60 seconds.18 out of 84  samples remain.
-2023-12-21 18:59:52 → root → INFO: Sampling industry_information_total/spending_transportation pair now.
-2023-12-21 18:59:57 → root → INFO: Done sampling industry_information_total/spending_transportation pair, completed in 5.68 seconds.17 out of 84  samples remain.
-2023-12-21 18:59:57 → root → INFO: Sampling industry_management_enterprises_total/spending_transportation pair now.
-2023-12-21 19:00:03 → root → INFO: Done sampling industry_management_enterprises_total/spending_transportation pair, completed in 5.59 seconds.16 out of 84  samples remain.
-2023-12-21 19:00:03 → root → INFO: Sampling industry_manufacturing_total/spending_transportation pair now.
-2023-12-21 19:00:08 → root → INFO: Done sampling industry_manufacturing_total/spending_transportation pair, completed in 5.61 seconds.15 out of 84  samples remain.
-2023-12-21 19:00:08 → root → INFO: Sampling industry_mining_total/spending_transportation pair now.
-2023-12-21 19:00:14 → root → INFO: Done sampling industry_mining_total/spending_transportation pair, completed in 5.61 seconds.14 out of 84  samples remain.
-2023-12-21 19:00:14 → root → INFO: Sampling industry_other_services_total/spending_transportation pair now.
-2023-12-21 19:00:20 → root → INFO: Done sampling industry_other_services_total/spending_transportation pair, completed in 5.60 seconds.13 out of 84  samples remain.
-2023-12-21 19:00:20 → root → INFO: Sampling industry_professional_services_total/spending_transportation pair now.
-2023-12-21 19:00:25 → root → INFO: Done sampling industry_professional_services_total/spending_transportation pair, completed in 5.60 seconds.12 out of 84  samples remain.
-2023-12-21 19:00:25 → root → INFO: Sampling industry_public_administration_total/spending_transportation pair now.
-2023-12-21 19:00:31 → root → INFO: Done sampling industry_public_administration_total/spending_transportation pair, completed in 5.68 seconds.11 out of 84  samples remain.
-2023-12-21 19:00:31 → root → INFO: Sampling industry_real_estate_total/spending_transportation pair now.
-2023-12-21 19:00:37 → root → INFO: Done sampling industry_real_estate_total/spending_transportation pair, completed in 5.63 seconds.10 out of 84  samples remain.
-2023-12-21 19:00:37 → root → INFO: Sampling industry_retail_trade_total/spending_transportation pair now.
-2023-12-21 19:00:42 → root → INFO: Done sampling industry_retail_trade_total/spending_transportation pair, completed in 5.66 seconds.9 out of 84  samples remain.
-2023-12-21 19:00:42 → root → INFO: Sampling industry_transportation_warehousing_total/spending_transportation pair now.
-2023-12-21 19:00:48 → root → INFO: Done sampling industry_transportation_warehousing_total/spending_transportation pair, completed in 5.73 seconds.8 out of 84  samples remain.
-2023-12-21 19:00:48 → root → INFO: Sampling industry_utilities_total/spending_transportation pair now.
-2023-12-21 19:00:54 → root → INFO: Done sampling industry_utilities_total/spending_transportation pair, completed in 5.63 seconds.7 out of 84  samples remain.
-2023-12-21 19:00:54 → root → INFO: Sampling industry_wholesale_trade_total/spending_transportation pair now.
-2023-12-21 19:00:59 → root → INFO: Done sampling industry_wholesale_trade_total/spending_transportation pair, completed in 5.61 seconds.6 out of 84  samples remain.
-2023-12-21 19:00:59 → root → INFO: Sampling medianHouseholdIncome/spending_transportation pair now.
-2023-12-21 19:01:05 → root → INFO: Done sampling medianHouseholdIncome/spending_transportation pair, completed in 5.70 seconds.5 out of 84  samples remain.
-2023-12-21 19:01:05 → root → INFO: Sampling population/spending_transportation pair now.
-2023-12-21 19:01:11 → root → INFO: Done sampling population/spending_transportation pair, completed in 5.73 seconds.4 out of 84  samples remain.
-2023-12-21 19:01:11 → root → INFO: Sampling povertyAll/spending_transportation pair now.
-2023-12-21 19:01:16 → root → INFO: Done sampling povertyAll/spending_transportation pair, completed in 5.64 seconds.3 out of 84  samples remain.
-2023-12-21 19:01:16 → root → INFO: Sampling povertyAllprct/spending_transportation pair now.
-2023-12-21 19:01:22 → root → INFO: Done sampling povertyAllprct/spending_transportation pair, completed in 5.65 seconds.2 out of 84  samples remain.
-2023-12-21 19:01:22 → root → INFO: Sampling povertyUnder18/spending_transportation pair now.
-2023-12-21 19:01:27 → root → INFO: Done sampling povertyUnder18/spending_transportation pair, completed in 5.62 seconds.1 out of 84  samples remain.
-2023-12-21 19:01:27 → root → INFO: Sampling povertyUnder18prct/spending_transportation pair now.
-2023-12-21 19:01:33 → root → INFO: Done sampling povertyUnder18prct/spending_transportation pair, completed in 5.54 seconds.0 out of 84  samples remain.
-2023-12-21 19:01:33 → root → INFO: All samples are now available. Sampling took 448.84 seconds, or 7.48 minutes.
+2024-02-05 07:59:32 → root → INFO: 1 sample dictionaries already exist. Starting to obtain 86 out of 87 sample dictionaries needed.
+2024-02-05 07:59:32 → root → INFO: Sampling gdp/spending_HHS pair now.
+2024-02-05 07:59:43 → root → INFO: Done sampling gdp/spending_HHS pair, completed in 10.96 seconds. 85 out of 87  samples remain.
+2024-02-05 07:59:43 → root → INFO: Sampling industry_accommodation_food_services_total/spending_HHS pair now.
+2024-02-05 07:59:54 → root → INFO: Done sampling industry_accommodation_food_services_total/spending_HHS pair, completed in 11.45 seconds. 84 out of 87  samples remain.
+2024-02-05 07:59:54 → root → INFO: Sampling industry_admin_support_services_total/spending_HHS pair now.
+2024-02-05 08:00:05 → root → INFO: Done sampling industry_admin_support_services_total/spending_HHS pair, completed in 11.16 seconds. 83 out of 87  samples remain.
+2024-02-05 08:00:05 → root → INFO: Sampling industry_agriculture_total/spending_HHS pair now.
+2024-02-05 08:00:16 → root → INFO: Done sampling industry_agriculture_total/spending_HHS pair, completed in 10.50 seconds. 82 out of 87  samples remain.
+2024-02-05 08:00:16 → root → INFO: Sampling industry_arts_recreation_total/spending_HHS pair now.
+2024-02-05 08:00:27 → root → INFO: Done sampling industry_arts_recreation_total/spending_HHS pair, completed in 11.46 seconds. 81 out of 87  samples remain.
+2024-02-05 08:00:27 → root → INFO: Sampling industry_construction_total/spending_HHS pair now.
+2024-02-05 08:00:36 → root → INFO: Done sampling industry_construction_total/spending_HHS pair, completed in 8.85 seconds. 80 out of 87  samples remain.
+2024-02-05 08:00:36 → root → INFO: Sampling industry_educational_services_total/spending_HHS pair now.
+2024-02-05 08:00:46 → root → INFO: Done sampling industry_educational_services_total/spending_HHS pair, completed in 9.51 seconds. 79 out of 87  samples remain.
+2024-02-05 08:00:46 → root → INFO: Sampling industry_finance_insurance_total/spending_HHS pair now.
+2024-02-05 08:00:57 → root → INFO: Done sampling industry_finance_insurance_total/spending_HHS pair, completed in 11.20 seconds. 78 out of 87  samples remain.
+2024-02-05 08:00:57 → root → INFO: Sampling industry_healthcare_social_services_total/spending_HHS pair now.
+2024-02-05 08:01:08 → root → INFO: Done sampling industry_healthcare_social_services_total/spending_HHS pair, completed in 11.40 seconds. 77 out of 87  samples remain.
+2024-02-05 08:01:08 → root → INFO: Sampling industry_information_total/spending_HHS pair now.
+2024-02-05 08:01:18 → root → INFO: Done sampling industry_information_total/spending_HHS pair, completed in 10.28 seconds. 76 out of 87  samples remain.
+2024-02-05 08:01:18 → root → INFO: Sampling industry_management_enterprises_total/spending_HHS pair now.
+2024-02-05 08:01:29 → root → INFO: Done sampling industry_management_enterprises_total/spending_HHS pair, completed in 10.24 seconds. 75 out of 87  samples remain.
+2024-02-05 08:01:29 → root → INFO: Sampling industry_manufacturing_total/spending_HHS pair now.
+2024-02-05 08:01:39 → root → INFO: Done sampling industry_manufacturing_total/spending_HHS pair, completed in 10.77 seconds. 74 out of 87  samples remain.
+2024-02-05 08:01:39 → root → INFO: Sampling industry_mining_total/spending_HHS pair now.
+2024-02-05 08:01:50 → root → INFO: Done sampling industry_mining_total/spending_HHS pair, completed in 10.71 seconds. 73 out of 87  samples remain.
+2024-02-05 08:01:50 → root → INFO: Sampling industry_other_services_total/spending_HHS pair now.
+2024-02-05 08:02:01 → root → INFO: Done sampling industry_other_services_total/spending_HHS pair, completed in 10.87 seconds. 72 out of 87  samples remain.
+2024-02-05 08:02:01 → root → INFO: Sampling industry_professional_services_total/spending_HHS pair now.
+2024-02-05 08:02:13 → root → INFO: Done sampling industry_professional_services_total/spending_HHS pair, completed in 11.57 seconds. 71 out of 87  samples remain.
+2024-02-05 08:02:13 → root → INFO: Sampling industry_public_administration_total/spending_HHS pair now.
+2024-02-05 08:02:24 → root → INFO: Done sampling industry_public_administration_total/spending_HHS pair, completed in 11.62 seconds. 70 out of 87  samples remain.
+2024-02-05 08:02:24 → root → INFO: Sampling industry_real_estate_total/spending_HHS pair now.
+2024-02-05 08:02:36 → root → INFO: Done sampling industry_real_estate_total/spending_HHS pair, completed in 11.42 seconds. 69 out of 87  samples remain.
+2024-02-05 08:02:36 → root → INFO: Sampling industry_retail_trade_total/spending_HHS pair now.
+2024-02-05 08:02:48 → root → INFO: Done sampling industry_retail_trade_total/spending_HHS pair, completed in 12.24 seconds. 68 out of 87  samples remain.
+2024-02-05 08:02:48 → root → INFO: Sampling industry_transportation_warehousing_total/spending_HHS pair now.
+2024-02-05 08:02:59 → root → INFO: Done sampling industry_transportation_warehousing_total/spending_HHS pair, completed in 11.54 seconds. 67 out of 87  samples remain.
+2024-02-05 08:02:59 → root → INFO: Sampling industry_utilities_total/spending_HHS pair now.
+2024-02-05 08:03:11 → root → INFO: Done sampling industry_utilities_total/spending_HHS pair, completed in 11.30 seconds. 66 out of 87  samples remain.
+2024-02-05 08:03:11 → root → INFO: Sampling industry_wholesale_trade_total/spending_HHS pair now.
+2024-02-05 08:03:22 → root → INFO: Done sampling industry_wholesale_trade_total/spending_HHS pair, completed in 10.93 seconds. 65 out of 87  samples remain.
+2024-02-05 08:03:22 → root → INFO: Sampling medianHouseholdIncome/spending_HHS pair now.
+2024-02-05 08:03:32 → root → INFO: Done sampling medianHouseholdIncome/spending_HHS pair, completed in 10.51 seconds. 64 out of 87  samples remain.
+2024-02-05 08:03:32 → root → INFO: Sampling population/spending_HHS pair now.
+2024-02-05 08:03:43 → root → INFO: Done sampling population/spending_HHS pair, completed in 10.44 seconds. 63 out of 87  samples remain.
+2024-02-05 08:03:43 → root → INFO: Sampling population_density/spending_HHS pair now.
+2024-02-05 08:03:53 → root → INFO: Done sampling population_density/spending_HHS pair, completed in 10.18 seconds. 62 out of 87  samples remain.
+2024-02-05 08:03:53 → root → INFO: Sampling povertyAll/spending_HHS pair now.
+2024-02-05 08:04:03 → root → INFO: Done sampling povertyAll/spending_HHS pair, completed in 10.01 seconds. 61 out of 87  samples remain.
+2024-02-05 08:04:03 → root → INFO: Sampling povertyAllprct/spending_HHS pair now.
+2024-02-05 08:04:14 → root → INFO: Done sampling povertyAllprct/spending_HHS pair, completed in 11.40 seconds. 60 out of 87  samples remain.
+2024-02-05 08:04:14 → root → INFO: Sampling povertyUnder18/spending_HHS pair now.
+2024-02-05 08:04:25 → root → INFO: Done sampling povertyUnder18/spending_HHS pair, completed in 10.35 seconds. 59 out of 87  samples remain.
+2024-02-05 08:04:25 → root → INFO: Sampling povertyUnder18prct/spending_HHS pair now.
+2024-02-05 08:04:36 → root → INFO: Done sampling povertyUnder18prct/spending_HHS pair, completed in 11.44 seconds. 58 out of 87  samples remain.
+2024-02-05 08:04:36 → root → INFO: Sampling unemployment_rate/spending_HHS pair now.
+2024-02-05 08:04:48 → root → INFO: Done sampling unemployment_rate/spending_HHS pair, completed in 11.90 seconds. 57 out of 87  samples remain.
+2024-02-05 08:04:48 → root → INFO: Sampling gdp/spending_commerce pair now.
+2024-02-05 08:04:59 → root → INFO: Done sampling gdp/spending_commerce pair, completed in 10.69 seconds. 56 out of 87  samples remain.
+2024-02-05 08:04:59 → root → INFO: Sampling industry_accommodation_food_services_total/spending_commerce pair now.
+2024-02-05 08:05:10 → root → INFO: Done sampling industry_accommodation_food_services_total/spending_commerce pair, completed in 11.15 seconds. 55 out of 87  samples remain.
+2024-02-05 08:05:10 → root → INFO: Sampling industry_admin_support_services_total/spending_commerce pair now.
+2024-02-05 08:05:21 → root → INFO: Done sampling industry_admin_support_services_total/spending_commerce pair, completed in 11.26 seconds. 54 out of 87  samples remain.
+2024-02-05 08:05:21 → root → INFO: Sampling industry_agriculture_total/spending_commerce pair now.
+2024-02-05 08:05:32 → root → INFO: Done sampling industry_agriculture_total/spending_commerce pair, completed in 11.07 seconds. 53 out of 87  samples remain.
+2024-02-05 08:05:32 → root → INFO: Sampling industry_arts_recreation_total/spending_commerce pair now.
+2024-02-05 08:05:43 → root → INFO: Done sampling industry_arts_recreation_total/spending_commerce pair, completed in 11.10 seconds. 52 out of 87  samples remain.
+2024-02-05 08:05:43 → root → INFO: Sampling industry_construction_total/spending_commerce pair now.
+2024-02-05 08:05:55 → root → INFO: Done sampling industry_construction_total/spending_commerce pair, completed in 11.87 seconds. 51 out of 87  samples remain.
+2024-02-05 08:05:55 → root → INFO: Sampling industry_educational_services_total/spending_commerce pair now.
+2024-02-05 08:06:05 → root → INFO: Done sampling industry_educational_services_total/spending_commerce pair, completed in 10.10 seconds. 50 out of 87  samples remain.
+2024-02-05 08:06:05 → root → INFO: Sampling industry_finance_insurance_total/spending_commerce pair now.
+2024-02-05 08:06:16 → root → INFO: Done sampling industry_finance_insurance_total/spending_commerce pair, completed in 10.99 seconds. 49 out of 87  samples remain.
+2024-02-05 08:06:16 → root → INFO: Sampling industry_healthcare_social_services_total/spending_commerce pair now.
+2024-02-05 08:06:28 → root → INFO: Done sampling industry_healthcare_social_services_total/spending_commerce pair, completed in 11.72 seconds. 48 out of 87  samples remain.
+2024-02-05 08:06:28 → root → INFO: Sampling industry_information_total/spending_commerce pair now.
+2024-02-05 08:06:39 → root → INFO: Done sampling industry_information_total/spending_commerce pair, completed in 10.90 seconds. 47 out of 87  samples remain.
+2024-02-05 08:06:39 → root → INFO: Sampling industry_management_enterprises_total/spending_commerce pair now.
+2024-02-05 08:06:49 → root → INFO: Done sampling industry_management_enterprises_total/spending_commerce pair, completed in 10.57 seconds. 46 out of 87  samples remain.
+2024-02-05 08:06:49 → root → INFO: Sampling industry_manufacturing_total/spending_commerce pair now.
+2024-02-05 08:06:59 → root → INFO: Done sampling industry_manufacturing_total/spending_commerce pair, completed in 9.30 seconds. 45 out of 87  samples remain.
+2024-02-05 08:06:59 → root → INFO: Sampling industry_mining_total/spending_commerce pair now.
+2024-02-05 08:07:09 → root → INFO: Done sampling industry_mining_total/spending_commerce pair, completed in 10.16 seconds. 44 out of 87  samples remain.
+2024-02-05 08:07:09 → root → INFO: Sampling industry_other_services_total/spending_commerce pair now.
+2024-02-05 08:07:17 → root → INFO: Done sampling industry_other_services_total/spending_commerce pair, completed in 8.35 seconds. 43 out of 87  samples remain.
+2024-02-05 08:07:17 → root → INFO: Sampling industry_professional_services_total/spending_commerce pair now.
+2024-02-05 08:07:29 → root → INFO: Done sampling industry_professional_services_total/spending_commerce pair, completed in 11.52 seconds. 42 out of 87  samples remain.
+2024-02-05 08:07:29 → root → INFO: Sampling industry_public_administration_total/spending_commerce pair now.
+2024-02-05 08:07:39 → root → INFO: Done sampling industry_public_administration_total/spending_commerce pair, completed in 10.19 seconds. 41 out of 87  samples remain.
+2024-02-05 08:07:39 → root → INFO: Sampling industry_real_estate_total/spending_commerce pair now.
+2024-02-05 08:07:49 → root → INFO: Done sampling industry_real_estate_total/spending_commerce pair, completed in 10.43 seconds. 40 out of 87  samples remain.
+2024-02-05 08:07:49 → root → INFO: Sampling industry_retail_trade_total/spending_commerce pair now.
+2024-02-05 08:08:00 → root → INFO: Done sampling industry_retail_trade_total/spending_commerce pair, completed in 10.61 seconds. 39 out of 87  samples remain.
+2024-02-05 08:08:00 → root → INFO: Sampling industry_transportation_warehousing_total/spending_commerce pair now.
+2024-02-05 08:08:11 → root → INFO: Done sampling industry_transportation_warehousing_total/spending_commerce pair, completed in 11.18 seconds. 38 out of 87  samples remain.
+2024-02-05 08:08:11 → root → INFO: Sampling industry_utilities_total/spending_commerce pair now.
+2024-02-05 08:08:22 → root → INFO: Done sampling industry_utilities_total/spending_commerce pair, completed in 11.03 seconds. 37 out of 87  samples remain.
+2024-02-05 08:08:22 → root → INFO: Sampling industry_wholesale_trade_total/spending_commerce pair now.
+2024-02-05 08:08:33 → root → INFO: Done sampling industry_wholesale_trade_total/spending_commerce pair, completed in 10.73 seconds. 36 out of 87  samples remain.
+2024-02-05 08:08:33 → root → INFO: Sampling medianHouseholdIncome/spending_commerce pair now.
+2024-02-05 08:08:43 → root → INFO: Done sampling medianHouseholdIncome/spending_commerce pair, completed in 10.64 seconds. 35 out of 87  samples remain.
+2024-02-05 08:08:43 → root → INFO: Sampling population/spending_commerce pair now.
+2024-02-05 08:08:54 → root → INFO: Done sampling population/spending_commerce pair, completed in 10.71 seconds. 34 out of 87  samples remain.
+2024-02-05 08:08:54 → root → INFO: Sampling population_density/spending_commerce pair now.
+2024-02-05 08:09:04 → root → INFO: Done sampling population_density/spending_commerce pair, completed in 10.22 seconds. 33 out of 87  samples remain.
+2024-02-05 08:09:04 → root → INFO: Sampling povertyAll/spending_commerce pair now.
+2024-02-05 08:09:16 → root → INFO: Done sampling povertyAll/spending_commerce pair, completed in 11.75 seconds. 32 out of 87  samples remain.
+2024-02-05 08:09:16 → root → INFO: Sampling povertyAllprct/spending_commerce pair now.
+2024-02-05 08:09:27 → root → INFO: Done sampling povertyAllprct/spending_commerce pair, completed in 11.15 seconds. 31 out of 87  samples remain.
+2024-02-05 08:09:27 → root → INFO: Sampling povertyUnder18/spending_commerce pair now.
+2024-02-05 08:09:38 → root → INFO: Done sampling povertyUnder18/spending_commerce pair, completed in 10.48 seconds. 30 out of 87  samples remain.
+2024-02-05 08:09:38 → root → INFO: Sampling povertyUnder18prct/spending_commerce pair now.
+2024-02-05 08:09:48 → root → INFO: Done sampling povertyUnder18prct/spending_commerce pair, completed in 10.22 seconds. 29 out of 87  samples remain.
+2024-02-05 08:09:48 → root → INFO: Sampling unemployment_rate/spending_commerce pair now.
+2024-02-05 08:10:00 → root → INFO: Done sampling unemployment_rate/spending_commerce pair, completed in 11.60 seconds. 28 out of 87  samples remain.
+2024-02-05 08:10:00 → root → INFO: Sampling gdp/spending_transportation pair now.
+2024-02-05 08:10:10 → root → INFO: Done sampling gdp/spending_transportation pair, completed in 10.35 seconds. 27 out of 87  samples remain.
+2024-02-05 08:10:10 → root → INFO: Sampling industry_accommodation_food_services_total/spending_transportation pair now.
+2024-02-05 08:10:20 → root → INFO: Done sampling industry_accommodation_food_services_total/spending_transportation pair, completed in 10.20 seconds. 26 out of 87  samples remain.
+2024-02-05 08:10:20 → root → INFO: Sampling industry_admin_support_services_total/spending_transportation pair now.
+2024-02-05 08:10:29 → root → INFO: Done sampling industry_admin_support_services_total/spending_transportation pair, completed in 8.98 seconds. 25 out of 87  samples remain.
+2024-02-05 08:10:29 → root → INFO: Sampling industry_agriculture_total/spending_transportation pair now.
+2024-02-05 08:10:39 → root → INFO: Done sampling industry_agriculture_total/spending_transportation pair, completed in 10.02 seconds. 24 out of 87  samples remain.
+2024-02-05 08:10:39 → root → INFO: Sampling industry_arts_recreation_total/spending_transportation pair now.
+2024-02-05 08:10:50 → root → INFO: Done sampling industry_arts_recreation_total/spending_transportation pair, completed in 10.50 seconds. 23 out of 87  samples remain.
+2024-02-05 08:10:50 → root → INFO: Sampling industry_construction_total/spending_transportation pair now.
+2024-02-05 08:10:59 → root → INFO: Done sampling industry_construction_total/spending_transportation pair, completed in 9.70 seconds. 22 out of 87  samples remain.
+2024-02-05 08:10:59 → root → INFO: Sampling industry_educational_services_total/spending_transportation pair now.
+2024-02-05 08:11:11 → root → INFO: Done sampling industry_educational_services_total/spending_transportation pair, completed in 11.28 seconds. 21 out of 87  samples remain.
+2024-02-05 08:11:11 → root → INFO: Sampling industry_finance_insurance_total/spending_transportation pair now.
+2024-02-05 08:11:21 → root → INFO: Done sampling industry_finance_insurance_total/spending_transportation pair, completed in 10.47 seconds. 20 out of 87  samples remain.
+2024-02-05 08:11:21 → root → INFO: Sampling industry_healthcare_social_services_total/spending_transportation pair now.
+2024-02-05 08:11:32 → root → INFO: Done sampling industry_healthcare_social_services_total/spending_transportation pair, completed in 11.21 seconds. 19 out of 87  samples remain.
+2024-02-05 08:11:32 → root → INFO: Sampling industry_information_total/spending_transportation pair now.
+2024-02-05 08:11:43 → root → INFO: Done sampling industry_information_total/spending_transportation pair, completed in 11.23 seconds. 18 out of 87  samples remain.
+2024-02-05 08:11:43 → root → INFO: Sampling industry_management_enterprises_total/spending_transportation pair now.
+2024-02-05 08:11:54 → root → INFO: Done sampling industry_management_enterprises_total/spending_transportation pair, completed in 10.93 seconds. 17 out of 87  samples remain.
+2024-02-05 08:11:54 → root → INFO: Sampling industry_manufacturing_total/spending_transportation pair now.
+2024-02-05 08:12:06 → root → INFO: Done sampling industry_manufacturing_total/spending_transportation pair, completed in 11.21 seconds. 16 out of 87  samples remain.
+2024-02-05 08:12:06 → root → INFO: Sampling industry_mining_total/spending_transportation pair now.
+2024-02-05 08:12:16 → root → INFO: Done sampling industry_mining_total/spending_transportation pair, completed in 10.49 seconds. 15 out of 87  samples remain.
+2024-02-05 08:12:16 → root → INFO: Sampling industry_other_services_total/spending_transportation pair now.
+2024-02-05 08:12:26 → root → INFO: Done sampling industry_other_services_total/spending_transportation pair, completed in 10.13 seconds. 14 out of 87  samples remain.
+2024-02-05 08:12:26 → root → INFO: Sampling industry_professional_services_total/spending_transportation pair now.
+2024-02-05 08:12:37 → root → INFO: Done sampling industry_professional_services_total/spending_transportation pair, completed in 10.96 seconds. 13 out of 87  samples remain.
+2024-02-05 08:12:37 → root → INFO: Sampling industry_public_administration_total/spending_transportation pair now.
+2024-02-05 08:12:48 → root → INFO: Done sampling industry_public_administration_total/spending_transportation pair, completed in 10.72 seconds. 12 out of 87  samples remain.
+2024-02-05 08:12:48 → root → INFO: Sampling industry_real_estate_total/spending_transportation pair now.
+2024-02-05 08:12:58 → root → INFO: Done sampling industry_real_estate_total/spending_transportation pair, completed in 10.54 seconds. 11 out of 87  samples remain.
+2024-02-05 08:12:58 → root → INFO: Sampling industry_retail_trade_total/spending_transportation pair now.
+2024-02-05 08:13:09 → root → INFO: Done sampling industry_retail_trade_total/spending_transportation pair, completed in 10.14 seconds. 10 out of 87  samples remain.
+2024-02-05 08:13:09 → root → INFO: Sampling industry_transportation_warehousing_total/spending_transportation pair now.
+2024-02-05 08:13:20 → root → INFO: Done sampling industry_transportation_warehousing_total/spending_transportation pair, completed in 11.12 seconds. 9 out of 87  samples remain.
+2024-02-05 08:13:20 → root → INFO: Sampling industry_utilities_total/spending_transportation pair now.
+2024-02-05 08:13:30 → root → INFO: Done sampling industry_utilities_total/spending_transportation pair, completed in 9.91 seconds. 8 out of 87  samples remain.
+2024-02-05 08:13:30 → root → INFO: Sampling industry_wholesale_trade_total/spending_transportation pair now.
+2024-02-05 08:13:41 → root → INFO: Done sampling industry_wholesale_trade_total/spending_transportation pair, completed in 11.18 seconds. 7 out of 87  samples remain.
+2024-02-05 08:13:41 → root → INFO: Sampling medianHouseholdIncome/spending_transportation pair now.
+2024-02-05 08:13:52 → root → INFO: Done sampling medianHouseholdIncome/spending_transportation pair, completed in 11.54 seconds. 6 out of 87  samples remain.
+2024-02-05 08:13:52 → root → INFO: Sampling population/spending_transportation pair now.
+2024-02-05 08:14:03 → root → INFO: Done sampling population/spending_transportation pair, completed in 10.41 seconds. 5 out of 87  samples remain.
+2024-02-05 08:14:03 → root → INFO: Sampling population_density/spending_transportation pair now.
+2024-02-05 08:14:12 → root → INFO: Done sampling population_density/spending_transportation pair, completed in 9.71 seconds. 4 out of 87  samples remain.
+2024-02-05 08:14:12 → root → INFO: Sampling povertyAll/spending_transportation pair now.
+2024-02-05 08:14:23 → root → INFO: Done sampling povertyAll/spending_transportation pair, completed in 10.15 seconds. 3 out of 87  samples remain.
+2024-02-05 08:14:23 → root → INFO: Sampling povertyAllprct/spending_transportation pair now.
+2024-02-05 08:14:33 → root → INFO: Done sampling povertyAllprct/spending_transportation pair, completed in 10.08 seconds. 2 out of 87  samples remain.
+2024-02-05 08:14:33 → root → INFO: Sampling povertyUnder18/spending_transportation pair now.
+2024-02-05 08:14:42 → root → INFO: Done sampling povertyUnder18/spending_transportation pair, completed in 9.41 seconds. 1 out of 87  samples remain.
+2024-02-05 08:14:42 → root → INFO: Sampling povertyUnder18prct/spending_transportation pair now.
+2024-02-05 08:14:53 → root → INFO: Done sampling povertyUnder18prct/spending_transportation pair, completed in 10.52 seconds. 0 out of 87  samples remain.
+2024-02-05 08:14:53 → root → INFO: Sampling unemployment_rate/spending_transportation pair now.
+2024-02-05 08:15:03 → root → INFO: Done sampling unemployment_rate/spending_transportation pair, completed in 10.56 seconds. -1 out of 87  samples remain.
+2024-02-05 08:15:03 → root → INFO: All samples are now available.Sampling took 941.25 seconds, or 15.69 minutes.

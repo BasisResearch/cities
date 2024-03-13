@@ -285,7 +285,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 2150,"Kodiak Island Borough, AK",2019,222048.0
 2150,"Kodiak Island Borough, AK",2020,291896.48
 2150,"Kodiak Island Borough, AK",2021,369944.0
-2158,"Kusilvak Census Area, AK*",2018,562571.0
 2164,"Lake and Peninsula Borough, AK",2017,687956.0
 2170,"Matanuska-Susitna Borough, AK",2013,48155.0
 2170,"Matanuska-Susitna Borough, AK",2017,53098.0
@@ -5569,14 +5568,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 35035,"Otero, NM",2017,102900.0
 35035,"Otero, NM",2020,102900.0
 35037,"Quay, NM",2018,0.0
-35039,"Rio Arriba, NM",2010,338550.0
-35039,"Rio Arriba, NM",2011,338550.0
-35039,"Rio Arriba, NM",2012,338550.0
-35039,"Rio Arriba, NM",2015,1496970.57
-35039,"Rio Arriba, NM",2016,248946.0
-35039,"Rio Arriba, NM",2017,798946.0
-35039,"Rio Arriba, NM",2020,96970.57
-35039,"Rio Arriba, NM",2021,1820550.0
 35041,"Roosevelt, NM",2012,101089.0
 35043,"Sandoval, NM",2010,1000000.0
 35043,"Sandoval, NM",2013,70000.0
@@ -7786,12 +7777,6 @@ GeoFIPS,GeoName,Year,total_obligated_amount
 46099,"Minnehaha, SD",2019,210000.0
 46099,"Minnehaha, SD",2020,7559320.0
 46101,"Moody, SD",2018,0.0
-46102,"Oglala Lakota, SD*",2016,353000.0
-46102,"Oglala Lakota, SD*",2017,357000.0
-46102,"Oglala Lakota, SD*",2018,353000.0
-46102,"Oglala Lakota, SD*",2019,306000.0
-46102,"Oglala Lakota, SD*",2020,350000.0
-46102,"Oglala Lakota, SD*",2021,135928.7
 46103,"Pennington, SD",2010,186000.0
 46103,"Pennington, SD",2011,372000.0
 46103,"Pennington, SD",2014,248000.0

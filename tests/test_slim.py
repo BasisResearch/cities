@@ -34,6 +34,7 @@ intervened_value = random.uniform(-1, 1)
 #     assert ci.predictions is not None
 
 
+# @pytest.mark.skip(reason="adding variables for now, training later")
 def test_slim_full():
     for intervention in interventions:
         for outcome in outcomes:

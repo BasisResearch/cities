@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
-import pyro
 import torch
 from sklearn.preprocessing import StandardScaler
 
+import pyro
 from cities.modeling.model_interactions import model_cities_interaction
 from cities.modeling.modeling_utils import prep_wide_data_for_inference
 from cities.utils.cleaning_utils import (

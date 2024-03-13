@@ -147,7 +147,7 @@ class CausalInsightSlim:
 
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
-        dg.get_features_wide([self.intervention_dataset])
+        dg.get_features_wide([self.intervention_dataset, self.outcome_dataset])
         interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
 
         self.intervened_value_original = revert_standardize_and_scale_scaler(
@@ -187,10 +187,11 @@ class CausalInsightSlim:
             self.fips_ids
         ][str(year)]
 
-        self.observed_interventions_original = dg.wide[self.intervention_dataset].iloc[
-            self.fips_ids
-        ][str(year)]
+        self.observed_interventions_original = (
+            dg.wide[self.intervention_dataset].iloc[self.fips_ids][str(year)].copy()
+        )
 
+        #
         if intervention_is_percentile:
             self.observed_interventions_percentile = (
                 np.round(
@@ -206,6 +207,10 @@ class CausalInsightSlim:
         self.observed_outcomes = dg.std_wide[self.outcome_dataset].iloc[self.fips_ids][
             outcome_years[year_id : (year_id + 4)]
         ]
+
+        self.observed_outcomes_original = dg.wide[self.outcome_dataset].iloc[
+            self.fips_ids
+        ][outcome_years[year_id : (year_id + 4)]]
 
         self.intervention_diffs = self.intervened_value - self.observed_interventions
 
@@ -240,65 +245,82 @@ class CausalInsightSlim:
         future_predicted_means = (
             self.observed_outcomes.iloc[:, 1:] + intervention_impacts_means_array
         )
-        predicted_means = np.insert(
-            future_predicted_means, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # predicted_means = np.insert(
+        #    future_predicted_means, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # ) #TODO delete if the new version raises no index error
+
+        predicted_means = np.column_stack(
+            [self.observed_outcomes.iloc[:, 0], future_predicted_means]
         )
 
         future_predicted_lows = (
             self.observed_outcomes.iloc[:, 1:] + intervention_impacts_lows_array
         )
-        predicted_lows = np.insert(
-            future_predicted_lows, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        predicted_lows = np.column_stack(
+            [self.observed_outcomes.iloc[:, 0], future_predicted_lows]
         )
+        # predicted_lows = np.insert(
+        #     future_predicted_lows, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # ) #TODO as above
 
         future_predicted_highs = (
             self.observed_outcomes.iloc[:, 1:] + intervention_impacts_highs_array
         )
-        predicted_highs = np.insert(
-            future_predicted_highs, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # predicted_highs = np.insert(
+        #     future_predicted_highs, 0, self.observed_outcomes.iloc[:, 0], axis=1
+        # ) #TODO as above
+
+        predicted_highs = np.column_stack(
+            [self.observed_outcomes.iloc[:, 0], future_predicted_highs]
         )
 
         if self.produce_original:
-            pred_means_original = []
-            pred_lows_original = []
-            pred_highs_original = []
-            observed_outcomes_original = []
+            pred_means_reverted = []
+            pred_lows_reverted = []
+            pred_highs_reverted = []
+            obs_out_reverted = []
             for i in range(predicted_means.shape[1]):
                 y = self.prediction_years[i]
-                observed_outcomes_original.append(
+                obs_out_reverted.append(
                     revert_standardize_and_scale_scaler(
                         self.observed_outcomes.iloc[:, i], y, self.outcome_dataset
                     )
                 )
-                pred_means_original.append(
+                pred_means_reverted.append(
                     revert_standardize_and_scale_scaler(
                         predicted_means[:, i], y, self.outcome_dataset
                     )
                 )
 
-                pred_lows_original.append(
+                pred_lows_reverted.append(
                     revert_standardize_and_scale_scaler(
                         predicted_lows[:, i], y, self.outcome_dataset
                     )
                 )
 
-                pred_highs_original.append(
+                pred_highs_reverted.append(
                     revert_standardize_and_scale_scaler(
                         predicted_highs[:, i], y, self.outcome_dataset
                     )
                 )
 
-            pred_means_original = np.column_stack(pred_means_original)
-            pred_lows_original = np.column_stack(pred_lows_original)
-            pred_highs_original = np.column_stack(pred_highs_original)
-            observed_outcomes_original = np.column_stack(observed_outcomes_original)
+            obs_out_reverted = np.column_stack(obs_out_reverted)
+            diff = obs_out_reverted - self.observed_outcomes_original
+            diff = np.array(diff)
+            obs_out_corrected = obs_out_reverted - diff
+            pred_means_reverted = np.column_stack(pred_means_reverted)
+            pred_means_corrected = pred_means_reverted - diff
+            pred_lows_reverted = np.column_stack(pred_lows_reverted)
+            pred_lows_corrected = pred_lows_reverted - diff
+            pred_highs_reverted = np.column_stack(pred_highs_reverted)
+            pred_highs_corrected = pred_highs_reverted - diff
 
-            self.observed_outcomes_original = pd.DataFrame(observed_outcomes_original)
-            self.observed_outcomes_original.index = self.observed_outcomes.index
+            self.observed_outcomes_corrected = pd.DataFrame(obs_out_corrected)
+            self.observed_outcomes_corrected.index = self.observed_outcomes.index
 
-            assert predicted_means.shape == pred_means_original.shape
-            assert predicted_lows.shape == pred_lows_original.shape
-            assert predicted_highs.shape == pred_highs_original.shape
+            assert predicted_means.shape == pred_means_corrected.shape
+            assert predicted_lows.shape == pred_lows_corrected.shape
+            assert predicted_highs.shape == pred_highs_corrected.shape
 
         assert int(predicted_means.shape[0]) == len(self.group_clean)
         assert int(predicted_means.shape[1]) == 4
@@ -325,12 +347,12 @@ class CausalInsightSlim:
                 self.group_clean[i]: pd.DataFrame(
                     {
                         "year": self.prediction_years,
-                        "observed": self.observed_outcomes_original.loc[
+                        "observed": self.observed_outcomes_corrected.loc[
                             self.fips_ids[i]
                         ],
-                        "mean": pred_means_original[i,],
-                        "low": pred_lows_original[i,],
-                        "high": pred_highs_original[i,],
+                        "mean": pred_means_corrected[i,],
+                        "low": pred_lows_corrected[i,],
+                        "high": pred_highs_corrected[i,],
                     }
                 )
                 for i in range(len(self.group_clean))
@@ -374,7 +396,7 @@ class CausalInsightSlim:
 
         dg = DataGrabber()
         dg.get_features_std_wide([self.intervention_dataset, self.outcome_dataset])
-        dg.get_features_wide([self.intervention_dataset])
+        dg.get_features_wide([self.intervention_dataset, self.outcome_dataset])
         interventions_this_year_original = dg.wide[self.intervention_dataset][str(year)]
 
         self.intervened_value_original = revert_standardize_and_scale_scaler(
@@ -424,6 +446,12 @@ class CausalInsightSlim:
         self.observed_outcomes = dg.std_wide[self.outcome_dataset].iloc[self.fips_id][
             outcome_years[year_id : (year_id + 4)]
         ]
+
+        # added
+        self.observed_outcomes_original = dg.wide[self.outcome_dataset].iloc[
+            self.fips_id
+        ][outcome_years[year_id : (year_id + 4)]]
+
         self.intervention_diff = self.intervened_value - self.observed_intervention
 
         self.intervention_impact = {}
@@ -468,10 +496,37 @@ class CausalInsightSlim:
             self.predictions, self.outcome_dataset
         )
 
+        # this corrects for rever transformation perturbations
+        difference = (
+            self.predictions_original["observed"] - self.observed_outcomes_original
+        )
+        self.predictions_original[["observed", "mean", "low", "high"]] = (
+            self.predictions_original[["observed", "mean", "low", "high"]].sub(
+                difference, axis=0
+            )
+        )
+
     def plot_predictions(
-        self, range_multiplier=1.5, show_figure=True, scaling="transformed"
+        self, range_multiplier=1.5, show_figure=True, scaling="transformed", fips=None
     ):
         assert scaling in ["transformed", "original"]
+
+        # you need to pass fips
+        # and grab the appropriate predictions
+        # if you started with group predictions
+        if fips is not None:
+            self.fips = fips
+            self.predictions = self.group_predictions[fips]
+            self.predictions_original = self.group_predictions_original[fips]
+
+            self.observed_intervention = self.observed_interventions[
+                self.fips_ids[self.group_clean.index(fips)]
+            ]
+            self.observed_intervention_original = self.observed_interventions_original[
+                self.fips_ids[self.group_clean.index(fips)]
+            ]
+
+            self.name = self.names[self.fips_ids[self.group_clean.index(fips)]]
 
         dg = DataGrabber()
 

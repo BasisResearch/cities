@@ -6,6 +6,6 @@ root = find_repo_root()
 
 def clean_gdp_ma():
     cleaner = VariableCleanerMSA(
-        variable_name="gdp", path_to_raw_csv=f"{root}/data/raw/gdp_ma.csv"
+        variable_name="gdp_ma", path_to_raw_csv=f"{root}/data/raw/gdp_ma.csv"
     )
     cleaner.clean_variable()

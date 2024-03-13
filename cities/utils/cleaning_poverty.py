@@ -17,8 +17,7 @@ def clean_poverty():
     for variable_name in poverty_variables:
         cleaner = VariableCleaner(
             variable_name,
-            path_to_raw_csv=f"{root}data/raw/{variable_name}_wide.csv",
+            path_to_raw_csv=f"{root}/data/raw/{variable_name}_wide.csv",
             year_or_category="Year",
-            region_type="MA",
         )
         cleaner.clean_variable()

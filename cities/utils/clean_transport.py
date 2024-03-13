@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber, find_repo_root
+
+root = find_repo_root()
 
 
 def clean_transport():
@@ -13,7 +15,7 @@ def clean_transport():
 
     # grabbing gdp for comparison
 
-    transport = pd.read_csv("../data/raw/smartLocationSmall.csv")
+    transport = pd.read_csv(f"{root}/data/raw/smartLocationSmall.csv")
 
     # choosing transport variables
     transport = transport[["GeoFIPS", "D3A", "WeightAvgNatWalkInd"]]
@@ -81,7 +83,11 @@ def clean_transport():
         value_name="Value",
     )
 
-    transport_wide.to_csv("../data/processed/transport_wide.csv", index=False)
-    transport_long.to_csv("../data/processed/transport_long.csv", index=False)
-    transport_std_wide.to_csv("../data/processed/transport_std_wide.csv", index=False)
-    transport_std_long.to_csv("../data/processed/transport_std_long.csv", index=False)
+    transport_wide.to_csv(f"{root}/data/processed/transport_wide.csv", index=False)
+    transport_long.to_csv(f"{root}/data/processed/transport_long.csv", index=False)
+    transport_std_wide.to_csv(
+        f"{root}/data/processed/transport_std_wide.csv", index=False
+    )
+    transport_std_long.to_csv(
+        f"{root}/data/processed/transport_std_long.csv", index=False
+    )

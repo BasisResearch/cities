@@ -467,9 +467,9 @@ class FipsQuery:
                 if col.endswith(feature)
             ]
             if _selected:
-                atemporal_aggregated_dict[
-                    feature
-                ] = atemporal_featurewise_contributions_df[_selected].sum(axis=1)
+                atemporal_aggregated_dict[feature] = (
+                    atemporal_featurewise_contributions_df[_selected].sum(axis=1)
+                )
 
         aggregated_atemporal_featurewise_contributions_df = pd.DataFrame(
             atemporal_aggregated_dict
@@ -489,9 +489,9 @@ class FipsQuery:
             axis=1,
         )
         columns_to_normalize = self.aggregated_featurewise_contributions.iloc[:, 3:]
-        self.aggregated_featurewise_contributions.iloc[
-            :, 3:
-        ] = columns_to_normalize.div(columns_to_normalize.sum(axis=1), axis=0)
+        self.aggregated_featurewise_contributions.iloc[:, 3:] = (
+            columns_to_normalize.div(columns_to_normalize.sum(axis=1), axis=0)
+        )
 
         # some sanity checks
         count = sum([1 for distance in distances if distance == 0])
