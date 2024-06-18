@@ -20,6 +20,11 @@ fips = 1003
 intervened_value = 0.9
 
 
+# WARNING: tests here pass with pyro < 1.9.0
+# investigating why they fail for newer versions
+# and testing the impact on the pipeline is necessary
+
+
 # running for all is too inefficient
 # let's just run for random on a regular basis
 # comment out for a full battery of tests
