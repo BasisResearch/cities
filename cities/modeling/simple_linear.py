@@ -109,6 +109,11 @@ class SimpleLinear(pyro.nn.PyroModule):
                     ..., categorical[name]
                 ]
 
+            max_shape_length = max([len(t.shape) for t in objects_cat_weighted.values()])
+            for name in categorical_names:
+                while len(objects_cat_weighted[name].shape) < max_shape_length:
+                    objects_cat_weighted[name] = objects_cat_weighted[name].unsqueeze(0)
+
             categorical_contribution_outcome = torch.stack(
                 list(objects_cat_weighted.values()), dim=0
             ).sum(dim=0)
