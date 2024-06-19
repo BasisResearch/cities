@@ -109,13 +109,19 @@ class SimpleLinear(pyro.nn.PyroModule):
                     ..., categorical[name]
                 ]
 
-            max_shape_length = max([len(t.shape) for t in objects_cat_weighted.values()])
-            for name in categorical_names:
-                while len(objects_cat_weighted[name].shape) < max_shape_length:
-                    objects_cat_weighted[name] = objects_cat_weighted[name].unsqueeze(0)
+            # most likely too add hoc and now redundant
+            # max_shape_length = max([len(t.shape) for t in objects_cat_weighted.values()])
+            # for name in categorical_names:
+            #     while len(objects_cat_weighted[name].shape) < max_shape_length:
+            #         objects_cat_weighted[name] = objects_cat_weighted[name].unsqueeze(0)
+
+            values = list(objects_cat_weighted.values())
+            for i in range(1,len(values)):
+                values[i] = values[i].view(values[0].shape)
 
             categorical_contribution_outcome = torch.stack(
-                list(objects_cat_weighted.values()), dim=0
+                values, dim=0
+                #list(objects_cat_weighted.values()), dim=0
             ).sum(dim=0)
 
         #################################################################################
@@ -126,7 +132,7 @@ class SimpleLinear(pyro.nn.PyroModule):
 
             continuous_stacked = torch.stack(list(continuous.values()), dim=0)
 
-            with pyro.plate("continuous", size=self.N_continuous, dim=running_dim):
+            with pyro.plate("continuous", size=N_continuous, dim=running_dim):
                 bias_continuous_outcome = pyro.sample(
                     "bias_continuous", dist.Normal(0.0, self.leeway)
                 )
@@ -167,8 +173,7 @@ class SimpleLinear(pyro.nn.PyroModule):
 
             outcome_observed = pyro.sample(
                 "outcome_observed",
-                dist.Normal(mean_outcome_prediction, sigma_outcome),
-                obs=outcome,
+                dist.Normal(mean_outcome_prediction, sigma_outcome), obs = outcome
             )
 
         return outcome_observed
