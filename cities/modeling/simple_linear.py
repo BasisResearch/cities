@@ -113,7 +113,7 @@ class SimpleLinear(pyro.nn.PyroModule):
                     ].squeeze(-1)
 
                 objects_cat_weighted[name] = weights_categorical_outcome[name][
-                    ..., categorical[name]
+                        ..., categorical[name]
                 ]
 
             # most likely too add hoc and now redundant
@@ -242,3 +242,20 @@ class SimpleLinearRegisteredInput(pyro.nn.PyroModule):
 
     def forward(self):
         return self.conditioned_model()
+
+
+
+#TODO mypy linting
+
+# + mypy --ignore-missing-imports cities/
+# cities/modeling/simple_linear.py:26: error: Name "pyro.nn.PyroModule" is not defined  [name-defined]
+# cities/modeling/simple_linear.py:72: error: Module has no attribute "sample"  [attr-defined]
+# cities/modeling/simple_linear.py:74: error: Module has no attribute "plate"  [attr-defined]
+# cities/modeling/simple_linear.py:97: error: Module has no attribute "plate"  [attr-defined]
+# cities/modeling/simple_linear.py:102: error: Module has no attribute "sample"  [attr-defined]
+# cities/modeling/simple_linear.py:143: error: Module has no attribute "plate"  [attr-defined]
+# cities/modeling/simple_linear.py:144: error: Module has no attribute "sample"  [attr-defined]
+# cities/modeling/simple_linear.py:154: error: Module has no attribute "sample"  [attr-defined]
+# cities/modeling/simple_linear.py:176: error: Module has no attribute "deterministic"  [attr-defined]
+# cities/modeling/simple_linear.py:182: error: Module has no attribute "sample"  [attr-defined]
+# cities/modeling/simple_linear.py:191: error: Name "pyro.nn.PyroModule" is not defined  [name-defined]
