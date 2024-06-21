@@ -1,10 +1,10 @@
 import torch
+from chirho.interventional.handlers import do
+from chirho.robust.handlers.predictive import PredictiveModel
 
 import pyro
 from cities.modeling.simple_linear import SimpleLinear, SimpleLinearRegisteredInput
-from chirho.robust.handlers.predictive import PredictiveModel
 from cities.modeling.svi_inference import run_svi_inference
-from chirho.interventional.handlers import do
 from pyro.infer import Predictive
 
 # set up the data
@@ -13,8 +13,11 @@ part = n // 3
 n_steps = 600
 
 x_cat = torch.cat(
-    [torch.zeros([part], dtype=torch.long), torch.ones([part], dtype=torch.long),
-     2 * torch.ones([part], dtype=torch.long)]
+    [
+        torch.zeros([part], dtype=torch.long),
+        torch.ones([part], dtype=torch.long),
+        2 * torch.ones([part], dtype=torch.long),
+    ]
 )
 x_con = torch.randn(n)
 
@@ -84,7 +87,6 @@ def test_simple_linear_con():
     assert con.mean() > 1.2
 
 
-
 # will re-use these in later tests
 simple_linear_mixed = SimpleLinear(
     categorical={"x_cat": x_cat}, continuous={"x_con": x_con}, outcome=y_mixed
@@ -93,12 +95,9 @@ simple_linear_mixed = SimpleLinear(
 pyro.clear_param_store()
 
 guide_mixed = run_svi_inference(
-        simple_linear_mixed,
-        n_steps=n_steps,
-        lr=0.01,
-        verbose=True,
-        **model_kwargs_mixed
-    )
+    simple_linear_mixed, n_steps=n_steps, lr=0.01, verbose=True, **model_kwargs_mixed
+)
+
 
 def test_simple_linear_mixed():
 
@@ -127,26 +126,32 @@ def test_simple_linear_mixed():
 # register inputs with PredictiveModel, intervene
 #################################################
 
+
 def test_SimpleLinearRegisteredInput():
 
-    predictive_model = PredictiveModel(
-    simple_linear_mixed, guide=guide_mixed)
+    predictive_model = PredictiveModel(simple_linear_mixed, guide=guide_mixed)
 
-    predictive_model_registered =  SimpleLinearRegisteredInput(
-    predictive_model, categorical =  {'x_cat': x_cat_test}, 
-            continuous =  {'x_con': x_con_test},)
-    
-    with pyro.poutine.trace() as tr:
+    predictive_model_registered = SimpleLinearRegisteredInput(
+        predictive_model,
+        categorical={"x_cat": x_cat_test},
+        continuous={"x_con": x_con_test},
+    )
+
+    with pyro.poutine.trace():
         before = predictive_model_registered()
-    
+
     assert torch.allclose(before, target, atol=2.5)
 
-    with do(actions = {'categorical_x_cat': torch.tensor([1,1,1,1]),
-                   "continuous_x_con": torch.tensor([1.,1.,1.,1.])}):
-        with pyro.poutine.trace() as tr:
+    with do(
+        actions={
+            "categorical_x_cat": torch.tensor([1, 1, 1, 1]),
+            "continuous_x_con": torch.tensor([1.0, 1.0, 1.0, 1.0]),
+        }
+    ):
+        with pyro.poutine.trace():
             after = predictive_model_registered()
 
-    target_after = torch.tensor([4.,4.,4.,4.])
+    target_after = torch.tensor([4.0, 4.0, 4.0, 4.0])
 
     assert torch.allclose(after, target_after, atol=2.5)
 
@@ -155,6 +160,3 @@ def test_SimpleLinearRegisteredInput():
     #     with do(actions = {'categorical_x_cat': torch.tensor([1,1,1,1])}):
     #         with pyro.poutine.trace() as tr:
     #             predicive_model_registered()
-    
-
-

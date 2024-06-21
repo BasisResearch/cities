@@ -112,7 +112,6 @@ class SimpleLinear(pyro.nn.PyroModule):
                         name
                     ].squeeze(-1)
 
-
                 objects_cat_weighted[name] = weights_categorical_outcome[name][
                     ..., categorical[name]
                 ]
@@ -222,8 +221,10 @@ class SimpleLinearRegisteredInput(pyro.nn.PyroModule):
                         f"continuous_{key}", dist.Normal(0, 1)
                     )
             return self.model(
-                categorical=_categorical, continuous=_continuous, 
-                outcome=None, categorical_levels=self.categorical_levels
+                categorical=_categorical,
+                continuous=_continuous,
+                outcome=None,
+                categorical_levels=self.categorical_levels,
             )
 
         self.unconditioned_model = unconditioned_model
