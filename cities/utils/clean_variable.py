@@ -206,3 +206,45 @@ def communities_tracts_to_counties(
             all_results = pd.merge(all_results, result_df, on="GeoFIPS", how="left")
 
     return all_results
+
+
+class VariableCleanerCT(
+    VariableCleanerMSA
+):  # this class inherits functionalites of two previous classes, but works at the Census Tract level
+    def __init__(
+        self,
+        variable_name: str,
+        path_to_raw_csv: str,
+        time_interval: str,  # pre2020 or post2020
+        year_or_category: str = "Year",
+    ):
+        super().__init__(variable_name, path_to_raw_csv, year_or_category)
+        self.time_interval = time_interval
+        self.folder = "Census_tract_level"
+        self.census_tracts = None
+
+    def clean_variable(self):
+        self.load_raw_csv()
+        self.drop_nans()
+        self.process_data()
+        # TODO self.check_exclusions('CT') functionality might be usefull in the future
+        self.save_csv_files(self.folder)
+
+    def load_census_tracts(self):
+        if self.time_interval == "pre2020":
+            self.census_tracts = pd.read_csv(
+                f"{self.root}/data/raw/CT_list_pre2020.csv"
+            )
+        elif self.time_interval == "post2020":
+            self.census_tracts = pd.read_csv(
+                f"{self.root}/data/raw/CT_list_post2020.csv"
+            )
+
+    def process_data(self):
+        self.load_census_tracts()
+        assert (
+            self.census_tracts["GeoFIPS"].nunique()
+            == self.variable_df["GeoFIPS"].nunique()
+        ), f'FIPS mismatch! {self.census_tracts["GeoFIPS"].nunique()} vs {self.variable_df["GeoFIPS"].nunique()}'
+
+        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)

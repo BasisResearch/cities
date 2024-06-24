@@ -500,10 +500,10 @@ class CausalInsightSlim:
         difference = (
             self.predictions_original["observed"] - self.observed_outcomes_original
         )
-        self.predictions_original[["observed", "mean", "low", "high"]] = (
-            self.predictions_original[["observed", "mean", "low", "high"]].sub(
-                difference, axis=0
-            )
+        self.predictions_original[
+            ["observed", "mean", "low", "high"]
+        ] = self.predictions_original[["observed", "mean", "low", "high"]].sub(
+            difference, axis=0
         )
 
     def plot_predictions(
