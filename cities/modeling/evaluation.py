@@ -1,5 +1,5 @@
 import os
-
+import pyro
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
@@ -44,6 +44,7 @@ def test_performance(
     plot=True,
 ):
 
+    pyro.clear_param_store()
     # TODO perhaps remove the original categorical levels here
 
     assert all(

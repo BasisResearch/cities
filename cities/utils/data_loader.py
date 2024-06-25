@@ -45,7 +45,7 @@ class ZoningDataset(Dataset):
         }
 
 
-def select_from_data(data, kwarg_names: Dict["str", List["str"]]):
+def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     _data = {}
     _data["outcome"] = data["continuous"][kwarg_names["outcome"]]
     _data["categorical"] = {
