@@ -76,7 +76,6 @@ class CTDataGrabberCSV(DataGrabberCSV):
         sys.path.insert(0, self.data_path)
 
 
-
 def list_available_features(level="county"):
     root = find_repo_root()
 
@@ -85,9 +84,11 @@ def list_available_features(level="county"):
     elif level == "msa":
         folder_path = f"{root}/data/MSA_level"
     elif level == "census_tract":
-        folder_path = f"{root}/data/Census_tract_level"    
+        folder_path = f"{root}/data/Census_tract_level"
     else:
-        raise ValueError("Invalid level. Please choose 'county', 'census_tract' or 'msa'.")
+        raise ValueError(
+            "Invalid level. Please choose 'county', 'census_tract' or 'msa'."
+        )
 
     file_names = [f for f in os.listdir(folder_path) if f != ".gitkeep"]
     processed_file_names = []
@@ -113,11 +114,13 @@ def list_tensed_features(level="county"):
         all_features = list_available_features(level="msa")
 
     elif level == "census_tract":
-        data = CTDataGrabberCSV()                                      # TODO: Change to CTDataGrabber() in the future
-        all_features = list_available_features(level="Census_tract_level") 
+        data = CTDataGrabberCSV()  # TODO: Change to CTDataGrabber() in the future
+        all_features = list_available_features(level="Census_tract_level")
 
     else:
-        raise ValueError("Invalid level. Please choose 'county', 'census_tract' or 'msa'.")
+        raise ValueError(
+            "Invalid level. Please choose 'county', 'census_tract' or 'msa'."
+        )
 
     data.get_features_wide(all_features)
 
