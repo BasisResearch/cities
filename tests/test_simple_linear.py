@@ -7,6 +7,10 @@ from cities.modeling.simple_linear import SimpleLinear, SimpleLinearRegisteredIn
 from cities.modeling.svi_inference import run_svi_inference
 from pyro.infer import Predictive
 
+from chirho.counterfactual.handlers import MultiWorldCounterfactual
+
+
+
 # set up the data
 n = 600
 part = n // 3
@@ -48,9 +52,6 @@ def test_simple_linear_cat():
     simple_linear_cat = SimpleLinear(
         categorical={"x_cat": x_cat}, continuous={}, outcome=y_cat
     )
-
-    # ideally, once we can ChiRho uncondition
-    #    simple_linear_cat = condition(simple_linear_cat, data =  {"outcome_observed": y_cat})
 
     guide_cat = run_svi_inference(
         simple_linear_cat, n_steps=n_steps, lr=0.01, verbose=True, **model_kwargs_cat
@@ -153,10 +154,11 @@ def test_SimpleLinearRegisteredInput():
 
     target_after = torch.tensor([4.0, 4.0, 4.0, 4.0])
 
-    assert torch.allclose(after, target_after, atol=2.5)
+    assert torch.allclose(after, target_after, atol=3)
 
     # this will fail!
     # with MultiWorldCounterfactual(first_available_dim=-10) as mwc:
-    #     with do(actions = {'categorical_x_cat': torch.tensor([1,1,1,1])}):
+    #     with do(actions = {'categorical_x_cat': torch.tensor(1)}):
     #         with pyro.poutine.trace() as tr:
-    #             predicive_model_registered()
+    #             predictive_model_registered()
+

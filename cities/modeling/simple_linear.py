@@ -36,12 +36,15 @@ class SimpleLinear(pyro.nn.PyroModule):
     ):
         super().__init__()
 
-        # potentially move away from init as somewhat useless for easy use of Predictive on other data
+        # potentially move away from init as somewhat useless 
+        # for easy use of Predictive on other data
 
         self.leeway = leeway
 
         self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
 
+        # you might need and pass further the original
+        #  categorical levels of the training data
         if self.N_categorical > 0 and categorical_levels is None:
             self.categorical_levels = dict()
             for name in categorical.keys():
@@ -76,14 +79,16 @@ class SimpleLinear(pyro.nn.PyroModule):
         running_dim = -2
 
         #################################################################################
-        # add a plate and linear contribution to outcome for categorical variables if any
+        # add plates and linear contribution to outcome for categorical variables if any
         #################################################################################
 
         if N_categorical > 0:
 
-            # Predictive doesn't seem to inherit much of the self attributes, so we need to get them here
-            # while allowing them to be passed as arguments, as some levels might be missing in data for
-            # which we want to make predictions
+            # Predictive and PredictiveModel don't seem to inherit much 
+            # of the self attributes, so we need to get them here
+            # or grab the original ones from the model object passed to Predictive
+            # while allowing them to be passed as arguments, as some
+            # levels might be missing in new data for which we want to make predictions
             categorical_names = list(categorical.keys())
             if categorical_levels is None:
                 categorical_levels = dict()
@@ -111,16 +116,11 @@ class SimpleLinear(pyro.nn.PyroModule):
                     weights_categorical_outcome[name] = weights_categorical_outcome[
                         name
                     ].squeeze(-1)
+                    #TODO consider getting rid of right squeeze and replacing with view()
 
                 objects_cat_weighted[name] = weights_categorical_outcome[name][
                         ..., categorical[name]
                 ]
-
-            # most likely too add hoc and now redundant
-            # max_shape_length = max([len(t.shape) for t in objects_cat_weighted.values()])
-            # for name in categorical_names:
-            #     while len(objects_cat_weighted[name].shape) < max_shape_length:
-            #         objects_cat_weighted[name] = objects_cat_weighted[name].unsqueeze(0)
 
             values = list(objects_cat_weighted.values())
             for i in range(1, len(values)):
@@ -129,7 +129,6 @@ class SimpleLinear(pyro.nn.PyroModule):
             categorical_contribution_outcome = torch.stack(
                 values,
                 dim=0,
-                # list(objects_cat_weighted.values()), dim=0
             ).sum(dim=0)
 
         #################################################################################
@@ -187,6 +186,7 @@ class SimpleLinear(pyro.nn.PyroModule):
 
         return outcome_observed
 
+#TODO rewrite input registration as more general function on model class
 
 class SimpleLinearRegisteredInput(pyro.nn.PyroModule):
     def __init__(
