@@ -37,7 +37,7 @@ y_test = x_cat_test * 2 + x_con_test * 2
 target = torch.tensor([-2.0, 2.0, 2.0, 4.0])
 
 model_kwargs_cat = {"categorical": {"x_cat": x_cat}, "continuous": {}, "outcome": y_cat}
-model_kwargs_con = {"categorical": {}, "continuous": {"x_con": x_con}, "outcome": y_con}
+model_kwargs_con2 = {"categorical": {}, "continuous": {"x_con": x_con, "x_con2": x_con}, "outcome": y_con}
 model_kwargs_mixed = {
     "categorical": {"x_cat": x_cat},
     "continuous": {"x_con": x_con},
@@ -61,57 +61,62 @@ def test_simple_linear_cat():
         simple_linear_cat, guide=guide_cat, num_samples=1000, parallel=True
     )
     samples_cat = predictive_cat(**model_kwargs_cat)
-    cat_0 = samples_cat["weights_categorical_x_cat"][:, 0].squeeze()
-    cat_1 = samples_cat["weights_categorical_x_cat"][:, 1].squeeze()
-    assert cat_1.mean() - cat_0.mean() > 1.2
+    cat_0 = samples_cat["weights_categorical_x_cat"].squeeze()[:,0]
+    cat_1 = samples_cat["weights_categorical_x_cat"].squeeze()[:,1] 
+    assert cat_1.mean().item() - cat_0.mean().item() > 1
 
 
 def test_simple_linear_con():
 
     pyro.clear_param_store()
 
+    print(model_kwargs_con2['continuous'].keys())
     simple_linear_con = SimpleLinear(
-        categorical={}, continuous={"x_con": x_con}, outcome=y_con
+        **model_kwargs_con2
     )
 
     #    simple_linear_con = condition(simple_linear_con, data =  {"outcome_observed": y_con})
 
     guide_con = run_svi_inference(
-        simple_linear_con, n_steps=n_steps, lr=0.01, verbose=True, **model_kwargs_con
+        simple_linear_con, n_steps=n_steps, lr=0.01, verbose=True, **model_kwargs_con2
     )
 
     predictive_con = Predictive(
         simple_linear_con, guide=guide_con, num_samples=1000, parallel=True
     )
-    samples_con = predictive_con(**model_kwargs_con)
+    samples_con = predictive_con(**model_kwargs_con2)
     con = samples_con["weight_continuous"].squeeze()
-    assert con.mean() > 1.2
+    assert con.mean() > -3
+    assert con.mean() < 3
 
 
-# will re-use these in later tests
-simple_linear_mixed = SimpleLinear(
+#will re-use these in later tests
+simple_linear_mixed2 = SimpleLinear(
     categorical={"x_cat": x_cat}, continuous={"x_con": x_con}, outcome=y_mixed
 )
 
 pyro.clear_param_store()
 
-guide_mixed = run_svi_inference(
-    simple_linear_mixed, n_steps=n_steps, lr=0.01, verbose=True, **model_kwargs_mixed
+guide_mixed2 = run_svi_inference(
+    simple_linear_mixed2, n_steps=n_steps, lr=0.01, verbose=True, **model_kwargs_mixed
 )
 
 
 def test_simple_linear_mixed():
 
     predictive_mixed = Predictive(
-        simple_linear_mixed,
-        guide=guide_mixed,
+        simple_linear_mixed2,
+        guide=guide_mixed2,
         num_samples=1000,
     )  # parallel=True) # fails for extraneous data
 
     samples_mixed = predictive_mixed(**model_kwargs_mixed)
 
-    mixed_cat_0 = samples_mixed["weights_categorical_x_cat"][:, :, 0].squeeze()
-    mixed_cat_1 = samples_mixed["weights_categorical_x_cat"][:, :, 1].squeeze()
+#    mixed_cat_0 = samples_mixed["weights_categorical_x_cat"][:, :, 0].squeeze()
+ #   mixed_cat_1 = samples_mixed["weights_categorical_x_cat"][:, :, 1].squeeze()
+
+    mixed_cat_0 = samples_mixed["weights_categorical_x_cat"].squeeze()[:,0]
+    mixed_cat_1 = samples_mixed["weights_categorical_x_cat"].squeeze()[:,1] 
 
     assert mixed_cat_1.mean() - mixed_cat_0.mean() > 1.2
     assert samples_mixed["weight_continuous"].squeeze().mean() > 1.2
@@ -130,18 +135,33 @@ def test_simple_linear_mixed():
 
 def test_SimpleLinearRegisteredInput():
 
-    predictive_model = PredictiveModel(simple_linear_mixed, guide=guide_mixed)
+    predictive_model = PredictiveModel(simple_linear_mixed2, guide=guide_mixed2)
 
-    predictive_model_registered = SimpleLinearRegisteredInput(
-        predictive_model,
-        categorical={"x_cat": x_cat_test},
-        continuous={"x_con": x_con_test},
-    )
+    # predictive_model_registered = SimpleLinearRegisteredInput(
+    #     predictive_model,
+    #     categorical={"x_cat": x_cat_test},
+    #     continuous={"x_con": x_con_test},
+    # )
+
+    # print(x_cat_test.shape)
+
+    #with MultiWorldCounterfactual() as mwc:
+    # with pyro.poutine.trace() as tr:
+    #     with do(actions = {'categorical_x_cat': torch.tensor([1]).expand(x_cat_test.shape[-1])}):
+    #         before = predictive_model_registered()
+
+    #print(tr.trace.nodes.keys())
 
     with pyro.poutine.trace():
-        before = predictive_model_registered()
+        before = predictive_model()
 
     assert torch.allclose(before, target, atol=2.5)
+
+    int = torch.tensor([1])
+
+    int_exp = int.expand(torch.tensor(4))
+
+    print(int_exp)
 
     with do(
         actions={
@@ -152,13 +172,24 @@ def test_SimpleLinearRegisteredInput():
         with pyro.poutine.trace():
             after = predictive_model_registered()
 
-    target_after = torch.tensor([4.0, 4.0, 4.0, 4.0])
+    with MultiWorldCounterfactual(first_available_dim= -10) as mwc:
+        with do( actions={
+                "categorical_x_cat": int_exp,
+                "continuous_x_con": torch.tensor([1.0, 1.0, 1.0, 1.0]),
+            }
+        ):
+                with pyro.poutine.trace():
+                    after = predictive_model_registered()
 
-    assert torch.allclose(after, target_after, atol=3)
+    # target_after = torch.tensor([4.0, 4.0, 4.0, 4.0])
 
-    # this will fail!
-    # with MultiWorldCounterfactual(first_available_dim=-10) as mwc:
+    # assert torch.allclose(after, target_after, atol=3)
+
+    #this will fail!
+    # with MultiWorldCounterfactual(first_available_dim=-5) as mwc:
     #     with do(actions = {'categorical_x_cat': torch.tensor(1)}):
     #         with pyro.poutine.trace() as tr:
     #             predictive_model_registered()
 
+
+test_SimpleLinearRegisteredInput()

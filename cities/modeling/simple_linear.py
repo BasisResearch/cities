@@ -99,25 +99,12 @@ class SimpleLinear(pyro.nn.PyroModule):
             objects_cat_weighted = {}
 
             for name in categorical_names:
-                #TODO consider expanded sampling instead of plate
-                with pyro.plate(
-                    f"w_plate_{name}",
-                    size=len(categorical_levels[name]),
-                    dim=(running_dim),
-                ):
-                    weights_categorical_outcome[name] = pyro.sample(
-                        f"weights_categorical_{name}", dist.Normal(0.0, self.leeway)
-                    )
-                running_dim -= 1
 
-                while (
-                    weights_categorical_outcome[name].shape[-1] == 1
-                    and len(weights_categorical_outcome[name].shape) > 1
-                ):
-                    weights_categorical_outcome[name] = weights_categorical_outcome[
-                        name
-                    ].squeeze(-1)
-                    #TODO consider getting rid of right squeeze and replacing with view()
+                weights_categorical_outcome[name] = pyro.sample(
+                        f"weights_categorical_{name}", dist.Normal(
+                            0.0,self.leeway).expand(categorical_levels[name].shape).to_event(1)
+                )
+                        
 
                 objects_cat_weighted[name] = weights_categorical_outcome[name][
                         ..., categorical[name]
@@ -140,31 +127,19 @@ class SimpleLinear(pyro.nn.PyroModule):
 
             continuous_stacked = torch.stack(list(continuous.values()), dim=0)
 
-            with pyro.plate("continuous", size=N_continuous, dim=running_dim):
-                bias_continuous_outcome = pyro.sample(
-                    "bias_continuous", dist.Normal(0.0, self.leeway)
+    
+            bias_continuous_outcome = pyro.sample(
+                    "bias_continuous", dist.Normal(0.0, self.leeway).expand(
+                        [continuous_stacked.shape[-2]]).to_event(1)
                 )
 
-                while (
-                    bias_continuous_outcome.shape[-1] == 1
-                    and len(bias_continuous_outcome.shape) > 1
-                ):
-                    bias_continuous_outcome = bias_continuous_outcome.squeeze(-1)
-
-                weight_continuous_outcome = pyro.sample(
-                    "weight_continuous", dist.Normal(0.0, self.leeway)
+            weight_continuous_outcome = pyro.sample(
+                    "weight_continuous",dist.Normal(0.0, self.leeway).expand(
+                        [continuous_stacked.shape[-2]]).to_event(1)
                 )
-                while (
-                    weight_continuous_outcome.shape[-1] == 1
-                    and len(weight_continuous_outcome.shape) > 1
-                ):
-                    weight_continuous_outcome = weight_continuous_outcome.squeeze(-1)
-
-            running_dim -= 1
-
-            continuous_contribution_outcome = torch.einsum(
-                "...d -> ...", bias_continuous_outcome
-            ) + torch.einsum(
+            
+           
+            continuous_contribution_outcome =  bias_continuous_outcome.sum() + torch.einsum(
                 "...cd, ...c -> ...d", continuous_stacked, weight_continuous_outcome
             )
 
@@ -212,7 +187,7 @@ class SimpleLinearRegisteredInput(pyro.nn.PyroModule):
         def unconditioned_model():
             _categorical = {}
             _continuous = {}
-            with pyro.plate("initiate", size=n, dim=-1):
+            with pyro.plate("initiate", size=n, dim=-8):
                 for key in categorical.keys():
                     _categorical[key] = pyro.sample(
                         f"categorical_{key}", dist.Bernoulli(0.5)
