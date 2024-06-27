@@ -137,51 +137,81 @@ def test_SimpleLinearRegisteredInput():
 
     predictive_model = PredictiveModel(simple_linear_mixed2, guide=guide_mixed2)
 
-    # predictive_model_registered = SimpleLinearRegisteredInput(
-    #     predictive_model,
-    #     categorical={"x_cat": x_cat_test},
-    #     continuous={"x_con": x_con_test},
-    # )
+    with pyro.poutine.trace() as tr_before:
+        before = predictive_model(categorical={"x_cat": x_cat_test},
+                                  continuous={"x_con": x_con_test})
 
-    # print(x_cat_test.shape)
+    print(tr_before.trace.nodes['weights_categorical_x_cat']['value'])
 
-    #with MultiWorldCounterfactual() as mwc:
-    # with pyro.poutine.trace() as tr:
-    #     with do(actions = {'categorical_x_cat': torch.tensor([1]).expand(x_cat_test.shape[-1])}):
-    #         before = predictive_model_registered()
-
-    #print(tr.trace.nodes.keys())
-
-    with pyro.poutine.trace():
-        before = predictive_model()
 
     assert torch.allclose(before, target, atol=2.5)
 
-    int = torch.tensor([1])
 
-    int_exp = int.expand(torch.tensor(4))
+    with do(actions = {'weights_categorical_x_cat': torch.tensor([1.]).expand(3)}):
+        with pyro.poutine.trace() as tr_after:
+            after = predictive_model(categorical={"x_cat": x_cat_test},
+                                  continuous={"x_con": x_con_test})
+            
+    print(tr_after.trace.nodes['weights_categorical_x_cat']['value'])
 
-    print(int_exp)
+    with MultiWorldCounterfactual() as  mwc:
+        with do(actions = {'weights_categorical_x_cat': torch.tensor([1.]).expand(3)}):
+            with pyro.poutine.trace() as tr_after_after:
+                after_after = predictive_model(categorical={"x_cat": x_cat_test},
+                                  continuous={"x_con": x_con_test})
+                
+    print(tr_after_after.trace.nodes['weights_categorical_x_cat']['value'])
 
-    with do(
-        actions={
-            "categorical_x_cat": torch.tensor([1, 1, 1, 1]),
-            "continuous_x_con": torch.tensor([1.0, 1.0, 1.0, 1.0]),
-        }
-    ):
-        with pyro.poutine.trace():
-            after = predictive_model_registered()
+    predictive_model_registered = SimpleLinearRegisteredInput(
+        predictive_model,
+        categorical={"x_cat": x_cat_test},
+        continuous={"x_con": x_con_test},
+    )
 
-    with MultiWorldCounterfactual(first_available_dim= -10) as mwc:
-        with do( actions={
-                "categorical_x_cat": int_exp,
-                "continuous_x_con": torch.tensor([1.0, 1.0, 1.0, 1.0]),
-            }
-        ):
-                with pyro.poutine.trace():
-                    after = predictive_model_registered()
+    # # print(x_cat_test.shape)
 
-    # target_after = torch.tensor([4.0, 4.0, 4.0, 4.0])
+    with MultiWorldCounterfactual() as mwc_registered:
+        with do(actions = {'weights_categorical_x_cat': torch.tensor([1.]).expand(3)}):
+            with pyro.poutine.trace() as tr_registered:
+                after_registered = predictive_model_registered()
+
+    print(tr_registered.trace.nodes['weights_categorical_x_cat']['value'])
+    print(tr_registered.trace.nodes['categorical_x_cat']['value'])
+
+    with MultiWorldCounterfactual() as mwc_registered:
+            with do(actions = {'categorical_x_cat': torch.tensor([1,1,1,1])}):
+                with pyro.poutine.trace() as tr_registered:
+                    after_registered = predictive_model_registered()
+
+    print(tr_registered.trace.nodes['weights_categorical_x_cat']['value'])
+    print(tr_registered.trace.nodes['categorical_x_cat']['value'])
+    
+
+    # int = torch.tensor([1])
+
+    # int_exp = int.expand(torch.tensor(4))
+
+    # print(int_exp)
+
+    # with do(
+    #     actions={
+    #         "categorical_x_cat": torch.tensor([1, 1, 1, 1]),
+    #         "continuous_x_con": torch.tensor([1.0, 1.0, 1.0, 1.0]),
+    #     }
+    # ):
+    #     with pyro.poutine.trace():
+    #         after = predictive_model_registered()
+
+    # with MultiWorldCounterfactual(first_available_dim= -10) as mwc:
+    #     with do( actions={
+    #             "categorical_x_cat": int_exp,
+    #             "continuous_x_con": torch.tensor([1.0, 1.0, 1.0, 1.0]),
+    #         }
+    #     ):
+    #             with pyro.poutine.trace():
+    #                 after = predictive_model_registered()
+
+    # # target_after = torch.tensor([4.0, 4.0, 4.0, 4.0])
 
     # assert torch.allclose(after, target_after, atol=3)
 
