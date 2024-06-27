@@ -99,6 +99,7 @@ class SimpleLinear(pyro.nn.PyroModule):
             objects_cat_weighted = {}
 
             for name in categorical_names:
+                #TODO consider expanded sampling instead of plate
                 with pyro.plate(
                     f"w_plate_{name}",
                     size=len(categorical_levels[name]),
