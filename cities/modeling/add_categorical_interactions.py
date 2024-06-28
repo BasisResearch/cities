@@ -1,8 +1,6 @@
 import contextlib
-from typing import Callable, Dict, List, Tuple, TypeVar, Any
 import copy
-
-T = TypeVar('T')#, bound=Callable[..., Any])
+from typing import Dict, List, Tuple
 
 import torch
 
@@ -11,7 +9,6 @@ def replace_categorical_with_combos(
     data: Dict, interaction_tuples: List[Tuple[str, ...]]
 ):
 
-    
     unique_combined_tensors = {}
     inverse_indices_tensors = {}
     indexing_dictionaries = {}
@@ -23,7 +20,7 @@ def replace_categorical_with_combos(
         assert len(interaction_tuple) > 1
 
         tensors_to_stack = [data_copy["categorical"][key] for key in interaction_tuple]
-        
+
         for tensor in tensors_to_stack:
             assert tensor.shape == tensors_to_stack[0].shape
 
@@ -38,30 +35,26 @@ def replace_categorical_with_combos(
         unique_combined_tensor = inverse_indices.reshape(
             data_copy["categorical"][interaction_tuple[0]].shape
         )
-        
 
         unique_combined_tensors[interaction_tuple] = unique_combined_tensor
 
         indexing_dictionaries[interaction_tuple] = {
             tuple(pair.tolist()): i for i, pair in enumerate(unique_pairs)
         }
-    
 
         data_copy["categorical"][
             f"{'_'.join(interaction_tuple)}"
         ] = unique_combined_tensor
-        
 
         for key in interaction_tuple:
             data_copy["categorical"].pop(key, None)
 
-    
     return data_copy, indexing_dictionaries
 
 
 @contextlib.contextmanager
 def AddCategoricalInteractions(
-    model,  #TODO type hint where mypy doesn't complain about forward
+    model,  # TODO type hint where mypy doesn't complain about forward
     interaction_tuples: List[Tuple[str, ...]],
 ):
 

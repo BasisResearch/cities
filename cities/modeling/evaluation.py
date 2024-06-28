@@ -113,8 +113,7 @@ def test_performance(
     predictive = Predictive(model, guide=guide, num_samples=1000)
 
     categorical_levels = model.categorical_levels
-    # with pyro.poutine.trace() as tr:
-    #     with pyro.plate("samples", size = 1000, dim = -10):
+
     samples_training = predictive(
         categorical=_train_data["categorical"],
         continuous=_train_data["continuous"],

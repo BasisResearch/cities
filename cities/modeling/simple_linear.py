@@ -1,14 +1,12 @@
 import contextlib
-from typing import Callable, Dict, List, Optional
+from typing import Dict, List, Optional
 
 import torch
 
 import pyro
 import pyro.distributions as dist
 
-# TODO no major causal assumptions are added
-# TODO add year/month latents
-# TODO add neighborhood latents as impacting parcel areas and limits
+# TODO no major causal assumptions are incorporated
 
 
 def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tensor]):
@@ -35,9 +33,6 @@ class SimpleLinear(pyro.nn.PyroModule):
         leeway=0.9,
     ):
         super().__init__()
-
-        # potentially move away from init as somewhat useless
-        # for easy use of Predictive on other data
 
         self.leeway = leeway
 
@@ -87,6 +82,7 @@ class SimpleLinear(pyro.nn.PyroModule):
             # or grab the original ones from the model object passed to Predictive
             # while allowing them to be passed as arguments, as some
             # levels might be missing in new data for which we want to make predictions
+            # or in the training/test split
             categorical_names = list(categorical.keys())
             if categorical_levels is None:
                 categorical_levels = dict()
@@ -169,7 +165,9 @@ class SimpleLinear(pyro.nn.PyroModule):
 
 
 @contextlib.contextmanager
-def RegisterInput(model: Callable, kwargs: Dict[str, List[str]]):
+def RegisterInput(
+    model, kwargs: Dict[str, List[str]]
+):  # TODO mypy: can't use Callable as type hint no attribute forward
 
     assert "categorical" in kwargs.keys()
 

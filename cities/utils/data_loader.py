@@ -16,6 +16,9 @@ class ZoningDataset(Dataset):
         self.continuous = continuous
 
         if index_dictionary is None:
+            # this is hardcoded from data processing pipeline
+            # and will be expanded in the future
+            # for easier downstream use and interpretation
             self.index_dictionary = {
                 "zoning_ordering": [
                     "downtown",
