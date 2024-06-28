@@ -1,5 +1,5 @@
 import contextlib
-from typing import Dict, Optional, Callable, List
+from typing import Callable, Dict, List, Optional
 
 import torch
 
@@ -169,7 +169,7 @@ class SimpleLinear(pyro.nn.PyroModule):
 
 
 @contextlib.contextmanager
-def RegisterInput(model: Callable, kwargs: Dict[str, List[str]]): 
+def RegisterInput(model: Callable, kwargs: Dict[str, List[str]]):
 
     assert "categorical" in kwargs.keys()
 
@@ -191,4 +191,3 @@ def RegisterInput(model: Callable, kwargs: Dict[str, List[str]]):
     model.forward = new_forward
     yield
     model.forward = old_forward
-

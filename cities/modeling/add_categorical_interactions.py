@@ -1,26 +1,29 @@
 import contextlib
-from typing import Callable, Dict, List, Tuple
+from typing import Callable, Dict, List, Tuple, TypeVar, Any
+import copy
+
+T = TypeVar('T')#, bound=Callable[..., Any])
 
 import torch
-
 
 
 def replace_categorical_with_combos(
     data: Dict, interaction_tuples: List[Tuple[str, ...]]
 ):
 
+    
     unique_combined_tensors = {}
     inverse_indices_tensors = {}
     indexing_dictionaries = {}
 
-    data_copy = data.copy()
+    data_copy = copy.deepcopy(data)
 
     for interaction_tuple in interaction_tuples:
 
         assert len(interaction_tuple) > 1
 
         tensors_to_stack = [data_copy["categorical"][key] for key in interaction_tuple]
-
+        
         for tensor in tensors_to_stack:
             assert tensor.shape == tensors_to_stack[0].shape
 
@@ -35,27 +38,30 @@ def replace_categorical_with_combos(
         unique_combined_tensor = inverse_indices.reshape(
             data_copy["categorical"][interaction_tuple[0]].shape
         )
+        
 
         unique_combined_tensors[interaction_tuple] = unique_combined_tensor
 
         indexing_dictionaries[interaction_tuple] = {
             tuple(pair.tolist()): i for i, pair in enumerate(unique_pairs)
         }
+    
 
         data_copy["categorical"][
             f"{'_'.join(interaction_tuple)}"
         ] = unique_combined_tensor
+        
 
         for key in interaction_tuple:
             data_copy["categorical"].pop(key, None)
 
+    
     return data_copy, indexing_dictionaries
 
 
 @contextlib.contextmanager
 def AddCategoricalInteractions(
-    model: Callable,
-    kwargs: Dict[str, List[str]],
+    model,  #TODO type hint where mypy doesn't complain about forward
     interaction_tuples: List[Tuple[str, ...]],
 ):
 
@@ -63,13 +69,17 @@ def AddCategoricalInteractions(
 
     def new_forward(**kwargs):
         new_kwargs = kwargs.copy()
+
         new_kwargs, indexing_dictionaries = replace_categorical_with_combos(
-        kwargs, interaction_tuples
+            kwargs, interaction_tuples
         )
+
+        model.indexing_dictionaries = indexing_dictionaries
+        model.new_kwargs = new_kwargs
         old_forward(**new_kwargs)
 
     model.forward = new_forward
 
-    yield 
+    yield
 
     model.forward = old_forward
