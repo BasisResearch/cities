@@ -16,7 +16,7 @@ root = find_repo_root()
 
 
 def check_if_tensed(df):
-    years_to_check = ["2015", "2018", "2019", "2020"] 
+    years_to_check = ["2015", "2018", "2019", "2020"]
     check = any(year in df.columns for year in years_to_check)
     return check
 
@@ -67,22 +67,32 @@ class MSADataGrabberCSV(DataGrabberCSV):
         self.data_path = os.path.join(self.repo_root, "data/MSA_level")
         sys.path.insert(0, self.data_path)
 
+
 class CTDataGrabberCSV(DataGrabberCSV):
-    def __init__(self,
-                 level_DG: str = "pre_2020"):                 # new argument pre_2020 and post_2020
+    def __init__(
+        self, level_DG: str = "pre_2020"
+    ):  # new argument pre_2020 and post_2020
         super().__init__()
         self.data_path = os.path.join(self.repo_root, "data/Census_tract_level")
         self.level_DG = level_DG
         sys.path.insert(0, self.data_path)
 
-    def _get_features(self, features: List[str], table_suffix: str) -> None:  # redefining data grabbing to depend on `level_DG` argument
+    def _get_features(
+        self, features: List[str], table_suffix: str
+    ) -> None:  # redefining data grabbing to depend on `level_DG` argument
         for feature in features:
             if self.level_DG == "pre_2020":
-                file_path = os.path.join(self.data_path, f"{feature}_pre2020_CT_{table_suffix}.csv")
+                file_path = os.path.join(
+                    self.data_path, f"{feature}_pre2020_CT_{table_suffix}.csv"
+                )
             elif self.level_DG == "post_2020":
-                file_path = os.path.join(self.data_path, f"{feature}_post2020_CT_{table_suffix}.csv")
+                file_path = os.path.join(
+                    self.data_path, f"{feature}_post2020_CT_{table_suffix}.csv"
+                )
             else:
-                raise ValueError("Invalid level_DG. Please choose 'pre_2020' or 'post_2020'.")
+                raise ValueError(
+                    "Invalid level_DG. Please choose 'pre_2020' or 'post_2020'."
+                )
 
             if os.path.exists(file_path):
                 df = pd.read_csv(file_path)
@@ -114,7 +124,6 @@ class CTDataGrabberCSV(DataGrabberCSV):
         self._get_features(features, "std_long")
 
 
-
 def list_available_features(level="county", level_DG="pre_2020"):
     root = find_repo_root()
 
@@ -125,7 +134,9 @@ def list_available_features(level="county", level_DG="pre_2020"):
     elif level == "census_tract":
         folder_path = f"{root}/data/Census_tract_level"
     else:
-        raise ValueError("Invalid level. Please choose 'county', 'census_tract' or 'msa'.")
+        raise ValueError(
+            "Invalid level. Please choose 'county', 'census_tract' or 'msa'."
+        )
 
     file_names = [f for f in os.listdir(folder_path) if f != ".gitkeep"]
     processed_file_names = []
@@ -145,11 +156,11 @@ def list_available_features(level="county", level_DG="pre_2020"):
             base_name = matches[0]
             processed_file_names.append(base_name)
 
-
-
     # Remove any remaining suffixes from the base names
     feature_names = list(set(processed_file_names))
-    feature_names = [re.sub(r'(_pre2020|_post2020)$', '', name) for name in feature_names]
+    feature_names = [
+        re.sub(r"(_pre2020|_post2020)$", "", name) for name in feature_names
+    ]
 
     return sorted(feature_names)
 
@@ -164,7 +175,9 @@ def list_tensed_features(level="county", level_DG="pre_2020"):
         all_features = list_available_features(level="msa")
 
     elif level == "census_tract":
-        data = CTDataGrabberCSV(level_DG=level_DG)  # TODO: Change to CTDataGrabber() in the future
+        data = CTDataGrabberCSV(
+            level_DG=level_DG
+        )  # TODO: Change to CTDataGrabber() in the future
         all_features = list_available_features(level="census_tract", level_DG=level_DG)
 
     else:
