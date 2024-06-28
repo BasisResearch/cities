@@ -20,7 +20,8 @@ DEV_REQUIRES = [
     "pyro-ppl==1.8.5",
     "torch",   "plotly.express", 
     "scipy",  
-    "chirho", "graphviz", "seaborn"
+    "chirho @ git+https://github.com/BasisResearch/chirho.git@master", 
+    "graphviz", "seaborn"
 ]
 
 setup(
