@@ -1,5 +1,5 @@
 import contextlib
-from typing import Dict, Optional
+from typing import Dict, Optional, Callable, List
 
 import torch
 
@@ -169,7 +169,7 @@ class SimpleLinear(pyro.nn.PyroModule):
 
 
 @contextlib.contextmanager
-def RegisterInput(model, kwargs):
+def RegisterInput(model: Callable, kwargs: Dict[str, List[str]]): 
 
     assert "categorical" in kwargs.keys()
 
@@ -192,76 +192,3 @@ def RegisterInput(model, kwargs):
     yield
     model.forward = old_forward
 
-
-# TODO rewrite input registration as more general function on model class
-
-# class SimpleLinearRegisteredInput(pyro.nn.PyroModule):
-#     def __init__(
-#         self,
-#         model,
-#         categorical=Dict[str, torch.Tensor],
-#         continuous=Dict[str, torch.Tensor],
-#         outcome=None,
-#         categorical_levels=None,
-#     ):
-#         super().__init__()
-#         self.model = model
-
-#         n = get_n(categorical, continuous)[2]
-
-#         if categorical_levels is None:
-#             categorical_levels = dict()
-#             for name in categorical.keys():
-#                 categorical_levels[name] = torch.unique(categorical[name])
-#         self.categorical_levels = categorical_levels
-
-#         def unconditioned_model():
-#             _categorical = {}
-#             _continuous = {}
-#             with pyro.plate("initiate", size=n, dim=-8):
-#                 for key in categorical.keys():
-#                     _categorical[key] = pyro.sample(
-#                         f"categorical_{key}", dist.Bernoulli(0.5)
-#                     )
-#                 for key in continuous.keys():
-#                     _continuous[key] = pyro.sample(
-#                         f"continuous_{key}", dist.Normal(0, 1)
-#                     )
-#             return self.model(
-#                 categorical=_categorical,
-#                 continuous=_continuous,
-#                 outcome=None,
-#                 categorical_levels=self.categorical_levels,
-#             )
-
-#         self.unconditioned_model = unconditioned_model
-
-#         data = {
-#             **{f"categorical_{key}": categorical[key] for key in categorical.keys()},
-#             **{f"continuous_{key}": continuous[key] for key in continuous.keys()},
-#         }
-
-#         self.data = data
-
-#         conditioned_model = condition(self.unconditioned_model, data=self.data)
-
-#         self.conditioned_model = conditioned_model
-
-#     def forward(self):
-#         return self.conditioned_model()
-
-
-# TODO mypy linting
-
-# + mypy --ignore-missing-imports cities/
-# cities/modeling/simple_linear.py:26: error: Name "pyro.nn.PyroModule" is not defined  [name-defined]
-# cities/modeling/simple_linear.py:72: error: Module has no attribute "sample"  [attr-defined]
-# cities/modeling/simple_linear.py:74: error: Module has no attribute "plate"  [attr-defined]
-# cities/modeling/simple_linear.py:97: error: Module has no attribute "plate"  [attr-defined]
-# cities/modeling/simple_linear.py:102: error: Module has no attribute "sample"  [attr-defined]
-# cities/modeling/simple_linear.py:143: error: Module has no attribute "plate"  [attr-defined]
-# cities/modeling/simple_linear.py:144: error: Module has no attribute "sample"  [attr-defined]
-# cities/modeling/simple_linear.py:154: error: Module has no attribute "sample"  [attr-defined]
-# cities/modeling/simple_linear.py:176: error: Module has no attribute "deterministic"  [attr-defined]
-# cities/modeling/simple_linear.py:182: error: Module has no attribute "sample"  [attr-defined]
-# cities/modeling/simple_linear.py:191: error: Name "pyro.nn.PyroModule" is not defined  [name-defined]
