@@ -1,10 +1,11 @@
 import os
-import pyro
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 from torch.utils.data import DataLoader, random_split
 
+import pyro
 from cities.modeling.svi_inference import run_svi_inference
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
@@ -112,8 +113,7 @@ def test_performance(
     predictive = Predictive(model, guide=guide, num_samples=1000)
 
     categorical_levels = model.categorical_levels
-    # with pyro.poutine.trace() as tr:
-    #     with pyro.plate("samples", size = 1000, dim = -10):
+
     samples_training = predictive(
         categorical=_train_data["categorical"],
         continuous=_train_data["continuous"],
