@@ -1,10 +1,11 @@
 import os
-import pyro
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 from torch.utils.data import DataLoader, random_split
 
+import pyro
 from cities.modeling.svi_inference import run_svi_inference
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data

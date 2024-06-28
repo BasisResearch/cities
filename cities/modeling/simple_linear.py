@@ -1,7 +1,7 @@
+import contextlib
 from typing import Dict, Optional
 
 import torch
-from chirho.observational.handlers.condition import condition
 
 import pyro
 import pyro.distributions as dist
@@ -36,7 +36,7 @@ class SimpleLinear(pyro.nn.PyroModule):
     ):
         super().__init__()
 
-        # potentially move away from init as somewhat useless 
+        # potentially move away from init as somewhat useless
         # for easy use of Predictive on other data
 
         self.leeway = leeway
@@ -76,15 +76,13 @@ class SimpleLinear(pyro.nn.PyroModule):
 
         data_plate = pyro.plate("data", size=n, dim=-1)
 
-        running_dim = -2
-
         #################################################################################
         # add plates and linear contribution to outcome for categorical variables if any
         #################################################################################
 
         if N_categorical > 0:
 
-            # Predictive and PredictiveModel don't seem to inherit much 
+            # Predictive and PredictiveModel don't seem to inherit much
             # of the self attributes, so we need to get them here
             # or grab the original ones from the model object passed to Predictive
             # while allowing them to be passed as arguments, as some
@@ -101,13 +99,14 @@ class SimpleLinear(pyro.nn.PyroModule):
             for name in categorical_names:
 
                 weights_categorical_outcome[name] = pyro.sample(
-                        f"weights_categorical_{name}", dist.Normal(
-                            0.0,self.leeway).expand(categorical_levels[name].shape).to_event(1)
+                    f"weights_categorical_{name}",
+                    dist.Normal(0.0, self.leeway)
+                    .expand(categorical_levels[name].shape)
+                    .to_event(1),
                 )
-                        
 
                 objects_cat_weighted[name] = weights_categorical_outcome[name][
-                        ..., categorical[name]
+                    ..., categorical[name]
                 ]
 
             values = list(objects_cat_weighted.values())
@@ -127,20 +126,25 @@ class SimpleLinear(pyro.nn.PyroModule):
 
             continuous_stacked = torch.stack(list(continuous.values()), dim=0)
 
-    
             bias_continuous_outcome = pyro.sample(
-                    "bias_continuous", dist.Normal(0.0, self.leeway).expand(
-                        [continuous_stacked.shape[-2]]).to_event(1)
-                )
+                "bias_continuous",
+                dist.Normal(0.0, self.leeway)
+                .expand([continuous_stacked.shape[-2]])
+                .to_event(1),
+            )
 
             weight_continuous_outcome = pyro.sample(
-                    "weight_continuous",dist.Normal(0.0, self.leeway).expand(
-                        [continuous_stacked.shape[-2]]).to_event(1)
+                "weight_continuous",
+                dist.Normal(0.0, self.leeway)
+                .expand([continuous_stacked.shape[-2]])
+                .to_event(1),
+            )
+
+            continuous_contribution_outcome = (
+                bias_continuous_outcome.sum()
+                + torch.einsum(
+                    "...cd, ...c -> ...d", continuous_stacked, weight_continuous_outcome
                 )
-            
-           
-            continuous_contribution_outcome =  bias_continuous_outcome.sum() + torch.einsum(
-                "...cd, ...c -> ...d", continuous_stacked, weight_continuous_outcome
             )
 
         #################################################################################
@@ -148,6 +152,7 @@ class SimpleLinear(pyro.nn.PyroModule):
         #################################################################################
 
         with data_plate:
+
             mean_outcome_prediction = pyro.deterministic(
                 "mean_outcome_prediction",
                 categorical_contribution_outcome + continuous_contribution_outcome,
@@ -162,66 +167,91 @@ class SimpleLinear(pyro.nn.PyroModule):
 
         return outcome_observed
 
-#TODO rewrite input registration as more general function on model class
 
-class SimpleLinearRegisteredInput(pyro.nn.PyroModule):
-    def __init__(
-        self,
-        model,
-        categorical=Dict[str, torch.Tensor],
-        continuous=Dict[str, torch.Tensor],
-        outcome=None,
-        categorical_levels=None,
-    ):
-        super().__init__()
-        self.model = model
+@contextlib.contextmanager
+def RegisterInput(model, kwargs):
 
-        n = get_n(categorical, continuous)[2]
+    assert "categorical" in kwargs.keys()
 
-        if categorical_levels is None:
-            categorical_levels = dict()
-            for name in categorical.keys():
-                categorical_levels[name] = torch.unique(categorical[name])
-        self.categorical_levels = categorical_levels
+    old_forward = model.forward
 
-        def unconditioned_model():
-            _categorical = {}
-            _continuous = {}
-            with pyro.plate("initiate", size=n, dim=-8):
-                for key in categorical.keys():
-                    _categorical[key] = pyro.sample(
-                        f"categorical_{key}", dist.Bernoulli(0.5)
-                    )
-                for key in continuous.keys():
-                    _continuous[key] = pyro.sample(
-                        f"continuous_{key}", dist.Normal(0, 1)
-                    )
-            return self.model(
-                categorical=_categorical,
-                continuous=_continuous,
-                outcome=None,
-                categorical_levels=self.categorical_levels,
+    def new_forward(**_kwargs):
+        new_kwargs = _kwargs.copy()
+        for key in _kwargs["categorical"].keys():
+            new_kwargs["categorical"][key] = pyro.sample(
+                key, dist.Delta(_kwargs["categorical"][key])
             )
 
-        self.unconditioned_model = unconditioned_model
+        for key in _kwargs["continuous"].keys():
+            new_kwargs["continuous"][key] = pyro.sample(
+                key, dist.Delta(_kwargs["continuous"][key])
+            )
+        return old_forward(**new_kwargs)
 
-        data = {
-            **{f"categorical_{key}": categorical[key] for key in categorical.keys()},
-            **{f"continuous_{key}": continuous[key] for key in continuous.keys()},
-        }
-
-        self.data = data
-
-        conditioned_model = condition(self.unconditioned_model, data=self.data)
-
-        self.conditioned_model = conditioned_model
-
-    def forward(self):
-        return self.conditioned_model()
+    model.forward = new_forward
+    yield
+    model.forward = old_forward
 
 
+# TODO rewrite input registration as more general function on model class
 
-#TODO mypy linting
+# class SimpleLinearRegisteredInput(pyro.nn.PyroModule):
+#     def __init__(
+#         self,
+#         model,
+#         categorical=Dict[str, torch.Tensor],
+#         continuous=Dict[str, torch.Tensor],
+#         outcome=None,
+#         categorical_levels=None,
+#     ):
+#         super().__init__()
+#         self.model = model
+
+#         n = get_n(categorical, continuous)[2]
+
+#         if categorical_levels is None:
+#             categorical_levels = dict()
+#             for name in categorical.keys():
+#                 categorical_levels[name] = torch.unique(categorical[name])
+#         self.categorical_levels = categorical_levels
+
+#         def unconditioned_model():
+#             _categorical = {}
+#             _continuous = {}
+#             with pyro.plate("initiate", size=n, dim=-8):
+#                 for key in categorical.keys():
+#                     _categorical[key] = pyro.sample(
+#                         f"categorical_{key}", dist.Bernoulli(0.5)
+#                     )
+#                 for key in continuous.keys():
+#                     _continuous[key] = pyro.sample(
+#                         f"continuous_{key}", dist.Normal(0, 1)
+#                     )
+#             return self.model(
+#                 categorical=_categorical,
+#                 continuous=_continuous,
+#                 outcome=None,
+#                 categorical_levels=self.categorical_levels,
+#             )
+
+#         self.unconditioned_model = unconditioned_model
+
+#         data = {
+#             **{f"categorical_{key}": categorical[key] for key in categorical.keys()},
+#             **{f"continuous_{key}": continuous[key] for key in continuous.keys()},
+#         }
+
+#         self.data = data
+
+#         conditioned_model = condition(self.unconditioned_model, data=self.data)
+
+#         self.conditioned_model = conditioned_model
+
+#     def forward(self):
+#         return self.conditioned_model()
+
+
+# TODO mypy linting
 
 # + mypy --ignore-missing-imports cities/
 # cities/modeling/simple_linear.py:26: error: Name "pyro.nn.PyroModule" is not defined  [name-defined]
