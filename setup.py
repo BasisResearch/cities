@@ -17,7 +17,7 @@ TEST_REQUIRES = [
         ]
 
 DEV_REQUIRES = [
-    "pyro-ppl==1.8.5",
+    "pyro-ppl==1.8.6",
     "torch",   "plotly.express", 
     "scipy",  
     "chirho @ git+https://github.com/BasisResearch/chirho.git@master", 
