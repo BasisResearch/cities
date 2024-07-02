@@ -11,7 +11,7 @@ class VariableCleaner:
         self,
         variable_name: str,
         path_to_raw_csv: str,
-        year_or_category: str = "Year",  # Year or Category
+        year_or_category: str = "Year",  # Column name to store years or categories in the long format
     ):
         self.variable_name = variable_name
         self.path_to_raw_csv = path_to_raw_csv

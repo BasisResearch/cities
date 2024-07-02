@@ -17,7 +17,7 @@ root = find_repo_root()
 
 def check_if_tensed(df):
     years_to_check = ["2015", "2018", "2019", "2020"]
-    check = any(year in df.columns for year in years_to_check)
+    check = df.columns[2:].isin(years_to_check).any().any()
     return check
 
 
@@ -70,28 +70,28 @@ class MSADataGrabberCSV(DataGrabberCSV):
 
 class CTDataGrabberCSV(DataGrabberCSV):
     def __init__(
-        self, level_DG: str = "pre_2020"
+        self, ct_time_period: str = "pre_2020"
     ):  # new argument pre_2020 and post_2020
         super().__init__()
         self.data_path = os.path.join(self.repo_root, "data/Census_tract_level")
-        self.level_DG = level_DG
+        self.ct_time_period = ct_time_period
         sys.path.insert(0, self.data_path)
 
     def _get_features(
         self, features: List[str], table_suffix: str
-    ) -> None:  # redefining data grabbing to depend on `level_DG` argument
+    ) -> None:  # redefining data grabbing to depend on `ct_time_period` argument
         for feature in features:
-            if self.level_DG == "pre_2020":
+            if self.ct_time_period == "pre_2020":
                 file_path = os.path.join(
                     self.data_path, f"{feature}_pre2020_CT_{table_suffix}.csv"
                 )
-            elif self.level_DG == "post_2020":
+            elif self.ct_time_period == "post_2020":
                 file_path = os.path.join(
                     self.data_path, f"{feature}_post2020_CT_{table_suffix}.csv"
                 )
             else:
                 raise ValueError(
-                    "Invalid level_DG. Please choose 'pre_2020' or 'post_2020'."
+                    "Invalid ct_time_period. Please choose 'pre_2020' or 'post_2020'."
                 )
 
             if os.path.exists(file_path):
@@ -124,7 +124,7 @@ class CTDataGrabberCSV(DataGrabberCSV):
         self._get_features(features, "std_long")
 
 
-def list_available_features(level="county", level_DG="pre_2020"):
+def list_available_features(level="county", ct_time_period="pre_2020"):
     root = find_repo_root()
 
     if level == "county":
@@ -143,9 +143,9 @@ def list_available_features(level="county", level_DG="pre_2020"):
 
     for file_name in file_names:
         if level == "census_tract":
-            if level_DG == "pre_2020" and "pre2020" in file_name:
+            if ct_time_period == "pre_2020" and "pre2020" in file_name:
                 matches = re.split(r"_wide|_long|_std|_pre2020", file_name)
-            elif level_DG == "post_2020" and "pre2020" not in file_name:
+            elif ct_time_period == "post_2020" and "pre2020" not in file_name:
                 matches = re.split(r"_wide|_long|_std|_post2020", file_name)
             else:
                 continue
@@ -165,7 +165,7 @@ def list_available_features(level="county", level_DG="pre_2020"):
     return sorted(feature_names)
 
 
-def list_tensed_features(level="county", level_DG="pre_2020"):
+def list_tensed_features(level="county", ct_time_period="pre_2020"):
     if level == "county":
         data = DataGrabber()
         all_features = list_available_features(level="county")
@@ -176,9 +176,9 @@ def list_tensed_features(level="county", level_DG="pre_2020"):
 
     elif level == "census_tract":
         data = CTDataGrabberCSV(
-            level_DG=level_DG
+            ct_time_period=ct_time_period
         )  # TODO: Change to CTDataGrabber() in the future
-        all_features = list_available_features(level="census_tract", level_DG=level_DG)
+        all_features = list_available_features(level="census_tract", ct_time_period=ct_time_period)
 
     else:
         raise ValueError(
