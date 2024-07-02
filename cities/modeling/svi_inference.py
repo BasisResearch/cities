@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import torch
 
 import pyro
-from pyro.infer.autoguide import AutoMultivariateNormal
+from pyro.infer.autoguide import AutoMultivariateNormal, init_to_mean
 
 
 def run_svi_inference(
@@ -16,7 +16,7 @@ def run_svi_inference(
 ):
     losses = []
     if guide is None:
-        guide = vi_family(model)
+        guide = vi_family(model,  init_loc_fn=init_to_mean)
     elbo = pyro.infer.Trace_ELBO()(model, guide)
 
     elbo(**model_kwargs)

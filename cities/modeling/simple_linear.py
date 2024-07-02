@@ -21,7 +21,7 @@ def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tens
     return N_categorical, N_continuous, n
 
 
-class SimpleLinear(pyro.nn.PyroModule): # type: ignore
+class SimpleLinear(pyro.nn.PyroModule):  # type: ignore
     def __init__(
         self,
         categorical: Dict[str, torch.Tensor],
@@ -67,10 +67,10 @@ class SimpleLinear(pyro.nn.PyroModule): # type: ignore
         bias_continuous_outcome = torch.zeros(1, 1, 1, n)
         continuous_contribution_outcome = torch.zeros(1, 1, 1, n)
 
-        #TODO figure out why mypy complains
-        sigma_outcome = pyro.sample("sigma", dist.Exponential(1.0)) # type: ignore
+        # TODO figure out why mypy complains
+        sigma_outcome = pyro.sample("sigma", dist.Exponential(1.0))  # type: ignore
 
-        data_plate = pyro.plate("data", size=n, dim=-1) # type: ignore
+        data_plate = pyro.plate("data", size=n, dim=-1)  # type: ignore
 
         #################################################################################
         # add plates and linear contribution to outcome for categorical variables if any
@@ -95,7 +95,7 @@ class SimpleLinear(pyro.nn.PyroModule): # type: ignore
 
             for name in categorical_names:
 
-                weights_categorical_outcome[name] = pyro.sample(
+                weights_categorical_outcome[name] = pyro.sample(  # type: ignore
                     f"weights_categorical_{name}",
                     dist.Normal(0.0, self.leeway)
                     .expand(categorical_levels[name].shape)
@@ -123,14 +123,14 @@ class SimpleLinear(pyro.nn.PyroModule): # type: ignore
 
             continuous_stacked = torch.stack(list(continuous.values()), dim=0)
 
-            bias_continuous_outcome = pyro.sample( # type: ignore
+            bias_continuous_outcome = pyro.sample(  # type: ignore
                 "bias_continuous",
                 dist.Normal(0.0, self.leeway)
                 .expand([continuous_stacked.shape[-2]])
                 .to_event(1),
             )
 
-            weight_continuous_outcome = pyro.sample(
+            weight_continuous_outcome = pyro.sample(  # type: ignore
                 "weight_continuous",
                 dist.Normal(0.0, self.leeway)
                 .expand([continuous_stacked.shape[-2]])
@@ -156,7 +156,7 @@ class SimpleLinear(pyro.nn.PyroModule): # type: ignore
                 event_dim=0,
             )
 
-            outcome_observed = pyro.sample( # type: ignore
+            outcome_observed = pyro.sample(  # type: ignore
                 "outcome_observed",
                 dist.Normal(mean_outcome_prediction, sigma_outcome),
                 obs=outcome,
