@@ -42,6 +42,31 @@ def categorical_contribution(categorical, child_name, leeway, categorical_levels
     return categorical_contribution_outcome
 
 
+def continuous_contribution(continuous, child_name, leeway):
+    continuous_stacked = torch.stack(list(continuous.values()), dim=0)
+
+    bias_continuous_child = pyro.sample(
+        f"bias_continuous_{child_name}",
+        dist.Normal(0.0, leeway)
+        .expand([continuous_stacked.shape[-2]])
+        .to_event(1),
+    )
+
+    weight_continuous_child = pyro.sample(
+        f"weight_continuous_{child_name}",
+        dist.Normal(0.0, leeway)
+        .expand([continuous_stacked.shape[-2]])
+        .to_event(1),
+    )
+
+    continuous_contribution_child = (
+        bias_continuous_child.sum()
+        + torch.einsum(
+            "...cd, ...c -> ...d", continuous_stacked, weight_continuous_child
+        )
+    )
+
+    return continuous_contribution_child
 
 
 
@@ -94,8 +119,12 @@ def AddCausalLayer(
 
             if N_categorical > 0:
                 categorical_contribution_to_child = categorical_contribution(categorical_parents, 
-                                                        "child", model.leeway)
+                                                        child, model.leeway)
+                
+            if N_continuous > 0:
+                continuous_contribution_to_child = continuous_contribution(continuous_parents, child, model.leeway)
 
+        
             
             
 
