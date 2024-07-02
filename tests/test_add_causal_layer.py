@@ -1,10 +1,7 @@
 import os
 
-import pyro
 import torch
 from torch.utils.data import DataLoader
-
-from pyro.infer.autoguide import AutoDiagonalNormal
 
 import pyro
 from cities.modeling.add_causal_layer import AddCausalLayer
@@ -13,6 +10,7 @@ from cities.modeling.svi_inference import run_svi_inference
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
 from pyro.infer import Predictive
+from pyro.infer.autoguide import AutoDiagonalNormal
 
 root = find_repo_root()
 
@@ -31,18 +29,22 @@ x_cat = torch.cat(
         2 * torch.ones([part], dtype=torch.long),
     ]
 )
-x_con = torch.cat([torch.ones(n//2), torch.ones(n//2) * 2]) + torch.randn(n) * 0.1 + 0.5 * x_cat 
+x_con = (
+    torch.cat([torch.ones(n // 2), torch.ones(n // 2) * 2])
+    + torch.randn(n) * 0.1
+    + 0.5 * x_cat
+)
 
 y_mixed = x_cat * 2 + x_con * 2 + torch.randn(n) * 0.05
 
 synthetic_minimal = {
     "categorical": {"x_cat": x_cat},
-    "continuous": {"x_con": x_con, "y_mixed": y_mixed   },
+    "continuous": {"x_con": x_con, "y_mixed": y_mixed},
 }
 
 synthetic_expanded = {
     "categorical": {"x_cat": x_cat},
-    "continuous": {"x_con": x_con, "y_mixed": y_mixed },
+    "continuous": {"x_con": x_con, "y_mixed": y_mixed},
 }
 
 minimal_kwargs_synthetic = {
@@ -60,33 +62,47 @@ expanded_kwargs_synthetic = {
 
 def test_basic_layer_synthetic():
 
-
     pyro.clear_param_store()
 
     base_model_synthetic = SimpleLinear(**synthetic_minimal)
 
     def new_model_synthetic(**kwargs):
-        with AddCausalLayer(base_model_synthetic,
-            model_kwargs = minimal_kwargs_synthetic,
-            dataset = synthetic_expanded,
-            causal_layer={"x_con": ["x_cat"]}):
-                base_model_synthetic(**synthetic_minimal)
+        with AddCausalLayer(
+            base_model_synthetic,
+            model_kwargs=minimal_kwargs_synthetic,
+            dataset=synthetic_expanded,
+            causal_layer={"x_con": ["x_cat"]},
+        ):
+            base_model_synthetic(**synthetic_minimal)
 
-    new_guide_synthetic  = run_svi_inference(new_model_synthetic,
-                    **synthetic_minimal, vi_family=AutoDiagonalNormal)
+    new_guide_synthetic = run_svi_inference(
+        new_model_synthetic, **synthetic_minimal, vi_family=AutoDiagonalNormal
+    )
     # note AutoMultivariateNormal fails, not clear why
 
-    predictive = Predictive(
-    new_model_synthetic, guide=new_guide_synthetic,
-      num_samples=400, parallel=True)
+    predictive_synthetic = Predictive(
+        new_model_synthetic, guide=new_guide_synthetic, num_samples=500, parallel=True
+    )
 
-    samples = predictive(**synthetic_minimal)
+    samples_synthetic = predictive_synthetic(**synthetic_minimal)
 
+    w_x_cat_to_x_con = samples_synthetic["weights_categorical_x_cat_x_con"].squeeze()
+
+    cat0_mean = w_x_cat_to_x_con[:, 0].mean()
+    cat1_mean = w_x_cat_to_x_con[:, 1].mean()
+    cat2_mean = w_x_cat_to_x_con[:, 2].mean()
+
+    assert torch.allclose(
+        torch.tensor([cat0_mean, cat1_mean, cat2_mean]),
+        torch.tensor([1.0, 2.0, 3.0]),
+        atol=0.2,
+    )
+
+
+test_basic_layer_synthetic()
 
 
 ###############################
-
-
 
 
 # real data

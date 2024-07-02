@@ -16,7 +16,7 @@ def run_svi_inference(
 ):
     losses = []
     if guide is None:
-        guide = vi_family(model,  init_loc_fn=init_to_mean)
+        guide = vi_family(model, init_loc_fn=init_to_mean)
     elbo = pyro.infer.Trace_ELBO()(model, guide)
 
     elbo(**model_kwargs)

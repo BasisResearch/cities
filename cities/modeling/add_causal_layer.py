@@ -124,8 +124,6 @@ def AddCausalLayer(
                     data_types[variable]
                 ][variable]
 
-        
-
         # TODO make layer_counter play nice with nested handlers, this is a placeholder really
         layer_counter = 1
         data_plate = pyro.plate(f"data_{layer_counter}", size=n, dim=-1)
@@ -138,34 +136,31 @@ def AddCausalLayer(
             continuous_contribution_to_child = torch.zeros(1, 1, 1, n)
 
             categorical_parents = {
-                    key: value
-                    for key, value in new_kwargs["categorical"].items()
-                    if key in causal_layer[child]
-                }
-            
+                key: value
+                for key, value in new_kwargs["categorical"].items()
+                if key in causal_layer[child]
+            }
+
             continuous_parents = {
                 key: value
                 for key, value in new_kwargs["continuous"].items()
                 if key in causal_layer[child]
-                }
+            }
 
             if len(categorical_parents.keys()) > 0:
 
-            
                 categorical_contribution_to_child = categorical_contribution(
                     categorical_parents, child, model.leeway
                 )
 
-
-            if len(continuous_parents.keys()) > 0:                
+            if len(continuous_parents.keys()) > 0:
 
                 continuous_contribution_to_child = continuous_contribution(
                     continuous_parents, child, model.leeway
                 )
-        
 
             sigma_child = pyro.sample(f"sigma_{child}", dist.Exponential(1.0))  # type: ignore
-               
+
             observations = (
                 new_kwargs[data_types[child]][child]
                 if child != model_kwargs["outcome"]
