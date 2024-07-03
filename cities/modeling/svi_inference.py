@@ -7,11 +7,11 @@ from pyro.infer.autoguide import AutoMultivariateNormal, init_to_mean
 
 def run_svi_inference(
     model,
-    n_steps=500,
     verbose=True,
     lr=0.03,
     vi_family=AutoMultivariateNormal,
     guide=None,
+    n_steps=500,
     **model_kwargs
 ):
     losses = []
