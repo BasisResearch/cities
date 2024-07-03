@@ -178,7 +178,9 @@ def list_tensed_features(level="county", ct_time_period="pre_2020"):
         data = CTDataGrabberCSV(
             ct_time_period=ct_time_period
         )  # TODO: Change to CTDataGrabber() in the future
-        all_features = list_available_features(level="census_tract", ct_time_period=ct_time_period)
+        all_features = list_available_features(
+            level="census_tract", ct_time_period=ct_time_period
+        )
 
     else:
         raise ValueError(

@@ -2,10 +2,8 @@ import os
 
 import numpy as np
 
-from cities.utils.data_grabber import (
+from cities.utils.data_grabber import (  # TODO: Change to CTDataGrabber() in the future
     CTDataGrabberCSV,
-)  # TODO: Change to CTDataGrabber() in the future
-from cities.utils.data_grabber import (
     DataGrabber,
     MSADataGrabber,
     list_available_features,

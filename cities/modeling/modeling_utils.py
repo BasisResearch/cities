@@ -3,6 +3,9 @@ from typing import Callable
 import matplotlib.pyplot as plt
 import pandas as pd
 import torch
+from pyro.infer import SVI, Trace_ELBO
+from pyro.infer.autoguide import AutoNormal
+from pyro.optim import Adam  # type: ignore
 from scipy.stats import spearmanr
 
 import pyro
@@ -11,9 +14,6 @@ from cities.utils.data_grabber import (
     list_available_features,
     list_tensed_features,
 )
-from pyro.infer import SVI, Trace_ELBO
-from pyro.infer.autoguide import AutoNormal
-from pyro.optim import Adam  # type: ignore
 
 
 def drop_high_correlation(df, threshold=0.85):
