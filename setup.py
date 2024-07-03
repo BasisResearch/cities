@@ -14,6 +14,7 @@ TEST_REQUIRES = [
             "nbval",
             "nbqa",
             "autoflake",
+            "types-requests",
         ]
 
 DEV_REQUIRES = [
@@ -21,7 +22,6 @@ DEV_REQUIRES = [
     "torch",   "plotly.express", 
     "scipy",  
     "chirho", "graphviz", "seaborn",
-    "types-requests",
 ]
 
 setup(
