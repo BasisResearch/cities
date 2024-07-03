@@ -167,25 +167,34 @@ class SimpleLinear(pyro.nn.PyroModule):  # type: ignore
 
 @contextlib.contextmanager
 def RegisterInput(
-    model, kwargs: Dict[str, List[str]]
+    model, new_kwargs: Dict[str, List[str]]
 ):  # TODO mypy: can't use Callable as type hint no attribute forward
 
-    assert "categorical" in kwargs.keys()
+    assert "categorical" in new_kwargs.keys()
 
     old_forward = model.forward
 
-    def new_forward(**_kwargs):
-        new_kwargs = _kwargs.copy()
-        for key in _kwargs["categorical"].keys():
-            new_kwargs["categorical"][key] = pyro.sample(
-                key, dist.Delta(_kwargs["categorical"][key])
-            )
+    def new_forward(**kwargs):
+        _kwargs = kwargs.copy()
+        sampled_flags = dict() # in some contexts multiple passes through the model result in multiple sample sites
 
-        for key in _kwargs["continuous"].keys():
-            new_kwargs["continuous"][key] = pyro.sample(
-                key, dist.Delta(_kwargs["continuous"][key])
-            )
-        return old_forward(**new_kwargs)
+        if "categorical" in new_kwargs.keys():
+            for key in new_kwargs["categorical"].keys():            
+                if key not in sampled_flags:
+                    _kwargs["categorical"][key] = pyro.sample(
+                        key, dist.Delta(new_kwargs["categorical"][key])
+                    )
+                    sampled_flags[key] = True
+
+        if "continuous" in new_kwargs.keys():
+            for key in new_kwargs["continuous"].keys():
+                if key not in sampled_flags:
+                    _kwargs["continuous"][key] = pyro.sample(
+                        key, dist.Delta(new_kwargs["continuous"][key])
+                    )
+                    sampled_flags[key] = True
+
+        return old_forward(**_kwargs)
 
     model.forward = new_forward
     yield

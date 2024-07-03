@@ -160,7 +160,7 @@ def test_SimpleLinearRegisteredInput():
 
     with RegisterInput(
         predictive_model,
-        kwargs={
+        new_kwargs={
             "categorical": {"x_cat": x_cat_test},
             "continuous": {"x_con": x_con_test},
         },
