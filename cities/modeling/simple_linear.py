@@ -1,10 +1,9 @@
 import contextlib
 from typing import Dict, List, Optional
 
-import torch
-
 import pyro
 import pyro.distributions as dist
+import torch
 
 # TODO no major causal assumptions are incorporated
 
@@ -176,10 +175,12 @@ def RegisterInput(
 
     def new_forward(**kwargs):
         _kwargs = kwargs.copy()
-        sampled_flags = dict() # in some contexts multiple passes through the model result in multiple sample sites
+        sampled_flags = (
+            dict()
+        )  # in some contexts multiple passes through the model result in multiple sample sites
 
         if "categorical" in new_kwargs.keys():
-            for key in new_kwargs["categorical"].keys():            
+            for key in new_kwargs["categorical"].keys():
                 if key not in sampled_flags:
                     _kwargs["categorical"][key] = pyro.sample(
                         key, dist.Delta(new_kwargs["categorical"][key])

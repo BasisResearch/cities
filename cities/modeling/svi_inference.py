@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
-import torch
-
 import pyro
+import torch
 from pyro.infer.autoguide import AutoMultivariateNormal, init_to_mean
 
 

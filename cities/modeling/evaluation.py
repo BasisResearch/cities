@@ -1,15 +1,15 @@
 import os
 
 import matplotlib.pyplot as plt
+import pyro
 import seaborn as sns
 import torch
+from pyro.infer import Predictive
 from torch.utils.data import DataLoader, random_split
 
-import pyro
 from cities.modeling.svi_inference import run_svi_inference
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
-from pyro.infer import Predictive
 
 root = find_repo_root()
 

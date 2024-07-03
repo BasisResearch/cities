@@ -1,12 +1,12 @@
+import pyro
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 from chirho.interventional.handlers import do
 from chirho.robust.handlers.predictive import PredictiveModel
+from pyro.infer import Predictive
 
-import pyro
 from cities.modeling.simple_linear import RegisterInput, SimpleLinear
 from cities.modeling.svi_inference import run_svi_inference
-from pyro.infer import Predictive
 
 # set up the data
 n = 600
