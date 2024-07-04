@@ -11,11 +11,11 @@ class VariableCleaner:
         self,
         variable_name: str,
         path_to_raw_csv: str,
-        year_or_category: str = "Year",  # Column name to store years or categories in the long format
+        year_or_category_column_label: str = "Year",  # Column name to store years or categories in the long format
     ):
         self.variable_name = variable_name
         self.path_to_raw_csv = path_to_raw_csv
-        self.year_or_category = year_or_category
+        self.year_or_category_column_label = year_or_category_column_label
         self.root = find_repo_root()
         self.data_grabber = DataGrabber()
         self.folder = "processed"
@@ -98,14 +98,14 @@ class VariableCleaner:
         variable_db_long = pd.melt(
             self.variable_df,
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.year_or_category,
+            var_name=self.year_or_category_column_label,
             value_name="Value",
         )
         variable_db_std_wide = standardize_and_scale(self.variable_df)
         variable_db_std_long = pd.melt(
             variable_db_std_wide.copy(),
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.year_or_category,
+            var_name=self.year_or_category_column_label,
             value_name="Value",
         )
 
@@ -131,9 +131,9 @@ class VariableCleanerMSA(
     VariableCleaner
 ):  # this class inherits functionalites of VariableCleaner, but works at the MSA level
     def __init__(
-        self, variable_name: str, path_to_raw_csv: str, year_or_category: str = "Year"
+        self, variable_name: str, path_to_raw_csv: str, year_or_category_column_label: str = "Year"
     ):
-        super().__init__(variable_name, path_to_raw_csv, year_or_category)
+        super().__init__(variable_name, path_to_raw_csv, year_or_category_column_label)
         self.folder = "MSA_level"
         self.metro_areas = None
 
@@ -216,9 +216,9 @@ class VariableCleanerCT(
         variable_name: str,
         path_to_raw_csv: str,
         time_interval: str,  # pre2020 or post2020
-        year_or_category: str = "Year",
+        year_or_category_column_label: str = "Year",
     ):
-        super().__init__(variable_name, path_to_raw_csv, year_or_category)
+        super().__init__(variable_name, path_to_raw_csv, year_or_category_column_label)
         self.time_interval = time_interval
         self.folder = "Census_tract_level"
         self.census_tracts = None
