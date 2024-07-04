@@ -11,11 +11,11 @@ class VariableCleaner:
         self,
         variable_name: str,
         path_to_raw_csv: str,
-        year_or_category: str = "Year",  # Year or Category
+        year_or_category_column_label: str = "Year",  # Column name to store years or categories in the long format
     ):
         self.variable_name = variable_name
         self.path_to_raw_csv = path_to_raw_csv
-        self.year_or_category = year_or_category
+        self.year_or_category_column_label = year_or_category_column_label
         self.root = find_repo_root()
         self.data_grabber = DataGrabber()
         self.folder = "processed"
@@ -98,14 +98,14 @@ class VariableCleaner:
         variable_db_long = pd.melt(
             self.variable_df,
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.year_or_category,
+            var_name=self.year_or_category_column_label,
             value_name="Value",
         )
         variable_db_std_wide = standardize_and_scale(self.variable_df)
         variable_db_std_long = pd.melt(
             variable_db_std_wide.copy(),
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.year_or_category,
+            var_name=self.year_or_category_column_label,
             value_name="Value",
         )
 
@@ -131,9 +131,12 @@ class VariableCleanerMSA(
     VariableCleaner
 ):  # this class inherits functionalites of VariableCleaner, but works at the MSA level
     def __init__(
-        self, variable_name: str, path_to_raw_csv: str, year_or_category: str = "Year"
+        self,
+        variable_name: str,
+        path_to_raw_csv: str,
+        year_or_category_column_label: str = "Year",
     ):
-        super().__init__(variable_name, path_to_raw_csv, year_or_category)
+        super().__init__(variable_name, path_to_raw_csv, year_or_category_column_label)
         self.folder = "MSA_level"
         self.metro_areas = None
 
@@ -206,3 +209,45 @@ def communities_tracts_to_counties(
             all_results = pd.merge(all_results, result_df, on="GeoFIPS", how="left")
 
     return all_results
+
+
+class VariableCleanerCT(
+    VariableCleanerMSA
+):  # this class inherits functionalites of two previous classes, but works at the Census Tract level
+    def __init__(
+        self,
+        variable_name: str,
+        path_to_raw_csv: str,
+        time_interval: str,  # pre2020 or post2020
+        year_or_category_column_label: str = "Year",
+    ):
+        super().__init__(variable_name, path_to_raw_csv, year_or_category_column_label)
+        self.time_interval = time_interval
+        self.folder = "Census_tract_level"
+        self.census_tracts = None
+
+    def clean_variable(self):
+        self.load_raw_csv()
+        self.drop_nans()
+        self.process_data()
+        # TODO self.check_exclusions('CT') functionality might be usefull in the future
+        self.save_csv_files(self.folder)
+
+    def load_census_tracts(self):
+        if self.time_interval == "pre2020":
+            self.census_tracts = pd.read_csv(
+                f"{self.root}/data/raw/CT_list_pre2020.csv"
+            )
+        elif self.time_interval == "post2020":
+            self.census_tracts = pd.read_csv(
+                f"{self.root}/data/raw/CT_list_post2020.csv"
+            )
+
+    def process_data(self):
+        self.load_census_tracts()
+        assert (
+            self.census_tracts["GeoFIPS"].nunique()
+            == self.variable_df["GeoFIPS"].nunique()
+        ), f'FIPS mismatch! {self.census_tracts["GeoFIPS"].nunique()} vs {self.variable_df["GeoFIPS"].nunique()}'
+
+        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)
