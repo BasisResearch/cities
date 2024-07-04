@@ -131,7 +131,10 @@ class VariableCleanerMSA(
     VariableCleaner
 ):  # this class inherits functionalites of VariableCleaner, but works at the MSA level
     def __init__(
-        self, variable_name: str, path_to_raw_csv: str, year_or_category_column_label: str = "Year"
+        self,
+        variable_name: str,
+        path_to_raw_csv: str,
+        year_or_category_column_label: str = "Year",
     ):
         super().__init__(variable_name, path_to_raw_csv, year_or_category_column_label)
         self.folder = "MSA_level"
