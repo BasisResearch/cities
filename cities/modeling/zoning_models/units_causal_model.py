@@ -68,11 +68,10 @@ def continuous_contribution(continuous, child_name, leeway):
 
         contribution = bias_continuous + weight_continuous * value
         contributions = contribution + contributions
-        #(bias_continuous + torch.einsum("...d, ...d -> ...", value, weight_continuous))
+        
         
     return contributions
     
-
 
 
 def add_linear_continuous_outcome(categorical_parents, 
@@ -173,26 +172,26 @@ class UnitsCausalModel(SimpleLinear):
 
             # continuous
             
-            parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1), obs = continuous['parcel_area'])
+            parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1))#, obs = continuous['parcel_area'])
 
-            limit_con = pyro.sample("limit_con", dist.Normal(0, 1), obs = continuous['limit_con'])
+            limit_con = pyro.sample("limit_con", dist.Normal(0, 1), )#obs = continuous['limit_con'])
 
 
             # categorical
-            year = pyro.sample("year", dist.Categorical(torch.ones(len(categorical_levels['year']))),
-                               obs = categorical['year'])
+            # year = pyro.sample("year", dist.Categorical(torch.ones(len(categorical_levels['year']))),
+            #                    obs = categorical['year'])
             
-            month = pyro.sample("month", dist.Categorical(torch.ones(len(categorical_levels['month']))),
-                                obs = categorical['month'])
+            # month = pyro.sample("month", dist.Categorical(torch.ones(len(categorical_levels['month']))),
+            #                     obs = categorical['month'])
         
 
 
 
-        housing_units_cat_parents = {'year': year, "month": month}
-        housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
+        # housing_units_cat_parents = {} #{'year': year, "month": month}
+        # housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
         
-        add_linear_continuous_outcome(housing_units_cat_parents, 
-                                      housing_units_con_parents, 
-                                      'housing_units', data_plate, n, leeway,
-                                      observations=outcome)
+        # add_linear_continuous_outcome(housing_units_cat_parents, 
+        #                               housing_units_con_parents, 
+        #                               'housing_units', data_plate, n, leeway,
+        #                               observations=outcome)
 
