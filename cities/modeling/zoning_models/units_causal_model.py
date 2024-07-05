@@ -55,23 +55,24 @@ def categorical_contribution(categorical, child_name, leeway, categorical_levels
 
 
 def continuous_contribution(continuous, child_name, leeway):
-    continuous_stacked = torch.stack(list(continuous.values()), dim=0)
+    
+    
+    contributions = torch.zeros(1)
 
-    bias_continuous = pyro.sample(
-        f"bias_continuous_{child_name}",
-        dist.Normal(0.0, leeway).expand([continuous_stacked.shape[-2]]).to_event(1),
-    )
+    for key, value in continuous.items():
+        bias_continuous = pyro.sample(
+            f"bias_continuous_{key}_{child_name}", dist.Normal(0.0, leeway),)
 
-    weight_continuous = pyro.sample(
-        f"weight_continuous_{child_name}",
-        dist.Normal(0.0, leeway).expand([continuous_stacked.shape[-2]]).to_event(1),
-    )
+        weight_continuous = pyro.sample(
+            f"weight_continuous_{key}_{child_name}_", dist.Normal(0.0, leeway),)
 
-    continuous_contribution = bias_continuous.sum() + torch.einsum(
-        "...cd, ...c -> ...d", continuous_stacked, weight_continuous
-    )
+        contribution = bias_continuous + weight_continuous * value
+        contributions = contribution + contributions
+        #(bias_continuous + torch.einsum("...d, ...d -> ...", value, weight_continuous))
+        
+    return contributions
+    
 
-    return continuous_contribution
 
 
 def add_linear_continuous_outcome(categorical_parents, 
@@ -159,17 +160,39 @@ class UnitsCausalModel(SimpleLinear):
         categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
         leeway=0.9,
     ):
-
+        if categorical_levels is None:
+            categorical_levels = self.categorical_levels
 
         _N_categorical, _N_continuous, n = get_n(categorical, continuous)
         data_plate = pyro.plate("data", size=n, dim=-1)
 
-        housing_units_cat_parents = {}
-        housing_units_con_parents = {'limit_con': continuous['limit_con']}
+        #################
+        # register input
+        #################
+        with data_plate:
 
+            # continuous
+            
+            parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1), obs = continuous['parcel_area'])
+
+            limit_con = pyro.sample("limit_con", dist.Normal(0, 1), obs = continuous['limit_con'])
+
+
+            # categorical
+            year = pyro.sample("year", dist.Categorical(torch.ones(len(categorical_levels['year']))),
+                               obs = categorical['year'])
+            
+            month = pyro.sample("month", dist.Categorical(torch.ones(len(categorical_levels['month']))),
+                                obs = categorical['month'])
+        
+
+
+
+        housing_units_cat_parents = {'year': year, "month": month}
+        housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
         
         add_linear_continuous_outcome(housing_units_cat_parents, 
                                       housing_units_con_parents, 
                                       'housing_units', data_plate, n, leeway,
-                                      observations= outcome)
+                                      observations=outcome)
 

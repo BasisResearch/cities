@@ -43,6 +43,8 @@ class SimpleLinear(pyro.nn.PyroModule):  # type: ignore
             self.categorical_levels = dict()
             for name in categorical.keys():
                 self.categorical_levels[name] = torch.unique(categorical[name])
+        else:
+            self.categorical_levels = categorical_levels
 
     def forward(
         self,
