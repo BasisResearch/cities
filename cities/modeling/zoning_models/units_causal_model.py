@@ -71,71 +71,67 @@ def continuous_contribution(continuous, child_name, leeway):
         
         
     return contributions
-    
 
 
-def add_linear_continuous_outcome(categorical_parents, 
-                                                continuous_parents,
-                                                child_name, 
-                                                data_plate, n, leeway, 
-                                                observations = None):
+def add_linear_component(child_name: 'str', 
+                    child_continuous_parents,
+                    child_categorical_parents,
+                    leeway,
+                    data_plate,
+                    observations = None):
 
-    categorical_contribution_to_child = torch.zeros(1, 1, 1, n)
-    continuous_contribution_to_child = torch.zeros(1, 1, 1, n)
+    sigma_child = pyro.sample(f"sigma_{child_name}",
+                    dist.Exponential(1.0))  # type: ignore
 
-    if len(categorical_parents.keys()) > 0:
+    continuous_contribution_to_child = continuous_contribution(
+        child_continuous_parents, child_name, leeway)
 
-        categorical_contribution_to_child = categorical_contribution(
-        categorical_parents, child_name, leeway
-        )
-
-    if len(continuous_parents.keys()) > 0:
-
-        continuous_contribution_to_child = continuous_contribution(
-            continuous_parents, child_name, leeway
-        )
-
-    sigma_child = pyro.sample(f"sigma_{child_name}", dist.Exponential(1.0))  # type: ignore
-
+    categorical_contribution_to_child = categorical_contribution(
+        child_categorical_parents, child_name, leeway
+    )
 
     with data_plate:
 
         mean_prediction_child = pyro.deterministic(  # type: ignore
             f"mean_outcome_prediction_{child_name}",
-            categorical_contribution_to_child
-            + continuous_contribution_to_child,
-            event_dim=0,
+        categorical_contribution_to_child +
+        continuous_contribution_to_child,
+        event_dim=0,
         )
 
         child_observed = pyro.sample(  # type: ignore
-            f"{child_name}",
-            dist.Normal(mean_prediction_child, sigma_child).to_event(1),
-            obs=observations,
+        f"{child_name}",
+        dist.Normal(mean_prediction_child, sigma_child),
+        obs = observations
+        )
+    
+    return child_observed
+
+
+    
+
+def categorical_interaction_variable(interaction_list: List[torch.Tensor]):
+
+    assert len(interaction_list) > 1
+
+    for tensor in interaction_list:
+        assert tensor.shape == interaction_list[0].shape
+
+        stacked_tensor = torch.stack(interaction_list, dim=-1)
+
+        unique_pairs, inverse_indices = torch.unique(
+            stacked_tensor, return_inverse=True, dim=0
         )
 
+        unique_combined_tensor = inverse_indices.reshape(
+            interaction_list[0].shape
+        )
 
-def RegisterInput(model, input_names):
-    def new_model(**kwargs):
+        indexing_dictionary = {
+            tuple(pair.tolist()): i for i, pair in enumerate(unique_pairs)
+        }
 
-        _kwargs = copy.deepcopy(kwargs)
-
-        if "categorical" in input_names.keys():
-            for key in input_names["categorical"].keys():
-                _kwargs["categorical"][key] = pyro.sample(
-                    key, dist.Delta(kwargs["categorical"][key])
-                    )
-        if "continuous" in input_names.keys():
-            for key in kwargs["continuous"].keys():
-                    _kwargs["continuous"][key] = pyro.sample(
-                        key, dist.Delta(kwargs["continuous"][key])
-                    )
-
-        return model(**_kwargs)
-    return new_model
-
-
-
-
+    return unique_combined_tensor, indexing_dictionary
 
 
 class UnitsCausalModel(pyro.nn.PyroModule):
@@ -163,7 +159,6 @@ class UnitsCausalModel(pyro.nn.PyroModule):
                 self.categorical_levels[name] = torch.unique(categorical[name])
         else:
             self.categorical_levels = categorical_levels
-
 
 
 
@@ -200,39 +195,65 @@ class UnitsCausalModel(pyro.nn.PyroModule):
                                  obs = categorical['month'])
         
 
-        # add regression to housing units
-        child_name = "housing_units"
-        observations = outcome
-        child_continuous_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
-        child_categorical_parents = {'year': year, "month": month}
-        sigma_child = pyro.sample(f"sigma_{child_name}", dist.Exponential(1.0))  # type: ignore
-
-
-        continuous_contribution_to_child = continuous_contribution(
-            child_continuous_parents, child_name, leeway)
-
-        categorical_contribution_to_child = categorical_contribution(
-            child_categorical_parents, child_name, leeway
-        )
-     
-
-        with data_plate:
-
-            mean_prediction_child = pyro.deterministic(  # type: ignore
-                f"mean_outcome_prediction_{child_name}",
-            categorical_contribution_to_child+
-            continuous_contribution_to_child,
-            event_dim=0,
-        )
-
-            child_observed = pyro.sample(  # type: ignore
-            f"{child_name}",
-            dist.Normal(mean_prediction_child, sigma_child),
-            obs = observations
-            )
-
+        # _____________________________
+        # regression for housing units
+        # _____________________________
 
     
+        housing_units_continuous_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
+        housing_units_categorical_parents = {'year': year, "month": month}
+        
+        housing_units = add_linear_component(child_name =  "housing_units",
+                            child_continuous_parents= housing_units_continuous_parents,
+                            child_categorical_parents= housing_units_categorical_parents,
+                            leeway=leeway,
+                            data_plate=data_plate,
+                            observations = outcome,)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#     old_forward = model.forward
+
+#     def new_forward(**kwargs):
+#         new_kwargs = kwargs.copy()
+
+#         new_kwargs, indexing_dictionaries = replace_categorical_with_combos(
+#             kwargs, interaction_tuples
+#         )
+
+#         model.indexing_dictionaries = indexing_dictionaries
+#         model.new_kwargs = new_kwargs
+#         old_forward(**new_kwargs)
+
+#     model.forward = new_forward
+
+#     yield
+
+#     model.forward = old_forward
+
+
 
            
     
@@ -265,4 +286,93 @@ class UnitsCausalModel(pyro.nn.PyroModule):
         #                                 housing_units_con_parents, 
         #                                 'housing_units', data_plate, n, leeway,
         #                                 observations=outcome)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def add_linear_continuous_outcome(categorical_parents, 
+#                                                 continuous_parents,
+#                                                 child_name, 
+#                                                 data_plate, n, leeway, 
+#                                                 observations = None):
+
+#     categorical_contribution_to_child = torch.zeros(1, 1, 1, n)
+#     continuous_contribution_to_child = torch.zeros(1, 1, 1, n)
+
+#     if len(categorical_parents.keys()) > 0:
+
+#         categorical_contribution_to_child = categorical_contribution(
+#         categorical_parents, child_name, leeway
+#         )
+
+#     if len(continuous_parents.keys()) > 0:
+
+#         continuous_contribution_to_child = continuous_contribution(
+#             continuous_parents, child_name, leeway
+#         )
+
+#     sigma_child = pyro.sample(f"sigma_{child_name}", dist.Exponential(1.0))  # type: ignore
+
+
+#     with data_plate:
+
+#         mean_prediction_child = pyro.deterministic(  # type: ignore
+#             f"mean_outcome_prediction_{child_name}",
+#             categorical_contribution_to_child
+#             + continuous_contribution_to_child,
+#             event_dim=0,
+#         )
+
+#         child_observed = pyro.sample(  # type: ignore
+#             f"{child_name}",
+#             dist.Normal(mean_prediction_child, sigma_child).to_event(1),
+#             obs=observations,
+#         )
+
+
+# def RegisterInput(model, input_names):
+#     def new_model(**kwargs):
+
+#         _kwargs = copy.deepcopy(kwargs)
+
+#         if "categorical" in input_names.keys():
+#             for key in input_names["categorical"].keys():
+#                 _kwargs["categorical"][key] = pyro.sample(
+#                     key, dist.Delta(kwargs["categorical"][key])
+#                     )
+#         if "continuous" in input_names.keys():
+#             for key in kwargs["continuous"].keys():
+#                     _kwargs["continuous"][key] = pyro.sample(
+#                         key, dist.Delta(kwargs["continuous"][key])
+#                     )
+
+#         return model(**_kwargs)
+#     return new_model
+
+
 
