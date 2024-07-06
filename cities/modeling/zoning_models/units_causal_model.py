@@ -138,7 +138,7 @@ def RegisterInput(model, input_names):
 
 
 
-class UnitsCausalModel(SimpleLinear):
+class UnitsCausalModel(pyro.nn.PyroModule):
     def __init__(
         self,
         categorical: Dict[str, torch.Tensor],
@@ -149,7 +149,23 @@ class UnitsCausalModel(SimpleLinear):
         categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
         leeway=0.9,
     ):
-        super().__init__(categorical, continuous, outcome, categorical_levels, leeway)
+        super().__init__()
+
+        self.leeway = leeway
+
+        self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
+
+        # you might need and pass further the original
+        #  categorical levels of the training data
+        if self.N_categorical > 0 and categorical_levels is None:
+            self.categorical_levels = dict()
+            for name in categorical.keys():
+                self.categorical_levels[name] = torch.unique(categorical[name])
+        else:
+            self.categorical_levels = categorical_levels
+
+
+
 
     def forward(
         self,
@@ -163,6 +179,7 @@ class UnitsCausalModel(SimpleLinear):
             categorical_levels = self.categorical_levels
 
         _N_categorical, _N_continuous, n = get_n(categorical, continuous)
+        
         data_plate = pyro.plate("data", size=n, dim=-1)
 
         #################
@@ -170,28 +187,84 @@ class UnitsCausalModel(SimpleLinear):
         #################
         with data_plate:
 
+            limit_con = pyro.sample("limit_con", dist.Normal(0, 1),
+                                    obs = continuous['limit_con'])
+            parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1),
+                                    obs = continuous['parcel_area'])
+
+        
+
+        # add regression to housing units
+        child_name = "housing_units"
+        observations = outcome
+        housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
+        sigma_child = pyro.sample(f"sigma_{child_name}", dist.Exponential(1.0))  # type: ignore
+
+
+        continuous_contribution_to_child = continuous_contribution(
+            housing_units_con_parents, child_name, leeway)
+
+     
+
+        with data_plate:
+
+            mean_prediction_child = pyro.deterministic(  # type: ignore
+                f"mean_outcome_prediction_{child_name}",
+            #categorical_contribution_to_child+
+            continuous_contribution_to_child,
+            event_dim=0,
+        )
+
+            child_observed = pyro.sample(  # type: ignore
+            f"{child_name}",
+            dist.Normal(mean_prediction_child, sigma_child),
+            obs = observations
+            )
+
+
+            
+            #housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
+            
+            
+
             # continuous
             
-            parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1))#, obs = continuous['parcel_area'])
+            # parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1))#, obs = continuous['parcel_area'])
 
-            limit_con = pyro.sample("limit_con", dist.Normal(0, 1), )#obs = continuous['limit_con'])
+            # limit_con = pyro.sample("limit_con", dist.Normal(0, 1), )#obs = continuous['limit_con'])
 
 
-            # categorical
-            # year = pyro.sample("year", dist.Categorical(torch.ones(len(categorical_levels['year']))),
-            #                    obs = categorical['year'])
             
-            # month = pyro.sample("month", dist.Categorical(torch.ones(len(categorical_levels['month']))),
-            #                     obs = categorical['month'])
-        
+
+           
+    
+            
+            # for key, value in housing_units_con_parents.items():
+            #     bias_continuous = pyro.sample(
+            #         f"bias_continuous_{key}_{'housing_units'}", dist.Normal(0.0, leeway),)
+
+            #     weight_continuous = pyro.sample(
+            #         f"weight_continuous_{key}_{child_name}_", dist.Normal(0.0, leeway),)
+
+            #     contribution = bias_continuous + weight_continuous * value
+                #contributions = contribution + contributions
+                
+                
+            # pyro.deterministic("contributions", contributions, event_dim=0)
+
+            # housing_units_a = pyro.sample("housing_units_a", 
+            #                               dist.Normal(limit_con.sum(), 1))
+
+            # housing_units_cat_parents = {} #{'year': year, "month": month}
+            # housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
+            
+            # continuous_contribution_housing_units = continuous_contribution(
+            #     housing_units_con_parents, 'housing_units_b', leeway)
 
 
 
-        # housing_units_cat_parents = {} #{'year': year, "month": month}
-        # housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
-        
         # add_linear_continuous_outcome(housing_units_cat_parents, 
-        #                               housing_units_con_parents, 
-        #                               'housing_units', data_plate, n, leeway,
-        #                               observations=outcome)
+        #                                 housing_units_con_parents, 
+        #                                 'housing_units', data_plate, n, leeway,
+        #                                 observations=outcome)
 
