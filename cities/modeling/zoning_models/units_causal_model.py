@@ -183,7 +183,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
         data_plate = pyro.plate("data", size=n, dim=-1)
 
         #################
-        # register input
+        # register 
         #################
         with data_plate:
 
@@ -193,24 +193,34 @@ class UnitsCausalModel(pyro.nn.PyroModule):
                                     obs = continuous['parcel_area'])
 
         
+            year = pyro.sample("year", dist.Categorical(torch.ones(len(categorical_levels['year']))),
+                                obs = categorical['year'])
+            
+            month = pyro.sample("month", dist.Categorical(torch.ones(len(categorical_levels['month']))),
+                                 obs = categorical['month'])
+        
 
         # add regression to housing units
         child_name = "housing_units"
         observations = outcome
-        housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
+        child_continuous_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
+        child_categorical_parents = {'year': year, "month": month}
         sigma_child = pyro.sample(f"sigma_{child_name}", dist.Exponential(1.0))  # type: ignore
 
 
         continuous_contribution_to_child = continuous_contribution(
-            housing_units_con_parents, child_name, leeway)
+            child_continuous_parents, child_name, leeway)
 
+        categorical_contribution_to_child = categorical_contribution(
+            child_categorical_parents, child_name, leeway
+        )
      
 
         with data_plate:
 
             mean_prediction_child = pyro.deterministic(  # type: ignore
                 f"mean_outcome_prediction_{child_name}",
-            #categorical_contribution_to_child+
+            categorical_contribution_to_child+
             continuous_contribution_to_child,
             event_dim=0,
         )
@@ -222,19 +232,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
             )
 
 
-            
-            #housing_units_con_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
-            
-            
-
-            # continuous
-            
-            # parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1))#, obs = continuous['parcel_area'])
-
-            # limit_con = pyro.sample("limit_con", dist.Normal(0, 1), )#obs = continuous['limit_con'])
-
-
-            
+    
 
            
     
