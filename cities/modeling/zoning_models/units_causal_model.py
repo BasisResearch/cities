@@ -143,7 +143,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
             torch.Tensor
         ] = None,  # init args kept for uniformity, consider deleting
         categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
-        leeway=0.9,
+        leeway=0.6,
     ):
         super().__init__()
 
@@ -168,7 +168,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
         continuous: Dict[str, torch.Tensor],
         outcome: Optional[torch.Tensor] = None,
         categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
-        leeway=0.9,
+        leeway=0.4,
     ):
         if categorical_levels is None:
             categorical_levels = self.categorical_levels
@@ -182,26 +182,68 @@ class UnitsCausalModel(pyro.nn.PyroModule):
         #################
         with data_plate:
 
-            limit_con = pyro.sample("limit_con", dist.Normal(0, 1),
-                                    obs = continuous['limit_con'])
-            parcel_area = pyro.sample("parcel_area", dist.Normal(0, 1),
-                                    obs = continuous['parcel_area'])
-
         
             year = pyro.sample("year", dist.Categorical(torch.ones(len(categorical_levels['year']))),
                                 obs = categorical['year'])
             
             month = pyro.sample("month", dist.Categorical(torch.ones(len(categorical_levels['month']))),
                                  obs = categorical['month'])
-        
+            
+            zone = pyro.sample("zone", dist.Categorical(torch.ones(len(categorical_levels['zone_id']))),
+                                 obs = categorical['zone_id'])
+            
+            neighborhood = pyro.sample("neighborhood", dist.Categorical(torch.ones(
+                                len(categorical_levels['neighborhood_id']))),
+                                 obs = categorical['neighborhood_id'])
+            
+            ward = pyro.sample("ward", dist.Categorical(torch.ones(
+                                len(categorical_levels['ward_id']))),
+                                 obs = categorical['ward_id'])
+
+            past_reform = pyro.sample("past_reform", dist.Normal(0, 1),
+                                    obs = categorical['past_reform'])
+
+
+
+            past_reform_by_zone = pyro.deterministic("past_reform_by_zone",
+                                    categorical_interaction_variable([past_reform,zone])[0])
+        #___________________________
+        # regression for parcel area
+        #___________________________
+        parcel_area_continuous_parents = {}
+        parcel_are_categorical_parents = {
+            "zone": zone, "neighborhood": neighborhood
+        }
+        parcel_area = add_linear_component(child_name =  "parcel_area",
+                        child_continuous_parents= parcel_area_continuous_parents,
+                        child_categorical_parents= parcel_are_categorical_parents,
+                        leeway=leeway,
+                        data_plate=data_plate,
+                        observations = continuous['parcel_area'],)
+
+
+        #___________________________
+        # regression for limit
+        #___________________________
+
+        limit_con_categorical_parents = {"past_reform_by_zone": past_reform_by_zone}
+
+        limit_con = add_linear_component(child_name =  "limit_con",
+                        child_continuous_parents= {},
+                        child_categorical_parents= limit_con_categorical_parents,
+                        leeway=leeway,
+                        data_plate=data_plate,
+                        observations = continuous['limit_con'],)
+
+
 
         # _____________________________
         # regression for housing units
         # _____________________________
-
     
         housing_units_continuous_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
-        housing_units_categorical_parents = {'year': year, "month": month}
+        housing_units_categorical_parents = {'year': year, "month": month, "zone": zone,
+                                            "neighborhood": neighborhood, "ward": ward}
         
         housing_units = add_linear_component(child_name =  "housing_units",
                             child_continuous_parents= housing_units_continuous_parents,
