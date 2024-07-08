@@ -8,7 +8,7 @@ def clean_income_CT():
     cleaner = VariableCleanerCT(
         variable_name="income_pre2020_CT",
         path_to_raw_csv=f"{root}/data/raw/income_pre2020_ct.csv",
-        year_or_category="Category",
+        year_or_category_column_label="Category",
         time_interval="pre2020",
     )
     cleaner.clean_variable()
@@ -16,7 +16,7 @@ def clean_income_CT():
     cleaner2 = VariableCleanerCT(
         variable_name="income_post2020_CT",
         path_to_raw_csv=f"{root}/data/raw/income_post2020_ct.csv",
-        year_or_category="Category",
+        year_or_category_column_label="Category",
         time_interval="post2020",
     )
     cleaner2.clean_variable()
