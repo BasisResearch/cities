@@ -10,6 +10,7 @@ from cities.utils.cleaning_scripts.clean_gdp import clean_gdp
 from cities.utils.cleaning_scripts.clean_gdp_ma import clean_gdp_ma
 from cities.utils.cleaning_scripts.clean_hazard import clean_hazard
 from cities.utils.cleaning_scripts.clean_homeownership import clean_homeownership
+from cities.utils.cleaning_scripts.clean_income_CT import clean_income_CT
 from cities.utils.cleaning_scripts.clean_income_distribution import (
     clean_income_distribution,
 )
@@ -34,7 +35,6 @@ from cities.utils.cleaning_scripts.clean_unemployment import clean_unemployment
 from cities.utils.cleaning_scripts.clean_urbanicity_ma import clean_urbanicity_ma
 from cities.utils.cleaning_scripts.clean_urbanization import clean_urbanization
 from cities.utils.cleaning_scripts.cleaning_poverty import clean_poverty
-from cities.utils.cleaning_scripts.clean_income_CT import clean_income_CT
 
 # from cities.utils.clean_health import clean_health
 
@@ -44,48 +44,48 @@ clean_income_CT()
 
 clean_population_CT()
 
-# clean_population_density()
+clean_population_density()
 
-# clean_homeownership()
+clean_homeownership()
 
-# clean_income_distribution()
+clean_income_distribution()
 
-# clean_hazard()
+clean_hazard()
 
-# clean_burdens()
+clean_burdens()
 
-# clean_age_composition()
+clean_age_composition()
 
-# clean_gdp_ma()
+clean_gdp_ma()
 
-# clean_industry_ma()
+clean_industry_ma()
 
-# clean_urbanicity_ma()
+clean_urbanicity_ma()
 
-# clean_ethnic_composition_ma()
+clean_ethnic_composition_ma()
 
-# clean_population_ma()
+clean_population_ma()
 
-# clean_poverty()
+clean_poverty()
 
-# clean_unemployment()
+clean_unemployment()
 
-# clean_gdp()
+clean_gdp()
 
-# clean_population()
+clean_population()
 
-# clean_transport()
+clean_transport()
 
-# clean_spending_transportation()
+clean_spending_transportation()
 
-# clean_spending_commerce()
+clean_spending_commerce()
 
-# clean_spending_HHS()
+clean_spending_HHS()
 
-# clean_ethnic_composition()
+clean_ethnic_composition()
 
-# clean_industry()
+clean_industry()
 
-# clean_urbanization()
+clean_urbanization()
 
-# clean_industry_ts()
+clean_industry_ts()

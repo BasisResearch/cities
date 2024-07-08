@@ -249,14 +249,13 @@ class VariableCleanerCT(
             self.census_tracts = pd.read_csv(self.ct_list_file)
 
             self.exclusions_file = f"{self.root}/data/raw/exclusions_ct_post2020.csv"
-        
 
     def add_new_exclusions(self, common_fips):
         new_exclusions = np.setdiff1d(
             self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
         )
         print("Adding new exclusions to new_exclusions.csv: " + str(new_exclusions))
-        
+
         # Append to exclusions file if it exists, otherwise create a new file
         try:
             existing_exclusions = pd.read_csv(self.exclusions_file)
@@ -266,7 +265,11 @@ class VariableCleanerCT(
                     "exclusions": new_exclusions,
                 }
             )
-            updated_exclusions = pd.concat([existing_exclusions, new_exclusions_df]).drop_duplicates().reset_index(drop=True)
+            updated_exclusions = (
+                pd.concat([existing_exclusions, new_exclusions_df])
+                .drop_duplicates()
+                .reset_index(drop=True)
+            )
         except FileNotFoundError:
             new_exclusions_df = pd.DataFrame(
                 {
@@ -275,28 +278,41 @@ class VariableCleanerCT(
                 }
             )
             updated_exclusions = new_exclusions_df
-        
+
         updated_exclusions.to_csv(self.exclusions_file, index=False)
-        
-        self.census_tracts = self.census_tracts[~self.census_tracts["GeoFIPS"].isin(new_exclusions)]
+
+        self.census_tracts = self.census_tracts[
+            ~self.census_tracts["GeoFIPS"].isin(new_exclusions)
+        ]
         self.census_tracts.to_csv(self.ct_list_file, index=False)
         print("Updated CT list saved.")
-        
-        self.variable_df = self.variable_df[self.variable_df["GeoFIPS"].isin(self.census_tracts["GeoFIPS"])]
+
+        self.variable_df = self.variable_df[
+            self.variable_df["GeoFIPS"].isin(self.census_tracts["GeoFIPS"])
+        ]
         print(f"{self.variable_name} data updated.")
 
     def check_exclusions(self):
         common_fips = np.intersect1d(
             self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
         )
-        if len(np.setdiff1d(self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique())) > 0:
+        if (
+            len(
+                np.setdiff1d(
+                    self.census_tracts["GeoFIPS"].unique(),
+                    self.variable_df["GeoFIPS"].unique(),
+                )
+            )
+            > 0
+        ):
             self.add_new_exclusions(common_fips)
         else:
             print("No new exclusions needed.")
             pre_size = self.variable_df.shape[0]
-            self.variable_df = self.variable_df[self.variable_df["GeoFIPS"].isin(self.census_tracts["GeoFIPS"])]
+            self.variable_df = self.variable_df[
+                self.variable_df["GeoFIPS"].isin(self.census_tracts["GeoFIPS"])
+            ]
             print(f" Initial size of {pre_size} reduced to {self.variable_df.shape[0]}")
-
 
     def process_data(self):
         self.load_census_tracts()
@@ -306,5 +322,3 @@ class VariableCleanerCT(
             self.census_tracts["GeoFIPS"].nunique()
             == self.variable_df["GeoFIPS"].nunique()
         ), f'FIPS mismatch! {self.census_tracts["GeoFIPS"].nunique()} vs {self.variable_df["GeoFIPS"].nunique()}'
-
-        
