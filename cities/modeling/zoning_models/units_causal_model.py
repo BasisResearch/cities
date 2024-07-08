@@ -232,6 +232,8 @@ class UnitsCausalModel(pyro.nn.PyroModule):
 
         limit_con_categorical_parents = {"past_reform_by_zone": past_reform_by_zone}
 
+        # TODO consider using a `pyro.deterministic` statement if safe to assume what the 
+        # rules are and hard code them
         limit_con = add_linear_component(child_name =  "limit_con",
                         child_continuous_parents= {},
                         child_categorical_parents= limit_con_categorical_parents,
@@ -257,4 +259,6 @@ class UnitsCausalModel(pyro.nn.PyroModule):
                             data_plate=data_plate,
                             observations = outcome,
                             categorical_levels=categorical_levels)
+        
+        return housing_units
 
