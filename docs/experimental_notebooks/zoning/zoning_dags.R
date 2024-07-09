@@ -31,16 +31,7 @@ zones_dag <- dagitty('dag {
 
 
 plot(zones_dag)
-
-
-
 paths(zones_dag,"limit_con","housing_units") 
-
-
-
-
 adjustmentSets(zones_dag,"limit_con","housing_units",type = "all")
-
-
 impliedConditionalIndependencies(zones_dag)
 

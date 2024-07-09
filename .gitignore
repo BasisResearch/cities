@@ -24,3 +24,5 @@ tests/.coverage
 data/sql/counties_database.db
 data/sql/msa_database.db
 .Rproj.user
+**/*.RData
+**/*.Rhistory
