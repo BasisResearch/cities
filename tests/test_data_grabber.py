@@ -2,7 +2,8 @@ import os
 
 import numpy as np
 
-from cities.utils.data_grabber import (
+from cities.utils.data_grabber import (  # TODO: Change to CTDataGrabber() in the future
+    CTDataGrabberCSV,
     DataGrabber,
     MSADataGrabber,
     list_available_features,
@@ -13,6 +14,7 @@ from cities.utils.data_grabber import (
 
 features = list_available_features()
 features_msa = list_available_features("msa")
+features_ct = list_available_features("census_tract")
 
 
 def test_non_emptiness_DataGrabber():
@@ -56,7 +58,23 @@ def test_non_emptiness_MSADataGrabber():
         assert data_msa.std_long[feature].shape[1] == 4
 
 
-def general_data_format_testing(data, features):
+def test_non_emptiness_CTDataGrabber():
+    os.chdir(os.path.dirname(os.getcwd()))
+    data_ct = CTDataGrabberCSV()  # TODO: Change to CTDataGrabber() in the future
+
+    data_ct.get_features_wide(features_ct)
+    data_ct.get_features_std_wide(features_ct)
+    data_ct.get_features_long(features_ct)
+    data_ct.get_features_std_long(features_ct)
+
+    for feature in features_ct:
+        assert data_ct.wide[feature].shape[0] > 100
+        assert data_ct.std_wide[feature].shape[1] < 100
+        assert data_ct.long[feature].shape[0] > 100
+        assert data_ct.std_long[feature].shape[1] == 4
+
+
+def general_data_format_testing(data, features, level="county_msa"):
     assert features is not None
 
     data.get_features_wide(features)
@@ -76,23 +94,27 @@ def general_data_format_testing(data, features):
         assert data.std_long[feature].iloc[:, 1].dtype == object, dataTypeError
 
     for feature in features:
-        namesFipsError = "FIPS codes and GeoNames don't match!"
-        assert (
-            data.wide[feature]["GeoFIPS"].nunique()
-            == data.wide[feature]["GeoName"].nunique()
-        ), namesFipsError
-        assert (
-            data.long[feature]["GeoFIPS"].nunique()
-            == data.long[feature]["GeoName"].nunique()
-        ), namesFipsError
-        assert (
-            data.std_wide[feature]["GeoFIPS"].nunique()
-            == data.std_wide[feature]["GeoName"].nunique()
-        ), namesFipsError
-        assert (
-            data.std_long[feature]["GeoFIPS"].nunique()
-            == data.std_long[feature]["GeoName"].nunique()
-        ), namesFipsError
+        if level == "county_msa":
+            namesFipsError = "FIPS codes and GeoNames don't match!"
+            assert (
+                data.wide[feature]["GeoFIPS"].nunique()
+                == data.wide[feature]["GeoName"].nunique()
+            ), namesFipsError
+            assert (
+                data.long[feature]["GeoFIPS"].nunique()
+                == data.long[feature]["GeoName"].nunique()
+            ), namesFipsError
+            assert (
+                data.std_wide[feature]["GeoFIPS"].nunique()
+                == data.std_wide[feature]["GeoName"].nunique()
+            ), namesFipsError
+            assert (
+                data.std_long[feature]["GeoFIPS"].nunique()
+                == data.std_long[feature]["GeoName"].nunique()
+            ), namesFipsError
+
+        elif level == "census_tract":
+            pass  # TODO: check whether the county number is correct as indicated by the CT number
 
     for feature in features:
         for column in data.wide[feature].columns[2:]:
@@ -148,6 +170,12 @@ def test_MSADataGrabber_data_types():
     general_data_format_testing(data_msa, features_msa)
 
 
+def test_CTDataGrabber_data_types():
+    data_ct = CTDataGrabberCSV()  # TODO: Change to CTDataGrabber() in the future
+
+    general_data_format_testing(data_ct, features_ct, level="census_tract")
+
+
 def test_feature_listing_runtime():
     features = list_available_features()
     tensed_features = list_tensed_features()
@@ -180,3 +208,15 @@ def test_GeoFIPS_ma_column_values():
         column_values = data_msa.long[feature]["GeoFIPS"]
 
         assert all(value > 9999 and str(value)[-1] == "0" for value in column_values)
+
+
+data_ct = CTDataGrabberCSV()  # TODO: Change to CTDataGrabber() in the future
+data_ct.get_features_wide(features_ct)
+
+
+def test_GeoFIPS_ct_column_values():
+    for feature in features_ct:
+        data_ct.wide[feature]["GeoFIPS"]
+        column_values = data_ct.wide[feature]["GeoFIPS"]
+
+        assert all(value > 999999999 for value in column_values)
