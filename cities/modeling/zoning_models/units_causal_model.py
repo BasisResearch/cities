@@ -145,7 +145,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
             torch.Tensor
         ] = None,  # init args kept for uniformity, consider deleting
         categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
-        leeway=0.6,
+        leeway=0.9,
     ):
         super().__init__()
 
@@ -170,7 +170,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
         continuous: Dict[str, torch.Tensor],
         outcome: Optional[torch.Tensor] = None,
         categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
-        leeway=0.4,
+        leeway=0.9,
     ):
         if categorical_levels is None:
             categorical_levels = self.categorical_levels
@@ -198,7 +198,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
                                 len(categorical_levels['neighborhood_id']))),
                                  obs = categorical['neighborhood_id'])
             
-            ward_id = pyro.sample("ward_d", dist.Categorical(torch.ones(
+            ward_id = pyro.sample("ward_id", dist.Categorical(torch.ones(
                                 len(categorical_levels['ward_id']))),
                                  obs = categorical['ward_id'])
 
