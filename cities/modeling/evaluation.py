@@ -36,7 +36,7 @@ def prep_data_for_test(train_size=0.8):
 
 
 def recode_categorical(kwarg_names, train_loader, test_loader):
-    
+
     assert all(
         item in kwarg_names.keys() for item in ["categorical", "continuous", "outcome"]
     )
@@ -91,16 +91,14 @@ def recode_categorical(kwarg_names, train_loader, test_loader):
             [mappings[name][x.item()] for x in _test_data["categorical"][name]]
         )
 
-    #for key in _train_data['categorical'].keys():
+    # for key in _train_data['categorical'].keys():
     #     print(key)
     #     print(_train_data['categorical'][key].unique())
     #     print(_test_data['categorical'][key].unique())
-    #  TODO codsider adding assertion        
+    #  TODO codsider adding assertion
     #   assert torch.all(test_data['categorical'][key].unique() in _train_data['categorical'][key].unique())
-    
 
     return _train_data, _test_data
-
 
 
 def test_performance(
@@ -111,10 +109,9 @@ def test_performance(
     categorical_levels,
     n_steps=600,
     plot=True,
-    is_class = True    
+    is_class=True,
 ):
-    _train_data, _test_data = recode_categorical(kwarg_names, 
-                                                train_loader, test_loader)
+    _train_data, _test_data = recode_categorical(kwarg_names, train_loader, test_loader)
 
     pyro.clear_param_store()
     # TODO perhaps remove the original categorical levels here
@@ -130,8 +127,8 @@ def test_performance(
         model = model_or_class
 
     guide = run_svi_inference(
-            model, n_steps=n_steps, lr=0.01, verbose=True, **_train_data
-        )
+        model, n_steps=n_steps, lr=0.01, verbose=True, **_train_data
+    )
 
     predictive = Predictive(model, guide=guide, num_samples=1000)
 
@@ -151,12 +148,14 @@ def test_performance(
         categorical_levels=categorical_levels,
     )
 
-    train_predicted_mean = samples_training[kwarg_names['outcome']].squeeze().mean(dim=0)
+    train_predicted_mean = (
+        samples_training[kwarg_names["outcome"]].squeeze().mean(dim=0)
+    )
     train_predicted_lower = (
-        samples_training[kwarg_names['outcome']].squeeze().quantile(0.05, dim=0)
+        samples_training[kwarg_names["outcome"]].squeeze().quantile(0.05, dim=0)
     )
     train_predicted_upper = (
-        samples_training[kwarg_names['outcome']].squeeze().quantile(0.95, dim=0)
+        samples_training[kwarg_names["outcome"]].squeeze().quantile(0.95, dim=0)
     )
 
     coverage_training = (
@@ -168,12 +167,12 @@ def test_performance(
 
     rsquared_train = 1 - residuals_train.var() / _train_data["outcome"].squeeze().var()
 
-    test_predicted_mean = samples_test[kwarg_names['outcome']].squeeze().mean(dim=0)
+    test_predicted_mean = samples_test[kwarg_names["outcome"]].squeeze().mean(dim=0)
     test_predicted_lower = (
-        samples_test[kwarg_names['outcome']].squeeze().quantile(0.05, dim=0)
+        samples_test[kwarg_names["outcome"]].squeeze().quantile(0.05, dim=0)
     )
     test_predicted_upper = (
-        samples_test[kwarg_names['outcome']].squeeze().quantile(0.95, dim=0)
+        samples_test[kwarg_names["outcome"]].squeeze().quantile(0.95, dim=0)
     )
 
     coverage_test = (

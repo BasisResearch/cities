@@ -1,12 +1,8 @@
-import contextlib
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
 import pyro
 import pyro.distributions as dist
 import torch
-
-
-import copy
 
 
 def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tensor]):
@@ -19,7 +15,6 @@ def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tens
         n = len(next(iter(continuous.values())))
 
     return N_categorical, N_continuous, n
-
 
 
 def categorical_contribution(categorical, child_name, leeway, categorical_levels=None):
@@ -40,7 +35,6 @@ def categorical_contribution(categorical, child_name, leeway, categorical_levels
             dist.Normal(0.0, leeway).expand(categorical_levels[name].shape).to_event(1),
         )
 
-        
         objects_cat_weighted[name] = weights_categorical_outcome[name][
             ..., categorical[name]
         ]
@@ -55,62 +49,67 @@ def categorical_contribution(categorical, child_name, leeway, categorical_levels
 
 
 def continuous_contribution(continuous, child_name, leeway):
-    
-    
+
     contributions = torch.zeros(1)
 
     for key, value in continuous.items():
         bias_continuous = pyro.sample(
-            f"bias_continuous_{key}_{child_name}", dist.Normal(0.0, leeway),)
+            f"bias_continuous_{key}_{child_name}",
+            dist.Normal(0.0, leeway),
+        )
 
         weight_continuous = pyro.sample(
-            f"weight_continuous_{key}_{child_name}_", dist.Normal(0.0, leeway),)
+            f"weight_continuous_{key}_{child_name}_",
+            dist.Normal(0.0, leeway),
+        )
 
         contribution = bias_continuous + weight_continuous * value
         contributions = contribution + contributions
-        
-        
+
     return contributions
 
 
-def add_linear_component(child_name: 'str', 
-                    child_continuous_parents,
-                    child_categorical_parents,
-                    leeway,
-                    data_plate,
-                    observations = None,
-                    categorical_levels = None):
+def add_linear_component(
+    child_name: "str",
+    child_continuous_parents,
+    child_categorical_parents,
+    leeway,
+    data_plate,
+    observations=None,
+    categorical_levels=None,
+):
 
-    sigma_child = pyro.sample(f"sigma_{child_name}",
-                    dist.Exponential(1.0))  # type: ignore
+    sigma_child = pyro.sample(
+        f"sigma_{child_name}", dist.Exponential(1.0)
+    )  # type: ignore
 
     continuous_contribution_to_child = continuous_contribution(
-        child_continuous_parents, child_name, leeway)
+        child_continuous_parents, child_name, leeway
+    )
 
     categorical_contribution_to_child = categorical_contribution(
-        child_categorical_parents, child_name, leeway, 
-        categorical_levels = categorical_levels
+        child_categorical_parents,
+        child_name,
+        leeway,
+        categorical_levels=categorical_levels,
     )
 
     with data_plate:
 
         mean_prediction_child = pyro.deterministic(  # type: ignore
             f"mean_outcome_prediction_{child_name}",
-        categorical_contribution_to_child +
-        continuous_contribution_to_child,
-        event_dim=0,
+            categorical_contribution_to_child + continuous_contribution_to_child,
+            event_dim=0,
         )
 
         child_observed = pyro.sample(  # type: ignore
-        f"{child_name}",
-        dist.Normal(mean_prediction_child, sigma_child),
-        obs = observations
+            f"{child_name}",
+            dist.Normal(mean_prediction_child, sigma_child),
+            obs=observations,
         )
-    
+
     return child_observed
 
-
-    
 
 def categorical_interaction_variable(interaction_list: List[torch.Tensor]):
 
@@ -125,9 +124,7 @@ def categorical_interaction_variable(interaction_list: List[torch.Tensor]):
             stacked_tensor, return_inverse=True, dim=0
         )
 
-        unique_combined_tensor = inverse_indices.reshape(
-            interaction_list[0].shape
-        )
+        unique_combined_tensor = inverse_indices.reshape(interaction_list[0].shape)
 
         indexing_dictionary = {
             tuple(pair.tolist()): i for i, pair in enumerate(unique_pairs)
@@ -144,7 +141,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
         outcome: Optional[
             torch.Tensor
         ] = None,  # init args kept for uniformity, consider deleting
-        categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
+        categorical_levels: Optional[Dict[str, Any]] = None,
         leeway=0.9,
     ):
         super().__init__()
@@ -160,9 +157,7 @@ class UnitsCausalModel(pyro.nn.PyroModule):
             for name in categorical.keys():
                 self.categorical_levels[name] = torch.unique(categorical[name])
         else:
-            self.categorical_levels = categorical_levels
-
-
+            self.categorical_levels = categorical_levels  # type: ignore
 
     def forward(
         self,
@@ -176,89 +171,117 @@ class UnitsCausalModel(pyro.nn.PyroModule):
             categorical_levels = self.categorical_levels
 
         _N_categorical, _N_continuous, n = get_n(categorical, continuous)
-        
+
         data_plate = pyro.plate("data", size=n, dim=-1)
 
         #################
-        # register 
+        # register
         #################
         with data_plate:
 
-        
-            year = pyro.sample("year", dist.Categorical(torch.ones(len(categorical_levels['year']))),
-                                obs = categorical['year'])
-            
-            month = pyro.sample("month", dist.Categorical(torch.ones(len(categorical_levels['month']))),
-                                 obs = categorical['month'])
-            
-            zone_id = pyro.sample("zone_id", dist.Categorical(torch.ones(len(categorical_levels['zone_id']))),
-                                 obs = categorical['zone_id'])
-            
-            neighborhood_id = pyro.sample("neighborhood_id", dist.Categorical(torch.ones(
-                                len(categorical_levels['neighborhood_id']))),
-                                 obs = categorical['neighborhood_id'])
-            
-            ward_id = pyro.sample("ward_id", dist.Categorical(torch.ones(
-                                len(categorical_levels['ward_id']))),
-                                 obs = categorical['ward_id'])
+            year = pyro.sample(
+                "year",
+                dist.Categorical(torch.ones(len(categorical_levels["year"]))),
+                obs=categorical["year"],
+            )
 
-            past_reform = pyro.sample("past_reform", dist.Normal(0, 1),
-                                    obs = categorical['past_reform'])
+            month = pyro.sample(
+                "month",
+                dist.Categorical(torch.ones(len(categorical_levels["month"]))),
+                obs=categorical["month"],
+            )
 
+            zone_id = pyro.sample(
+                "zone_id",
+                dist.Categorical(torch.ones(len(categorical_levels["zone_id"]))),
+                obs=categorical["zone_id"],
+            )
 
+            neighborhood_id = pyro.sample(
+                "neighborhood_id",
+                dist.Categorical(
+                    torch.ones(len(categorical_levels["neighborhood_id"]))
+                ),
+                obs=categorical["neighborhood_id"],
+            )
 
-            past_reform_by_zone = pyro.deterministic("past_reform_by_zone",
-                                    categorical_interaction_variable([past_reform,zone_id])[0])
-            categorical_levels['past_reform_by_zone'] = torch.unique(past_reform_by_zone)
-        #___________________________
+            ward_id = pyro.sample(
+                "ward_id",
+                dist.Categorical(torch.ones(len(categorical_levels["ward_id"]))),
+                obs=categorical["ward_id"],
+            )
+
+            past_reform = pyro.sample(
+                "past_reform", dist.Normal(0, 1), obs=categorical["past_reform"]
+            )
+
+            past_reform_by_zone = pyro.deterministic(
+                "past_reform_by_zone",
+                categorical_interaction_variable([past_reform, zone_id])[0],
+            )
+            categorical_levels["past_reform_by_zone"] = torch.unique(
+                past_reform_by_zone
+            )
+        # ___________________________
         # regression for parcel area
-        #___________________________
-        parcel_area_continuous_parents = {}
+        # ___________________________
+        parcel_area_continuous_parents = {}  # type: ignore
         parcel_are_categorical_parents = {
-            "zone_id": zone_id, "neighborhood_id": neighborhood_id
+            "zone_id": zone_id,
+            "neighborhood_id": neighborhood_id,
         }
-        parcel_area = add_linear_component(child_name =  "parcel_area",
-                        child_continuous_parents= parcel_area_continuous_parents,
-                        child_categorical_parents= parcel_are_categorical_parents,
-                        leeway=leeway,
-                        data_plate=data_plate,
-                        observations = continuous['parcel_area'],
-                        categorical_levels=categorical_levels)
+        parcel_area = add_linear_component(
+            child_name="parcel_area",
+            child_continuous_parents=parcel_area_continuous_parents,
+            child_categorical_parents=parcel_are_categorical_parents,
+            leeway=leeway,
+            data_plate=data_plate,
+            observations=continuous["parcel_area"],
+            categorical_levels=categorical_levels,
+        )
 
-
-        #___________________________
+        # ___________________________
         # regression for limit
-        #___________________________
+        # ___________________________
 
         limit_con_categorical_parents = {"past_reform_by_zone": past_reform_by_zone}
 
-        # TODO consider using a `pyro.deterministic` statement if safe to assume what the 
+        # TODO consider using a `pyro.deterministic` statement if safe to assume what the
         # rules are and hard code them
-        limit_con = add_linear_component(child_name =  "limit_con",
-                        child_continuous_parents= {},
-                        child_categorical_parents= limit_con_categorical_parents,
-                        leeway=leeway,
-                        data_plate=data_plate,
-                        observations = continuous['limit_con'],
-                        categorical_levels=categorical_levels)
-
-
+        limit_con = add_linear_component(
+            child_name="limit_con",
+            child_continuous_parents={},
+            child_categorical_parents=limit_con_categorical_parents,
+            leeway=leeway,
+            data_plate=data_plate,
+            observations=continuous["limit_con"],
+            categorical_levels=categorical_levels,
+        )
 
         # _____________________________
         # regression for housing units
         # _____________________________
-    
-        housing_units_continuous_parents = {'limit_con': limit_con, 'parcel_area': parcel_area}
-        housing_units_categorical_parents = {'year': year, "month": month, "zone_id": zone_id,
-                                            "neighborhood_id": neighborhood_id, "ward_id": ward_id}
-        
-        housing_units = add_linear_component(child_name =  "housing_units",
-                            child_continuous_parents= housing_units_continuous_parents,
-                            child_categorical_parents= housing_units_categorical_parents,
-                            leeway=leeway,
-                            data_plate=data_plate,
-                            observations = outcome,
-                            categorical_levels=categorical_levels)
-        
-        return housing_units
 
+        housing_units_continuous_parents = {
+            "limit_con": limit_con,
+            "parcel_area": parcel_area,
+        }
+        housing_units_categorical_parents = {
+            "year": year,
+            "month": month,
+            "zone_id": zone_id,
+            "neighborhood_id": neighborhood_id,
+            "ward_id": ward_id,
+        }
+
+        housing_units = add_linear_component(
+            child_name="housing_units",
+            child_continuous_parents=housing_units_continuous_parents,
+            child_categorical_parents=housing_units_categorical_parents,
+            leeway=leeway,
+            data_plate=data_plate,
+            observations=outcome,
+            categorical_levels=categorical_levels,
+        )
+
+        return housing_units
