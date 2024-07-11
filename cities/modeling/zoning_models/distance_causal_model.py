@@ -20,7 +20,7 @@ class DistanceCausalModel(pyro.nn.PyroModule):
             torch.Tensor
         ] = None,  # init args kept for uniformity, consider deleting
         categorical_levels: Optional[Dict[str, Any]] = None,
-        leeway=0.9,
+        leeway=0.3,
     ):
         super().__init__()
 
@@ -93,13 +93,24 @@ class DistanceCausalModel(pyro.nn.PyroModule):
                 "past_reform", dist.Normal(0, 1), obs=categorical["past_reform"]
             )
 
-            past_reform_by_zone = pyro.deterministic(
-                "past_reform_by_zone",
-                categorical_interaction_variable([past_reform, zone_id])[0],
-            )
-            categorical_levels["past_reform_by_zone"] = torch.unique(
-                past_reform_by_zone
-            )
+            # past_reform_by_zone = pyro.deterministic(
+            #     "past_reform_by_zone",
+            #     categorical_interaction_variable([past_reform, zone_id])[0],
+            # )
+            # categorical_levels["past_reform_by_zone"] = torch.unique(
+            #     past_reform_by_zone
+            # )
+
+        #___________________________________
+        # deterministic def of actual limits
+        #___________________________________
+
+        with data_plate:
+            limit_con = pyro.deterministic("limit_con",
+                        torch.where(zone_id == 0, torch.tensor(0.0), torch.where(zone_id == 1, 1.0 - past_reform,
+                                            torch.where(zone_id == 2, 1.0 - 0.5 * past_reform, torch.tensor(1.0)))), 
+                                            event_dim=0)
+
 
 
         # __________________________________
@@ -141,22 +152,22 @@ class DistanceCausalModel(pyro.nn.PyroModule):
         )
 
         # ___________________________
-        # regression for limit
+        # regression for limit suspended in light of pyro.deterministic
         # ___________________________
 
-        limit_con_categorical_parents = {"past_reform_by_zone": past_reform_by_zone}
+        # limit_con_categorical_parents = {"past_reform_by_zone": past_reform_by_zone}
 
-        # TODO consider using a `pyro.deterministic` statement if safe to assume what the
-        # rules are and hard code them
-        limit_con = add_linear_component(
-            child_name="limit_con",
-            child_continuous_parents={},
-            child_categorical_parents=limit_con_categorical_parents,
-            leeway=leeway,
-            data_plate=data_plate,
-            observations=continuous["limit_con"],
-            categorical_levels=categorical_levels,
-        )
+        # # TODO consider using a `pyro.deterministic` statement if safe to assume what the
+        # # rules are and hard code them
+        # limit_con = add_linear_component(
+        #     child_name="limit_con",
+        #     child_continuous_parents={},
+        #     child_categorical_parents=limit_con_categorical_parents,
+        #     leeway=leeway,
+        #     data_plate=data_plate,
+        #     observations=continuous["limit_con"],
+        #     categorical_levels=categorical_levels,
+        # )
 
         # _____________________________
         # regression for housing units
