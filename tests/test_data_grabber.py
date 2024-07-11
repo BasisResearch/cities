@@ -83,7 +83,7 @@ def general_data_format_testing(data, features, level="county_msa"):
     data.get_features_std_long(features)
 
     for feature in features:
-        
+
         assert data.wide[feature].iloc[:, 0].dtype == np.int64, (
             f"Wrong data type for '{feature}' in 'data.wide' at {level} level: "
             f"Expected np.int64, got {data.wide[feature].iloc[:, 0].dtype}"
@@ -92,7 +92,7 @@ def general_data_format_testing(data, features, level="county_msa"):
             f"Wrong data type for '{feature}' in 'data.wide' at {level} level: "
             f"Expected object, got {data.wide[feature].iloc[:, 1].dtype}"
         )
- 
+
         assert data.std_wide[feature].iloc[:, 0].dtype == np.int64, (
             f"Wrong data type for '{feature}' in 'data.std_wide' at {level} level: "
             f"Expected np.int64, got {data.std_wide[feature].iloc[:, 0].dtype}"
@@ -101,7 +101,7 @@ def general_data_format_testing(data, features, level="county_msa"):
             f"Wrong data type for '{feature}' in 'data.std_wide' at {level} level: "
             f"Expected object, got {data.std_wide[feature].iloc[:, 1].dtype}"
         )
-  
+
         assert data.long[feature].iloc[:, 0].dtype == np.int64, (
             f"Wrong data type for '{feature}' in 'data.long' at {level} level: "
             f"Expected np.int64, got {data.long[feature].iloc[:, 0].dtype}"
@@ -110,7 +110,7 @@ def general_data_format_testing(data, features, level="county_msa"):
             f"Wrong data type for '{feature}' in 'data.long' at {level} level: "
             f"Expected object, got {data.long[feature].iloc[:, 1].dtype}"
         )
-        
+
         assert data.std_long[feature].iloc[:, 0].dtype == np.int64, (
             f"Wrong data type for '{feature}' in 'data.std_long' at {level} level: "
             f"Expected np.int64, got {data.std_long[feature].iloc[:, 0].dtype}"
@@ -119,7 +119,6 @@ def general_data_format_testing(data, features, level="county_msa"):
             f"Wrong data type for '{feature}' in 'data.std_long' at {level} level: "
             f"Expected object, got {data.std_long[feature].iloc[:, 1].dtype}"
         )
-
 
     for feature in features:
         if level == "county_msa":
