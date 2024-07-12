@@ -35,11 +35,14 @@ from cities.utils.cleaning_scripts.clean_urbanicity_ct import clean_urbanicity_C
 from cities.utils.cleaning_scripts.clean_urbanicity_ma import clean_urbanicity_ma
 from cities.utils.cleaning_scripts.clean_urbanization import clean_urbanization
 from cities.utils.cleaning_scripts.cleaning_poverty import clean_poverty
+from cities.utils.cleaning_scripts.clean_unemployment_ct import clean_unemployment_CT
 
 # from cities.utils.clean_health import clean_health
 
 
 # clean_health() lost of another 15-ish fips
+
+clean_unemployment_CT()
 
 clean_urbanicity_CT()
 
