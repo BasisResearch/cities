@@ -20,7 +20,7 @@ class DistanceCausalModel(pyro.nn.PyroModule):
             torch.Tensor
         ] = None,  # init args kept for uniformity, consider deleting
         categorical_levels: Optional[Dict[str, Any]] = None,
-        leeway=0.3,
+        leeway=0.9,
     ):
         super().__init__()
 
