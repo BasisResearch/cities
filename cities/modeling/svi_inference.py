@@ -12,6 +12,7 @@ def run_svi_inference(
     guide=None,
     hide = None,
     n_steps=500,
+    ylim = None,
     **model_kwargs
 ):
     losses = []
@@ -32,6 +33,9 @@ def run_svi_inference(
             print("[iteration %04d] loss: %.4f" % (step, loss))
 
     plt.plot(losses)
+    if ylim:
+        plt.ylim(ylim)
+    plt.show()
 
 
     return guide
