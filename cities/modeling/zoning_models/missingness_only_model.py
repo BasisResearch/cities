@@ -49,11 +49,9 @@ def add_logistic_component(
             event_dim=0,
             )
                 
-        child_probs = pyro.deterministic("child_probs", torch.sigmoid(mean_prediction_child),
+        child_probs = pyro.deterministic(f"child_probs_{child_name}", torch.sigmoid(mean_prediction_child),
                                          event_dim=0,)
         
-        # blocking categorical observed var from inference
-        #with pyro.poutine.block(hide=[f"{child_name}"]):
         child_observed = pyro.sample(
             f"{child_name}",
             dist.Bernoulli(child_probs),
@@ -119,8 +117,8 @@ class MissingnessOnlyModel(pyro.nn.PyroModule):
                 obs=categorical["year"],
             )
 
-            parcel_area = pyro.sample(
-                "parcel_area", dist.Normal(0, 1), obs=continuous["parcel_area"]
+            value = pyro.sample(
+                "value", dist.Normal(0, 1), obs=continuous["value"]
             )
 
             # month = pyro.sample(
@@ -160,7 +158,7 @@ class MissingnessOnlyModel(pyro.nn.PyroModule):
         
 
         applied_continuous_parents = {
-            "parcel_area": parcel_area,
+            "value": value,
         }
         applied_categorical_parents = {
             "year": year,
@@ -172,7 +170,7 @@ class MissingnessOnlyModel(pyro.nn.PyroModule):
             child_categorical_parents=applied_categorical_parents,
             leeway=11.57,
             data_plate=data_plate,
-            observations=outcome,
+            observations= categorical["applied"],
             categorical_levels=categorical_levels,
         )
 

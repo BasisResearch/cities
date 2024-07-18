@@ -26,3 +26,6 @@ data/sql/msa_database.db
 .Rproj.user
 **/*.RData
 **/*.Rhistory
+
+# data
+data/minneapolis/processed/values_long.csv
