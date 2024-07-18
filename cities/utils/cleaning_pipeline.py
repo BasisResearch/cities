@@ -31,11 +31,11 @@ from cities.utils.cleaning_scripts.clean_spending_transportation import (
 )
 from cities.utils.cleaning_scripts.clean_transport import clean_transport
 from cities.utils.cleaning_scripts.clean_unemployment import clean_unemployment
+from cities.utils.cleaning_scripts.clean_unemployment_ct import clean_unemployment_CT
 from cities.utils.cleaning_scripts.clean_urbanicity_ct import clean_urbanicity_CT
 from cities.utils.cleaning_scripts.clean_urbanicity_ma import clean_urbanicity_ma
 from cities.utils.cleaning_scripts.clean_urbanization import clean_urbanization
 from cities.utils.cleaning_scripts.cleaning_poverty import clean_poverty
-from cities.utils.cleaning_scripts.clean_unemployment_ct import clean_unemployment_CT
 
 # from cities.utils.clean_health import clean_health
 
