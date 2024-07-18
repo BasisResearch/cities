@@ -10,6 +10,63 @@ from cities.modeling.zoning_models.units_causal_model import (get_n, categorical
 
 
 
+# see A WEAKLY INFORMATIVE DEFAULT PRIOR DISTRIBUTION FOR
+# LOGISTIC AND OTHER REGRESSION MODELS
+# B Y A NDREW G ELMAN , A LEKS JAKULIN , M ARIA G RAZIA
+# P ITTAU AND Y U -S UNG S 
+# they recommed Cauchy with 2.5 scale for coefficient priors
+
+# see also zoning_missingness_only.ipynb for a normal approximation
+
+
+def add_logistic_component(
+    child_name: "str",
+    child_continuous_parents,
+    child_categorical_parents,
+    leeway,  
+    data_plate,
+    observations=None,
+    categorical_levels=None,
+):
+
+
+    continuous_contribution_to_child = continuous_contribution(
+        child_continuous_parents, child_name, leeway
+    )
+
+    categorical_contribution_to_child = categorical_contribution(
+        child_categorical_parents,
+        child_name,
+        leeway,
+        categorical_levels=categorical_levels,
+    )
+
+    with data_plate:
+
+        mean_prediction_child = pyro.deterministic(  # type: ignore
+            f"mean_outcome_prediction_{child_name}",
+            categorical_contribution_to_child + continuous_contribution_to_child,
+            event_dim=0,
+            )
+                
+        child_probs = pyro.deterministic("child_probs", torch.sigmoid(mean_prediction_child),
+                                         event_dim=0,)
+        
+        # blocking categorical observed var from inference
+        #with pyro.poutine.block(hide=[f"{child_name}"]):
+        child_observed = pyro.sample(
+            f"{child_name}",
+            dist.Bernoulli(child_probs),
+            obs=observations,
+        )
+
+       
+    #TODO consider a gamma-like distro here
+
+    return child_observed
+
+
+
 class MissingnessOnlyModel(pyro.nn.PyroModule):
     def __init__(
         self,
@@ -109,11 +166,11 @@ class MissingnessOnlyModel(pyro.nn.PyroModule):
             "year": year,
         }
 
-        applied = add_linear_component(
+        applied = add_logistic_component(
             child_name="applied",
             child_continuous_parents=applied_continuous_parents,
             child_categorical_parents=applied_categorical_parents,
-            leeway=leeway,
+            leeway=11.57,
             data_plate=data_plate,
             observations=outcome,
             categorical_levels=categorical_levels,

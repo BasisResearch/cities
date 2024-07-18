@@ -10,12 +10,13 @@ def run_svi_inference(
     lr=0.03,
     vi_family=AutoMultivariateNormal,
     guide=None,
+    hide = None,
     n_steps=500,
     **model_kwargs
 ):
     losses = []
     if guide is None:
-        guide = vi_family(model, init_loc_fn=init_to_mean)
+        guide = vi_family(pyro.poutine.block(model, hide=hide), init_loc_fn=init_to_mean)
     elbo = pyro.infer.Trace_ELBO()(model, guide)
 
     elbo(**model_kwargs)
@@ -31,5 +32,6 @@ def run_svi_inference(
             print("[iteration %04d] loss: %.4f" % (step, loss))
 
     plt.plot(losses)
+
 
     return guide
