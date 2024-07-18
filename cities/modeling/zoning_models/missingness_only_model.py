@@ -49,7 +49,7 @@ def add_logistic_component(
             event_dim=0,
             )
                 
-        child_probs = pyro.deterministic("child_probs", torch.sigmoid(mean_prediction_child),
+        child_probs = pyro.deterministic(f"child_probs_{child_name}", torch.sigmoid(mean_prediction_child),
                                          event_dim=0,)
         
         child_observed = pyro.sample(
