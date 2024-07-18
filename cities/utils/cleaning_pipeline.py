@@ -14,6 +14,7 @@ from cities.utils.cleaning_scripts.clean_income_distribution import (
     clean_income_distribution,
 )
 from cities.utils.cleaning_scripts.clean_industry import clean_industry
+from cities.utils.cleaning_scripts.clean_industry_ct import clean_industry_CT
 from cities.utils.cleaning_scripts.clean_industry_ma import clean_industry_ma
 from cities.utils.cleaning_scripts.clean_industry_ts import clean_industry_ts
 from cities.utils.cleaning_scripts.clean_population import clean_population
@@ -41,6 +42,8 @@ from cities.utils.cleaning_scripts.cleaning_poverty import clean_poverty
 
 
 # clean_health() lost of another 15-ish fips
+
+clean_industry_CT()
 
 clean_unemployment_CT()
 
