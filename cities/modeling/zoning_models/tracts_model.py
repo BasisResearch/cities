@@ -60,11 +60,11 @@ class TractsModel(pyro.nn.PyroModule):
         # #################
         with data_plate:
 
-            year = pyro.sample(
-                "year",
-                dist.Categorical(torch.ones(len(categorical_levels["year"]))),
-                obs=categorical["year"],
-            )
+            # year = pyro.sample(
+            #     "year",
+            #     dist.Categorical(torch.ones(len(categorical_levels["year"]))),
+            #     obs=categorical["year"],
+            # )
 
             past_reform = pyro.sample(
                 "past_reform",
@@ -91,7 +91,7 @@ class TractsModel(pyro.nn.PyroModule):
         }
 
         housing_units_categorical_parents = {
-            "year": year,
+            #"year": year,
             "past_reform": past_reform,
         }
 
