@@ -2,6 +2,7 @@ import os
 
 import matplotlib.pyplot as plt
 import pyro
+import copy
 import seaborn as sns
 import torch
 from pyro.infer import Predictive
@@ -108,6 +109,8 @@ def test_performance(
     train_loader,
     test_loader,
     categorical_levels,
+    outcome_type = "outcome",
+    outcome_name = "outcome",
     n_steps=600,
     plot=True,
     is_class=True,
@@ -128,76 +131,89 @@ def test_performance(
         model = model_or_class
 
     guide = run_svi_inference(
-        model, n_steps=n_steps, lr=0.01, verbose=True, **_train_data
-    )
+            model, n_steps=n_steps, lr=0.01, verbose=True, **_train_data
+        )
 
     predictive = Predictive(model, guide=guide, num_samples=1000)
 
     categorical_levels = model.categorical_levels
 
-    samples_training = predictive(
-        categorical=_train_data["categorical"],
-        continuous=_train_data["continuous"],
-        outcome=None,
-        categorical_levels=categorical_levels,
-    )
+
+    _train_data_for_preds = copy.deepcopy(_train_data)
+    _test_data_for_preds = copy.deepcopy(_test_data)
+
+
+    if outcome_type != "outcome":
+        _train_data_for_preds[outcome_type][outcome_name] = None
+        _test_data_for_preds[outcome_type][outcome_name] = None
+        
+    else:
+        _train_data_for_preds[outcome_type] = None
+
+
+    samples_train = predictive(
+            ** _train_data_for_preds,
+            categorical_levels=categorical_levels,
+        )
 
     samples_test = predictive(
-        categorical=_test_data["categorical"],
-        continuous=_test_data["continuous"],
-        outcome=None,
-        categorical_levels=categorical_levels,
-    )
+            ** _test_data_for_preds,
+            categorical_levels=categorical_levels,
+        )
 
     train_predicted_mean = (
-        samples_training[kwarg_names["outcome"]].squeeze().mean(dim=0)
-    )
+            samples_train[outcome_name].squeeze().mean(dim=0)
+        )
     train_predicted_lower = (
-        samples_training[kwarg_names["outcome"]].squeeze().quantile(0.05, dim=0)
+        samples_train[outcome_name].squeeze().quantile(0.05, dim=0)
     )
     train_predicted_upper = (
-        samples_training[kwarg_names["outcome"]].squeeze().quantile(0.95, dim=0)
+        samples_train[outcome_name].squeeze().quantile(0.95, dim=0)
     )
 
     coverage_training = (
-        _train_data["outcome"].squeeze().gt(train_predicted_lower).float()
-        * _train_data["outcome"].squeeze().lt(train_predicted_upper).float()
+        _train_data[outcome_type][outcome_name].squeeze().gt(train_predicted_lower).float()
+        * _train_data[outcome_type][outcome_name].squeeze().lt(train_predicted_upper).float()
     )
-    residuals_train = _train_data["outcome"].squeeze() - train_predicted_mean
+    residuals_train = _train_data[outcome_type][outcome_name].squeeze() - train_predicted_mean
     mae_train = torch.abs(residuals_train).mean().item()
 
-    rsquared_train = 1 - residuals_train.var() / _train_data["outcome"].squeeze().var()
+    rsquared_train = 1 - residuals_train.var() / _train_data[outcome_type][outcome_name].squeeze().var()
 
-    test_predicted_mean = samples_test[kwarg_names["outcome"]].squeeze().mean(dim=0)
+    test_predicted_mean = samples_test[outcome_name].squeeze().mean(dim=0)
     test_predicted_lower = (
-        samples_test[kwarg_names["outcome"]].squeeze().quantile(0.05, dim=0)
+        samples_test[outcome_name].squeeze().quantile(0.05, dim=0)
     )
     test_predicted_upper = (
-        samples_test[kwarg_names["outcome"]].squeeze().quantile(0.95, dim=0)
+        samples_test[outcome_name].squeeze().quantile(0.95, dim=0)
     )
 
     coverage_test = (
-        _test_data["outcome"].squeeze().gt(test_predicted_lower).float()
-        * _test_data["outcome"].squeeze().lt(test_predicted_upper).float()
+        _test_data[outcome_type][outcome_name].squeeze().gt(test_predicted_lower).float()
+        * _test_data[outcome_type][outcome_name].squeeze().lt(test_predicted_upper).float()
     )
-    residuals_test = _test_data["outcome"].squeeze() - test_predicted_mean
+    residuals_test = _test_data[outcome_type][outcome_name].squeeze() - test_predicted_mean
     mae_test = torch.abs(residuals_test).mean().item()
 
-    rsquared_test = 1 - residuals_test.var() / _test_data["outcome"].squeeze().var()
+    rsquared_test = 1 - residuals_test.var() / _test_data[outcome_type][outcome_name].squeeze().var()
+
+    print(rsquared_train, rsquared_test)
+
 
     if plot:
         fig, axs = plt.subplots(2, 2, figsize=(14, 10))
 
         axs[0, 0].scatter(
-            x=_train_data["outcome"], y=train_predicted_mean, s=6, alpha=0.5
+            x=_train_data[outcome_type][outcome_name],
+            y=train_predicted_mean, s=6, alpha=0.5
         )
         axs[0, 0].set_title(
             "Training data, ratio of outcomes within 95% CI: {:.2f}".format(
                 coverage_training.mean().item()
             )
         )
-        axs[0, 0].set_xlabel("true outcome")
-        axs[0, 0].set_ylabel("mean predicted outcome")
+        axs[0, 0].set_xlabel("observed values")
+        axs[0, 0].set_ylabel("mean predicted values")
 
         axs[0, 1].hist(residuals_train, bins=50)
         axs[0, 1].set_title(
@@ -207,15 +223,16 @@ def test_performance(
         axs[0, 1].set_ylabel("frequency")
 
         axs[1, 0].scatter(
-            x=_test_data["outcome"], y=test_predicted_mean, s=6, alpha=0.5
+            x=_test_data[outcome_type][outcome_name],
+            y=test_predicted_mean, s=6, alpha=0.5
         )
         axs[1, 0].set_title(
             "Test data, ratio of outcomes within 95% CI: {:.2f}".format(
                 coverage_test.mean().item()
             )
         )
-        axs[1, 0].set_xlabel("true outcome")
-        axs[1, 0].set_ylabel("mean predicted outcome")
+        axs[1, 0].set_xlabel("true values")
+        axs[1, 0].set_ylabel("mean predicted values")
 
         axs[1, 1].hist(residuals_test, bins=50)
         axs[1, 1].set_title(
