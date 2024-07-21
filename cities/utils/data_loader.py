@@ -35,9 +35,17 @@ class ZoningDataset(Dataset):
             self.categorical_levels = dict()
             for name in self.categorical.keys():
                 self.categorical_levels[name] = torch.unique(categorical[name])
+        
+        N_categorical = len(categorical.keys())
+        N_continuous = len(continuous.keys())
+
+        if N_categorical > 0:
+            self.n = len(next(iter(categorical.values())))
+        elif N_continuous > 0:
+            self.n = len(next(iter(continuous.values())))
 
     def __len__(self):
-        return len(self.categorical["parcel_id"])
+        return self.n
 
     def __getitem__(self, idx):
         cat_data = {key: val[idx] for key, val in self.categorical.items()}

@@ -10,7 +10,7 @@ def run_svi_inference(
     lr=0.03,
     vi_family=AutoMultivariateNormal,
     guide=None,
-    hide = None,
+    hide = [],
     n_steps=500,
     ylim = None,
     **model_kwargs

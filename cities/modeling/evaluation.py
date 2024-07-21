@@ -14,11 +14,13 @@ from cities.utils.data_loader import select_from_data
 root = find_repo_root()
 
 
-def prep_data_for_test(train_size=0.8):
-    zoning_data_path = os.path.join(
-        root, "data/minneapolis/processed/zoning_dataset.pt"
-    )
-    zoning_dataset_read = torch.load(zoning_data_path)
+def prep_data_for_test(data_path = None, train_size=0.8):
+
+    if data_path is None:
+        data_path = os.path.join(
+            root, "data/minneapolis/processed/zoning_dataset.pt"
+        )
+    zoning_dataset_read = torch.load(data_path)
 
     train_size = int(train_size * len(zoning_dataset_read))
     test_size = len(zoning_dataset_read) - train_size
@@ -40,7 +42,6 @@ def recode_categorical(kwarg_names, train_loader, test_loader):
     assert all(
         item in kwarg_names.keys() for item in ["categorical", "continuous", "outcome"]
     )
-    assert kwarg_names["outcome"] not in kwarg_names["continuous"]
 
     train_data = next(iter(train_loader))
     test_data = next(iter(test_loader))
