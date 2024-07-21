@@ -216,9 +216,14 @@ def test_performance(
         axs[0, 0].set_ylabel("mean predicted values")
 
         axs[0, 1].hist(residuals_train, bins=50)
+        #axs[0, 1].set_title(
+        #    "Training set residuals, Rsquared: {:.2f}".format(rsquared_train.item())
+        #)
+        # add mae and rsquared to title
         axs[0, 1].set_title(
-            "Training set residuals, Rsquared: {:.2f}".format(rsquared_train.item())
-        )
+            "Training set residuals, MAE: {:.2f}, Rsquared: {:.2f}".format(
+                mae_train, rsquared_train.item()
+                ))
         axs[0, 1].set_xlabel("residuals")
         axs[0, 1].set_ylabel("frequency")
 
@@ -235,9 +240,13 @@ def test_performance(
         axs[1, 0].set_ylabel("mean predicted values")
 
         axs[1, 1].hist(residuals_test, bins=50)
+        
         axs[1, 1].set_title(
-            "Test set residuals, Rsquared: {:.2f}".format(rsquared_test.item())
+            "Test set residuals, MAE: {:.2f}, Rsquared: {:.2f}".format(
+                mae_test, rsquared_test.item()
+            )
         )
+
         axs[1, 1].set_xlabel("residuals")
         axs[1, 1].set_ylabel("frequency")
 
