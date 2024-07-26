@@ -3,9 +3,9 @@ import pandas as pd
 import plotly.graph_objects as go
 
 from cities.utils.data_grabber import (
+    CTDataGrabberCSV,
     DataGrabber,
     MSADataGrabber,
-    CTDataGrabberCSV,
     check_if_tensed,
     list_available_features,
 )
@@ -798,8 +798,7 @@ class MSAFipsQuery(FipsQuery):
             self.outcome_percentile_range = outcome_percentile_range
 
 
-
-class CTFipsQuery(FipsQuery): # census tract FipsQuery
+class CTFipsQuery(FipsQuery):  # census tract FipsQuery
 
     def __init__(
         self,
@@ -811,7 +810,7 @@ class CTFipsQuery(FipsQuery): # census tract FipsQuery
         time_decay=1.08,
         outcome_comparison_period=None,
         outcome_percentile_range=None,
-        ct_time_period: str = "pre_2020", # "pre_2020" or "post_2020"
+        ct_time_period: str = "pre_2020",  # "pre_2020" or "post_2020"
     ):
         # self.data = MSADataGrabber()
         # self.all_available_features = list_available_features(level="msa")
@@ -844,7 +843,9 @@ class CTFipsQuery(FipsQuery): # census tract FipsQuery
             outcome_var is None and outcome_percentile_range is not None
         ), "outcome_percentile_range requires an outcome variable"
 
-        self.all_available_features = list_available_features(level = "census_tract", ct_time_period = ct_time_period)
+        self.all_available_features = list_available_features(
+            level="census_tract", ct_time_period=ct_time_period
+        )
 
         feature_groups = list(feature_groups_with_weights.keys())
 
@@ -857,13 +858,15 @@ class CTFipsQuery(FipsQuery): # census tract FipsQuery
 
         self.feature_groups_with_weights = feature_groups_with_weights
         self.feature_groups = feature_groups
-        self.data = CTDataGrabberCSV(ct_time_period = ct_time_period)
+        self.data = CTDataGrabberCSV(ct_time_period=ct_time_period)
         self.repo_root = self.data.repo_root
         self.fips = fips
         self.lag = lag
         self.top = top
-        self.population_var = "population" # default valuable
-                                           # population instead of gdp
+        self.population_var = "population"  # default valuable
+        # population instead of gdp
+
+        self.gdp_var = self.population_var  # for sake of using 'find_eucleadian_kins'
 
         # it's fine if they're None (by default)
         self.outcome_var = outcome_var
