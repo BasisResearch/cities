@@ -59,7 +59,7 @@ def continuous_contribution(continuous, child_name, leeway):
         )
 
         weight_continuous = pyro.sample(
-            f"weight_continuous_{key}_{child_name}_",
+            f"weight_continuous_{key}_{child_name}",
             dist.Normal(0.0, leeway),
         )
 

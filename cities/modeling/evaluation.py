@@ -113,6 +113,7 @@ def test_performance(
     outcome_name = "outcome",
     n_steps=600,
     plot=True,
+    lim = None,
     is_class=True,
 ):
     _train_data, _test_data = recode_categorical(kwarg_names, train_loader, test_loader)
@@ -212,6 +213,10 @@ def test_performance(
                 coverage_training.mean().item()
             )
         )
+
+        if lim is not None:
+            axs[0, 0].set_xlim(lim)
+            axs[0, 0].set_ylim(lim)
         axs[0, 0].set_xlabel("observed values")
         axs[0, 0].set_ylabel("mean predicted values")
 
@@ -238,6 +243,9 @@ def test_performance(
         )
         axs[1, 0].set_xlabel("true values")
         axs[1, 0].set_ylabel("mean predicted values")
+        if lim is not None:
+            axs[1, 0].set_xlim(lim)
+            axs[1, 0].set_ylim(lim)
 
         axs[1, 1].hist(residuals_test, bins=50)
         

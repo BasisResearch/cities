@@ -60,25 +60,83 @@ class TractsModel(pyro.nn.PyroModule):
         # #################
         with data_plate:
 
-            # year = pyro.sample(
-            #     "year",
-            #     dist.Categorical(torch.ones(len(categorical_levels["year"]))),
-            #     obs=categorical["year"],
+            year = pyro.sample(
+                "year",
+                dist.Categorical(torch.ones(len(categorical_levels["year"]))),
+                obs=categorical["year"],
+            )
+
+            distance = pyro.sample("distance", dist.Normal(0, 1),
+                                    obs=continuous["median_distance"])
+
+
+            # past_reform = pyro.sample(
+            #     "past_reform",
+            #     dist.Categorical(torch.ones(len(categorical_levels["past_reform"]))),
+            #     obs=categorical["past_reform"],
             # )
 
-            past_reform = pyro.sample(
-                "past_reform",
-                dist.Categorical(torch.ones(len(categorical_levels["past_reform"]))),
-                obs=categorical["past_reform"],
-            )
 
-            total_value = pyro.sample(
-                "total_value", dist.Normal(0, 1), obs=continuous["total_value"]
-            )
+        # #_____________________________
+        # # regression for limit
+        # #_____________________________
+            
 
-            median_value = pyro.sample(
-                "median_value", dist.Normal(0, 1), obs=continuous["median_value"]
-            )
+        limit_continuous_parents = {
+            "distance": distance,
+        }
+
+        limit_categorical_parents = {
+            "year": year,
+        }
+
+        limit = add_linear_component(
+            child_name="limit",
+            child_continuous_parents=limit_continuous_parents,
+            child_categorical_parents=limit_categorical_parents,
+            leeway=0.9,
+            data_plate=data_plate,
+            observations=continuous["mean_limit"],
+        )
+
+    # # _____________________________
+    # # regression for values
+    # # _____________________________
+
+        value_continuous_parents = {
+            "distance": distance, "limit": limit
+        }
+
+        value_categorical_parents = {
+            "year": year,
+        }
+
+        total_value = add_linear_component(
+            child_name="total_value",
+            child_continuous_parents=value_continuous_parents,
+            child_categorical_parents=value_categorical_parents,
+            leeway=0.9,
+            data_plate=data_plate,
+            observations=continuous["total_value"],
+        )
+
+        median_value = add_linear_component(
+            child_name="median_value",
+            child_continuous_parents=value_continuous_parents,
+            child_categorical_parents=value_categorical_parents,
+            leeway=0.9,
+            data_plate=data_plate,
+            observations=continuous["median_value"],
+        )
+
+
+            # total_value = pyro.sample(
+            #     "total_value", dist.Normal(0, 1), obs=continuous["total_value"]
+            # )
+
+            # median_value = pyro.sample(
+            #     "median_value", dist.Normal(0, 1), obs=continuous["median_value"]
+            # )
 
 
         # # ___________________________
@@ -88,11 +146,12 @@ class TractsModel(pyro.nn.PyroModule):
         housing_units_continuous_parents = {
             "total_value": total_value,
             "median_value": median_value,
+            "distance": distance,
+            "limit": limit
         }
 
         housing_units_categorical_parents = {
-            #"year": year,
-            "past_reform": past_reform,
+            "year": year,
         }
 
         housing_units = add_linear_component(
@@ -106,22 +165,3 @@ class TractsModel(pyro.nn.PyroModule):
 
         return housing_units
         
-
-        # applied_continuous_parents = {
-        #     "value": value,
-        # }
-        # applied_categorical_parents = {
-        #     "year": year,
-        # }
-
-        # applied = add_logistic_component(
-        #     child_name="applied",
-        #     child_continuous_parents=applied_continuous_parents,
-        #     child_categorical_parents=applied_categorical_parents,
-        #     leeway=11.57,
-        #     data_plate=data_plate,
-        #     observations= categorical["applied"],
-        #     categorical_levels=categorical_levels,
-        # )
-
-        # return applied
