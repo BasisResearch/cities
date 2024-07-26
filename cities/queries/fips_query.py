@@ -862,7 +862,8 @@ class CTFipsQuery(FipsQuery): # census tract FipsQuery
         self.fips = fips
         self.lag = lag
         self.top = top
-        self.gdp_var = "gdp_ma"
+        self.population_var = "population" # default valuable
+                                           # population instead of gdp
 
         # it's fine if they're None (by default)
         self.outcome_var = outcome_var
@@ -870,8 +871,8 @@ class CTFipsQuery(FipsQuery): # census tract FipsQuery
 
         self.time_decay = time_decay
 
-        if self.gdp_var not in self.feature_groups:
-            self.all_features = [self.gdp_var] + feature_groups
+        if self.population_var not in self.feature_groups:
+            self.all_features = [self.population_var] + feature_groups
         else:
             self.all_features = feature_groups
 
@@ -879,10 +880,10 @@ class CTFipsQuery(FipsQuery): # census tract FipsQuery
         self.data.get_features_wide(self.all_features)
 
         assert (
-            fips in self.data.std_wide[self.gdp_var]["GeoFIPS"].values
+            fips in self.data.std_wide[self.population_var]["GeoFIPS"].values
         ), "FIPS not found in the data set."
-        self.name = self.data.std_wide[self.gdp_var]["GeoName"][
-            self.data.std_wide[self.gdp_var]["GeoFIPS"] == self.fips
+        self.name = self.data.std_wide[self.population_var]["GeoName"][
+            self.data.std_wide[self.population_var]["GeoFIPS"] == self.fips
         ].values[0]
 
         assert (
