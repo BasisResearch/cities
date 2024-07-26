@@ -77,6 +77,73 @@ class TractsModel(pyro.nn.PyroModule):
             # )
 
 
+        ## ___________________________
+        ## regression for white
+        ## ___________________________
+
+        white_continuous_parents = {
+            "distance": distance,
+        }
+
+        white_categorical_parents = {
+            "year": year,
+        }
+
+        white = add_linear_component(
+            child_name="white",
+            child_continuous_parents=white_continuous_parents,
+            child_categorical_parents=white_categorical_parents,
+            leeway=0.9,
+            data_plate=data_plate,
+            observations=continuous["white"],
+        )
+
+        ## ___________________________
+        ## regression for segregation
+        ## ___________________________
+
+        segregation_continuous_parents = {
+            "distance": distance,
+            "white": white,
+        }
+
+        segregation_categorical_parents = {
+            "year": year,
+        }
+
+        segregation = add_linear_component(
+            child_name="segregation",
+            child_continuous_parents=segregation_continuous_parents,
+            child_categorical_parents=segregation_categorical_parents,
+            leeway=0.9,
+            data_plate=data_plate,
+            observations=continuous["segregation"],
+        )
+
+        ## ___________________________
+        ## regression for income
+        ## ___________________________
+
+        income_continuous_parents = {
+            "distance": distance,
+            "white": white,
+            "segregation": segregation,
+        }
+
+        income_categorical_parents = {
+            "year": year,
+        }
+
+        income = add_linear_component(
+            child_name="income",
+            child_continuous_parents=income_continuous_parents,
+            child_categorical_parents=income_categorical_parents,
+            leeway=0.9,
+            data_plate=data_plate,
+            observations=continuous["income"],
+        )
+
+
         # #_____________________________
         # # regression for limit
         # #_____________________________
@@ -99,26 +166,20 @@ class TractsModel(pyro.nn.PyroModule):
             observations=continuous["mean_limit"],
         )
 
-    # # _____________________________
-    # # regression for values
-    # # _____________________________
+        # # _____________________________
+        # # regression for median value
+        # # _____________________________
 
         value_continuous_parents = {
-            "distance": distance, "limit": limit
+            "distance": distance, "limit": limit,
+            "income": income, "white": white,
+            "segregation": segregation
+
         }
 
         value_categorical_parents = {
             "year": year,
         }
-
-        total_value = add_linear_component(
-            child_name="total_value",
-            child_continuous_parents=value_continuous_parents,
-            child_categorical_parents=value_categorical_parents,
-            leeway=0.9,
-            data_plate=data_plate,
-            observations=continuous["total_value"],
-        )
 
         median_value = add_linear_component(
             child_name="median_value",
@@ -130,13 +191,6 @@ class TractsModel(pyro.nn.PyroModule):
         )
 
 
-            # total_value = pyro.sample(
-            #     "total_value", dist.Normal(0, 1), obs=continuous["total_value"]
-            # )
-
-            # median_value = pyro.sample(
-            #     "median_value", dist.Normal(0, 1), obs=continuous["median_value"]
-            # )
 
 
         # # ___________________________
@@ -144,10 +198,12 @@ class TractsModel(pyro.nn.PyroModule):
         # # ___________________________
     
         housing_units_continuous_parents = {
-            "total_value": total_value,
             "median_value": median_value,
             "distance": distance,
-            "limit": limit
+            "income": income,
+            "white": white,
+            "limit": limit,
+            "segregation": segregation,
         }
 
         housing_units_categorical_parents = {
