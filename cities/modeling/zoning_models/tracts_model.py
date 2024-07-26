@@ -14,6 +14,54 @@ from cities.modeling.zoning_models.missingness_only_model import add_logistic_co
 
 
 
+def add_ratio_component(
+    child_name: "str",
+    child_continuous_parents,
+    child_categorical_parents,
+    leeway,  
+    data_plate,
+    observations=None,
+    categorical_levels=None,
+):
+
+
+    continuous_contribution_to_child = continuous_contribution(
+        child_continuous_parents, child_name, leeway
+    )
+
+    categorical_contribution_to_child = categorical_contribution(
+        child_categorical_parents,
+        child_name,
+        leeway,
+        categorical_levels=categorical_levels,
+    )
+
+    sigma_child = pyro.sample(
+        f"sigma_{child_name}", dist.Exponential(40.0)
+    ) 
+
+    with data_plate:
+
+        mean_prediction_child = pyro.deterministic(  # type: ignore
+            f"mean_outcome_prediction_{child_name}",
+            categorical_contribution_to_child + continuous_contribution_to_child,
+            event_dim=0,
+            )
+                
+        child_probs = pyro.deterministic(f"child_probs_{child_name}_{child_name}", 
+                                         torch.sigmoid(mean_prediction_child),
+                                         event_dim=0,)
+        
+        child_observed = pyro.sample(child_name, 
+        dist.Normal(child_probs, sigma_child),
+        obs=observations)
+
+
+    return child_observed
+
+
+
+
 class TractsModel(pyro.nn.PyroModule):
     def __init__(
         self,
@@ -89,11 +137,11 @@ class TractsModel(pyro.nn.PyroModule):
             "year": year,
         }
 
-        white = add_linear_component(
+        white = add_ratio_component(
             child_name="white",
             child_continuous_parents=white_continuous_parents,
             child_categorical_parents=white_categorical_parents,
-            leeway=0.9,
+            leeway=11.57,
             data_plate=data_plate,
             observations=continuous["white"],
         )
@@ -111,11 +159,11 @@ class TractsModel(pyro.nn.PyroModule):
             "year": year,
         }
 
-        segregation = add_linear_component(
+        segregation = add_ratio_component(
             child_name="segregation",
             child_continuous_parents=segregation_continuous_parents,
             child_categorical_parents=segregation_categorical_parents,
-            leeway=0.9,
+            leeway=11.57,
             data_plate=data_plate,
             observations=continuous["segregation"],
         )
@@ -157,11 +205,11 @@ class TractsModel(pyro.nn.PyroModule):
             "year": year,
         }
 
-        limit = add_linear_component(
+        limit = add_ratio_component(
             child_name="limit",
             child_continuous_parents=limit_continuous_parents,
             child_categorical_parents=limit_categorical_parents,
-            leeway=0.9,
+            leeway=11.57,
             data_plate=data_plate,
             observations=continuous["mean_limit"],
         )
