@@ -23,3 +23,6 @@ tests/.coverage
 .vscode/launch.json
 data/sql/counties_database.db
 data/sql/msa_database.db
+
+
+**/.Rproj.user/** 
