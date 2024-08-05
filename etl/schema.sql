@@ -11,7 +11,7 @@ drop table if exists parcel;
 create table parcel (
   id serial primary key
   , pid text not null
-  , year int not null
+  , valid daterange not null
 
   , emv_land numeric
   , emv_building numeric
@@ -23,6 +23,7 @@ create table parcel (
   , geom_id int references parcel_geom(id)
 );
 
+comment on column parcel.valid is 'Dates for which this parcel is valid';
 comment on column parcel.pid is 'Municipal parcel ID';
 comment on column parcel.emv_land is 'Estimated Market Value, land';
 comment on column parcel.emv_building is 'Estimated Market Value, buildings';

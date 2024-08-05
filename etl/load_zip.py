@@ -13,9 +13,9 @@ with open("etl/zip_schema.sql", "r") as f:
 conn.commit()
 
 zip_load = """
-insert into zip_code(zip_code, year, geom)
-select zcta5ce20, 2020, geom from zip_raw_2020
-union select zcta, 2000, ST_Transform(geom, 4269) from zip_raw_2000
+insert into zip_code(zip_code, valid, geom)
+select zcta5ce20, '[2020-01-01,)'::daterange, geom from zip_raw_2020
+union select zcta, '[2000-01-01,2020-01-01)'::daterange, ST_Transform(geom, 4269) from zip_raw_2000
 """
 print("Executing:", zip_load)
 cur.execute(zip_load)
