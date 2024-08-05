@@ -1,23 +1,35 @@
-from typing import Dict
+from typing import Dict, Optional
 
 import pyro
 import pyro.distributions as dist
 import torch
 
 
-def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tensor]):
-    N_categorical = len(categorical.keys())
-    N_continuous = len(continuous.keys())
 
-    if N_categorical > 0:
-        n = len(next(iter(categorical.values())))
-    elif N_continuous > 0:
-        n = len(next(iter(continuous.values())))
+def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tensor]):
+    N_categorical = len(categorical)
+    N_continuous = len(continuous)
+
+    n_cat = next(iter(categorical.values())).shape[0] if N_categorical > 0 else None
+    n_con = next(iter(continuous.values())).shape[0] if N_continuous > 0 else None
+
+    if N_categorical > 0 and N_continuous > 0:
+        assert n_cat == n_con, "The number of categorical and continuous data points must be the same"
+
+    n = n_cat if n_cat is not None else n_con
+
+    if n is None:
+        raise ValueError("Both categorical and continuous dictionaries are empty.")
 
     return N_categorical, N_continuous, n
 
 
-def categorical_contribution(categorical, child_name, leeway, categorical_levels=None):
+def categorical_contribution(
+    categorical: Dict[str, torch.Tensor],
+    child_name: str,
+    leeway: float,
+    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
+) -> torch.Tensor:
 
     categorical_names = list(categorical.keys())
 
@@ -48,7 +60,11 @@ def categorical_contribution(categorical, child_name, leeway, categorical_levels
     return categorical_contribution_outcome
 
 
-def continuous_contribution(continuous, child_name, leeway):
+def continuous_contribution(
+    continuous: Dict[str, torch.Tensor],
+    child_name: str,
+    leeway: float,
+) -> torch.Tensor:
 
     contributions = torch.zeros(1)
 
@@ -70,14 +86,14 @@ def continuous_contribution(continuous, child_name, leeway):
 
 
 def add_linear_component(
-    child_name: "str",
-    child_continuous_parents,
-    child_categorical_parents,
-    leeway,
+    child_name: str,
+    child_continuous_parents: Dict[str, torch.Tensor],
+    child_categorical_parents: Dict[str, torch.Tensor],
+    leeway: float,
     data_plate,
-    observations=None,
-    categorical_levels=None,
-):
+    observations: Optional[torch.Tensor] = None,
+    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
+) -> torch.Tensor:
 
     sigma_child = pyro.sample(
         f"sigma_{child_name}", dist.Exponential(1.0)
@@ -112,14 +128,14 @@ def add_linear_component(
 
 
 def add_logistic_component(
-    child_name: "str",
-    child_continuous_parents,
-    child_categorical_parents,
-    leeway,
+    child_name: str,
+    child_continuous_parents: Dict[str, torch.Tensor],
+    child_categorical_parents: Dict[str, torch.Tensor],
+    leeway: float,
     data_plate,
-    observations=None,
-    categorical_levels=None,
-):
+    observations: Optional[torch.Tensor] = None,
+    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
+) -> torch.Tensor:
 
     continuous_contribution_to_child = continuous_contribution(
         child_continuous_parents, child_name, leeway
@@ -156,14 +172,14 @@ def add_logistic_component(
 
 
 def add_ratio_component(
-    child_name: "str",
-    child_continuous_parents,
-    child_categorical_parents,
-    leeway,
+    child_name: str,
+    child_continuous_parents: Dict[str, torch.Tensor],
+    child_categorical_parents: Dict[str, torch.Tensor],
+    leeway: float,
     data_plate,
-    observations=None,
-    categorical_levels=None,
-):
+    observations: Optional[torch.Tensor] = None,
+    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
+) -> torch.Tensor:
 
     continuous_contribution_to_child = continuous_contribution(
         child_continuous_parents, child_name, leeway
