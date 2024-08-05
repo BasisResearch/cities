@@ -3,6 +3,7 @@ from cities.utils.cleaning_scripts.clean_burdens import clean_burdens
 from cities.utils.cleaning_scripts.clean_ethnic_composition import (
     clean_ethnic_composition,
 )
+from cities.utils.cleaning_scripts.clean_ethnic_composition_ct import clean_ethnicity_CT
 from cities.utils.cleaning_scripts.clean_ethnic_composition_ma import (
     clean_ethnic_composition_ma,
 )
@@ -10,10 +11,12 @@ from cities.utils.cleaning_scripts.clean_gdp import clean_gdp
 from cities.utils.cleaning_scripts.clean_gdp_ma import clean_gdp_ma
 from cities.utils.cleaning_scripts.clean_hazard import clean_hazard
 from cities.utils.cleaning_scripts.clean_homeownership import clean_homeownership
+from cities.utils.cleaning_scripts.clean_income_CT import clean_income_CT
 from cities.utils.cleaning_scripts.clean_income_distribution import (
     clean_income_distribution,
 )
 from cities.utils.cleaning_scripts.clean_industry import clean_industry
+from cities.utils.cleaning_scripts.clean_industry_ct import clean_industry_CT
 from cities.utils.cleaning_scripts.clean_industry_ma import clean_industry_ma
 from cities.utils.cleaning_scripts.clean_industry_ts import clean_industry_ts
 from cities.utils.cleaning_scripts.clean_population import clean_population
@@ -31,6 +34,7 @@ from cities.utils.cleaning_scripts.clean_spending_transportation import (
 )
 from cities.utils.cleaning_scripts.clean_transport import clean_transport
 from cities.utils.cleaning_scripts.clean_unemployment import clean_unemployment
+from cities.utils.cleaning_scripts.clean_unemployment_ct import clean_unemployment_CT
 from cities.utils.cleaning_scripts.clean_urbanicity_ct import clean_urbanicity_CT
 from cities.utils.cleaning_scripts.clean_urbanicity_ma import clean_urbanicity_ma
 from cities.utils.cleaning_scripts.clean_urbanization import clean_urbanization
@@ -40,6 +44,13 @@ from cities.utils.cleaning_scripts.cleaning_poverty import clean_poverty
 
 
 # clean_health() lost of another 15-ish fips
+clean_income_CT()
+
+clean_industry_CT()
+
+clean_unemployment_CT()
+
+clean_ethnicity_CT()
 
 clean_urbanicity_CT()
 
