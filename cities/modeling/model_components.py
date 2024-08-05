@@ -14,8 +14,9 @@ def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tens
 
     if N_categorical > 0 and N_continuous > 0:
         if n_cat != n_con:
-            raise ValueError("The number of categorical and continuous data points must be the same")
-
+            raise ValueError(
+                "The number of categorical and continuous data points must be the same"
+            )
 
     n = n_cat if n_cat is not None else n_con
 
