@@ -251,9 +251,12 @@ class VariableCleanerCT(
             self.exclusions_file = f"{self.root}/data/raw/exclusions_ct_post2020.csv"
 
     def add_new_exclusions(self, common_fips):
-        new_exclusions = np.setdiff1d(
-            self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
-        )
+        # new_exclusions = np.setdiff1d(
+        #     self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
+        # )
+        
+        new_exclusions = np.setxor1d(self.census_tracts["GeoFIPS"], self.variable_df["GeoFIPS"])
+        
         print("Adding new exclusions to new_exclusions.csv: " + str(new_exclusions))
 
         # Append to exclusions file if it exists, otherwise create a new file

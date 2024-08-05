@@ -46,58 +46,58 @@ from cities.utils.cleaning_scripts.cleaning_poverty import clean_poverty
 # clean_health() lost of another 15-ish fips
 clean_income_CT()
 
-clean_industry_CT()
+#clean_industry_CT()
 
-clean_unemployment_CT()
+#clean_unemployment_CT()
 
-clean_ethnicity_CT()
+#clean_ethnicity_CT()
 
-clean_urbanicity_CT()
+#clean_urbanicity_CT()
 
-clean_population_CT()
+#clean_population_CT()
 
-clean_population_density()
+# clean_population_density()
 
-clean_homeownership()
+# clean_homeownership()
 
-clean_income_distribution()
+# clean_income_distribution()
 
-clean_hazard()
+# clean_hazard()
 
-clean_burdens()
+# clean_burdens()
 
-clean_age_composition()
+# clean_age_composition()
 
-clean_gdp_ma()
+# clean_gdp_ma()
 
-clean_industry_ma()
+# clean_industry_ma()
 
-clean_urbanicity_ma()
+# clean_urbanicity_ma()
 
-clean_ethnic_composition_ma()
+# clean_ethnic_composition_ma()
 
-clean_population_ma()
+# clean_population_ma()
 
-clean_poverty()
+# clean_poverty()
 
-clean_unemployment()
+# clean_unemployment()
 
-clean_gdp()
+# clean_gdp()
 
-clean_population()
+# clean_population()
 
-clean_transport()
+# clean_transport()
 
-clean_spending_transportation()
+# clean_spending_transportation()
 
-clean_spending_commerce()
+# clean_spending_commerce()
 
-clean_spending_HHS()
+# clean_spending_HHS()
 
-clean_ethnic_composition()
+# clean_ethnic_composition()
 
-clean_industry()
+# clean_industry()
 
-clean_urbanization()
+# clean_urbanization()
 
-clean_industry_ts()
+# clean_industry_ts()
