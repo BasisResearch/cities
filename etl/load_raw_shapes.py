@@ -73,9 +73,10 @@ def main():
         table = f"parcel_raw_{year}"
         abs_shapes.append((shape, table))
 
-    log.info("Loading raw shape files: %s", abs_shapes)
     for shape, table in abs_shapes:
-        if not os.path.exists(shape):
+        if os.path.exists(shape):
+            log.info("Loading %s into %s", shape, table)
+        else:
             log.warn("Skipping %s because it does not exist", shape)
             continue
 
@@ -85,4 +86,5 @@ def main():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     main()
