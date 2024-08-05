@@ -198,7 +198,6 @@ def test_add_logistic_component():
     assert torch.allclose(child_probs, expected_probs, atol=1e-6)
 
 
-
 def test_add_ratio_component():
 
     data_plate = pyro.plate("data_plate", 3)
@@ -210,7 +209,7 @@ def test_add_ratio_component():
             child_categorical_parents=mock_data_cat,
             leeway=0.5,
             data_plate=data_plate,
-            categorical_levels=categorical_levels
+            categorical_levels=categorical_levels,
         )
 
     sigma_child = tr.trace.nodes["sigma_child1"]["value"]
@@ -223,7 +222,9 @@ def test_add_ratio_component():
 
     weights_categorical = {}
     for name in mock_data_cat.keys():
-        weights_categorical[name] = tr.trace.nodes[f"weights_categorical_{name}_child1"]["value"]
+        weights_categorical[name] = tr.trace.nodes[
+            f"weights_categorical_{name}_child1"
+        ]["value"]
 
     categorical_contrib = torch.zeros(3)
     for name, tensor in mock_data_cat.items():
@@ -240,4 +241,3 @@ def test_add_ratio_component():
     expected_probs = torch.sigmoid(expected_mean_prediction)
 
     assert torch.allclose(child_probs, expected_probs, atol=1e-6)
-
