@@ -5,7 +5,6 @@ import pyro.distributions as dist
 import torch
 
 
-
 def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tensor]):
     N_categorical = len(categorical)
     N_continuous = len(continuous)
@@ -14,7 +13,9 @@ def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tens
     n_con = next(iter(continuous.values())).shape[0] if N_continuous > 0 else None
 
     if N_categorical > 0 and N_continuous > 0:
-        assert n_cat == n_con, "The number of categorical and continuous data points must be the same"
+        if n_cat != n_con:
+            raise ValueError("The number of categorical and continuous data points must be the same")
+
 
     n = n_cat if n_cat is not None else n_con
 
