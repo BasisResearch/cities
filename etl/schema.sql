@@ -9,7 +9,7 @@ create table parcel_geom (
 
 create index parcel_geom_idx on parcel_geom using gist (geom);
 
-drop table if exists parcel;
+drop table if exists parcel cascade;
 
 create table parcel (
     id serial primary key
@@ -33,4 +33,3 @@ comment on column parcel.emv_land is 'Estimated Market Value, land';
 comment on column parcel.emv_building is 'Estimated Market Value, buildings';
 
 comment on column parcel.emv_total is 'Estimated Market Value, total (may be more than sum of land and building)';
-

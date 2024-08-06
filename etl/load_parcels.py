@@ -27,12 +27,12 @@ conn.commit()
 # insert parcel data into parcel table
 parcel_data = " union all ".join(
     f"""
-    select replace(pin, '{COUNTY_ID}-', ''), '[{year}-01-01,{year+1}-01-01)'::daterange, nullif(emv_land, 0), nullif(emv_bldg, 0), nullif(emv_total, 0), nullif(year_built, 0), sale_date, nullif(sale_value, 0), parcel_geom.id
+    select replace(pin, '{COUNTY_ID}-', ''), '[{year-1}-01-01,{year}-01-01)'::daterange, nullif(emv_land, 0), nullif(emv_bldg, 0), nullif(emv_total, 0), nullif(year_built, 0), sale_date, nullif(sale_value, 0), parcel_geom.id
     from parcel_raw_{year}, parcel_geom
     where parcel_raw_{year}.geom = parcel_geom.geom
       and upper({'city' if year < 2018 else 'ctu_name'}) = 'MINNEAPOLIS'
     """
-    for year in range(2002, 2018)
+    for year in PARCEL_YEARS
 )
 
 parcel_load = f"""
