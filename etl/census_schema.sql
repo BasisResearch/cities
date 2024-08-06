@@ -12,6 +12,8 @@ create table census_tract (
 
 create index census_tract_geom_idx on census_tract using gist (geom);
 
+create index census_tract_valid_idx on census_tract using gist (valid);
+
 insert into census_tract (statefp , countyfp , tractce , geoidfq , valid , geom)
 select
     statefp
@@ -33,9 +35,9 @@ select
 from
     cb_2023_27_tract_500k;
 
-drop table if exists census_block_group cascade;
+drop table if exists census_bg cascade;
 
-create table census_block_group (
+create table census_bg (
     id serial primary key
     , statefp text not null
     , countyfp text not null
@@ -47,9 +49,11 @@ create table census_block_group (
     , geom geometry(MultiPolygon , 4269) not null
 );
 
-create index census_block_group_geom_idx on census_block_group using gist (geom);
+create index census_bg_geom_idx on census_bg using gist (geom);
 
-insert into census_block (statefp , countyfp , tractce , blkgrpce , geoidfq , tract_id , valid , geom)
+create index census_bg_valid_idx on census_bg using gist (valid);
+
+insert into census_bg (statefp , countyfp , tractce , blkgrpce , geoidfq , tract_id , valid , geom)
 select
     statefp
     , countyfp
@@ -84,4 +88,3 @@ from (
     join census_tract using (statefp , countyfp , tractce)
 where
     census_tract.valid && bg.valid;
-
