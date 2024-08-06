@@ -1,8 +1,12 @@
+drop type if exists parcel_zip_type;
+create type parcel_zip_type as enum ('within', 'most_overlap', 'closest');
+
 drop table if exists parcel_zip;
 create table parcel_zip (
   parcel_id int references parcel(id)
   , zip_code_id int references zip_code(id)
   , valid daterange not null
+  , type parcel_zip_type not null
 );
 
 with
@@ -47,8 +51,8 @@ parcel_closest as ( -- parcels that overlap no zip codes map to the closest one
      order by parcel_id, ST_Distance(parcel.geom, zip_code.geom)
 )
 insert into parcel_zip
-select * from parcel_in_zip
+select *, 'within'::parcel_zip_type from parcel_in_zip
 union all
-select * from parcel_largest_overlap
+select *, 'most_overlap'::parcel_zip_type from parcel_largest_overlap
 union all
-select * from parcel_closest;
+select *, 'closest'::parcel_zip_type from parcel_closest;
