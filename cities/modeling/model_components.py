@@ -9,8 +9,22 @@ def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tens
     N_categorical = len(categorical)
     N_continuous = len(continuous)
 
-    n_cat = next(iter(categorical.values())).shape[0] if N_categorical > 0 else None
-    n_con = next(iter(continuous.values())).shape[0] if N_continuous > 0 else None
+
+    # a but convoluted, but groups might be missing and sometimes
+    # vars are allowed to be None    
+    n_cat = None
+    if N_categorical > 0:
+        for value in categorical.values():
+            if value is not None:
+                n_cat = value.shape[0]
+                break
+
+    n_con = None
+    if N_continuous > 0:
+        for value in continuous.values():
+            if value is not None:
+                n_con = value.shape[0]
+                break
 
     if N_categorical > 0 and N_continuous > 0:
         if n_cat != n_con:
