@@ -1,6 +1,12 @@
 format: FORCE
 	./scripts/clean.sh
 
+
+path ?= .
+
+format_path: FORCE
+	./scripts/clean_path.sh $(path)
+
 lint: FORCE
 	./scripts/lint.sh	
 
