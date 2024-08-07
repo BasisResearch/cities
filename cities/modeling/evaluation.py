@@ -289,6 +289,8 @@ def test_performance(
         plt.show()
 
     return {
+        "mae_null_train": null_mae_train,
+        "mae_null_test": null_mae_test,
         "mae_train": mae_train,
         "mae_test": mae_test,
         "rsquared_train": rsquared_train,
