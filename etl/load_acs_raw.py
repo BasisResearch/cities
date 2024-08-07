@@ -136,19 +136,6 @@ def main():
                 "insert into acs_tract_raw select statefp, countyfp, tractce, %s, %s, value from acs_tract_temp",
                 (year, code),
             )
-            # cur.execute(
-            #     """
-            #     insert into acs_tract
-            #     select t2.id, year, name_, value
-            #     from (select statefp, countyfp, tractce, %s as year, %s as name_, value from acs_tract_temp) as t1
-            #       join census_tract as t2
-            #         on to_date(year::varchar, 'YYYY') <@ valid
-            #         and t1.statefp = t2.statefp
-            #         and t1.countyfp = t2.countyfp
-            #         and t1.tractce = t2.tractce
-            #     """,
-            #     (year, code),
-            # )
     conn.commit()
 
     cur.execute("drop table if exists acs_bg_temp")
@@ -173,20 +160,6 @@ def main():
                 "insert into acs_bg_raw select statefp, countyfp, tractce, blkgrpce, %s, %s, value from acs_bg_temp",
                 (year, code),
             )
-
-            # cur.execute(
-            #     """
-            #     insert into acs_bg
-            #     select t2.id, year, name_, value
-            #     from (select statefp, countyfp, tractce, blkgrpce, %s as year, %s as name_, value from acs_bg_temp) as t1
-            #       join census_bg as t2
-            #         on to_date(year::varchar, 'YYYY') <@ valid
-            #         and t1.statefp = t2.statefp
-            #         and t1.countyfp = t2.countyfp
-            #         and t1.tractce = t2.tractce
-            #     """,
-            #     (year, code),
-            # )
     conn.commit()
 
 
