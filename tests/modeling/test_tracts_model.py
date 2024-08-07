@@ -10,6 +10,7 @@ from torch.utils.data import DataLoader
 
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
+from cities.modeling.evaluation import prep_data_for_test, test_performance
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
 
@@ -47,6 +48,10 @@ kwargs = {
 }
 subset = select_from_data(data, kwargs)
 
+train_loader, test_loader, categorical_levels = prep_data_for_test(
+    census_tracts_data_path, train_size=0.6
+)
+
 
 def test_tracts_model():
 
@@ -81,3 +86,17 @@ def test_tracts_model():
             samples = predictive(**subset_for_preds)
 
     assert samples["housing_units"].shape == torch.Size([num_samples, 3, 1, 1, 1, 816])
+
+    # test evaluation
+    test_performance(
+    tracts_model,
+    kwargs,
+    train_loader,
+    test_loader,
+    categorical_levels,
+    outcome_type="continuous",
+    outcome_name="housing_units",
+    n_steps=n_steps,
+    plot=False,
+    is_class=False,
+    )
