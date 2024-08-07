@@ -13,7 +13,7 @@ def run_svi_inference(
     hide=[],
     n_steps=500,
     ylim=None,
-    plot = True,
+    plot=True,
     **model_kwargs
 ):
     losses = []
