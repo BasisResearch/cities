@@ -9,7 +9,7 @@ from pyro.infer import Predictive
 from torch.utils.data import DataLoader
 
 from cities.modeling.svi_inference import run_svi_inference
-from cities.modeling.zoning_models.zoning_tracts_model_ratios import TractsModel
+from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
 
