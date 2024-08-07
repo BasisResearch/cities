@@ -8,9 +8,9 @@ from chirho.interventional.handlers import do
 from pyro.infer import Predictive
 from torch.utils.data import DataLoader
 
+from cities.modeling.evaluation import prep_data_for_test, test_performance
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-from cities.modeling.evaluation import prep_data_for_test, test_performance
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
 
@@ -89,14 +89,14 @@ def test_tracts_model():
 
     # test evaluation
     test_performance(
-    tracts_model,
-    kwargs,
-    train_loader,
-    test_loader,
-    categorical_levels,
-    outcome_type="continuous",
-    outcome_name="housing_units",
-    n_steps=n_steps,
-    plot=False,
-    is_class=False,
+        tracts_model,
+        kwargs,
+        train_loader,
+        test_loader,
+        categorical_levels,
+        outcome_type="continuous",
+        outcome_name="housing_units",
+        n_steps=n_steps,
+        plot=False,
+        is_class=False,
     )
