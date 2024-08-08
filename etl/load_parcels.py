@@ -10,7 +10,7 @@ COUNTY_ID = "053"
 conn = psycopg2.connect(host=HOST, user=USER, database="cities")
 cur = conn.cursor()
 
-with open("etl/schema.sql", "r") as f:
+with open("etl/parcel_schema.sql", "r") as f:
     cur.execute(f.read())
 conn.commit()
 

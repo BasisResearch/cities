@@ -33,3 +33,4 @@ comment on column parcel.emv_land is 'Estimated Market Value, land';
 comment on column parcel.emv_building is 'Estimated Market Value, buildings';
 
 comment on column parcel.emv_total is 'Estimated Market Value, total (may be more than sum of land and building)';
+
