@@ -31,8 +31,10 @@ class VariableCleaner:
         self.save_csv_files(self.folder)
 
     def load_raw_csv(self):
-        self.variable_df = pd.read_csv(self.path_to_raw_csv)
-        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(int)
+        self.variable_df = pd.read_csv(
+            self.path_to_raw_csv
+        )  # changed from int to np.int64
+        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)
 
     def drop_nans(self):
         self.variable_df = self.variable_df.dropna()
@@ -251,13 +253,11 @@ class VariableCleanerCT(
             self.exclusions_file = f"{self.root}/data/raw/exclusions_ct_post2020.csv"
 
     def add_new_exclusions(self, common_fips):
-        # new_exclusions = np.setdiff1d(
-        #     self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
-        # )
-        
-        new_exclusions = np.setxor1d(self.census_tracts["GeoFIPS"], self.variable_df["GeoFIPS"])
-        
-        print("Adding new exclusions to new_exclusions.csv: " + str(new_exclusions))
+        new_exclusions = np.setdiff1d(
+            self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
+        )
+
+        print(f"Adding new exclusions to {self.time_interval}: " + str(new_exclusions))
 
         # Append to exclusions file if it exists, otherwise create a new file
         try:
@@ -296,6 +296,11 @@ class VariableCleanerCT(
         print(f"{self.variable_name} data updated.")
 
     def check_exclusions(self):
+
+        assert (
+            self.variable_df["GeoFIPS"].dtype == "int64"
+        ), f"Expected 'int64', but got {self.variable_df['GeoFIPS'].dtype}"
+
         common_fips = np.intersect1d(
             self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
         )
@@ -315,7 +320,9 @@ class VariableCleanerCT(
             self.variable_df = self.variable_df[
                 self.variable_df["GeoFIPS"].isin(self.census_tracts["GeoFIPS"])
             ]
-            print(f" Initial size of {pre_size} reduced to {self.variable_df.shape[0]}")
+            print(
+                f" Initial size of {pre_size} of {self.variable_name} reduced to {self.variable_df.shape[0]}"
+            )
 
     def process_data(self):
         self.load_census_tracts()
