@@ -153,3 +153,4 @@ insert into usps_migration with process_date as (
         , total_to_zip_temp
     from
         add_zip_id;
+

@@ -88,3 +88,4 @@ from (
     join census_tract using (statefp , countyfp , tractce)
 where
     census_tract.valid && bg.valid;
+

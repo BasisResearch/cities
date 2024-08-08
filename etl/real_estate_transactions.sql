@@ -70,3 +70,4 @@ from
     real_estate_transactions_scraped as scraped
     join parcel on pid = parcel_id
         and scraped.sale_date <@ valid;
+

@@ -115,3 +115,4 @@ with parcel_with_geom as (
         , 'closest'::parcel_census_bg_type
     from
         parcel_closest;
+
