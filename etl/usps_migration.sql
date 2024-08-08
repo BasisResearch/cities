@@ -27,7 +27,6 @@ create table usps_migration (
     , primary key (date_ , zip_id , direction , type_)
 );
 
--- explain insert into usps_migration (date_, zip_id, direction, type_, flow)
 insert into usps_migration with process_date as (
     select
         to_date(yyyymm
@@ -154,4 +153,3 @@ insert into usps_migration with process_date as (
         , total_to_zip_temp
     from
         add_zip_id;
-
