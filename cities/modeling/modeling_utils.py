@@ -91,48 +91,16 @@ def prep_wide_data_for_inference(
     assert f_covariates_joint["GeoFIPS"].equals(intervention["GeoFIPS"])
 
     # extract data for which intervention and outcome overlap
-    year_min = max(
-        intervention.columns[2:].astype(int).min(),
-        outcome.columns[2:].astype(int).min(),
-    )
-
-    year_max = min(
-        intervention.columns[2:].astype(int).max(),
-        outcome.columns[2:].astype(int).max(),
-    )
-
-    assert all(intervention["GeoFIPS"] == outcome["GeoFIPS"])
-
-    outcome_years_to_keep = [
-        year
-        for year in outcome.columns[2:]
-        if year_min <= int(year) <= year_max + forward_shift
-    ]
-
-    outcome_years_to_keep = [
-        year for year in outcome_years_to_keep if year in intervention.columns[2:]
-    ]
-
-    outcome = outcome[outcome_years_to_keep]
-
-    # shift outcome `forward_shift` steps ahead
-    # for the prediction task
-    outcome_shifted = outcome.copy()
-
-    for i in range(len(outcome_years_to_keep) - forward_shift):
-        outcome_shifted.iloc[:, i] = outcome_shifted.iloc[:, i + forward_shift]
-
-    years_to_drop = [
-        f"{year}" for year in range(year_max - forward_shift + 1, year_max + 1)
-    ]
-    outcome_shifted.drop(columns=years_to_drop, inplace=True)
-
+    outcome.drop(columns=["GeoFIPS", "GeoName"], inplace=True)
     intervention.drop(columns=["GeoFIPS", "GeoName"], inplace=True)
-    intervention = intervention[outcome_shifted.columns]
+    outcome_shifted = outcome.rename(lambda x: str(int(x) - forward_shift), axis=1)
+    years_available = [
+        year for year in intervention.columns if year in outcome_shifted.columns
+    ]
+    intervention = intervention[years_available]
+    outcome_shifted = outcome_shifted[years_available]
 
     assert intervention.shape == outcome_shifted.shape
-
-    years_available = outcome_shifted.columns.astype(int).values
 
     unit_index = pd.factorize(f_covariates_joint["GeoFIPS"].values)[0]
     state_index = pd.factorize(f_covariates_joint["GeoFIPS"].values // 1000)[0]
@@ -163,13 +131,14 @@ def prep_wide_data_for_inference(
 
     model_args = (N_t, N_cov, N_s, N_u, state_index, unit_index)
 
+    int_year_available = [int(year) for year in years_available]
     return {
         "model_args": model_args,
         "x": x,
         "t": t,
         "y": y,
-        "years_available": years_available,
-        "outcome_years": outcome_years_to_keep,
+        "years_available": int_year_available,
+        "outcome_years": [str(year + forward_shift) for year in int_year_available],
     }
 
 
