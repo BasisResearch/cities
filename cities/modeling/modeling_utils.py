@@ -6,7 +6,7 @@ import pyro
 import torch
 from pyro.infer import SVI, Trace_ELBO
 from pyro.infer.autoguide import AutoNormal
-from pyro.optim import Adam
+from pyro.optim.optim import ClippedAdam
 
 from cities.utils.data_grabber import (
     DataGrabber,
@@ -36,8 +36,8 @@ def prep_wide_data_for_inference(
         4. Loads the required transformed features.
         5. Merges fixed covariates into a joint dataframe based on a common ID column.
         6. Ensures that the GeoFIPS (geographical identifier) is consistent across datasets.
-        7. Extracts common years for which both intervention and outcome data are available.
-        8. Shifts the outcome variable forward by the specified number of time steps.
+        7. Shifts the outcome variable forward by the specified number of time steps determined by forward_shift.
+        8. Extracts common years for which both intervention and outcome data are available.
         9. Prepares tensors for input features (x), interventions (t), and outcomes (y).
         10. Creates indices for states and units, preparing them as tensors.
         11. Validates the shapes of the tensors.
@@ -156,7 +156,10 @@ def train_interactions_model(
     guide = AutoNormal(conditioned_model)
 
     svi = SVI(
-        model=conditioned_model, guide=guide, optim=Adam({"lr": lr}), loss=Trace_ELBO()
+        model=conditioned_model,
+        guide=guide,
+        optim=ClippedAdam({"lr": lr}),
+        loss=Trace_ELBO(),
     )
 
     losses = []
