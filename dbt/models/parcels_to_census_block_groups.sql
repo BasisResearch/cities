@@ -2,7 +2,7 @@
   config(
     materialized='table',
     indexes = [
-      {'columns': ['parcel_id']},
+      {'columns': ['parcel_id'], 'unique': true},
       {'columns': ['census_block_group_id']}
     ]
   )

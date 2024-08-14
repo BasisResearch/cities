@@ -1,6 +1,10 @@
 {{
   config(
-    materialized='table'
+    materialized='table',
+    indexes = [
+      {'columns': ['parcel_id'], 'unique': true},
+      {'columns': ['zip_code_id']}
+    ]
   )
 }}
 
