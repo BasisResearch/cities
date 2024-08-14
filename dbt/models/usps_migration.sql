@@ -3,7 +3,7 @@
 
 with process_date as (
   select to_date(yyyymm, 'YYYYMM') as date_, *
-    from usps_migration_raw
+    from {{ source('minneapolis_old', 'usps_migration') }}
 )
 , zip_codes as (
   select

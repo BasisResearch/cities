@@ -16,7 +16,7 @@ select
     , acs_tract_raw.name_
     , acs_tract_raw.value_
 from
-    acs_tract_raw
+    {{ source('minneapolis_old', 'acs_tract_raw') }}
     inner join census_tracts
         using (statefp, countyfp, tractce)
  where

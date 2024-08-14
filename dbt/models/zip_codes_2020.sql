@@ -1,4 +1,4 @@
 select
   zcta5ce20 as zip_code,
   geom
-from zip_raw_2020
+from {{ source('minneapolis_old', 'zip_raw_2020') }}

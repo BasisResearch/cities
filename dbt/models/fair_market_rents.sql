@@ -16,7 +16,7 @@ zip_codes as (
     {% endfor %}
     , fair_market_rents_raw.year_
   from
-    fair_market_rents_raw
+    {{ source('minneapolis_old', 'fair_market_rents_raw') }}
     inner join zip_codes
         on zip_codes.zip_code = fair_market_rents_raw.zip
         and zip_codes.valid @> to_date(year_::text , 'YYYY')

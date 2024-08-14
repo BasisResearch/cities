@@ -1,30 +1,20 @@
 sources:
+  - name: minneapolis_old
+    database: cities
+    schema: public
+    tables:
+      - name: acs_bg_raw
+      - name: acs_tract_raw
+      - name: commercial_permits_raw
+      - name: fair_market_rents_raw
+      - name: residential_permits_raw
+      - name: usps_migration
+      - name: zip_raw_2000
+      - name: zip_raw_2020
   - name: minneapolis
     database: cities
     schema: minneapolis
     tables:
-      - name: parcels2002hennepin
-      - name: parcels2003hennepin
-      - name: parcels2004hennepin
-      - name: parcels2005hennepin
-      - name: parcels2006hennepin
-      - name: parcels2007hennepin
-      - name: parcels2008hennepin
-      - name: parcels2009hennepin
-      - name: parcels2010hennepin
-      - name: parcels2011hennepin
-      - name: parcels2012hennepin
-      - name: parcels2013hennepin
-      - name: parcels2014hennepin
-      - name: parcels2015hennepin
-      - name: parcels2016hennepin
-      - name: parcels2017hennepin
-      - name: parcels2018hennepin
-      - name: parcels2019hennepin
-      - name: parcels2020hennepin
-      - name: parcels2021hennepin
-      - name: parcels2022hennepin
-      - name: parcels2023hennepin
       - name: cb_2010_27_bg_500k
       - name: cb_2010_27_tract_500k
       - name: cb_2013_27_bg_500k
@@ -52,6 +42,28 @@ sources:
       - name: minneapolis_city_boundary
       - name: minneapolis_neighborhoods
       - name: minneapolis_wards
+      - name: parcels2002hennepin
+      - name: parcels2003hennepin
+      - name: parcels2004hennepin
+      - name: parcels2005hennepin
+      - name: parcels2006hennepin
+      - name: parcels2007hennepin
+      - name: parcels2008hennepin
+      - name: parcels2009hennepin
+      - name: parcels2010hennepin
+      - name: parcels2011hennepin
+      - name: parcels2012hennepin
+      - name: parcels2013hennepin
+      - name: parcels2014hennepin
+      - name: parcels2015hennepin
+      - name: parcels2016hennepin
+      - name: parcels2017hennepin
+      - name: parcels2018hennepin
+      - name: parcels2019hennepin
+      - name: parcels2020hennepin
+      - name: parcels2021hennepin
+      - name: parcels2022hennepin
+      - name: parcels2023hennepin
 
 models:
   - name: census_tracts

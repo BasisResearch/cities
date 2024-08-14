@@ -10,14 +10,25 @@ census_block_groups as (
     from
         {{ ref('census_block_groups') }}
 )
-
+, acs_bg as (
+  select
+    statefp
+    , countyfp
+    , tractce
+    , blkgrpce
+    , year_
+    , name_
+    , value_
+    from
+        {{ source('minneapolis_old', 'acs_bg_raw') }}
+)
 select
     census_block_group_id
     , year_
     , name_
     , value_
 from
-    acs_bg_raw
+    acs_bg
     inner join census_block_groups using (statefp, countyfp, tractce, blkgrpce)
 where
     to_date(acs_bg_raw.year_::text , 'YYYY') <@ census_block_groups.valid

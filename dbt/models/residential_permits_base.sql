@@ -19,7 +19,7 @@ select
   , notes
   , geom
 from
-    residential_permits_raw
+    {{ source('minneapolis_old', 'residential_permits_raw') }}
 where
     co_code = '053'
     and lower(ctu_name) = 'minneapolis'
