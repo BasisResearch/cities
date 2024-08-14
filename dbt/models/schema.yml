@@ -64,6 +64,7 @@ sources:
       - name: parcels2021hennepin
       - name: parcels2022hennepin
       - name: parcels2023hennepin
+      - name: parking_parcels
 
 models:
   - name: census_tracts
