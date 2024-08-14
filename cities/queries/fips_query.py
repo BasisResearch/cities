@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 from cities.utils.data_grabber import (
+    CTDataGrabberCSV,
     DataGrabber,
     MSADataGrabber,
     check_if_tensed,
@@ -769,6 +770,123 @@ class MSAFipsQuery(FipsQuery):
         ), "FIPS not found in the data set."
         self.name = self.data.std_wide[self.gdp_var]["GeoName"][
             self.data.std_wide[self.gdp_var]["GeoFIPS"] == self.fips
+        ].values[0]
+
+        assert (
+            self.lag >= 0 and self.lag < 6 and isinstance(self.lag, int)
+        ), "lag must be  an iteger between 0 and 5"
+        assert (
+            self.top > 0
+            and isinstance(self.top, int)
+            and self.top
+            < 100  # TODO Make sure the number makes sense once we add all datasets we need
+        ), "top must be a positive integer smaller than the number of locations in the dataset"
+
+        if outcome_var:
+            assert check_if_tensed(
+                self.data.std_wide[self.outcome_var]
+            ), "Outcome needs to be a time series."
+
+            self.outcome_with_percentiles = self.data.std_wide[self.outcome_var].copy()
+            most_recent_outcome = self.data.wide[self.outcome_var].iloc[:, -1].values
+            self.outcome_with_percentiles["percentile"] = (
+                most_recent_outcome < most_recent_outcome[:, np.newaxis]
+            ).sum(axis=1) / most_recent_outcome.shape[0]
+            self.outcome_with_percentiles["percentile"] = round(
+                self.outcome_with_percentiles["percentile"] * 100, 2
+            )
+            self.outcome_percentile_range = outcome_percentile_range
+
+
+class CTFipsQuery(FipsQuery):  # census tract FipsQuery
+
+    def __init__(
+        self,
+        fips,
+        outcome_var=None,
+        feature_groups_with_weights=None,
+        lag=0,
+        top=5,
+        time_decay=1.08,
+        outcome_comparison_period=None,
+        outcome_percentile_range=None,
+        ct_time_period: str = "pre_2020",  # "pre_2020" or "post_2020"
+    ):
+        # self.data = MSADataGrabber()
+        # self.all_available_features = list_available_features(level="msa")
+        # self.gdp_var = "gdp_ma"
+        # print("MSAFipsQuery __init__ data:", self.data)
+
+        if feature_groups_with_weights is None and outcome_var:
+            feature_groups_with_weights = {outcome_var: 4}
+
+        if outcome_var:
+            outcome_var_dict = {
+                outcome_var: feature_groups_with_weights.pop(outcome_var)
+            }
+            outcome_var_dict.update(feature_groups_with_weights)
+            feature_groups_with_weights = outcome_var_dict
+
+        assert not (
+            lag > 0 and outcome_var is None
+        ), "Lag will be idle with no outcome variable"
+
+        assert not (
+            lag > 0 and outcome_comparison_period is not None
+        ), "outcome_comparison_period is only used when lag = 0"
+
+        assert not (
+            outcome_var is None and outcome_comparison_period is not None
+        ), "outcome_comparison_period requires an outcome variable"
+
+        assert not (
+            outcome_var is None and outcome_percentile_range is not None
+        ), "outcome_percentile_range requires an outcome variable"
+
+        self.all_available_features = list_available_features(
+            level="census_tract", ct_time_period=ct_time_period
+        )
+
+        feature_groups = list(feature_groups_with_weights.keys())
+
+        assert feature_groups, "You need to specify at least one feature group"
+
+        assert all(
+            isinstance(value, int) and -4 <= value <= 4
+            for value in feature_groups_with_weights.values()
+        ), "Feature weights need to be integers between -4 and 4"
+
+        self.feature_groups_with_weights = feature_groups_with_weights
+        self.feature_groups = feature_groups
+        self.data = CTDataGrabberCSV(ct_time_period=ct_time_period)
+        self.repo_root = self.data.repo_root
+        self.fips = fips
+        self.lag = lag
+        self.top = top
+        self.population_var = "population"  # default valuable
+        # population instead of gdp
+
+        self.gdp_var = self.population_var  # for sake of using 'find_eucleadian_kins'
+
+        # it's fine if they're None (by default)
+        self.outcome_var = outcome_var
+        self.outcome_comparison_period = outcome_comparison_period
+
+        self.time_decay = time_decay
+
+        if self.population_var not in self.feature_groups:
+            self.all_features = [self.population_var] + feature_groups
+        else:
+            self.all_features = feature_groups
+
+        self.data.get_features_std_wide(self.all_features)
+        self.data.get_features_wide(self.all_features)
+
+        assert (
+            fips in self.data.std_wide[self.population_var]["GeoFIPS"].values
+        ), "FIPS not found in the data set."
+        self.name = self.data.std_wide[self.population_var]["GeoName"][
+            self.data.std_wide[self.population_var]["GeoFIPS"] == self.fips
         ].values[0]
 
         assert (

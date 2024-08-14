@@ -1,4 +1,5 @@
 import os
+import random
 
 import numpy as np
 
@@ -247,3 +248,27 @@ def test_GeoFIPS_ct_column_values():
         column_values = data_ct.wide[feature]["GeoFIPS"]
 
         assert all(value > 999999999 for value in column_values)
+
+
+time_periods = ["pre_2020", "post_2020"]
+variables = list_available_features(level="census_tract")
+compare_variable = random.choice(variables)
+
+
+for ct_time_period in time_periods:
+
+    data = CTDataGrabberCSV(ct_time_period=ct_time_period)
+    data.get_features_wide([compare_variable])
+    var_compare = data.wide[compare_variable]
+    fips_compare = var_compare["GeoFIPS"].nunique()
+
+    for variable in variables:
+
+        data.get_features_wide([variable])
+        var = data.wide[variable]
+        fips_standard = var["GeoFIPS"].nunique()
+
+        assert fips_compare == fips_standard, (
+            f"The CT variables differ in the number of FIPS codes: {compare_variable} and {variable},"
+            f"with {fips_compare} and {fips_standard} respectively!"
+        )
