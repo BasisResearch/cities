@@ -8,7 +8,7 @@ sources:
       - name: commercial_permits_raw
       - name: fair_market_rents_raw
       - name: residential_permits_raw
-      - name: usps_migration
+      - name: usps_migration_raw
       - name: zip_raw_2000
       - name: zip_raw_2020
   - name: minneapolis
