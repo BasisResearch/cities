@@ -39,7 +39,7 @@ census_block_groups as (
   {% endif %}
   , geom
   from
-  minneapolis.cb_{{ year_ }}_27_bg_500k
+  {{ source('minneapolis', 'cb_' ~ year_ ~ '_27_bg_500k') }}
   {% if not loop.last %}union all{% endif %}
   {% endfor %}
 ),
