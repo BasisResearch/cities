@@ -230,12 +230,6 @@ models:
         data_tests:
           - not_null
           - unique
-      - name: parcel_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('parcels')
-              field: parcel_id
 
   - name: residential_permits
     columns:
@@ -243,6 +237,30 @@ models:
         data_tests:
           - not_null
           - unique
+
+  - name: residential_permits_to_parcels
+    columns:
+      - name: residential_permit_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('residential_permits')
+              field: residential_permit_id
+      - name: parcel_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parcels')
+              field: parcel_id
+
+  - name: commercial_permits_to_parcels
+    columns:
+      - name: commercial_permit_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('commercial_permits')
+              field: commercial_permit_id
       - name: parcel_id
         data_tests:
           - not_null

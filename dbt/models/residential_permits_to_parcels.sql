@@ -1,17 +1,27 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['residential_permit_id']},
+      {'columns': ['parcel_id']}
+    ]
+  )
+}}
+
 with
 residential_permits as (
   select
     residential_permit_id as id
     , daterange(to_date(year_::text, 'YYYY'), to_date(year_::text, 'YYYY'), '[]') as valid
     , geom
-  from {{ ref("residential_permits_base") }}
+  from {{ ref("residential_permits") }}
 )
 , parcels as (
   select
     parcel_id as id
     , valid
     , geom
-  from {{ ref("parcels") }}
+  from {{ ref("parcels_base") }}
 )
 select
   child_id as residential_permit_id

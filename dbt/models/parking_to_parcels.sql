@@ -14,7 +14,7 @@ with
       parking_id as id
       , daterange(date_, date_, '[]') as valid
       , ST_Transform(geom, 26915) as geom
-    from {{ ref('parking_base') }}
+    from {{ ref('parking') }}
   )
   , parcels as (
     select
