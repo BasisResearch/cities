@@ -1,0 +1,181 @@
+models:
+  - name: census_tracts
+    columns:
+      - name: census_tract_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: census_block_groups
+    columns:
+      - name: census_block_group_id
+        data_tests:
+          - unique
+          - not_null
+      - name: census_tract_id
+        data_tests:
+          - relationships:
+              to: ref('census_tracts')
+              field: census_tract_id
+
+  - name: acs_tract
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - census_tract_id
+            - year_
+            - name_
+    columns:
+      - name: census_tract_id
+        data_tests:
+          - relationships:
+              to: ref('census_tracts')
+              field: census_tract_id
+
+  - name: acs_block_group
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - census_block_group_id
+            - year_
+            - name_
+    columns:
+      - name: census_block_group_id
+        data_tests:
+          - relationships:
+              to: ref('census_block_groups')
+              field: census_block_group_id
+
+  - name: segregation_indexes
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - census_tract_id
+            - year_
+            - distribution
+    columns:
+      - name: census_tract_id
+        data_tests:
+          - relationships:
+              to: ref('census_tracts')
+              field: census_tract_id
+
+  - name: parcels
+    columns:
+      - name: parcel_id
+        data_tests:
+          - unique
+          - not_null
+      - name: zip_code_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('zip_codes')
+              field: zip_code_id
+      - name: census_block_group_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('census_block_groups')
+              field: census_block_group_id
+
+  - name: parcels_to_census_block_groups
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - parcel_id
+            - census_block_group_id
+    columns:
+      - name: parcel_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parcels')
+              field: parcel_id
+      - name: census_block_group_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('census_block_groups')
+              field: census_block_group_id
+
+  - name: parcels_to_zip_codes
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - parcel_id
+            - zip_code_id
+    columns:
+      - name: parcel_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parcels')
+              field: parcel_id
+      - name: zip_code_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('zip_codes')
+              field: zip_code_id
+
+  - name: zip_codes_2000
+    columns:
+      - name: zip_code
+        data_tests:
+          - not_null
+          - unique
+
+  - name: zip_codes_2020
+    columns:
+      - name: zip_code
+        data_tests:
+          - not_null
+          - unique
+
+  - name: zip_codes
+    columns:
+      - name: zip_code_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: usps_migration
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - parcel_id
+            - zip_code_id
+    columns:
+      - name: zip_code_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('zip_codes')
+              field: zip_code_id
+
+  - name: commercial_permits
+    columns:
+      - name: commercial_permit_id
+        data_tests:
+          - not_null
+          - unique
+      - name: parcel_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parcels')
+              field: parcel_id
+
+  - name: residential_permits
+    columns:
+      - name: residential_permit_id
+        data_tests:
+          - not_null
+          - unique
+      - name: parcel_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parcels')
+              field: parcel_id
