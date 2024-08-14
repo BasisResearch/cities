@@ -1,3 +1,14 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['census_block_group_id'], 'unique': true},
+      {'columns': ['geom'], 'type': 'gist'},
+      {'columns': ['valid', 'geom'], 'type': 'gist'}
+    ]
+  )
+}}
+
 with
 census_tracts as (
   select

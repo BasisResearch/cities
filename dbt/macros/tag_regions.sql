@@ -4,10 +4,12 @@
 -- max_distance: maximum distance to consider a region as a parent (meters)
 {% macro tag_regions(child_table, parent_table, max_distance=100) %}
 (
-with child as (
+-- the not materialized keyword allows us to use indexes on the child and parent
+-- tables
+with child as not materialized (
     select * from {{child_table}}
 )
-, parent as (
+, parent as not materialized (
     select * from {{parent_table}}
 )
 , within as (

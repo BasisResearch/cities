@@ -1,3 +1,13 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['parcel_id']},
+      {'columns': ['census_block_group_id']}
+    ]
+  )
+}}
+
 with
 parcels as (
   select

@@ -1,3 +1,13 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['parcel_id'], 'unique': true},
+      {'columns': ['geom'], 'type': 'gist'}
+    ]
+  )
+}}
+
 {% set years = range(2002, 2024) %}
 {% set city = 'MINNEAPOLIS' %}
 {% set county_id = '053' %}
@@ -5,6 +15,7 @@
 with parcels as (
   {% for year_ in years %}
   select
+  ogc_fid,
   replace(pin, '{{ county_id }}-', '') as pin,
   '[{{ year_ - 1 }}-01-01,{{ year_ }}-01-01)'::daterange as valid,
   nullif(emv_land, 0) as emv_land,
@@ -20,7 +31,7 @@ with parcels as (
   {% endfor %}
 )
 select
-  {{ dbt_utils.generate_surrogate_key(['pin', 'valid']) }} as parcel_id
+  {{ dbt_utils.generate_surrogate_key(['ogc_fid', 'valid']) }} as parcel_id
   , pin
   , valid
   , emv_land

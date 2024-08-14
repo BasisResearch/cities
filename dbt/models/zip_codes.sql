@@ -1,3 +1,13 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['zip_code_id'], 'unique': true},
+      {'columns': ['geom'], 'type': 'gist'}
+    ]
+  )
+}}
+
 with
 zip_codes as (
 select
