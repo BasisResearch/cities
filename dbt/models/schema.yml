@@ -144,8 +144,10 @@ models:
     data_tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
-            - parcel_id
+            - date_
             - zip_code_id
+            - flow_direction
+            - flow_type
     columns:
       - name: zip_code_id
         data_tests:
