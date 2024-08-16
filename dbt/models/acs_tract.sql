@@ -1,3 +1,12 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['census_tract_id', 'year_', 'name_'], 'unique': true},
+    ]
+  )
+}}
+
 with
 census_tracts as (
   select
@@ -9,7 +18,6 @@ census_tracts as (
 
   from {{ ref("census_tracts") }}
 )
-
 select
     census_tract_id
     , acs_tract_raw.year_

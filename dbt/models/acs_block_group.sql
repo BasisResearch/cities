@@ -1,3 +1,12 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['census_block_group_id', 'year_', 'name_'], 'unique': true},
+    ]
+  )
+}}
+
 with
 census_block_groups as (
     select

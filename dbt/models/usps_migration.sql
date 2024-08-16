@@ -1,3 +1,12 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['date_', 'zip_code_id', 'flow_direction', 'flow_type'], 'unique': true},
+    ]
+  )
+}}
+
 {% set usps_migration_flow_types = ['business', 'family', 'individual', 'perm', 'temp'] %}
 {% set usps_migration_flow_directions = ['from', 'to'] %}
 

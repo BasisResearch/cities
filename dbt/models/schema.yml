@@ -5,8 +5,6 @@ sources:
     tables:
       - name: acs_bg_raw
       - name: acs_tract_raw
-      - name: zip_raw_2000
-      - name: zip_raw_2020
   - name: minneapolis
     database: cities
     schema: minneapolis
@@ -215,16 +213,23 @@ models:
               to: ref('zip_codes')
               field: zip_code_id
 
-  - name: zip_codes_2000
+  - name: all_zip_codes_2010
     columns:
       - name: zip_code
         data_tests:
           - not_null
           - unique
 
-  - name: zip_codes_2020
+  - name: all_zip_codes_2020
     columns:
       - name: zip_code
+        data_tests:
+          - not_null
+          - unique
+
+  - name: all_zip_codes
+    columns:
+      - name: zip_code_id
         data_tests:
           - not_null
           - unique

@@ -3,7 +3,7 @@
     materialized='table',
     indexes = [
       {'columns': ['parcel_id'], 'unique': true},
-      {'columns': ['geom'], 'type': 'gist'}
+      {'columns': ['valid', 'geom'], 'type': 'gist'}
     ]
   )
 }}
