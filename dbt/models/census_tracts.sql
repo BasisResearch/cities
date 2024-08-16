@@ -16,7 +16,7 @@ select
 {% endif %}
     , geom
 from
-    {{ source('minneapolis', 'cb_' ~ year_ ~ '_27_tract_500k') }}
+    {{ source('minneapolis', 'census_cb_' ~ year_ ~ '_27_tract_500k') }}
 {% if not loop.last %}union all{% endif %}
 {% endfor %}
 )

@@ -22,7 +22,7 @@ select
   , address
   , geom
   from
-    {{ source('minneapolis_old', 'commercial_permits_raw') }}
+    {{ source('minneapolis', 'commercial_permits_nonresidentialconstruction') }}
  where
     co_code = '053'
    and lower(ctu_name) = 'minneapolis'

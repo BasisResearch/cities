@@ -25,7 +25,7 @@ with parcels as (
   sale_date,
   nullif(sale_value, 0) as sale_value,
   geom
-  from {{ source('minneapolis', 'parcels' ~ year_ ~ 'hennepin') }}
+  from {{ source('minneapolis', 'parcels_shp_plan_regonal_' ~ year_ ~ '_parcels' ~ year_ ~ 'hennepin') }}
   where upper({{ "city" if year_ < 2018 else "ctu_name" }}) = '{{ city }}'
   {% if not loop.last %}union all{% endif %}
   {% endfor %}

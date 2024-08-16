@@ -3,4 +3,4 @@ select
   , bdname as name_
   , geom
 from
-  {{ source('minneapolis', 'minneapolis_neighborhoods') }}
+  {{ source('minneapolis', 'neighborhoods_minneapolis') }}
