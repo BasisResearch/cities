@@ -5,65 +5,91 @@ sources:
     tables:
       - name: acs_bg_raw
       - name: acs_tract_raw
-      - name: commercial_permits_raw
-      - name: fair_market_rents_raw
-      - name: residential_permits_raw
-      - name: usps_migration_raw
-      - name: zip_raw_2000
-      - name: zip_raw_2020
   - name: minneapolis
     database: cities
     schema: minneapolis
     tables:
-      - name: cb_2010_27_bg_500k
-      - name: cb_2010_27_tract_500k
-      - name: cb_2013_27_bg_500k
-      - name: cb_2013_27_tract_500k
-      - name: cb_2014_27_bg_500k
-      - name: cb_2014_27_tract_500k
-      - name: cb_2015_27_bg_500k
-      - name: cb_2015_27_tract_500k
-      - name: cb_2016_27_bg_500k
-      - name: cb_2016_27_tract_500k
-      - name: cb_2017_27_bg_500k
-      - name: cb_2017_27_tract_500k
-      - name: cb_2018_27_bg_500k
-      - name: cb_2018_27_tract_500k
-      - name: cb_2019_27_bg_500k
-      - name: cb_2019_27_tract_500k
-      - name: cb_2020_27_bg_500k
-      - name: cb_2020_27_tract_500k
-      - name: cb_2021_27_bg_500k
-      - name: cb_2021_27_tract_500k
-      - name: cb_2022_27_bg_500k
-      - name: cb_2022_27_tract_500k
-      - name: cb_2023_27_bg_500k
-      - name: cb_2023_27_tract_500k
-      - name: minneapolis_city_boundary
-      - name: minneapolis_neighborhoods
-      - name: minneapolis_wards
-      - name: parcels2002hennepin
-      - name: parcels2003hennepin
-      - name: parcels2004hennepin
-      - name: parcels2005hennepin
-      - name: parcels2006hennepin
-      - name: parcels2007hennepin
-      - name: parcels2008hennepin
-      - name: parcels2009hennepin
-      - name: parcels2010hennepin
-      - name: parcels2011hennepin
-      - name: parcels2012hennepin
-      - name: parcels2013hennepin
-      - name: parcels2014hennepin
-      - name: parcels2015hennepin
-      - name: parcels2016hennepin
-      - name: parcels2017hennepin
-      - name: parcels2018hennepin
-      - name: parcels2019hennepin
-      - name: parcels2020hennepin
-      - name: parcels2021hennepin
-      - name: parcels2022hennepin
-      - name: parcels2023hennepin
+      - name: residential_permits_residentialpermits
+      - name: commercial_permits_nonresidentialconstruction
+      - name: high_frequency_transit_2015_freq_350_ft_buffer
+      - name: high_frequency_transit_2015_freq_lines
+      - name: high_frequency_transit_2015_freq_quarter_and_half_mile_buffer
+      - name: high_frequency_transit_2015_freq_rail_stops
+      - name: high_frequency_transit_2016_freq_350_ft_buffer
+      - name: high_frequency_transit_2016_freq_lines
+      - name: high_frequency_transit_2016_freq_quarter_and_half_mile_buffer
+      - name: fair_market_rents_2012
+      - name: fair_market_rents_2013
+      - name: fair_market_rents_2014
+      - name: fair_market_rents_2015
+      - name: fair_market_rents_2016
+      - name: fair_market_rents_2017
+      - name: fair_market_rents_2018
+      - name: fair_market_rents_2019
+      - name: fair_market_rents_2020
+      - name: fair_market_rents_2021
+      - name: fair_market_rents_2022
+      - name: fair_market_rents_2023
+      - name: fair_market_rents_2024
+      - name: downtown
+      - name: university
+      - name: usps_y2018
+      - name: usps_y2019
+      - name: usps_y2020
+      - name: usps_y2021
+      - name: usps_y2022
+      - name: usps_y2023
+      - name: zip_codes_tl_2020_us_zcta510
+      - name: zip_codes_tl_2020_us_zcta520
+      - name: census_cb_2010_27_bg_500k
+      - name: census_cb_2010_27_tract_500k
+      - name: census_cb_2013_27_bg_500k
+      - name: census_cb_2013_27_tract_500k
+      - name: census_cb_2014_27_bg_500k
+      - name: census_cb_2014_27_tract_500k
+      - name: census_cb_2015_27_bg_500k
+      - name: census_cb_2015_27_tract_500k
+      - name: census_cb_2016_27_bg_500k
+      - name: census_cb_2016_27_tract_500k
+      - name: census_cb_2017_27_bg_500k
+      - name: census_cb_2017_27_tract_500k
+      - name: census_cb_2018_27_bg_500k
+      - name: census_cb_2018_27_tract_500k
+      - name: census_cb_2019_27_bg_500k
+      - name: census_cb_2019_27_tract_500k
+      - name: census_cb_2020_27_bg_500k
+      - name: census_cb_2020_27_tract_500k
+      - name: census_cb_2021_27_bg_500k
+      - name: census_cb_2021_27_tract_500k
+      - name: census_cb_2022_27_bg_500k
+      - name: census_cb_2022_27_tract_500k
+      - name: census_cb_2023_27_bg_500k
+      - name: census_cb_2023_27_tract_500k
+      - name: city_boundary_minneapolis
+      - name: neighborhoods_minneapolis
+      - name: wards_minneapolis
+      - name: parcels_shp_plan_regonal_2002_parcels2002hennepin
+      - name: parcels_shp_plan_regonal_2003_parcels2003hennepin
+      - name: parcels_shp_plan_regonal_2004_parcels2004hennepin
+      - name: parcels_shp_plan_regonal_2005_parcels2005hennepin
+      - name: parcels_shp_plan_regonal_2006_parcels2006hennepin
+      - name: parcels_shp_plan_regonal_2007_parcels2007hennepin
+      - name: parcels_shp_plan_regonal_2008_parcels2008hennepin
+      - name: parcels_shp_plan_regonal_2009_parcels2009hennepin
+      - name: parcels_shp_plan_regonal_2010_parcels2010hennepin
+      - name: parcels_shp_plan_regonal_2011_parcels2011hennepin
+      - name: parcels_shp_plan_regonal_2012_parcels2012hennepin
+      - name: parcels_shp_plan_regonal_2013_parcels2013hennepin
+      - name: parcels_shp_plan_regonal_2014_parcels2014hennepin
+      - name: parcels_shp_plan_regonal_2015_parcels2015hennepin
+      - name: parcels_shp_plan_regonal_2016_parcels2016hennepin
+      - name: parcels_shp_plan_regonal_2017_parcels2017hennepin
+      - name: parcels_shp_plan_regonal_2018_parcels2018hennepin
+      - name: parcels_shp_plan_regonal_2019_parcels2019hennepin
+      - name: parcels_shp_plan_regonal_2020_parcels2020hennepin
+      - name: parcels_shp_plan_regonal_2021_parcels2021hennepin
+      - name: parcels_shp_plan_regonal_2022_parcels2022hennepin
+      - name: parcels_shp_plan_regonal_2023_parcels2023hennepin
       - name: parking_parcels
 
 models:
@@ -187,16 +213,23 @@ models:
               to: ref('zip_codes')
               field: zip_code_id
 
-  - name: zip_codes_2000
+  - name: all_zip_codes_2010
     columns:
       - name: zip_code
         data_tests:
           - not_null
           - unique
 
-  - name: zip_codes_2020
+  - name: all_zip_codes_2020
     columns:
       - name: zip_code
+        data_tests:
+          - not_null
+          - unique
+
+  - name: all_zip_codes
+    columns:
+      - name: zip_code_id
         data_tests:
           - not_null
           - unique

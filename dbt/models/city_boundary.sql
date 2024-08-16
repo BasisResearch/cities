@@ -1,4 +1,4 @@
 select
   geom
 from
-  {{ source('minneapolis', 'minneapolis_city_boundary') }}
+  {{ source('minneapolis', 'city_boundary_minneapolis') }}
