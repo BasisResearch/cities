@@ -5,7 +5,6 @@ sources:
     tables:
       - name: acs_bg_raw
       - name: acs_tract_raw
-      - name: usps_migration_raw
       - name: zip_raw_2000
       - name: zip_raw_2020
   - name: minneapolis

@@ -2,8 +2,8 @@
 {% set usps_migration_flow_directions = ['from', 'to'] %}
 
 with process_date as (
-  select to_date(yyyymm, 'YYYYMM') as date_, *
-    from {{ source('minneapolis_old', 'usps_migration_raw') }}
+  select to_date(yyyy_mm, 'YYYYMM') as date_, *
+    from {{ ref('usps_migration_union') }}
 )
 , zip_codes as (
   select
