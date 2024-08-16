@@ -2,7 +2,7 @@
   config(
     materialized='table',
     indexes = [
-      {'columns': ['geoidfq', 'description']}
+      {'columns': ['description']}
     ]
   )
 }}
@@ -18,11 +18,18 @@ with acs_tract as (
   from {{ ref('acs_tract') }}
 )
 
+, census_tracts_in_city_boundary as (
+  select
+    census_tract_id
+  from {{ ref("census_tracts_in_city_boundary") }}
+)
+
 , census_tracts as (
   select
     census_tract_id
-    , geoidfq
+    , substring(geoidfq from 10) as geoidfq
   from {{ ref("census_tracts") }}
+  where census_tract_id in (select census_tract_id from census_tracts_in_city_boundary)
 )
 
 , acs_variables as (
@@ -52,8 +59,8 @@ with acs_tract as (
 )
 
 select
-  distinct_tracts_and_variables.geoidfq
-  , acs_variables.description
+  acs_variables.description
+  , distinct_tracts_and_variables.geoidfq as tract_id
 {% for year_ in years %}
   , "{{ year_ }}"
 {% endfor %}
