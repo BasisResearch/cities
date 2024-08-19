@@ -24,4 +24,3 @@ from
   city_boundary
 where
   st_intersects(all_zip_codes.geom, city_boundary.geom)
-  and st_area(st_intersection(all_zip_codes.geom, city_boundary.geom)) / st_area(all_zip_codes.geom) > 0.2
