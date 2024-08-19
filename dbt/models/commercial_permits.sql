@@ -20,7 +20,7 @@ select
   , permit_val as permit_value
   , sqf as square_feet
   , address
-  , geom
+  , st_transform(geom, {{ var("srid") }}) as geom
   from
     {{ source('minneapolis', 'commercial_permits_nonresidentialconstruction') }}
  where

@@ -10,7 +10,7 @@
 
 with city_boundary as (
   select
-    st_transform(geom, 4269) as geom
+    geom
   from
     {{ ref('city_boundary') }}
 )
