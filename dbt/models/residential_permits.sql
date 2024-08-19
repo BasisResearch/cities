@@ -27,7 +27,7 @@ select
   , permit_val as permit_value
   , community_ as community_designation
   , notes
-  , geom
+  , st_transform(geom, {{ var("srid") }}) as geom
 from
     {{ source('minneapolis', 'residential_permits_residentialpermits') }}
 where

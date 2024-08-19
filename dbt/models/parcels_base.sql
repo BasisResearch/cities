@@ -40,5 +40,5 @@ select
   , year_built
   , sale_date
   , sale_value
-  , geom
+  , st_transform(geom, {{ var("srid") }}) as geom
 from parcels

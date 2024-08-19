@@ -26,5 +26,5 @@ select
   , "housing un" as num_housing_units
   , "car parkin" as num_car_parking_spaces
   , "bike parki" as num_bike_parking_spaces
-  , geom
+  , st_transform(geom, {{ var("srid") }}) as geom
 from parking_raw

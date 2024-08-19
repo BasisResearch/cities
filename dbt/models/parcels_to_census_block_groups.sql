@@ -13,7 +13,7 @@ parcels as (
   select
     parcel_id as id
     , valid
-    , ST_Transform(geom, 4269) as geom
+    , geom
   from {{ ref("parcels_base") }}
 ),
 census_block_groups as (

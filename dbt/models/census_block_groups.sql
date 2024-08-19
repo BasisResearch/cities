@@ -37,7 +37,7 @@ census_block_groups as (
     , {{ 'geoidfq' if year_ >= 2023 else 'affgeoid' }} as geoidfq
     , '[{{ year_ }}-01-01,{{ year_ + 1 }}-01-01)'::daterange as valid
   {% endif %}
-  , geom
+  , st_transform(geom, {{ var("srid") }}) as geom
   from
   {{ source('minneapolis', 'census_cb_' ~ year_ ~ '_27_bg_500k') }}
   {% if not loop.last %}union all{% endif %}

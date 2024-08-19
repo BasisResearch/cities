@@ -24,5 +24,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 
 vars:
+  srid: 26915 # use UTM zone 15N for all geometric data. note, this must have meters as the unit of measure
   # years for which we have census tract/block group data
   census_years: [2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
