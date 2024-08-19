@@ -9,7 +9,7 @@
 }}
 
 select
-  sde_id as residential_permit_id
+  sde_id::int as residential_permit_id
   , year::int as year_
   , tenure
   , housing_ty as housing_type
