@@ -18,14 +18,24 @@ census_tracts as (
 
   from {{ ref("census_tracts") }}
 )
+, acs_tract as (
+  select
+    statefp
+    , countyfp
+    , tractce
+    , year_
+    , name_
+    , value_
+  from {{ ref('acs_tract_clean') }}
+)
 select
     census_tract_id
-    , acs_tract_raw.year_
-    , acs_tract_raw.name_
-    , acs_tract_raw.value_
+    , acs_tract.year_
+    , acs_tract.name_
+    , acs_tract.value_
 from
-    {{ source('minneapolis_old', 'acs_tract_raw') }}
+    acs_tract
     inner join census_tracts
         using (statefp, countyfp, tractce)
  where
-   to_date(acs_tract_raw.year_::text , 'YYYY') <@ census_tracts.valid
+   to_date(acs_tract.year_::text , 'YYYY') <@ census_tracts.valid
