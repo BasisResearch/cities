@@ -5,10 +5,8 @@ import pyro
 import torch
 from torch.utils.data import DataLoader
 
-from cities.modeling.evaluation import prep_data_for_test
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-
 
 # can be disposed of once you access data in a different manner
 from cities.utils.data_grabber import find_repo_root

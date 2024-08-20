@@ -1,32 +1,25 @@
-import pyro
-import os
-
+import copy
 import os
 import time
-import copy 
-import pandas as pd
-import dill
-import pyro
-from pyro.infer import Predictive
-import torch
-from torch.utils.data import DataLoader
 
-#import chirho
-from chirho.interventional.handlers import do
+import dill
+import pandas as pd
+import pyro
+import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 
-from cities.modeling.evaluation import prep_data_for_test
-from cities.modeling.svi_inference import run_svi_inference
-from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
+# import chirho
+from chirho.interventional.handlers import do
+from pyro.infer import Predictive
+from torch.utils.data import DataLoader
 
+from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 
 # can be disposed of once you access data in a different manner
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
 
 root = find_repo_root()
-
-
 
 
 #####################
@@ -86,13 +79,16 @@ with open(guide_path, "rb") as file:
 pyro.get_param_store().load(param_path)
 
 predictive = Predictive(
-    model=tracts_model, guide=guide, num_samples=100, 
+    model=tracts_model,
+    guide=guide,
+    num_samples=100,
 )
 
 
 ############################################################
 # define interventions parametrized as in the intended query
 ############################################################
+
 
 # these are at the parcel level
 def values_intervention(
@@ -151,6 +147,7 @@ def values_intervention(
 
     return data
 
+
 # generate three interventions at the parcel level
 
 start = time.time()
@@ -168,6 +165,7 @@ print("Time to run values_intervention 3: ", end3 - start3)
 
 
 # these are at the tracts level
+
 
 def tracts_intervention(
     radius_blue, limit_blue, radius_yellow, limit_yellow, reform_year=2015
@@ -201,6 +199,7 @@ def tracts_intervention(
 
     return torch.tensor(list(subaggregate["intervention"]))
 
+
 # generate two interventions at the tracts level
 
 start = time.time()
@@ -219,8 +218,8 @@ print("Time to run tracts_intervention 2: ", end2 - start2)
 ##################################
 
 with MultiWorldCounterfactual() as mwc:
-    with do(actions={"limit": torch.tensor(0.)}):
+    with do(actions={"limit": torch.tensor(0.0)}):
         samples = predictive(**subset_for_preds)
 
 
-assert samples['limit'].shape == torch.Size([100, 2, 1, 1, 1, 816])
+assert samples["limit"].shape == torch.Size([100, 2, 1, 1, 1, 816])
