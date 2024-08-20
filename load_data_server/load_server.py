@@ -80,17 +80,8 @@ def get_db_connection():
 def create_schema_if_not_exists(conn):
     """Create the schema if it doesn't exist."""
     with conn.cursor() as cur:
-        cur.execute(
-            "SELECT EXISTS(SELECT 1 FROM information_schema.schemata WHERE schema_name = %s);",
-            (SCHEMA,),
-        )
-        schema_exists = cur.fetchone()[0]
-
-        if not schema_exists:
-            cur.execute(f"CREATE SCHEMA {SCHEMA};")
-            logging.info(f"Schema '{SCHEMA}' created.")
-        else:
-            logging.info(f"Schema '{SCHEMA}' already exists.")
+        cur.execute(f"create schema if not exists {SCHEMA};")
+        cur.execute("create extension if not exists postgis;")
 
 
 def generate_table_name(blob_name):
