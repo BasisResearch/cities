@@ -115,21 +115,6 @@ def generate_table_name(blob_name):
     return table_name.lower()
 
 
-def table_exists(conn, table_name):
-    """Check if a table exists in the specified schema."""
-    with conn.cursor() as cur:
-        cur.execute(
-            """
-            SELECT EXISTS (
-                SELECT FROM information_schema.tables
-                WHERE table_schema = %s AND table_name = %s
-            );
-        """,
-            (SCHEMA, table_name),
-        )
-        return cur.fetchone()[0]
-
-
 def drop_table_if_exists(conn, table_name):
     """Drop the table if it exists."""
     with conn.cursor() as cur:
@@ -140,8 +125,7 @@ def load_into_server(conn, file_path, file_type):
     table_name = os.path.splitext(os.path.basename(file_path))[0]
     full_table_name = f"{SCHEMA}.{table_name}"
 
-    if table_exists(conn, table_name):
-        drop_table_if_exists(conn, table_name)
+    drop_table_if_exists(conn, table_name)
 
     # Upload the file based on its type
     if file_type == "shp":
@@ -196,9 +180,6 @@ def group_shapefile_components(blobs):
 
 def process_geojson(conn, blob):
     table_name = generate_table_name(blob.name)
-    if table_exists(conn, table_name):
-        return False  # Table already exists, skip processing
-
     full_table_name = f"{SCHEMA}.{table_name}"
 
     file_path = os.path.join("/tmp", os.path.basename(blob.name))
@@ -231,9 +212,6 @@ def process_geojson(conn, blob):
 def process_shapefile(conn, component_blobs):
     shp_blob = next(blob for blob in component_blobs if blob.name.endswith(".shp"))
     table_name = generate_table_name(shp_blob.name)
-
-    if table_exists(conn, table_name):
-        return False  # Table already exists, skip processing
 
     temp_dir = os.path.join("/tmp", table_name)
     os.makedirs(temp_dir, exist_ok=True)
@@ -291,6 +269,7 @@ def load_csv_into_server(conn, file_path, full_table_name):
             ]
 
             create_table_sql = f"""
+            drop table if exists {full_table_name};
             CREATE TABLE {full_table_name} (
                 {','.join([f'"{col}" TEXT' for col in sanitized_header])}
             );
@@ -315,10 +294,6 @@ def process_csv(conn, blob):
     # Generate a table name based on the blob name
     table_name = generate_table_name(blob.name)
     full_table_name = f"{SCHEMA}.{table_name}"
-
-    # Check if the table already exists
-    if table_exists(conn, table_name):
-        return False  # Table already exists, skip processing
 
     # Download the CSV file to a temporary location
     temp_file_name = f"temp_{table_name}.csv"
