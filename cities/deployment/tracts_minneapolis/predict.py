@@ -216,8 +216,10 @@ print("Time to run tracts_intervention 2: ", end2 - start2)
 ##################################
 # use interventions with the model
 ##################################
-print(t_intervention.shape)
+print(t_intervention)
 
 with MultiWorldCounterfactual() as mwc:
-    with do(actions={"limit": t_intervention}):
+    with do(actions={"limit": torch.tensor(0.)}):
         samples = predictive(**subset_for_preds)
+
+print(samples['limit'])
