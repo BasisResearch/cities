@@ -269,7 +269,7 @@ def load_csv_into_server(conn, file_path, full_table_name):
             ]
 
             create_table_sql = f"""
-            drop table if exists {full_table_name};
+            drop table if exists {full_table_name} cascade;
             CREATE TABLE {full_table_name} (
                 {','.join([f'"{col}" TEXT' for col in sanitized_header])}
             );
