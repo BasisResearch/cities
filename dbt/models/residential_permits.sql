@@ -22,9 +22,9 @@ select
   , memory_car as num_memory_care_units
   , assisted as num_assisted_living_units
   , com_off_re = 'Y' as is_commercial_and_residential
-  , sqf as square_feet
+  , nullif(sqf, 0) as square_feet
   , public_fun = 'Y' as is_public_funded
-  , permit_val as permit_value
+  , nullif(permit_val, 0) as permit_value
   , community_ as community_designation
   , notes
   , st_transform(geom, {{ var("srid") }}) as geom
