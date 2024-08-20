@@ -1,5 +1,4 @@
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 VERSION = "0.1.0"
 
@@ -27,6 +26,7 @@ DEV_REQUIRES = [
     "google-cloud-storage",
     "dbt-core",
     "dbt-postgres",
+    "seaborn",
 ]
 
 setup(
@@ -45,10 +45,10 @@ setup(
         "pandas",
         "numpy",
         "scikit-learn",
+        "sqlalchemy",
         "dill",
         "plotly",
         "matplotlib>=3.8.2",
-        "seaborn",
     ],
     extras_require={"test": TEST_REQUIRES, "dev": DEV_REQUIRES + TEST_REQUIRES},
     python_requires=">=3.10",
