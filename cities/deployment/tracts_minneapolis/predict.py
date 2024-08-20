@@ -11,6 +11,7 @@ from pyro.infer import Predictive
 import torch
 from torch.utils.data import DataLoader
 
+#import chirho
 from chirho.interventional.handlers import do
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 
@@ -216,10 +217,10 @@ print("Time to run tracts_intervention 2: ", end2 - start2)
 ##################################
 # use interventions with the model
 ##################################
-print(t_intervention)
 
 with MultiWorldCounterfactual() as mwc:
     with do(actions={"limit": torch.tensor(0.)}):
         samples = predictive(**subset_for_preds)
 
-print(samples['limit'])
+
+assert samples['limit'].shape == torch.Size([100, 2, 1, 1, 1, 816])
