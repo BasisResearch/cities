@@ -1,6 +1,7 @@
 import os
 
 import numpy as np
+import pandas as pd
 
 from cities.utils.data_grabber import (
     DataGrabber,
@@ -133,6 +134,24 @@ def general_data_format_testing(data, features):
             ).all(), (
                 f"The column '{column}' of feature '{feature}' is not standardized."
             )
+
+
+def check_years(df):
+    current_year = pd.Timestamp.now().year
+    for year in df["Year"].unique():
+        assert year > 1945, f"Year {year} in is not greater than 1945."
+        assert year <= current_year, f"Year {year} exceeds the current year."
+
+
+tensed_features = list_tensed_features()
+
+
+def test_missing_years():
+    data = DataGrabber()
+    data.get_features_long(tensed_features)
+
+    for feature in tensed_features:
+        check_years(data.long[feature])
 
 
 def test_DataGrabber_data_types():
