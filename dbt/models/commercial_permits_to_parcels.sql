@@ -21,7 +21,7 @@ commercial_permits as (
     parcel_id as id
     , valid
     , geom
-  from {{ ref("parcels_base") }}
+  from {{ ref("parcels") }}
 )
 select
   child_id as commercial_permit_id

@@ -8,7 +8,12 @@
 with
   categories as (select * from {{ ref("population_categories") }})
   , acs_tract as (select * from {{ ref("acs_tract") }})
-  , acs_variables as (select * from {{ ref("acs_variables") }})
+  , acs_variables as (
+    select
+      variable as name_,
+      description
+    from {{ ref("acs_variables") }}
+  )
   , pop_tyc as
     ( -- Population by tract, year, and category
     select acs_tract.census_tract_id, acs_tract.year_, categories.category, acs_tract.value_

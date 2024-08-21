@@ -1,21 +1,25 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['parcel_id'], 'unique': true},
+      {'columns': ['valid', 'geom'], 'type': 'gist'}
+    ]
+  )
+}}
+
 with
-parcels_to_zip_codes as (
-  select
-    parcel_id
-    , zip_code_id
-  from {{ref('parcels_to_zip_codes')}}
-),
-parcels_to_census_block_groups as (
-  select
-    parcel_id
-    , census_block_group_id
-  from {{ref('parcels_to_census_block_groups')}}
-)
+parcels as (select * from {{ ref('parcels_base') }}),
+to_zip_codes as (select * from {{ref('parcels_to_zip_codes')}}),
+to_census_bgs as (select * from {{ref('parcels_to_census_block_groups')}}),
+census_bgs as (select * from {{ref('census_block_groups')}})
 select
-  {{ dbt_utils.star(ref('parcels_base')) }}
-  , zip_code_id
-  , census_block_group_id
+  parcels.*
+  , to_zip_codes.zip_code_id
+  , to_census_bgs.census_block_group_id
+  , census_bgs.census_tract_id
 from
-  {{ ref('parcels_base') }}
-  left join parcels_to_zip_codes using (parcel_id)
-  left join parcels_to_census_block_groups using (parcel_id)
+  parcels
+  left join to_zip_codes using (parcel_id)
+  left join to_census_bgs using (parcel_id)
+  left join census_bgs using (census_block_group_id)
