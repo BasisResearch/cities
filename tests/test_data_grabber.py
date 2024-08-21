@@ -2,6 +2,7 @@ import os
 import random
 
 import numpy as np
+import pandas as pd
 
 from cities.utils.data_grabber import (  # TODO: Change to CTDataGrabber() in the future
     CTDataGrabberCSV,
@@ -250,25 +251,51 @@ def test_GeoFIPS_ct_column_values():
         assert all(value > 999999999 for value in column_values)
 
 
-time_periods = ["pre_2020", "post_2020"]
-variables = list_available_features(level="census_tract")
-compare_variable = random.choice(variables)
+def test_ct_data_grabber_fips_consistency():
+    time_periods = ["pre_2020", "post_2020"]
+    variables = list_available_features(level="census_tract")
+
+    data_by_period = {}
+
+    for ct_time_period in time_periods:
+        data = CTDataGrabberCSV(ct_time_period=ct_time_period)
+        data.get_features_wide(variables)
+        data_by_period[ct_time_period] = {var: data.wide[var] for var in variables}
+
+    compare_variable = random.choice(variables)
+
+    for ct_time_period in time_periods:
+        var_compare = data_by_period[ct_time_period][compare_variable]
+        fips_compare = var_compare["GeoFIPS"].nunique()
+
+        for variable in variables:
+            var = data_by_period[ct_time_period][variable]
+            fips_standard = var["GeoFIPS"].nunique()
+
+            assert fips_compare == fips_standard, (
+                f"The CT variables differ in the number of FIPS codes: {compare_variable} and {variable},"
+                f"with {fips_compare} and {fips_standard} respectively!"
+            )
 
 
-for ct_time_period in time_periods:
+current_year = pd.Timestamp.now().year
 
-    data = CTDataGrabberCSV(ct_time_period=ct_time_period)
-    data.get_features_wide([compare_variable])
-    var_compare = data.wide[compare_variable]
-    fips_compare = var_compare["GeoFIPS"].nunique()
 
-    for variable in variables:
+def check_years(df):
+    for year in df["Year"].unique():
+        assert year > 1945, f"Year {year} is not greater than 1945."
+        assert year <= current_year, f"Year {year} exceeds the current year."
 
-        data.get_features_wide([variable])
-        var = data.wide[variable]
-        fips_standard = var["GeoFIPS"].nunique()
 
-        assert fips_compare == fips_standard, (
-            f"The CT variables differ in the number of FIPS codes: {compare_variable} and {variable},"
-            f"with {fips_compare} and {fips_standard} respectively!"
-        )
+tensed_features_ct = list_tensed_features(level="census_tract")
+
+
+def test_missing_years_census_tract():
+    time_periods = ["pre_2020", "post_2020"]
+
+    for time_period in time_periods:
+        data = CTDataGrabberCSV(ct_time_period=time_period)
+        data.get_features_long(tensed_features_ct)
+
+        for feature in tensed_features_ct:
+            check_years(data.long[feature])
