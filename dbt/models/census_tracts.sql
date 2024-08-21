@@ -1,3 +1,13 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['census_tract_id'], 'unique': true},
+      {'columns': ['valid', 'geom'], 'type': 'gist'}
+    ]
+  )
+}}
+
 with census_tracts as (
   {% for year_ in var('census_years') %}
 select
@@ -13,7 +23,8 @@ select
     , tractce
     , {{ 'geoidfq' if year_ >= 2023 else 'affgeoid' }} as geoidfq
     , '[{{year_}}-01-01,{{ year_ + 1 }}-01-01)'::daterange as valid
-{% endif %}
+  {% endif %}
+    , {{ year_ }} as year_
     , st_transform(geom, {{ var("srid") }}) as geom
 from
     {{ source('minneapolis', 'census_cb_' ~ year_ ~ '_27_tract_500k') }}
@@ -27,6 +38,7 @@ select
     , tractce
     , geoidfq
     , valid
+    , year_
     , geom
 from
      census_tracts

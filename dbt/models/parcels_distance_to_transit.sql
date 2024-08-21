@@ -1,3 +1,12 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['parcel_id'], 'unique': true},
+    ]
+  )
+}}
+
 with
   parcels as (
     select

@@ -37,6 +37,7 @@ census_block_groups as (
     , {{ 'geoidfq' if year_ >= 2023 else 'affgeoid' }} as geoidfq
     , '[{{ year_ }}-01-01,{{ year_ + 1 }}-01-01)'::daterange as valid
   {% endif %}
+  , {{ year_ }} as year_
   , st_transform(geom, {{ var("srid") }}) as geom
   from
   {{ source('minneapolis', 'census_cb_' ~ year_ ~ '_27_bg_500k') }}
@@ -67,5 +68,6 @@ select
   , geoidfq
   , census_tract_id
   , valid
+  , year_
   , geom
 from census_block_groups_with_tracts

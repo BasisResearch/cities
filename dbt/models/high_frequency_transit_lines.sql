@@ -1,3 +1,13 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['high_frequency_transit_line_id'], 'unique': true},
+      {'columns': ['valid', 'geom'], 'type': 'gist'},
+    ]
+  )
+}}
+
 with lines as (
   select
     valid
