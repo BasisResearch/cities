@@ -32,13 +32,6 @@ from
 {% endfor %}
 )
 select
-    {{ dbt_utils.generate_surrogate_key(['geoidfq', 'valid']) }} as census_tract_id
-    , statefp
-    , countyfp
-    , tractce
-    , geoidfq
-    , valid
-    , year_
-    , geom
+    {{ dbt_utils.generate_surrogate_key(['geoidfq', 'valid']) }} as census_tract_id, *
 from
      census_tracts

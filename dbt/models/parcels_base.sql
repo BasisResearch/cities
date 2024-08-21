@@ -24,21 +24,12 @@ with parcels as (
   nullif(year_built, 0) as year_built,
   sale_date,
   nullif(sale_value, 0) as sale_value,
-  geom
+  st_transform(geom, {{ var("srid") }}) as geom
   from {{ source('minneapolis', 'parcels_shp_plan_regonal_' ~ year_ ~ '_parcels' ~ year_ ~ 'hennepin') }}
   where upper({{ "city" if year_ < 2018 else "ctu_name" }}) = '{{ city }}'
   {% if not loop.last %}union all{% endif %}
   {% endfor %}
 )
 select
-  {{ dbt_utils.generate_surrogate_key(['ogc_fid', 'valid']) }} as parcel_id
-  , pin
-  , valid
-  , emv_land
-  , emv_bldg
-  , emv_total
-  , year_built
-  , sale_date
-  , sale_value
-  , st_transform(geom, {{ var("srid") }}) as geom
+  {{ dbt_utils.generate_surrogate_key(['ogc_fid', 'valid']) }} as parcel_id, *
 from parcels

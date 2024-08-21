@@ -8,18 +8,8 @@
   )
 }}
 
-with lines as (
-  select
-    valid
-    , geom
-  from {{ ref('high_frequency_transit_lines_union') }}
-)
-, stops as (
-  select
-    valid
-    , geom
-  from {{ ref('high_frequency_transit_stops') }}
-)
+with lines as (select * from {{ ref('high_frequency_transit_lines_union') }})
+, stops as (select * from {{ ref('high_frequency_transit_stops') }})
 , lines_and_stops as (
   select
     lines.valid * stops.valid as valid

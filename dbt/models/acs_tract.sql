@@ -8,26 +8,8 @@
 }}
 
 with
-census_tracts as (
-  select
-    census_tract_id
-    , statefp
-    , countyfp
-    , tractce
-    , valid
-
-  from {{ ref("census_tracts") }}
-)
-, acs_tract as (
-  select
-    statefp
-    , countyfp
-    , tractce
-    , year_
-    , name_
-    , value_
-  from {{ ref('acs_tract_clean') }}
-)
+census_tracts as (select * from {{ ref("census_tracts") }})
+, acs_tract as (select * from {{ ref('acs_tract_clean') }})
 select
     census_tract_id
     , acs_tract.year_

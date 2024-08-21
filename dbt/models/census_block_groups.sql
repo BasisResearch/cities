@@ -10,15 +10,7 @@
 }}
 
 with
-census_tracts as (
-  select
-    census_tract_id
-    , statefp
-    , countyfp
-    , tractce
-    , valid
-  from {{ ref("census_tracts") }}
-),
+census_tracts as (select * from {{ ref("census_tracts") }}),
 census_block_groups as (
   {% for year_ in var('census_years') %}
   select
@@ -55,19 +47,11 @@ census_block_groups_with_tracts as (
     , (census_block_groups.valid * census_tracts.valid) as valid
     , census_block_groups.geom
   from census_block_groups
-       inner join census_tracts using (statefp , countyfp , tractce)
+       inner join census_tracts using (statefp, countyfp, tractce)
   where
     census_tracts.valid && census_block_groups.valid
 )
 select
-  {{ dbt_utils.generate_surrogate_key(['geoidfq', 'valid']) }} as census_block_group_id
-  , statefp
-  , countyfp
-  , tractce
-  , blkgrpce
-  , geoidfq
-  , census_tract_id
-  , valid
-  , year_
-  , geom
+  {{ dbt_utils.generate_surrogate_key(['geoidfq', 'valid']) }} as census_block_group_id,
+  *
 from census_block_groups_with_tracts

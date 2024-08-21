@@ -9,22 +9,10 @@
 }}
 
 with
-parcels as (
-  select
-    parcel_id
-  from {{ ref("parcels_base") }}
-)
-, census_block_groups as (
-  select
-    census_block_group_id
-    , census_tract_id
-  from {{ ref("census_block_groups") }}
-)
+parcels as (select * from {{ ref("parcels_base") }})
+, census_block_groups as (select * from {{ ref("census_block_groups") }})
 , parcels_to_census_block_groups as (
-  select
-    parcel_id
-    , census_block_group_id
-  from {{ ref("parcels_to_census_block_groups") }}
+  select * from {{ ref("parcels_to_census_block_groups") }}
 )
 select
   parcels.parcel_id

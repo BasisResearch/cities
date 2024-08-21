@@ -10,17 +10,11 @@
 {% set usps_migration_flow_types = ['business', 'family', 'individual', 'perm', 'temp'] %}
 {% set usps_migration_flow_directions = ['from', 'to'] %}
 
-with process_date as (
+with
+zip_codes as (select * from {{ ref('zip_codes') }})
+, process_date as (
   select to_date(yyyy_mm, 'YYYYMM') as date_, *
     from {{ ref('usps_migration_union') }}
-)
-, zip_codes as (
-  select
-    zip_code_id
-    , zip_code
-    , valid
-  from
-    {{ ref('zip_codes') }}
 )
 , add_zip_id as (
   select zip_code_id, process_date.*

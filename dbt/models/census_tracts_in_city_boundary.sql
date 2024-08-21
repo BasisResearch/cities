@@ -1,13 +1,8 @@
 with census_tracts as (
-  select
-    census_tract_id
-    , geom
-  from {{ ref('census_tracts') }}
+  select * from {{ ref('census_tracts') }}
 )
 , city_boundary as (
-  select
-    geom
-  from {{ ref('city_boundary') }}
+  select * from {{ ref('city_boundary') }}
 )
 select
   census_tracts.census_tract_id

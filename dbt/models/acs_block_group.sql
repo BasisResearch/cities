@@ -8,29 +8,8 @@
 }}
 
 with
-census_block_groups as (
-    select
-        census_block_group_id
-        , statefp
-        , countyfp
-        , tractce
-        , blkgrpce
-        , valid
-    from
-        {{ ref('census_block_groups') }}
-)
-, acs_bg as (
-  select
-    statefp
-    , countyfp
-    , tractce
-    , blkgrpce
-    , year_
-    , name_
-    , value_
-    from
-        {{ ref('acs_block_group_clean') }}
-)
+census_block_groups as (select * from {{ ref('census_block_groups') }})
+, acs_bg as (select * from {{ ref('acs_block_group_clean') }})
 select
     census_block_groups.census_block_group_id
     , acs_bg.year_

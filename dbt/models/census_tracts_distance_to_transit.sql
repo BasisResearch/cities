@@ -9,21 +9,13 @@
 
 with
   parcels_distance_to_transit as (
-    select
-      parcel_id
-      , distance
-    from {{ ref('parcels_distance_to_transit') }}
+    select * from {{ ref('parcels_distance_to_transit') }}
  )
  , census_tracts as (
-    select
-      census_tract_id
-    from {{ ref('census_tracts') }}
+    select * from {{ ref('census_tracts') }}
  )
  , parcels_to_census_tracts as (
-    select
-      parcel_id
-      , census_tract_id
-    from {{ ref('parcels_to_census_tracts') }}
+    select * from {{ ref('parcels_to_census_tracts') }}
  )
 select
   census_tracts.census_tract_id

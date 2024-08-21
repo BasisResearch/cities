@@ -8,21 +8,13 @@
 }}
 
 with census_tracts as (
-  select
-    census_tract_id
-  from {{ ref('census_tracts') }}
+  select * from {{ ref('census_tracts') }}
 )
 , parcels as (
-  select
-    parcel_id
-    , geom
-  from {{ ref('parcels_base') }}
+  select * from {{ ref('parcels_base') }}
 )
 , parcels_to_census_tracts as (
-  select
-    parcel_id
-    , census_tract_id
-  from {{ ref('parcels_to_census_tracts') }}
+  select * from {{ ref('parcels_to_census_tracts') }}
 )
 select
   census_tract_id

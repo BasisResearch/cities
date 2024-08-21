@@ -1,24 +1,8 @@
 {% set num_bedrooms = range(0, 5) %}
 
 with
-zip_codes as (
-  select
-    zip_code_id
-    , zip_code
-    , valid
-  from {{ ref('zip_codes') }}
-)
-, fair_market_rents as (
-  select
-    zip_code
-    , rent_br0
-    , rent_br1
-    , rent_br2
-    , rent_br3
-    , rent_br4
-    , year_
-  from {{ ref('fair_market_rents_union') }}
-)
+zip_codes as (select * from {{ ref('zip_codes') }})
+, fair_market_rents as (select * from {{ ref('fair_market_rents_union') }})
 , fmr_zip as (
   select
     zip_codes.zip_code_id

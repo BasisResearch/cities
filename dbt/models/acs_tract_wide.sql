@@ -9,21 +9,12 @@
 
 {% set years = range(2013, 2023) %}
 
-with acs_tract as (
-  select
-    census_tract_id
-    , year_
-    , name_
-    , value_
-  from {{ ref('acs_tract') }}
-)
-
+with
+acs_tract as (select * from {{ ref('acs_tract') }})
+, acs_variables as (select * from {{ ref("acs_variables") }})
 , census_tracts_in_city_boundary as (
-  select
-    census_tract_id
-  from {{ ref("census_tracts_in_city_boundary") }}
+  select * from {{ ref("census_tracts_in_city_boundary") }}
 )
-
 , census_tracts as (
   select
     census_tract_id
@@ -31,14 +22,6 @@ with acs_tract as (
   from {{ ref("census_tracts") }}
   where census_tract_id in (select census_tract_id from census_tracts_in_city_boundary)
 )
-
-, acs_variables as (
-  select
-    "variable"
-    , description
-  from {{ ref("acs_variables") }}
-)
-
 , acs_tract_extended as (
   select
     acs_tract.census_tract_id
