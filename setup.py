@@ -14,13 +14,14 @@ TEST_REQUIRES = [
             "nbval",
             "nbqa",
             "autoflake",
+            "types-requests",
         ]
 
 DEV_REQUIRES = [
     "pyro-ppl==1.8.5",
     "torch",   "plotly.express", 
     "scipy",  
-    "chirho", "graphviz", "seaborn"
+    "chirho", "graphviz", "seaborn",
 ]
 
 setup(
