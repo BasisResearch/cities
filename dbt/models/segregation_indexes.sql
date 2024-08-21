@@ -17,18 +17,24 @@ with
       , value_
     from {{ ref("acs_tract") }}
   )
+  , acs_variables as (
+    select
+      "variable" as name_
+      , description
+    from {{ ref("acs_variables") }}
+  )
   , pop_tyc as
     ( -- Population by tract, year, and category
     select acs_tract.census_tract_id, acs_tract.year_, categories.category, acs_tract.value_
       from acs_tract
-           join acs_variable using (name_)
-           join categories on categories.category = acs_variable.description
+           join acs_variables using (name_)
+           join categories on categories.category = acs_variables.description
     ),
   pop_ty as
     ( -- Population by tract and year (note: using 'population' variable instead of aggregating categories)
     select census_tract_id, year_, value_
-      from acs_tract join acs_variable using (name_)
-     where acs_variable.description = 'population'
+      from acs_tract join acs_variables using (name_)
+     where acs_variables.description = 'population'
     ),
   pop_yc as
     ( -- Population by year and category
