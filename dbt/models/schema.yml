@@ -1,14 +1,10 @@
 sources:
-  - name: minneapolis_old
-    database: cities
-    schema: public
-    tables:
-      - name: acs_bg_raw
-      - name: acs_tract_raw
   - name: minneapolis
     database: cities
     schema: minneapolis
     tables:
+      - name: acs_bg_raw
+      - name: acs_tract_raw
       - name: residential_permits_residentialpermits
       - name: commercial_permits_nonresidentialconstruction
       - name: high_frequency_transit_2015_freq_350_ft_buffer

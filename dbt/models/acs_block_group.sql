@@ -29,7 +29,7 @@ census_block_groups as (
     , name_
     , value_
     from
-        {{ source('minneapolis_old', 'acs_bg_raw') }}
+        {{ ref('acs_block_group_clean') }}
 )
 select
     census_block_groups.census_block_group_id
