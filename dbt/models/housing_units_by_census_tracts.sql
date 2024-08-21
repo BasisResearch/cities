@@ -15,6 +15,7 @@ with census_tracts as (
     residential_permit_id
     , year_
     , permit_value
+    , num_units
   from {{ ref('residential_permits') }}
 )
 , residential_permits_to_parcels as (
@@ -33,7 +34,7 @@ with census_tracts as (
   select
     census_tracts.census_tract
     , residential_permits.year_
-    , residential_permits.housing_units
+    , residential_permits.num_units
     , st_area(parcels.geom) as parcel_sqm
     , residential_permits.permit_value
   from
@@ -48,7 +49,7 @@ with census_tracts as (
   select
     census_tract
     , year_
-    , sum(housing_units) as housing_units
+    , sum(num_units) as num_units
   from residential
   group by census_tract, year_
 )
@@ -56,7 +57,7 @@ with census_tracts as (
 select
   census_tract
   , year_
-  , housing_units -- do we really want the total _applied_ units, or should we
-                  -- be looking at the total unit estimates from ACS?
+  , num_units -- do we really want the total _applied_ units, or should we be
+              -- looking at the total unit estimates from ACS?
 from
   agg_residential

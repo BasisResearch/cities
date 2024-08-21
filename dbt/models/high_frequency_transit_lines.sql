@@ -1,22 +1,30 @@
 with lines as (
   select
-    year_
+    valid
     , geom
   from {{ ref('high_frequency_transit_lines_union') }}
 )
 , stops as (
   select
-    year_
+    valid
     , geom
   from {{ ref('high_frequency_transit_stops') }}
 )
+, lines_and_stops as (
+  select
+    lines.valid * stops.valid as valid
+    , lines.geom as line_geom
+    , stops.geom as stop_geom
+  from
+    lines
+      inner join stops on lines.valid && stops.valid
+)
 select
-  year_ as high_frequency_transit_lines_id
-  , year_
-  , lines.geom
+  {{ dbt_utils.generate_surrogate_key(['valid']) }} as high_frequency_transit_line_id
+  , valid
+  , line_geom as geom
   -- note units are in meters
-  , st_buffer(lines.geom, 106.7) as blue_zone_geom -- 350 feet
-  , st_union(st_buffer(lines.geom, 402.3), st_buffer(stops.geom, 804.7)) as yellow_zone_geom -- quarter mile around lines and half mile around stops
+  , st_buffer(line_geom, 106.7) as blue_zone_geom -- 350 feet
+  , st_union(st_buffer(line_geom, 402.3), st_buffer(stop_geom, 804.7)) as yellow_zone_geom -- quarter mile around lines and half mile around stops
 from
-  lines
-    inner join stops using (year_)
+  lines_and_stops

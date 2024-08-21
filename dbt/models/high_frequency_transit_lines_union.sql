@@ -11,11 +11,11 @@ with lines_2015 as (
     {{ source('minneapolis', 'high_frequency_transit_2016_freq_lines') }}
 )
 select
-    2015 as year_,
+    '(,2016-01-01)'::daterange as valid,
     geom
 from lines_2015
 union all
 select
-    2016 as year_,
+    '[2016-01-01,)'::daterange as valid,
     geom
 from lines_2016

@@ -17,6 +17,6 @@ select
   , sum(parcels.emv_total) as total_value
   , percentile_cont(0.5) within group (order by parcels.emv_total) as median_value
 from
-  parcels_to_census_tracts using (parcel_id)
+  parcels_to_census_tracts
     inner join parcels using (parcel_id)
-group by census_tracts.census_tract_id
+group by parcels_to_census_tracts.census_tract_id
