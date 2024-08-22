@@ -3,7 +3,7 @@ drop schema if exists api cascade;
 create schema api;
 
 create view api.acs_tract_wide as (
-  select * from dbt.acs_tract_wide
+  select * from acs_tract_wide
   order by random()
 );
 
