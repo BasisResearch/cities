@@ -8,7 +8,7 @@
   )
 }}
 
-with census_tracts as (
+with census_tracts_union as (
   {% for year_ in var('census_years') %}
 select
   {% if year_ == 2010 %}
@@ -30,8 +30,12 @@ from
     {{ source('minneapolis', 'census_cb_' ~ year_ ~ '_27_tract_500k') }}
 {% if not loop.last %}union all{% endif %}
 {% endfor %}
+),
+with_census_tract as (
+  select *, statefp || countyfp || tractce as census_tract
+  from census_tracts_union
 )
 select
     {{ dbt_utils.generate_surrogate_key(['geoidfq', 'valid']) }} as census_tract_id, *
 from
-     census_tracts
+     with_census_tract
