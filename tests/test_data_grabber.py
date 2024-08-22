@@ -143,15 +143,20 @@ def check_years(df):
         assert year <= current_year, f"Year {year} exceeds the current year."
 
 
-tensed_features = list_tensed_features()
-
-
 def test_missing_years():
-    data = DataGrabber()
-    data.get_features_long(tensed_features)
+    levels = ["county", "msa"]
+    for level in levels:
+        tensed_features = list_tensed_features(level=level)
 
-    for feature in tensed_features:
-        check_years(data.long[feature])
+        if level == "msa":
+            data = MSADataGrabber()
+        else:
+            data = DataGrabber()
+
+        data.get_features_long(tensed_features)
+
+        for feature in tensed_features:
+            check_years(data.long[feature])
 
 
 def test_DataGrabber_data_types():
