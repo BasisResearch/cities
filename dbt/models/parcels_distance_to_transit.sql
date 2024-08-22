@@ -7,13 +7,22 @@
   )
 }}
 
+-- This model calculates the distance from each parcel to the nearest high
+-- frequency transit line or stop
 with
   parcels as (select * from {{ ref('parcels') }})
- , high_freq_transit as (select * from {{ ref('high_frequency_transit_lines') }})
+ , lines as (select * from {{ ref('high_frequency_transit_lines') }})
+ , stops as (select * from {{ ref('high_frequency_transit_stops') }})
+ , lines_and_stops as materialized (
+  select
+    lines.valid * stops.valid as valid
+    , st_union(lines.geom, stops.geom) as geom
+  from
+    lines inner join stops on lines.valid && stops.valid
+)
 select
   parcels.parcel_id
-  , st_distance(parcels.geom, high_frequency_transit_lines.geom) as distance
+  , st_distance(parcels.geom, lines_and_stops.geom) as distance
 from
   parcels
-    inner join high_frequency_transit_lines
-    on parcels.valid && high_frequency_transit_lines.valid
+  inner join lines_and_stops on parcels.valid && lines_and_stops.valid
