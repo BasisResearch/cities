@@ -26,7 +26,7 @@ parcels_union as (
   nullif(emv_bldg, 0) as emv_bldg,
   nullif(emv_total, 0) as emv_total,
   nullif(year_built, 0) as year_built,
-  nullif(sale_date, '1899-12-30'::date),
+  nullif(sale_date, '1899-12-30'::date) as sale_date,
   nullif(sale_value, 0) as sale_value,
   st_transform(geom, {{ var("srid") }}) as geom
   from {{ source('minneapolis', 'parcels_shp_plan_regonal_' ~ year_ ~ '_parcels' ~ year_ ~ 'hennepin') }}
