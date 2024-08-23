@@ -87,9 +87,10 @@ select
   , parcel_sqm
   , white
   , income
+  , mean_limit
   , {{ standardize(['num_units', 'total_value', 'median_value',
                     'median_distance_to_transit', 'mean_distance_to_transit',
-                    'parcel_sqm', 'white', 'income' ]) }}
+                    'parcel_sqm', 'white', 'income', 'mean_limit' ]) }}
 from
   raw_data
 )
