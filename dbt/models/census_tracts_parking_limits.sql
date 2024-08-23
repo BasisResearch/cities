@@ -10,11 +10,13 @@
 with
 parcels as (select * from {{ ref('parcels') }}),
 transit as (select * from {{ ref('high_frequency_transit_lines') }}),
+downtown as (select * from {{ ref('downtown') }}),
 with_parking_limit as (
   select
     parcel_id,
     census_tract_id,
     case
+      when st_intersects(parcels.geom, downtown.geom) then 'eliminated'
       when parcels.valid << '[2015-01-01,)'::daterange then 'full'
       else
         case
@@ -24,7 +26,7 @@ with_parking_limit as (
         end
     end as limit_
   from
-    parcels
+    downtown, parcels
     left join transit
       on parcels.valid && transit.valid
 ),
