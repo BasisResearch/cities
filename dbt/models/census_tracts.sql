@@ -16,14 +16,13 @@ select
     , county as countyfp
     , tract as tractce
     , geo_id as geoidfq
-    , '[,2013-01-01)'::daterange as valid
   {% else %}
     statefp
     , countyfp
     , tractce
     , {{ 'geoidfq' if year_ >= 2023 else 'affgeoid' }} as geoidfq
-    , '[{{year_}}-01-01,{{ year_ + 1 }}-01-01)'::daterange as valid
   {% endif %}
+    , '[{{year_}}-01-01,{{ year_ + 1 }}-01-01)'::daterange as valid
     , {{ year_ }} as year_
     , st_transform(geom, {{ var("srid") }}) as geom
 from
@@ -31,11 +30,41 @@ from
 {% if not loop.last %}union all{% endif %}
 {% endfor %}
 ),
+years_2011_2012 as (
+  select
+    statefp
+    , countyfp
+    , tractce
+    , geoidfq
+    , '[2011-01-01,2012-01-01)'::daterange as valid
+    , 2011 as year_
+    , geom
+  from census_tracts_union
+  where year_ = 2010
+  union all
+  select
+    statefp
+    , countyfp
+    , tractce
+    , geoidfq
+    , '[2012-01-01,2013-01-01)'::daterange as valid
+    , 2012 as year_
+    , geom
+  from census_tracts_union
+  where year_ = 2010
+),
+add_2011_2012 as (
+  select *
+  from census_tracts_union
+  union all
+  select *
+  from years_2011_2012
+),
 with_census_tract as (
   select *, statefp || countyfp || tractce as census_tract
-  from census_tracts_union
+  from add_2011_2012
 )
 select
-    {{ dbt_utils.generate_surrogate_key(['geoidfq', 'valid']) }} as census_tract_id, *
+    {{ dbt_utils.generate_surrogate_key(['geoidfq', 'year_']) }} as census_tract_id, *
 from
      with_census_tract
