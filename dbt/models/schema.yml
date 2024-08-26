@@ -126,15 +126,15 @@ models:
     data_tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
-            - census_tract_id
+            - census_tract
             - year_
             - distribution
     columns:
-      - name: census_tract_id
+      - name: census_tract
         data_tests:
           - relationships:
               to: ref('census_tracts')
-              field: census_tract_id
+              field: census_tract
 
   - name: parcels
     columns:
