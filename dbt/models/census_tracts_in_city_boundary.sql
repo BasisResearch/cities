@@ -6,6 +6,8 @@ with census_tracts as (
 )
 select
   census_tracts.census_tract_id
+  , census_tracts.census_tract
+  , census_tracts.year_
 from
   census_tracts
   , city_boundary
