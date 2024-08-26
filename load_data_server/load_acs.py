@@ -49,7 +49,7 @@ ACS_CODES = {
     "B02001_004E": "american_indian_or_alaska_native",
     "B02001_005E": "asian",
     "B02001_006E": "native_hawaiian_or_pacific_islander",
-    "B03001_003E": "population_hispanic_or_latino",
+    "B03001_003E": "hispanic_or_latino",
     "B02001_007E": "other_race",
     "B02001_008E": "multiple_races",
     "B02001_009E": "multiple_races_and_other_race",
@@ -78,14 +78,6 @@ ACS_CODES = {
     "B02015_023E": "south_asian_bhutanese",
     "B02015_024E": "south_asian_nepalese",
     "B02015_025E": "south_asian_pakistani",
-    "B02015_026E": "south_asian_sikh",
-    "B02015_027E": "south_asian_sri_lankan",
-    "B02015_028E": "south_asian_other",
-    "B02015_029E": "central_asian_kazakh",
-    "B02015_030E": "central_asian_uzbek",
-    "B02015_031E": "central_asian_other",
-    "B02015_032E": "other_asian_specified",
-    "B02015_033E": "other_asian_not_specified",
     "B19013_001E": "median_household_income",
     "B19013A_001E": "median_household_income_white",
     "B19013H_001E": "median_household_income_white_non_hispanic",
@@ -128,10 +120,10 @@ if __name__ == "__main__":
     bucket = storage_client.bucket(BUCKET_NAME)
     cur = conn.cursor()
 
-    cur.execute(f"drop table if exists {SCHEMA}.acs_tract_raw")
     cur.execute(
-        f"create table {SCHEMA}.acs_tract_raw (statefp text, countyfp text, tractce text, year int, code text, value numeric)"
+        f"create table if not exists {SCHEMA}.acs_tract_raw (statefp text, countyfp text, tractce text, year int, code text, value numeric)"
     )
+    cur.execute(f"truncate table {SCHEMA}.acs_tract_raw")
 
     temp_table = f"{SCHEMA}.acs_tract_temp"
     cur.execute(f"drop table if exists {temp_table}")
@@ -141,7 +133,12 @@ if __name__ == "__main__":
     for code in tqdm(ACS_CODES.keys()):
         desc = ACS_CODES[code]
 
-        for blob in bucket.list_blobs(prefix=f"acs/tracts/{desc}/"):
+        blobs = list(bucket.list_blobs(prefix=f"acs/tracts/{desc}/"))
+        if len(blobs) == 0:
+            logging.info(f"No blobs found for {desc}")
+            continue
+
+        for blob in blobs:
             year = blob.name.split("/")[-1].split(".")[0]
             cur.execute(f"truncate {temp_table}")
             with tempfile.NamedTemporaryFile() as temp:
@@ -155,10 +152,10 @@ if __name__ == "__main__":
     cur.execute(f"drop table {temp_table}")
     conn.commit()
 
-    cur.execute(f"drop table if exists {SCHEMA}.acs_bg_raw")
     cur.execute(
-        f"create table {SCHEMA}.acs_bg_raw (statefp text, countyfp text, tractce text, blkgrpce text, year int, code text, value numeric)"
+        f"create table if not exists {SCHEMA}.acs_bg_raw (statefp text, countyfp text, tractce text, blkgrpce text, year int, code text, value numeric)"
     )
+    cur.execute(f"truncate table {SCHEMA}.acs_bg_raw")
 
     temp_table = f"{SCHEMA}.acs_tract_temp"
     cur.execute(f"drop table if exists {temp_table}")
@@ -168,7 +165,13 @@ if __name__ == "__main__":
 
     for code in tqdm(ACS_CODES.keys()):
         desc = ACS_CODES[code]
-        for blob in bucket.list_blobs(prefix=f"acs/block_groups/{desc}/"):
+
+        blobs = list(bucket.list_blobs(prefix=f"acs/block_groups/{desc}/"))
+        if len(blobs) == 0:
+            logging.info(f"No blobs found for {desc}")
+            continue
+
+        for blob in blobs:
             year = blob.name.split("/")[-1].split(".")[0]
             cur.execute(f"truncate {temp_table}")
             with tempfile.NamedTemporaryFile() as temp:
