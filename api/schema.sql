@@ -2,9 +2,8 @@ drop schema if exists api cascade;
 
 create schema api;
 
-create view api.acs_tract_wide as (
-  select * from acs_tract_wide
-  order by random()
+create view api.demographics as (
+  select * from demographics_wide
 );
 
 drop role if exists web_anon;
