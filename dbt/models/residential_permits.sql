@@ -11,22 +11,22 @@
 select
   sde_id::int as residential_permit_id
   , year::int as year_
-  , tenure
-  , housing_ty as housing_type
-  , res_permit as permit_type
-  , address
-  , name as name_
-  , buildings as num_buildings
-  , units as num_units
-  , age_restri as num_age_restricted_units
-  , memory_car as num_memory_care_units
-  , assisted as num_assisted_living_units
+  , tenure::text
+  , housing_ty::text as housing_type
+  , res_permit::text as permit_type
+  , address::text
+  , name::text as name_
+  , buildings::int as num_buildings
+  , units::int as num_units
+  , age_restri::int as num_age_restricted_units
+  , memory_car::int as num_memory_care_units
+  , assisted::int as num_assisted_living_units
   , com_off_re = 'Y' as is_commercial_and_residential
-  , nullif(sqf, 0) as square_feet
+  , nullif(sqf, 0)::int as square_feet
   , public_fun = 'Y' as is_public_funded
-  , nullif(permit_val, 0) as permit_value
-  , community_ as community_designation
-  , notes
+  , nullif(permit_val, 0)::int as permit_value
+  , community_::text as community_designation
+  , notes::text
   , st_transform(geom, {{ var("srid") }}) as geom
 from
     {{ source('minneapolis', 'residential_permits_residentialpermits') }}

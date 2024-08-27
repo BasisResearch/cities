@@ -30,7 +30,7 @@ zip_codes as (select * from {{ ref('zip_codes') }})
     , zip_code_id
     , '{{ flow_direction }}' as flow_direction
     , 'total' as flow_type
-    , total_{{ flow_direction }}_zip as flow_value
+    , total_{{ flow_direction }}_zip::int as flow_value
   from add_zip_id
   union all
   {% for flow_type in usps_migration_flow_types %}
@@ -39,7 +39,7 @@ zip_codes as (select * from {{ ref('zip_codes') }})
       , zip_code_id
       , '{{ flow_direction }}' as flow_direction
       , '{{ flow_type }}' as flow_type
-      , total_{{ flow_direction }}_zip_{{ flow_type }} as flow_value
+      , total_{{ flow_direction }}_zip_{{ flow_type }}::int as flow_value
     from add_zip_id
   {% if not loop.last %} union all {% endif %}
   {% endfor %}

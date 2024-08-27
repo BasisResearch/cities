@@ -19,9 +19,9 @@ zip_codes as (select * from {{ ref('zip_codes') }})
 {% for bedroom in num_bedrooms %}
 select
   zip_code_id
-  , rent_br{{ bedroom }} as rent
+  , rent_br{{ bedroom }}::int as rent
   , {{ bedroom }} as num_bedrooms
-  , year_
+  , year_::int
 from fmr_zip
 {% if not loop.last %} union all {% endif %}
 {% endfor %}

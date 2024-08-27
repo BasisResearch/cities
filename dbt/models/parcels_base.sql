@@ -22,12 +22,12 @@ parcels_union as (
 
   -- parcels are a year-end snapshot, named after the year they cover
   '[{{ year_ }}-01-01,{{ year_ + 1 }}-01-01)'::daterange as valid,
-  nullif(emv_land, 0) as emv_land,
-  nullif(emv_bldg, 0) as emv_bldg,
-  nullif(emv_total, 0) as emv_total,
-  nullif(year_built, 0) as year_built,
+  nullif(emv_land, 0)::int as emv_land,
+  nullif(emv_bldg, 0)::int as emv_bldg,
+  nullif(emv_total, 0)::int as emv_total,
+  nullif(year_built, 0)::int as year_built,
   nullif(sale_date, '1899-12-30'::date) as sale_date,
-  nullif(sale_value, 0) as sale_value,
+  nullif(sale_value, 0)::int as sale_value,
   st_transform(geom, {{ var("srid") }}) as geom
   from {{ source('minneapolis', 'parcels_shp_plan_regonal_' ~ year_ ~ '_parcels' ~ year_ ~ 'hennepin') }}
   where upper({{ "city" if year_ < 2018 else "ctu_name" }}) = '{{ city }}'

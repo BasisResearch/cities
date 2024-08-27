@@ -18,7 +18,7 @@ with census_tracts as (
 )
 select
   census_tracts.census_tract_id
-  , sum(residential_permits.num_units) as num_units
+  , sum(residential_permits.num_units)::int as num_units
 from
   census_tracts
   left join residential_permits_to_census_tracts using (census_tract_id)

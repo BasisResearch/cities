@@ -57,7 +57,7 @@ with
     select
       pop_yc.year_,
       pop_yc.category,
-      {{ safe_divide('pop_yc.value_', 'pop_y.value_') }} as value_
+      ({{ safe_divide('pop_yc.value_', 'pop_y.value_') }})::double precision as value_
     from pop_yc inner join pop_y using (year_)
     ),
   dist_tyc as
@@ -66,18 +66,18 @@ with
       pop_tyc.census_tract,
       pop_tyc.year_,
       pop_tyc.category,
-      {{ safe_divide('pop_tyc.value_', 'pop_ty.value_') }} as value_
+      ({{ safe_divide('pop_tyc.value_', 'pop_ty.value_') }})::double precision as value_
     from pop_tyc inner join pop_ty using (year_, census_tract)
     ),
   uniform_dist as
     ( -- Uniform distribution across categories
     with n_cat as (select count(*) as n_cat from categories)
-    select category, 1.0 / n_cat as value_
+    select category, (1.0 / n_cat)::double precision as value_
       from categories, n_cat
     ),
   average_dist as
     ( -- Average of the annual citywide distributions
-    select category, avg(value_) as value_
+    select category, avg(value_)::double precision as value_
       from dist_yc
     group by 1
     )
