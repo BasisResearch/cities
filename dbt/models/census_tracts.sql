@@ -4,6 +4,7 @@
     indexes = [
       {'columns': ['census_tract_id'], 'unique': true},
       {'columns': ['valid', 'geom'], 'type': 'gist'}
+      {'columns': ['year']}
     ]
   )
 }}

@@ -6,8 +6,23 @@ create view api.demographics as (
   select * from demographics_wide
 );
 
-drop role if exists web_anon;
+create view api.census_tracts as (
+  select
+    census_tract,
+    year_,
+    geom
+  from census_tracts
+);
+
+do $$
+begin
 create role web_anon nologin;
+exception when duplicate_object then raise notice '%, skipping', sqlerrm using errcode = sqlstate;
+end
+$$;
+
+grant usage on schema public to web_anon;
+grant select on table public.spatial_ref_sys TO web_anon;
 grant usage on schema api to web_anon;
 grant select on all tables in schema api to web_anon;
 grant web_anon to postgres;
