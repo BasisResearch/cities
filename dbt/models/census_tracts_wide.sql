@@ -11,6 +11,7 @@ in_city_boundary as (select * from {{ ref('census_tracts_in_city_boundary') }})
 , distance_to_transit as (select * from {{ ref('census_tracts_distance_to_transit') }})
 , parcel_area as (select * from {{ ref('census_tracts_parcel_area') }})
 , parking_limits as (select * from {{ ref('census_tracts_parking_limits') }})
+, demographics as (select * from {{ ref('demographics') }})
 , census_tracts as (
   select *
   from {{ ref('census_tracts') }}
@@ -20,37 +21,12 @@ in_city_boundary as (select * from {{ ref('census_tracts_in_city_boundary') }})
 )
 
 -- Demographic data
-, acs_tract as (select * from {{ ref('acs_tract') }})
-, segregation_indexes as (
-  select census_tract, year_, 'segregation', segregation_index as value_
-  from {{ ref('segregation_indexes') }}
-  where distribution = 'annual_city'
-)
-, demographics as (
-  select * from acs_tract
-  union all
-  select * from segregation_indexes
-)
--- Fill in data for 2011, 2012 using closest available year. Replace 2020 data
--- with 2019 data to avoid pandemic effects.
-, demographics_replace_years as (
-  select * from demographics where year_ != 2020
-  union all
-  select census_tract, 2020 as year_, name_, value_
-  from demographics where year_ = 2019
-  union all
-  select census_tract, 2011 as year_, name_, value_
-  from demographics where year_ = 2013
-  union all
-  select census_tract, 2012 as year_, name_, value_
-  from demographics where year_ = 2013
-)
 , white as (
-  select * from demographics_replace_years
+  select * from demographics
   where name_ = 'B03002_003E' -- white non-hispanic population
 )
 , population as (
-  select * from demographics_replace_years
+  select * from demographics
   where name_ = 'B01003_001E' -- total population
 )
 , white_frac as (
@@ -58,12 +34,12 @@ in_city_boundary as (select * from {{ ref('census_tracts_in_city_boundary') }})
   from white inner join population using (census_tract, year_)
 )
 , income as (
-  select * from demographics_replace_years
+  select * from demographics
   where name_ = 'B19013_001E' -- median household income
 )
 , segregation as (
-  select * from demographics_replace_years
-  where name_ = 'segregation'
+  select * from demographics
+  where description = 'segregation_index_annual_city'
 )
 
 , raw_data as (
