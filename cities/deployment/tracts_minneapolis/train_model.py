@@ -1,35 +1,16 @@
-import os
-
 import dill
 import pyro
 import torch
-from torch.utils.data import DataLoader
 
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 
-# can be disposed of once you access data in a different manner
-from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import select_from_data
+from cities.utils.data_loader import load_sql
 
-root = find_repo_root()
 
 #####################
 # data load and prep
 #####################
-
-census_tracts_data_path = os.path.join(
-    root, "data/minneapolis/processed/census_tracts_dataset.pt"
-)
-
-ct_dataset_read = torch.load(census_tracts_data_path)
-
-assert ct_dataset_read.n == 816
-
-ct_loader = DataLoader(ct_dataset_read, batch_size=len(ct_dataset_read), shuffle=True)
-
-data = next(iter(ct_loader))
-
 
 kwargs = {
     "categorical": ["year", "census_tract"],
@@ -46,14 +27,18 @@ kwargs = {
     "outcome": "housing_units",
 }
 
-subset = select_from_data(data, kwargs)
+subset = load_sql(kwargs)
 
 #############################
 # instantiate and train model
 #############################
 
 tracts_model = TractsModel(
-    **subset, categorical_levels=ct_dataset_read.categorical_levels
+    **subset,
+    categorical_levels={
+        "year": torch.unique(subset["categorical"]["year"]),
+        "census_tract": torch.unique(subset["categorical"]["census_tract"]),
+    },
 )
 
 pyro.clear_param_store()
