@@ -25,6 +25,8 @@ DEV_REQUIRES = [
     "graphviz",
     "python-dotenv",
     "google-cloud-storage",
+    "dbt-core",
+    "dbt-postgres",
 ]
 
 setup(
