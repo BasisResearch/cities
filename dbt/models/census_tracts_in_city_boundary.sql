@@ -1,3 +1,12 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['year_']}
+    ]
+  )
+}}
+
 with census_tracts as (
   select * from {{ ref('census_tracts') }}
 )
@@ -8,6 +17,7 @@ select
   census_tracts.census_tract_id
   , census_tracts.census_tract
   , census_tracts.year_
+  , census_tracts.geom
 from
   census_tracts
   , city_boundary
