@@ -40,11 +40,17 @@ in_city_boundary as (select * from {{ ref('census_tracts_in_city_boundary') }})
 , segregation as (
   select * from demographics
   where description = 'segregation_index_annual_city'
+),
+census_tract_numeric as (
+  select
+    census_tract
+    , row_number() over () as census_tract_numeric
+  from (select distinct census_tract from census_tracts order by 1)
 )
-
 , raw_data as (
 select
   census_tracts.census_tract
+  , census_tract_numeric.census_tract_numeric
   , census_tracts.year_
   , coalesce(housing_units.num_units, 0) as num_units
   , property_values.total_value
@@ -58,6 +64,7 @@ select
   , segregation.value_ as segregation
 from
   census_tracts
+  inner join census_tract_numeric using (census_tract)
   inner join housing_units using (census_tract_id)
   inner join property_values using (census_tract_id)
   inner join distance_to_transit using (census_tract_id)
@@ -70,6 +77,7 @@ from
 , with_std as (
 select
   census_tract
+  , census_tract_numeric
   , year_
   , num_units
   , total_value
