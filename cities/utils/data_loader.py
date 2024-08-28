@@ -1,7 +1,10 @@
+import os
 from typing import Dict, List
 
 import torch
 from torch.utils.data import Dataset
+import sqlalchemy
+import pandas as pd
 
 
 class ZoningDataset(Dataset):
@@ -56,3 +59,28 @@ def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     }
 
     return _data
+
+
+def load_sql(kwargs):
+    USERNAME = os.getenv("USERNAME")
+    PASSWORD = os.getenv("PASSWORD")
+    HOST = os.getenv("HOST")
+    DATABASE = os.getenv("DATABASE")
+    engine = sqlalchemy.create_engine(
+        f"postgresql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
+    )
+
+    with engine.connect() as conn:
+        dataset = pd.read_sql("select * from dev.census_tracts_wide", conn)
+    dataset = {key: dataset[key].values for key in dataset.columns}
+
+    return {
+        "outcome": dataset[kwargs["outcome"]],
+        "categorical": {
+            key: torch.tensor(dataset[key]) for key in kwargs["categorical"]
+        },
+        "continuous": {
+            key: torch.tensor(dataset[key], dtype=torch.float32)
+            for key in kwargs["continuous"]
+        },
+    }
