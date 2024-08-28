@@ -49,14 +49,14 @@ census_tract_numeric as (
 )
 , raw_data as (
 select
-  census_tracts.census_tract
-  , census_tract_numeric.census_tract_numeric
-  , census_tracts.year_
-  , coalesce(housing_units.num_units, 0) as num_units
+  census_tracts.census_tract as census_tract_fips
+  , census_tract_numeric.census_tract_numeric as census_tract
+  , census_tracts.year_ as "year"
+  , coalesce(housing_units.num_units, 0) as housing_units
   , property_values.total_value
   , property_values.median_value
-  , distance_to_transit.median_distance_to_transit
-  , distance_to_transit.mean_distance_to_transit
+  , distance_to_transit.median_distance_to_transit as median_distance
+  , distance_to_transit.mean_distance_to_transit as mean_distance
   , parcel_area.parcel_sqm
   , parking_limits.mean_limit
   , white_frac.value_ as white
@@ -76,21 +76,11 @@ from
 )
 , with_std as (
 select
-  census_tract
-  , census_tract_numeric
-  , year_
-  , num_units
-  , total_value
-  , median_value
-  , median_distance_to_transit
-  , mean_distance_to_transit
-  , parcel_sqm
-  , white
-  , income
-  , mean_limit
-  , segregation
-  , {{ standardize(['num_units', 'total_value', 'median_value',
-                    'median_distance_to_transit', 'mean_distance_to_transit',
+  census_tract_fips
+  , census_tract
+  , "year"
+  , {{ standardize(['housing_units', 'total_value', 'median_value',
+                    'median_distance', 'mean_distance',
                     'parcel_sqm', 'white', 'income', 'mean_limit', 'segregation' ]) }}
 from
   raw_data
