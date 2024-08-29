@@ -11,7 +11,7 @@ create view api.census_tracts as (
     census_tract,
     year_,
     geom
-  from census_tracts_in_city_boundary
+  from census_tracts_api
 );
 
 do $$

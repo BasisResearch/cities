@@ -1,12 +1,3 @@
-{{
-  config(
-    materialized='table',
-    indexes = [
-      {'columns': ['year_']}
-    ]
-  )
-}}
-
 with census_tracts as (
   select * from {{ ref('census_tracts') }}
 )
