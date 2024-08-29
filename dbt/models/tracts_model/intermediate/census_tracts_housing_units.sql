@@ -1,19 +1,7 @@
-{{
-  config(
-    materialized='table',
-    indexes = [
-      {'columns': ['census_tract_id'], 'unique': true},
-    ]
-  )
-}}
-
-with census_tracts as (
-  select * from {{ ref('census_tracts') }}
-)
-, residential_permits as (
-  select * from {{ ref('residential_permits') }}
-)
-, residential_permits_to_census_tracts as (
+with
+census_tracts as (select * from {{ ref('census_tracts') }}),
+residential_permits as (select * from {{ ref('residential_permits') }}),
+residential_permits_to_census_tracts as (
   select * from {{ ref('residential_permits_to_census_tracts') }}
 )
 select

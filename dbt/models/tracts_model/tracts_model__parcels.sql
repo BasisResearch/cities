@@ -8,9 +8,9 @@ with
 parcels_parking_limits as (select * from {{ ref('parcels_parking_limits') }}),
 parcels_distance_to_transit as (select * from {{ ref('parcels_distance_to_transit') }}),
 parcels as (select * from {{ ref('parcels') }}),
-census_tracts as (select * from {{ ref('census_tracts') }})
+census_tracts as (select * from {{ ref('census_tracts_in_city_boundary') }})
 select
-  parcels.pin,
+  parcels.*,
   census_tracts.census_tract,
   census_tracts.year_,
   parcels_distance_to_transit.distance as distance_to_transit,

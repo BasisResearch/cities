@@ -5,20 +5,16 @@
 }}
 
 with
-in_city_boundary as (select * from {{ ref('census_tracts_in_city_boundary') }})
-, housing_units as (select * from {{ ref('census_tracts_housing_units') }})
+housing_units as (select * from {{ ref('census_tracts_housing_units') }})
 , property_values as (select * from {{ ref('census_tracts_property_values') }})
 , distance_to_transit as (select * from {{ ref('census_tracts_distance_to_transit') }})
 , parcel_area as (select * from {{ ref('census_tracts_parcel_area') }})
 , parking_limits as (select * from {{ ref('census_tracts_parking_limits') }})
 , demographics as (select * from {{ ref('demographics') }})
-, downtown as (select * from {{ ref('downtown') }})
 , census_tracts as (
   select *
-  from {{ ref('census_tracts') }}
-  where
-    year_ <= 2020
-    and census_tract_id in (select census_tract_id from in_city_boundary)
+  from {{ ref('census_tracts_in_city_boundary') }}
+  where year_ <= 2020
 )
 
 -- Demographic data

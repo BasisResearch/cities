@@ -13,4 +13,4 @@ from
   census_tracts
   , city_boundary
 where st_intersects(census_tracts.geom, city_boundary.geom)
-      and st_area(st_intersection(census_tracts.geom, city_boundary.geom)) / st_area(census_tracts.geom) > 0.2
+      and st_area(st_intersection(census_tracts.geom, city_boundary.geom)) / st_area(census_tracts.geom) > 0.9
