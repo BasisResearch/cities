@@ -1,9 +1,7 @@
 import copy
-import os
 import time
 
 import dill
-import pandas as pd
 import pyro
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
@@ -16,7 +14,7 @@ from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 
 # can be disposed of once you access data in a different manner
 from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import load_sql
+from cities.utils.data_loader import load_sql_df, select_from_sql
 
 root = find_repo_root()
 
@@ -40,7 +38,8 @@ kwargs = {
     "outcome": "housing_units",
 }
 
-subset = load_sql(kwargs)
+subset = select_from_sql("select * from dev.tracts_model__census_tracts", kwargs)
+
 categorical_levels = {
     "year": torch.unique(subset["categorical"]["year"]),
     "census_tract": torch.unique(subset["categorical"]["census_tract"]),
@@ -77,67 +76,36 @@ predictive = Predictive(
 # define interventions parametrized as in the intended query
 ############################################################
 
+parcel_intervention_sql = """
+select
+  census_tract,
+  year_,
+  case
+    when downtown_yn then 0
+    when not downtown_yn and year_ >= %(reform_year)s and distance_to_transit <= %(radius_blue)s then %(limit_blue)s
+    when not downtown_yn and year_ >= %(reform_year)s and distance_to_transit > %(radius_blue)s and distance_to_transit <= %(radius_yellow)s then %(limit_yellow)s
+    when not downtown_yn and year_ > %(reform_year)s and distance_to_transit > %(radius_yellow)s then 1
+    else limit_con
+  end as intervention
+from dev.tracts_model__parcels
+"""
+
 
 # these are at the parcel level
 def values_intervention(
     radius_blue, limit_blue, radius_yellow, limit_yellow, reform_year=2015
 ):
-
-    # don't want to load large data multiple times
-    # note we'll need to generate these datasets anew once we switch to the new data pipeline
-
-    if not hasattr(values_intervention, "global_census_ids"):
-        values_intervention.global_census_ids = pd.read_csv(
-            os.path.join(root, "data/minneapolis/processed/census_ids.csv")
-        )
-
-        values_intervention.global_data = pd.read_csv(
-            os.path.join(
-                root,
-                "data/minneapolis/processed/census_tract_intervention_required.csv",
-            )
-        )
-
-        data = values_intervention.global_data
-        census_ids = values_intervention.global_census_ids
-        values_intervention.global_data = data[
-            (data["census_tract"].isin(census_ids["census_tract"]))
-            & (data["year"].isin(census_ids["year"]))
-        ]
-
-    data = values_intervention.global_data.copy()
-
-    intervention = copy.deepcopy(values_intervention.global_data["limit_con"])
-    downtown = data["downtown_yn"]
-    new_blue = (
-        (~downtown)
-        & (data["year"] >= reform_year)
-        & (data["distance_to_transit"] <= radius_blue)
-    )
-    new_yellow = (
-        (~downtown)
-        & (data["year"] >= reform_year)
-        & (data["distance_to_transit"] > radius_blue)
-        & (data["distance_to_transit"] <= radius_yellow)
-    )
-    new_other = (
-        (~downtown)
-        & (data["year"] > reform_year)
-        & (data["distance_to_transit"] > radius_yellow)
-    )
-
-    intervention[downtown] = 0.0
-    intervention[new_blue] = limit_blue
-    intervention[new_yellow] = limit_yellow
-    intervention[new_other] = 1.0
-
-    data["intervention"] = intervention
-
-    return data
+    params = {
+        "reform_year": reform_year,
+        "radius_blue": radius_blue,
+        "limit_blue": limit_blue,
+        "radius_yellow": radius_yellow,
+        "limit_yellow": limit_yellow,
+    }
+    return load_sql_df(parcel_intervention_sql, params)
 
 
 # generate three interventions at the parcel level
-
 start = time.time()
 simple_intervention = values_intervention(300, 0.5, 700, 0.7, reform_year=2015)
 end = time.time()
@@ -153,43 +121,33 @@ print("Time to run values_intervention 3: ", end3 - start3)
 
 
 # these are at the tracts level
-
-
 def tracts_intervention(
     radius_blue, limit_blue, radius_yellow, limit_yellow, reform_year=2015
 ):
-
-    parcel_interventions = values_intervention(
-        radius_blue, limit_blue, radius_yellow, limit_yellow, reform_year=reform_year
+    tracts_intervention_sql = f"""
+    with parcel_interventions as ({parcel_intervention_sql})
+    select
+        census_tract,
+        year_,
+        avg(intervention) as intervention
+    from parcel_interventions
+    group by census_tract, year_
+    order by census_tract, year_
+    """
+    df = load_sql_df(
+        tracts_intervention_sql,
+        {
+            "reform_year": reform_year,
+            "radius_blue": radius_blue,
+            "limit_blue": limit_blue,
+            "radius_yellow": radius_yellow,
+            "limit_yellow": limit_yellow,
+        },
     )
-
-    aggregate = (
-        parcel_interventions[["census_tract", "year", "intervention"]]
-        .groupby(["census_tract", "year"])
-        .mean()
-        .reset_index()
-    )
-
-    if not hasattr(tracts_intervention, "global_census_ids"):
-
-        tracts_intervention.global_valid_pairs = set(
-            zip(
-                values_intervention.global_census_ids["census_tract"],
-                values_intervention.global_census_ids["year"],
-            )
-        )
-
-    subaggregate = aggregate[
-        aggregate[["census_tract", "year"]]
-        .apply(tuple, axis=1)
-        .isin(tracts_intervention.global_valid_pairs)
-    ].copy()
-
-    return torch.tensor(list(subaggregate["intervention"]))
+    return torch.tensor(df["intervention"].values, dtype=torch.float32)
 
 
 # generate two interventions at the tracts level
-
 start = time.time()
 t_intervention = tracts_intervention(300, 0.5, 700, 0.7, reform_year=2015)
 end = time.time()
@@ -206,7 +164,7 @@ print("Time to run tracts_intervention 2: ", end2 - start2)
 ##################################
 
 with MultiWorldCounterfactual() as mwc:
-    with do(actions={"limit": torch.tensor(0.0)}):
+    with do(actions={"limit": t_intervention}):
         samples = predictive(**subset_for_preds)
 
 
