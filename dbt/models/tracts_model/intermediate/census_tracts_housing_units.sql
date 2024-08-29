@@ -1,5 +1,5 @@
 with
-census_tracts as (select * from {{ ref('census_tracts') }}),
+census_tracts as (select * from {{ ref('tracts_model_int__census_tracts_filtered') }}),
 residential_permits as (select * from {{ ref('residential_permits') }}),
 residential_permits_to_census_tracts as (
   select * from {{ ref('residential_permits_to_census_tracts') }}

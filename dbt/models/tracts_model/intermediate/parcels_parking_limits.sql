@@ -1,10 +1,11 @@
 with
-parcels as (select * from {{ ref('parcels') }}),
+parcels as (select * from {{ ref('tracts_model_int__parcels_filtered') }}),
 transit as (select * from {{ ref('high_frequency_transit_lines') }}),
 downtown as (select * from {{ ref('downtown') }}),
 with_is_downtown as (
   select
     parcels.parcel_id,
+    parcels.census_tract_id,
     parcels.valid,
     parcels.geom,
     st_intersects(parcels.geom, downtown.geom) as is_downtown
@@ -13,6 +14,7 @@ with_is_downtown as (
 with_limit as (
   select
     parcels.parcel_id,
+    parcels.census_tract_id,
     parcels.is_downtown,
     case
       when parcels.is_downtown then 'eliminated'
@@ -31,6 +33,7 @@ with_limit as (
 with_limit_numeric as (
   select
     parcels.parcel_id,
+    parcels.census_tract_id,
     parcels.is_downtown,
     parcels.limit_,
     case limit_

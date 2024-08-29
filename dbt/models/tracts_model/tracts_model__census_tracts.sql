@@ -11,11 +11,7 @@ housing_units as (select * from {{ ref('census_tracts_housing_units') }})
 , parcel_area as (select * from {{ ref('census_tracts_parcel_area') }})
 , parking_limits as (select * from {{ ref('census_tracts_parking_limits') }})
 , demographics as (select * from {{ ref('demographics') }})
-, census_tracts as (
-  select *
-  from {{ ref('census_tracts_in_city_boundary') }}
-  where year_ <= 2020
-)
+, census_tracts as (select * from {{ ref('tracts_model_int__census_tracts_filtered') }})
 
 -- Demographic data
 , white as (
