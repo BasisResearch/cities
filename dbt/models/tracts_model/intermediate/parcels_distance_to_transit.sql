@@ -1,12 +1,3 @@
-{{
-  config(
-    materialized='table',
-    indexes = [
-      {'columns': ['parcel_id'], 'unique': true},
-    ]
-  )
-}}
-
 -- This model calculates the distance from each parcel to the nearest high
 -- frequency transit line or stop
 with
@@ -21,8 +12,8 @@ with
     lines inner join stops on lines.valid && stops.valid
 )
 select
-  parcels.parcel_id
-  , st_distance(parcels.geom, lines_and_stops.geom) as distance
+  parcels.parcel_id,
+  st_distance(parcels.geom, lines_and_stops.geom) as distance
 from
   parcels
   inner join lines_and_stops on parcels.valid && lines_and_stops.valid

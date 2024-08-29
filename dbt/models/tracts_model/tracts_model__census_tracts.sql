@@ -12,6 +12,7 @@ in_city_boundary as (select * from {{ ref('census_tracts_in_city_boundary') }})
 , parcel_area as (select * from {{ ref('census_tracts_parcel_area') }})
 , parking_limits as (select * from {{ ref('census_tracts_parking_limits') }})
 , demographics as (select * from {{ ref('demographics') }})
+, downtown as (select * from {{ ref('downtown') }})
 , census_tracts as (
   select *
   from {{ ref('census_tracts') }}
@@ -41,6 +42,7 @@ in_city_boundary as (select * from {{ ref('census_tracts_in_city_boundary') }})
   select * from demographics
   where description = 'segregation_index_annual_city'
 )
+
 , raw_data as (
 select
   census_tracts.census_tract::numeric
