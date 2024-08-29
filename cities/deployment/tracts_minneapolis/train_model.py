@@ -5,7 +5,7 @@ import torch
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 
-from cities.utils.data_loader import load_sql
+from cities.utils.data_loader import select_from_sql
 
 
 #####################
@@ -27,7 +27,9 @@ kwargs = {
     "outcome": "housing_units",
 }
 
-subset = load_sql(kwargs)
+subset = select_from_sql(
+    "select * from dev.tracts_model__census_tracts order by census_tract, year", kwargs
+)
 
 #############################
 # instantiate and train model

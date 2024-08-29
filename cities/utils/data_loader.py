@@ -61,7 +61,7 @@ def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     return _data
 
 
-def load_sql(kwargs):
+def load_sql_df(sql, params=None):
     USERNAME = os.getenv("USERNAME")
     PASSWORD = os.getenv("PASSWORD")
     HOST = os.getenv("HOST")
@@ -71,16 +71,16 @@ def load_sql(kwargs):
     )
 
     with engine.connect() as conn:
-        dataset = pd.read_sql("select * from dev.census_tracts_wide", conn)
-    dataset = {key: dataset[key].values for key in dataset.columns}
+        return pd.read_sql(sql, conn, params=params)
 
+
+def select_from_sql(sql, kwargs, params=None):
+    df = load_sql_df(sql, params=params)
     return {
-        "outcome": dataset[kwargs["outcome"]],
-        "categorical": {
-            key: torch.tensor(dataset[key]) for key in kwargs["categorical"]
-        },
+        "outcome": df[kwargs["outcome"]],
+        "categorical": {key: torch.tensor(df[key]) for key in kwargs["categorical"]},
         "continuous": {
-            key: torch.tensor(dataset[key], dtype=torch.float32)
+            key: torch.tensor(df[key], dtype=torch.float32)
             for key in kwargs["continuous"]
         },
     }
