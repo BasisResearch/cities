@@ -3,15 +3,15 @@ drop schema if exists api cascade;
 create schema api;
 
 create view api.demographics as (
-  select * from demographics_wide
+  select * from api__demographics
 );
 
 create view api.census_tracts as (
-  select
-    census_tract,
-    year_,
-    geom
-  from census_tracts_api
+  select * from api__census_tracts
+);
+
+create view api.high_frequency_transit_lines as (
+  select * from api__high_frequency_transit_lines
 );
 
 do $$
