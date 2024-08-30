@@ -56,7 +56,7 @@ from
   inner join distance_to_transit using (census_tract_id)
   inner join parcel_area using (census_tract_id)
   inner join parking_limits using (census_tract_id)
-  inner join segregation using (census_tract, year_)
+  left join segregation using (census_tract, year_)
   left join white_frac using (census_tract, year_)
   left join income using (census_tract, year_)
 )

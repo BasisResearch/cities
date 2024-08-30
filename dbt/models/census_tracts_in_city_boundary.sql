@@ -6,6 +6,7 @@ with census_tracts as (
 )
 select
   census_tracts.census_tract_id
+  , census_tracts.valid
   , census_tracts.census_tract
   , census_tracts.year_
   , census_tracts.geom
