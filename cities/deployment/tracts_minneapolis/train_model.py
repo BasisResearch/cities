@@ -1,12 +1,17 @@
 import dill
+import os
 import pyro
 import torch
+import time
+import sqlalchemy
 
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-
 from cities.utils.data_loader import select_from_sql
 
+USERNAME = os.getenv("USERNAME")
+HOST = os.getenv("HOST")
+DATABASE = os.getenv("DATABASE")
 
 #####################
 # data load and prep
@@ -27,9 +32,17 @@ kwargs = {
     "outcome": "housing_units",
 }
 
-subset = select_from_sql(
-    "select * from dev.tracts_model__census_tracts order by census_tract, year", kwargs
-)
+load_start = time.time()
+with sqlalchemy.create_engine(
+    f"postgresql://{USERNAME}@{HOST}/{DATABASE}"
+).connect() as conn:
+    subset = select_from_sql(
+        "select * from dev.tracts_model__census_tracts order by census_tract, year",
+        conn,
+        kwargs,
+    )
+load_end = time.time()
+print(f"Data loaded in {load_end - load_start} seconds")
 
 #############################
 # instantiate and train model

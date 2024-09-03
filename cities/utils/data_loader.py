@@ -3,7 +3,6 @@ from typing import Dict, List
 
 import torch
 from torch.utils.data import Dataset
-import sqlalchemy
 import pandas as pd
 
 
@@ -61,24 +60,24 @@ def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     return _data
 
 
-def load_sql_df(sql, params=None):
+def load_sql_df(sql, conn=None, params=None):
+    from adbc_driver_postgresql import dbapi
+
     USERNAME = os.getenv("USERNAME")
-    PASSWORD = os.getenv("PASSWORD")
     HOST = os.getenv("HOST")
     DATABASE = os.getenv("DATABASE")
-    engine = sqlalchemy.create_engine(
-        f"postgresql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
-    )
 
-    with engine.connect() as conn:
+    with dbapi.connect(f"postgresql://{USERNAME}@{HOST}/{DATABASE}") as conn:
         return pd.read_sql(sql, conn, params=params)
 
 
-def select_from_sql(sql, kwargs, params=None):
-    df = load_sql_df(sql, params=params)
+def select_from_sql(sql, conn, kwargs, params=None):
+    df = pd.read_sql(sql, conn, params=params)
     return {
         "outcome": df[kwargs["outcome"]],
-        "categorical": {key: torch.tensor(df[key]) for key in kwargs["categorical"]},
+        "categorical": {
+            key: torch.tensor(df[key].values) for key in kwargs["categorical"]
+        },
         "continuous": {
             key: torch.tensor(df[key], dtype=torch.float32)
             for key in kwargs["continuous"]
