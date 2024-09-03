@@ -8,21 +8,27 @@
   )
 }}
 
+{% docs commercial_permits %}
+
+Contains commercial building permit applications.
+
+Notes:
+ - Permits are filtered to only include those in Minneapolis.
+ - `square_feet` is treated as missing if it is 0.
+
+{% enddocs %}
+
+with
+stg_commercial_permits as (select * from {{ ref('stg_commercial_permits') }}),
+stg_commercial_permits_to_parcels as (select * from {{ ref('stg_commercial_permits_to_parcels') }}),
+parcels as (select * from {{ ref('parcels') }})
 select
-  sde_id as commercial_permit_id
-  , year::int as year_
-  , nonres_gro::text as group_
-  , nonres_sub::text as subgroup
-  , nonres_typ::text as type_category
-  , bldg_name::text as building_name
-  , bldg_desc::text as building_description
-  , permit_typ::text as permit_type
-  , permit_val::int as permit_value
-  , nullif(sqf, 0)::int as square_feet
-  , address::text
-  , st_transform(geom, {{ var("srid") }}) as geom
+  stg_commercial_permits.*,
+  stg_commercial_permits_to_parcels.parcel_id,
+  parcels.census_block_group_id,
+  parcels.census_tract_id,
+  parcels.zip_code_id
 from
-    {{ source('minneapolis', 'commercial_permits_nonresidentialconstruction') }}
- where
-    co_code = '053'
-   and lower(ctu_name) = 'minneapolis'
+  stg_commercial_permits
+  left join stg_commercial_permits_to_parcels using commercial_permit_id
+  left join parcels using parcel_id
