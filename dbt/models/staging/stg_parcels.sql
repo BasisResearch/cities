@@ -1,13 +1,3 @@
-{{
-  config(
-    materialized='table',
-    indexes = [
-      {'columns': ['parcel_id'], 'unique': true},
-      {'columns': ['valid', 'geom'], 'type': 'gist'}
-    ]
-  )
-}}
-
 {% set years = range(2002, 2024) %}
 {% set city = 'MINNEAPOLIS' %}
 {% set county_id = '053' %}

@@ -1,20 +1,10 @@
-{{
-  config(
-    materialized='table',
-    indexes = [
-      {'columns': ['parcel_id'], 'unique': true},
-      {'columns': ['zip_code_id']}
-    ]
-  )
-}}
-
 with
 parcels as (
   select
     parcel_id as id
     , valid
     , geom
-  from {{ ref("parcels_base") }}
+  from {{ ref("stg_parcels_base") }}
 ),
 zip_codes as (
   select
