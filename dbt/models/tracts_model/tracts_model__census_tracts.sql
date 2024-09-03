@@ -37,15 +37,15 @@ housing_units as (select * from {{ ref('census_tracts_housing_units') }})
 
 , raw_data as (
 select
-  census_tracts.census_tract::numeric
-  , census_tracts.year_ as "year"
+  census_tracts.census_tract::bigint
+  , census_tracts.year_::smallint as "year"
   , coalesce(housing_units.num_units, 0) as housing_units
   , property_values.total_value
   , property_values.median_value
   , distance_to_transit.median_distance_to_transit as median_distance
   , distance_to_transit.mean_distance_to_transit as mean_distance
   , parcel_area.parcel_sqm
-  , parking_limits.mean_limit
+  , parking_limits.mean_limit::double precision
   , white_frac.value_ as white
   , income.value_ as income
   , segregation.value_ as segregation
@@ -62,7 +62,7 @@ from
 )
 , with_std as (
 select
-  census_tract::numeric
+  census_tract
   , {{ standardize_cat(['year']) }}
   , {{ standardize_cont(['housing_units', 'total_value', 'median_value',
                          'median_distance', 'mean_distance', 'parcel_sqm',
