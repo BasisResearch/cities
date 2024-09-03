@@ -8,19 +8,21 @@
   )
 }}
 
-with city_boundary as (
-  select
-    geom
-  from
-    {{ ref('city_boundary') }}
+with
+zip_codes as (
+select
+  zip_code,
+  '[2020-01-01,)'::daterange as valid,
+  geom
+from {{ ref('all_zip_codes_2020') }}
+union all
+select
+  zip_code,
+  '[,2020-01-01)'::daterange as valid,
+  geom
+from {{ ref('all_zip_codes_2010') }}
 )
 select
-    all_zip_codes.zip_code_id
-    , all_zip_codes.zip_code
-    , all_zip_codes.valid
-    , all_zip_codes.geom
-from
-  {{ ref('all_zip_codes') }} as all_zip_codes,
-  city_boundary
-where
-  st_intersects(all_zip_codes.geom, city_boundary.geom)
+  {{ dbt_utils.generate_surrogate_key(['zip_code', 'valid']) }} as zip_code_id,
+  zip_codes.*
+from zip_codes
