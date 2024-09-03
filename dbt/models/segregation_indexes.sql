@@ -7,13 +7,6 @@
   )
 }}
 
--- Segregation index for each tract for each year, computed for each reference
--- distribution.
---
--- The segregation index is the KL-divergence between the distribution of
--- population in a tract and a reference distribution. For example, a tract that
--- has many more white people than the average for the city will have a high
--- segregation index for the 'average_city' distribution.
 with
   categories as (select * from {{ ref("population_categories") }})
   , acs_tract_all as (select * from {{ ref("acs_tract") }})

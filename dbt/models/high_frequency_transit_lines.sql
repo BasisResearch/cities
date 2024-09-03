@@ -8,16 +8,6 @@
   )
 }}
 
-{% doc high_frequency_transit_lines %}
-
-Contains the geometry and metadata for high frequency transit lines in the city of Minneapolis.
-
-Notes:
-- `blue_zone_geom` is a 350 foot buffer around both lines and stops.
-- `yellow_zone_geom` is a quarter mile buffer around lines and a half mile buffer around stops.
-
-{% enddoc %}
-
 with lines as (select * from {{ ref('stg_high_frequency_transit_lines_union') }})
 , stops as (select * from {{ ref('high_frequency_transit_stops') }})
 , lines_and_stops as (

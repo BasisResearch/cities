@@ -8,17 +8,6 @@
   )
 }}
 
-{% docs residential_permits %}
-
-Contains residential building permit applications.
-
-Notes:
- - Permits are filtered to only include those in Minneapolis.
- - `square_feet` is treated as missing if it is 0.
- - `permit_value` is treated as missing if it is 0.
-
-{% enddocs %}
-
 with
 stg_residential_permits as (select * from {{ ref('stg_residential_permits') }}),
 stg_residential_permits_to_parcels as (select * from {{ ref('stg_residential_permits_to_parcels') }}),

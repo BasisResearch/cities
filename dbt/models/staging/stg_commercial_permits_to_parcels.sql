@@ -4,7 +4,7 @@ commercial_permits as (
     commercial_permit_id as id
     , daterange(to_date(year_::text, 'YYYY'), to_date(year_::text, 'YYYY'), '[]') as valid
     , geom
-  from {{ ref("commercial_permits") }}
+  from {{ ref('stg_commercial_permits') }}
 )
 , parcels as (
   select

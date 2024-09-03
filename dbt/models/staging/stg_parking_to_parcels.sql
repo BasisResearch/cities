@@ -1,27 +1,17 @@
-{{
-  config(
-    materialized='table',
-    indexes = [
-      {'columns': ['parking_id']},
-      {'columns': ['parcel_id']}
-    ]
-  )
-}}
-
 with
   parking as (
     select
       parking_id as id
       , daterange(date_, date_, '[]') as valid
       , geom
-    from {{ ref('parking') }}
+    from {{ ref('stg_parking') }}
   )
   , parcels as (
     select
       parcel_id as id
       , valid
       , geom
-    from {{ ref('parcels_base') }}
+    from {{ ref('parcels') }}
   )
 select
   child_id as parking_id

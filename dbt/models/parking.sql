@@ -1,30 +1,24 @@
-with
-  parking_raw as (
-    select
-      ogc_fid
-      , "date"
-      , "project na"
-      , address
-      , neighborho
-      , ward
-      , "downtown y"
-      , "housing un"
-      , "car parkin"
-      , "bike parki"
-      , "year"
-      , geom
-    from {{ source('minneapolis', 'parking_parcels') }}
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['parking_id'], 'unique': true},
+      {'columns': ['geom'], 'type': 'gist'}
+    ]
   )
+}}
+
+with
+  stg_parking as (select * from {{ ref('stg_parking') }}),
+  stg_parking_to_parcels as (select * from {{ ref('stg_parking_to_parcels') }}),
+  parcels as (select * from {{ ref('parcels') }})
 select
-  ogc_fid as parking_id
-  , to_date("year" || '-' || "date", 'YYYY-DD-Mon') as date_
-  , "project na"::text as project_name
-  , address::text
-  , neighborho::text as neighborhood
-  , ward::int
-  , "downtown y" = 'Y' as is_downtown
-  , "housing un"::int as num_housing_units
-  , "car parkin"::int as num_car_parking_spaces
-  , "bike parki"::int as num_bike_parking_spaces
-  , st_transform(geom, {{ var("srid") }}) as geom
-from parking_raw
+  stg_parking.*,
+  stg_parking_to_parcels.parcel_id,
+  parcels.census_block_group_id,
+  parcels.census_tract_id,
+  parcels.zip_code_id
+from
+  stg_parking
+  left join stg_parking_to_parcels using parking_id
+  left join parcels using parcel_id

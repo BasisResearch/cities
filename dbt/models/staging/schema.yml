@@ -1,0 +1,14 @@
+models:
+  - name: stg_zip_codes_2010
+    columns:
+      - name: zip_code
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_zip_codes_2020
+    columns:
+      - name: zip_code
+        data_tests:
+          - not_null
+          - unique

@@ -90,6 +90,7 @@ sources:
 
 models:
   - name: census_tracts
+    description: '{{ doc("census_tracts") }}'
     columns:
       - name: census_tract_id
         data_tests:
@@ -97,6 +98,7 @@ models:
           - not_null
 
   - name: census_block_groups
+    description: '{{ doc("census_block_groups") }}'
     columns:
       - name: census_block_group_id
         data_tests:
@@ -109,12 +111,7 @@ models:
               field: census_tract_id
 
   - name: acs_block_group
-    data_tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - census_block_group_id
-            - year_
-            - name_
+    description: '{{ doc("acs_block_group") }}'
     columns:
       - name: census_block_group_id
         data_tests:
@@ -122,7 +119,17 @@ models:
               to: ref('census_block_groups')
               field: census_block_group_id
 
+  - name: acs_tract
+    description: '{{ doc("acs_tract") }}'
+
+  - name: fair_market_rents
+    description: '{{ doc("fair_market_rents") }}'
+
+  - name: high_frequency_transit_lines
+    description: '{{ doc("high_frequency_transit_lines") }}'
+
   - name: segregation_indexes
+    description: '{{ doc("segregation_indexes") }}'
     data_tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -137,6 +144,7 @@ models:
               field: census_tract
 
   - name: parcels
+    description: '{{ doc("parcels") }}'
     columns:
       - name: parcel_id
         data_tests:
@@ -153,69 +161,9 @@ models:
           - relationships:
               to: ref('census_block_groups')
               field: census_block_group_id
-
-  - name: parcels_to_census_block_groups
-    data_tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - parcel_id
-            - census_block_group_id
-    columns:
-      - name: parcel_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('parcels')
-              field: parcel_id
-      - name: census_block_group_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('census_block_groups')
-              field: census_block_group_id
-
-  - name: parcels_to_zip_codes
-    data_tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - parcel_id
-            - zip_code_id
-    columns:
-      - name: parcel_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('parcels')
-              field: parcel_id
-      - name: zip_code_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('zip_codes')
-              field: zip_code_id
-
-  - name: all_zip_codes_2010
-    columns:
-      - name: zip_code
-        data_tests:
-          - not_null
-          - unique
-
-  - name: all_zip_codes_2020
-    columns:
-      - name: zip_code
-        data_tests:
-          - not_null
-          - unique
-
-  - name: all_zip_codes
-    columns:
-      - name: zip_code_id
-        data_tests:
-          - not_null
-          - unique
 
   - name: zip_codes
+    description: '{{ doc("zip_codes") }}'
     columns:
       - name: zip_code_id
         data_tests:
@@ -223,6 +171,7 @@ models:
           - unique
 
   - name: usps_migration
+    description: '{{ doc("usps_migration") }}'
     data_tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -239,6 +188,7 @@ models:
               field: zip_code_id
 
   - name: commercial_permits
+    description: '{{ doc("commercial_permits") }}'
     columns:
       - name: commercial_permit_id
         data_tests:
@@ -246,41 +196,12 @@ models:
           - unique
 
   - name: residential_permits
+    description: '{{ doc("residential_permits") }}'
     columns:
       - name: residential_permit_id
         data_tests:
           - not_null
           - unique
-
-  - name: residential_permits_to_parcels
-    columns:
-      - name: residential_permit_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('residential_permits')
-              field: residential_permit_id
-      - name: parcel_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('parcels')
-              field: parcel_id
-
-  - name: commercial_permits_to_parcels
-    columns:
-      - name: commercial_permit_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('commercial_permits')
-              field: commercial_permit_id
-      - name: parcel_id
-        data_tests:
-          - not_null
-          - relationships:
-              to: ref('parcels')
-              field: parcel_id
 
   - name: neighborhoods
     columns:

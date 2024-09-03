@@ -4,7 +4,7 @@ parcels as (
     parcel_id as id
     , valid
     , geom
-  from {{ ref("stg_parcels_base") }}
+  from {{ ref("stg_parcels") }}
 ),
 zip_codes as (
   select

@@ -8,13 +8,6 @@
   )
 }}
 
-{% docs zip_codes %}
-
-Contains the geometry and metadata for all zip code tabulation areas (ZCTAs) in
-the United States.
-
-{% enddocs %}
-
 with
 zip_codes as (
 select

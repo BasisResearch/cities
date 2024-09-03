@@ -14,7 +14,7 @@ with
 zip_codes as (select * from {{ ref('zip_codes') }})
 , process_date as (
   select to_date(yyyy_mm, 'YYYYMM') as date_, *
-    from {{ ref('usps_migration_union') }}
+  from {{ ref('stg_usps_migration_union') }}
 )
 , add_zip_id as (
   select zip_code_id, process_date.*

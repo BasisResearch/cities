@@ -4,7 +4,7 @@ residential_permits as (
     residential_permit_id as id
     , daterange(to_date(year_::text, 'YYYY'), to_date(year_::text, 'YYYY'), '[]') as valid
     , geom
-  from {{ ref("residential_permits") }}
+  from {{ ref('stg_residential_permits') }}
 )
 , parcels as (
   select

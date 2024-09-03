@@ -9,12 +9,6 @@
 
 {% set num_bedrooms = range(0, 5) %}
 
-{% doc fair_market_rents %}
-
-Contains fair market rent data for different numbers of bedrooms by zip code.
-
-{% enddoc %}
-
 with
 zip_codes as (select * from {{ ref('zip_codes') }})
 , fair_market_rents as (select * from {{ ref('stg_fair_market_rents_union') }})
