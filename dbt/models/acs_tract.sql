@@ -7,14 +7,9 @@
   )
 }}
 
-with
-census_tracts as (select * from {{ ref("census_tracts") }})
-, acs_tract as (select * from {{ ref('acs_tract_clean') }})
 select
-    census_tract
-    , acs_tract.year_
-    , acs_tract.name_
-    , acs_tract.value_
-from
-    acs_tract
-    inner join census_tracts using (statefp, countyfp, tractce, year_)
+  year::smallint as year_,
+  code as name_,
+  statefp || countyfp || tractce as census_tract,
+  case when "value" < 0 then null else "value" end as value_
+from {{ source('minneapolis', 'acs_tract_raw') }}
