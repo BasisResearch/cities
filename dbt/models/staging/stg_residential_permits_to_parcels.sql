@@ -1,13 +1,3 @@
-{{
-  config(
-    materialized='table',
-    indexes = [
-      {'columns': ['residential_permit_id']},
-      {'columns': ['parcel_id']}
-    ]
-  )
-}}
-
 with
 residential_permits as (
   select

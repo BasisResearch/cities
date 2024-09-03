@@ -8,28 +8,28 @@
   )
 }}
 
+{% docs residential_permits %}
+
+Contains residential building permit applications.
+
+Notes:
+ - Permits are filtered to only include those in Minneapolis.
+ - `square_feet` is treated as missing if it is 0.
+ - `permit_value` is treated as missing if it is 0.
+
+{% enddocs %}
+
+with
+stg_residential_permits as (select * from {{ ref('stg_residential_permits') }}),
+stg_residential_permits_to_parcels as (select * from {{ ref('stg_residential_permits_to_parcels') }}),
+parcels as (select * from {{ ref('parcels') }})
 select
-  sde_id::int as residential_permit_id
-  , year::int as year_
-  , tenure::text
-  , housing_ty::text as housing_type
-  , res_permit::text as permit_type
-  , address::text
-  , name::text as name_
-  , buildings::int as num_buildings
-  , units::int as num_units
-  , age_restri::int as num_age_restricted_units
-  , memory_car::int as num_memory_care_units
-  , assisted::int as num_assisted_living_units
-  , com_off_re = 'Y' as is_commercial_and_residential
-  , nullif(sqf, 0)::int as square_feet
-  , public_fun = 'Y' as is_public_funded
-  , nullif(permit_val, 0)::int as permit_value
-  , community_::text as community_designation
-  , notes::text
-  , st_transform(geom, {{ var("srid") }}) as geom
+  stg_residential_permits.*,
+  stg_residential_permits_to_parcels.parcel_id,
+  parcels.census_block_group_id,
+  parcels.census_tract_id,
+  parcels.zip_code_id
 from
-    {{ source('minneapolis', 'residential_permits_residentialpermits') }}
-where
-    co_code = '053'
-    and lower(ctu_name) = 'minneapolis'
+  stg_residential_permits
+  left join stg_residential_permits_to_parcels using residential_permit_id
+  left join parcels using parcel_id
