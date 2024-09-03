@@ -1,8 +1,23 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['zip_code_id', 'year_', 'num_bedrooms'], 'unique': true}
+    ]
+  )
+}}
+
 {% set num_bedrooms = range(0, 5) %}
+
+{% doc fair_market_rents %}
+
+Contains fair market rent data for different numbers of bedrooms by zip code.
+
+{% enddoc %}
 
 with
 zip_codes as (select * from {{ ref('zip_codes') }})
-, fair_market_rents as (select * from {{ ref('fair_market_rents_union') }})
+, fair_market_rents as (select * from {{ ref('stg_fair_market_rents_union') }})
 , fmr_zip as (
   select
     zip_codes.zip_code_id
