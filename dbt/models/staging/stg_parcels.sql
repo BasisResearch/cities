@@ -1,3 +1,13 @@
+{{
+  config(
+    materialized='table',
+    indexes = [
+      {'columns': ['parcel_id'], 'unique': true},
+      {'columns': ['valid', 'geom'], 'type': 'gist'}
+    ]
+  )
+}}
+
 {% set years = range(2002, 2024) %}
 {% set city = 'MINNEAPOLIS' %}
 {% set county_id = '053' %}
@@ -15,7 +25,7 @@ parcels_union as (
   nullif(emv_land, 0)::int as emv_land,
   nullif(emv_bldg, 0)::int as emv_bldg,
   nullif(emv_total, 0)::int as emv_total,
-  nullif(year_built, 0)::int as year_built,
+  nullif(year_built, 0)::smallint as year_built,
   nullif(sale_date, '1899-12-30'::date) as sale_date,
   nullif(sale_value, 0)::int as sale_value,
   st_transform(geom, {{ var("srid") }}) as geom
@@ -32,5 +42,14 @@ parcels_distinct as (
   from parcels_union
 )
 select
-  {{ dbt_utils.generate_surrogate_key(['ogc_fid', 'valid']) }} as parcel_id, *
+  {{ dbt_utils.generate_surrogate_key(['ogc_fid', 'valid']) }} as parcel_id,
+  pin,
+  valid,
+  emv_land,
+  emv_bldg,
+  emv_total,
+  year_built,
+  sale_date,
+  sale_value,
+  geom
 from parcels_distinct

@@ -20,6 +20,6 @@ select
   , census_bgs.census_tract_id
 from
   parcels
-  left join to_zip_codes using (parcel_id)
+  left join to_zctas using (parcel_id)
   left join to_census_bgs using (parcel_id)
   left join census_bgs using (census_block_group_id)

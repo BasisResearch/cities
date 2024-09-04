@@ -122,4 +122,8 @@ directions are either `from` (out of) the zip code or `to` (in to) the zip code.
 Flow types are one of `business`, `family`, `individual`, `perm` (permanent),
 `temp` (temporary), or `total`.
 
+We associate zip codes to ZCTAs and provide aggregate flows for ZCTAs. Note that
+some zip codes do not find a match in our zip to ZCTA mapping table, so there is
+some missingness in this data.
+
 {% enddocs %}

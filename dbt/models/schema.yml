@@ -177,7 +177,6 @@ models:
     columns:
       - name: zcta_id
         data_tests:
-          - not_null
           - relationships:
               to: ref('zctas')
               field: zcta_id

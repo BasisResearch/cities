@@ -10,6 +10,6 @@ select
   , "downtown y" = 'Y' as is_downtown
   , "housing un"::smallint as num_housing_units
   , "car parkin"::smallint as num_car_parking_spaces
-  , "bike parki"::smallint as num_bike_parking_spaces
+  , replace("bike parki", ',', '')::smallint as num_bike_parking_spaces
   , st_transform(geom, {{ var("srid") }}) as geom
 from parking_raw
