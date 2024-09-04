@@ -6,16 +6,16 @@ parcels as (
     , geom
   from {{ ref("stg_parcels") }}
 ),
-zip_codes as (
+zctas as (
   select
-    zip_code_id as id
+    zcta_id as id
     , valid
     , geom
-  from {{ ref("zip_codes") }}
+  from {{ ref("zctas") }}
 )
 select
   child_id as parcel_id
-  , parent_id as zip_code_id
+  , parent_id as zcta_id
   , valid
   , type_
-from {{ tag_regions("parcels", "zip_codes") }}
+from {{ tag_regions("parcels", "zctas") }}

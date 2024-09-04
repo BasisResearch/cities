@@ -37,6 +37,7 @@ sources:
       - name: usps_y2023
       - name: zip_codes_tl_2020_us_zcta510
       - name: zip_codes_tl_2020_us_zcta520
+      - name: zip_codes_zcta_xref
       - name: census_cb_2010_27_bg_500k
       - name: census_cb_2010_27_tract_500k
       - name: census_cb_2013_27_bg_500k
@@ -144,22 +145,22 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: zip_code_id
+      - name: zcta_id
         data_tests:
           - not_null
           - relationships:
-              to: ref('zip_codes')
-              field: zip_code_id
+              to: ref('zctas')
+              field: zcta_id
       - name: census_block_group_id
         data_tests:
           - relationships:
               to: ref('census_block_groups')
               field: census_block_group_id
 
-  - name: zip_codes
-    description: '{{ doc("zip_codes") }}'
+  - name: zctas
+    description: '{{ doc("zctas") }}'
     columns:
-      - name: zip_code_id
+      - name: zcta_id
         data_tests:
           - not_null
           - unique
@@ -170,16 +171,16 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - date_
-            - zip_code_id
+            - zcta_id
             - flow_direction
             - flow_type
     columns:
-      - name: zip_code_id
+      - name: zcta_id
         data_tests:
           - not_null
           - relationships:
-              to: ref('zip_codes')
-              field: zip_code_id
+              to: ref('zctas')
+              field: zcta_id
 
   - name: commercial_permits
     description: '{{ doc("commercial_permits") }}'

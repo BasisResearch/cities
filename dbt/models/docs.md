@@ -19,10 +19,14 @@ Notes:
 
 {% enddocs %}
 
-{% docs zip_codes %}
+{% docs zctas %}
 
 Contains the geometry and metadata for all zip code tabulation areas (ZCTAs) in
 the United States.
+
+These are not the same as zip codes. Zip codes are created by the postal service, and they change regularly. ZCTAs are created by the census bureau alongside the census. Not every zip code has a corresponding ZCTA (unpopulated zip codes are not represented, for example), and some ZCTAs cover multiple zip codes.
+
+Use the mapping table `zip_codes_to_zctas` to translate from zip codes to ZCTAs.
 
 {% enddocs %}
 

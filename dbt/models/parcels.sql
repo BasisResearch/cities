@@ -10,12 +10,12 @@
 
 with
 parcels as (select * from {{ ref('stg_parcels') }}),
-to_zip_codes as (select * from {{ref('stg_parcels_to_zip_codes')}}),
+to_zctas as (select * from {{ref('stg_parcels_to_zctas')}}),
 to_census_bgs as (select * from {{ref('stg_parcels_to_census_block_groups')}}),
 census_bgs as (select * from {{ref('census_block_groups')}})
 select
   parcels.*
-  , to_zip_codes.zip_code_id
+  , to_zctas.zcta_id
   , to_census_bgs.census_block_group_id
   , census_bgs.census_tract_id
 from

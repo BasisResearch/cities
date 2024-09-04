@@ -1,14 +1,14 @@
 models:
-  - name: stg_zip_codes_2010
+  - name: stg_zctas_2010
     columns:
-      - name: zip_code
+      - name: zcta
         data_tests:
           - not_null
           - unique
 
-  - name: stg_zip_codes_2020
+  - name: stg_zctas_2020
     columns:
-      - name: zip_code
+      - name: zcta
         data_tests:
           - not_null
           - unique
