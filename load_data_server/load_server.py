@@ -32,7 +32,6 @@ SCHEMA = os.getenv("SCHEMA")
 HOST = os.getenv("HOST")
 DATABASE = os.getenv("DATABASE")
 USERNAME = os.getenv("USERNAME")
-PASSWORD = os.getenv("PASSWORD")
 
 OGR2OGR_OPTS = [
     "--config",
@@ -47,9 +46,7 @@ OGR2OGR_OPTS = [
     "-nlt",
     "PROMOTE_TO_MULTI",
 ]
-DB_OPTS = [
-    f"PG:dbname={DATABASE} host={HOST} user={USERNAME} password={PASSWORD} port=5432"
-]
+DB_OPTS = [f"PG:dbname={DATABASE} host={HOST} user={USERNAME} port=5432"]
 
 MAX_RETRIES = 3
 RETRY_DELAY = 5  # seconds
@@ -59,9 +56,7 @@ def get_db_connection():
     """Create a database connection with retries."""
     for attempt in range(MAX_RETRIES):
         try:
-            conn = psycopg2.connect(
-                host=HOST, database=DATABASE, user=USERNAME, password=PASSWORD
-            )
+            conn = psycopg2.connect(f"postgresql://{USERNAME}@{HOST}/{DATABASE}")
             conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
             return conn
         except psycopg2.OperationalError as e:
