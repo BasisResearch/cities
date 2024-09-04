@@ -123,6 +123,21 @@ models:
   - name: high_frequency_transit_lines
     description: '{{ doc("high_frequency_transit_lines") }}'
 
+  - name: demographics
+    description: '{{ doc("demographics") }}'
+
+  - name: university
+    description: '{{ doc("university") }}'
+
+  - name: downtown
+    description: '{{ doc("downtown") }}'
+
+  - name: city_boundary
+    description: '{{ doc("city_boundary") }}'
+
+  - name: parking
+    description: '{{ doc("parking") }}'
+
   - name: segregation_indexes
     description: '{{ doc("segregation_indexes") }}'
     data_tests:
@@ -198,6 +213,7 @@ models:
           - unique
 
   - name: neighborhoods
+    description: '{{ doc("neighborhoods") }}'
     columns:
       - name: neighborhood_id
         data_tests:
@@ -205,6 +221,7 @@ models:
           - unique
 
   - name: wards
+    description: '{{ doc("wards") }}'
     columns:
       - name: ward_id
         data_tests:

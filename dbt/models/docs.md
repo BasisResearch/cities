@@ -5,6 +5,10 @@ Contains commercial building permit applications.
 Notes:
  - Permits are filtered to only include those in Minneapolis.
  - `square_feet` is treated as missing if it is 0.
+ - When mapping permits to parcels, if more than one parcel contains the permit
+   location, a parcel will be chosen arbitrarily. This can happen because the
+   same parcel spatial extent can appear multiple times with different PINs, to
+   represent e.g. units in a condominium.
 
 {% enddocs %}
 
@@ -16,6 +20,16 @@ Notes:
  - Permits are filtered to only include those in Minneapolis.
  - `square_feet` is treated as missing if it is 0.
  - `permit_value` is treated as missing if it is 0.
+ - If more than one parcel contains the permit location, a parcel is selected
+   arbitrarily. See `commercial_permits`.
+
+{% enddocs %}
+
+{% docs parking %}
+
+Notes:
+ - If more than one parcel contains the permit location, a parcel is selected
+   arbitrarily. See `commercial_permits`.
 
 {% enddocs %}
 
@@ -125,5 +139,46 @@ Flow types are one of `business`, `family`, `individual`, `perm` (permanent),
 We associate zip codes to ZCTAs and provide aggregate flows for ZCTAs. Note that
 some zip codes do not find a match in our zip to ZCTA mapping table, so there is
 some missingness in this data.
+
+{% enddocs %}
+
+{% docs demographics %}
+
+Contains demographic data at census tract granularity.
+Combines ACS data and segregation indexes in one table.
+
+Notes:
+- Fills in missing demographic data from 2011 and 2012 with data from 2013.
+- Replaces pandemic-affected data from 2020 with data from 2019.
+
+{% enddocs %}
+
+{% docs neighborhoods %}
+
+Neighborhood boundaries in the city of Minneapolis.
+
+{% enddocs %}
+
+{% docs wards %}
+
+Ward boundaries in the city of Minneapolis.
+
+{% enddocs %}
+
+{% docs university %}
+
+Boundary of the University of Minnesota.
+
+{% enddocs %}
+
+{% docs downtown %}
+
+Boundary of the downtown of Minneapolis.
+
+{% enddocs %}
+
+{% docs city_boundary %}
+
+Boundary of the city of Minneapolis.
 
 {% enddocs %}
