@@ -13,11 +13,26 @@ from chirho.interventional.handlers import do
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 
 from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import select_from_sql
+from cities.utils.data_loader import select_from_sql, select_from_data
 
 
 class TractsModelPredictor:
     kwargs = {
+        "categorical": ["year", "year_original", "census_tract"],
+        "continuous": {
+            "housing_units",
+            "total_value",
+            "median_value",
+            "mean_limit_original",
+            "median_distance",
+            "income",
+            "segregation_original",
+            "white_original",
+        },
+        "outcome": "housing_units",
+    }
+
+    kwargs_subset = {
         "categorical": ["year", "census_tract"],
         "continuous": {
             "housing_units",
@@ -78,11 +93,12 @@ class TractsModelPredictor:
 
         self.param_path = os.path.join(root, "tracts_model_params.pth")
 
-        self.subset = select_from_sql(
+        self.data = select_from_sql(
             "select * from dev.tracts_model__census_tracts",
             conn,
             TractsModelPredictor.kwargs,
         )
+        self.subset = select_from_data(self.data, TractsModelPredictor.kwargs_subset)
 
         categorical_levels = {
             "year": torch.unique(self.subset["categorical"]["year"]),
@@ -116,13 +132,18 @@ class TractsModelPredictor:
         subset_for_preds["continuous"]["housing_units"] = None
 
         if intervention is None:
-            return self.predictive(**subset_for_preds)["housing_units"]
+            result = self.predictive(**subset_for_preds)["housing_units"]
         else:
             intervention = self._tracts_intervention(**intervention)
             print(intervention.shape, intervention)
             with MultiWorldCounterfactual():
                 with do(actions={"limit": intervention}):
-                    return self.predictive(**subset_for_preds)["housing_units"]
+                    result = self.predictive(**subset_for_preds)["housing_units"]
+
+        self.data["categorical"]["year_original"], self.data["categorical"][
+            "census_tract"
+        ], result
+        return result
 
 
 if __name__ == "__main__":
