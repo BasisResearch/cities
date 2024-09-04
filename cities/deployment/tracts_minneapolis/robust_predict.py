@@ -253,6 +253,9 @@ def get_correction(unconditioned_model, data: Dict[str, torch.Tensor]):
         pointwise_influence=False
     )
 
+    raise NotImplementedError(
+        "model_for_correction isn't a torch module..."
+    )
     correction_estimator = influence_functional(model_for_correction)
     with MonteCarloInfluenceEstimator(
         num_samples_outer=1000,
