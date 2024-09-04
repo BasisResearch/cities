@@ -50,7 +50,7 @@ class TractsModel(pyro.nn.PyroModule):
             categorical_levels = self.categorical_levels
 
         if n is None:
-            _N_categorical, _N_continuous, n = get_n(categorical, continuous)
+            _, _, n = get_n(categorical, continuous)
 
         data_plate = pyro.plate("data", size=n, dim=-1)
 

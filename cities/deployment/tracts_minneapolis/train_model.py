@@ -4,6 +4,7 @@ import dill
 import pyro
 import torch
 from torch.utils.data import DataLoader
+from functools import partial
 
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
@@ -12,7 +13,9 @@ from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
 from copy import deepcopy
+from pyro.infer.autoguide import AutoDelta
 from chirho.observational.handlers import condition
+from utils import nonify_dict, map_subset_onto_obs
 
 root = find_repo_root()
 
@@ -54,99 +57,54 @@ subset = select_from_data(data, kwargs)
 # instantiate and train model
 #############################
 
-# DEBUG
+nonified_subset = nonify_dict(subset)
 
-def nonify_dict(d):
-    for k, v in d.items():
-        if isinstance(v, torch.Tensor):
-            d[k] = None
-        elif isinstance(v, dict):
-            d[k] = nonify_dict(v)
-    return d
-
-nonified_subset = nonify_dict(deepcopy(subset))
-#
-# unconditioned_model = TractsModel(
-#     **nonified_subset, categorical_levels=ct_dataset_read.categorical_levels
-# )
-#
-# with pyro.poutine.trace() as tr:
-#     unconditioned_model(
-#         **nonified_subset
-#     )
-#
-# exit()
-# # /DEBUG
-
-# We're replacing this with the same thing below, but with an outside-conditioned version.
-internally_conditioned_tracts_model = TractsModel(
-    **subset, categorical_levels=ct_dataset_read.categorical_levels
+tracts_model = TractsModel(
+    **subset,  # pass the data here so that categorical levels are properly constructed.
+    categorical_levels=ct_dataset_read.categorical_levels
 )
 
+# We can partially evaluate with the nonified subset to get an unconditioned model.
+unconditioned_model = partial(tracts_model, n=816, **nonified_subset)
+
 # DEBUG
-unconditioned_model = pyro.poutine.uncondition(internally_conditioned_tracts_model)
 
-with pyro.poutine.trace() as tr:
-    unconditioned_model(
-        **nonified_subset,
-        n=816
-    )
+# Tracing the unconditioned forward
+with pyro.poutine.trace() as prior_trace:
+    unconditioned_model()
 
-SUBSET_SITE_NAME_MAP = {
-    "white": "white_original",
-    "segregation": "segregation_original",
-    "limit": "mean_limit_original",
-    "distance": "median_distance",
-}
 
-def map_subset_onto_obs(subset):
-    obs = dict()
+subset_as_obs = map_subset_onto_obs(
+    subset,
+    site_names=["year", "distance", "white", "segregation", "income", "limit", "median_value", "housing_units"]
+)
 
-    site_names = ["year", "distance", "white", "segregation", "income", "limit", "median_value", "housing_units"]
+conditioned_model = condition(unconditioned_model, data=subset_as_obs)
 
-    for name in site_names:
-        subset_name = SUBSET_SITE_NAME_MAP.get(name, name)
-        for k, inner_subset_dict in subset.items():
-            if k == "outcome":
-                continue
-            if subset_name in inner_subset_dict:
-                obs[name] = inner_subset_dict[subset_name]
-                break
-
-    assert obs.keys() == set(site_names), f"Missing keys: {set(site_names) - obs.keys()}"
-    return obs
-
-subset_as_obs = map_subset_onto_obs(subset)
-
-tracts_model = condition(unconditioned_model, data=subset_as_obs)
-
-with pyro.poutine.trace() as tr:
-    tracts_model(
-        **nonified_subset,
-        n=816
-    )
-# from functools import partial
-# tracts_model = partial(
-#     unconditioned_model
-# )
-
+# with pyro.poutine.trace() as conditioned_trace:
+#     conditioned_model()
+#
 # import matplotlib.pyplot as plt
-# plt.hist(tr.get_trace().nodes["white"]["value"].detach())
+# plt.figure()
+# plt.hist(prior_trace.get_trace().nodes["year"]["value"].detach())
+# plt.suptitle("Prior")
+#
+# plt.figure()
+# plt.hist(subset_as_obs["year"].detach())
+# plt.suptitle("Data")
+#
+# plt.figure()
+# plt.hist(conditioned_trace.get_trace().nodes["year"]["value"].detach())
+# plt.suptitle("Conditioned")
+#
 # plt.show()
-
-import matplotlib.pyplot as plt
-plt.figure()
-plt.hist(tr.get_trace().nodes["year"]["value"].detach())
-plt.figure()
-plt.hist(subset_as_obs["year"].detach())
-plt.show()
-
-exit()
+#
+# exit()
 # /DEBUG
 
 pyro.clear_param_store()
 
-guide = run_svi_inference(tracts_model, n_steps=2000, lr=0.03, **subset)
+guide = run_svi_inference(conditioned_model, n_steps=5000, lr=0.005, vi_family=AutoDelta)
 
 
 ##########################################
