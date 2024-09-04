@@ -218,8 +218,8 @@ print("Time to run tracts_intervention 2: ", end2 - start2)
 ##################################
 
 with MultiWorldCounterfactual() as mwc:
-    with do(actions={"limit": torch.tensor(0.0)}):
+    with do(actions={"limit": (t_intervention, t_intervention2)}):
         samples = predictive(**subset_for_preds)
 
 
-assert samples["limit"].shape == torch.Size([100, 2, 1, 1, 1, 816])
+assert samples["limit"].shape == torch.Size([100, 3, 1, 1, 1, 816])
