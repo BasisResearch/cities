@@ -3,11 +3,11 @@
 {% for year_ in years %}
 select
   zip_code
-  , rent_br0
-  , rent_br1
-  , rent_br2
-  , rent_br3
-  , rent_br4
+  , replace(rent_br0, '.00', '') as rent_br0
+  , replace(rent_br1, '.00', '') as rent_br1
+  , replace(rent_br2, '.00', '') as rent_br2
+  , replace(rent_br3, '.00', '') as rent_br3
+  , replace(rent_br4, '.00', '') as rent_br4
   , year as year_
 from
   {{ source('minneapolis', 'fair_market_rents_' ~ year_) }}

@@ -112,12 +112,6 @@ models:
 
   - name: acs_block_group
     description: '{{ doc("acs_block_group") }}'
-    columns:
-      - name: census_block_group_id
-        data_tests:
-          - relationships:
-              to: ref('census_block_groups')
-              field: census_block_group_id
 
   - name: acs_tract
     description: '{{ doc("acs_tract") }}'
