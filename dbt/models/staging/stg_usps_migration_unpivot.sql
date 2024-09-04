@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='table'
+  )
+}}
+
 {% set usps_migration_flow_types = ['business', 'family', 'individual', 'perm', 'temp'] %}
 {% set usps_migration_flow_directions = ['from', 'to'] %}
 

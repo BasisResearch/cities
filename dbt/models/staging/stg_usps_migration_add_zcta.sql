@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='table'
+  )
+}}
+
 with
 usps_migration as (select * from {{ ref('stg_usps_migration_unpivot') }}),
 zctas as (select * from {{ ref('zctas') }}),
