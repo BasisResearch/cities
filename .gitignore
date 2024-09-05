@@ -6,9 +6,14 @@ cities.egg-info/*
 cities.egg-info/
 */__pycache__
 *.pyc
-**/*.pyc 
+**/*.pyc
 tests/__pycache__/
 .mypy_cache/
+
+**/*.Rproj.user/
+**/*.Rproj/
+**/*.Rhistory
+
 
 .vscode/settings.json
 tests/.coverage
@@ -23,9 +28,6 @@ tests/.coverage
 .vscode/launch.json
 data/sql/counties_database.db
 data/sql/msa_database.db
-.Rproj.user
-**/*.RData
-**/*.Rhistory
 
 # data
 data/minneapolis/processed/values_long.csv
@@ -34,5 +36,3 @@ data/minneapolis/sourced/demographic/**
 data/minneapolis/preds/**
 data/minneapolis/sourced/parcel_to_census_tract_mappings/**
 data/minneapolis/sourced/parcel_to_parking_info_mappings/**
-
-data/minneapolis/.pgpass

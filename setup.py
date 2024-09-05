@@ -27,6 +27,8 @@ DEV_REQUIRES = [
     "dbt-core",
     "dbt-postgres",
     "seaborn",
+    "adbc_driver_postgresql",
+    "psycopg2",
 ]
 
 setup(
