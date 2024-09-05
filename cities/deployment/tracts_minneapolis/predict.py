@@ -87,12 +87,14 @@ class TractsModelPredictor:
         self.conn = conn
 
         root = find_repo_root()
+        deploy_path = os.path.join(root, "cities/deployment/tracts_minneapolis")
 
-        guide_path = os.path.join(root, "tracts_model_guide.pkl")
+        guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
+        print("guide path", guide_path)
         with open(guide_path, "rb") as file:
             guide = dill.load(file)
 
-        self.param_path = os.path.join(root, "tracts_model_params.pth")
+        self.param_path = os.path.join(deploy_path, "tracts_model_params.pth")
 
         self.data = select_from_sql(
             "select * from dev.tracts_model__census_tracts",
