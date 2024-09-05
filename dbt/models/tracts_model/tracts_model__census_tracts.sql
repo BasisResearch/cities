@@ -68,7 +68,8 @@ select
   , {{ standardize_cat(['year']) }}
   , {{ standardize_cont(['housing_units', 'total_value', 'median_value',
                          'median_distance', 'mean_distance', 'parcel_sqm',
-                         'white', 'income', 'mean_limit', 'segregation' ]) }}
+                         'parcel_mean_sqm', 'parcel_median_sqm', 'white',
+                         'income', 'mean_limit', 'segregation' ]) }}
 from
   raw_data
 )
