@@ -28,6 +28,7 @@ class TractsModelPredictor:
             "income",
             "segregation_original",
             "white_original",
+            "housing_units_original",
         },
         "outcome": "housing_units",
     }
@@ -138,12 +139,23 @@ class TractsModelPredictor:
             print(intervention.shape, intervention)
             with MultiWorldCounterfactual():
                 with do(actions={"limit": intervention}):
-                    result = self.predictive(**subset_for_preds)["housing_units"]
+                    result = self.predictive(**subset_for_preds)[
+                        "housing_units"
+                    ].squeeze()[:, 1, :]
 
-        self.data["categorical"]["year_original"], self.data["categorical"][
-            "census_tract"
-        ], result
-        return result
+        # undo standardization
+        housing_units_std = self.data["continuous"]["housing_units_original"].std()
+        housing_units_mean = self.data["continuous"]["housing_units_original"].mean()
+        result = result * housing_units_std + housing_units_mean
+
+        # filter to latest year
+        year_mask = (
+            self.data["categorical"]["year"] == self.data["categorical"]["year"].max()
+        )
+        result = result[:, year_mask]
+        tracts = self.data["categorical"]["census_tract"][year_mask]
+
+        return {"census_tracts": tracts, "housing_units": result.mean(0)}
 
 
 if __name__ == "__main__":
@@ -159,20 +171,20 @@ if __name__ == "__main__":
         predictor = TractsModelPredictor(conn)
 
         start = time.time()
-        print(predictor.predict().shape)
+        result = predictor.predict()
+        print({k: v.shape for k, v in result.items()})
         end = time.time()
         print(f"Predicted in {end - start} seconds")
 
         start = time.time()
-        print(
-            predictor.predict(
-                intervention={
-                    "radius_blue": 300,
-                    "limit_blue": 0.5,
-                    "radius_yellow": 700,
-                    "limit_yellow": 0.7,
-                }
-            ).shape
+        result = predictor.predict(
+            intervention={
+                "radius_blue": 300,
+                "limit_blue": 0.5,
+                "radius_yellow": 700,
+                "limit_yellow": 0.7,
+            }
         )
+        print({k: v.shape for k, v in result.items()})
         end = time.time()
         print(f"Counterfactual in {end - start} seconds")
