@@ -44,7 +44,9 @@ select
   , property_values.median_value
   , distance_to_transit.median_distance_to_transit as median_distance
   , distance_to_transit.mean_distance_to_transit as mean_distance
-  , parcel_area.parcel_sqm
+  , parcel_area.parcel_sqm::double precision
+  , parcel_area.parcel_mean_sqm::double precision
+  , parcel_area.parcel_median_sqm::double precision
   , parking_limits.mean_limit::double precision
   , white_frac.value_ as white
   , income.value_ as income
