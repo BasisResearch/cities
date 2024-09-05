@@ -10,6 +10,11 @@ cities.egg-info/
 tests/__pycache__/
 .mypy_cache/
 
+**/*.Rproj.user/
+**/*.Rproj/
+**/*.Rhistory
+
+
 .vscode/settings.json
 tests/.coverage
 tests/pytest_report/
@@ -23,3 +28,5 @@ tests/.coverage
 .vscode/launch.json
 data/sql/counties_database.db
 data/sql/msa_database.db
+data/minneapolis/pgpass
+data/minneapolis/.pgpass

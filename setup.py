@@ -23,6 +23,8 @@ DEV_REQUIRES = [
     "chirho",
     "graphviz",
     "seaborn",
+    "adbc_driver_postgresql",
+    "psycopg2",
 ]
 
 setup(
