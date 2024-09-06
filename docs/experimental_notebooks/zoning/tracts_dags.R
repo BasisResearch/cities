@@ -4,29 +4,61 @@ require(dagitty)
 tracts_dag <- dagitty('dag {
     year [pos="0,2"]
     distance [pos = "0,0"]
-    total_value [pos = "1,0"]
-    median_value [pos = "1.2,0.3"]
-    limit [pos="1,1"]
-    units [pos = "2,1"]
+
+    white [pos = ".2,1"]
+    segregation [pos = ".6,1"]
     
-    distance -> limit
-    distance -> total_value
-    distance -> median_value
-    distance -> units
+    income [pos = ".9,.8"]
+
+    median_value [pos = "1.2,0.2"]
+    limit [pos=".7,1.8"]
+    units [pos = "1.5,.8"]
+    
+    sqm [pos = ".2,.4"]
+   
+    distance -> white
+    year -> white
+    sqm -> white
     
     year -> limit
-    year -> total_value
-    year -> median_value
-    year -> units
+    distance -> limit
     
-    total_value -> units
-    median_value -> units
+    distance -> sqm
+    year -> sqm
     
+    sqm -> segregation
+    distance -> segregation
+    white -> segregation
+    year -> segregation
+    limit -> segregation
     
-    limit -> total_value
+    sqm -> income
+    distance -> income
+    white -> income
+    segregation -> income
+    year -> income
+    limit -> income
+    
+ 
+    
+    sqm -> median_value
+    distance -> median_value
     limit -> median_value
-    limit -> units
+    income -> median_value
+    white -> median_value
+    segregation -> median_value
+    year -> median_value
     
+  
+    
+    sqm -> units
+    median_value -> units
+    distance -> units
+    income -> units
+    white -> units
+    limit -> units
+    segregation -> units
+    year -> units
     }')
 
 
