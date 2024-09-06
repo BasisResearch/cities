@@ -71,11 +71,24 @@ async def read_census_tracts(year: int, db=Depends(get_db)):
 
 @app.get("/predict")
 async def read_predict(
+    radius_blue: float,
+    limit_blue: float,
+    radius_yellow: float,
+    limit_yellow: float,
     samples=100,
-    intervention: Dict[str, float] = None,
     predictor: TractsModelPredictor = Depends(get_predictor),
 ):
-    result = predictor.predict(samples=samples, intervention=intervention)
+    result = predictor.predict(
+        samples=samples,
+        intervention=(
+            {
+                "radius_blue": radius_blue,
+                "limit_blue": limit_blue,
+                "radius_yellow": radius_yellow,
+                "limit_yellow": limit_yellow,
+            }
+        ),
+    )
     result = [
         {
             "description": "predict",
