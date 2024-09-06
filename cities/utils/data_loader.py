@@ -1,7 +1,9 @@
+import os
 from typing import Dict, List
 
 import torch
 from torch.utils.data import Dataset
+import pandas as pd
 
 
 class ZoningDataset(Dataset):
@@ -10,24 +12,9 @@ class ZoningDataset(Dataset):
         categorical,
         continuous,
         standardization_dictionary=None,
-        index_dictionary=None,
     ):
         self.categorical = categorical
         self.continuous = continuous
-
-        if index_dictionary is None:
-            # this is hardcoded from data processing pipeline
-            # and will be expanded in the future
-            # for easier downstream use and interpretation
-            self.index_dictionary = {
-                "zoning_ordering": [
-                    "downtown",
-                    "blue_zone",
-                    "yellow_zone",
-                    "other_non_university",
-                ],
-                "limit_ordering": ["eliminated", "reduced", "full"],
-            }
 
         self.standardization_dictionary = standardization_dictionary
 
@@ -35,7 +22,7 @@ class ZoningDataset(Dataset):
             self.categorical_levels = dict()
             for name in self.categorical.keys():
                 self.categorical_levels[name] = torch.unique(categorical[name])
-        
+
         N_categorical = len(categorical.keys())
         N_continuous = len(continuous.keys())
 
@@ -71,3 +58,28 @@ def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     }
 
     return _data
+
+
+def load_sql_df(sql, conn=None, params=None):
+    from adbc_driver_postgresql import dbapi
+
+    USERNAME = os.getenv("USERNAME")
+    HOST = os.getenv("HOST")
+    DATABASE = os.getenv("DATABASE")
+
+    with dbapi.connect(f"postgresql://{USERNAME}@{HOST}/{DATABASE}") as conn:
+        return pd.read_sql(sql, conn, params=params)
+
+
+def select_from_sql(sql, conn, kwargs, params=None):
+    df = pd.read_sql(sql, conn, params=params)
+    return {
+        "outcome": df[kwargs["outcome"]],
+        "categorical": {
+            key: torch.tensor(df[key].values) for key in kwargs["categorical"]
+        },
+        "continuous": {
+            key: torch.tensor(df[key], dtype=torch.float32)
+            for key in kwargs["continuous"]
+        },
+    }
