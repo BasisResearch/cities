@@ -1,6 +1,6 @@
 with
 stg_fair_market_rents_unpivot as (
-  select * from {{ ref('stg_fair_market_rents_unpivot') }}
+  select * from {{ ref('stg_fair_market_rents_dedup') }}
 ),
 zip_codes_to_zctas as (select * from {{ ref('zip_codes_to_zctas') }}),
 zctas as (select * from {{ ref('zctas') }})
