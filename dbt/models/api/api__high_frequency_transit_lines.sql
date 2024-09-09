@@ -7,11 +7,11 @@
   )
 }}
 
+with
+lines as (select * from dev.stg_high_frequency_transit_lines_union),
+stops as (select * from dev.high_frequency_transit_stops),
 select
-  high_frequency_transit_line_id,
-  valid,
-  st_transform(geom, 4269) as geom,
-  st_transform(blue_zone_geom, 4269) as blue_zone_geom,
-  st_transform(yellow_zone_geom, 4269) as yellow_zone_geom
-from
-  {{ ref('high_frequency_transit_lines') }}
+  st_transform(lines.geom, 4269) as line_geom,
+  st_transform(stops.geom, 4269) as stop_geom
+from lines inner join stops on lines.valid && stops.valid
+where '2020-01-01'::date <@ lines.valid

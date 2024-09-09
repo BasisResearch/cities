@@ -1,10 +1,10 @@
 import os
+from typing import Annotated
 
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 import psycopg2
-from typing import Dict
 
 from cities.deployment.tracts_minneapolis.predict import TractsModelPredictor
 
@@ -45,57 +45,72 @@ def get_predictor(
     return TractsModelPredictor(db)
 
 
+Limit = Annotated[float, Query(ge=0, le=1)]
+Radius = Annotated[float, Query(ge=0)]
+Year = Annotated[int, Query(ge=2000, le=2030)]
+
+
 @app.get("/demographics")
-async def read_demographics(category: str, db=Depends(get_db)):
-    cur = db.cursor()
-    cur.execute("select * from api__demographics where description = %s", (category,))
-    return cur.fetchall()
-
-
-@app.get("/census_tracts")
-async def read_census_tracts(year: int, db=Depends(get_db)):
-    cur = db.cursor()
-    cur.execute(
-        """
-        with census_tracts as (
-          select census_tract, geom from api__census_tracts
-          where year_ = %s
+async def read_demographics(
+    category: Annotated[str, Query(max_length=100)], db=Depends(get_db)
+):
+    with db.cursor() as cur:
+        cur.execute(
+            "select * from api__demographics where description = %s", (category,)
         )
-        select json_build_object('type', 'FeatureCollection', 'features', json_agg(ST_AsGeoJSON(census_tracts.*)::json))
-        from census_tracts
-        """,
-        (year,),
-    )
-    return cur.fetchall()
+        return cur.fetchall()
+
+
+@app.get("/census-tracts")
+async def read_census_tracts(year: Year, db=Depends(get_db)):
+    with db.cursor() as cur:
+        cur.execute("select * from api__census_tracts where year_ = %s", (year,))
+        return cur.fetchone()[0]
+
+
+@app.get("/high-frequency-transit-lines")
+async def read_high_frequency_transit_lines(
+    blue_zone_radius: Radius,
+    yellow_zone_line_radius: Radius,
+    yellow_zone_stop_radius: Radius,
+    db=Depends(get_db),
+):
+    with db.cursor() as cur:
+        cur.execute(
+            """
+      select
+        line_geom as geom,
+        st_buffer(line_geom, blue_zone_radius) as blue_zone_geom,
+        st_union(st_buffer(line_geom, yellow_zone_line_radius), st_buffer(stop_geom, yellow_zone_stop_radius)) as yellow_zone_geom
+      from api__high_frequency_transit_lines
+            """,
+        )
+        return cur.fetchone()[0]
 
 
 @app.get("/predict")
 async def read_predict(
-    radius_blue: float,
-    limit_blue: float,
-    radius_yellow: float,
-    limit_yellow: float,
-    samples=100,
+    blue_zone_radius: Radius,
+    yellow_zone_line_radius: Radius,
+    yellow_zone_stop_radius: Radius,
+    blue_zone_limit: Limit,
+    yellow_zone_limit: Limit,
+    year: Year,
+    samples: Annotated[int, Query(ge=0, le=1000)] = 100,
     predictor: TractsModelPredictor = Depends(get_predictor),
 ):
     result = predictor.predict(
         samples=samples,
         intervention=(
             {
-                "radius_blue": radius_blue,
-                "limit_blue": limit_blue,
-                "radius_yellow": radius_yellow,
-                "limit_yellow": limit_yellow,
+                "radius_blue": blue_zone_radius,
+                "limit_blue": blue_zone_limit,
+                "radius_yellow": yellow_zone_line_radius,
+                "limit_yellow": yellow_zone_limit,
             }
         ),
     )
-    result = [
-        {
-            "description": "predict",
-            "tract_id": str(result["census_tracts"][i].item()),
-            "2022": result["housing_units"][i].item(),
-        }
-        for i in range(len(result["census_tracts"]))
-    ]
-    print(result)
-    return result
+    return (
+        [str(x) for x in result["census_tracts"].tolist()],
+        result["housing_units"].tolist(),
+    )
