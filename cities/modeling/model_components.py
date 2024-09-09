@@ -62,9 +62,17 @@ def categorical_contribution(
             dist.Normal(0.0, leeway).expand(categorical_levels[name].shape).to_event(1),
         )
 
-        objects_cat_weighted[name] = weights_categorical_outcome[name][
-            ..., categorical[name]
-        ]
+        weights_batch_dims = weights_categorical_outcome[name].shape[:-1]
+
+        objects_cat_weighted[name] = torch.gather(
+            weights_categorical_outcome[name],
+            dim=-1,
+            index=categorical[name].view(*weights_batch_dims, -1)
+        )
+
+        # objects_cat_weighted[name] = weights_categorical_outcome[name][
+        #     ..., categorical[name].view(*weights_batch_dims, -1)
+        # ]
 
     values = list(objects_cat_weighted.values())
     for i in range(1, len(values)):
