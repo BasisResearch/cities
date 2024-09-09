@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 
 from cities.utils.cleaning_utils import standardize_and_scale
-from cities.utils.data_grabber import DataGrabber
+from cities.utils.data_grabber import DataGrabber, find_repo_root
+
+root = find_repo_root()
 
 
 def clean_ethnic_composition():
@@ -10,7 +12,7 @@ def clean_ethnic_composition():
     data.get_features_wide(["gdp"])
     gdp = data.wide["gdp"]
 
-    ethnic_composition = pd.read_csv("../data/raw/ACSDP5Y2021_DP05_Race.csv")
+    ethnic_composition = pd.read_csv(f"{root}/data/raw/ACSDP5Y2021_DP05_Race.csv")
 
     ethnic_composition = ethnic_composition.iloc[1:]
     ethnic_composition["GEO_ID"].isna() == 0
@@ -93,7 +95,9 @@ def clean_ethnic_composition():
     ethnic_composition = ethnic_composition.drop("totalALT", axis=1)
 
     # copy with nominal values
-    ethnic_composition.to_csv("../data/raw/ethnic_composition_nominal.csv", index=False)
+    ethnic_composition.to_csv(
+        f"{root}/data/raw/ethnic_composition_nominal.csv", index=False
+    )
 
     row_sums = ethnic_composition.iloc[:, 2:].sum(axis=1)
     ethnic_composition.iloc[:, 3:] = ethnic_composition.iloc[:, 3:].div(
@@ -121,14 +125,14 @@ def clean_ethnic_composition():
     )
 
     ethnic_composition_wide.to_csv(
-        "../data/processed/ethnic_composition_wide.csv", index=False
+        f"{root}/data/processed/ethnic_composition_wide.csv", index=False
     )
     ethnic_composition_long.to_csv(
-        "../data/processed/ethnic_composition_long.csv", index=False
+        f"{root}/data/processed/ethnic_composition_long.csv", index=False
     )
     ethnic_composition_std_wide.to_csv(
-        "../data/processed/ethnic_composition_std_wide.csv", index=False
+        f"{root}/data/processed/ethnic_composition_std_wide.csv", index=False
     )
     ethnic_composition_std_long.to_csv(
-        "../data/processed/ethnic_composition_std_long.csv", index=False
+        f"{root}/data/processed/ethnic_composition_std_long.csv", index=False
     )
