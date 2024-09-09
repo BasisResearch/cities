@@ -79,7 +79,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",mexican,0.013379094207218408
 2130,"Ketchikan Gateway Borough, AK*",mexican,0.015998278212210344
 2150,"Kodiak Island Borough, AK",mexican,0.02292328642759873
-2158,"Kusilvak Census Area, AK*",mexican,0.005147234857553268
 2164,"Lake and Peninsula Borough, AK",mexican,0.0
 2170,"Matanuska-Susitna Borough, AK",mexican,0.013922308462928459
 2180,"Nome Census Area, AK",mexican,0.0068520357497517375
@@ -1798,7 +1797,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",mexican,0.0723062381852552
 35035,"Otero, NM",mexican,0.15514576956224554
 35037,"Quay, NM",mexican,0.14201729106628241
-35039,"Rio Arriba, NM",mexican,0.09014300939351129
 35041,"Roosevelt, NM",mexican,0.1865213546272694
 35043,"Sandoval, NM",mexican,0.10906351177991815
 35045,"San Juan, NM",mexican,0.06459906274407706
@@ -2394,7 +2392,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",mexican,0.006323593545573485
 46099,"Minnehaha, SD",mexican,0.012789659489747748
 46101,"Moody, SD",mexican,0.019179163378058407
-46102,"Oglala Lakota, SD*",mexican,0.01788941091434767
 46103,"Pennington, SD",mexican,0.017266597367234862
 46105,"Perkins, SD",mexican,0.0026872690628149142
 46107,"Potter, SD",mexican,0.0
@@ -3153,7 +3150,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",puerto_rican,0.0011667319582361058
 2130,"Ketchikan Gateway Borough, AK*",puerto_rican,0.002259846473922089
 2150,"Kodiak Island Borough, AK",puerto_rican,7.565441065214103e-05
-2158,"Kusilvak Census Area, AK*",puerto_rican,0.0
 2164,"Lake and Peninsula Borough, AK",puerto_rican,0.0005070993914807302
 2170,"Matanuska-Susitna Borough, AK",puerto_rican,0.0036888967951538756
 2180,"Nome Census Area, AK",puerto_rican,0.0007447864945382324
@@ -4872,7 +4868,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",puerto_rican,0.002008506616257089
 35035,"Otero, NM",puerto_rican,0.002867841540610419
 35037,"Quay, NM",puerto_rican,0.0005763688760806917
-35039,"Rio Arriba, NM",puerto_rican,0.0007683346965077949
 35041,"Roosevelt, NM",puerto_rican,0.005358164698538209
 35043,"Sandoval, NM",puerto_rican,0.0038621569705485077
 35045,"San Juan, NM",puerto_rican,0.0013342879458474355
@@ -5468,7 +5463,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",puerto_rican,0.0
 46099,"Minnehaha, SD",puerto_rican,0.0011699267256419204
 46101,"Moody, SD",puerto_rican,0.0025256511444356746
-46102,"Oglala Lakota, SD*",puerto_rican,0.0016263100831225153
 46103,"Pennington, SD",puerto_rican,0.004171764467789563
 46105,"Perkins, SD",puerto_rican,0.0
 46107,"Potter, SD",puerto_rican,0.0
@@ -6227,7 +6221,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",cuban,0.0003917494166340209
 2130,"Ketchikan Gateway Borough, AK*",cuban,0.0017935289475572136
 2150,"Kodiak Island Borough, AK",cuban,0.0006808896958692692
-2158,"Kusilvak Census Area, AK*",cuban,0.0
 2164,"Lake and Peninsula Borough, AK",cuban,0.0
 2170,"Matanuska-Susitna Borough, AK",cuban,0.001385676968738004
 2180,"Nome Census Area, AK",cuban,0.00024826216484607745
@@ -7946,7 +7939,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",cuban,0.0
 35035,"Otero, NM",cuban,0.003135308627299474
 35037,"Quay, NM",cuban,0.00069164265129683
-35039,"Rio Arriba, NM",cuban,0.00035938235804396855
 35041,"Roosevelt, NM",cuban,0.0009363782968319201
 35043,"Sandoval, NM",cuban,0.0012183781655772533
 35045,"San Juan, NM",cuban,0.0008176581619369956
@@ -8542,7 +8534,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",cuban,0.0
 46099,"Minnehaha, SD",cuban,0.0002822191662732703
 46101,"Moody, SD",cuban,0.0
-46102,"Oglala Lakota, SD*",cuban,0.0
 46103,"Pennington, SD",cuban,0.00020237887164580018
 46105,"Perkins, SD",cuban,0.0
 46107,"Potter, SD",cuban,0.0
@@ -9301,7 +9292,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",other_hispanic_latino,0.006864131082761322
 2130,"Ketchikan Gateway Borough, AK*",other_hispanic_latino,0.008286103737714327
 2150,"Kodiak Island Borough, AK",other_hispanic_latino,0.020842790134664852
-2158,"Kusilvak Census Area, AK*",other_hispanic_latino,0.0
 2164,"Lake and Peninsula Borough, AK",other_hispanic_latino,0.0
 2170,"Matanuska-Susitna Borough, AK",other_hispanic_latino,0.007972323911354124
 2180,"Nome Census Area, AK",other_hispanic_latino,0.0021847070506454814
@@ -11020,7 +11010,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",other_hispanic_latino,0.34132797731569
 35035,"Otero, NM",other_hispanic_latino,0.03467413593271717
 35037,"Quay, NM",other_hispanic_latino,0.08726224783861672
-35039,"Rio Arriba, NM",other_hispanic_latino,0.2654348526532332
 35041,"Roosevelt, NM",other_hispanic_latino,0.025360245539197836
 35043,"Sandoval, NM",other_hispanic_latino,0.0871734305320817
 35045,"San Juan, NM",other_hispanic_latino,0.04026864748763343
@@ -11616,7 +11605,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",other_hispanic_latino,0.005451373746184038
 46099,"Minnehaha, SD",other_hispanic_latino,0.012694731224728556
 46101,"Moody, SD",other_hispanic_latino,0.0012628255722178373
-46102,"Oglala Lakota, SD*",other_hispanic_latino,0.0
 46103,"Pennington, SD",other_hispanic_latino,0.006356536377602178
 46105,"Perkins, SD",other_hispanic_latino,0.0
 46107,"Potter, SD",other_hispanic_latino,0.004975124378109453
@@ -12375,7 +12363,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",white,0.39349525642554206
 2130,"Ketchikan Gateway Borough, AK*",white,0.312289260348662
 2150,"Kodiak Island Borough, AK",white,0.2370252685731578
-2158,"Kusilvak Census Area, AK*",white,0.016399329662437154
 2164,"Lake and Peninsula Borough, AK",white,0.12170385395537525
 2170,"Matanuska-Susitna Borough, AK",white,0.3885232241332497
 2180,"Nome Census Area, AK",white,0.07144985104270109
@@ -14094,7 +14081,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",white,0.08234877126654064
 35035,"Otero, NM",white,0.23539332521025885
 35037,"Quay, NM",white,0.2390778097982709
-35039,"Rio Arriba, NM",white,0.059075024165365454
 35041,"Roosevelt, NM",white,0.2492847110232534
 35043,"Sandoval, NM",white,0.20976467314205816
 35045,"San Juan, NM",white,0.18279744858109867
@@ -14690,7 +14676,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",white,0.4659834278238116
 46099,"Minnehaha, SD",white,0.404137846103323
 46101,"Moody, SD",white,0.37640094711917915
-46102,"Oglala Lakota, SD*",white,0.02157571376942537
 46103,"Pennington, SD",white,0.3912213564903824
 46105,"Perkins, SD",white,0.4696002687269063
 46107,"Potter, SD",white,0.4556065824722541
@@ -15449,7 +15434,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",black_african_american,0.0030743812914104684
 2130,"Ketchikan Gateway Borough, AK*",black_african_american,0.0038740225267235814
 2150,"Kodiak Island Borough, AK",black_african_american,0.00446361022847632
-2158,"Kusilvak Census Area, AK*",black_african_american,0.00011970313622216902
 2164,"Lake and Peninsula Borough, AK",black_african_american,0.011156186612576065
 2170,"Matanuska-Susitna Borough, AK",black_african_american,0.00654919621373131
 2180,"Nome Census Area, AK",black_african_american,0.004319761668321748
@@ -17168,7 +17152,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",black_african_american,0.0
 35035,"Otero, NM",black_african_american,0.01575826919076347
 35037,"Quay, NM",black_african_american,0.0074351585014409225
-35039,"Rio Arriba, NM",black_african_american,0.002453714030782958
 35041,"Roosevelt, NM",black_african_american,0.010820371430057743
 35043,"Sandoval, NM",black_african_american,0.009801326301356845
 35045,"San Juan, NM",black_african_american,0.003242156990367092
@@ -17764,7 +17747,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",black_african_american,0.0004361098996947231
 46099,"Minnehaha, SD",black_african_american,0.030328297859239343
 46101,"Moody, SD",black_african_american,0.004340962904498816
-46102,"Oglala Lakota, SD*",black_african_american,0.0
 46103,"Pennington, SD",black_african_american,0.005947179114500446
 46105,"Perkins, SD",black_african_american,0.0
 46107,"Potter, SD",black_african_american,0.0007654037504783774
@@ -18523,7 +18505,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",american_indian_alaska_native,0.03706290133024476
 2130,"Ketchikan Gateway Borough, AK*",american_indian_alaska_native,0.07027046416529163
 2150,"Kodiak Island Borough, AK",american_indian_alaska_native,0.0547737933121501
-2158,"Kusilvak Census Area, AK*",american_indian_alaska_native,0.4657050514723486
 2164,"Lake and Peninsula Borough, AK",american_indian_alaska_native,0.3204868154158215
 2170,"Matanuska-Susitna Borough, AK",american_indian_alaska_native,0.0301712434578258
 2180,"Nome Census Area, AK",american_indian_alaska_native,0.3795431976166832
@@ -20242,7 +20223,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",american_indian_alaska_native,0.0
 35035,"Otero, NM",american_indian_alaska_native,0.0297037059050789
 35037,"Quay, NM",american_indian_alaska_native,0.00478386167146974
-35039,"Rio Arriba, NM",american_indian_alaska_native,0.07134359431928024
 35041,"Roosevelt, NM",american_indian_alaska_native,0.0017166935441918535
 35043,"Sandoval, NM",american_indian_alaska_native,0.05765066824139499
 35045,"San Juan, NM",american_indian_alaska_native,0.188386813329862
@@ -20838,7 +20818,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",american_indian_alaska_native,0.0034888791975577847
 46099,"Minnehaha, SD",american_indian_alaska_native,0.009359413805135363
 46101,"Moody, SD",american_indian_alaska_native,0.056827150749802685
-46102,"Oglala Lakota, SD*",american_indian_alaska_native,0.4573545355981207
 46103,"Pennington, SD",american_indian_alaska_native,0.03847038369194256
 46105,"Perkins, SD",american_indian_alaska_native,0.0141081625797783
 46107,"Potter, SD",american_indian_alaska_native,0.014351320321469576
@@ -21597,7 +21576,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",asian,0.008967655124252695
 2130,"Ketchikan Gateway Borough, AK*",asian,0.04121529521486477
 2150,"Kodiak Island Borough, AK",asian,0.1101906491148434
-2158,"Kusilvak Census Area, AK*",asian,0.00047881254488867607
 2164,"Lake and Peninsula Borough, AK",asian,0.013691683569979716
 2170,"Matanuska-Susitna Borough, AK",asian,0.008304699130206821
 2180,"Nome Census Area, AK",asian,0.006107249255213505
@@ -23316,7 +23294,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",asian,0.0
 35035,"Otero, NM",asian,0.005549942048797884
 35037,"Quay, NM",asian,0.0023631123919308356
-35039,"Rio Arriba, NM",asian,0.00251567650630778
 35041,"Roosevelt, NM",asian,0.003199292514175727
 35043,"Sandoval, NM",asian,0.006950525022568843
 35045,"San Juan, NM",asian,0.003148594116115595
@@ -23912,7 +23889,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",asian,0.00436109899694723
 46099,"Minnehaha, SD",asian,0.010044436690544119
 46101,"Moody, SD",asian,0.010181531176006314
-46102,"Oglala Lakota, SD*",asian,0.0
 46103,"Pennington, SD",asian,0.006135759426715851
 46105,"Perkins, SD",asian,0.004366812227074236
 46107,"Potter, SD",asian,0.011289705319556066
@@ -24671,7 +24647,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",native_hawaiian_other_pacific_islander,0.001788421249850965
 2130,"Ketchikan Gateway Borough, AK*",native_hawaiian_other_pacific_islander,0.0011478585264366166
 2150,"Kodiak Island Borough, AK",native_hawaiian_other_pacific_islander,0.0005674080798910577
-2158,"Kusilvak Census Area, AK*",native_hawaiian_other_pacific_islander,0.0005386641129997606
 2164,"Lake and Peninsula Borough, AK",native_hawaiian_other_pacific_islander,0.0015212981744421906
 2170,"Matanuska-Susitna Borough, AK",native_hawaiian_other_pacific_islander,0.0014793037909500313
 2180,"Nome Census Area, AK",native_hawaiian_other_pacific_islander,9.930486593843098e-05
@@ -26390,7 +26365,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",native_hawaiian_other_pacific_islander,0.0
 35035,"Otero, NM",native_hawaiian_other_pacific_islander,0.0007132455645041457
 35037,"Quay, NM",native_hawaiian_other_pacific_islander,0.0013256484149855908
-35039,"Rio Arriba, NM",native_hawaiian_other_pacific_islander,0.00011153245594467991
 35041,"Roosevelt, NM",native_hawaiian_other_pacific_islander,0.0004161681319252978
 35043,"Sandoval, NM",native_hawaiian_other_pacific_islander,0.00042762019181820035
 35045,"San Juan, NM",native_hawaiian_other_pacific_islander,0.00016271804217651652
@@ -26986,7 +26960,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",native_hawaiian_other_pacific_islander,0.0
 46099,"Minnehaha, SD",native_hawaiian_other_pacific_islander,0.00026682539356745553
 46101,"Moody, SD",native_hawaiian_other_pacific_islander,0.0
-46102,"Oglala Lakota, SD*",native_hawaiian_other_pacific_islander,0.0
 46103,"Pennington, SD",native_hawaiian_other_pacific_islander,0.0005381438177854232
 46105,"Perkins, SD",native_hawaiian_other_pacific_islander,0.0
 46107,"Potter, SD",native_hawaiian_other_pacific_islander,0.0
@@ -27745,7 +27718,6 @@ GeoFIPS,GeoName,Category,Value
 2122,"Kenai Peninsula Borough, AK",other_race_races,0.033809677913849194
 2130,"Ketchikan Gateway Borough, AK*",other_race_races,0.0428653418466174
 2150,"Kodiak Island Borough, AK",other_race_races,0.04845665002269632
-2158,"Kusilvak Census Area, AK*",other_race_races,0.011611204213550394
 2164,"Lake and Peninsula Borough, AK",other_race_races,0.030933062880324543
 2170,"Matanuska-Susitna Borough, AK",other_race_races,0.03800312713586188
 2180,"Nome Census Area, AK",other_race_races,0.028450844091360478
@@ -29464,7 +29436,6 @@ GeoFIPS,GeoName,Category,Value
 35033,"Mora, NM",other_race_races,0.002008506616257089
 35035,"Otero, NM",other_race_races,0.017058456417724153
 35037,"Quay, NM",other_race_races,0.01446685878962536
-35039,"Rio Arriba, NM",other_race_races,0.0077948794210226284
 35041,"Roosevelt, NM",other_race_races,0.016386620194558603
 35043,"Sandoval, NM",other_race_races,0.014087709652677378
 35045,"San Juan, NM",other_race_races,0.015242612600885186
@@ -30060,7 +30031,6 @@ GeoFIPS,GeoName,Category,Value
 46097,"Miner, SD",other_race_races,0.013955516790231139
 46099,"Minnehaha, SD",other_race_races,0.018926643541799223
 46101,"Moody, SD",other_race_races,0.029281767955801105
-46102,"Oglala Lakota, SD*",other_race_races,0.001554029634983737
 46103,"Pennington, SD",other_race_races,0.02968990037440091
 46105,"Perkins, SD",other_race_races,0.009237487403426269
 46107,"Potter, SD",other_race_races,0.013011863758132415

@@ -1,15 +1,452 @@
-<<<<<<< HEAD
-2023-11-27 05:02:59 → root → INFO: 248.0 guides already exist. Starting to train 4.0 out of 252 guides needed.
-2023-11-27 05:02:59 → root → INFO: Training spending_HHS_medianHouseholdIncome_2 for 4000 iterations.
-2023-11-27 05:05:35 → root → INFO: Training of spending_HHS_medianHouseholdIncome_2 completed in 156.07 seconds. 3.0 out of 252 guides remain to be trained.
-2023-11-27 05:05:35 → root → INFO: Training spending_HHS_medianHouseholdIncome_3 for 4000 iterations.
-2023-11-27 05:06:42 → root → INFO: Training of spending_HHS_medianHouseholdIncome_3 completed in 67.55 seconds. 2.0 out of 252 guides remain to be trained.
-2023-11-27 05:06:42 → root → INFO: Training spending_commerce_povertyAllprct_2 for 4000 iterations.
-2023-11-27 05:07:50 → root → INFO: Training of spending_commerce_povertyAllprct_2 completed in 67.82 seconds. 1.0 out of 252 guides remain to be trained.
-2023-11-27 05:07:50 → root → INFO: Training spending_commerce_povertyAllprct_3 for 4000 iterations.
-2023-11-27 05:08:58 → root → INFO: Training of spending_commerce_povertyAllprct_3 completed in 67.89 seconds. 0.0 out of 252 guides remain to be trained.
-2023-11-27 05:08:58 → root → INFO: All guides are now available.
-=======
-2023-11-27 16:33:36 → root → INFO: 252.0 guides already exist. Starting to train -45.0 out of 207 guides needed.
-2023-11-27 16:33:36 → root → INFO: All guides are now available.
->>>>>>> 07d87a3d4df13b6d63c34887d05dd2ed00cfacb9
+2024-02-02 11:56:54 → root → INFO: 36.0 guides already exist. Starting to train 225.0 out of 261 guides needed.
+2024-02-02 11:56:54 → root → INFO: Training spending_HHS_industry_mining_total_1 for 4000 iterations.
+2024-02-02 12:00:41 → root → INFO: Training of spending_HHS_industry_mining_total_1 completed in 226.27 seconds. 224 out of 261 guides remain to be trained.
+2024-02-02 12:00:41 → root → INFO: Training spending_HHS_industry_mining_total_2 for 4000 iterations.
+2024-02-02 12:04:21 → root → INFO: Training of spending_HHS_industry_mining_total_2 completed in 220.48 seconds. 223 out of 261 guides remain to be trained.
+2024-02-02 12:04:21 → root → INFO: Training spending_HHS_industry_mining_total_3 for 4000 iterations.
+2024-02-02 12:08:02 → root → INFO: Training of spending_HHS_industry_mining_total_3 completed in 220.68 seconds. 222 out of 261 guides remain to be trained.
+2024-02-02 12:08:02 → root → INFO: Training spending_HHS_industry_other_services_total_1 for 4000 iterations.
+2024-02-02 12:11:35 → root → INFO: Training of spending_HHS_industry_other_services_total_1 completed in 213.55 seconds. 221 out of 261 guides remain to be trained.
+2024-02-02 12:11:35 → root → INFO: Training spending_HHS_industry_other_services_total_2 for 4000 iterations.
+2024-02-02 12:14:55 → root → INFO: Training of spending_HHS_industry_other_services_total_2 completed in 199.66 seconds. 220 out of 261 guides remain to be trained.
+2024-02-02 12:14:55 → root → INFO: Training spending_HHS_industry_other_services_total_3 for 4000 iterations.
+2024-02-02 12:18:17 → root → INFO: Training of spending_HHS_industry_other_services_total_3 completed in 202.47 seconds. 219 out of 261 guides remain to be trained.
+2024-02-02 12:18:17 → root → INFO: Training spending_HHS_industry_professional_services_total_1 for 4000 iterations.
+2024-02-02 12:21:50 → root → INFO: Training of spending_HHS_industry_professional_services_total_1 completed in 212.56 seconds. 218 out of 261 guides remain to be trained.
+2024-02-02 12:21:50 → root → INFO: Training spending_HHS_industry_professional_services_total_2 for 4000 iterations.
+2024-02-02 12:26:18 → root → INFO: Training of spending_HHS_industry_professional_services_total_2 completed in 268.06 seconds. 217 out of 261 guides remain to be trained.
+2024-02-02 12:26:18 → root → INFO: Training spending_HHS_industry_professional_services_total_3 for 4000 iterations.
+2024-02-02 12:30:42 → root → INFO: Training of spending_HHS_industry_professional_services_total_3 completed in 263.99 seconds. 216 out of 261 guides remain to be trained.
+2024-02-02 12:30:42 → root → INFO: Training spending_HHS_industry_public_administration_total_1 for 4000 iterations.
+2024-02-02 12:34:27 → root → INFO: Training of spending_HHS_industry_public_administration_total_1 completed in 225.15 seconds. 215 out of 261 guides remain to be trained.
+2024-02-02 12:34:27 → root → INFO: Training spending_HHS_industry_public_administration_total_2 for 4000 iterations.
+2024-02-02 12:38:18 → root → INFO: Training of spending_HHS_industry_public_administration_total_2 completed in 231.15 seconds. 214 out of 261 guides remain to be trained.
+2024-02-02 12:38:18 → root → INFO: Training spending_HHS_industry_public_administration_total_3 for 4000 iterations.
+2024-02-02 12:41:38 → root → INFO: Training of spending_HHS_industry_public_administration_total_3 completed in 200.05 seconds. 213 out of 261 guides remain to be trained.
+2024-02-02 12:41:38 → root → INFO: Training spending_HHS_industry_real_estate_total_1 for 4000 iterations.
+2024-02-02 12:45:12 → root → INFO: Training of spending_HHS_industry_real_estate_total_1 completed in 213.66 seconds. 212 out of 261 guides remain to be trained.
+2024-02-02 12:45:12 → root → INFO: Training spending_HHS_industry_real_estate_total_2 for 4000 iterations.
+2024-02-02 12:48:02 → root → INFO: Training of spending_HHS_industry_real_estate_total_2 completed in 169.80 seconds. 211 out of 261 guides remain to be trained.
+2024-02-02 12:48:02 → root → INFO: Training spending_HHS_industry_real_estate_total_3 for 4000 iterations.
+2024-02-02 12:50:36 → root → INFO: Training of spending_HHS_industry_real_estate_total_3 completed in 153.70 seconds. 210 out of 261 guides remain to be trained.
+2024-02-02 12:50:36 → root → INFO: Training spending_HHS_industry_retail_trade_total_1 for 4000 iterations.
+2024-02-02 12:52:56 → root → INFO: Training of spending_HHS_industry_retail_trade_total_1 completed in 140.28 seconds. 209 out of 261 guides remain to be trained.
+2024-02-02 12:52:56 → root → INFO: Training spending_HHS_industry_retail_trade_total_2 for 4000 iterations.
+2024-02-02 12:55:50 → root → INFO: Training of spending_HHS_industry_retail_trade_total_2 completed in 174.03 seconds. 208 out of 261 guides remain to be trained.
+2024-02-02 12:55:50 → root → INFO: Training spending_HHS_industry_retail_trade_total_3 for 4000 iterations.
+2024-02-02 12:58:02 → root → INFO: Training of spending_HHS_industry_retail_trade_total_3 completed in 131.88 seconds. 207 out of 261 guides remain to be trained.
+2024-02-02 12:58:02 → root → INFO: Training spending_HHS_industry_transportation_warehousing_total_1 for 4000 iterations.
+2024-02-02 13:00:21 → root → INFO: Training of spending_HHS_industry_transportation_warehousing_total_1 completed in 139.22 seconds. 206 out of 261 guides remain to be trained.
+2024-02-02 13:00:21 → root → INFO: Training spending_HHS_industry_transportation_warehousing_total_2 for 4000 iterations.
+2024-02-02 13:02:42 → root → INFO: Training of spending_HHS_industry_transportation_warehousing_total_2 completed in 140.54 seconds. 205 out of 261 guides remain to be trained.
+2024-02-02 13:02:42 → root → INFO: Training spending_HHS_industry_transportation_warehousing_total_3 for 4000 iterations.
+2024-02-02 13:05:02 → root → INFO: Training of spending_HHS_industry_transportation_warehousing_total_3 completed in 140.39 seconds. 204 out of 261 guides remain to be trained.
+2024-02-02 13:05:02 → root → INFO: Training spending_HHS_industry_utilities_total_1 for 4000 iterations.
+2024-02-02 13:07:21 → root → INFO: Training of spending_HHS_industry_utilities_total_1 completed in 139.18 seconds. 203 out of 261 guides remain to be trained.
+2024-02-02 13:07:21 → root → INFO: Training spending_HHS_industry_utilities_total_2 for 4000 iterations.
+2024-02-02 13:09:41 → root → INFO: Training of spending_HHS_industry_utilities_total_2 completed in 140.33 seconds. 202 out of 261 guides remain to be trained.
+2024-02-02 13:09:41 → root → INFO: Training spending_HHS_industry_utilities_total_3 for 4000 iterations.
+2024-02-02 13:12:01 → root → INFO: Training of spending_HHS_industry_utilities_total_3 completed in 140.08 seconds. 201 out of 261 guides remain to be trained.
+2024-02-02 13:12:01 → root → INFO: Training spending_HHS_industry_wholesale_trade_total_1 for 4000 iterations.
+2024-02-02 13:14:21 → root → INFO: Training of spending_HHS_industry_wholesale_trade_total_1 completed in 139.38 seconds. 200 out of 261 guides remain to be trained.
+2024-02-02 13:14:21 → root → INFO: Training spending_HHS_industry_wholesale_trade_total_2 for 4000 iterations.
+2024-02-02 13:16:41 → root → INFO: Training of spending_HHS_industry_wholesale_trade_total_2 completed in 140.24 seconds. 199 out of 261 guides remain to be trained.
+2024-02-02 13:16:41 → root → INFO: Training spending_HHS_industry_wholesale_trade_total_3 for 4000 iterations.
+2024-02-02 13:19:03 → root → INFO: Training of spending_HHS_industry_wholesale_trade_total_3 completed in 141.89 seconds. 198 out of 261 guides remain to be trained.
+2024-02-02 13:19:03 → root → INFO: Training spending_HHS_medianHouseholdIncome_1 for 4000 iterations.
+2024-02-02 13:21:26 → root → INFO: Training of spending_HHS_medianHouseholdIncome_1 completed in 142.91 seconds. 197 out of 261 guides remain to be trained.
+2024-02-02 13:21:26 → root → INFO: Training spending_HHS_medianHouseholdIncome_2 for 4000 iterations.
+2024-02-02 13:23:45 → root → INFO: Training of spending_HHS_medianHouseholdIncome_2 completed in 139.36 seconds. 196 out of 261 guides remain to be trained.
+2024-02-02 13:23:45 → root → INFO: Training spending_HHS_medianHouseholdIncome_3 for 4000 iterations.
+2024-02-02 13:26:03 → root → INFO: Training of spending_HHS_medianHouseholdIncome_3 completed in 137.69 seconds. 195 out of 261 guides remain to be trained.
+2024-02-02 13:26:03 → root → INFO: Training spending_HHS_population_1 for 4000 iterations.
+2024-02-02 13:28:22 → root → INFO: Training of spending_HHS_population_1 completed in 139.45 seconds. 194 out of 261 guides remain to be trained.
+2024-02-02 13:28:22 → root → INFO: Training spending_HHS_population_2 for 4000 iterations.
+2024-02-02 13:30:43 → root → INFO: Training of spending_HHS_population_2 completed in 140.89 seconds. 193 out of 261 guides remain to be trained.
+2024-02-02 13:30:43 → root → INFO: Training spending_HHS_population_3 for 4000 iterations.
+2024-02-02 13:33:02 → root → INFO: Training of spending_HHS_population_3 completed in 139.12 seconds. 192 out of 261 guides remain to be trained.
+2024-02-02 13:33:02 → root → INFO: Training spending_HHS_population_density_1 for 4000 iterations.
+2024-02-02 13:35:20 → root → INFO: Training of spending_HHS_population_density_1 completed in 137.76 seconds. 191 out of 261 guides remain to be trained.
+2024-02-02 13:35:20 → root → INFO: Training spending_HHS_population_density_2 for 4000 iterations.
+2024-02-02 13:37:50 → root → INFO: Training of spending_HHS_population_density_2 completed in 149.96 seconds. 190 out of 261 guides remain to be trained.
+2024-02-02 13:37:50 → root → INFO: Training spending_HHS_population_density_3 for 4000 iterations.
+2024-02-02 13:40:19 → root → INFO: Training of spending_HHS_population_density_3 completed in 148.60 seconds. 189 out of 261 guides remain to be trained.
+2024-02-02 13:40:19 → root → INFO: Training spending_HHS_povertyAll_1 for 4000 iterations.
+2024-02-02 13:43:54 → root → INFO: Training of spending_HHS_povertyAll_1 completed in 215.08 seconds. 188 out of 261 guides remain to be trained.
+2024-02-02 13:43:54 → root → INFO: Training spending_HHS_povertyAll_2 for 4000 iterations.
+2024-02-02 13:47:39 → root → INFO: Training of spending_HHS_povertyAll_2 completed in 225.38 seconds. 187 out of 261 guides remain to be trained.
+2024-02-02 13:47:39 → root → INFO: Training spending_HHS_povertyAll_3 for 4000 iterations.
+2024-02-02 13:51:19 → root → INFO: Training of spending_HHS_povertyAll_3 completed in 219.97 seconds. 186 out of 261 guides remain to be trained.
+2024-02-02 13:51:19 → root → INFO: Training spending_HHS_povertyAllprct_1 for 4000 iterations.
+2024-02-02 13:55:02 → root → INFO: Training of spending_HHS_povertyAllprct_1 completed in 222.47 seconds. 185 out of 261 guides remain to be trained.
+2024-02-02 13:55:02 → root → INFO: Training spending_HHS_povertyAllprct_2 for 4000 iterations.
+2024-02-02 13:58:39 → root → INFO: Training of spending_HHS_povertyAllprct_2 completed in 217.33 seconds. 184 out of 261 guides remain to be trained.
+2024-02-02 13:58:39 → root → INFO: Training spending_HHS_povertyAllprct_3 for 4000 iterations.
+2024-02-02 14:02:10 → root → INFO: Training of spending_HHS_povertyAllprct_3 completed in 211.39 seconds. 183 out of 261 guides remain to be trained.
+2024-02-02 14:02:10 → root → INFO: Training spending_HHS_povertyUnder18_1 for 4000 iterations.
+2024-02-02 14:05:54 → root → INFO: Training of spending_HHS_povertyUnder18_1 completed in 223.59 seconds. 182 out of 261 guides remain to be trained.
+2024-02-02 14:05:54 → root → INFO: Training spending_HHS_povertyUnder18_2 for 4000 iterations.
+2024-02-02 14:09:13 → root → INFO: Training of spending_HHS_povertyUnder18_2 completed in 199.23 seconds. 181 out of 261 guides remain to be trained.
+2024-02-02 14:09:13 → root → INFO: Training spending_HHS_povertyUnder18_3 for 4000 iterations.
+2024-02-02 14:12:26 → root → INFO: Training of spending_HHS_povertyUnder18_3 completed in 192.85 seconds. 180 out of 261 guides remain to be trained.
+2024-02-02 14:12:26 → root → INFO: Training spending_HHS_povertyUnder18prct_1 for 4000 iterations.
+2024-02-02 14:14:46 → root → INFO: Training of spending_HHS_povertyUnder18prct_1 completed in 139.85 seconds. 179 out of 261 guides remain to be trained.
+2024-02-02 14:14:46 → root → INFO: Training spending_HHS_povertyUnder18prct_2 for 4000 iterations.
+2024-02-02 14:17:06 → root → INFO: Training of spending_HHS_povertyUnder18prct_2 completed in 140.41 seconds. 178 out of 261 guides remain to be trained.
+2024-02-02 14:17:06 → root → INFO: Training spending_HHS_povertyUnder18prct_3 for 4000 iterations.
+2024-02-02 14:19:26 → root → INFO: Training of spending_HHS_povertyUnder18prct_3 completed in 139.77 seconds. 177 out of 261 guides remain to be trained.
+2024-02-02 14:19:26 → root → INFO: Training spending_HHS_unemployment_rate_1 for 4000 iterations.
+2024-02-02 14:20:28 → root → INFO: Training of spending_HHS_unemployment_rate_1 completed in 61.65 seconds. 176 out of 261 guides remain to be trained.
+2024-02-02 14:20:28 → root → INFO: Training spending_HHS_unemployment_rate_2 for 4000 iterations.
+2024-02-02 14:21:30 → root → INFO: Training of spending_HHS_unemployment_rate_2 completed in 61.85 seconds. 175 out of 261 guides remain to be trained.
+2024-02-02 14:21:30 → root → INFO: Training spending_HHS_unemployment_rate_3 for 4000 iterations.
+2024-02-02 14:23:49 → root → INFO: Training of spending_HHS_unemployment_rate_3 completed in 139.57 seconds. 174 out of 261 guides remain to be trained.
+2024-02-02 14:23:49 → root → INFO: Training spending_commerce_gdp_1 for 4000 iterations.
+2024-02-02 14:26:09 → root → INFO: Training of spending_commerce_gdp_1 completed in 140.21 seconds. 173 out of 261 guides remain to be trained.
+2024-02-02 14:26:09 → root → INFO: Training spending_commerce_gdp_2 for 4000 iterations.
+2024-02-02 14:28:29 → root → INFO: Training of spending_commerce_gdp_2 completed in 139.51 seconds. 172 out of 261 guides remain to be trained.
+2024-02-02 14:28:29 → root → INFO: Training spending_commerce_gdp_3 for 4000 iterations.
+2024-02-02 14:30:48 → root → INFO: Training of spending_commerce_gdp_3 completed in 139.23 seconds. 171 out of 261 guides remain to be trained.
+2024-02-02 14:30:48 → root → INFO: Training spending_commerce_industry_accommodation_food_services_total_1 for 4000 iterations.
+2024-02-02 14:33:08 → root → INFO: Training of spending_commerce_industry_accommodation_food_services_total_1 completed in 140.31 seconds. 170 out of 261 guides remain to be trained.
+2024-02-02 14:33:08 → root → INFO: Training spending_commerce_industry_accommodation_food_services_total_2 for 4000 iterations.
+2024-02-02 14:35:28 → root → INFO: Training of spending_commerce_industry_accommodation_food_services_total_2 completed in 139.82 seconds. 169 out of 261 guides remain to be trained.
+2024-02-02 14:35:28 → root → INFO: Training spending_commerce_industry_accommodation_food_services_total_3 for 4000 iterations.
+2024-02-02 14:37:49 → root → INFO: Training of spending_commerce_industry_accommodation_food_services_total_3 completed in 140.25 seconds. 168 out of 261 guides remain to be trained.
+2024-02-02 14:37:49 → root → INFO: Training spending_commerce_industry_admin_support_services_total_1 for 4000 iterations.
+2024-02-02 14:40:12 → root → INFO: Training of spending_commerce_industry_admin_support_services_total_1 completed in 143.55 seconds. 167 out of 261 guides remain to be trained.
+2024-02-02 14:40:12 → root → INFO: Training spending_commerce_industry_admin_support_services_total_2 for 4000 iterations.
+2024-02-02 14:42:36 → root → INFO: Training of spending_commerce_industry_admin_support_services_total_2 completed in 144.22 seconds. 166 out of 261 guides remain to be trained.
+2024-02-02 14:42:36 → root → INFO: Training spending_commerce_industry_admin_support_services_total_3 for 4000 iterations.
+2024-02-02 14:44:56 → root → INFO: Training of spending_commerce_industry_admin_support_services_total_3 completed in 140.19 seconds. 165 out of 261 guides remain to be trained.
+2024-02-02 14:44:56 → root → INFO: Training spending_commerce_industry_agriculture_total_1 for 4000 iterations.
+2024-02-02 14:47:18 → root → INFO: Training of spending_commerce_industry_agriculture_total_1 completed in 141.81 seconds. 164 out of 261 guides remain to be trained.
+2024-02-02 14:47:18 → root → INFO: Training spending_commerce_industry_agriculture_total_2 for 4000 iterations.
+2024-02-02 14:49:38 → root → INFO: Training of spending_commerce_industry_agriculture_total_2 completed in 139.49 seconds. 163 out of 261 guides remain to be trained.
+2024-02-02 14:49:38 → root → INFO: Training spending_commerce_industry_agriculture_total_3 for 4000 iterations.
+2024-02-02 14:51:57 → root → INFO: Training of spending_commerce_industry_agriculture_total_3 completed in 139.55 seconds. 162 out of 261 guides remain to be trained.
+2024-02-02 14:51:57 → root → INFO: Training spending_commerce_industry_arts_recreation_total_1 for 4000 iterations.
+2024-02-02 14:54:17 → root → INFO: Training of spending_commerce_industry_arts_recreation_total_1 completed in 139.20 seconds. 161 out of 261 guides remain to be trained.
+2024-02-02 14:54:17 → root → INFO: Training spending_commerce_industry_arts_recreation_total_2 for 4000 iterations.
+2024-02-02 14:56:40 → root → INFO: Training of spending_commerce_industry_arts_recreation_total_2 completed in 143.70 seconds. 160 out of 261 guides remain to be trained.
+2024-02-02 14:56:40 → root → INFO: Training spending_commerce_industry_arts_recreation_total_3 for 4000 iterations.
+2024-02-02 14:59:04 → root → INFO: Training of spending_commerce_industry_arts_recreation_total_3 completed in 143.95 seconds. 159 out of 261 guides remain to be trained.
+2024-02-02 14:59:04 → root → INFO: Training spending_commerce_industry_construction_total_1 for 4000 iterations.
+2024-02-02 15:01:24 → root → INFO: Training of spending_commerce_industry_construction_total_1 completed in 139.96 seconds. 158 out of 261 guides remain to be trained.
+2024-02-02 15:01:24 → root → INFO: Training spending_commerce_industry_construction_total_2 for 4000 iterations.
+2024-02-02 15:03:44 → root → INFO: Training of spending_commerce_industry_construction_total_2 completed in 139.95 seconds. 157 out of 261 guides remain to be trained.
+2024-02-02 15:03:44 → root → INFO: Training spending_commerce_industry_construction_total_3 for 4000 iterations.
+2024-02-02 15:06:07 → root → INFO: Training of spending_commerce_industry_construction_total_3 completed in 143.12 seconds. 156 out of 261 guides remain to be trained.
+2024-02-02 15:06:07 → root → INFO: Training spending_commerce_industry_educational_services_total_1 for 4000 iterations.
+2024-02-02 15:08:26 → root → INFO: Training of spending_commerce_industry_educational_services_total_1 completed in 138.86 seconds. 155 out of 261 guides remain to be trained.
+2024-02-02 15:08:26 → root → INFO: Training spending_commerce_industry_educational_services_total_2 for 4000 iterations.
+2024-02-02 15:10:47 → root → INFO: Training of spending_commerce_industry_educational_services_total_2 completed in 141.36 seconds. 154 out of 261 guides remain to be trained.
+2024-02-02 15:10:47 → root → INFO: Training spending_commerce_industry_educational_services_total_3 for 4000 iterations.
+2024-02-02 15:13:06 → root → INFO: Training of spending_commerce_industry_educational_services_total_3 completed in 138.32 seconds. 153 out of 261 guides remain to be trained.
+2024-02-02 15:13:06 → root → INFO: Training spending_commerce_industry_finance_insurance_total_1 for 4000 iterations.
+2024-02-02 15:15:25 → root → INFO: Training of spending_commerce_industry_finance_insurance_total_1 completed in 139.73 seconds. 152 out of 261 guides remain to be trained.
+2024-02-02 15:15:25 → root → INFO: Training spending_commerce_industry_finance_insurance_total_2 for 4000 iterations.
+2024-02-02 15:17:46 → root → INFO: Training of spending_commerce_industry_finance_insurance_total_2 completed in 140.80 seconds. 151 out of 261 guides remain to be trained.
+2024-02-02 15:17:46 → root → INFO: Training spending_commerce_industry_finance_insurance_total_3 for 4000 iterations.
+2024-02-02 15:20:10 → root → INFO: Training of spending_commerce_industry_finance_insurance_total_3 completed in 143.39 seconds. 150 out of 261 guides remain to be trained.
+2024-02-02 15:20:10 → root → INFO: Training spending_commerce_industry_healthcare_social_services_total_1 for 4000 iterations.
+2024-02-02 15:22:33 → root → INFO: Training of spending_commerce_industry_healthcare_social_services_total_1 completed in 143.35 seconds. 149 out of 261 guides remain to be trained.
+2024-02-02 15:22:33 → root → INFO: Training spending_commerce_industry_healthcare_social_services_total_2 for 4000 iterations.
+2024-02-02 15:24:54 → root → INFO: Training of spending_commerce_industry_healthcare_social_services_total_2 completed in 141.06 seconds. 148 out of 261 guides remain to be trained.
+2024-02-02 15:24:54 → root → INFO: Training spending_commerce_industry_healthcare_social_services_total_3 for 4000 iterations.
+2024-02-02 15:27:13 → root → INFO: Training of spending_commerce_industry_healthcare_social_services_total_3 completed in 139.06 seconds. 147 out of 261 guides remain to be trained.
+2024-02-02 15:27:13 → root → INFO: Training spending_commerce_industry_information_total_1 for 4000 iterations.
+2024-02-02 15:29:32 → root → INFO: Training of spending_commerce_industry_information_total_1 completed in 139.28 seconds. 146 out of 261 guides remain to be trained.
+2024-02-02 15:29:32 → root → INFO: Training spending_commerce_industry_information_total_2 for 4000 iterations.
+2024-02-02 15:31:56 → root → INFO: Training of spending_commerce_industry_information_total_2 completed in 143.08 seconds. 145 out of 261 guides remain to be trained.
+2024-02-02 15:31:56 → root → INFO: Training spending_commerce_industry_information_total_3 for 4000 iterations.
+2024-02-02 15:34:18 → root → INFO: Training of spending_commerce_industry_information_total_3 completed in 142.91 seconds. 144 out of 261 guides remain to be trained.
+2024-02-02 15:34:18 → root → INFO: Training spending_commerce_industry_management_enterprises_total_1 for 4000 iterations.
+2024-02-02 15:36:42 → root → INFO: Training of spending_commerce_industry_management_enterprises_total_1 completed in 143.10 seconds. 143 out of 261 guides remain to be trained.
+2024-02-02 15:36:42 → root → INFO: Training spending_commerce_industry_management_enterprises_total_2 for 4000 iterations.
+2024-02-02 15:39:02 → root → INFO: Training of spending_commerce_industry_management_enterprises_total_2 completed in 140.10 seconds. 142 out of 261 guides remain to be trained.
+2024-02-02 15:39:02 → root → INFO: Training spending_commerce_industry_management_enterprises_total_3 for 4000 iterations.
+2024-02-02 15:41:21 → root → INFO: Training of spending_commerce_industry_management_enterprises_total_3 completed in 139.71 seconds. 141 out of 261 guides remain to be trained.
+2024-02-02 15:41:21 → root → INFO: Training spending_commerce_industry_manufacturing_total_1 for 4000 iterations.
+2024-02-02 15:43:45 → root → INFO: Training of spending_commerce_industry_manufacturing_total_1 completed in 143.24 seconds. 140 out of 261 guides remain to be trained.
+2024-02-02 15:43:45 → root → INFO: Training spending_commerce_industry_manufacturing_total_2 for 4000 iterations.
+2024-02-02 15:46:04 → root → INFO: Training of spending_commerce_industry_manufacturing_total_2 completed in 139.76 seconds. 139 out of 261 guides remain to be trained.
+2024-02-02 15:46:04 → root → INFO: Training spending_commerce_industry_manufacturing_total_3 for 4000 iterations.
+2024-02-02 15:48:27 → root → INFO: Training of spending_commerce_industry_manufacturing_total_3 completed in 142.48 seconds. 138 out of 261 guides remain to be trained.
+2024-02-02 15:48:27 → root → INFO: Training spending_commerce_industry_mining_total_1 for 4000 iterations.
+2024-02-02 15:50:47 → root → INFO: Training of spending_commerce_industry_mining_total_1 completed in 140.09 seconds. 137 out of 261 guides remain to be trained.
+2024-02-02 15:50:47 → root → INFO: Training spending_commerce_industry_mining_total_2 for 4000 iterations.
+2024-02-02 15:53:07 → root → INFO: Training of spending_commerce_industry_mining_total_2 completed in 140.07 seconds. 136 out of 261 guides remain to be trained.
+2024-02-02 15:53:07 → root → INFO: Training spending_commerce_industry_mining_total_3 for 4000 iterations.
+2024-02-02 15:55:29 → root → INFO: Training of spending_commerce_industry_mining_total_3 completed in 142.16 seconds. 135 out of 261 guides remain to be trained.
+2024-02-02 15:55:29 → root → INFO: Training spending_commerce_industry_other_services_total_1 for 4000 iterations.
+2024-02-02 15:57:51 → root → INFO: Training of spending_commerce_industry_other_services_total_1 completed in 142.00 seconds. 134 out of 261 guides remain to be trained.
+2024-02-02 15:57:51 → root → INFO: Training spending_commerce_industry_other_services_total_2 for 4000 iterations.
+2024-02-02 16:00:17 → root → INFO: Training of spending_commerce_industry_other_services_total_2 completed in 145.36 seconds. 133 out of 261 guides remain to be trained.
+2024-02-02 16:00:17 → root → INFO: Training spending_commerce_industry_other_services_total_3 for 4000 iterations.
+2024-02-02 16:02:48 → root → INFO: Training of spending_commerce_industry_other_services_total_3 completed in 151.38 seconds. 132 out of 261 guides remain to be trained.
+2024-02-02 16:02:48 → root → INFO: Training spending_commerce_industry_professional_services_total_1 for 4000 iterations.
+2024-02-02 16:05:18 → root → INFO: Training of spending_commerce_industry_professional_services_total_1 completed in 150.15 seconds. 131 out of 261 guides remain to be trained.
+2024-02-02 16:05:18 → root → INFO: Training spending_commerce_industry_professional_services_total_2 for 4000 iterations.
+2024-02-02 16:07:52 → root → INFO: Training of spending_commerce_industry_professional_services_total_2 completed in 153.57 seconds. 130 out of 261 guides remain to be trained.
+2024-02-02 16:07:52 → root → INFO: Training spending_commerce_industry_professional_services_total_3 for 4000 iterations.
+2024-02-02 16:10:19 → root → INFO: Training of spending_commerce_industry_professional_services_total_3 completed in 147.02 seconds. 129 out of 261 guides remain to be trained.
+2024-02-02 16:10:19 → root → INFO: Training spending_commerce_industry_public_administration_total_1 for 4000 iterations.
+2024-02-02 16:12:46 → root → INFO: Training of spending_commerce_industry_public_administration_total_1 completed in 147.13 seconds. 128 out of 261 guides remain to be trained.
+2024-02-02 16:12:46 → root → INFO: Training spending_commerce_industry_public_administration_total_2 for 4000 iterations.
+2024-02-02 16:14:52 → root → INFO: Training of spending_commerce_industry_public_administration_total_2 completed in 125.78 seconds. 127 out of 261 guides remain to be trained.
+2024-02-02 16:14:52 → root → INFO: Training spending_commerce_industry_public_administration_total_3 for 4000 iterations.
+2024-02-02 16:17:24 → root → INFO: Training of spending_commerce_industry_public_administration_total_3 completed in 152.20 seconds. 126 out of 261 guides remain to be trained.
+2024-02-02 16:17:24 → root → INFO: Training spending_commerce_industry_real_estate_total_1 for 4000 iterations.
+2024-02-02 16:19:33 → root → INFO: Training of spending_commerce_industry_real_estate_total_1 completed in 129.74 seconds. 125 out of 261 guides remain to be trained.
+2024-02-02 16:19:33 → root → INFO: Training spending_commerce_industry_real_estate_total_2 for 4000 iterations.
+2024-02-02 16:22:30 → root → INFO: Training of spending_commerce_industry_real_estate_total_2 completed in 176.28 seconds. 124 out of 261 guides remain to be trained.
+2024-02-02 16:22:30 → root → INFO: Training spending_commerce_industry_real_estate_total_3 for 4000 iterations.
+2024-02-02 16:24:58 → root → INFO: Training of spending_commerce_industry_real_estate_total_3 completed in 148.40 seconds. 123 out of 261 guides remain to be trained.
+2024-02-02 16:24:58 → root → INFO: Training spending_commerce_industry_retail_trade_total_1 for 4000 iterations.
+2024-02-02 16:27:49 → root → INFO: Training of spending_commerce_industry_retail_trade_total_1 completed in 170.55 seconds. 122 out of 261 guides remain to be trained.
+2024-02-02 16:27:49 → root → INFO: Training spending_commerce_industry_retail_trade_total_2 for 4000 iterations.
+2024-02-02 16:30:02 → root → INFO: Training of spending_commerce_industry_retail_trade_total_2 completed in 132.95 seconds. 121 out of 261 guides remain to be trained.
+2024-02-02 16:30:02 → root → INFO: Training spending_commerce_industry_retail_trade_total_3 for 4000 iterations.
+2024-02-02 16:32:23 → root → INFO: Training of spending_commerce_industry_retail_trade_total_3 completed in 141.51 seconds. 120 out of 261 guides remain to be trained.
+2024-02-02 16:32:23 → root → INFO: Training spending_commerce_industry_transportation_warehousing_total_1 for 4000 iterations.
+2024-02-02 16:35:15 → root → INFO: Training of spending_commerce_industry_transportation_warehousing_total_1 completed in 172.10 seconds. 119 out of 261 guides remain to be trained.
+2024-02-02 16:35:15 → root → INFO: Training spending_commerce_industry_transportation_warehousing_total_2 for 4000 iterations.
+2024-02-02 16:37:32 → root → INFO: Training of spending_commerce_industry_transportation_warehousing_total_2 completed in 136.59 seconds. 118 out of 261 guides remain to be trained.
+2024-02-02 16:37:32 → root → INFO: Training spending_commerce_industry_transportation_warehousing_total_3 for 4000 iterations.
+2024-02-02 16:40:16 → root → INFO: Training of spending_commerce_industry_transportation_warehousing_total_3 completed in 164.46 seconds. 117 out of 261 guides remain to be trained.
+2024-02-02 16:40:16 → root → INFO: Training spending_commerce_industry_utilities_total_1 for 4000 iterations.
+2024-02-02 16:42:51 → root → INFO: Training of spending_commerce_industry_utilities_total_1 completed in 154.76 seconds. 116 out of 261 guides remain to be trained.
+2024-02-02 16:42:51 → root → INFO: Training spending_commerce_industry_utilities_total_2 for 4000 iterations.
+2024-02-02 16:45:22 → root → INFO: Training of spending_commerce_industry_utilities_total_2 completed in 150.88 seconds. 115 out of 261 guides remain to be trained.
+2024-02-02 16:45:22 → root → INFO: Training spending_commerce_industry_utilities_total_3 for 4000 iterations.
+2024-02-02 16:47:32 → root → INFO: Training of spending_commerce_industry_utilities_total_3 completed in 130.01 seconds. 114 out of 261 guides remain to be trained.
+2024-02-02 16:47:32 → root → INFO: Training spending_commerce_industry_wholesale_trade_total_1 for 4000 iterations.
+2024-02-02 16:50:30 → root → INFO: Training of spending_commerce_industry_wholesale_trade_total_1 completed in 177.93 seconds. 113 out of 261 guides remain to be trained.
+2024-02-02 16:50:30 → root → INFO: Training spending_commerce_industry_wholesale_trade_total_2 for 4000 iterations.
+2024-02-02 16:53:11 → root → INFO: Training of spending_commerce_industry_wholesale_trade_total_2 completed in 160.85 seconds. 112 out of 261 guides remain to be trained.
+2024-02-02 16:53:11 → root → INFO: Training spending_commerce_industry_wholesale_trade_total_3 for 4000 iterations.
+2024-02-02 16:55:26 → root → INFO: Training of spending_commerce_industry_wholesale_trade_total_3 completed in 135.35 seconds. 111 out of 261 guides remain to be trained.
+2024-02-02 16:55:26 → root → INFO: Training spending_commerce_medianHouseholdIncome_1 for 4000 iterations.
+2024-02-02 16:58:08 → root → INFO: Training of spending_commerce_medianHouseholdIncome_1 completed in 161.60 seconds. 110 out of 261 guides remain to be trained.
+2024-02-02 16:58:08 → root → INFO: Training spending_commerce_medianHouseholdIncome_2 for 4000 iterations.
+2024-02-02 17:00:09 → root → INFO: Training of spending_commerce_medianHouseholdIncome_2 completed in 121.19 seconds. 109 out of 261 guides remain to be trained.
+2024-02-02 17:00:09 → root → INFO: Training spending_commerce_medianHouseholdIncome_3 for 4000 iterations.
+2024-02-02 17:02:29 → root → INFO: Training of spending_commerce_medianHouseholdIncome_3 completed in 139.98 seconds. 108 out of 261 guides remain to be trained.
+2024-02-02 17:02:29 → root → INFO: Training spending_commerce_population_1 for 4000 iterations.
+2024-02-02 17:04:38 → root → INFO: Training of spending_commerce_population_1 completed in 128.80 seconds. 107 out of 261 guides remain to be trained.
+2024-02-02 17:04:38 → root → INFO: Training spending_commerce_population_2 for 4000 iterations.
+2024-02-02 17:06:53 → root → INFO: Training of spending_commerce_population_2 completed in 135.38 seconds. 106 out of 261 guides remain to be trained.
+2024-02-02 17:06:53 → root → INFO: Training spending_commerce_population_3 for 4000 iterations.
+2024-02-02 17:08:59 → root → INFO: Training of spending_commerce_population_3 completed in 125.98 seconds. 105 out of 261 guides remain to be trained.
+2024-02-02 17:08:59 → root → INFO: Training spending_commerce_population_density_1 for 4000 iterations.
+2024-02-02 17:10:31 → root → INFO: Training of spending_commerce_population_density_1 completed in 91.70 seconds. 104 out of 261 guides remain to be trained.
+2024-02-02 17:10:31 → root → INFO: Training spending_commerce_population_density_2 for 4000 iterations.
+2024-02-02 17:12:33 → root → INFO: Training of spending_commerce_population_density_2 completed in 122.51 seconds. 103 out of 261 guides remain to be trained.
+2024-02-02 17:12:33 → root → INFO: Training spending_commerce_population_density_3 for 4000 iterations.
+2024-02-02 17:14:08 → root → INFO: Training of spending_commerce_population_density_3 completed in 94.68 seconds. 102 out of 261 guides remain to be trained.
+2024-02-02 17:14:08 → root → INFO: Training spending_commerce_povertyAll_1 for 4000 iterations.
+2024-02-02 17:16:12 → root → INFO: Training of spending_commerce_povertyAll_1 completed in 123.58 seconds. 101 out of 261 guides remain to be trained.
+2024-02-02 17:16:12 → root → INFO: Training spending_commerce_povertyAll_2 for 4000 iterations.
+2024-02-02 17:18:17 → root → INFO: Training of spending_commerce_povertyAll_2 completed in 125.16 seconds. 100 out of 261 guides remain to be trained.
+2024-02-02 17:18:17 → root → INFO: Training spending_commerce_povertyAll_3 for 4000 iterations.
+2024-02-02 17:21:04 → root → INFO: Training of spending_commerce_povertyAll_3 completed in 167.00 seconds. 99 out of 261 guides remain to be trained.
+2024-02-02 17:21:04 → root → INFO: Training spending_commerce_povertyAllprct_1 for 4000 iterations.
+2024-02-02 17:23:25 → root → INFO: Training of spending_commerce_povertyAllprct_1 completed in 141.64 seconds. 98 out of 261 guides remain to be trained.
+2024-02-02 17:23:25 → root → INFO: Training spending_commerce_povertyAllprct_2 for 4000 iterations.
+2024-02-02 17:25:57 → root → INFO: Training of spending_commerce_povertyAllprct_2 completed in 151.49 seconds. 97 out of 261 guides remain to be trained.
+2024-02-02 17:25:57 → root → INFO: Training spending_commerce_povertyAllprct_3 for 4000 iterations.
+2024-02-02 17:28:15 → root → INFO: Training of spending_commerce_povertyAllprct_3 completed in 137.94 seconds. 96 out of 261 guides remain to be trained.
+2024-02-02 17:28:15 → root → INFO: Training spending_commerce_povertyUnder18_1 for 4000 iterations.
+2024-02-02 17:31:06 → root → INFO: Training of spending_commerce_povertyUnder18_1 completed in 171.37 seconds. 95 out of 261 guides remain to be trained.
+2024-02-02 17:31:06 → root → INFO: Training spending_commerce_povertyUnder18_2 for 4000 iterations.
+2024-02-02 17:33:26 → root → INFO: Training of spending_commerce_povertyUnder18_2 completed in 140.08 seconds. 94 out of 261 guides remain to be trained.
+2024-02-02 17:33:26 → root → INFO: Training spending_commerce_povertyUnder18_3 for 4000 iterations.
+2024-02-02 17:36:11 → root → INFO: Training of spending_commerce_povertyUnder18_3 completed in 164.90 seconds. 93 out of 261 guides remain to be trained.
+2024-02-02 17:36:11 → root → INFO: Training spending_commerce_povertyUnder18prct_1 for 4000 iterations.
+2024-02-02 17:38:57 → root → INFO: Training of spending_commerce_povertyUnder18prct_1 completed in 166.12 seconds. 92 out of 261 guides remain to be trained.
+2024-02-02 17:38:57 → root → INFO: Training spending_commerce_povertyUnder18prct_2 for 4000 iterations.
+2024-02-02 17:41:20 → root → INFO: Training of spending_commerce_povertyUnder18prct_2 completed in 142.28 seconds. 91 out of 261 guides remain to be trained.
+2024-02-02 17:41:20 → root → INFO: Training spending_commerce_povertyUnder18prct_3 for 4000 iterations.
+2024-02-02 17:43:35 → root → INFO: Training of spending_commerce_povertyUnder18prct_3 completed in 135.79 seconds. 90 out of 261 guides remain to be trained.
+2024-02-02 17:43:35 → root → INFO: Training spending_commerce_unemployment_rate_1 for 4000 iterations.
+2024-02-02 17:45:55 → root → INFO: Training of spending_commerce_unemployment_rate_1 completed in 139.64 seconds. 89 out of 261 guides remain to be trained.
+2024-02-02 17:45:55 → root → INFO: Training spending_commerce_unemployment_rate_2 for 4000 iterations.
+2024-02-02 17:48:42 → root → INFO: Training of spending_commerce_unemployment_rate_2 completed in 166.60 seconds. 88 out of 261 guides remain to be trained.
+2024-02-02 17:48:42 → root → INFO: Training spending_commerce_unemployment_rate_3 for 4000 iterations.
+2024-02-02 17:51:28 → root → INFO: Training of spending_commerce_unemployment_rate_3 completed in 166.65 seconds. 87 out of 261 guides remain to be trained.
+2024-02-02 17:51:28 → root → INFO: Training spending_transportation_gdp_1 for 4000 iterations.
+2024-02-02 17:54:01 → root → INFO: Training of spending_transportation_gdp_1 completed in 152.97 seconds. 86 out of 261 guides remain to be trained.
+2024-02-02 17:54:01 → root → INFO: Training spending_transportation_gdp_2 for 4000 iterations.
+2024-02-02 17:55:49 → root → INFO: Training of spending_transportation_gdp_2 completed in 107.46 seconds. 85 out of 261 guides remain to be trained.
+2024-02-02 17:55:49 → root → INFO: Training spending_transportation_gdp_3 for 4000 iterations.
+2024-02-02 17:58:02 → root → INFO: Training of spending_transportation_gdp_3 completed in 133.09 seconds. 84 out of 261 guides remain to be trained.
+2024-02-02 17:58:02 → root → INFO: Training spending_transportation_industry_accommodation_food_services_total_1 for 4000 iterations.
+2024-02-02 17:59:57 → root → INFO: Training of spending_transportation_industry_accommodation_food_services_total_1 completed in 114.97 seconds. 83 out of 261 guides remain to be trained.
+2024-02-02 17:59:57 → root → INFO: Training spending_transportation_industry_accommodation_food_services_total_2 for 4000 iterations.
+2024-02-02 18:01:17 → root → INFO: Training of spending_transportation_industry_accommodation_food_services_total_2 completed in 79.78 seconds. 82 out of 261 guides remain to be trained.
+2024-02-02 18:01:17 → root → INFO: Training spending_transportation_industry_accommodation_food_services_total_3 for 4000 iterations.
+2024-02-02 18:03:55 → root → INFO: Training of spending_transportation_industry_accommodation_food_services_total_3 completed in 158.63 seconds. 81 out of 261 guides remain to be trained.
+2024-02-02 18:03:55 → root → INFO: Training spending_transportation_industry_admin_support_services_total_1 for 4000 iterations.
+2024-02-02 18:05:44 → root → INFO: Training of spending_transportation_industry_admin_support_services_total_1 completed in 108.91 seconds. 80 out of 261 guides remain to be trained.
+2024-02-02 18:05:44 → root → INFO: Training spending_transportation_industry_admin_support_services_total_2 for 4000 iterations.
+2024-02-02 18:07:32 → root → INFO: Training of spending_transportation_industry_admin_support_services_total_2 completed in 108.28 seconds. 79 out of 261 guides remain to be trained.
+2024-02-02 18:07:32 → root → INFO: Training spending_transportation_industry_admin_support_services_total_3 for 4000 iterations.
+2024-02-02 18:09:18 → root → INFO: Training of spending_transportation_industry_admin_support_services_total_3 completed in 105.82 seconds. 78 out of 261 guides remain to be trained.
+2024-02-02 18:09:18 → root → INFO: Training spending_transportation_industry_agriculture_total_1 for 4000 iterations.
+2024-02-02 18:12:13 → root → INFO: Training of spending_transportation_industry_agriculture_total_1 completed in 175.06 seconds. 77 out of 261 guides remain to be trained.
+2024-02-02 18:12:13 → root → INFO: Training spending_transportation_industry_agriculture_total_2 for 4000 iterations.
+2024-02-02 18:15:08 → root → INFO: Training of spending_transportation_industry_agriculture_total_2 completed in 174.97 seconds. 76 out of 261 guides remain to be trained.
+2024-02-02 18:15:08 → root → INFO: Training spending_transportation_industry_agriculture_total_3 for 4000 iterations.
+2024-02-02 18:17:21 → root → INFO: Training of spending_transportation_industry_agriculture_total_3 completed in 132.73 seconds. 75 out of 261 guides remain to be trained.
+2024-02-02 18:17:21 → root → INFO: Training spending_transportation_industry_arts_recreation_total_1 for 4000 iterations.
+2024-02-02 18:19:43 → root → INFO: Training of spending_transportation_industry_arts_recreation_total_1 completed in 142.06 seconds. 74 out of 261 guides remain to be trained.
+2024-02-02 18:19:43 → root → INFO: Training spending_transportation_industry_arts_recreation_total_2 for 4000 iterations.
+2024-02-02 18:22:10 → root → INFO: Training of spending_transportation_industry_arts_recreation_total_2 completed in 147.00 seconds. 73 out of 261 guides remain to be trained.
+2024-02-02 18:22:10 → root → INFO: Training spending_transportation_industry_arts_recreation_total_3 for 4000 iterations.
+2024-02-02 18:24:34 → root → INFO: Training of spending_transportation_industry_arts_recreation_total_3 completed in 143.93 seconds. 72 out of 261 guides remain to be trained.
+2024-02-02 18:24:34 → root → INFO: Training spending_transportation_industry_construction_total_1 for 4000 iterations.
+2024-02-02 18:27:21 → root → INFO: Training of spending_transportation_industry_construction_total_1 completed in 167.53 seconds. 71 out of 261 guides remain to be trained.
+2024-02-02 18:27:21 → root → INFO: Training spending_transportation_industry_construction_total_2 for 4000 iterations.
+2024-02-02 18:28:58 → root → INFO: Training of spending_transportation_industry_construction_total_2 completed in 96.68 seconds. 70 out of 261 guides remain to be trained.
+2024-02-02 18:28:58 → root → INFO: Training spending_transportation_industry_construction_total_3 for 4000 iterations.
+2024-02-02 18:31:34 → root → INFO: Training of spending_transportation_industry_construction_total_3 completed in 155.92 seconds. 69 out of 261 guides remain to be trained.
+2024-02-02 18:31:34 → root → INFO: Training spending_transportation_industry_educational_services_total_1 for 4000 iterations.
+2024-02-02 18:34:15 → root → INFO: Training of spending_transportation_industry_educational_services_total_1 completed in 161.38 seconds. 68 out of 261 guides remain to be trained.
+2024-02-02 18:34:15 → root → INFO: Training spending_transportation_industry_educational_services_total_2 for 4000 iterations.
+2024-02-02 18:37:07 → root → INFO: Training of spending_transportation_industry_educational_services_total_2 completed in 171.49 seconds. 67 out of 261 guides remain to be trained.
+2024-02-02 18:37:07 → root → INFO: Training spending_transportation_industry_educational_services_total_3 for 4000 iterations.
+2024-02-02 18:39:12 → root → INFO: Training of spending_transportation_industry_educational_services_total_3 completed in 125.02 seconds. 66 out of 261 guides remain to be trained.
+2024-02-02 18:39:12 → root → INFO: Training spending_transportation_industry_finance_insurance_total_1 for 4000 iterations.
+2024-02-02 18:41:06 → root → INFO: Training of spending_transportation_industry_finance_insurance_total_1 completed in 113.74 seconds. 65 out of 261 guides remain to be trained.
+2024-02-02 18:41:06 → root → INFO: Training spending_transportation_industry_finance_insurance_total_2 for 4000 iterations.
+2024-02-02 18:43:02 → root → INFO: Training of spending_transportation_industry_finance_insurance_total_2 completed in 116.69 seconds. 64 out of 261 guides remain to be trained.
+2024-02-02 18:43:02 → root → INFO: Training spending_transportation_industry_finance_insurance_total_3 for 4000 iterations.
+2024-02-02 18:45:58 → root → INFO: Training of spending_transportation_industry_finance_insurance_total_3 completed in 175.49 seconds. 63 out of 261 guides remain to be trained.
+2024-02-02 18:45:58 → root → INFO: Training spending_transportation_industry_healthcare_social_services_total_1 for 4000 iterations.
+2024-02-02 18:48:34 → root → INFO: Training of spending_transportation_industry_healthcare_social_services_total_1 completed in 156.28 seconds. 62 out of 261 guides remain to be trained.
+2024-02-02 18:48:34 → root → INFO: Training spending_transportation_industry_healthcare_social_services_total_2 for 4000 iterations.
+2024-02-02 18:50:30 → root → INFO: Training of spending_transportation_industry_healthcare_social_services_total_2 completed in 115.60 seconds. 61 out of 261 guides remain to be trained.
+2024-02-02 18:50:30 → root → INFO: Training spending_transportation_industry_healthcare_social_services_total_3 for 4000 iterations.
+2024-02-02 18:53:17 → root → INFO: Training of spending_transportation_industry_healthcare_social_services_total_3 completed in 167.30 seconds. 60 out of 261 guides remain to be trained.
+2024-02-02 18:53:17 → root → INFO: Training spending_transportation_industry_information_total_1 for 4000 iterations.
+2024-02-02 18:55:59 → root → INFO: Training of spending_transportation_industry_information_total_1 completed in 162.21 seconds. 59 out of 261 guides remain to be trained.
+2024-02-02 18:55:59 → root → INFO: Training spending_transportation_industry_information_total_2 for 4000 iterations.
+2024-02-02 18:57:58 → root → INFO: Training of spending_transportation_industry_information_total_2 completed in 118.35 seconds. 58 out of 261 guides remain to be trained.
+2024-02-02 18:57:58 → root → INFO: Training spending_transportation_industry_information_total_3 for 4000 iterations.
+2024-02-02 19:00:47 → root → INFO: Training of spending_transportation_industry_information_total_3 completed in 169.64 seconds. 57 out of 261 guides remain to be trained.
+2024-02-02 19:00:47 → root → INFO: Training spending_transportation_industry_management_enterprises_total_1 for 4000 iterations.
+2024-02-02 19:02:58 → root → INFO: Training of spending_transportation_industry_management_enterprises_total_1 completed in 131.01 seconds. 56 out of 261 guides remain to be trained.
+2024-02-02 19:02:58 → root → INFO: Training spending_transportation_industry_management_enterprises_total_2 for 4000 iterations.
+2024-02-02 19:05:18 → root → INFO: Training of spending_transportation_industry_management_enterprises_total_2 completed in 139.80 seconds. 55 out of 261 guides remain to be trained.
+2024-02-02 19:05:18 → root → INFO: Training spending_transportation_industry_management_enterprises_total_3 for 4000 iterations.
+2024-02-02 19:07:35 → root → INFO: Training of spending_transportation_industry_management_enterprises_total_3 completed in 136.53 seconds. 54 out of 261 guides remain to be trained.
+2024-02-02 19:07:35 → root → INFO: Training spending_transportation_industry_manufacturing_total_1 for 4000 iterations.
+2024-02-02 19:10:11 → root → INFO: Training of spending_transportation_industry_manufacturing_total_1 completed in 156.90 seconds. 53 out of 261 guides remain to be trained.
+2024-02-02 19:10:11 → root → INFO: Training spending_transportation_industry_manufacturing_total_2 for 4000 iterations.
+2024-02-02 19:12:21 → root → INFO: Training of spending_transportation_industry_manufacturing_total_2 completed in 129.25 seconds. 52 out of 261 guides remain to be trained.
+2024-02-02 19:12:21 → root → INFO: Training spending_transportation_industry_manufacturing_total_3 for 4000 iterations.
+2024-02-02 19:14:24 → root → INFO: Training of spending_transportation_industry_manufacturing_total_3 completed in 123.11 seconds. 51 out of 261 guides remain to be trained.
+2024-02-02 19:14:24 → root → INFO: Training spending_transportation_industry_mining_total_1 for 4000 iterations.
+2024-02-02 19:16:45 → root → INFO: Training of spending_transportation_industry_mining_total_1 completed in 141.24 seconds. 50 out of 261 guides remain to be trained.
+2024-02-02 19:16:45 → root → INFO: Training spending_transportation_industry_mining_total_2 for 4000 iterations.
+2024-02-02 19:18:11 → root → INFO: Training of spending_transportation_industry_mining_total_2 completed in 85.93 seconds. 49 out of 261 guides remain to be trained.
+2024-02-02 19:18:11 → root → INFO: Training spending_transportation_industry_mining_total_3 for 4000 iterations.
+2024-02-02 19:20:49 → root → INFO: Training of spending_transportation_industry_mining_total_3 completed in 157.68 seconds. 48 out of 261 guides remain to be trained.
+2024-02-02 19:20:49 → root → INFO: Training spending_transportation_industry_other_services_total_1 for 4000 iterations.
+2024-02-02 19:23:19 → root → INFO: Training of spending_transportation_industry_other_services_total_1 completed in 149.83 seconds. 47 out of 261 guides remain to be trained.
+2024-02-02 19:23:19 → root → INFO: Training spending_transportation_industry_other_services_total_2 for 4000 iterations.
+2024-02-02 19:24:44 → root → INFO: Training of spending_transportation_industry_other_services_total_2 completed in 85.65 seconds. 46 out of 261 guides remain to be trained.
+2024-02-02 19:24:44 → root → INFO: Training spending_transportation_industry_other_services_total_3 for 4000 iterations.
+2024-02-02 19:26:44 → root → INFO: Training of spending_transportation_industry_other_services_total_3 completed in 119.95 seconds. 45 out of 261 guides remain to be trained.
+2024-02-02 19:26:44 → root → INFO: Training spending_transportation_industry_professional_services_total_1 for 4000 iterations.
+2024-02-02 19:28:43 → root → INFO: Training of spending_transportation_industry_professional_services_total_1 completed in 119.34 seconds. 44 out of 261 guides remain to be trained.
+2024-02-02 19:28:43 → root → INFO: Training spending_transportation_industry_professional_services_total_2 for 4000 iterations.
+2024-02-02 19:31:32 → root → INFO: Training of spending_transportation_industry_professional_services_total_2 completed in 168.07 seconds. 43 out of 261 guides remain to be trained.
+2024-02-02 19:31:32 → root → INFO: Training spending_transportation_industry_professional_services_total_3 for 4000 iterations.
+2024-02-02 19:34:18 → root → INFO: Training of spending_transportation_industry_professional_services_total_3 completed in 166.89 seconds. 42 out of 261 guides remain to be trained.
+2024-02-02 19:34:18 → root → INFO: Training spending_transportation_industry_public_administration_total_1 for 4000 iterations.
+2024-02-02 19:37:09 → root → INFO: Training of spending_transportation_industry_public_administration_total_1 completed in 170.17 seconds. 41 out of 261 guides remain to be trained.
+2024-02-02 19:37:09 → root → INFO: Training spending_transportation_industry_public_administration_total_2 for 4000 iterations.
+2024-02-02 19:39:34 → root → INFO: Training of spending_transportation_industry_public_administration_total_2 completed in 145.17 seconds. 40 out of 261 guides remain to be trained.
+2024-02-02 19:39:34 → root → INFO: Training spending_transportation_industry_public_administration_total_3 for 4000 iterations.
+2024-02-02 19:42:09 → root → INFO: Training of spending_transportation_industry_public_administration_total_3 completed in 155.24 seconds. 39 out of 261 guides remain to be trained.
+2024-02-02 19:42:09 → root → INFO: Training spending_transportation_industry_real_estate_total_1 for 4000 iterations.
+2024-02-02 19:44:33 → root → INFO: Training of spending_transportation_industry_real_estate_total_1 completed in 143.88 seconds. 38 out of 261 guides remain to be trained.
+2024-02-02 19:44:33 → root → INFO: Training spending_transportation_industry_real_estate_total_2 for 4000 iterations.
+2024-02-02 19:46:22 → root → INFO: Training of spending_transportation_industry_real_estate_total_2 completed in 109.34 seconds. 37 out of 261 guides remain to be trained.
+2024-02-02 19:46:22 → root → INFO: Training spending_transportation_industry_real_estate_total_3 for 4000 iterations.
+2024-02-02 19:48:14 → root → INFO: Training of spending_transportation_industry_real_estate_total_3 completed in 111.38 seconds. 36 out of 261 guides remain to be trained.
+2024-02-02 19:48:14 → root → INFO: Training spending_transportation_industry_retail_trade_total_1 for 4000 iterations.
+2024-02-02 19:49:54 → root → INFO: Training of spending_transportation_industry_retail_trade_total_1 completed in 100.28 seconds. 35 out of 261 guides remain to be trained.
+2024-02-02 19:49:54 → root → INFO: Training spending_transportation_industry_retail_trade_total_2 for 4000 iterations.
+2024-02-02 19:52:05 → root → INFO: Training of spending_transportation_industry_retail_trade_total_2 completed in 130.73 seconds. 34 out of 261 guides remain to be trained.
+2024-02-02 19:52:05 → root → INFO: Training spending_transportation_industry_retail_trade_total_3 for 4000 iterations.
+2024-02-02 19:54:57 → root → INFO: Training of spending_transportation_industry_retail_trade_total_3 completed in 172.40 seconds. 33 out of 261 guides remain to be trained.
+2024-02-02 19:54:57 → root → INFO: Training spending_transportation_industry_transportation_warehousing_total_1 for 4000 iterations.
+2024-02-02 19:57:19 → root → INFO: Training of spending_transportation_industry_transportation_warehousing_total_1 completed in 141.62 seconds. 32 out of 261 guides remain to be trained.
+2024-02-02 19:57:19 → root → INFO: Training spending_transportation_industry_transportation_warehousing_total_2 for 4000 iterations.
+2024-02-02 19:59:27 → root → INFO: Training of spending_transportation_industry_transportation_warehousing_total_2 completed in 128.75 seconds. 31 out of 261 guides remain to be trained.
+2024-02-02 19:59:27 → root → INFO: Training spending_transportation_industry_transportation_warehousing_total_3 for 4000 iterations.
+2024-02-02 20:00:55 → root → INFO: Training of spending_transportation_industry_transportation_warehousing_total_3 completed in 87.34 seconds. 30 out of 261 guides remain to be trained.
+2024-02-02 20:00:55 → root → INFO: Training spending_transportation_industry_utilities_total_1 for 4000 iterations.
+2024-02-02 20:02:47 → root → INFO: Training of spending_transportation_industry_utilities_total_1 completed in 111.90 seconds. 29 out of 261 guides remain to be trained.
+2024-02-02 20:02:47 → root → INFO: Training spending_transportation_industry_utilities_total_2 for 4000 iterations.
+2024-02-02 20:05:13 → root → INFO: Training of spending_transportation_industry_utilities_total_2 completed in 146.72 seconds. 28 out of 261 guides remain to be trained.
+2024-02-02 20:05:13 → root → INFO: Training spending_transportation_industry_utilities_total_3 for 4000 iterations.
+2024-02-02 20:07:47 → root → INFO: Training of spending_transportation_industry_utilities_total_3 completed in 153.54 seconds. 27 out of 261 guides remain to be trained.
+2024-02-02 20:07:47 → root → INFO: Training spending_transportation_industry_wholesale_trade_total_1 for 4000 iterations.
+2024-02-02 20:10:38 → root → INFO: Training of spending_transportation_industry_wholesale_trade_total_1 completed in 171.06 seconds. 26 out of 261 guides remain to be trained.
+2024-02-02 20:10:38 → root → INFO: Training spending_transportation_industry_wholesale_trade_total_2 for 4000 iterations.
+2024-02-02 20:13:02 → root → INFO: Training of spending_transportation_industry_wholesale_trade_total_2 completed in 144.28 seconds. 25 out of 261 guides remain to be trained.
+2024-02-02 20:13:02 → root → INFO: Training spending_transportation_industry_wholesale_trade_total_3 for 4000 iterations.
+2024-02-02 20:15:16 → root → INFO: Training of spending_transportation_industry_wholesale_trade_total_3 completed in 133.49 seconds. 24 out of 261 guides remain to be trained.
+2024-02-02 20:15:16 → root → INFO: Training spending_transportation_medianHouseholdIncome_1 for 4000 iterations.
+2024-02-02 20:17:29 → root → INFO: Training of spending_transportation_medianHouseholdIncome_1 completed in 132.92 seconds. 23 out of 261 guides remain to be trained.
+2024-02-02 20:17:29 → root → INFO: Training spending_transportation_medianHouseholdIncome_2 for 4000 iterations.
+2024-02-02 20:20:01 → root → INFO: Training of spending_transportation_medianHouseholdIncome_2 completed in 151.92 seconds. 22 out of 261 guides remain to be trained.
+2024-02-02 20:20:01 → root → INFO: Training spending_transportation_medianHouseholdIncome_3 for 4000 iterations.
+2024-02-02 20:22:16 → root → INFO: Training of spending_transportation_medianHouseholdIncome_3 completed in 135.45 seconds. 21 out of 261 guides remain to be trained.
+2024-02-02 20:22:16 → root → INFO: Training spending_transportation_population_1 for 4000 iterations.
+2024-02-02 20:24:32 → root → INFO: Training of spending_transportation_population_1 completed in 136.26 seconds. 20 out of 261 guides remain to be trained.
+2024-02-02 20:24:32 → root → INFO: Training spending_transportation_population_2 for 4000 iterations.
+2024-02-02 20:26:33 → root → INFO: Training of spending_transportation_population_2 completed in 120.36 seconds. 19 out of 261 guides remain to be trained.
+2024-02-02 20:26:33 → root → INFO: Training spending_transportation_population_3 for 4000 iterations.
+2024-02-02 20:28:43 → root → INFO: Training of spending_transportation_population_3 completed in 129.82 seconds. 18 out of 261 guides remain to be trained.
+2024-02-02 20:28:43 → root → INFO: Training spending_transportation_population_density_1 for 4000 iterations.
+2024-02-02 20:30:35 → root → INFO: Training of spending_transportation_population_density_1 completed in 112.55 seconds. 17 out of 261 guides remain to be trained.
+2024-02-02 20:30:35 → root → INFO: Training spending_transportation_population_density_2 for 4000 iterations.
+2024-02-02 20:33:16 → root → INFO: Training of spending_transportation_population_density_2 completed in 160.88 seconds. 16 out of 261 guides remain to be trained.
+2024-02-02 20:33:16 → root → INFO: Training spending_transportation_population_density_3 for 4000 iterations.
+2024-02-02 20:35:16 → root → INFO: Training of spending_transportation_population_density_3 completed in 120.15 seconds. 15 out of 261 guides remain to be trained.
+2024-02-02 20:35:16 → root → INFO: Training spending_transportation_povertyAll_1 for 4000 iterations.
+2024-02-02 20:37:26 → root → INFO: Training of spending_transportation_povertyAll_1 completed in 130.36 seconds. 14 out of 261 guides remain to be trained.
+2024-02-02 20:37:26 → root → INFO: Training spending_transportation_povertyAll_2 for 4000 iterations.
+2024-02-02 20:39:33 → root → INFO: Training of spending_transportation_povertyAll_2 completed in 126.11 seconds. 13 out of 261 guides remain to be trained.
+2024-02-02 20:39:33 → root → INFO: Training spending_transportation_povertyAll_3 for 4000 iterations.
+2024-02-02 20:41:46 → root → INFO: Training of spending_transportation_povertyAll_3 completed in 133.69 seconds. 12 out of 261 guides remain to be trained.
+2024-02-02 20:41:46 → root → INFO: Training spending_transportation_povertyAllprct_1 for 4000 iterations.
+2024-02-02 20:44:11 → root → INFO: Training of spending_transportation_povertyAllprct_1 completed in 144.49 seconds. 11 out of 261 guides remain to be trained.
+2024-02-02 20:44:11 → root → INFO: Training spending_transportation_povertyAllprct_2 for 4000 iterations.
+2024-02-02 20:46:18 → root → INFO: Training of spending_transportation_povertyAllprct_2 completed in 127.46 seconds. 10 out of 261 guides remain to be trained.
+2024-02-02 20:46:18 → root → INFO: Training spending_transportation_povertyAllprct_3 for 4000 iterations.
+2024-02-02 20:48:13 → root → INFO: Training of spending_transportation_povertyAllprct_3 completed in 115.09 seconds. 9 out of 261 guides remain to be trained.
+2024-02-02 20:48:13 → root → INFO: Training spending_transportation_povertyUnder18_1 for 4000 iterations.
+2024-02-02 20:49:43 → root → INFO: Training of spending_transportation_povertyUnder18_1 completed in 89.29 seconds. 8 out of 261 guides remain to be trained.
+2024-02-02 20:49:43 → root → INFO: Training spending_transportation_povertyUnder18_2 for 4000 iterations.
+2024-02-02 20:51:04 → root → INFO: Training of spending_transportation_povertyUnder18_2 completed in 81.08 seconds. 7 out of 261 guides remain to be trained.
+2024-02-02 20:51:04 → root → INFO: Training spending_transportation_povertyUnder18_3 for 4000 iterations.
+2024-02-02 20:53:04 → root → INFO: Training of spending_transportation_povertyUnder18_3 completed in 120.60 seconds. 6 out of 261 guides remain to be trained.
+2024-02-02 20:53:04 → root → INFO: Training spending_transportation_povertyUnder18prct_1 for 4000 iterations.
+2024-02-02 20:54:46 → root → INFO: Training of spending_transportation_povertyUnder18prct_1 completed in 101.38 seconds. 5 out of 261 guides remain to be trained.
+2024-02-02 20:54:46 → root → INFO: Training spending_transportation_povertyUnder18prct_2 for 4000 iterations.
+2024-02-02 20:56:45 → root → INFO: Training of spending_transportation_povertyUnder18prct_2 completed in 118.92 seconds. 4 out of 261 guides remain to be trained.
+2024-02-02 20:56:45 → root → INFO: Training spending_transportation_povertyUnder18prct_3 for 4000 iterations.
+2024-02-02 20:59:36 → root → INFO: Training of spending_transportation_povertyUnder18prct_3 completed in 171.63 seconds. 3 out of 261 guides remain to be trained.
+2024-02-02 20:59:36 → root → INFO: Training spending_transportation_unemployment_rate_1 for 4000 iterations.
+2024-02-02 21:02:05 → root → INFO: Training of spending_transportation_unemployment_rate_1 completed in 148.87 seconds. 2 out of 261 guides remain to be trained.
+2024-02-02 21:02:05 → root → INFO: Training spending_transportation_unemployment_rate_2 for 4000 iterations.
+2024-02-02 21:04:24 → root → INFO: Training of spending_transportation_unemployment_rate_2 completed in 138.99 seconds. 1 out of 261 guides remain to be trained.
+2024-02-02 21:04:24 → root → INFO: Training spending_transportation_unemployment_rate_3 for 4000 iterations.
+2024-02-02 21:06:55 → root → INFO: Training of spending_transportation_unemployment_rate_3 completed in 151.15 seconds. 0 out of 261 guides remain to be trained.
+2024-02-02 21:06:55 → root → INFO: All guides are now available.
