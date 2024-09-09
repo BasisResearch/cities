@@ -9,8 +9,21 @@ def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tens
     N_categorical = len(categorical)
     N_continuous = len(continuous)
 
-    n_cat = next(iter(categorical.values())).shape[0] if N_categorical > 0 else None
-    n_con = next(iter(continuous.values())).shape[0] if N_continuous > 0 else None
+    # a but convoluted, but groups might be missing and sometimes
+    # vars are allowed to be None
+    n_cat = None
+    if N_categorical > 0:
+        for value in categorical.values():
+            if value is not None:
+                n_cat = value.shape[0]
+                break
+
+    n_con = None
+    if N_continuous > 0:
+        for value in continuous.values():
+            if value is not None:
+                n_con = value.shape[0]
+                break
 
     if N_categorical > 0 and N_continuous > 0:
         if n_cat != n_con:
@@ -49,9 +62,17 @@ def categorical_contribution(
             dist.Normal(0.0, leeway).expand(categorical_levels[name].shape).to_event(1),
         )
 
-        objects_cat_weighted[name] = weights_categorical_outcome[name][
-            ..., categorical[name]
-        ]
+        weights_batch_dims = weights_categorical_outcome[name].shape[:-1]
+
+        objects_cat_weighted[name] = torch.gather(
+            weights_categorical_outcome[name],
+            dim=-1,
+            index=categorical[name].view(*weights_batch_dims, -1)
+        )
+
+        # objects_cat_weighted[name] = weights_categorical_outcome[name][
+        #     ..., categorical[name].view(*weights_batch_dims, -1)
+        # ]
 
     values = list(objects_cat_weighted.values())
     for i in range(1, len(values)):
