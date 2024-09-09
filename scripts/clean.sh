@@ -1,13 +1,8 @@
 #!/bin/bash
 set -euxo pipefail
 
-# isort suspended till the CI-vs-local issue is resolved
-# isort cities/ tests/
-
-black cities/ tests/
+isort --profile="black" cities/ tests/
 autoflake --remove-all-unused-imports --in-place --recursive ./cities ./tests
-
-nbqa autoflake --remove-all-unused-imports --recursive --in-place docs/guides/ 
-# nbqa isort docs/guides/
-nbqa black docs/guides/
-
+nbqa --nbqa-shell isort --profile="black" docs/guides/ 
+nbqa --nbqa-shell autoflake  --nbqa-shell --remove-all-unused-imports --recursive --in-place docs/guides/   
+black ./cities ./tests docs/guides/ 
