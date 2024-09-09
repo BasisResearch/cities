@@ -62,9 +62,40 @@ def categorical_contribution(
             dist.Normal(0.0, leeway).expand(categorical_levels[name].shape).to_event(1),
         )
 
-        objects_cat_weighted[name] = weights_categorical_outcome[name][
-            ..., categorical[name]
-        ]
+        weights_batch_dims = weights_categorical_outcome[name].shape[:-1]
+        lwbd = len(weights_batch_dims)
+
+        # FIXME
+        #  Problem: if the categorical variable is being conditioned on per unit (e.g. in an ITE), then
+        #   it won't be plated according to the sample plate, which means that the gather below has to
+        #   broadcast those levels across the plated weights_categorical_outcome samples.
+        # HACKy solution:
+        # We can tell when this happens if weights_categorical_outcome batch shape doesn't match
+        #  the categorical shape. In that case, we have to manually tile to broadcast the gather.
+        # Otherwise, we use the view method.
+        conditioned = categorical[name].ndim == 1  # we are conditioning.
+        if conditioned:
+            weight_indices = torch.tile(
+                categorical[name].view(*((1,) * lwbd), -1),
+                dims=(*weights_batch_dims, 1)
+            )
+        else:
+            weight_indices = categorical[name].view(*weights_batch_dims, -1)
+
+        objects_cat_weighted[name] = torch.gather(
+            weights_categorical_outcome[name],
+            dim=-1,
+            index=weight_indices
+        )
+
+        # FIXME HACK any outer plates will tacked onto weights_categorical_outcome AFTER the event_dim, meaning
+        # e.g. for outer plate 13, and data plate 816, and categorical levels 10, we'd have weights.shape == (13, 1, 10)
+        # This propagates through the gather, but we want the final to be (13, 816) and not (13, 1, 816).
+        if (not conditioned) and (objects_cat_weighted[name].shape[-lwbd:] != categorical[name].shape[-lwbd:]):
+            # Note that this is always -2 b/c we're squeezing the single extra dimension resulting from the event dim
+            #  above.
+            assert objects_cat_weighted[name].shape[-2] == 1
+            objects_cat_weighted[name] = objects_cat_weighted[name].squeeze(-2)
 
     values = list(objects_cat_weighted.values())
     for i in range(1, len(values)):
