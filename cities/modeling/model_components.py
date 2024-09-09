@@ -63,16 +63,29 @@ def categorical_contribution(
         )
 
         weights_batch_dims = weights_categorical_outcome[name].shape[:-1]
+        # n = categorical[name].shape[-1]
+
+        # FIXME
+        #  Problem: if the categorical variable is being conditioned on per unit (e.g. in an ITE), then
+        #   it won't be plated according to the sample plate, which means that the gather below has to
+        #   broadcast those levels across the plated weights_categorical_outcome samples.
+        # HACKy solution:
+        # We can tell when this happens if weights_categorical_outcome batch shape doesn't match
+        #  the categorical shape. In that case, we have to manually tile to broadcast the gather.
+        # Otherwise, we use the view method.
+        if categorical[name].ndim == 1:  # we are conditioning.
+            weight_indices = torch.tile(
+                categorical[name].view(*((1,) * len(weights_batch_dims)), -1),
+                dims=(*weights_batch_dims, 1)
+            )
+        else:
+            weight_indices = categorical[name].view(*weights_batch_dims, -1)
 
         objects_cat_weighted[name] = torch.gather(
             weights_categorical_outcome[name],
             dim=-1,
-            index=categorical[name].view(*weights_batch_dims, -1)
+            index=weight_indices
         )
-
-        # objects_cat_weighted[name] = weights_categorical_outcome[name][
-        #     ..., categorical[name].view(*weights_batch_dims, -1)
-        # ]
 
     values = list(objects_cat_weighted.values())
     for i in range(1, len(values)):
