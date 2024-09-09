@@ -58,14 +58,11 @@ tracts_model = TractsModel(
 
 pyro.clear_param_store()
 
-guide = run_svi_inference(tracts_model, n_steps=2000, lr=0.03, **subset)
-
+guide = run_svi_inference(tracts_model, n_steps=2000, lr=0.03, plot=False, **subset)
 
 ##########################################
 # save guide and params in the same folder
 ##########################################
-
-
 serialized_guide = dill.dumps(guide)
 file_path = "tracts_model_guide.pkl"
 with open(file_path, "wb") as file:
