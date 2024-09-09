@@ -100,3 +100,5 @@ def test_tracts_model():
         plot=False,
         is_class=False,
     )
+
+test_tracts_model()
