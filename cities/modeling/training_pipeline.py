@@ -84,7 +84,7 @@ for intervention_dataset in interventions:
                 remaining -= 1
                 logging.info(
                     f"Training of {guide_name} completed in {duration:.2f} seconds. "
-                    f"{remaining} out of {N_combinations} guides remain to be trained."
+                    f"{int(remaining)} out of {N_combinations} guides remain to be trained."
                 )
 
 logging.info("All guides are now available.")

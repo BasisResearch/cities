@@ -34,7 +34,7 @@ The above will install the minimal version that's ported to [polis.basis.ai](htt
 To install dev dependencies, needed to run models, train models and run all the tests, run the following command:
 
 ```sh
-pip install -e .[dev]
+pip install -e .'[dev]'
 ```
 
 Details of which packages are available in which see `setup.py`.
