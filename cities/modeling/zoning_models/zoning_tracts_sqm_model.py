@@ -44,11 +44,17 @@ class TractsModelSqm(pyro.nn.PyroModule):
         outcome: Optional[torch.Tensor] = None,
         categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
         leeway=0.9,
+        levels = None
     ):
         if categorical_levels is None:
             categorical_levels = self.categorical_levels
 
-        _N_categorical, _N_continuous, n = get_n(categorical, continuous)
+        if levels is None:
+            _N_categorical, _N_continuous, n = get_n(categorical, continuous)
+        else:
+            _N_categorical, _N_continuous, n = levels
+
+        
 
         data_plate = pyro.plate("data", size=n, dim=-1)
 
