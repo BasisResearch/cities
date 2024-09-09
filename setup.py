@@ -48,6 +48,7 @@ setup(
         "dill",
         "plotly",
         "matplotlib>=3.8.2",
+        "seaborn",
     ],
     extras_require={"test": TEST_REQUIRES, "dev": DEV_REQUIRES + TEST_REQUIRES},
     python_requires=">=3.10",
