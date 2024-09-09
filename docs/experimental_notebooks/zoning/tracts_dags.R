@@ -16,21 +16,24 @@ tracts_dag <- dagitty('dag {
     
     sqm [pos = ".2,.4"]
    
+    distance -> sqm
+    year -> sqm
+   
+    year -> limit
+    distance -> limit
+   
     distance -> white
     year -> white
     sqm -> white
-    
-    year -> limit
-    distance -> limit
-    
-    distance -> sqm
-    year -> sqm
+    limit -> white
     
     sqm -> segregation
     distance -> segregation
     white -> segregation
     year -> segregation
     limit -> segregation
+    
+    
     
     sqm -> income
     distance -> income
