@@ -39,19 +39,37 @@ def get_n(categorical: Dict[str, torch.Tensor], continuous: Dict[str, torch.Tens
     return N_categorical, N_continuous, n
 
 
+def check_categorical_is_subset_of_levels(categorical, categorical_levels):
+
+    assert set(categorical.keys()).issubset(set(categorical_levels.keys()))
+
+    # # TODO should these be subsets or can we only check lengths?
+    # if not all([set(torch.unique(v)).issubset(set(categorical_levels[k])) for k, v in categorical.items()]):
+    #     raise ValueError("The passed categorical values are from a superset of the provided levels."
+    #                      " See note about the categorical_levels param in the __init__ docstring.")
+
+    return True
+
+
+def get_categorical_levels(categorical):
+    """
+    Assumes that no levels are missing from the categorical data, and constructs the levels from the unique values.
+    This should only be used with supersets of all data (so that every data subset will have its levels represented
+    in the levels returned here.
+    """
+    return {name: torch.unique(categorical[name]) for name in categorical.keys()}
+
+
 def categorical_contribution(
     categorical: Dict[str, torch.Tensor],
     child_name: str,
     leeway: float,
-    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
+    categorical_levels: Dict[str, torch.Tensor],
 ) -> torch.Tensor:
 
-    categorical_names = list(categorical.keys())
+    check_categorical_is_subset_of_levels(categorical, categorical_levels)
 
-    if categorical_levels is None:
-        categorical_levels = {
-            name: torch.unique(categorical[name]) for name in categorical_names
-        }
+    categorical_names = list(categorical.keys())
 
     weights_categorical_outcome = {}
     objects_cat_weighted = {}
@@ -98,8 +116,6 @@ def categorical_contribution(
             objects_cat_weighted[name] = objects_cat_weighted[name].squeeze(-2)
 
     values = list(objects_cat_weighted.values())
-    for i in range(1, len(values)):
-        values[i] = values[i].view(values[0].shape)
 
     categorical_contribution_outcome = torch.stack(values, dim=0).sum(dim=0)
 
@@ -137,8 +153,8 @@ def add_linear_component(
     child_categorical_parents: Dict[str, torch.Tensor],
     leeway: float,
     data_plate,
+    categorical_levels: Dict[str, torch.Tensor],
     observations: Optional[torch.Tensor] = None,
-    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
 ) -> torch.Tensor:
 
     sigma_child = pyro.sample(
@@ -179,8 +195,8 @@ def add_logistic_component(
     child_categorical_parents: Dict[str, torch.Tensor],
     leeway: float,
     data_plate,
+    categorical_levels: Dict[str, torch.Tensor],
     observations: Optional[torch.Tensor] = None,
-    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
 ) -> torch.Tensor:
 
     continuous_contribution_to_child = continuous_contribution(
@@ -223,8 +239,8 @@ def add_ratio_component(
     child_categorical_parents: Dict[str, torch.Tensor],
     leeway: float,
     data_plate,
+    categorical_levels: Dict[str, torch.Tensor],
     observations: Optional[torch.Tensor] = None,
-    categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
 ) -> torch.Tensor:
 
     continuous_contribution_to_child = continuous_contribution(

@@ -8,10 +8,15 @@ from cities.modeling.model_components import (
     add_linear_component,
     add_ratio_component,
     get_n,
+    check_categorical_is_subset_of_levels,
+    get_categorical_levels
 )
+
+import warnings
 
 
 class TractsModel(pyro.nn.PyroModule):
+
     def __init__(
         self,
         categorical: Dict[str, torch.Tensor],
@@ -22,6 +27,15 @@ class TractsModel(pyro.nn.PyroModule):
         categorical_levels: Optional[Dict[str, Any]] = None,
         leeway=0.9,
     ):
+        """
+
+        :param categorical: dict of categorical data
+        :param continuous: dict of continuous data
+        :param outcome: outcome data  (unused, todo remove)
+        :param categorical_levels: dict of unique categorical values. If this is not passed, it will be computed from
+         the provided categorical data. Importantly, if categorical is a subset of the full dataset, this automated
+         computation may omit categorical levels that are present in the full dataset but not in the subset.
+        """
         super().__init__()
 
         self.leeway = leeway
@@ -31,9 +45,7 @@ class TractsModel(pyro.nn.PyroModule):
         # you might need and pass further the original
         #  categorical levels of the training data
         if self.N_categorical > 0 and categorical_levels is None:
-            self.categorical_levels = dict()
-            for name in categorical.keys():
-                self.categorical_levels[name] = torch.unique(categorical[name])
+            self.categorical_levels = get_categorical_levels(categorical)
         else:
             self.categorical_levels = categorical_levels  # type: ignore
 
@@ -42,12 +54,16 @@ class TractsModel(pyro.nn.PyroModule):
         categorical: Dict[str, torch.Tensor],
         continuous: Dict[str, torch.Tensor],
         outcome: Optional[torch.Tensor] = None,
-        categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
         leeway=0.9,
+        categorical_levels=None,
         n=None
     ):
-        if categorical_levels is None:
-            categorical_levels = self.categorical_levels
+        if categorical_levels is not None:
+            warnings.warn(f"Passed categorical_levels will no longer override the levels passed to or computed during"
+                          f" model initialization. The argument will be ignored.")
+
+        categorical_levels = self.categorical_levels
+        assert check_categorical_is_subset_of_levels(categorical, categorical_levels)
 
         if n is None:
             _, _, n = get_n(categorical, continuous)
@@ -89,6 +105,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=11.57,
             data_plate=data_plate,
             observations=continuous["white_original"],
+            categorical_levels=self.categorical_levels
         )
 
         # ___________________________
@@ -111,6 +128,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=11.57,
             data_plate=data_plate,
             observations=continuous["segregation_original"],
+            categorical_levels=self.categorical_levels
         )
 
         # ______________________
@@ -134,6 +152,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=0.9,
             data_plate=data_plate,
             observations=continuous["income"],
+            categorical_levels=self.categorical_levels
         )
 
         # _______________________
@@ -155,6 +174,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=11.57,
             data_plate=data_plate,
             observations=continuous["mean_limit_original"],
+            categorical_levels=self.categorical_levels
         )
 
         # _____________________________
@@ -180,6 +200,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=0.9,
             data_plate=data_plate,
             observations=continuous["median_value"],
+            categorical_levels=self.categorical_levels
         )
 
         # ______________________________
@@ -206,6 +227,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=0.9,
             data_plate=data_plate,
             observations=continuous["housing_units"],
+            categorical_levels=self.categorical_levels
         )
 
         return housing_units
