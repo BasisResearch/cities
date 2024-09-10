@@ -97,24 +97,24 @@ def categorical_contribution(
             # Try to just expand as if the plating on the weights is identical to that of the categories.
             weight_indices = categorical[name].view(*weights_batch_dims, -1)
             conditioning = False
-        except RuntimeError as e:
+        except RuntimeError: # as e:
 
             # Otherwise, we assume we're conditioning and therefore might to manually expand the unplated
             #  data over the plated weights.
             weight_indices = torch.tile(
                 categorical[name].view(*((1,) * lwbd), -1),
-                dims=(*weights_batch_dims, 1)
+                dims=(*weights_batch_dims, 1),
             )
             conditioning = True
 
         objects_cat_weighted[name] = torch.gather(
-            weights_categorical_outcome[name],
-            dim=-1,
-            index=weight_indices
+            weights_categorical_outcome[name], dim=-1, index=weight_indices
         )
 
         if not conditioning:
-            objects_cat_weighted[name] = objects_cat_weighted[name].view(categorical[name].shape)
+            objects_cat_weighted[name] = objects_cat_weighted[name].view(
+                categorical[name].shape
+            )
 
     values = list(objects_cat_weighted.values())
 
