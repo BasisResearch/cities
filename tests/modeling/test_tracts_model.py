@@ -86,3 +86,12 @@ def test_tracts_model():
             samples = predictive(**subset_for_preds)
 
     assert samples["housing_units"].shape == torch.Size([num_samples, 3, 1, 1, 1, 816])
+
+    with pyro.plate("outer_plate", 4, dim = -8):
+        #with MultiWorldCounterfactual():
+        with do(actions={"limit": (torch.tensor(0.0), torch.tensor(1.0))}):
+            samples_outer = predictive(**subset_for_preds)
+
+    print(samples_outer['housing_units'].shape)
+
+test_tracts_model()
