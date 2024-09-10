@@ -1,4 +1,3 @@
-import warnings
 from typing import Any, Dict, Optional
 
 import pyro
@@ -8,10 +7,12 @@ import torch
 from cities.modeling.model_components import (
     add_linear_component,
     add_ratio_component,
-    check_categorical_is_subset_of_levels,
-    get_categorical_levels,
     get_n,
+    check_categorical_is_subset_of_levels,
+    get_categorical_levels
 )
+
+import warnings
 
 
 class TractsModel(pyro.nn.PyroModule):
@@ -55,13 +56,11 @@ class TractsModel(pyro.nn.PyroModule):
         outcome: Optional[torch.Tensor] = None,
         leeway=0.9,
         categorical_levels=None,
-        n=None,
+        n=None
     ):
         if categorical_levels is not None:
-            warnings.warn(
-                "Passed categorical_levels will not override the levels passed to or computed during"
-                " model initialization. The argument will be ignored."
-            )
+            warnings.warn(f"Passed categorical_levels will no longer override the levels passed to or computed during"
+                          f" model initialization. The argument will be ignored.")
 
         categorical_levels = self.categorical_levels
         assert check_categorical_is_subset_of_levels(categorical, categorical_levels)
@@ -106,7 +105,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=11.57,
             data_plate=data_plate,
             observations=continuous["white_original"],
-            categorical_levels=self.categorical_levels,
+            categorical_levels=self.categorical_levels
         )
 
         # ___________________________
@@ -129,7 +128,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=11.57,
             data_plate=data_plate,
             observations=continuous["segregation_original"],
-            categorical_levels=self.categorical_levels,
+            categorical_levels=self.categorical_levels
         )
 
         # ______________________
@@ -153,7 +152,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=0.9,
             data_plate=data_plate,
             observations=continuous["income"],
-            categorical_levels=self.categorical_levels,
+            categorical_levels=self.categorical_levels
         )
 
         # _______________________
@@ -175,7 +174,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=11.57,
             data_plate=data_plate,
             observations=continuous["mean_limit_original"],
-            categorical_levels=self.categorical_levels,
+            categorical_levels=self.categorical_levels
         )
 
         # _____________________________
@@ -201,7 +200,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=0.9,
             data_plate=data_plate,
             observations=continuous["median_value"],
-            categorical_levels=self.categorical_levels,
+            categorical_levels=self.categorical_levels
         )
 
         # ______________________________
@@ -228,7 +227,7 @@ class TractsModel(pyro.nn.PyroModule):
             leeway=0.9,
             data_plate=data_plate,
             observations=continuous["housing_units"],
-            categorical_levels=self.categorical_levels,
+            categorical_levels=self.categorical_levels
         )
 
         return housing_units
