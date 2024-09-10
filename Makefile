@@ -27,14 +27,16 @@ done: FORCE
 api/requirements.txt: FORCE
 	pip-compile --extra api --output-file api/requirements.txt
 
-build/tracts_model_params.pth build/tracts_model_guide.pkl: FORCE
+api-container-build: FORCE
 	mkdir -p build
-	cd build && python ../cities/deployment/tracts_minneapolis/train_model.py
-
-api-container: FORCE api/requirements.txt build/tracts_model_params.pth build/tracts_model_guide.pkl
-	mkdir -p build
+	# cd build && python ../cities/deployment/tracts_minneapolis/train_model.py
 	cp -r cities build
 	cp -r api/ build
-	cd build && docker build -t BasisResearch/cities-api .
+	cp .env build
+	cd build && docker build --platform linux/amd64 -t cities-api .
+
+api-container-push:
+	docker tag cities-api us-east1-docker.pkg.dev/cities-429602/cities/cities-api
+	docker push us-east1-docker.pkg.dev/cities-429602/cities/cities-api
 
 FORCE:

@@ -8,7 +8,10 @@
 }}
 
 with census_tracts as (
-  select census_tract as id, st_transform(geom, 4269)
+  select
+    census_tract as id,
+    year_,
+    st_transform(geom, 4269) as geom
   from {{ ref('tracts_model_int__census_tracts_filtered') }}
 )
 select

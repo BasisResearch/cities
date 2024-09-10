@@ -8,10 +8,12 @@
 }}
 
 with
-lines as (select * from dev.stg_high_frequency_transit_lines_union),
-stops as (select * from dev.high_frequency_transit_stops),
+lines as (select * from {{ ref('high_frequency_transit_lines') }}),
+stops as (select * from {{ ref('high_frequency_transit_stops') }})
 select
-  st_transform(lines.geom, 4269) as line_geom,
-  st_transform(stops.geom, 4269) as stop_geom
+  lines.valid * stops.valid as valid,
+  lines.geom as line_geom,
+  st_asgeojson(st_transform(lines.geom, 4269))::json as line_geom_json,
+  stops.geom as stop_geom,
+  st_asgeojson(st_transform(stops.geom, 4269))::json as stop_geom_json
 from lines inner join stops on lines.valid && stops.valid
-where '2020-01-01'::date <@ lines.valid

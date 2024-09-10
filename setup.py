@@ -27,10 +27,7 @@ DEV_REQUIRES = [
     "pip-tools",
 ]
 
-API_REQUIRES = [
-    "psycopg2",
-    "fastapi[standard]",
-]
+API_REQUIRES = ["psycopg2", "fastapi"]
 
 setup(
     name="cities",
