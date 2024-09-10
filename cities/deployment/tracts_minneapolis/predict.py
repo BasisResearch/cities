@@ -113,7 +113,13 @@ class TractsModelPredictor:
 
     # these are at the tracts level
     def _tracts_intervention(
-        self, radius_blue, limit_blue, radius_yellow, limit_yellow, reform_year=2015
+        self,
+        conn,
+        radius_blue,
+        limit_blue,
+        radius_yellow,
+        limit_yellow,
+        reform_year=2015,
     ):
         params = {
             "reform_year": reform_year,
@@ -123,11 +129,11 @@ class TractsModelPredictor:
             "limit_yellow": limit_yellow,
         }
         df = pd.read_sql(
-            TractsModelPredictor.tracts_intervention_sql, self.conn, params=params
+            TractsModelPredictor.tracts_intervention_sql, conn, params=params
         )
         return torch.tensor(df["intervention"].values, dtype=torch.float32)
 
-    def predict(self, intervention=None, samples=100):
+    def predict(self, conn, intervention=None, samples=100):
         pyro.clear_param_store()
         pyro.get_param_store().load(self.param_path)
 
@@ -137,7 +143,7 @@ class TractsModelPredictor:
         if intervention is None:
             result = self.predictive(**subset_for_preds)["housing_units"]
         else:
-            intervention = self._tracts_intervention(**intervention)
+            intervention = self._tracts_intervention(conn, **intervention)
             print(intervention.shape, intervention)
             with MultiWorldCounterfactual():
                 with do(actions={"limit": intervention}):
@@ -173,7 +179,7 @@ if __name__ == "__main__":
         predictor = TractsModelPredictor(conn)
 
         start = time.time()
-        result = predictor.predict()
+        result = predictor.predict(conn)
         print({k: v.shape for k, v in result.items()})
         end = time.time()
         print(f"Predicted in {end - start} seconds")

@@ -1,13 +1,15 @@
 import os
+
 from typing import Annotated
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, Depends, Query
 from fastapi.middleware.cors import CORSMiddleware
-import psycopg2
+from fastapi.middleware.gzip import GZipMiddleware
 import uvicorn
 
-from cities.deployment.tracts_minneapolis.predict import TractsModelPredictor
+import psycopg2
+from psycopg2.pool import ThreadedConnectionPool
 
 load_dotenv()
 
@@ -32,31 +34,37 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=5)
+
+
+if ENV == "dev":
+    host = HOST
+else:
+    host = f"/cloudsql/{INSTANCE_CONNECTION_NAME}"
+
+pool = ThreadedConnectionPool(
+    1, 10, user=USERNAME, password=PASSWORD, host=HOST, database=DATABASE
+)
 
 
 def get_db() -> psycopg2.extensions.connection:
-    if ENV == "dev":
-        db = psycopg2.connect(
-            host=HOST, database=DATABASE, user=USERNAME, password=PASSWORD
-        )
-    else:
-        db = psycopg2.connect(
-            host=f"/cloudsql/{INSTANCE_CONNECTION_NAME}",
-            database=DATABASE,
-            user=USERNAME,
-            password=PASSWORD,
-        )
-
+    db = pool.getconn()
     try:
         yield db
     finally:
         db.close()
 
 
-def get_predictor(
-    db: psycopg2.extensions.connection = Depends(get_db),
-) -> TractsModelPredictor:
-    return TractsModelPredictor(db)
+predictor = None
+
+
+def get_predictor(db: psycopg2.extensions.connection = Depends(get_db)):
+    from cities.deployment.tracts_minneapolis.predict import TractsModelPredictor
+
+    global predictor
+    if predictor is None:
+        predictor = TractsModelPredictor(db)
+    return predictor
 
 
 Limit = Annotated[float, Query(ge=0, le=1)]
@@ -138,9 +146,11 @@ async def read_predict(
     yellow_zone_limit: Limit,
     year: Year,
     samples: Annotated[int, Query(ge=0, le=1000)] = 100,
-    predictor: TractsModelPredictor = Depends(get_predictor),
+    db=Depends(get_db),
+    predictor=Depends(get_predictor),
 ):
     result = predictor.predict(
+        db,
         samples=samples,
         intervention=(
             {
