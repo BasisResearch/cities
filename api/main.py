@@ -52,7 +52,7 @@ def get_db() -> psycopg2.extensions.connection:
     try:
         yield db
     finally:
-        db.close()
+        pool.putconn(db)
 
 
 predictor = None
