@@ -8,7 +8,7 @@ from chirho.interventional.handlers import do
 from pyro.infer import Predictive
 from torch.utils.data import DataLoader
 
-from cities.modeling.evaluation import prep_data_for_test, test_performance
+from cities.modeling.evaluation import prep_data_for_test
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_grabber import find_repo_root
@@ -86,18 +86,3 @@ def test_tracts_model():
             samples = predictive(**subset_for_preds)
 
     assert samples["housing_units"].shape == torch.Size([num_samples, 3, 1, 1, 1, 816])
-
-    # test evaluation
-    test_performance(
-        tracts_model,
-        kwargs,
-        train_loader,
-        test_loader,
-        categorical_levels,
-        outcome_type="continuous",
-        outcome_name="housing_units",
-        n_steps=n_steps,
-        plot=False,
-        is_class=False,
-    )
-

@@ -95,21 +95,21 @@ def categorical_contribution(
         if conditioned:
             weight_indices = torch.tile(
                 categorical[name].view(*((1,) * lwbd), -1),
-                dims=(*weights_batch_dims, 1)
+                dims=(*weights_batch_dims, 1),
             )
         else:
             weight_indices = categorical[name].view(*weights_batch_dims, -1)
 
         objects_cat_weighted[name] = torch.gather(
-            weights_categorical_outcome[name],
-            dim=-1,
-            index=weight_indices
+            weights_categorical_outcome[name], dim=-1, index=weight_indices
         )
 
         # FIXME HACK any outer plates will tacked onto weights_categorical_outcome AFTER the event_dim, meaning
         # e.g. for outer plate 13, and data plate 816, and categorical levels 10, we'd have weights.shape == (13, 1, 10)
         # This propagates through the gather, but we want the final to be (13, 816) and not (13, 1, 816).
-        if (not conditioned) and (objects_cat_weighted[name].shape[-lwbd:] != categorical[name].shape[-lwbd:]):
+        if (not conditioned) and (
+            objects_cat_weighted[name].shape[-lwbd:] != categorical[name].shape[-lwbd:]
+        ):
             # Note that this is always -2 b/c we're squeezing the single extra dimension resulting from the event dim
             #  above.
             assert objects_cat_weighted[name].shape[-2] == 1

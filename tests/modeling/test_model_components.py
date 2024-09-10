@@ -10,8 +10,8 @@ from cities.modeling.model_components import (
     add_ratio_component,
     categorical_contribution,
     continuous_contribution,
+    get_categorical_levels,
     get_n,
-    get_categorical_levels
 )
 
 
