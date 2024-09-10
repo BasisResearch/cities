@@ -101,4 +101,3 @@ def test_tracts_model():
         is_class=False,
     )
 
-test_tracts_model()
