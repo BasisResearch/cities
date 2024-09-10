@@ -44,10 +44,12 @@ def check_categorical_is_subset_of_levels(categorical, categorical_levels):
     assert set(categorical.keys()).issubset(set(categorical_levels.keys()))
 
     # # TODO should these be subsets or can we only check lengths?
-    # if not all([set(torch.unique(v)).issubset(set(categorical_levels[k])) for k, v in categorical.items()]):
-    #     raise ValueError("The passed categorical values are from a superset of the provided levels."
-    #                      " See note about the categorical_levels param in the __init__ docstring.")
-
+    # for k, v in categorical.items():
+    #     unique_categories_in_data = set([x.item() for x in torch.unique(v)])
+    #     superset_levels = set([x.item() for x in categorical_levels[k]])
+    #     if not unique_categories_in_data.issubset(superset_levels):
+    #         raise ValueError("The passed categorical values are from a superset of the provided levels."
+    #                          " See note about the categorical_levels param in the __init__ docstring.")
     return True
 
 
@@ -83,22 +85,27 @@ def categorical_contribution(
         weights_batch_dims = weights_categorical_outcome[name].shape[:-1]
         lwbd = len(weights_batch_dims)
 
-        # FIXME
         #  Problem: if the categorical variable is being conditioned on per unit (e.g. in an ITE), then
         #   it won't be plated according to the sample plate, which means that the gather below has to
         #   broadcast those levels across the plated weights_categorical_outcome samples.
-        # HACKy solution:
-        # We can tell when this happens if weights_categorical_outcome batch shape doesn't match
-        #  the categorical shape. In that case, we have to manually tile to broadcast the gather.
-        # Otherwise, we use the view method.
-        conditioned = categorical[name].ndim == 1  # we are conditioning.
-        if conditioned:
+        # So we proceed first as if the categoricals are plated the same as the weights.
+        # And if that fails, we assume we're conditioning and manually expand the data over the weight batches.
+        # Finally, if we are not conditioning, we have to deal with an extra event dim.
+
+        # This actually subsumes the one below.
+        try:
+            # Try to just expand as if the plating on the weights is identical to that of the categories.
+            weight_indices = categorical[name].view(*weights_batch_dims, -1)
+            conditioning = False
+        except RuntimeError as e:
+
+            # Otherwise, we assume we're conditioning and therefore might to manually expand the unplated
+            #  data over the plated weights.
             weight_indices = torch.tile(
                 categorical[name].view(*((1,) * lwbd), -1),
                 dims=(*weights_batch_dims, 1)
             )
-        else:
-            weight_indices = categorical[name].view(*weights_batch_dims, -1)
+            conditioning = True
 
         objects_cat_weighted[name] = torch.gather(
             weights_categorical_outcome[name],
@@ -106,14 +113,8 @@ def categorical_contribution(
             index=weight_indices
         )
 
-        # FIXME HACK any outer plates will tacked onto weights_categorical_outcome AFTER the event_dim, meaning
-        # e.g. for outer plate 13, and data plate 816, and categorical levels 10, we'd have weights.shape == (13, 1, 10)
-        # This propagates through the gather, but we want the final to be (13, 816) and not (13, 1, 816).
-        if (not conditioned) and (objects_cat_weighted[name].shape[-lwbd:] != categorical[name].shape[-lwbd:]):
-            # Note that this is always -2 b/c we're squeezing the single extra dimension resulting from the event dim
-            #  above.
-            assert objects_cat_weighted[name].shape[-2] == 1
-            objects_cat_weighted[name] = objects_cat_weighted[name].squeeze(-2)
+        if not conditioning:
+            objects_cat_weighted[name] = objects_cat_weighted[name].view(categorical[name].shape)
 
     values = list(objects_cat_weighted.values())
 
