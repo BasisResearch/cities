@@ -576,7 +576,8 @@ class CausalInsight:
             label=f"mean = {tau_samples.mean():.3f}",
         )
         plt.title(
-            f"ATE for {self.intervention_dataset}  and  {self.outcome_dataset} with forward shift = {self.forward_shift}"
+            f"ATE for {self.intervention_dataset} and {self.outcome_dataset} "
+            f"with forward shift = {self.forward_shift}"
         )
         plt.ylabel("counts")
         plt.xlabel("ATE")

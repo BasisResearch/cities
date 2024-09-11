@@ -1,3 +1,4 @@
+import warnings
 from typing import Any, Dict, Optional
 
 import pyro
@@ -7,6 +8,8 @@ import torch
 from cities.modeling.model_components import (
     add_linear_component,
     add_ratio_component,
+    check_categorical_is_subset_of_levels,
+    get_categorical_levels,
     get_n,
 )
 
@@ -22,33 +25,46 @@ class TractsModelSqm(pyro.nn.PyroModule):
         categorical_levels: Optional[Dict[str, Any]] = None,
         leeway=0.9,
     ):
+        """
+
+        :param categorical: dict of categorical data
+        :param continuous: dict of continuous data
+        :param outcome: outcome data  (unused, todo remove)
+        :param categorical_levels: dict of unique categorical values. If this is not passed, it will be computed from
+         the provided categorical data. Importantly, if categorical is a subset of the full dataset, this automated
+         computation may omit categorical levels that are present in the full dataset but not in the subset.
+        """
         super().__init__()
 
         self.leeway = leeway
 
         self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
 
-        # you might need and pass further the original
-        #  categorical levels of the training data
         if self.N_categorical > 0 and categorical_levels is None:
-            self.categorical_levels = dict()
-            for name in categorical.keys():
-                self.categorical_levels[name] = torch.unique(categorical[name])
+            self.categorical_levels = get_categorical_levels(categorical)
         else:
-            self.categorical_levels = categorical_levels  # type: ignore
+            self.categorical_levels = categorical_levels
 
     def forward(
         self,
         categorical: Dict[str, torch.Tensor],
         continuous: Dict[str, torch.Tensor],
         outcome: Optional[torch.Tensor] = None,
-        categorical_levels: Optional[Dict[str, torch.Tensor]] = None,
         leeway=0.9,
+        categorical_levels=None,
+        n=None,
     ):
-        if categorical_levels is None:
-            categorical_levels = self.categorical_levels
+        if categorical_levels is not None:
+            warnings.warn(
+                "Passed categorical_levels will no longer override the levels passed to or computed during"
+                " model initialization. The argument will be ignored."
+            )
 
-        _N_categorical, _N_continuous, n = get_n(categorical, continuous)
+        categorical_levels = self.categorical_levels
+        assert check_categorical_is_subset_of_levels(categorical, categorical_levels)
+
+        if n is None:
+            _, _, n = get_n(categorical, continuous)
 
         data_plate = pyro.plate("data", size=n, dim=-1)
 
@@ -86,9 +102,9 @@ class TractsModelSqm(pyro.nn.PyroModule):
             child_categorical_parents=sqm_categorical_parents,
             leeway=0.5,
             data_plate=data_plate,
-            observations=continuous['parcel_sqm'],
+            observations=continuous["parcel_sqm"],
+            categorical_levels=self.categorical_levels,
         )
-
 
         # _______________________
         # regression for limit
@@ -106,11 +122,11 @@ class TractsModelSqm(pyro.nn.PyroModule):
             child_name="limit",
             child_continuous_parents=limit_continuous_parents,
             child_categorical_parents=limit_categorical_parents,
-            leeway=8, #,
+            leeway=8,  # ,
             data_plate=data_plate,
             observations=continuous["mean_limit_original"],
+            categorical_levels=self.categorical_levels,
         )
-
 
         # _____________________
         # regression for white
@@ -130,9 +146,10 @@ class TractsModelSqm(pyro.nn.PyroModule):
             child_name="white",
             child_continuous_parents=white_continuous_parents,
             child_categorical_parents=white_categorical_parents,
-            leeway= 8, #11.57,
+            leeway=8,  # 11.57,
             data_plate=data_plate,
             observations=continuous["white_original"],
+            categorical_levels=self.categorical_levels,
         )
 
         # ___________________________
@@ -154,9 +171,10 @@ class TractsModelSqm(pyro.nn.PyroModule):
             child_name="segregation",
             child_continuous_parents=segregation_continuous_parents,
             child_categorical_parents=segregation_categorical_parents,
-            leeway= 8, #11.57,
+            leeway=8,  # 11.57,
             data_plate=data_plate,
             observations=continuous["segregation_original"],
+            categorical_levels=self.categorical_levels,
         )
 
         # ______________________
@@ -182,8 +200,8 @@ class TractsModelSqm(pyro.nn.PyroModule):
             leeway=0.5,
             data_plate=data_plate,
             observations=continuous["income"],
+            categorical_levels=self.categorical_levels,
         )
-
 
         # _____________________________
         # regression for median value
@@ -194,7 +212,7 @@ class TractsModelSqm(pyro.nn.PyroModule):
             "income": income,
             "white": white,
             "segregation": segregation,
-            "sqm":  sqm,
+            "sqm": sqm,
             "limit": limit,
         }
 
@@ -209,6 +227,7 @@ class TractsModelSqm(pyro.nn.PyroModule):
             leeway=0.5,
             data_plate=data_plate,
             observations=continuous["median_value"],
+            categorical_levels=self.categorical_levels,
         )
 
         # ______________________________
@@ -236,6 +255,7 @@ class TractsModelSqm(pyro.nn.PyroModule):
             leeway=0.5,
             data_plate=data_plate,
             observations=continuous["housing_units"],
+            categorical_levels=self.categorical_levels,
         )
 
         return housing_units
