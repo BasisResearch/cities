@@ -16,6 +16,7 @@ test: FORCE
 test_all: FORCE
 	./scripts/clean.sh
 	./scripts/lint.sh
+	./scripts/test.sh
 	./scripts/test_notebooks.sh
 
 test_notebooks: FORCE
