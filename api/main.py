@@ -80,14 +80,16 @@ async def read_demographics(
         cur.execute(
             "select * from dev.api__demographics where description = %s", (category,)
         )
-        return cur.fetchall()
+        return [[desc[0] for desc in cur.description]] + cur.fetchall()
 
 
 @app.get("/census-tracts")
 async def read_census_tracts(year: Year, db=Depends(get_db)):
     with db.cursor() as cur:
         cur.execute("select * from dev.api__census_tracts where year_ = %s", (year,))
-        return cur.fetchone()
+        row = cur.fetchone()
+
+    return row[1] if row is not None else None
 
 
 @app.get("/high-frequency-transit")
@@ -101,7 +103,12 @@ async def read_high_frequency_transit(year: Year, db=Depends(get_db)):
             """,
             (year,),
         )
-        line_geom, stop_geom = cur.fetchone()
+        row = cur.fetchone()
+
+    if row is None:
+        return None
+
+    line_geom, stop_geom = row
     return {"line_geom": line_geom, "stop_geom": stop_geom}
 
 
@@ -120,7 +127,9 @@ async def read_yellow_zone(
             """,
             (line_radius, stop_radius, year),
         )
-        return cur.fetchone()[0]
+        row = cur.fetchone()
+
+    return row[0] if row is not None else None
 
 
 @app.get("/blue-zone")
@@ -134,7 +143,9 @@ async def read_blue_zone(year: Year, radius: Radius, db=Depends(get_db)):
             """,
             (radius, year),
         )
-        return cur.fetchone()[0]
+        row = cur.fetchone()
+
+    return row[0] if row is not None else None
 
 
 @app.get("/predict")
