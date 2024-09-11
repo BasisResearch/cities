@@ -9,9 +9,10 @@ from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_loader import select_from_sql
 
-USERNAME = os.getenv("USERNAME")
+DB_USERNAME = os.getenv("DB_USERNAME")
 HOST = os.getenv("HOST")
 DATABASE = os.getenv("DATABASE")
+PASSWORD = os.getenv("PASSWORD")
 
 #####################
 # data load and prep
@@ -34,7 +35,7 @@ kwargs = {
 
 load_start = time.time()
 with sqlalchemy.create_engine(
-    f"postgresql://{USERNAME}@{HOST}/{DATABASE}"
+    f"postgresql://{DB_USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
 ).connect() as conn:
     subset = select_from_sql(
         "select * from dev.tracts_model__census_tracts order by census_tract, year",

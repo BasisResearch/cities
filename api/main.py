@@ -14,7 +14,7 @@ from psycopg2.pool import ThreadedConnectionPool
 load_dotenv()
 
 ENV = os.getenv("ENV")
-USERNAME = os.getenv("USERNAME")
+USERNAME = os.getenv("DB_USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 HOST = os.getenv("HOST")
 DATABASE = os.getenv("DATABASE")
