@@ -72,6 +72,13 @@ Radius = Annotated[float, Query(ge=0)]
 Year = Annotated[int, Query(ge=2000, le=2030)]
 
 
+@app.middleware("http")
+async def add_cache_control_header(request, call_next):
+    response = await call_next(request)
+    response.headers["Cache-Control"] = "public, max-age=300"
+    return response
+
+
 @app.get("/demographics")
 async def read_demographics(
     category: Annotated[str, Query(max_length=100)], db=Depends(get_db)
