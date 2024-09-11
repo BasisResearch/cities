@@ -1,0 +1,51 @@
+models:
+  - name: tracts_model_int__census_tracts_filtered
+    description: '{{ doc("tracts_model_int__census_tracts_filtered") }}'
+
+  - name: tracts_model_int__parcels_filtered
+    description: '{{ doc("tracts_model_int__parcels_filtered") }}'
+
+  - name: tracts_model__census_tracts
+    description: '{{ doc("tracts_model__census_tracts") }}'
+    columns:
+      - name: segregation
+        description: Segregation with respect to the annual city distribution.
+      - name: white
+        description: The proportion of white people in the tract, not the absolute number.
+      - name: income
+        description: Median household income in the tract.
+      - name: median_distance
+        description: Median parcel distance to transit in meters.
+      - name: mean_distance
+        description: Mean parcel distance to transit in meters.
+
+  - name: tracts_model__parcels
+    description: '{{ doc("tracts_model__parcels") }}'
+    columns:
+      - name: distance_to_transit
+        description: Minimum distance to transit (lines or stops) in meters.
+      - name: limit_con
+        description: Numeric representation of parking limit (1 for full, 0 for eliminated, 0.5 for reduced).
+      - name: downtown_yn
+        description: Whether the parcel intersects the downtown area.
+
+  - name: census_tracts_distance_to_transit
+    description: '{{ doc("census_tracts_distance_to_transit") }}'
+
+  - name: census_tracts_housing_units
+    description: '{{ doc("census_tracts_housing_units") }}'
+
+  - name: census_tracts_parcel_area
+    description: '{{ doc("census_tracts_parcel_area") }}'
+
+  - name: census_tracts_parking_limits
+    description: '{{ doc("census_tracts_parking_limits") }}'
+
+  - name: parcels_distance_to_transit
+    description: '{{ doc("parcels_distance_to_transit") }}'
+
+  - name: parcels_parking_limits
+    description: '{{ doc("parcels_parking_limits") }}'
+
+  - name: census_tracts_property_values
+    description: '{{ doc("census_tracts_property_values") }}'

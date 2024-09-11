@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
+import pyro
 import torch
 from sklearn.preprocessing import StandardScaler
 
-import pyro
 from cities.modeling.model_interactions import model_cities_interaction
 from cities.modeling.modeling_utils import prep_wide_data_for_inference
 from cities.utils.cleaning_utils import (
@@ -576,7 +576,8 @@ class CausalInsight:
             label=f"mean = {tau_samples.mean():.3f}",
         )
         plt.title(
-            f"ATE for {self.intervention_dataset}  and  {self.outcome_dataset} with forward shift = {self.forward_shift}"
+            f"ATE for {self.intervention_dataset} and {self.outcome_dataset} "
+            f"with forward shift = {self.forward_shift}"
         )
         plt.ylabel("counts")
         plt.xlabel("ATE")
