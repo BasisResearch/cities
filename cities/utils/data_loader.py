@@ -1,9 +1,7 @@
-import os
 from typing import Dict, List
 
 import torch
 from torch.utils.data import Dataset
-import pandas as pd
 
 
 class ZoningDataset(Dataset):
@@ -58,28 +56,3 @@ def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     }
 
     return _data
-
-
-def load_sql_df(sql, conn=None, params=None):
-    from adbc_driver_postgresql import dbapi
-
-    USERNAME = os.getenv("USERNAME")
-    HOST = os.getenv("HOST")
-    DATABASE = os.getenv("DATABASE")
-
-    with dbapi.connect(f"postgresql://{USERNAME}@{HOST}/{DATABASE}") as conn:
-        return pd.read_sql(sql, conn, params=params)
-
-
-def select_from_sql(sql, conn, kwargs, params=None):
-    df = pd.read_sql(sql, conn, params=params)
-    return {
-        "outcome": df[kwargs["outcome"]],
-        "categorical": {
-            key: torch.tensor(df[key].values) for key in kwargs["categorical"]
-        },
-        "continuous": {
-            key: torch.tensor(df[key], dtype=torch.float32)
-            for key in kwargs["continuous"]
-        },
-    }
