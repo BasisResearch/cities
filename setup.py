@@ -17,11 +17,11 @@ TEST_REQUIRES = [
 ]
 
 DEV_REQUIRES = [
-    "pyro-ppl==1.8.5",
+    "pyro-ppl==1.8.6",
     "torch",
     "plotly.express",
     "scipy",
-    "chirho",
+    "chirho @ git+https://github.com/BasisResearch/chirho",
     "graphviz",
     "python-dotenv",
     "google-cloud-storage",
@@ -48,7 +48,7 @@ setup(
         "dill",
         "plotly",
         "matplotlib>=3.8.2",
-        "seaborn",
+        "seaborn",  
     ],
     extras_require={"test": TEST_REQUIRES, "dev": DEV_REQUIRES + TEST_REQUIRES},
     python_requires=">=3.10",
