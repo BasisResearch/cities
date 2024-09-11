@@ -154,7 +154,12 @@ async def read_yellow_zone(
     if row is None:
         return None
 
-    return {"type": "Feature", "id": "0", "properties": {}, "geometry": row[0]}
+    return {
+        "type": "FeatureCollection",
+        "features": [
+            {"type": "Feature", "properties": {"id": "0"}, "geometry": row[0]}
+        ],
+    }
 
 
 @app.get("/blue-zone")
@@ -173,7 +178,12 @@ async def read_blue_zone(year: Year, radius: Radius, db=Depends(get_db)):
     if row is None:
         return None
 
-    return {"type": "Feature", "id": "0", "properties": {}, "geometry": row[0]}
+    return {
+        "type": "FeatureCollection",
+        "features": [
+            {"type": "Feature", "properties": {"id": "0"}, "geometry": row[0]}
+        ],
+    }
 
 
 @app.get("/predict")
