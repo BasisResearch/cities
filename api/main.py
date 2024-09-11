@@ -4,7 +4,6 @@ from typing import Annotated
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, Depends, Query
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 import uvicorn
 
@@ -27,13 +26,6 @@ origins = [
     "http://localhost:5000",
 ]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=5)
 
 
@@ -77,6 +69,15 @@ async def add_cache_control_header(request, call_next):
     response = await call_next(request)
     response.headers["Cache-Control"] = "public, max-age=300"
     return response
+
+
+if ENV == "dev":
+
+    @app.middleware("http")
+    async def add_acess_control_header(request, call_next):
+        response = await call_next(request)
+        response.headers["Access-Control-Allow-Origin"] = "*"
+        return response
 
 
 @app.get("/demographics")
