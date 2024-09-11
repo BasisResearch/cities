@@ -86,16 +86,9 @@ def categorical_contribution(
             *weights_categorical_outcome[name].shape[:-1], -1
         )
 
-        conditioning = True
-
         objects_cat_weighted[name] = torch.gather(
             weights_categorical_outcome[name], dim=-1, index=weight_indices
         )
-
-        if not conditioning:
-            objects_cat_weighted[name] = objects_cat_weighted[name].view(
-                categorical[name].shape
-            )
 
     values = list(objects_cat_weighted.values())
 
