@@ -103,12 +103,12 @@ async def read_census_tracts(year: Year, db=Depends(get_db)):
     return row[1] if row is not None else None
 
 
-@app.get("/high-frequency-transit")
-async def read_high_frequency_transit(year: Year, db=Depends(get_db)):
+@app.get("/high-frequency-transit-lines")
+async def read_high_frequency_transit_lines(year: Year, db=Depends(get_db)):
     with db.cursor() as cur:
         cur.execute(
             """
-            select line_geom_json, stop_geom_json
+            select line_geom_json
             from dev.api__high_frequency_transit_lines
             where '%s-01-01'::date <@ valid
             """,
@@ -116,11 +116,23 @@ async def read_high_frequency_transit(year: Year, db=Depends(get_db)):
         )
         row = cur.fetchone()
 
-    if row is None:
-        return None
+    return row[0] if row is not None else None
 
-    line_geom, stop_geom = row
-    return {"line_geom": line_geom, "stop_geom": stop_geom}
+
+@app.get("/high-frequency-transit-stops")
+async def read_high_frequency_transit_stops(year: Year, db=Depends(get_db)):
+    with db.cursor() as cur:
+        cur.execute(
+            """
+            select stop_geom_json
+            from dev.api__high_frequency_transit_lines
+            where '%s-01-01'::date <@ valid
+            """,
+            (year,),
+        )
+        row = cur.fetchone()
+
+    return row[0] if row is not None else None
 
 
 @app.get("/yellow-zone")
@@ -140,7 +152,10 @@ async def read_yellow_zone(
         )
         row = cur.fetchone()
 
-    return row[0] if row is not None else None
+    if row is None:
+        return None
+
+    return {"type": "Feature", "id": "0", "properties": {}, "geometry": row[0]}
 
 
 @app.get("/blue-zone")
@@ -156,7 +171,10 @@ async def read_blue_zone(year: Year, radius: Radius, db=Depends(get_db)):
         )
         row = cur.fetchone()
 
-    return row[0] if row is not None else None
+    if row is None:
+        return None
+
+    return {"type": "Feature", "id": "0", "properties": {}, "geometry": row[0]}
 
 
 @app.get("/predict")
