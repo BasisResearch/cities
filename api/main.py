@@ -143,8 +143,7 @@ async def read_yellow_zone(
         cur.execute(
             """
             select
-              st_asgeojson(st_union(st_buffer(line_geom, %s, 'quad_segs=4'),
-                                    st_buffer(stop_geom, %s, 'quad_segs=4')))::json
+              st_asgeojson(st_transform(st_union(st_buffer(line_geom, %s, 'quad_segs=4'), st_buffer(stop_geom, %s, 'quad_segs=4')), 4269))::json
             from dev.api__high_frequency_transit_lines
             where '%s-01-01'::date <@ valid
             """,
@@ -163,7 +162,7 @@ async def read_blue_zone(year: Year, radius: Radius, db=Depends(get_db)):
     with db.cursor() as cur:
         cur.execute(
             """
-            select st_asgeojson(st_buffer(line_geom, %s, 'quad_segs=4'))::json
+            select st_asgeojson(st_transform(st_buffer(line_geom, %s, 'quad_segs=4'), 4269))::json
             from dev.api__high_frequency_transit_lines
             where '%s-01-01'::date <@ valid
             """,
