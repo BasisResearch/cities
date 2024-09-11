@@ -82,13 +82,25 @@ def categorical_contribution(
                 name
             ].squeeze(-2)
 
-        weight_indices = categorical[name].expand(
-            *weights_categorical_outcome[name].shape[:-1], -1
+        final_nonevent_shape = torch.broadcast_shapes(
+            categorical[name].shape[:-1], weights_categorical_outcome[name].shape[:-1]
+        )
+        expanded_weight_indices = categorical[name].expand(*final_nonevent_shape, -1)
+        expanded_weights = weights_categorical_outcome[name].expand(
+            *final_nonevent_shape, -1
         )
 
         objects_cat_weighted[name] = torch.gather(
-            weights_categorical_outcome[name], dim=-1, index=weight_indices
+            expanded_weights, dim=-1, index=expanded_weight_indices
         )
+
+        # weight_indices = categorical[name].expand(
+        #     *weights_categorical_outcome[name].shape[:-1], -1
+        # )
+
+        # objects_cat_weighted[name] = torch.gather(
+        #     weights_categorical_outcome[name], dim=-1, index=weight_indices
+        # )
 
     values = list(objects_cat_weighted.values())
 
