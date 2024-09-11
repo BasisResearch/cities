@@ -12,7 +12,7 @@ with census_tracts as (
     census_tract as id,
     year_,
     st_transform(geom, 4269) as geom
-  from {{ ref('tracts_model_int__census_tracts_filtered') }}
+  from {{ ref('census_tracts_in_city_boundary') }}
 )
 select
   year_,

@@ -78,7 +78,11 @@ async def read_demographics(
 ):
     with db.cursor() as cur:
         cur.execute(
-            "select * from dev.api__demographics where description = %s", (category,)
+            """
+            select tract_id, "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"
+            from dev.api__demographics where description = %s
+            """,
+            (category,),
         )
         return [[desc[0] for desc in cur.description]] + cur.fetchall()
 
