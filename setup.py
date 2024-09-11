@@ -15,17 +15,6 @@ TEST_REQUIRES = [
     "nbqa",
     "autoflake",
 ]
-    "pytest",
-    "pytest-cov",
-    "pytest-xdist",
-    "mypy",
-    "black",
-    "flake8",
-    "isort",
-    "nbval",
-    "nbqa",
-    "autoflake",
-]
 
 DEV_REQUIRES = [
     "pyro-ppl==1.8.6",
