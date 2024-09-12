@@ -162,46 +162,6 @@ class TractsModelPredictor:
         )
         return torch.tensor(df["intervention"].values, dtype=torch.float32)
 
-    def predict(self, conn, intervention=None):
-        pyro.clear_param_store()
-        pyro.get_param_store().load(self.param_path)
-
-        subset_for_preds = copy.deepcopy(self.subset)
-        subset_for_preds["continuous"]["housing_units"] = None
-
-        if intervention is None:
-            result = self.predictive(**subset_for_preds)["housing_units"]
-        else:
-            intervention = self._tracts_intervention(conn, **intervention)
-            print(intervention.shape, intervention)
-            # with MultiWorldCounterfactual():
-            #     with do(actions={"limit": intervention}):
-            #         result = self.predictive(**subset_for_preds)[
-            #             "housing_units"
-            #         ].squeeze()[:, 1, :]
-
-        # RU: if you use mwc, you should not use squeezing and indexing to look into possible worlds.
-        # There is a nicer and more robust way to do so is:
-        with MultiWorldCounterfactual() as mwc:
-            with do(actions={"limit": intervention}):
-                result_all = self.predictive(**subset_for_preds)["housing_units"]
-        with mwc:
-            result = gather(
-                result_all, IndexSet(**{"limit": {1}}), event_dims=0
-            ).squeeze()
-
-        # undo standardization
-        result = result * self.housing_units_std + self.housing_units_mean
-
-        # filter to latest year
-        year_mask = (
-            self.data["categorical"]["year"] == self.data["categorical"]["year"].max()
-        )
-        result = result[:, year_mask]
-        tracts = self.data["categorical"]["census_tract"][year_mask]
-
-        return {"census_tracts": tracts, "housing_units": result.T}
-
     def predict_cumulative(self, conn, intervention):
         """Predict the total number of housing units built from 2011-2020 under intervention.
 
