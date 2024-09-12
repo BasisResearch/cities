@@ -116,11 +116,8 @@ class TractsModelPredictor:
         if need_to_train_flag:
             print("Please run 'train_model.py' to generate the required files.")
 
-
         with open(guide_path, "rb") as file:
             guide = dill.load(file)
-
-        
 
         self.data = select_from_sql(
             "select * from dev.tracts_model__census_tracts",
