@@ -185,12 +185,13 @@ if __name__ == "__main__":
 
         start = time.time()
         result = predictor.predict(
+            conn,
             intervention={
                 "radius_blue": 300,
                 "limit_blue": 0.5,
                 "radius_yellow": 700,
                 "limit_yellow": 0.7,
-            }
+            },
         )
         print({k: v.shape for k, v in result.items()})
         end = time.time()
