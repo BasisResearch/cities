@@ -66,7 +66,7 @@ class TractsModelSqm(pyro.nn.PyroModule):
         if n is None:
             _, _, n = get_n(categorical, continuous)
 
-        data_plate = pyro.plate("data", size=n, dim=-1)
+        self.data_plate = data_plate = pyro.plate("data", size=n, dim=-1)
 
         # _________
         # register
