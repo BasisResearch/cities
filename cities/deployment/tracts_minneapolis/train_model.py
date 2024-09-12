@@ -16,7 +16,7 @@ from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_sql
 
-n_steps = 20
+n_steps = 2000
 
 load_dotenv()
 
