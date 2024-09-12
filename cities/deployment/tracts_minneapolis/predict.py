@@ -9,11 +9,19 @@ import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 from chirho.interventional.handlers import do
 from pyro.infer import Predictive
+from dotenv import load_dotenv
 
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data, select_from_sql
 
+load_dotenv()
+
+
+DB_USERNAME = os.getenv("DB_USERNAME")
+HOST = os.getenv("HOST")
+DATABASE = os.getenv("DATABASE")
+PASSWORD = os.getenv("PASSWORD")
 
 class TractsModelPredictor:
     kwargs = {
@@ -171,9 +179,11 @@ if __name__ == "__main__":
     USERNAME = os.getenv("USERNAME")
     HOST = os.getenv("HOST")
     DATABASE = os.getenv("DATABASE")
+    PASSWORD = os.getenv("PASSWORD")
+
 
     with sqlalchemy.create_engine(
-        f"postgresql://{USERNAME}@{HOST}/{DATABASE}"
+        f"postgresql://{DB_USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
     ).connect() as conn:
         predictor = TractsModelPredictor(conn)
 

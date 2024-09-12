@@ -6,10 +6,13 @@ import pyro
 import sqlalchemy
 import torch
 from dotenv import load_dotenv
+from cities.utils.data_grabber import find_repo_root
 
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_loader import select_from_sql
+
+n_steps = 10
 
 load_dotenv()
 
@@ -64,15 +67,21 @@ tracts_model = TractsModel(
 
 pyro.clear_param_store()
 
-guide = run_svi_inference(tracts_model, n_steps=2000, lr=0.03, plot=False, **subset)
+guide = run_svi_inference(tracts_model, n_steps=n_steps, lr=0.03, plot=False, **subset)
 
 ##########################################
 # save guide and params in the same folder
 ##########################################
+root = find_repo_root()
+
+deploy_path = os.path.join(root, "cities/deployment/tracts_minneapolis")
+guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
+param_path = os.path.join(deploy_path, "tracts_model_params.pth")
+
+guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
 serialized_guide = dill.dumps(guide)
-file_path = "tracts_model_guide.pkl"
-with open(file_path, "wb") as file:
+with open(guide_path, "wb") as file:
     file.write(serialized_guide)
 
-param_path = "tracts_model_params.pth"
-pyro.get_param_store().save(param_path)
+with open(param_path, "wb") as file:
+    pyro.get_param_store().save(param_path)
