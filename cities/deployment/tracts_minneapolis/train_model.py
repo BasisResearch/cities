@@ -6,13 +6,17 @@ import pyro
 import sqlalchemy
 import torch
 from dotenv import load_dotenv
-from cities.utils.data_grabber import find_repo_root
 
 from cities.modeling.svi_inference import run_svi_inference
-from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
+
+# from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
+from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
+    TractsModelSqm as TractsModel,
+)
+from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_sql
 
-n_steps = 2000
+n_steps = 20
 
 load_dotenv()
 
@@ -37,6 +41,7 @@ kwargs = {
         "income",
         "segregation_original",
         "white_original",
+        "parcel_sqm",
     },
     "outcome": "housing_units",
 }
