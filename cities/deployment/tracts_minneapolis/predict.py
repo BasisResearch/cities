@@ -103,10 +103,24 @@ class TractsModelPredictor:
         deploy_path = os.path.join(root, "cities/deployment/tracts_minneapolis")
 
         guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
+        self.param_path = os.path.join(deploy_path, "tracts_model_params.pth")
+
+        need_to_train_flag = False
+        if not os.path.isfile(guide_path):
+            need_to_train_flag = True
+            print(f"Warning: '{guide_path}' does not exist.")
+        if not os.path.isfile(self.param_path):
+            need_to_train_flag = True
+            print(f"Warning: '{self.param_path}' does not exist.")
+
+        if need_to_train_flag:
+            print("Please run 'train_model.py' to generate the required files.")
+
+
         with open(guide_path, "rb") as file:
             guide = dill.load(file)
 
-        self.param_path = os.path.join(deploy_path, "tracts_model_params.pth")
+        
 
         self.data = select_from_sql(
             "select * from dev.tracts_model__census_tracts",
