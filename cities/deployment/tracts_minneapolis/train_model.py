@@ -1,9 +1,10 @@
-import dill
 import os
-import pyro
-import torch
 import time
+
+import dill
+import pyro
 import sqlalchemy
+import torch
 
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel

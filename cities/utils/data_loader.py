@@ -1,9 +1,9 @@
 import os
 from typing import Dict, List
 
+import pandas as pd
 import torch
 from torch.utils.data import Dataset
-import pandas as pd
 
 
 class ZoningDataset(Dataset):

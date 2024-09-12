@@ -4,16 +4,15 @@ import os
 import dill
 import pandas as pd
 import pyro
-from pyro.infer import Predictive
 import sqlalchemy
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 from chirho.interventional.handlers import do
+from pyro.infer import Predictive
 
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-
 from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import select_from_sql, select_from_data
+from cities.utils.data_loader import select_from_data, select_from_sql
 
 
 class TractsModelPredictor:
@@ -186,12 +185,13 @@ if __name__ == "__main__":
 
         start = time.time()
         result = predictor.predict(
+            conn,
             intervention={
                 "radius_blue": 300,
                 "limit_blue": 0.5,
                 "radius_yellow": 700,
                 "limit_yellow": 0.7,
-            }
+            },
         )
         print({k: v.shape for k, v in result.items()})
         end = time.time()

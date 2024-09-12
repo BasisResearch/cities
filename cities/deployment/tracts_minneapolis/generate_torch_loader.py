@@ -1,15 +1,11 @@
-import dill
 import os
-import pyro
-import torch
 import time
+
 import sqlalchemy
 
-from cities.modeling.svi_inference import run_svi_inference
-from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_loader import select_from_sql
 
-#local torch loader is needed for subsampling in evaluation, comparison to the previous dataset and useful for EDA
+# local torch loader is needed for subsampling in evaluation, comparison to the previous dataset and useful for EDA
 
 USERNAME = os.getenv("USERNAME")
 HOST = os.getenv("HOST")
