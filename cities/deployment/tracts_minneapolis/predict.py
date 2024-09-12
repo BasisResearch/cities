@@ -74,11 +74,13 @@ class TractsModelPredictor:
         when not downtown_yn
              and year_ >= %(reform_year)s
              and distance_to_transit > %(radius_blue)s
-             and distance_to_transit <= %(radius_yellow)s
+             and (distance_to_transit_line <= %(radius_yellow_line)s
+                  or distance_to_transit_stop <= %(radius_yellow_stop)s)
              then %(limit_yellow)s
         when not downtown_yn
              and year_ >= %(reform_year)s
-             and distance_to_transit > %(radius_yellow)s
+             and distance_to_transit_line > %(radius_yellow_line)s
+             and distance_to_transit_stop > %(radius_yellow_stop)s
              then 1
         else limit_con
       end as intervention
@@ -145,7 +147,8 @@ class TractsModelPredictor:
         conn,
         radius_blue,
         limit_blue,
-        radius_yellow,
+        radius_yellow_line,
+        radius_yellow_stop,
         limit_yellow,
         reform_year,
     ):
@@ -153,10 +156,10 @@ class TractsModelPredictor:
             "reform_year": reform_year,
             "radius_blue": radius_blue,
             "limit_blue": limit_blue,
-            "radius_yellow": radius_yellow,
+            "radius_yellow_line": radius_yellow_line,
+            "radius_yellow_stop": radius_yellow_stop,
             "limit_yellow": limit_yellow,
         }
-        print(TractsModelPredictor.tracts_intervention_sql % params)
         df = pd.read_sql(
             TractsModelPredictor.tracts_intervention_sql, conn, params=params
         )
@@ -242,7 +245,8 @@ if __name__ == "__main__":
             intervention={
                 "radius_blue": 300,
                 "limit_blue": 0.5,
-                "radius_yellow": 700,
+                "radius_yellow_line": 700,
+                "radius_yellow_stop": 1000,
                 "limit_yellow": 0.7,
                 "reform_year": 2015,
             },
