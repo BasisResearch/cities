@@ -113,7 +113,7 @@ class TractsModelPredictor:
         ].mean()
 
         model = TractsModel(**self.subset, categorical_levels=categorical_levels)
-        self.predictive = Predictive(model=model, guide=guide, num_samples=1000)
+        self.predictive = Predictive(model=model, guide=guide, num_samples=100)
 
     # these are at the tracts level
     def _tracts_intervention(

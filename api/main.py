@@ -211,7 +211,7 @@ async def read_predict(
         ),
     )
     return {
-        "census_tracts": result["census_tracts"],
+        "census_tracts": [str(t) for t in result["census_tracts"]],
         "housing_units_factual": [t.item() for t in result["housing_units_factual"]],
         "housing_units_counterfactual": [
             t.tolist() for t in result["housing_units_counterfactual"]
