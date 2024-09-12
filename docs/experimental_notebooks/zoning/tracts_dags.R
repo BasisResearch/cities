@@ -1,5 +1,12 @@
 require(dagitty)
 
+if (rstudioapi::isAvailable()) {
+  # Set working directory to the script's location
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+}
+
+print(getwd())
+
 # with zones
 tracts_dag <- dagitty('dag {
     year [pos="0,2"]
@@ -30,6 +37,25 @@ tracts_dag <- dagitty('dag {
     }')
 
 
+
+
+png("tracts_dag_plot_high_density.png",
+    width = 2000,       
+    height = 1600,     
+    res = 300          
+)
+plot(tracts_dag)
+dev.off()
+
+pdf("tracts_dag_plot.pdf", 
+    width = 10,        
+    height = 8,        
+    pointsize = 18,    
+    paper = "special",
+    useDingbats = FALSE, 
+    compress = FALSE)    
+plot(tracts_dag)
+dev.off()
 
 plot(tracts_dag)
 paths(tracts_dag,"limit","units")
