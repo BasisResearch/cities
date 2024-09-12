@@ -4,10 +4,14 @@ import pyro
 import torch
 import time
 import sqlalchemy
+from dotenv import load_dotenv
 
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.utils.data_loader import select_from_sql
+
+load_dotenv()
+
 
 DB_USERNAME = os.getenv("DB_USERNAME")
 HOST = os.getenv("HOST")
