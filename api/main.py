@@ -195,26 +195,28 @@ async def read_predict(
     blue_zone_limit: Limit,
     yellow_zone_limit: Limit,
     year: Year,
-    samples: Annotated[int, Query(ge=0, le=1000)] = 100,
     db=Depends(get_db),
     predictor=Depends(get_predictor),
 ):
-    result = predictor.predict(
+    result = predictor.predict_cumulative(
         db,
-        samples=samples,
         intervention=(
             {
                 "radius_blue": blue_zone_radius,
                 "limit_blue": blue_zone_limit,
                 "radius_yellow": yellow_zone_line_radius,
                 "limit_yellow": yellow_zone_limit,
+                "reform_year": year,
             }
         ),
     )
-    return (
-        [str(x) for x in result["census_tracts"].tolist()],
-        result["housing_units"].tolist(),
-    )
+    return {
+        "census_tracts": result["census_tracts"],
+        "housing_units_factual": [t.item() for t in result["housing_units_factual"]],
+        "housing_units_counterfactual": [
+            t.tolist() for t in result["housing_units_counterfactual"]
+        ],
+    }
 
 
 if __name__ == "__main__":
