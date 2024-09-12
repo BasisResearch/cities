@@ -16,17 +16,14 @@ TEST_REQUIRES = [
 ]
 
 DEV_REQUIRES = [
-    "pyro-ppl==1.8.6",
     "torch",
     "plotly.express",
     "scipy",
-    "chirho @ git+https://github.com/BasisResearch/chirho",
     "graphviz",
     "python-dotenv",
     "google-cloud-storage",
     "dbt-core",
     "dbt-postgres",
-    "seaborn",
     "pip-tools",
 ]
 
