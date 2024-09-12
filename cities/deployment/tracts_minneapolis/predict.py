@@ -4,16 +4,15 @@ import os
 import dill
 import pandas as pd
 import pyro
-from pyro.infer import Predictive
 import sqlalchemy
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 from chirho.interventional.handlers import do
+from pyro.infer import Predictive
 
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-
 from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import select_from_sql, select_from_data
+from cities.utils.data_loader import select_from_data, select_from_sql
 
 
 class TractsModelPredictor:

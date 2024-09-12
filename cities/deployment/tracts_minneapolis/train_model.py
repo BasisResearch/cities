@@ -1,9 +1,10 @@
-import dill
 import os
-import pyro
-import torch
 import time
+
+import dill
+import pyro
 import sqlalchemy
+import torch
 from dotenv import load_dotenv
 
 from cities.modeling.svi_inference import run_svi_inference
