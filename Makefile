@@ -22,9 +22,6 @@ test_all: FORCE
 test_notebooks: FORCE
 	./scripts/test_notebooks.sh
 
-grab: FORCE
-	./scripts/grab.sh
-
 api/requirements.txt: FORCE
 	pip-compile --extra api --output-file api/requirements.txt
 
