@@ -14,8 +14,7 @@ from cities.modeling.model_components import (
 )
 
 
-class TractsModel(pyro.nn.PyroModule):
-
+class TractsModelSqm(pyro.nn.PyroModule):
     def __init__(
         self,
         categorical: Dict[str, torch.Tensor],
@@ -41,12 +40,10 @@ class TractsModel(pyro.nn.PyroModule):
 
         self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
 
-        # you might need and pass further the original
-        #  categorical levels of the training data
         if self.N_categorical > 0 and categorical_levels is None:
             self.categorical_levels = get_categorical_levels(categorical)
         else:
-            self.categorical_levels = categorical_levels  # type: ignore
+            self.categorical_levels = categorical_levels
 
     def forward(
         self,
@@ -87,72 +84,25 @@ class TractsModel(pyro.nn.PyroModule):
                 "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
             )
 
-        # _____________________
-        # regression for white
-        # _____________________
-
-        white_continuous_parents = {
-            "distance": distance,
-        }
-
-        white_categorical_parents = {
-            "year": year,
-        }
-
-        white = add_ratio_component(
-            child_name="white",
-            child_continuous_parents=white_continuous_parents,
-            child_categorical_parents=white_categorical_parents,
-            leeway=11.57,
-            data_plate=data_plate,
-            observations=continuous["white_original"],
-            categorical_levels=self.categorical_levels,
-        )
-
-        # ___________________________
-        # regression for segregation
-        # ___________________________
-
-        segregation_continuous_parents = {
-            "distance": distance,
-            "white": white,
-        }
-
-        segregation_categorical_parents = {
-            "year": year,
-        }
-
-        segregation = add_ratio_component(
-            child_name="segregation",
-            child_continuous_parents=segregation_continuous_parents,
-            child_categorical_parents=segregation_categorical_parents,
-            leeway=11.57,
-            data_plate=data_plate,
-            observations=continuous["segregation_original"],
-            categorical_levels=self.categorical_levels,
-        )
-
         # ______________________
-        # regression for income
+        # regression for sqm
         # ______________________
 
-        income_continuous_parents = {
+        sqm_continuous_parents = {
             "distance": distance,
-            "white": white,
-            "segregation": segregation,
         }
 
-        income_categorical_parents = {
+        sqm_categorical_parents = {
             "year": year,
         }
 
-        income = add_linear_component(
-            child_name="income",
-            child_continuous_parents=income_continuous_parents,
-            child_categorical_parents=income_categorical_parents,
-            leeway=0.9,
+        sqm = add_linear_component(
+            child_name="sqm",
+            child_continuous_parents=sqm_continuous_parents,
+            child_categorical_parents=sqm_categorical_parents,
+            leeway=0.5,
             data_plate=data_plate,
-            observations=continuous["income"],
+            observations=continuous["parcel_sqm"],
             categorical_levels=self.categorical_levels,
         )
 
@@ -172,9 +122,84 @@ class TractsModel(pyro.nn.PyroModule):
             child_name="limit",
             child_continuous_parents=limit_continuous_parents,
             child_categorical_parents=limit_categorical_parents,
-            leeway=11.57,
+            leeway=8,  # ,
             data_plate=data_plate,
             observations=continuous["mean_limit_original"],
+            categorical_levels=self.categorical_levels,
+        )
+
+        # _____________________
+        # regression for white
+        # _____________________
+
+        white_continuous_parents = {
+            "distance": distance,
+            "sqm": sqm,
+            "limit": limit,
+        }
+
+        white_categorical_parents = {
+            "year": year,
+        }
+
+        white = add_ratio_component(
+            child_name="white",
+            child_continuous_parents=white_continuous_parents,
+            child_categorical_parents=white_categorical_parents,
+            leeway=8,  # 11.57,
+            data_plate=data_plate,
+            observations=continuous["white_original"],
+            categorical_levels=self.categorical_levels,
+        )
+
+        # ___________________________
+        # regression for segregation
+        # ___________________________
+
+        segregation_continuous_parents = {
+            "distance": distance,
+            "white": white,
+            "sqm": sqm,
+            "limit": limit,
+        }
+
+        segregation_categorical_parents = {
+            "year": year,
+        }
+
+        segregation = add_ratio_component(
+            child_name="segregation",
+            child_continuous_parents=segregation_continuous_parents,
+            child_categorical_parents=segregation_categorical_parents,
+            leeway=8,  # 11.57,
+            data_plate=data_plate,
+            observations=continuous["segregation_original"],
+            categorical_levels=self.categorical_levels,
+        )
+
+        # ______________________
+        # regression for income
+        # ______________________
+
+        income_continuous_parents = {
+            "distance": distance,
+            "white": white,
+            "segregation": segregation,
+            "sqm": sqm,
+            "limit": limit,
+        }
+
+        income_categorical_parents = {
+            "year": year,
+        }
+
+        income = add_linear_component(
+            child_name="income",
+            child_continuous_parents=income_continuous_parents,
+            child_categorical_parents=income_categorical_parents,
+            leeway=0.5,
+            data_plate=data_plate,
+            observations=continuous["income"],
             categorical_levels=self.categorical_levels,
         )
 
@@ -184,10 +209,11 @@ class TractsModel(pyro.nn.PyroModule):
 
         value_continuous_parents = {
             "distance": distance,
-            "limit": limit,
             "income": income,
             "white": white,
             "segregation": segregation,
+            "sqm": sqm,
+            "limit": limit,
         }
 
         value_categorical_parents = {
@@ -198,7 +224,7 @@ class TractsModel(pyro.nn.PyroModule):
             child_name="median_value",
             child_continuous_parents=value_continuous_parents,
             child_categorical_parents=value_categorical_parents,
-            leeway=0.9,
+            leeway=0.5,
             data_plate=data_plate,
             observations=continuous["median_value"],
             categorical_levels=self.categorical_levels,
@@ -215,6 +241,7 @@ class TractsModel(pyro.nn.PyroModule):
             "white": white,
             "limit": limit,
             "segregation": segregation,
+            "sqm": sqm,
         }
 
         housing_units_categorical_parents = {
@@ -225,7 +252,7 @@ class TractsModel(pyro.nn.PyroModule):
             child_name="housing_units",
             child_continuous_parents=housing_units_continuous_parents,
             child_categorical_parents=housing_units_categorical_parents,
-            leeway=0.9,
+            leeway=0.5,
             data_plate=data_plate,
             observations=continuous["housing_units"],
             categorical_levels=self.categorical_levels,
