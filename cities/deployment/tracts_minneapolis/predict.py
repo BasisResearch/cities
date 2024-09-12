@@ -7,12 +7,24 @@ import pyro
 import sqlalchemy
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
+from chirho.indexed.ops import IndexSet, gather
 from chirho.interventional.handlers import do
+from dotenv import load_dotenv
 from pyro.infer import Predictive
 
-from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
+from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
+    TractsModelSqm as TractsModel,
+)
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data, select_from_sql
+
+load_dotenv()
+
+
+DB_USERNAME = os.getenv("DB_USERNAME")
+HOST = os.getenv("HOST")
+DATABASE = os.getenv("DATABASE")
+PASSWORD = os.getenv("PASSWORD")
 
 
 class TractsModelPredictor:
@@ -28,6 +40,7 @@ class TractsModelPredictor:
             "segregation_original",
             "white_original",
             "housing_units_original",
+            "parcel_sqm",
         },
         "outcome": "housing_units",
     }
@@ -43,6 +56,7 @@ class TractsModelPredictor:
             "income",
             "segregation_original",
             "white_original",
+            "parcel_sqm",
         },
         "outcome": "housing_units",
     }
@@ -89,7 +103,6 @@ class TractsModelPredictor:
         deploy_path = os.path.join(root, "cities/deployment/tracts_minneapolis")
 
         guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
-        print("guide path", guide_path)
         with open(guide_path, "rb") as file:
             guide = dill.load(file)
 
@@ -150,11 +163,21 @@ class TractsModelPredictor:
         else:
             intervention = self._tracts_intervention(conn, **intervention)
             print(intervention.shape, intervention)
-            with MultiWorldCounterfactual():
-                with do(actions={"limit": intervention}):
-                    result = self.predictive(**subset_for_preds)[
-                        "housing_units"
-                    ].squeeze()[:, 1, :]
+            # with MultiWorldCounterfactual():
+            #     with do(actions={"limit": intervention}):
+            #         result = self.predictive(**subset_for_preds)[
+            #             "housing_units"
+            #         ].squeeze()[:, 1, :]
+
+        # RU: if you use mwc, you should not use squeezing and indexing to look into possible worlds.
+        # There is a nicer and more robust way to do so is:
+        with MultiWorldCounterfactual() as mwc:
+            with do(actions={"limit": intervention}):
+                result_all = self.predictive(**subset_for_preds)["housing_units"]
+        with mwc:
+            result = gather(
+                result_all, IndexSet(**{"limit": {1}}), event_dims=0
+            ).squeeze()
 
         # undo standardization
         result = result * self.housing_units_std + self.housing_units_mean
@@ -236,7 +259,7 @@ if __name__ == "__main__":
     PASSWORD = os.getenv("PASSWORD")
 
     with sqlalchemy.create_engine(
-        f"postgresql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
+        f"postgresql://{DB_USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
     ).connect() as conn:
         predictor = TractsModelPredictor(conn)
         start = time.time()

@@ -11,32 +11,64 @@ print(getwd())
 tracts_dag <- dagitty('dag {
     year [pos="0,2"]
     distance [pos = "0,0"]
-    total_value [pos = "1,0"]
-    median_value [pos = "1.2,0.3"]
-    limit [pos="1,1"]
-    units [pos = "2,1"]
+    
+    square_meters [pos = "0.2,.4"]
+    limit [pos = "0.2, 1.6"]
+    
+    white [pos = "0.4,1.8"]
+    segregation [pos = "0.6,0.2"]
+    
+    income [pos = "0.7, .8"]
+    
+    median_value [pos = "0.9,1.4"]
+    housing_units [pos = "1.,.6"]
+    
+    distance -> square_meters
+    year -> square_meters
     
     distance -> limit
-    distance -> total_value
-    distance -> median_value
-    distance -> units
-    
     year -> limit
-    year -> total_value
-    year -> median_value
-    year -> units
     
-    total_value -> units
-    median_value -> units
+    distance -> white
+    square_meters -> white
+    limit -> white
     
+    distance -> segregation
+    year -> segregation
+    limit -> segregation
+    square_meters -> segregation
+    white -> segregation
     
-    limit -> total_value
+    distance -> income
+    white -> income
+    segregation -> income
+    square_meters -> income
+    limit -> income
+    year -> income
+    
+    distance -> median_value
+    income  -> median_value
+    white -> median_value
+    segregation -> median_value
+    square_meters -> median_value
     limit -> median_value
-    limit -> units
+    year -> median_value
+    
+    median_value -> housing_units
+    distance -> housing_units
+    income -> housing_units
+    white -> housing_units
+    limit -> housing_units
+    segregation -> housing_units
+    square_meters -> housing_units
+    year -> housing_units
+    
+    
+    
     
     }')
 
-
+plot(tracts_dag)
 
 
 png("tracts_dag_plot_high_density.png",
@@ -58,6 +90,6 @@ plot(tracts_dag)
 dev.off()
 
 plot(tracts_dag)
-paths(tracts_dag,"limit","units")
-adjustmentSets(tracts_dag,"limit","units", type = "all")
+paths(tracts_dag,"limit","housing_units")
+adjustmentSets(tracts_dag,"limit","housing_units", type = "all")
 impliedConditionalIndependencies(tracts_dag)

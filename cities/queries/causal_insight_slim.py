@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from sklearn.preprocessing import StandardScaler
 
-from cities.utils.cleaning_scripts.cleaning_utils import (
+from cities.utils.cleaning_utils import (
     revert_prediction_df,
     revert_standardize_and_scale_scaler,
     sigmoid,

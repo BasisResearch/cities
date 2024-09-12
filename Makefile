@@ -22,12 +22,6 @@ test_all: FORCE
 test_notebooks: FORCE
 	./scripts/test_notebooks.sh
 
-done: FORCE
-	./scripts/clean.sh
-	./scripts/lint.sh
-	./scripts/test.sh
-	./scripts/test_notebooks.sh
-
 api/requirements.txt: FORCE
 	pip-compile --extra api --output-file api/requirements.txt
 
