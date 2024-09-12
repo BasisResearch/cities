@@ -178,11 +178,13 @@ class TractsModelPredictor:
 
         limit_intervention = self._tracts_intervention(conn, **intervention)
 
-        with MultiWorldCounterfactual():
+        with MultiWorldCounterfactual() as mwc:
             with do(actions={"limit": limit_intervention}):
-                result = self.predictive(**subset_for_preds)["housing_units"].squeeze()[
-                    :, 1, :
-                ]
+                result_all = self.predictive(**subset_for_preds)["housing_units"]
+        with mwc:
+            result = gather(
+                result_all, IndexSet(**{"limit": {1}}), event_dims=0
+            ).squeeze()
 
         years = self.data["categorical"]["year_original"]
         tracts = self.data["categorical"]["census_tract"]
