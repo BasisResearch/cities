@@ -10,6 +10,7 @@ from cities.modeling.model_components import (
     add_ratio_component,
     categorical_contribution,
     continuous_contribution,
+    get_categorical_levels,
     get_n,
 )
 
@@ -73,7 +74,7 @@ def test_categorical_contribution():
             mock_data_cat,
             "child1",
             0.3,
-            None,
+            get_categorical_levels(mock_data_cat),
         )
 
         weights_1 = tr.trace.nodes["weights_categorical_cat1_child1"]["value"]

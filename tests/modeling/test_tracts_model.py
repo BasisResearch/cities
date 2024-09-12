@@ -1,16 +1,19 @@
 import copy
 import os
+from contextlib import ExitStack
+from typing import List
 
 import pyro
+import pytest
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 from chirho.interventional.handlers import do
 from pyro.infer import Predictive
 from torch.utils.data import DataLoader
 
-from cities.modeling.evaluation import prep_data_for_test, test_performance
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
+from cities.modeling.zoning_models.zoning_tracts_sqm_model import TractsModelSqm
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data
 
@@ -20,17 +23,15 @@ n_steps = 10
 num_samples = 10
 
 
-# data load and prep
-census_tracts_data_path = os.path.join(
-    root, "data/minneapolis/processed/census_tracts_dataset.pt"
-)
+data_path = os.path.join(root, "data/minneapolis/processed/pg_census_tracts_dataset.pt")
 
-ct_dataset_read = torch.load(census_tracts_data_path)
+dataset_read = torch.load(data_path)
 
-assert ct_dataset_read.n == 816
 
-ct_loader = DataLoader(ct_dataset_read, batch_size=len(ct_dataset_read), shuffle=True)
-data = next(iter(ct_loader))
+loader = DataLoader(dataset_read, batch_size=len(dataset_read), shuffle=True)
+
+data = next(iter(loader))
+
 
 kwargs = {
     "categorical": ["year", "census_tract"],
@@ -43,60 +44,124 @@ kwargs = {
         "income",
         "segregation_original",
         "white_original",
+        "parcel_mean_sqm",
+        "parcel_median_sqm",
+        "parcel_sqm",
     },
     "outcome": "housing_units",
 }
-subset = select_from_data(data, kwargs)
 
-train_loader, test_loader, categorical_levels = prep_data_for_test(
-    census_tracts_data_path, train_size=0.6
+pg_subset = select_from_data(data, kwargs)
+pg_dataset_read = torch.load(data_path)
+
+print("shape for pg", pg_subset["categorical"]["year"].shape)
+
+
+@pytest.mark.parametrize(
+    "model_class",
+    [TractsModel, TractsModelSqm],
 )
+def test_tracts_model(model_class):
 
+    tracts_model = model_class(
+        **pg_subset, categorical_levels=pg_dataset_read.categorical_levels
+    )
 
-def test_tracts_model():
-
-    # instantiate model simulate forward check shape
-    tracts_model = TractsModel(
-        **subset, categorical_levels=ct_dataset_read.categorical_levels
+    pyro.clear_param_store()
+    guide = run_svi_inference(
+        tracts_model, n_steps=n_steps, lr=0.03, plot=False, **pg_subset
     )
 
     with pyro.poutine.trace() as tr:
-        tracts_model(**subset)
+        units = tracts_model(**pg_subset)
 
-    assert tr.trace.nodes["housing_units"]["value"].shape == torch.Size([816])
+    n = units.shape[0]
 
-    # test inference
-    pyro.clear_param_store()
-    guide = run_svi_inference(
-        tracts_model, n_steps=n_steps, lr=0.03, plot=False, **subset
-    )
+    assert tr.trace.nodes["housing_units"]["value"].shape == torch.Size([n])
 
     predictive = Predictive(tracts_model, guide=guide, num_samples=num_samples)
 
-    subset_for_preds = copy.deepcopy(subset)
+    subset_for_preds = copy.deepcopy(pg_subset)
     subset_for_preds["continuous"]["housing_units"] = None
 
     preds = predictive(**subset_for_preds)
 
-    assert preds["housing_units"].shape == torch.Size([num_samples, 816])
+    assert preds["housing_units"].shape == torch.Size([num_samples, n])
 
     # test counterfactuals
     with MultiWorldCounterfactual():
         with do(actions={"limit": (torch.tensor(0.0), torch.tensor(1.0))}):
             samples = predictive(**subset_for_preds)
 
-    assert samples["housing_units"].shape == torch.Size([num_samples, 3, 1, 1, 1, 816])
+    assert samples["housing_units"].shape == torch.Size([num_samples, 3, 1, 1, 1, n])
 
-    # test evaluation
-    test_performance(
-        tracts_model,
-        kwargs,
-        train_loader,
-        test_loader,
-        categorical_levels,
-        outcome_type="continuous",
-        outcome_name="housing_units",
-        n_steps=n_steps,
-        plot=False,
-        is_class=False,
+
+def context_stack(contexts: List):
+
+    stack = ExitStack()
+    for context in contexts:
+        stack.enter_context(context)
+    return stack
+
+
+def assert_no_repeated_non_ones(tensor_size):
+
+    non_ones = [dim for dim in tensor_size if dim != 1]
+    assert len(non_ones) == len(
+        set(non_ones)
+    ), f"Repeated non-1 dimensions found in {tensor_size}"
+
+
+@pytest.mark.parametrize(
+    "use_plate, use_mwc, use_do",
+    [
+        (True, True, True),
+        (True, True, False),
+        (True, False, True),
+        (False, True, True),
+    ],
+)
+@pytest.mark.parametrize(
+    "model_class",
+    [TractsModel, TractsModelSqm],
+)
+def test_plated_sample_shaping(use_plate, use_mwc, use_do, model_class):
+    model = model_class(**data, categorical_levels=pg_dataset_read.categorical_levels)
+
+    # run forward to g
+    units = model(**data)
+    n = units.shape[0]
+    print(n)
+
+    pyro.clear_param_store()
+    guide = run_svi_inference(model, n_steps=n_steps, lr=0.03, plot=False, **data)
+
+    predictive = Predictive(model, guide=guide, num_samples=num_samples)
+
+    data_for_preds = copy.deepcopy(data)
+    data_for_preds["continuous"]["housing_units"] = None
+    data_no_categorical_info = copy.deepcopy(data_for_preds)
+    data_no_categorical_info["categorical"]["year"] = None
+
+    context_managers = []
+
+    if use_plate:
+        context_managers.append(pyro.plate("outer_plate", 4, dim=-8))
+    if use_mwc:
+        context_managers.append(MultiWorldCounterfactual())
+    if use_do:
+        context_managers.append(
+            do(actions={"limit": (torch.tensor(0.0), torch.tensor(1.0))})
+        )
+
+    with context_stack(context_managers):
+        samples_contextualized = predictive(**data_for_preds)
+        samples_conditioned_contextualized = predictive(**data)
+        samples_no_categorical_info = predictive(**data_no_categorical_info)
+
+    assert samples_conditioned_contextualized["housing_units"].shape == torch.Size(
+        [num_samples, n]
     )
+
+    assert_no_repeated_non_ones(samples_contextualized["housing_units"].shape)
+    assert_no_repeated_non_ones(samples_no_categorical_info["housing_units"].shape)

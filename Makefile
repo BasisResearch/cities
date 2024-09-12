@@ -10,7 +10,11 @@ format_path: FORCE
 lint: FORCE
 	./scripts/lint.sh
 
-test: FORCE
+test: FORCE 
+	./scripts/test.sh
+
+test_all: FORCE
+	./scripts/clean.sh
 	./scripts/lint.sh
 	./scripts/test.sh
 	./scripts/test_notebooks.sh

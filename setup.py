@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 VERSION = "0.1.0"
 
 TEST_REQUIRES = [
-    "pytest == 7.4.3",
+    "pytest",
     "pytest-cov",
     "pytest-xdist",
     "mypy",
@@ -16,8 +16,11 @@ TEST_REQUIRES = [
 ]
 
 DEV_REQUIRES = [
-    "jupyter",
+    "pyro-ppl==1.8.6",
+    "torch",
     "plotly.express",
+    "scipy",
+    "chirho @ git+https://github.com/BasisResearch/chirho",
     "graphviz",
     "python-dotenv",
     "google-cloud-storage",
@@ -51,6 +54,7 @@ setup(
         "dill",
         "plotly",
         "matplotlib>=3.8.2",
+        "seaborn",  
     ],
     extras_require={
         "test": TEST_REQUIRES,
