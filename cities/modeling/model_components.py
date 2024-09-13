@@ -167,6 +167,9 @@ def add_linear_component(
             event_dim=0,
         )
 
+        print(mean_prediction_child.shape, sigma_child.shape)
+        if observations is not None:
+            print(observations.shape)
         child_observed = pyro.sample(  # type: ignore
             f"{child_name}",
             dist.Normal(mean_prediction_child, sigma_child),
