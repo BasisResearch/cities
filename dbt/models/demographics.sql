@@ -1,7 +1,7 @@
 -- Demographic data
 -- Contains data from the ACS and the computed segregation indexes.
 with
-demographics_union as (select * from {{ ref('stg_demographics_union') }}),
+demographics as (select * from {{ ref('stg_demographics_union') }}),
 -- Fill in data for 2011, 2012 using closest available year. Replace 2020 data
 -- with 2019 data to avoid pandemic effects.
 demographics_replace_years as (
