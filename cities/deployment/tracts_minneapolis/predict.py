@@ -122,7 +122,7 @@ class TractsModelPredictor:
             guide = dill.load(file)
 
         self.data = select_from_sql(
-            "select * from dev.tracts_model__census_tracts",
+            "select * from dev.tracts_model__census_tracts order by census_tract, year",
             conn,
             TractsModelPredictor.kwargs,
         )

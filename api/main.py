@@ -204,7 +204,8 @@ async def read_predict(
             {
                 "radius_blue": blue_zone_radius,
                 "limit_blue": blue_zone_limit,
-                "radius_yellow": yellow_zone_line_radius,
+                "radius_yellow_line": yellow_zone_line_radius,
+                "radius_yellow_stop": yellow_zone_stop_radius,
                 "limit_yellow": yellow_zone_limit,
                 "reform_year": year,
             }
