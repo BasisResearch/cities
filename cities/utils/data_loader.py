@@ -2,6 +2,7 @@ import os
 from typing import Dict, List
 
 import pandas as pd
+import sqlalchemy
 import torch
 from torch.utils.data import Dataset
 
@@ -60,15 +61,17 @@ def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     return _data
 
 
-def load_sql_df(sql, conn=None, params=None):
-    from adbc_driver_postgresql import dbapi
-
-    USERNAME = os.getenv("USERNAME")
+def db_connection():
+    DB_USERNAME = os.getenv("DB_USERNAME")
     HOST = os.getenv("HOST")
     DATABASE = os.getenv("DATABASE")
+    PASSWORD = os.getenv("PASSWORD")
+    DB_SEARCH_PATH = os.getenv("DB_SEARCH_PATH")
 
-    with dbapi.connect(f"postgresql://{USERNAME}@{HOST}/{DATABASE}") as conn:
-        return pd.read_sql(sql, conn, params=params)
+    return sqlalchemy.create_engine(
+        f"postgresql://{DB_USERNAME}:{PASSWORD}@{HOST}/{DATABASE}",
+        connect_args={"options": f"-csearch-path={DB_SEARCH_PATH}"},
+    ).connect()
 
 
 def select_from_sql(sql, conn, kwargs, params=None):

@@ -17,14 +17,19 @@ USERNAME = os.getenv("DB_USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 HOST = os.getenv("HOST")
 DATABASE = os.getenv("DATABASE")
+DB_SEARCH_PATH = os.getenv("DB_SEARCH_PATH")
 INSTANCE_CONNECTION_NAME = os.getenv("INSTANCE_CONNECTION_NAME")
 
 app = FastAPI()
 
-origins = [
-    "http://localhost",
-    "http://localhost:5000",
-]
+if ENV == "dev":
+    from fastapi.middleware.cors import CORSMiddleware
+
+    origins = [
+        "http://localhost",
+        "http://localhost:5000",
+    ]
+    app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True)
 
 app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=5)
 
@@ -35,7 +40,13 @@ else:
     host = f"/cloudsql/{INSTANCE_CONNECTION_NAME}"
 
 pool = ThreadedConnectionPool(
-    1, 10, user=USERNAME, password=PASSWORD, host=HOST, database=DATABASE
+    1,
+    10,
+    user=USERNAME,
+    password=PASSWORD,
+    host=HOST,
+    database=DATABASE,
+    options=f"-csearch_path={DB_SEARCH_PATH}",
 )
 
 
@@ -88,7 +99,7 @@ async def read_demographics(
         cur.execute(
             """
             select tract_id, "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"
-            from dev.api__demographics where description = %s
+            from api__demographics where description = %s
             """,
             (category,),
         )
@@ -98,7 +109,7 @@ async def read_demographics(
 @app.get("/census-tracts")
 async def read_census_tracts(year: Year, db=Depends(get_db)):
     with db.cursor() as cur:
-        cur.execute("select * from dev.api__census_tracts where year_ = %s", (year,))
+        cur.execute("select * from api__census_tracts where year_ = %s", (year,))
         row = cur.fetchone()
 
     return row[1] if row is not None else None
@@ -110,7 +121,7 @@ async def read_high_frequency_transit_lines(year: Year, db=Depends(get_db)):
         cur.execute(
             """
             select line_geom_json
-            from dev.api__high_frequency_transit_lines
+            from api__high_frequency_transit_lines
             where '%s-01-01'::date <@ valid
             """,
             (year,),
@@ -126,7 +137,7 @@ async def read_high_frequency_transit_stops(year: Year, db=Depends(get_db)):
         cur.execute(
             """
             select stop_geom_json
-            from dev.api__high_frequency_transit_lines
+            from api__high_frequency_transit_lines
             where '%s-01-01'::date <@ valid
             """,
             (year,),
@@ -145,7 +156,7 @@ async def read_yellow_zone(
             """
             select
               st_asgeojson(st_transform(st_union(st_buffer(line_geom, %s, 'quad_segs=4'), st_buffer(stop_geom, %s, 'quad_segs=4')), 4269))::json
-            from dev.api__high_frequency_transit_lines
+            from api__high_frequency_transit_lines
             where '%s-01-01'::date <@ valid
             """,
             (line_radius, stop_radius, year),
@@ -169,7 +180,7 @@ async def read_blue_zone(year: Year, radius: Radius, db=Depends(get_db)):
         cur.execute(
             """
             select st_asgeojson(st_transform(st_buffer(line_geom, %s, 'quad_segs=4'), 4269))::json
-            from dev.api__high_frequency_transit_lines
+            from api__high_frequency_transit_lines
             where '%s-01-01'::date <@ valid
             """,
             (radius, year),

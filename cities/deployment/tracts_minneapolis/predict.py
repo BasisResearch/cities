@@ -4,7 +4,6 @@ import os
 import dill
 import pandas as pd
 import pyro
-import sqlalchemy
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
 from chirho.indexed.ops import IndexSet, gather
@@ -19,12 +18,6 @@ from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data, select_from_sql
 
 load_dotenv()
-
-
-DB_USERNAME = os.getenv("DB_USERNAME")
-HOST = os.getenv("HOST")
-DATABASE = os.getenv("DATABASE")
-PASSWORD = os.getenv("PASSWORD")
 
 
 class TractsModelPredictor:
@@ -84,7 +77,7 @@ class TractsModelPredictor:
              then 1
         else limit_con
       end as intervention
-    from dev.tracts_model__parcels
+    from tracts_model__parcels
     """
 
     tracts_intervention_sql = f"""
@@ -122,7 +115,7 @@ class TractsModelPredictor:
             guide = dill.load(file)
 
         self.data = select_from_sql(
-            "select * from dev.tracts_model__census_tracts order by census_tract, year",
+            "select * from tracts_model__census_tracts order by census_tract, year",
             conn,
             TractsModelPredictor.kwargs,
         )
@@ -228,26 +221,20 @@ class TractsModelPredictor:
 
 if __name__ == "__main__":
     import time
+    from cities.utils.data_loader import db_connection
 
-    USERNAME = os.getenv("DB_USERNAME")
-    HOST = os.getenv("HOST")
-    DATABASE = os.getenv("DATABASE")
-    PASSWORD = os.getenv("PASSWORD")
-
-    with sqlalchemy.create_engine(
-        f"postgresql://{DB_USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
-    ).connect() as conn:
+    with db_connection() as conn:
         predictor = TractsModelPredictor(conn)
         start = time.time()
 
         result = predictor.predict_cumulative(
             conn,
             intervention={
-                "radius_blue": 300,
-                "limit_blue": 0.5,
-                "radius_yellow_line": 700,
-                "radius_yellow_stop": 1000,
-                "limit_yellow": 0.7,
+                "radius_blue": 106.7,
+                "limit_blue": 0,
+                "radius_yellow_line": 402.3,
+                "radius_yellow_stop": 804.7,
+                "limit_yellow": 0.5,
                 "reform_year": 2015,
             },
         )

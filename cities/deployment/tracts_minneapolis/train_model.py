@@ -14,17 +14,11 @@ from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
     TractsModelSqm as TractsModel,
 )
 from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import select_from_sql
+from cities.utils.data_loader import select_from_sql, db_connection
 
 n_steps = 2000
 
 load_dotenv()
-
-
-DB_USERNAME = os.getenv("DB_USERNAME")
-HOST = os.getenv("HOST")
-DATABASE = os.getenv("DATABASE")
-PASSWORD = os.getenv("PASSWORD")
 
 #####################
 # data load and prep
@@ -47,9 +41,7 @@ kwargs = {
 }
 
 load_start = time.time()
-with sqlalchemy.create_engine(
-    f"postgresql://{DB_USERNAME}:{PASSWORD}@{HOST}/{DATABASE}"
-).connect() as conn:
+with db_connection() as conn:
     subset = select_from_sql(
         "select * from dev.tracts_model__census_tracts order by census_tract, year",
         conn,
