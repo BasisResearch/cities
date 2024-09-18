@@ -128,7 +128,7 @@ def prep_wide_data_for_inference(
     outcome_years_to_keep = [
         year
         for year in outcome.columns[2:]
-        if year - forward_shift in intervention.columns[2:]
+        if str(int(year) - forward_shift) in intervention.columns[2:]
     ]
 
     # extract data for which intervention and outcome overlap
