@@ -178,7 +178,7 @@ def prep_wide_data_for_inference(
         "x": x,
         "t": t,
         "y": y,
-        "years_available": years_available,
+        "years_available": int_year_available,
         "outcome_years": outcome_years_to_keep,
         "covariates_df": f_covariates_joint,
     }
