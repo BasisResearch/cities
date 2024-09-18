@@ -68,8 +68,8 @@ def prep_wide_data_for_inference(
         4. Loads the required transformed features.
         5. Merges fixed covariates into a joint dataframe based on a common ID column.
         6. Ensures that the GeoFIPS (geographical identifier) is consistent across datasets.
-        7. Extracts common years for which both intervention and outcome data are available.
-        8. Shifts the outcome variable forward by the specified number of time steps.
+        7. Shifts the outcome variable forward by the specified number of time steps determined by forward_shift.
+        8. Extracts common years for which both intervention and outcome data are available.
         9. Prepares tensors for input features (x), interventions (t), and outcomes (y).
         10. Creates indices for states and units, preparing them as tensors.
         11. Validates the shapes of the tensors.
@@ -124,49 +124,24 @@ def prep_wide_data_for_inference(
 
     assert f_covariates_joint["GeoFIPS"].equals(intervention["GeoFIPS"])
 
-    # extract data for which intervention and outcome overlap
-    year_min = max(
-        intervention.columns[2:].astype(int).min(),
-        outcome.columns[2:].astype(int).min(),
-    )
-
-    year_max = min(
-        intervention.columns[2:].astype(int).max(),
-        outcome.columns[2:].astype(int).max(),
-    )
-
-    assert all(intervention["GeoFIPS"] == outcome["GeoFIPS"])
-
+    # This is for the downstream variable
     outcome_years_to_keep = [
         year
         for year in outcome.columns[2:]
-        if year_min <= int(year) <= year_max + forward_shift
+        if str(int(year) - forward_shift) in intervention.columns[2:]
     ]
 
-    outcome_years_to_keep = [
-        year for year in outcome_years_to_keep if year in intervention.columns[2:]
-    ]
-
-    outcome = outcome[outcome_years_to_keep]
-
-    # shift outcome `forward_shift` steps ahead
-    # for the prediction task
-    outcome_shifted = outcome.copy()
-
-    for i in range(len(outcome_years_to_keep) - forward_shift):
-        outcome_shifted.iloc[:, i] = outcome_shifted.iloc[:, i + forward_shift]
-
-    years_to_drop = [
-        f"{year}" for year in range(year_max - forward_shift + 1, year_max + 1)
-    ]
-    outcome_shifted.drop(columns=years_to_drop, inplace=True)
-
+    # extract data for which intervention and outcome overlap
+    outcome.drop(columns=["GeoFIPS", "GeoName"], inplace=True)
     intervention.drop(columns=["GeoFIPS", "GeoName"], inplace=True)
-    intervention = intervention[outcome_shifted.columns]
+    outcome_shifted = outcome.rename(lambda x: str(int(x) - forward_shift), axis=1)
+    years_available = [
+        year for year in intervention.columns if year in outcome_shifted.columns
+    ]
+    intervention = intervention[years_available]
+    outcome_shifted = outcome_shifted[years_available]
 
     assert intervention.shape == outcome_shifted.shape
-
-    years_available = outcome_shifted.columns.astype(int).values
 
     unit_index = pd.factorize(f_covariates_joint["GeoFIPS"].values)[0]
     state_index = pd.factorize(f_covariates_joint["GeoFIPS"].values // 1000)[0]
@@ -197,12 +172,13 @@ def prep_wide_data_for_inference(
 
     model_args = (N_t, N_cov, N_s, N_u, state_index, unit_index)
 
+    int_year_available = [int(year) for year in years_available]
     return {
         "model_args": model_args,
         "x": x,
         "t": t,
         "y": y,
-        "years_available": years_available,
+        "years_available": int_year_available,
         "outcome_years": outcome_years_to_keep,
         "covariates_df": f_covariates_joint,
     }
@@ -222,7 +198,10 @@ def train_interactions_model(
     guide = AutoNormal(conditioned_model)
 
     svi = SVI(
-        model=conditioned_model, guide=guide, optim=Adam({"lr": lr}), loss=Trace_ELBO()
+        model=conditioned_model,
+        guide=guide,
+        optim=Adam({"lr": lr}),  # type: ignore
+        loss=Trace_ELBO(),
     )
 
     losses = []

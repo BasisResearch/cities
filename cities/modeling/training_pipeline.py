@@ -42,8 +42,8 @@ num_files = len(files)
 
 
 logging.info(
-    f"{(num_files-2)/2} guides already exist. "
-    f"Starting to train {N_combinations - (num_files -2)/2} out of {N_combinations} guides needed."
+    f"{(num_files - 2) / 2} guides already exist. "
+    f"Starting to train {N_combinations - (num_files - 2) / 2} out of {N_combinations} guides needed."
 )
 
 remaining = N_combinations - (num_files - 2) / 2
