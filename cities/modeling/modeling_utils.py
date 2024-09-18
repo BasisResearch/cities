@@ -125,7 +125,11 @@ def prep_wide_data_for_inference(
     assert f_covariates_joint["GeoFIPS"].equals(intervention["GeoFIPS"])
 
     # This is for the downstream variable
-    outcome_years_to_keep = [year for year in outcome.columns[2:] if year - forward_shift in intervention.columns[2:]]
+    outcome_years_to_keep = [
+        year
+        for year in outcome.columns[2:]
+        if year - forward_shift in intervention.columns[2:]
+    ]
 
     # extract data for which intervention and outcome overlap
     outcome.drop(columns=["GeoFIPS", "GeoName"], inplace=True)
@@ -196,7 +200,7 @@ def train_interactions_model(
     svi = SVI(
         model=conditioned_model,
         guide=guide,
-        optim=Adam({"lr": lr}), # type: ignore
+        optim=Adam({"lr": lr}),  # type: ignore
         loss=Trace_ELBO(),
     )
 
