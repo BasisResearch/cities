@@ -1,44 +1,20 @@
-import os
-
-import dill
-import pyro
-import torch
-from torch.utils.data import DataLoader
 from functools import partial
-
 from cities.modeling.svi_inference import run_svi_inference
-from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-
-# can be disposed of once you access data in a different manner
-from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import select_from_data
-from copy import deepcopy
 from pyro.infer.autoguide import AutoDiagonalNormal, init_to_value
-# from pyro.infer.autoguide import AutoDelta as AutoGuide
 from chirho.observational.handlers import condition
 from utils import nonify_dict, map_subset_onto_obs
 from typing import Dict
-import seaborn as sns
-import matplotlib.pyplot as plt
-import copy
 import os
-import time
 from collections import namedtuple
-
 import dill
-import pandas as pd
 import pyro
 import torch
 from chirho.counterfactual.handlers import MultiWorldCounterfactual
-
-# import chirho
 from chirho.interventional.handlers import do
 from pyro.infer import Predictive
 from torch.utils.data import DataLoader
-
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-
-from chirho.robust.handlers.estimators import MonteCarloInfluenceEstimator, one_step_corrected_estimator
+from chirho.robust.handlers.estimators import MonteCarloInfluenceEstimator
 from chirho.robust.ops import influence_fn
 from chirho.observational.handlers.predictive import PredictiveModel
 
@@ -54,10 +30,12 @@ from chirho.indexed.ops import gather, IndexSet
 parser = argparse.ArgumentParser()
 parser.add_argument("--smoke", action="store_true")
 parser.add_argument("--num_outer_if_mc", type=int, default=1000)
+parser.add_argument("--dataset_size", type=int, default=816)
 args = parser.parse_args()
 
 SMOKE = args.smoke
 NUM_OUTER_IF_MC = args.num_outer_if_mc
+DATASET_SIZE = args.dataset_size
 
 pyro.clear_param_store()
 pyro.settings.set(module_local_params=True)
@@ -67,6 +45,10 @@ root = find_repo_root()
 
 # <Fake AutoDelta Workaround>
 def build_fake_delta(model, *args, **kwargs):
+    """
+    Constructing a delta with easyguide here, b/c the AutoDelta, for some reason, complains during SVI about
+    differently updating two different tensor elements that point to the same memory location. This is a workaround.
+    """
 
     # TODO easier way to do this? Also 'data' is a plate...
     with pyro.poutine.trace() as tr:
@@ -127,6 +109,11 @@ SUPER_CAT_LEVELS = ct_dataset_read.categorical_levels
 
 # <Unconditioned Model>
 class UnconditionedTractsModel(TractsModel):
+    """
+    The current TractsModel implementation sets all obs kwargs of sample statements to the data. This
+    wrapper lets us pass in data (required for initialization), but not require that all sample statements
+    are conditioned on obs.
+    """
     def __init__(self, subset, n):
         self.subset = subset
         self.nonified_subset = nonify_dict(subset)
@@ -141,6 +128,7 @@ class UnconditionedTractsModel(TractsModel):
     def forward(self):
         return super().forward(n=self.n, **self.nonified_subset)
 # </Unconditioned Model>
+
 
 # <Conditioned Model>
 # Convert the subset-formed dataset into something we can pass to obs for conditioning.
@@ -162,9 +150,7 @@ full_n = next(iter(subset_as_obs.values())).shape[0]
 # Passing the nonified subset to the forward ensures that all obs= get set to None.
 full_unconditioned_model = UnconditionedTractsModel(subset, n=full_n)
 
-# DEBUG
-# full_unconditioned_model()
-
+# <Sanity checking shapes>
 with pyro.plate("outer", size=13, dim=-2):
     result = full_unconditioned_model()
 # Sanity check.
@@ -174,7 +160,7 @@ with pyro.plate("outer", size=14, dim=-3):
     result = full_unconditioned_model()
 # Sanity check.
 assert result.shape == (14, 1, 816)
-# /DEBUG
+# </Sanity checking shapes>
 
 full_conditioned_model = condition(
     full_unconditioned_model,
@@ -182,11 +168,9 @@ full_conditioned_model = condition(
 )
 # </Conditioned Model>
 
-# <DEBUG check fake delta>
-build_fake_delta(full_conditioned_model)
-# </DEBUG check fake delta>
-
 # <Training>
+# Train the model on the original data. We'll use this as our ground truth so we can test under a semi-synethic setting
+#  that matches the data, but we have a ground truth and know that our model is correctly specified.
 LR = 0.0025
 NUM_STEPS = 100 if SMOKE else 2000
 guide = run_svi_inference(
@@ -197,17 +181,11 @@ guide = run_svi_inference(
     guide=build_fake_delta(full_conditioned_model),
     plot=True
 )
-
 # </Training>
 
 # <Generate Data>
-# Construct the dataset sizes.
-# sizes = [100, 200, 300, 500, 900]
-# if not SMOKE:
-#     sizes.extend([1200, 1900, 2700, 5000, 7500, 10000])
-# sizes = list(range(100, 3000, 200))
-sizes = [int(100 * 1.1 ** i) for i in range(2 if SMOKE else 50)]
-# sizes = [100, 200]
+# Now we'll generate data sets from our ground truth model
+sizes = [DATASET_SIZE] * 100
 
 datasets = []
 for size in sizes:
@@ -215,7 +193,7 @@ for size in sizes:
     predictive = Predictive(
         model=unconditioned_model_of_size,
         guide=guide,
-        num_samples=1,
+        num_samples=1,  # the year/tract pair count is our primary concern.
     )
     predictions = predictive()
     dataset = {k: predictions[k].squeeze() for k in subset_as_obs.keys()}
@@ -249,6 +227,8 @@ class TargetFunctional(torch.nn.Module):
         self.num_mc = num_mc
 
     def forward(self):
+        # Note that we are not doing the direct cities model here of an "average ITE" over tracts.
+        # TODO is it as simple as just conditioning on everything but limit and housing units here?
         with MultiWorldCounterfactual() as mwc:
             with do(actions={"limit": (self.no_limit, self.full_limit)}):
                 with pyro.plate("mc", self.num_mc, dim=-2):
@@ -270,6 +250,9 @@ ground_truth_estimator = TargetFunctional(
     num_mc=100 if SMOKE else 10000
 )
 ground_truth_est = ground_truth_estimator()
+# This is currently just a linear model with no interaction terms, so we can pull the exact quantity out here.
+# Note that this script generally doesn't assume this is possible, to make it easier to generalize in the future.
+# This also just exercises the more general use case.
 ground_truth = -guide()[1]["weight_continuous_limit_housing_units"]
 print(f"Estimated Ground Truth via Functional: {ground_truth_est.item()}")
 print(f"Ground Truth Effect", ground_truth.item())
@@ -280,8 +263,8 @@ CorrectedEstimates = namedtuple("CorrectedEstimates", ["plugin", "plugin_actual"
 
 
 def hack_fake_delta(model, fake_delta):
-    # Because for some reason the fake delta isn't diffable in the context of the influence function
-    #  machinery.
+    # Because for some reason the delta easyguide isn't diffable in the context of the influence function
+    #  machinery, and as mentioned above, the AutoDelta does not work in this context for some reason.
     return AutoDiagonalNormal(
         model,
         init_loc_fn=init_to_value(
@@ -303,6 +286,7 @@ def get_correction(data: Dict[str, torch.Tensor]):
     train_data = {k: v[:train_n] for k, v in data.items()}
     correction_data = {k: v[train_n:] for k, v in data.items()}
 
+    # Maintaining separate models here for odd dataset sizes or eventual non-equal splits?
     unconditioned_train_model = UnconditionedTractsModel(subset, n=train_n)
     unconditioned_correction_model = UnconditionedTractsModel(subset, n=correction_n)
 
@@ -365,15 +349,14 @@ def get_correction(data: Dict[str, torch.Tensor]):
         corrected=(plugin_estimate + correction).detach(),
         corrected_actual=(plugin_actual + correction).detach()
     )
-# <Correction>
 
+
+print(f"FN: robust_predict_results_{sizes[0]}_{NUM_OUTER_IF_MC}.pt")
 
 plugins_and_corrections = []
 for dataset in datasets:
     plugins_and_corrections.append(get_correction(dataset))
 
     # Save the results.
-    with open(f"robust_predict_results{NUM_OUTER_IF_MC}.pt", "wb") as f:
+    with open(f"robust_predict_results_{sizes[0]}_{NUM_OUTER_IF_MC}.pt", "wb") as f:
         dill.dump(plugins_and_corrections, f)
-
-# </Correction>
