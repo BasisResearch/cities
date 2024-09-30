@@ -10,13 +10,15 @@ from cities.utils.data_loader import ZoningDataset, select_from_sql
 
 load_dotenv()
 
-# local torch loader is needed for subsampling in evaluation, comparison to the previous dataset and useful for EDA
-
-
+local_user = os.getenv("USER")
+if local_user == "rafal":
+    load_dotenv(os.path.expanduser("~/.env_pw"))
+# local torch loader is needed for subsampling in evaluation, comparison to the previous dataset and useful for ED
 DB_USERNAME = os.getenv("DB_USERNAME")
 HOST = os.getenv("HOST")
 DATABASE = os.getenv("DATABASE")
 PASSWORD = os.getenv("PASSWORD")
+
 
 #####################
 # data load and prep
