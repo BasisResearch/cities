@@ -221,6 +221,7 @@ class TractsModelPredictor:
 
 if __name__ == "__main__":
     import time
+
     from cities.utils.data_loader import db_connection
 
     with db_connection() as conn:

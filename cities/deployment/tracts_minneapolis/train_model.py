@@ -3,7 +3,6 @@ import time
 
 import dill
 import pyro
-import sqlalchemy
 import torch
 from dotenv import load_dotenv
 
@@ -14,7 +13,7 @@ from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
     TractsModelSqm as TractsModel,
 )
 from cities.utils.data_grabber import find_repo_root
-from cities.utils.data_loader import select_from_sql, db_connection
+from cities.utils.data_loader import db_connection, select_from_sql
 
 n_steps = 2000
 
