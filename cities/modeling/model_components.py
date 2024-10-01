@@ -118,18 +118,16 @@ def continuous_contribution(
 
     contributions = torch.zeros(1)
 
-    for key, value in continuous.items():
-
-        if key not in no_bias_sites:
-            bias_continuous = pyro.sample(
-                f"bias_continuous_{key}_{child_name}",
+    
+    bias_continuous = pyro.sample(
+                f"bias_continuous_{child_name}",
                 dist.Normal(0.0, leeway),
             )
-        else:
-            bias_continuous = 0.0
+    
+    for key, value in continuous.items():
 
         weight_continuous = pyro.sample(
-            f"weight_continuous_{key}_{child_name}",
+            f"weight_continuous_{key}_to_{child_name}",
             dist.Normal(0.0, leeway),
         )
 
