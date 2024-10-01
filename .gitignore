@@ -16,6 +16,7 @@ tests/__pycache__/
 **/*.Rdata
 **/*.RData
 
+build/
 
 .vscode/settings.json
 tests/.coverage

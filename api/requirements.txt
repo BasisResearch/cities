@@ -150,6 +150,7 @@ tenacity==9.0.0
     # via plotly
 threadpoolctl==3.5.0
     # via scikit-learn
+#torch==2.4.1
 torch @ https://download.pytorch.org/whl/cpu-cxx11-abi/torch-2.4.1%2Bcpu.cxx11.abi-cp312-cp312-linux_x86_64.whl
     # via
     #   cities (setup.py)

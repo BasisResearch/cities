@@ -27,17 +27,17 @@ api/requirements.txt: FORCE
 
 api-container-build: FORCE
 	mkdir -p build
-	# cd build && python ../cities/deployment/tracts_minneapolis/train_model.py
+	#cd build && python ../cities/deployment/tracts_minneapolis/train_model.py
 	cp -r cities build
-	cp -r api/ build
+	cp -r api/* build
 	cp .env build
-	cd build && docker build --platform linux/amd64 -t cities-api .
+	cd build && docker build --platform linux/amd64 -t cities-api . 
 
 api-container-push:
 	docker tag cities-api us-east1-docker.pkg.dev/cities-429602/cities/cities-api
 	docker push us-east1-docker.pkg.dev/cities-429602/cities/cities-api
 
 run-api-local:
-	docker run --rm -it -e PORT=8081 -e PASSWORD -p 3001:8081 cities-api
+	sudo -E docker run --rm -it -e PORT=8081 -e PASSWORD -p 3001:8081 cities-api
 
 FORCE:

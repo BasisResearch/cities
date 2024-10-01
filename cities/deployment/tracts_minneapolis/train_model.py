@@ -19,6 +19,10 @@ n_steps = 2000
 
 load_dotenv()
 
+local_user = os.getenv("USER")
+if local_user == "rafal":
+    load_dotenv(os.path.expanduser("~/.env_pw"))
+
 #####################
 # data load and prep
 #####################
