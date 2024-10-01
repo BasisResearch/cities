@@ -42,3 +42,4 @@ data/minneapolis/sourced/parcel_to_parking_info_mappings/**
 cities/deployment/tracts_minneapolis/tracts_model_guide.pkl
 cities/deployment/tracts_minneapolis/tracts_model_params.pth
 /build/
+.Rproj.user
