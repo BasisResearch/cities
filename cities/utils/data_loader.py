@@ -1,5 +1,8 @@
+import os
 from typing import Dict, List
 
+import pandas as pd
+import sqlalchemy
 import torch
 from torch.utils.data import Dataset
 
@@ -56,3 +59,30 @@ def select_from_data(data, kwarg_names: Dict[str, List[str]]):
     }
 
     return _data
+
+
+def db_connection():
+    DB_USERNAME = os.getenv("DB_USERNAME")
+    HOST = os.getenv("HOST")
+    DATABASE = os.getenv("DATABASE")
+    PASSWORD = os.getenv("PASSWORD")
+    DB_SEARCH_PATH = os.getenv("DB_SEARCH_PATH")
+
+    return sqlalchemy.create_engine(
+        f"postgresql://{DB_USERNAME}:{PASSWORD}@{HOST}/{DATABASE}",
+        connect_args={"options": f"-csearch-path={DB_SEARCH_PATH}"},
+    ).connect()
+
+
+def select_from_sql(sql, conn, kwargs, params=None):
+    df = pd.read_sql(sql, conn, params=params)
+    return {
+        "outcome": df[kwargs["outcome"]],
+        "categorical": {
+            key: torch.tensor(df[key].values, dtype=torch.int64) for key in kwargs["categorical"]
+        },
+        "continuous": {
+            key: torch.tensor(df[key], dtype=torch.float32)
+            for key in kwargs["continuous"]
+        },
+    }
