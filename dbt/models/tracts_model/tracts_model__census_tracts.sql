@@ -10,6 +10,7 @@ housing_units as (select * from {{ ref('census_tracts_housing_units') }})
 , distance_to_transit as (select * from {{ ref('census_tracts_distance_to_transit') }})
 , parcel_area as (select * from {{ ref('census_tracts_parcel_area') }})
 , parking_limits as (select * from {{ ref('census_tracts_parking_limits') }})
+, regions as (select * from {{ ref('census_tracts_regions') }})
 , demographics as (select * from {{ ref('demographics') }})
 , census_tracts as (select * from {{ ref('tracts_model_int__census_tracts_filtered') }})
 
@@ -51,6 +52,8 @@ select
   , white_frac.value_ as white
   , income.value_ as income
   , segregation.value_ as segregation
+  , regions.downtown_overlap
+  , regions.university_overlap
 from
   census_tracts
   inner join housing_units using (census_tract_id)
@@ -61,6 +64,7 @@ from
   left join segregation using (census_tract, year_)
   left join white_frac using (census_tract, year_)
   left join income using (census_tract, year_)
+  left join regions using (census_tract_id)
 )
 , with_std as (
 select
@@ -69,7 +73,8 @@ select
   , {{ standardize_cont(['housing_units', 'total_value', 'median_value',
                          'median_distance', 'mean_distance', 'parcel_sqm',
                          'parcel_mean_sqm', 'parcel_median_sqm', 'white',
-                         'income', 'mean_limit', 'segregation' ]) }}
+                         'income', 'mean_limit', 'segregation', 
+                         'downtown_overlap', 'university_overlap' ]) }}
 from
   raw_data
 )
