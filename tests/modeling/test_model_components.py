@@ -103,9 +103,11 @@ def test_continuous_contribution():
         assert weight_cont2.shape == torch.Size([])
 
         expected_contribution = (
-            bias + weight_cont1 * mock_data_cont["cont1"]
-          + weight_cont2 * mock_data_cont["cont2"])
-        
+            bias
+            + weight_cont1 * mock_data_cont["cont1"]
+            + weight_cont2 * mock_data_cont["cont2"]
+        )
+
         assert torch.allclose(cont_contribution, expected_contribution)
 
 
@@ -144,11 +146,11 @@ def test_add_linear_component():
         categorical_contrib += weights_categorical[name][..., tensor]
 
     continuous_contrib = torch.zeros(3)
-    bias = tr.trace.nodes[f"bias_continuous_child1"]["value"]
-        
+    bias = tr.trace.nodes["bias_continuous_child1"]["value"]
+
     for key, value in mock_data_cont.items():
         weight = tr.trace.nodes[f"weight_continuous_{key}_to_child1"]["value"]
-        continuous_contrib +=  weight * value
+        continuous_contrib += weight * value
     continuous_contrib += bias
 
     expected_mean_prediction = categorical_contrib + continuous_contrib
@@ -187,9 +189,9 @@ def test_add_logistic_component():
         categorical_contrib += weights_categorical[name][..., tensor]
 
     continuous_contrib = torch.zeros(3)
-    bias = tr.trace.nodes[f"bias_continuous_child1"]["value"]
+    bias = tr.trace.nodes["bias_continuous_child1"]["value"]
     for key, value in mock_data_cont.items():
-        
+
         weight = tr.trace.nodes[f"weight_continuous_{key}_to_child1"]["value"]
         continuous_contrib += weight * value
     continuous_contrib += bias
@@ -234,10 +236,10 @@ def test_add_ratio_component():
         categorical_contrib += weights_categorical[name][..., tensor]
 
     continuous_contrib = torch.zeros(3)
-    bias = tr.trace.nodes[f"bias_continuous_child1"]["value"]
+    bias = tr.trace.nodes["bias_continuous_child1"]["value"]
     for key, value in mock_data_cont.items():
         weight = tr.trace.nodes[f"weight_continuous_{key}_to_child1"]["value"]
-        continuous_contrib +=  weight * value
+        continuous_contrib += weight * value
     continuous_contrib += bias
 
     expected_mean_prediction = categorical_contrib + continuous_contrib

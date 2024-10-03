@@ -79,7 +79,8 @@ def select_from_sql(sql, conn, kwargs, params=None):
     return {
         "outcome": df[kwargs["outcome"]],
         "categorical": {
-            key: torch.tensor(df[key].values, dtype=torch.int64) for key in kwargs["categorical"]
+            key: torch.tensor(df[key].values, dtype=torch.int64)
+            for key in kwargs["categorical"]
         },
         "continuous": {
             key: torch.tensor(df[key], dtype=torch.float32)

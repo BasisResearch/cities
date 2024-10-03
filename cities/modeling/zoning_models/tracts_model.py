@@ -1,29 +1,26 @@
-from typing import Any, List, Optional, Dict
+from typing import Any, Dict, Optional
 
 import pyro
 import pyro.distributions as dist
 import torch
 
-from cities.modeling.zoning_models.units_causal_model import (get_n, categorical_contribution, 
-                                                              continuous_contribution, add_linear_component, 
-                                                              categorical_interaction_variable)
-
-
-from cities.modeling.zoning_models.missingness_only_model import add_logistic_component
-
-
+from cities.modeling.zoning_models.units_causal_model import (
+    add_linear_component,
+    categorical_contribution,
+    continuous_contribution,
+    get_n,
+)
 
 
 def add_ratio_component(
     child_name: "str",
     child_continuous_parents,
     child_categorical_parents,
-    leeway,  
+    leeway,
     data_plate,
     observations=None,
     categorical_levels=None,
 ):
-
 
     continuous_contribution_to_child = continuous_contribution(
         child_continuous_parents, child_name, leeway
@@ -36,9 +33,7 @@ def add_ratio_component(
         categorical_levels=categorical_levels,
     )
 
-    sigma_child = pyro.sample(
-        f"sigma_{child_name}", dist.Exponential(40.0)
-    ) 
+    sigma_child = pyro.sample(f"sigma_{child_name}", dist.Exponential(40.0))
 
     with data_plate:
 
@@ -46,16 +41,17 @@ def add_ratio_component(
             f"mean_outcome_prediction_{child_name}",
             categorical_contribution_to_child + continuous_contribution_to_child,
             event_dim=0,
-            )
-                
-        child_probs = pyro.deterministic(f"child_probs_{child_name}_{child_name}", 
-                                         torch.sigmoid(mean_prediction_child),
-                                         event_dim=0,)
-        
-        child_observed = pyro.sample(child_name, 
-        dist.Normal(child_probs, sigma_child),
-        obs=observations)
+        )
 
+        child_probs = pyro.deterministic(
+            f"child_probs_{child_name}_{child_name}",
+            torch.sigmoid(mean_prediction_child),
+            event_dim=0,
+        )
+
+        child_observed = pyro.sample(
+            child_name, dist.Normal(child_probs, sigma_child), obs=observations
+        )
 
     return child_observed
 
@@ -85,22 +81,17 @@ def add_poisson_component(
 
         mean_prediction_child = pyro.deterministic(
             f"mean_outcome_prediction_{child_name}",
-            torch.exp(categorical_contribution_to_child + continuous_contribution_to_child),
+            torch.exp(
+                categorical_contribution_to_child + continuous_contribution_to_child
+            ),
             event_dim=0,
         )
-        
+
         child_observed = pyro.sample(
-            child_name,
-            dist.Poisson(mean_prediction_child),
-            obs=observations
+            child_name, dist.Poisson(mean_prediction_child), obs=observations
         )
 
     return child_observed
-
-
-
-
-
 
 
 class TractsModelNoRatios(pyro.nn.PyroModule):
@@ -155,9 +146,9 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
                 obs=categorical["year"],
             )
 
-            distance = pyro.sample("distance", dist.Normal(0, 1),
-                                    obs=continuous["median_distance"])
-
+            distance = pyro.sample(
+                "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
+            )
 
             # past_reform = pyro.sample(
             #     "past_reform",
@@ -165,10 +156,9 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
             #     obs=categorical["past_reform"],
             # )
 
-
-        ## ___________________________
-        ## regression for white
-        ## ___________________________
+        # ___________________________
+        # regression for white
+        # ___________________________
 
         white_continuous_parents = {
             "distance": distance,
@@ -187,9 +177,9 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
             observations=continuous["white"],
         )
 
-        ## ___________________________
-        ## regression for segregation
-        ## ___________________________
+        # ___________________________
+        # regression for segregation
+        # ___________________________
 
         segregation_continuous_parents = {
             "distance": distance,
@@ -209,9 +199,9 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
             observations=continuous["segregation"],
         )
 
-        ## ___________________________
-        ## regression for income
-        ## ___________________________
+        # ___________________________
+        # regression for income
+        # ___________________________
 
         income_continuous_parents = {
             "distance": distance,
@@ -232,11 +222,9 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
             observations=continuous["income"],
         )
 
-
-        # #_____________________________
-        # # regression for limit
-        # #_____________________________
-            
+        # _____________________________
+        # regression for limit
+        # _____________________________
 
         limit_continuous_parents = {
             "distance": distance,
@@ -255,15 +243,16 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
             observations=continuous["mean_limit"],
         )
 
-        # # _____________________________
-        # # regression for median value
-        # # _____________________________
+        # _____________________________
+        # regression for median value
+        # _____________________________
 
         value_continuous_parents = {
-            "distance": distance, "limit": limit,
-            "income": income, "white": white,
-            "segregation": segregation
-
+            "distance": distance,
+            "limit": limit,
+            "income": income,
+            "white": white,
+            "segregation": segregation,
         }
 
         value_categorical_parents = {
@@ -279,10 +268,10 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
             observations=continuous["median_value"],
         )
 
-        # # ___________________________
-        # # regression for housing units
-        # # ___________________________
-    
+        # ___________________________
+        # regression for housing units
+        # ___________________________
+
         housing_units_continuous_parents = {
             "median_value": median_value,
             "distance": distance,
@@ -300,15 +289,12 @@ class TractsModelNoRatios(pyro.nn.PyroModule):
             child_name="housing_units",
             child_continuous_parents=housing_units_continuous_parents,
             child_categorical_parents=housing_units_categorical_parents,
-            leeway= 0.9,
+            leeway=0.9,
             data_plate=data_plate,
             observations=continuous["housing_units"],
         )
 
         return housing_units
-        
-
-
 
 
 class TractsModel(pyro.nn.PyroModule):
@@ -363,9 +349,9 @@ class TractsModel(pyro.nn.PyroModule):
                 obs=categorical["year"],
             )
 
-            distance = pyro.sample("distance", dist.Normal(0, 1),
-                                    obs=continuous["median_distance"])
-
+            distance = pyro.sample(
+                "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
+            )
 
             # past_reform = pyro.sample(
             #     "past_reform",
@@ -373,10 +359,9 @@ class TractsModel(pyro.nn.PyroModule):
             #     obs=categorical["past_reform"],
             # )
 
-
-        ## ___________________________
-        ## regression for white
-        ## ___________________________
+        # ___________________________
+        # regression for white
+        # ___________________________
 
         white_continuous_parents = {
             "distance": distance,
@@ -395,9 +380,9 @@ class TractsModel(pyro.nn.PyroModule):
             observations=continuous["white_original"],
         )
 
-        ## ___________________________
-        ## regression for segregation
-        ## ___________________________
+        # ___________________________
+        # regression for segregation
+        # ___________________________
 
         segregation_continuous_parents = {
             "distance": distance,
@@ -417,9 +402,9 @@ class TractsModel(pyro.nn.PyroModule):
             observations=continuous["segregation_original"],
         )
 
-        ## ___________________________
-        ## regression for income
-        ## ___________________________
+        # ___________________________
+        # regression for income
+        # ___________________________
 
         income_continuous_parents = {
             "distance": distance,
@@ -440,11 +425,9 @@ class TractsModel(pyro.nn.PyroModule):
             observations=continuous["income"],
         )
 
-
-        # #_____________________________
-        # # regression for limit
-        # #_____________________________
-            
+        # _____________________________
+        # regression for limit
+        # _____________________________
 
         limit_continuous_parents = {
             "distance": distance,
@@ -463,15 +446,16 @@ class TractsModel(pyro.nn.PyroModule):
             observations=continuous["mean_limit_original"],
         )
 
-        # # _____________________________
-        # # regression for median value
-        # # _____________________________
+        # _____________________________
+        # regression for median value
+        # _____________________________
 
         value_continuous_parents = {
-            "distance": distance, "limit": limit,
-            "income": income, "white": white,
-            "segregation": segregation
-
+            "distance": distance,
+            "limit": limit,
+            "income": income,
+            "white": white,
+            "segregation": segregation,
         }
 
         value_categorical_parents = {
@@ -487,13 +471,10 @@ class TractsModel(pyro.nn.PyroModule):
             observations=continuous["median_value"],
         )
 
+        # ___________________________
+        # regression for housing units
+        # ___________________________
 
-
-
-        # # ___________________________
-        # # regression for housing units
-        # # ___________________________
-    
         housing_units_continuous_parents = {
             "median_value": median_value,
             "distance": distance,
@@ -511,14 +492,12 @@ class TractsModel(pyro.nn.PyroModule):
             child_name="housing_units",
             child_continuous_parents=housing_units_continuous_parents,
             child_categorical_parents=housing_units_categorical_parents,
-            leeway= 0.9,
+            leeway=0.9,
             data_plate=data_plate,
             observations=continuous["housing_units"],
         )
 
         return housing_units
-        
-
 
 
 class TractsModelPoisson(pyro.nn.PyroModule):
@@ -573,9 +552,9 @@ class TractsModelPoisson(pyro.nn.PyroModule):
                 obs=categorical["year"],
             )
 
-            distance = pyro.sample("distance", dist.Normal(0, 1),
-                                    obs=continuous["median_distance"])
-
+            distance = pyro.sample(
+                "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
+            )
 
             # past_reform = pyro.sample(
             #     "past_reform",
@@ -583,10 +562,9 @@ class TractsModelPoisson(pyro.nn.PyroModule):
             #     obs=categorical["past_reform"],
             # )
 
-
-        ## ___________________________
-        ## regression for white
-        ## ___________________________
+        # ___________________________
+        # regression for white
+        # ___________________________
 
         white_continuous_parents = {
             "distance": distance,
@@ -605,9 +583,9 @@ class TractsModelPoisson(pyro.nn.PyroModule):
             observations=continuous["white_original"],
         )
 
-        ## ___________________________
-        ## regression for segregation
-        ## ___________________________
+        # ___________________________
+        # regression for segregation
+        # ___________________________
 
         segregation_continuous_parents = {
             "distance": distance,
@@ -627,9 +605,9 @@ class TractsModelPoisson(pyro.nn.PyroModule):
             observations=continuous["segregation_original"],
         )
 
-        ## ___________________________
-        ## regression for income
-        ## ___________________________
+        # ___________________________
+        # regression for income
+        # ___________________________
 
         income_continuous_parents = {
             "distance": distance,
@@ -650,11 +628,9 @@ class TractsModelPoisson(pyro.nn.PyroModule):
             observations=continuous["income"],
         )
 
-
         # #_____________________________
         # # regression for limit
         # #_____________________________
-            
 
         limit_continuous_parents = {
             "distance": distance,
@@ -678,10 +654,11 @@ class TractsModelPoisson(pyro.nn.PyroModule):
         # # _____________________________
 
         value_continuous_parents = {
-            "distance": distance, "limit": limit,
-            "income": income, "white": white,
-            "segregation": segregation
-
+            "distance": distance,
+            "limit": limit,
+            "income": income,
+            "white": white,
+            "segregation": segregation,
         }
 
         value_categorical_parents = {
@@ -697,13 +674,10 @@ class TractsModelPoisson(pyro.nn.PyroModule):
             observations=continuous["median_value"],
         )
 
-
-
-
         # # ___________________________
         # # regression for housing units
         # # ___________________________
-    
+
         housing_units_continuous_parents = {
             "median_value": median_value,
             "distance": distance,
@@ -721,15 +695,9 @@ class TractsModelPoisson(pyro.nn.PyroModule):
             child_name="housing_units_original",
             child_continuous_parents=housing_units_continuous_parents,
             child_categorical_parents=housing_units_categorical_parents,
-            leeway= 11.57,
+            leeway=11.57,
             data_plate=data_plate,
             observations=continuous["housing_units_original"],
         )
 
         return housing_units
-        
-
-
-
-
-

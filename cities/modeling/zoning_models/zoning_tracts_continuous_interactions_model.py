@@ -86,7 +86,9 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
             )
 
             downtown_overlap = pyro.sample(
-                "downtown_overlap", dist.Normal(0, 1), obs=continuous["downtown_overlap"]
+                "downtown_overlap",
+                dist.Normal(0, 1),
+                obs=continuous["downtown_overlap"],
             )
 
             university_overlap = pyro.sample(
@@ -94,7 +96,6 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
                 dist.Normal(0, 1),
                 obs=continuous["university_overlap"],
             )
-
 
         # ______________________
         # regression for sqm
@@ -255,7 +256,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
             "segregation": segregation,
             "sqm": sqm,
             "downtown_overlap": downtown_overlap,
-            'university_overlap': university_overlap
+            "university_overlap": university_overlap,
         }
 
         housing_units_categorical_parents = {
@@ -270,7 +271,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
             child_name="housing_units",
             child_continuous_parents=housing_units_continuous_parents,
             child_categorical_parents=housing_units_categorical_parents,
-            continous_interaction_pairs = housing_units_continuous_interaction_pairs,
+            continous_interaction_pairs=housing_units_continuous_interaction_pairs,
             leeway=0.5,
             data_plate=data_plate,
             observations=continuous["housing_units"],
