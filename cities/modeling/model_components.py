@@ -204,7 +204,7 @@ def add_linear_component_continuous_interactions(
 
         interaction_name = f"{interaction_pair[0]}_x_{interaction_pair[1]}"
         no_bias_sites.append(interaction_name)
-        print(interaction_name)
+        
 
         with data_plate:
             child_continuous_parents[interaction_name] = pyro.deterministic(
@@ -213,7 +213,7 @@ def add_linear_component_continuous_interactions(
                 event_dim=0,
             )
 
-    add_linear_component(
+    child_observed = add_linear_component(
         child_name=child_name,
         child_continuous_parents=child_continuous_parents,
         child_categorical_parents=child_categorical_parents,
@@ -223,6 +223,8 @@ def add_linear_component_continuous_interactions(
         categorical_levels=categorical_levels,
         observations=observations,
     )
+
+    return child_observed
 
 
 
