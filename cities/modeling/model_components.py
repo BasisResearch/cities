@@ -131,8 +131,11 @@ def continuous_contribution(
             dist.Normal(0.0, leeway),
         )
 
-        contribution = bias_continuous + weight_continuous * value
+        contribution =  weight_continuous * value
         contributions = contribution + contributions
+
+    contributions = bias_continuous + contributions
+
 
     return contributions
 

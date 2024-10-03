@@ -94,20 +94,18 @@ def test_continuous_contribution():
     with pyro.poutine.trace() as tr:
         cont_contribution = continuous_contribution(mock_data_cont, "child1", 0.5)
 
-        bias_cont1 = tr.trace.nodes["bias_continuous_cont1_child1"]["value"]
-        weight_cont1 = tr.trace.nodes["weight_continuous_cont1_child1"]["value"]
-        bias_cont2 = tr.trace.nodes["bias_continuous_cont2_child1"]["value"]
-        weight_cont2 = tr.trace.nodes["weight_continuous_cont2_child1"]["value"]
+        bias = tr.trace.nodes["bias_continuous_child1"]["value"]
+        weight_cont1 = tr.trace.nodes["weight_continuous_cont1_to_child1"]["value"]
+        weight_cont2 = tr.trace.nodes["weight_continuous_cont2_to_child1"]["value"]
 
-        assert bias_cont1.shape == torch.Size([])
+        assert bias.shape == torch.Size([])
         assert weight_cont1.shape == torch.Size([])
-        assert bias_cont2.shape == torch.Size([])
         assert weight_cont2.shape == torch.Size([])
 
         expected_contribution = (
-            bias_cont1 + weight_cont1 * mock_data_cont["cont1"]
-        ) + (bias_cont2 + weight_cont2 * mock_data_cont["cont2"])
-
+            bias + weight_cont1 * mock_data_cont["cont1"]
+          + weight_cont2 * mock_data_cont["cont2"])
+        
         assert torch.allclose(cont_contribution, expected_contribution)
 
 
@@ -146,10 +144,12 @@ def test_add_linear_component():
         categorical_contrib += weights_categorical[name][..., tensor]
 
     continuous_contrib = torch.zeros(3)
+    bias = tr.trace.nodes[f"bias_continuous_child1"]["value"]
+        
     for key, value in mock_data_cont.items():
-        bias = tr.trace.nodes[f"bias_continuous_{key}_child1"]["value"]
-        weight = tr.trace.nodes[f"weight_continuous_{key}_child1"]["value"]
-        continuous_contrib += bias + weight * value
+        weight = tr.trace.nodes[f"weight_continuous_{key}_to_child1"]["value"]
+        continuous_contrib +=  weight * value
+    continuous_contrib += bias
 
     expected_mean_prediction = categorical_contrib + continuous_contrib
 
@@ -171,7 +171,7 @@ def test_add_logistic_component():
         )
 
     mean_prediction_child = tr.trace.nodes["mean_outcome_prediction_child1"]["value"]
-    child_probs = tr.trace.nodes["child_probs_child1_child1"]["value"]
+    child_probs = tr.trace.nodes["child_probs_child1"]["value"]
 
     assert mean_prediction_child.shape == torch.Size([3])
     assert child_probs.shape == torch.Size([3])
@@ -187,10 +187,12 @@ def test_add_logistic_component():
         categorical_contrib += weights_categorical[name][..., tensor]
 
     continuous_contrib = torch.zeros(3)
+    bias = tr.trace.nodes[f"bias_continuous_child1"]["value"]
     for key, value in mock_data_cont.items():
-        bias = tr.trace.nodes[f"bias_continuous_{key}_child1"]["value"]
-        weight = tr.trace.nodes[f"weight_continuous_{key}_child1"]["value"]
-        continuous_contrib += bias + weight * value
+        
+        weight = tr.trace.nodes[f"weight_continuous_{key}_to_child1"]["value"]
+        continuous_contrib += weight * value
+    continuous_contrib += bias
 
     expected_mean_prediction = categorical_contrib + continuous_contrib
 
@@ -215,7 +217,7 @@ def test_add_ratio_component():
 
     sigma_child = tr.trace.nodes["sigma_child1"]["value"]
     mean_prediction_child = tr.trace.nodes["mean_outcome_prediction_child1"]["value"]
-    child_probs = tr.trace.nodes["child_probs_child1_child1"]["value"]
+    child_probs = tr.trace.nodes["child_probs_child1"]["value"]
 
     assert sigma_child.shape == torch.Size([])
     assert mean_prediction_child.shape == torch.Size([3])
@@ -232,10 +234,11 @@ def test_add_ratio_component():
         categorical_contrib += weights_categorical[name][..., tensor]
 
     continuous_contrib = torch.zeros(3)
+    bias = tr.trace.nodes[f"bias_continuous_child1"]["value"]
     for key, value in mock_data_cont.items():
-        bias = tr.trace.nodes[f"bias_continuous_{key}_child1"]["value"]
-        weight = tr.trace.nodes[f"weight_continuous_{key}_child1"]["value"]
-        continuous_contrib += bias + weight * value
+        weight = tr.trace.nodes[f"weight_continuous_{key}_to_child1"]["value"]
+        continuous_contrib +=  weight * value
+    continuous_contrib += bias
 
     expected_mean_prediction = categorical_contrib + continuous_contrib
 
