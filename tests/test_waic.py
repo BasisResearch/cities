@@ -6,7 +6,7 @@ from pyro.infer.autoguide import AutoMultivariateNormal
 
 from cities.modeling.waic import compute_waic
 
-num_steps = 500
+num_steps = 400
 max_plate_nesting = 9
 
 
@@ -14,6 +14,14 @@ torch.manual_seed(0)
 X = torch.linspace(0, 1, 10000)
 y = 3 * X + torch.randn(10000) * 0.1
 
+
+# TODO refactor to use with the repo general svi inference
+# TODO rename models to something more meaningful
+
+# Key idea: we have two models, one with a linear relationship and 
+# one with a quadratic relationship
+# We generate synthetic linear data, train the models
+# waic should be much better for the linear one
 
 class Submodel1(pyro.nn.PyroModule):
     def __init__(self):
