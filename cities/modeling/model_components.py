@@ -304,6 +304,7 @@ def add_ratio_component(
 
     return child_observed
 
+
 def add_ratio_component_continuous_interactions(
     child_name: str,
     child_continuous_parents: Dict[str, torch.Tensor],
@@ -313,15 +314,13 @@ def add_ratio_component_continuous_interactions(
     data_plate,
     categorical_levels: Dict[str, torch.Tensor],
     observations: Optional[torch.Tensor] = None,
-    ) -> torch.Tensor:
+) -> torch.Tensor:
 
-    no_bias_sites = []
     for interaction_pair in continous_interaction_pairs:
         assert interaction_pair[0] in child_continuous_parents.keys()
         assert interaction_pair[1] in child_continuous_parents.keys()
 
         interaction_name = f"{interaction_pair[0]}_x_{interaction_pair[1]}"
-        no_bias_sites.append(interaction_name)
 
         with data_plate:
             child_continuous_parents[interaction_name] = pyro.deterministic(
@@ -330,3 +329,15 @@ def add_ratio_component_continuous_interactions(
                 * child_continuous_parents[interaction_pair[1]],
                 event_dim=0,
             )
+
+    child_observed = add_ratio_component(
+        child_name=child_name,
+        child_continuous_parents=child_continuous_parents,
+        child_categorical_parents=child_categorical_parents,
+        leeway=leeway,
+        data_plate=data_plate,
+        categorical_levels=categorical_levels,
+        observations=observations,
+    )
+
+    return child_observed

@@ -264,7 +264,8 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         }
 
         housing_units_continuous_interaction_pairs = [
-            ("university_overlap", "limit"),("downtown_overlap", "limit")
+            ("university_overlap", "limit"),
+            ("downtown_overlap", "limit"),
         ]
 
         housing_units = add_linear_component_continuous_interactions(
