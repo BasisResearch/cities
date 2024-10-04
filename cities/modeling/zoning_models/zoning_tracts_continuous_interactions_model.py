@@ -83,6 +83,18 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
                 obs=categorical["year"],
             )
 
+            university_index = pyro.sample(
+                "university_index",
+                dist.Categorical(torch.ones(len(categorical_levels["university_index"]))),
+                obs=categorical["university_index"],
+            )
+
+            downtown_index = pyro.sample(
+                "downtown_index",
+                dist.Categorical(torch.ones(len(categorical_levels["downtown_index"]))),
+                obs=categorical["downtown_index"],
+            )
+
             distance = pyro.sample(
                 "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
             )
@@ -249,6 +261,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         # regression for housing units
         # ______________________________
 
+        
         housing_units_continuous_parents = {
             "median_value": median_value,
             "distance": distance,
@@ -263,6 +276,8 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
 
         housing_units_categorical_parents = {
             "year": year,
+#            "university_index": university_index,
+#            "downtown_index": downtown_index,
         }
 
         housing_units = add_linear_component_continuous_interactions(
