@@ -25,6 +25,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         ] = None,  # init args kept for uniformity, consider deleting
         categorical_levels: Optional[Dict[str, Any]] = None,
         leeway=0.9,
+        housing_units_continuous_interaction_pairs = [],
     ):
         """
 
@@ -38,6 +39,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         super().__init__()
 
         self.leeway = leeway
+        self.housing_units_continuous_interaction_pairs = housing_units_continuous_interaction_pairs
 
         self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
 
@@ -263,16 +265,11 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
             "year": year,
         }
 
-        housing_units_continuous_interaction_pairs = [
-            ("university_overlap", "limit"),
-            ("downtown_overlap", "limit"),
-        ]
-
         housing_units = add_linear_component_continuous_interactions(
             child_name="housing_units",
             child_continuous_parents=housing_units_continuous_parents,
             child_categorical_parents=housing_units_categorical_parents,
-            continous_interaction_pairs=housing_units_continuous_interaction_pairs,
+            continous_interaction_pairs=self.housing_units_continuous_interaction_pairs,
             leeway=0.5,
             data_plate=data_plate,
             observations=continuous["housing_units"],

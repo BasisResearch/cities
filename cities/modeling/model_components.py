@@ -190,6 +190,15 @@ def add_linear_component_continuous_interactions(
     observations: Optional[torch.Tensor] = None,
 ) -> torch.Tensor:
 
+    if continous_interaction_pairs == [("all", "all")]:
+        continous_interaction_pairs = [
+            (key1, key2)
+            for key1 in child_continuous_parents.keys()
+            for key2 in child_continuous_parents.keys()
+            if key1 != key2
+        ]
+
+
     for interaction_pair in continous_interaction_pairs:
         assert interaction_pair[0] in child_continuous_parents.keys()
         assert interaction_pair[1] in child_continuous_parents.keys()
