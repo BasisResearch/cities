@@ -111,22 +111,19 @@ class TractsModelPredictor:
         root = find_repo_root()
         deploy_path = os.path.join(root, "cities/deployment/tracts_minneapolis")
 
-        guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
+        self.guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
         self.param_path = os.path.join(deploy_path, "tracts_model_params.pth")
 
         need_to_train_flag = False
-        if not os.path.isfile(guide_path):
+        if not os.path.isfile(self.guide_path):
             need_to_train_flag = True
-            print(f"Warning: '{guide_path}' does not exist.")
+            print(f"Warning: '{self.guide_path}' does not exist.")
         if not os.path.isfile(self.param_path):
             need_to_train_flag = True
             print(f"Warning: '{self.param_path}' does not exist.")
 
         if need_to_train_flag:
             print("Please run 'train_model.py' to generate the required files.")
-
-        with open(guide_path, "rb") as file:
-            guide = dill.load(file)
 
         self.data = select_from_sql(
             "select * from tracts_model__census_tracts order by census_tract, year",
@@ -183,8 +180,20 @@ class TractsModelPredictor:
 
         model = TractsModel(**self.subset, categorical_levels=categorical_levels, 
                             housing_units_continuous_interaction_pairs=ins)
+        
+        # moved most of this logic here to avoid repeated computations
 
-        self.predictive = Predictive(model=model, guide=guide, num_samples=100)
+        with open(self.guide_path, "rb") as file:
+            self.guide = dill.load(file)
+
+        pyro.clear_param_store()
+        pyro.get_param_store().load(self.param_path)
+
+        self.predictive = Predictive(model=model, guide=self.guide, num_samples=1000, parallel=True)
+
+
+        self.subset_for_preds = copy.deepcopy(self.subset)
+        self.subset_for_preds["continuous"]["housing_units"] = None
 
     # these are at the tracts level
     def _tracts_intervention(
@@ -218,25 +227,20 @@ class TractsModelPredictor:
         - 'housing_units_factual': total housing units built according to real housing data
         - 'housing_units_counterfactual': samples from prediction of total housing units built
         """
-        pyro.clear_param_store()
-        pyro.get_param_store().load(self.param_path)
-
-        subset_for_preds = copy.deepcopy(self.subset)
-        subset_for_preds["continuous"]["housing_units"] = None
 
         limit_intervention = self._tracts_intervention(conn, **intervention)
 
-        limit_intervention = torch.where(self.data['continuous']['university_overlap'] > 1, 
+        limit_intervention = torch.where(self.data['continuous']['university_overlap'] > 2, 
                                             torch.zeros_like(limit_intervention), 
                                             limit_intervention)
         
-        limit_intervention = torch.where(self.data['continuous']['downtown_overlap'] > 3.7,
-                                            torch.zeros_like(limit_intervention),
-                                            limit_intervention)
+        limit_intervention = torch.where(self.data['continuous']['downtown_overlap'] > 1,
+                                           torch.zeros_like(limit_intervention),
+                                           limit_intervention)
 
         with MultiWorldCounterfactual() as mwc:
             with do(actions={"limit": limit_intervention}):
-                result_all = self.predictive(**subset_for_preds)["housing_units"]
+                result_all = self.predictive(**self.subset_for_preds)["housing_units"]
         with mwc:
             result_f = gather(
                 result_all, IndexSet(**{"limit": {0}}), event_dims=0
@@ -246,52 +250,70 @@ class TractsModelPredictor:
             ).squeeze()
 
         obs_housing_units = self.data["continuous"]["housing_units_original"]
-        f_housing_units = (result_f * self.housing_units_std + self.housing_units_mean)#.clamp(min = 0)
-        cf_housing_units = (result_cf * self.housing_units_std + self.housing_units_mean)# .clamp(min = 0)
+        f_housing_units = (result_f * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
+        cf_housing_units = (result_cf * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
 
 
         # calculate cumulative housing units (factual)
         obs_cumsums = {}
+        f_cumsums = {}
+        cf_cumsums = {}
         for key in self.tracts.unique():
             obs_units = []
-            for year, year_id in zip(self.years.unique(), self.year_ids.unique()):
-                print(key, year, year_id)
-
-                obs_units.append(obs_housing_units[(self.tracts == key) & (self.year_ids == year_id)])
+            f_units = []
+            cf_units = []
+            for year in self.years.unique():
+                obs_units.append(obs_housing_units[(self.tracts == key) & (self.years == year)])
+                f_units.append(f_housing_units[:,(self.tracts == key) & (self.years  == year)])
+                cf_units.append(cf_housing_units[:,(self.tracts == key) & (self.years == year)])
 
             obs_cumsum = torch.cumsum(torch.stack(obs_units), dim = 0).flatten()
+            f_cumsum = torch.cumsum(torch.stack(f_units), dim = 0).squeeze()
+            cf_cumsum = torch.cumsum(torch.stack(cf_units), dim = 0).squeeze()
+
             obs_cumsums[key] = obs_cumsum
+            f_cumsums[key] = f_cumsum
+            cf_cumsums[key] = cf_cumsum
 
 
-        return {"obs_cumsums": obs_cumsums,"limit_intervention": limit_intervention,}
+        # presumably outdated
+
+        tracts = self.data["categorical"]["census_tract"]
+
+         # calculate cumulative housing units (factual)
+        f_totals = {}
+        for i in range(tracts.shape[0]):
+            key = tracts[i].item()
+            if key not in f_totals:
+                f_totals[key] = 0
+            f_totals[key] += obs_housing_units[i]
+
+        # calculate cumulative housing units (counterfactual)
+        cf_totals = {}
+        for i in range(tracts.shape[0]):
+            year = self.years[i].item()
+            key = tracts[i].item()
+            if key not in cf_totals:
+                cf_totals[key] = 0
+            if year < intervention["reform_year"]:
+                cf_totals[key] += obs_housing_units[i]
+            else:
+                cf_totals[key] = cf_totals[key] + cf_housing_units[:, i]
+        cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()}
+
+        census_tracts = list(cf_totals.keys())
+        f_housing_units = [f_totals[k] for k in census_tracts]
+        cf_housing_units = [cf_totals[k] for k in census_tracts]
 
 
-            #obs_totals[key] = 
-        # for i in range(tracts.shape[0]):
-        #     key = tracts[i].item()
-        #     if key not in obs_totals:
-        #         obs_totals[key] = 0
-        #     obs_totals[key] += f_housing_units[i]
 
-        # # calculate cumulative housing units (counterfactual)
-        # cf_totals = {}
-        # for i in range(tracts.shape[0]):
-        #     year = years[i].item()
-        #     key = tracts[i].item()
-        #     if key not in cf_totals:
-        #         cf_totals[key] = 0
-        #     # if year < intervention["reform_year"]:
-        #     #     cf_totals[key] += f_housing_units[i] # R: grabbing the factual data here is somewhat controversial
-        #     # else:
-        #     cf_totals[key] = cf_totals[key] + cf_housing_units[:, i] 
-        # cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()} 
-        # # R so is clamping after summation rather than before
-        # # if predictions are systematically too low, consider clamping before summation 
+        return {"obs_cumsums": obs_cumsums, "f_cumsums": f_cumsums, "cf_cumsums": cf_cumsums, 
+                "limit_intervention": limit_intervention,
+                # presumably outdated
+                "census_tracts": census_tracts,
+                "housing_units_factual": f_housing_units,
+                "housing_units_counterfactual": cf_housing_units,}
 
-
-        # census_tracts = list(cf_totals.keys())
-        # f_housing_units = [f_totals[k] for k in census_tracts]
-        # cf_housing_units = [cf_totals[k] for k in census_tracts]
 
         # return {
         #     "census_tracts": census_tracts,

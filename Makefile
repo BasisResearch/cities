@@ -27,7 +27,7 @@ api/requirements.txt: FORCE
 
 api-container-build: FORCE
 	mkdir -p build
-	cd build && python ../cities/deployment/tracts_minneapolis/train_model.py
+	#cd build && python ../cities/deployment/tracts_minneapolis/train_model.py
 	cp -r cities build
 	cp -r api/* build
 	cp .env build

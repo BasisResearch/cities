@@ -19,7 +19,7 @@ from cities.utils.data_loader import db_connection, select_from_sql
 # )
 
 
-n_steps = 2000
+n_steps = 4000
 
 load_dotenv()
 
