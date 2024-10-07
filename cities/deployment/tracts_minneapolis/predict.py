@@ -133,7 +133,18 @@ class TractsModelPredictor:
             conn,
             TractsModelPredictor.kwargs,
         )
+
+
+        # set to zero whenever the university overlap is above 1
+        # TODO this should be handled at the data processing stage
+        self.data['continuous']['mean_limit_original'] = torch.where(self.data['continuous']['university_overlap'] > 1, 
+                                            torch.zeros_like(self.data['continuous']['mean_limit_original']), 
+                                            self.data['continuous']['mean_limit_original'])
+
+
         self.subset = select_from_data(self.data, TractsModelPredictor.kwargs_subset)
+
+
 
         categorical_levels = {
             "year": torch.unique(self.subset["categorical"]["year"]),
@@ -210,6 +221,14 @@ class TractsModelPredictor:
         subset_for_preds["continuous"]["housing_units"] = None
 
         limit_intervention = self._tracts_intervention(conn, **intervention)
+
+        limit_intervention = torch.where(self.data['continuous']['university_overlap'] > 1, 
+                                            torch.zeros_like(limit_intervention), 
+                                            limit_intervention)
+        
+        limit_intervention = torch.where(self.data['continuous']['downtown_overlap'] > 3.7,
+                                            torch.zeros_like(limit_intervention),
+                                            limit_intervention)
 
         with MultiWorldCounterfactual() as mwc:
             with do(actions={"limit": limit_intervention}):
