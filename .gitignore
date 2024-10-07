@@ -43,3 +43,4 @@ cities/deployment/tracts_minneapolis/tracts_model_guide.pkl
 cities/deployment/tracts_minneapolis/tracts_model_params.pth
 /build/
 .Rproj.user
+docs/experimental_notebooks/zoning/interactions_preds.dill
