@@ -8,6 +8,7 @@ import torch
 from cities.modeling.model_components import (
     add_linear_component,
     add_linear_component_continuous_interactions,
+    add_ratio_component_continuous_interactions,
     add_ratio_component,
     check_categorical_is_subset_of_levels,
     get_categorical_levels,
@@ -26,6 +27,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         categorical_levels: Optional[Dict[str, Any]] = None,
         leeway=0.9,
         housing_units_continuous_interaction_pairs=[],
+        limit_continuous_interaction_pairs=[],
     ):
         """
 
@@ -42,6 +44,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         self.housing_units_continuous_interaction_pairs = (
             housing_units_continuous_interaction_pairs
         )
+        self.limit_continuous_interaction_pairs = limit_continuous_interaction_pairs
 
         self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
 
@@ -129,11 +132,15 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
 
         limit_continuous_parents = {
             "distance": distance,
+            "downtown_overlap": downtown_overlap,
+            "university_overlap": university_overlap,
         }
 
         limit_categorical_parents = {
             "year": year,
         }
+
+   
 
         limit = add_ratio_component(
             child_name="limit",
@@ -144,6 +151,17 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
             observations=continuous["mean_limit_original"],
             categorical_levels=self.categorical_levels,
         )
+
+
+        # limit = add_ratio_component(
+        #     child_name="limit",
+        #     child_continuous_parents=limit_continuous_parents,
+        #     child_categorical_parents=limit_categorical_parents,
+        #     leeway=8,  # ,
+        #     data_plate=data_plate,
+        #     observations=continuous["mean_limit_original"],
+        #     categorical_levels=self.categorical_levels,
+        # )
 
         # _____________________
         # regression for white

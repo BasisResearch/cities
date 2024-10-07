@@ -11,17 +11,44 @@ from chirho.interventional.handlers import do
 from dotenv import load_dotenv
 from pyro.infer import Predictive
 
-from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
-    TractsModelSqm as TractsModel,
+# from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
+#     TractsModelSqm as TractsModel,
+# )
+
+from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
+    TractsModelContinuousInteractions as TractsModel,
 )
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data, select_from_sql
 
 load_dotenv()
 
+local_user = os.getenv("USER")
+if local_user == "rafal":
+    load_dotenv(os.path.expanduser("~/.env_pw"))
+
 
 class TractsModelPredictor:
     kwargs = {
+    "categorical": ["year", "year_original", "census_tract",],
+    "continuous": {
+        "housing_units",  
+        "housing_units_original",
+        "total_value",
+        "median_value",
+        "mean_limit_original",
+        "median_distance",
+        "income",
+        "segregation_original",
+        "white_original",
+        "parcel_sqm",
+        'downtown_overlap', 
+        'university_overlap',
+    },
+    "outcome": "housing_units",
+    }
+
+    kwargs_subset = {
         "categorical": ["year", "year_original", "census_tract"],
         "continuous": {
             "housing_units",
@@ -32,27 +59,14 @@ class TractsModelPredictor:
             "income",
             "segregation_original",
             "white_original",
-            "housing_units_original",
             "parcel_sqm",
+            'downtown_overlap', 
+            'university_overlap',
         },
         "outcome": "housing_units",
     }
 
-    kwargs_subset = {
-        "categorical": ["year", "census_tract"],
-        "continuous": {
-            "housing_units",
-            "total_value",
-            "median_value",
-            "mean_limit_original",
-            "median_distance",
-            "income",
-            "segregation_original",
-            "white_original",
-            "parcel_sqm",
-        },
-        "outcome": "housing_units",
-    }
+    
 
     parcel_intervention_sql = """
     select
@@ -123,6 +137,7 @@ class TractsModelPredictor:
 
         categorical_levels = {
             "year": torch.unique(self.subset["categorical"]["year"]),
+            "year_original": torch.unique(self.subset["categorical"]["year_original"]),
             "census_tract": torch.unique(self.subset["categorical"]["census_tract"]),
         }
 
@@ -131,7 +146,29 @@ class TractsModelPredictor:
             "housing_units_original"
         ].mean()
 
-        model = TractsModel(**self.subset, categorical_levels=categorical_levels)
+        #interaction_pairs
+        ins = [
+        ("university_overlap", "limit"),
+        ("downtown_overlap", "limit"),
+        ("distance", "downtown_overlap"),
+        ("distance", "university_overlap"),
+        ("distance", "limit"),
+        ("median_value", "segregation"),
+        ("distance", "segregation"),
+        ("limit", "sqm"),
+        ("segregation", "sqm"),
+        ("distance", "white"),
+        ("income", "limit"),
+        ("downtown_overlap", "median_value"),
+        ("downtown_overlap", "segregation"),
+        ("median_value", "white"),
+        ("distance", "income"),
+        ]
+
+
+        model = TractsModel(**self.subset, categorical_levels=categorical_levels, 
+                            housing_units_continuous_interaction_pairs=ins)
+
         self.predictive = Predictive(model=model, guide=guide, num_samples=100)
 
     # these are at the tracts level
@@ -185,7 +222,7 @@ class TractsModelPredictor:
         years = self.data["categorical"]["year_original"]
         tracts = self.data["categorical"]["census_tract"]
         f_housing_units = self.data["continuous"]["housing_units_original"]
-        cf_housing_units = result * self.housing_units_std + self.housing_units_mean
+        cf_housing_units = (result * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
 
         # calculate cumulative housing units (factual)
         f_totals = {}
@@ -202,11 +239,14 @@ class TractsModelPredictor:
             key = tracts[i].item()
             if key not in cf_totals:
                 cf_totals[key] = 0
-            if year < intervention["reform_year"]:
-                cf_totals[key] += f_housing_units[i]
-            else:
-                cf_totals[key] = cf_totals[key] + cf_housing_units[:, i]
-        cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()}
+            # if year < intervention["reform_year"]:
+            #     cf_totals[key] += f_housing_units[i] # R: grabbing the factual data here is somewhat controversial
+            # else:
+            cf_totals[key] = cf_totals[key] + cf_housing_units[:, i] 
+        cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()} 
+        # R so is clamping after summation rather than before
+        # if predictions are systematically too low, consider clamping before summation 
+
 
         census_tracts = list(cf_totals.keys())
         f_housing_units = [f_totals[k] for k in census_tracts]
@@ -216,6 +256,7 @@ class TractsModelPredictor:
             "census_tracts": census_tracts,
             "housing_units_factual": f_housing_units,
             "housing_units_counterfactual": cf_housing_units,
+            "limit_intervention": limit_intervention,
         }
 
 
