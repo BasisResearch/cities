@@ -25,7 +25,7 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         ] = None,  # init args kept for uniformity, consider deleting
         categorical_levels: Optional[Dict[str, Any]] = None,
         leeway=0.9,
-        housing_units_continuous_interaction_pairs = [],
+        housing_units_continuous_interaction_pairs=[],
     ):
         """
 
@@ -39,7 +39,9 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         super().__init__()
 
         self.leeway = leeway
-        self.housing_units_continuous_interaction_pairs = housing_units_continuous_interaction_pairs
+        self.housing_units_continuous_interaction_pairs = (
+            housing_units_continuous_interaction_pairs
+        )
 
         self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
 
@@ -81,18 +83,6 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
                 "year",
                 dist.Categorical(torch.ones(len(categorical_levels["year"]))),
                 obs=categorical["year"],
-            )
-
-            university_index = pyro.sample(
-                "university_index",
-                dist.Categorical(torch.ones(len(categorical_levels["university_index"]))),
-                obs=categorical["university_index"],
-            )
-
-            downtown_index = pyro.sample(
-                "downtown_index",
-                dist.Categorical(torch.ones(len(categorical_levels["downtown_index"]))),
-                obs=categorical["downtown_index"],
             )
 
             distance = pyro.sample(
@@ -261,7 +251,6 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
         # regression for housing units
         # ______________________________
 
-        
         housing_units_continuous_parents = {
             "median_value": median_value,
             "distance": distance,
@@ -276,8 +265,8 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
 
         housing_units_categorical_parents = {
             "year": year,
-#            "university_index": university_index,
-#            "downtown_index": downtown_index,
+            #            "university_index": university_index,
+            #            "downtown_index": downtown_index,
         }
 
         housing_units = add_linear_component_continuous_interactions(

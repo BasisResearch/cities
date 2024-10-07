@@ -198,7 +198,6 @@ def add_linear_component_continuous_interactions(
             if key1 != key2
         ]
 
-
     for interaction_pair in continous_interaction_pairs:
         assert interaction_pair[0] in child_continuous_parents.keys()
         assert interaction_pair[1] in child_continuous_parents.keys()
