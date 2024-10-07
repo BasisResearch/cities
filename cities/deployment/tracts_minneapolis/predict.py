@@ -145,6 +145,10 @@ class TractsModelPredictor:
         self.subset = select_from_data(self.data, TractsModelPredictor.kwargs_subset)
 
 
+        self.years = self.data["categorical"]["year_original"]
+        self.year_ids = self.data['categorical']["year"]
+        self.tracts = self.data["categorical"]["census_tract"]
+
 
         categorical_levels = {
             "year": torch.unique(self.subset["categorical"]["year"]),
@@ -234,49 +238,67 @@ class TractsModelPredictor:
             with do(actions={"limit": limit_intervention}):
                 result_all = self.predictive(**subset_for_preds)["housing_units"]
         with mwc:
-            result = gather(
+            result_f = gather(
+                result_all, IndexSet(**{"limit": {0}}), event_dims=0
+            ).squeeze()
+            result_cf = gather(
                 result_all, IndexSet(**{"limit": {1}}), event_dims=0
             ).squeeze()
 
-        years = self.data["categorical"]["year_original"]
-        tracts = self.data["categorical"]["census_tract"]
-        f_housing_units = self.data["continuous"]["housing_units_original"]
-        cf_housing_units = (result * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
+        obs_housing_units = self.data["continuous"]["housing_units_original"]
+        f_housing_units = (result_f * self.housing_units_std + self.housing_units_mean)#.clamp(min = 0)
+        cf_housing_units = (result_cf * self.housing_units_std + self.housing_units_mean)# .clamp(min = 0)
+
 
         # calculate cumulative housing units (factual)
-        f_totals = {}
-        for i in range(tracts.shape[0]):
-            key = tracts[i].item()
-            if key not in f_totals:
-                f_totals[key] = 0
-            f_totals[key] += f_housing_units[i]
+        obs_cumsums = {}
+        for key in self.tracts.unique():
+            obs_units = []
+            for year, year_id in zip(self.years.unique(), self.year_ids.unique()):
+                print(key, year, year_id)
 
-        # calculate cumulative housing units (counterfactual)
-        cf_totals = {}
-        for i in range(tracts.shape[0]):
-            year = years[i].item()
-            key = tracts[i].item()
-            if key not in cf_totals:
-                cf_totals[key] = 0
-            # if year < intervention["reform_year"]:
-            #     cf_totals[key] += f_housing_units[i] # R: grabbing the factual data here is somewhat controversial
-            # else:
-            cf_totals[key] = cf_totals[key] + cf_housing_units[:, i] 
-        cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()} 
-        # R so is clamping after summation rather than before
-        # if predictions are systematically too low, consider clamping before summation 
+                obs_units.append(obs_housing_units[(self.tracts == key) & (self.year_ids == year_id)])
+
+            obs_cumsum = torch.cumsum(torch.stack(obs_units), dim = 0).flatten()
+            obs_cumsums[key] = obs_cumsum
 
 
-        census_tracts = list(cf_totals.keys())
-        f_housing_units = [f_totals[k] for k in census_tracts]
-        cf_housing_units = [cf_totals[k] for k in census_tracts]
+        return {"obs_cumsums": obs_cumsums,"limit_intervention": limit_intervention,}
 
-        return {
-            "census_tracts": census_tracts,
-            "housing_units_factual": f_housing_units,
-            "housing_units_counterfactual": cf_housing_units,
-            "limit_intervention": limit_intervention,
-        }
+
+            #obs_totals[key] = 
+        # for i in range(tracts.shape[0]):
+        #     key = tracts[i].item()
+        #     if key not in obs_totals:
+        #         obs_totals[key] = 0
+        #     obs_totals[key] += f_housing_units[i]
+
+        # # calculate cumulative housing units (counterfactual)
+        # cf_totals = {}
+        # for i in range(tracts.shape[0]):
+        #     year = years[i].item()
+        #     key = tracts[i].item()
+        #     if key not in cf_totals:
+        #         cf_totals[key] = 0
+        #     # if year < intervention["reform_year"]:
+        #     #     cf_totals[key] += f_housing_units[i] # R: grabbing the factual data here is somewhat controversial
+        #     # else:
+        #     cf_totals[key] = cf_totals[key] + cf_housing_units[:, i] 
+        # cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()} 
+        # # R so is clamping after summation rather than before
+        # # if predictions are systematically too low, consider clamping before summation 
+
+
+        # census_tracts = list(cf_totals.keys())
+        # f_housing_units = [f_totals[k] for k in census_tracts]
+        # cf_housing_units = [cf_totals[k] for k in census_tracts]
+
+        # return {
+        #     "census_tracts": census_tracts,
+        #     "housing_units_factual": f_housing_units,
+        #     "housing_units_counterfactual": cf_housing_units,
+        #     "limit_intervention": limit_intervention,
+        # }
 
 
 if __name__ == "__main__":
