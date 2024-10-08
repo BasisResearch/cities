@@ -1,14 +1,10 @@
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 import pyro
 import pyro.distributions as dist
 import torch
 
-from cities.modeling.zoning_models.units_causal_model import (get_n, categorical_contribution, 
-                                                              continuous_contribution, add_linear_component, 
-                                                              categorical_interaction_variable)
-
-
+from cities.modeling.zoning_models.units_causal_model import add_linear_component, get_n
 
 
 class DistanceCausalModel(pyro.nn.PyroModule):
@@ -101,26 +97,35 @@ class DistanceCausalModel(pyro.nn.PyroModule):
             #     past_reform_by_zone
             # )
 
-        #___________________________________
+        # ___________________________________
         # deterministic def of actual limits
-        #___________________________________
+        # ___________________________________
 
         with data_plate:
-            limit_con = pyro.deterministic("limit_con",
-                        torch.where(zone_id == 0, torch.tensor(0.0), torch.where(zone_id == 1, 1.0 - past_reform,
-                                            torch.where(zone_id == 2, 1.0 - 0.5 * past_reform, torch.tensor(1.0)))), 
-                                            event_dim=0)
-
-
+            limit_con = pyro.deterministic(
+                "limit_con",
+                torch.where(
+                    zone_id == 0,
+                    torch.tensor(0.0),
+                    torch.where(
+                        zone_id == 1,
+                        1.0 - past_reform,
+                        torch.where(
+                            zone_id == 2, 1.0 - 0.5 * past_reform, torch.tensor(1.0)
+                        ),
+                    ),
+                ),
+                event_dim=0,
+            )
 
         # __________________________________
         # regression for distance to transit
         # __________________________________
 
-        distance_to_transit_continuous_parents = {}
+        distance_to_transit_continuous_parents = {}  # type: ignore
         distance_to_transit_categorical_parents = {
             "zone_id": zone_id,
-        } 
+        }
         distance_to_transit = add_linear_component(
             child_name="distance_to_transit",
             child_continuous_parents=distance_to_transit_continuous_parents,
@@ -130,8 +135,6 @@ class DistanceCausalModel(pyro.nn.PyroModule):
             observations=continuous["distance_to_transit"],
             categorical_levels=categorical_levels,
         )
-
-
 
         # ___________________________
         # regression for parcel area
