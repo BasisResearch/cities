@@ -19,6 +19,10 @@ from cities.utils.data_loader import select_from_data, select_from_sql
 
 load_dotenv()
 
+local_user = os.getenv("USER")
+if local_user == "rafal":
+    load_dotenv(os.path.expanduser("~/.env_pw"))
+
 
 class TractsModelPredictor:
     kwargs = {
@@ -228,7 +232,7 @@ if __name__ == "__main__":
         predictor = TractsModelPredictor(conn)
         start = time.time()
 
-        for iter in range(100): # added for time testing
+        for iter in range(5): # added for time testing
             result = predictor.predict_cumulative(
                 conn,
                 intervention={
