@@ -189,7 +189,7 @@ class TractsModelPredictor:
         pyro.clear_param_store()
         pyro.get_param_store().load(self.param_path)
 
-        self.predictive = Predictive(model=model, guide=self.guide, num_samples=1000, parallel=True)
+        self.predictive = Predictive(model=model, guide=self.guide, num_samples=100)
 
 
         self.subset_for_preds = copy.deepcopy(self.subset)
@@ -249,12 +249,14 @@ class TractsModelPredictor:
                 result_all, IndexSet(**{"limit": {1}}), event_dims=0
             ).squeeze()
 
-        obs_housing_units = self.data["continuous"]["housing_units_original"]
-        f_housing_units = (result_f * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
-        cf_housing_units = (result_cf * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
+        obs_housing_units_raw = self.data["continuous"]["housing_units_original"]
+        f_housing_units_raw = (result_f * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
+        cf_housing_units_raw = (result_cf * self.housing_units_std + self.housing_units_mean).clamp(min = 0)
 
 
         # calculate cumulative housing units (factual)
+        obs_limits = {}
+        cf_limits = {}
         obs_cumsums = {}
         f_cumsums = {}
         cf_cumsums = {}
@@ -262,14 +264,26 @@ class TractsModelPredictor:
             obs_units = []
             f_units = []
             cf_units = []
+            obs_limits_list = []
+            cf_limits_list = []
             for year in self.years.unique():
-                obs_units.append(obs_housing_units[(self.tracts == key) & (self.years == year)])
-                f_units.append(f_housing_units[:,(self.tracts == key) & (self.years  == year)])
-                cf_units.append(cf_housing_units[:,(self.tracts == key) & (self.years == year)])
+
+                mask = (self.tracts == key) & (self.years == year)
+
+                obs_units.append(obs_housing_units_raw[mask])
+                
+                obs_limits_list.append(self.data["continuous"]["mean_limit_original"][mask])
+                cf_limits_list.append(limit_intervention[mask])
+
+                f_units.append(f_housing_units_raw[:,mask])
+                cf_units.append(cf_housing_units_raw[:, mask])
 
             obs_cumsum = torch.cumsum(torch.stack(obs_units), dim = 0).flatten()
+            obs_limits[key] = torch.stack(obs_limits_list).flatten()
+            cf_limits[key] = torch.stack(cf_limits_list).flatten()
             f_cumsum = torch.cumsum(torch.stack(f_units), dim = 0).squeeze()
             cf_cumsum = torch.cumsum(torch.stack(cf_units), dim = 0).squeeze()
+
 
             obs_cumsums[key] = obs_cumsum
             f_cumsums[key] = f_cumsum
@@ -286,7 +300,7 @@ class TractsModelPredictor:
             key = tracts[i].item()
             if key not in f_totals:
                 f_totals[key] = 0
-            f_totals[key] += obs_housing_units[i]
+            f_totals[key] += obs_housing_units_raw[i]
 
         # calculate cumulative housing units (counterfactual)
         cf_totals = {}
@@ -296,9 +310,9 @@ class TractsModelPredictor:
             if key not in cf_totals:
                 cf_totals[key] = 0
             if year < intervention["reform_year"]:
-                cf_totals[key] += obs_housing_units[i]
+                cf_totals[key] += obs_housing_units_raw[i]
             else:
-                cf_totals[key] = cf_totals[key] + cf_housing_units[:, i]
+                cf_totals[key] = cf_totals[key] + cf_housing_units_raw[:, i]
         cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()}
 
         census_tracts = list(cf_totals.keys())
@@ -309,6 +323,11 @@ class TractsModelPredictor:
 
         return {"obs_cumsums": obs_cumsums, "f_cumsums": f_cumsums, "cf_cumsums": cf_cumsums, 
                 "limit_intervention": limit_intervention,
+                "obs_limits": obs_limits,
+                "cf_limits": cf_limits,
+                "raw_obs_housing_units": obs_housing_units_raw,
+                "raw_f_housing_units": f_housing_units_raw,
+                "raw_cf_housing_units": cf_housing_units_raw,
                 # presumably outdated
                 "census_tracts": census_tracts,
                 "housing_units_factual": f_housing_units,
@@ -332,16 +351,17 @@ if __name__ == "__main__":
         predictor = TractsModelPredictor(conn)
         start = time.time()
 
-        result = predictor.predict_cumulative(
-            conn,
-            intervention={
-                "radius_blue": 106.7,
-                "limit_blue": 0,
-                "radius_yellow_line": 402.3,
-                "radius_yellow_stop": 804.7,
-                "limit_yellow": 0.5,
-                "reform_year": 2015,
+        for iter in range(5):
+            result = predictor.predict_cumulative(
+                conn,
+                intervention={
+            "radius_blue": 350,
+            "limit_blue": 0,
+            "radius_yellow_line": 1320,
+            "radius_yellow_stop": 2640,
+            "limit_yellow": 0.5,
+            "reform_year": 2015,
             },
-        )
+            )
         end = time.time()
         print(f"Counterfactual in {end - start} seconds")
