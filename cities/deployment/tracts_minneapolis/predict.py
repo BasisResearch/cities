@@ -232,7 +232,7 @@ if __name__ == "__main__":
         predictor = TractsModelPredictor(conn)
         start = time.time()
 
-        for iter in range(5): # added for time testing
+        for iter in range(5):  # added for time testing
             result = predictor.predict_cumulative(
                 conn,
                 intervention={
