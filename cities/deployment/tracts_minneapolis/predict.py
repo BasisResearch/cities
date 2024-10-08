@@ -228,16 +228,17 @@ if __name__ == "__main__":
         predictor = TractsModelPredictor(conn)
         start = time.time()
 
-        result = predictor.predict_cumulative(
-            conn,
-            intervention={
-                "radius_blue": 106.7,
-                "limit_blue": 0,
-                "radius_yellow_line": 402.3,
-                "radius_yellow_stop": 804.7,
-                "limit_yellow": 0.5,
-                "reform_year": 2015,
-            },
-        )
+        for iter in range(100): # added for time testing
+            result = predictor.predict_cumulative(
+                conn,
+                intervention={
+                    "radius_blue": 106.7,
+                    "limit_blue": 0,
+                    "radius_yellow_line": 402.3,
+                    "radius_yellow_stop": 804.7,
+                    "limit_yellow": 0.5,
+                    "reform_year": 2015,
+                },
+            )
         end = time.time()
         print(f"Counterfactual in {end - start} seconds")
