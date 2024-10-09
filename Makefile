@@ -38,6 +38,6 @@ api-container-push:
 	docker push us-east1-docker.pkg.dev/cities-429602/cities/cities-api
 
 run-api-local:
-	sudo -E docker run --rm -it -e PORT=8081 -e PASSWORD -p 3001:8081 cities-api
+	docker run --rm -it -e PORT=8081 -e PASSWORD -p 3001:8081 cities-api
 
 FORCE:

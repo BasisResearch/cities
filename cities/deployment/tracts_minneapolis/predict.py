@@ -161,14 +161,15 @@ class TractsModelPredictor:
             TractsModelPredictor.tracts_intervention_sql, conn, params=params
         )
         return torch.tensor(df["intervention"].values, dtype=torch.float32)
-
-    def predict_cumulative(self, conn, intervention):
-        """Predict the total number of housing units built from 2011-2020 under intervention.
+    
+    def predict_cumulative_by_year(self, conn, intervention):
+        """Predict the cumulative number of housing units built from 2011-2019 under intervention, by year.
 
         Returns a dictionary with keys:
         - 'census_tracts': the tracts considered
-        - 'housing_units_factual': total housing units built according to real housing data
-        - 'housing_units_counterfactual': samples from prediction of total housing units built
+        - 'years': the years considered (2011-2019)
+        - 'housing_units_factual': cumulative housing units built according to real housing data, by year
+        - 'housing_units_counterfactual': samples from prediction of cumulative housing units built, by year
         """
         pyro.clear_param_store()
         pyro.get_param_store().load(self.param_path)
@@ -191,37 +192,48 @@ class TractsModelPredictor:
         f_housing_units = self.data["continuous"]["housing_units_original"]
         cf_housing_units = result * self.housing_units_std + self.housing_units_mean
 
-        # calculate cumulative housing units (factual)
-        f_totals = {}
-        for i in range(tracts.shape[0]):
-            key = tracts[i].item()
-            if key not in f_totals:
-                f_totals[key] = 0
-            f_totals[key] += f_housing_units[i]
+        # Organize cumulative data by year and tract
+        f_data = {}
+        cf_data = {}
+        unique_years = sorted(set(years.tolist()))
+        unique_years = [year for year in unique_years if year <= 2019]  # Exclude years after 2019
+        unique_tracts = sorted(set(tracts.tolist()))
 
-        # calculate cumulative housing units (counterfactual)
-        cf_totals = {}
+        for year in unique_years:
+            f_data[year] = {tract: 0 for tract in unique_tracts}
+            cf_data[year] = {tract: [0] * 100 for tract in unique_tracts}
+
         for i in range(tracts.shape[0]):
             year = years[i].item()
-            key = tracts[i].item()
-            if key not in cf_totals:
-                cf_totals[key] = 0
-            if year < intervention["reform_year"]:
-                cf_totals[key] += f_housing_units[i]
-            else:
-                cf_totals[key] = cf_totals[key] + cf_housing_units[:, i]
-        cf_totals = {k: torch.clamp(v, 0) for k, v in cf_totals.items()}
+            if year > 2019:
+                continue  # Skip data for years after 2019
+            tract = tracts[i].item()
+            
+            # Update factual data
+            for y in unique_years:
+                if y >= year:
+                    f_data[y][tract] += f_housing_units[i].item()
 
-        census_tracts = list(cf_totals.keys())
-        f_housing_units = [f_totals[k] for k in census_tracts]
-        cf_housing_units = [cf_totals[k] for k in census_tracts]
+            # Update counterfactual data
+            if year < intervention["reform_year"]:
+                for y in unique_years:
+                    if y >= year:
+                        cf_data[y][tract] = [x + f_housing_units[i].item() for x in cf_data[y][tract]]
+            else:
+                for y in unique_years:
+                    if y >= year:
+                        cf_data[y][tract] = [x + y for x, y in zip(cf_data[y][tract], cf_housing_units[:, i].tolist())]
+
+        # Convert to lists for easier JSON serialization
+        housing_units_factual = [[f_data[year][tract] for tract in unique_tracts] for year in unique_years]
+        housing_units_counterfactual = [[cf_data[year][tract] for tract in unique_tracts] for year in unique_years]
 
         return {
-            "census_tracts": census_tracts,
-            "housing_units_factual": f_housing_units,
-            "housing_units_counterfactual": cf_housing_units,
+            "census_tracts": unique_tracts,
+            "years": unique_years,
+            "housing_units_factual": housing_units_factual,
+            "housing_units_counterfactual": housing_units_counterfactual,
         }
-
 
 if __name__ == "__main__":
     import time
