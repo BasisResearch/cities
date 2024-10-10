@@ -14,6 +14,8 @@ select
   census_tracts.census_tract,
   census_tracts.year_,
   parcels_distance_to_transit.distance as distance_to_transit,
+  parcels_distance_to_transit.line_distance as distance_to_transit_line,
+  parcels_distance_to_transit.stop_distance as distance_to_transit_stop,
   parcels_parking_limits.limit_numeric as limit_con,
   parcels_parking_limits.is_downtown as downtown_yn
 from
