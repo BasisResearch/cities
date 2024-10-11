@@ -203,7 +203,9 @@ class TractsModelPredictor:
         f_data = {}
         cf_data = {}
         unique_years = sorted(set(years.tolist()))
-        unique_years = [year for year in unique_years if year <= 2019]  # Exclude years after 2019
+        unique_years = [
+            year for year in unique_years if year <= 2019
+        ]  # Exclude years after 2019
         unique_tracts = sorted(set(tracts.tolist()))
 
         for year in unique_years:
@@ -215,7 +217,7 @@ class TractsModelPredictor:
             if year > 2019:
                 continue  # Skip data for years after 2019
             tract = tracts[i].item()
-            
+
             # Update factual data
             for y in unique_years:
                 if y >= year:
@@ -225,15 +227,26 @@ class TractsModelPredictor:
             if year < intervention["reform_year"]:
                 for y in unique_years:
                     if y >= year:
-                        cf_data[y][tract] = [x + f_housing_units[i].item() for x in cf_data[y][tract]]
+                        cf_data[y][tract] = [
+                            x + f_housing_units[i].item() for x in cf_data[y][tract]
+                        ]
             else:
                 for y in unique_years:
                     if y >= year:
-                        cf_data[y][tract] = [x + y for x, y in zip(cf_data[y][tract], cf_housing_units[:, i].tolist())]
+                        cf_data[y][tract] = [
+                            x + y
+                            for x, y in zip(
+                                cf_data[y][tract], cf_housing_units[:, i].tolist()
+                            )
+                        ]
 
         # Convert to lists for easier JSON serialization
-        housing_units_factual = [[f_data[year][tract] for tract in unique_tracts] for year in unique_years]
-        housing_units_counterfactual = [[cf_data[year][tract] for tract in unique_tracts] for year in unique_years]
+        housing_units_factual = [
+            [f_data[year][tract] for tract in unique_tracts] for year in unique_years
+        ]
+        housing_units_counterfactual = [
+            [cf_data[year][tract] for tract in unique_tracts] for year in unique_years
+        ]
 
         return {
             "census_tracts": unique_tracts,
@@ -241,6 +254,7 @@ class TractsModelPredictor:
             "housing_units_factual": housing_units_factual,
             "housing_units_counterfactual": housing_units_counterfactual,
         }
+
 
 if __name__ == "__main__":
     import time
@@ -252,7 +266,7 @@ if __name__ == "__main__":
         start = time.time()
 
         for iter in range(5):  # added for time testing
-            result = predictor.predict_cumulative(
+            result = predictor.predict_cumulative_by_year(
                 conn,
                 intervention={
                     "radius_blue": 106.7,
