@@ -45,7 +45,7 @@ setup(
         "pyro-ppl==1.8.6",
         "chirho @ git+https://github.com/BasisResearch/chirho.git",
         "pandas",
-        "numpy",
+        "numpy==1.24.1", # torch won't work reliably with newer versions
         "scikit-learn",
         "sqlalchemy",
         "dill",
