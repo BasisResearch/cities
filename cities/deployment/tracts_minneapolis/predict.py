@@ -31,7 +31,6 @@ class TractsModelPredictor:
             "housing_units",
             "total_value",
             "median_value",
-            "mean_limit_original",
             "median_distance",
             "income",
             "segregation_original",
@@ -63,23 +62,13 @@ class TractsModelPredictor:
       census_tract,
       year_,
       case
-        when downtown_yn then 0
-        when not downtown_yn
-             and year_ >= %(reform_year)s
-             and distance_to_transit <= %(radius_blue)s
-             then %(limit_blue)s
-        when not downtown_yn
-             and year_ >= %(reform_year)s
-             and distance_to_transit > %(radius_blue)s
-             and (distance_to_transit_line <= %(radius_yellow_line)s
-                  or distance_to_transit_stop <= %(radius_yellow_stop)s)
+        when downtown_yn or university_yn then 0
+        when year_ < %(reform_year)s then 1
+        when distance_to_transit <= %(radius_blue)s then %(limit_blue)s
+        when distance_to_transit_line <= %(radius_yellow_line)s 
+             or distance_to_transit_stop <= %(radius_yellow_stop)s
              then %(limit_yellow)s
-        when not downtown_yn
-             and year_ >= %(reform_year)s
-             and distance_to_transit_line > %(radius_yellow_line)s
-             and distance_to_transit_stop > %(radius_yellow_stop)s
-             then 1
-        else limit_con
+        else 1
       end as intervention
     from tracts_model__parcels
     """
@@ -123,6 +112,7 @@ class TractsModelPredictor:
             conn,
             TractsModelPredictor.kwargs,
         )
+        self.data["continuous"]["mean_limit_original"] = self.obs_limits(conn)
         self.subset = select_from_data(self.data, TractsModelPredictor.kwargs_subset)
 
         categorical_levels = {
@@ -149,6 +139,19 @@ class TractsModelPredictor:
         limit_yellow,
         reform_year,
     ):
+        """Return the mean parking limits at the tracts level that result from the given intervention.
+
+        Parameters:
+        - conn: database connection
+        - radius_blue: radius of the blue zone (meters)
+        - limit_blue: parking limit for blue zone
+        - radius_yellow_line: radius of the yellow zone around lines (meters)
+        - radius_yellow_stop: radius of the yellow zone around stops (meters)
+        - limit_yellow: parking limit for yellow zone
+        - reform_year: year of the intervention
+
+        Returns: Tensor of parking limits sorted by tract and year
+        """
         params = {
             "reform_year": reform_year,
             "radius_blue": radius_blue,
@@ -161,7 +164,11 @@ class TractsModelPredictor:
             TractsModelPredictor.tracts_intervention_sql, conn, params=params
         )
         return torch.tensor(df["intervention"].values, dtype=torch.float32)
-    
+
+    def obs_limits(self, conn):
+        """Return the observed (factual) parking limits at the tracts level."""
+        return self._tracts_intervention(conn, 106.7, 0, 402.3, 804.7, 0.5, 2015)
+
     def predict_cumulative_by_year(self, conn, intervention):
         """Predict the cumulative number of housing units built from 2011-2019 under intervention, by year.
 
