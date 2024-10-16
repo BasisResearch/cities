@@ -1,0 +1,14 @@
+models:
+  - name: stg_zctas_2010
+    columns:
+      - name: zcta
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_zctas_2020
+    columns:
+      - name: zcta
+        data_tests:
+          - not_null
+          - unique
