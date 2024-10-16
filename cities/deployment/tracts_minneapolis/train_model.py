@@ -7,15 +7,23 @@ import torch
 from dotenv import load_dotenv
 
 from cities.modeling.svi_inference import run_svi_inference
-
-# from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
-from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
-    TractsModelSqm as TractsModel,
+from cities.modeling.zoning_models.zoning_tracts_population import (
+    TractsModelPopulation as TractsModel,
 )
+
+# from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
+#    # TractsModelContinuousInteractions as TractsModel,
+# )
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import db_connection, select_from_sql
 
-n_steps = 2000
+# from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
+# from cities.modeling.zoning_models.zoning_tracts_sqm_model import (
+#     TractsModelSqm as TractsModel,
+# )
+
+
+n_steps = 1500
 
 load_dotenv()
 
@@ -28,10 +36,16 @@ if local_user == "rafal":
 #####################
 
 kwargs = {
-    "categorical": ["year", "census_tract"],
+    "categorical": [
+        "year",
+        "census_tract",
+    ],
     "continuous": {
         "housing_units",
+        "housing_units_original",
         "total_value",
+        "total_population",
+        "population_density",
         "median_value",
         "mean_limit_original",
         "median_distance",
@@ -39,6 +53,8 @@ kwargs = {
         "segregation_original",
         "white_original",
         "parcel_sqm",
+        "downtown_overlap",
+        "university_overlap",
     },
     "outcome": "housing_units",
 }
@@ -57,12 +73,61 @@ print(f"Data loaded in {load_end - load_start} seconds")
 # instantiate and train model
 #############################
 
+# interaction terms
+# ins = [
+#     ("university_overlap", "limit"),
+#     ("downtown_overlap", "limit"),
+#     ("distance", "downtown_overlap"),
+#     ("distance", "university_overlap"),
+#     ("distance", "limit"),
+#     ("median_value", "segregation"),
+#     ("distance", "segregation"),
+#     ("limit", "sqm"),
+#     ("segregation", "sqm"),
+#     ("distance", "white"),
+#     ("income", "limit"),
+#     ("downtown_overlap", "median_value"),
+#     ("downtown_overlap", "segregation"),
+#     ("median_value", "white"),
+#     ("distance", "income"),
+# ]
+
+
+ins = [
+    ("university_overlap", "limit"),
+    ("downtown_overlap", "limit"),
+    ("distance", "downtown_overlap"),
+    ("distance", "university_overlap"),
+    ("distance", "limit"),
+    ("median_value", "segregation"),
+    ("distance", "segregation"),
+    ("limit", "sqm"),
+    ("segregation", "sqm"),
+    ("distance", "white"),
+    ("income", "limit"),
+    ("downtown_overlap", "median_value"),
+    ("downtown_overlap", "segregation"),
+    ("median_value", "white"),
+    ("distance", "income"),
+    ("population", "sqm"),
+    ("density", "income"),
+    ("density", "white"),
+    ("density", "segregation"),
+    ("density", "sqm"),
+    ("density", "downtown_overlap"),
+    ("density", "university_overlap"),
+    ("population", "density"),
+]
+
+
+# model
 tracts_model = TractsModel(
     **subset,
     categorical_levels={
         "year": torch.unique(subset["categorical"]["year"]),
         "census_tract": torch.unique(subset["categorical"]["census_tract"]),
     },
+    housing_units_continuous_interaction_pairs=ins,
 )
 
 pyro.clear_param_store()
@@ -78,7 +143,6 @@ deploy_path = os.path.join(root, "cities/deployment/tracts_minneapolis")
 guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
 param_path = os.path.join(deploy_path, "tracts_model_params.pth")
 
-guide_path = os.path.join(deploy_path, "tracts_model_guide.pkl")
 serialized_guide = dill.dumps(guide)
 with open(guide_path, "wb") as file:
     file.write(serialized_guide)
