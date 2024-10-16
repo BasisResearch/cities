@@ -12,6 +12,9 @@ from pyro.infer import Predictive
 from torch.utils.data import DataLoader
 
 from cities.modeling.svi_inference import run_svi_inference
+from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
+    TractsModelContinuousInteractions,
+)
 from cities.modeling.zoning_models.zoning_tracts_model import TractsModel
 from cities.modeling.zoning_models.zoning_tracts_sqm_model import TractsModelSqm
 from cities.utils.data_grabber import find_repo_root
@@ -25,7 +28,7 @@ num_samples = 10
 
 data_path = os.path.join(root, "data/minneapolis/processed/pg_census_tracts_dataset.pt")
 
-dataset_read = torch.load(data_path)
+dataset_read = torch.load(data_path, weights_only=False)
 
 
 loader = DataLoader(dataset_read, batch_size=len(dataset_read), shuffle=True)
@@ -47,19 +50,22 @@ kwargs = {
         "parcel_mean_sqm",
         "parcel_median_sqm",
         "parcel_sqm",
+        "downtown_overlap",
+        "university_overlap",
     },
     "outcome": "housing_units",
 }
 
+
 pg_subset = select_from_data(data, kwargs)
-pg_dataset_read = torch.load(data_path)
+pg_dataset_read = torch.load(data_path, weights_only=False)
 
 print("shape for pg", pg_subset["categorical"]["year"].shape)
 
 
 @pytest.mark.parametrize(
     "model_class",
-    [TractsModel, TractsModelSqm],
+    [TractsModel, TractsModelSqm, TractsModelContinuousInteractions],
 )
 def test_tracts_model(model_class):
 
@@ -123,7 +129,7 @@ def assert_no_repeated_non_ones(tensor_size):
 )
 @pytest.mark.parametrize(
     "model_class",
-    [TractsModel, TractsModelSqm],
+    [TractsModel, TractsModelSqm, TractsModelContinuousInteractions],
 )
 def test_plated_sample_shaping(use_plate, use_mwc, use_do, model_class):
     model = model_class(**data, categorical_levels=pg_dataset_read.categorical_levels)
