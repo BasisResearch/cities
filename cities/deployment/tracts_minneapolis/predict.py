@@ -25,6 +25,10 @@ if local_user == "rafal":
 
 num_samples = 100
 
+# this disables assertions for speed
+dev_mode = False
+
+
 
 class TractsModelPredictor:
     kwargs = {
@@ -268,9 +272,7 @@ class TractsModelPredictor:
             f_cumsums[key_str] = f_cumsum
             cf_cumsums[key_str] = cf_cumsum
 
-        assert list(obs_cumsums.keys()) == [
-            str(_) for _ in self.tracts.unique().tolist()
-        ]
+       
 
         # R: I'd recommend keeping "cumsums", as well as "observed/factual/counterfactual"
         # in variable names
@@ -287,21 +289,25 @@ class TractsModelPredictor:
             for __ in torch.stack(list(cf_cumsums.values())).unbind(dim=-2)
         ]
 
-        assert (
-            len(cumsums_factual)
-            == len(cumsums_observed)
-            == len(cumsums_counterfactual)
-            == 10
-        )
-        #  the number of years
-        assert (
-            len(cumsums_factual[0]) == len(cumsums_counterfactual[0]) == 113
-        )  # the number of unique tracts
-        assert (
-            len(cumsums_factual[0][0])
-            == len(cumsums_counterfactual[0][0])
-            == num_samples
-        )
+        if dev_mode:
+            assert (
+                len(cumsums_factual)
+                == len(cumsums_observed)
+                == len(cumsums_counterfactual)
+                == 10
+            )
+            #  the number of years
+            assert (
+                len(cumsums_factual[0]) == len(cumsums_counterfactual[0]) == 113
+            )  # the number of unique tracts
+            assert (
+                len(cumsums_factual[0][0])
+                == len(cumsums_counterfactual[0][0])
+                == num_samples
+            )
+            assert list(obs_cumsums.keys()) == [
+                str(_) for _ in self.tracts.unique().tolist()
+            ]
 
         return {
             # these are lists whose structures are dictated
