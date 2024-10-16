@@ -25,6 +25,7 @@ if local_user == "rafal":
 
 num_samples = 100
 
+
 class TractsModelPredictor:
     kwargs = {
         "categorical": ["year", "census_tract", "year_original"],
@@ -43,9 +44,9 @@ class TractsModelPredictor:
             "white_original",
             "parcel_sqm",
             "downtown_overlap",
-            'downtown_overlap_original',
+            "downtown_overlap_original",
             "university_overlap",
-            'university_overlap_original'
+            "university_overlap_original",
         },
         "outcome": "housing_units",
     }
@@ -106,7 +107,6 @@ class TractsModelPredictor:
         # R: I assume this this is Jack's workaround to ensure the limits align, correct?
         self.data["continuous"]["mean_limit_original"] = self.obs_limits(conn)
 
-
         self.subset = select_from_data(self.data, TractsModelPredictor.kwargs)
 
         self.years = self.data["categorical"]["year_original"]
@@ -154,8 +154,9 @@ class TractsModelPredictor:
         pyro.clear_param_store()
         pyro.get_param_store().load(self.param_path)
 
-        self.predictive = Predictive(model=model, guide=self.guide,
-         num_samples=num_samples)
+        self.predictive = Predictive(
+            model=model, guide=self.guide, num_samples=num_samples
+        )
 
         self.subset_for_preds = copy.deepcopy(self.subset)
         self.subset_for_preds["continuous"]["housing_units"] = None
@@ -267,27 +268,40 @@ class TractsModelPredictor:
             f_cumsums[key_str] = f_cumsum
             cf_cumsums[key_str] = cf_cumsum
 
-        assert list(obs_cumsums.keys()) == [str(_) for _ in self.tracts.unique().tolist()]
+        assert list(obs_cumsums.keys()) == [
+            str(_) for _ in self.tracts.unique().tolist()
+        ]
 
         # R: I'd recommend keeping "cumsums", as well as "observed/factual/counterfactual"
         # in variable names
         # to make terminology clear and transparent
-        cumsums_observed = torch.stack( list(obs_cumsums.values())).T.tolist()
+        cumsums_observed = torch.stack(list(obs_cumsums.values())).T.tolist()
 
         cumsums_factual = [
             [_.tolist() for _ in __.unbind(dim=-2)]
             for __ in torch.stack(list(f_cumsums.values())).unbind(dim=-2)
-            ]
+        ]
 
         cumsums_counterfactual = [
             [_.tolist() for _ in __.unbind(dim=-2)]
             for __ in torch.stack(list(cf_cumsums.values())).unbind(dim=-2)
-            ]
+        ]
 
-        assert len(cumsums_factual) == len(cumsums_observed) == len(cumsums_counterfactual) == 10 #  the number of years
-        assert len(cumsums_factual[0]) == len(cumsums_counterfactual[0]) == 113 # the number of unique tracts
-        assert len(cumsums_factual[0][0]) == len(cumsums_counterfactual[0][0])== num_samples 
-
+        assert (
+            len(cumsums_factual)
+            == len(cumsums_observed)
+            == len(cumsums_counterfactual)
+            == 10
+        )
+        #  the number of years
+        assert (
+            len(cumsums_factual[0]) == len(cumsums_counterfactual[0]) == 113
+        )  # the number of unique tracts
+        assert (
+            len(cumsums_factual[0][0])
+            == len(cumsums_counterfactual[0][0])
+            == num_samples
+        )
 
         return {
             # these are lists whose structures are dictated
@@ -296,8 +310,7 @@ class TractsModelPredictor:
             "years": self.years.unique().tolist(),
             "cumsums_observed": cumsums_observed,
             "cumsums_factual": cumsums_factual,
-            "cumsums_counterfactual": cumsums_counterfactual,            
-
+            "cumsums_counterfactual": cumsums_counterfactual,
             # more direct dictionaries used for notebooks and debugging
             # if they slow anything down
             # we can revisit and make an optional output
@@ -313,11 +326,10 @@ class TractsModelPredictor:
         }
 
 
-
 # This the desired structure of the output
 # (except, we need to correct for the observed/factual distinction
 # (and make our terminology consistent with the concepts)
-#{
+# {
 #     "census_tracts": ["27053000100", "27053000200", ...],  # List of census tract IDs
 #     "years": [2011, 2012, 2013, ..., 2019],  # List of years
 
@@ -341,8 +353,6 @@ class TractsModelPredictor:
 #         ...
 #     ]
 # }
-
-
 
 
 if __name__ == "__main__":
