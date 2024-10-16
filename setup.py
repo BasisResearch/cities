@@ -13,6 +13,7 @@ TEST_REQUIRES = [
     "nbval",
     "nbqa",
     "autoflake",
+    "xetcache",
 ]
 
 DEV_REQUIRES = [

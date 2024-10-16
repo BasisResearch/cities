@@ -108,6 +108,10 @@ class TractsModelPopulation(pyro.nn.PyroModule):
                 "population", dist.Normal(0, 1), obs=continuous["total_population"]
             )
 
+            density = pyro.sample(
+                "density", dist.Normal(0, 1), obs=continuous["population_density"]
+            )
+
 
         # ______________________
         # regression for sqm
@@ -285,6 +289,7 @@ class TractsModelPopulation(pyro.nn.PyroModule):
             "downtown_overlap": downtown_overlap,
             "university_overlap": university_overlap,
             "population": population,
+            "density": density,
         }
 
         housing_units_categorical_parents = {

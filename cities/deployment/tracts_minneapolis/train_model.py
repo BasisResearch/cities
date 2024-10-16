@@ -7,9 +7,12 @@ import torch
 from dotenv import load_dotenv
 
 from cities.modeling.svi_inference import run_svi_inference
-from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
-    TractsModelContinuousInteractions as TractsModel,
-)
+
+from cities.modeling.zoning_models.zoning_tracts_population import TractsModelPopulation as TractsModel
+
+# from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
+#    # TractsModelContinuousInteractions as TractsModel,
+# )
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import db_connection, select_from_sql
 
@@ -32,11 +35,13 @@ if local_user == "rafal":
 #####################
 
 kwargs = {
-    "categorical": ["year", "census_tract"],
+    "categorical": ["year", "census_tract",],
     "continuous": {
         "housing_units",
         "housing_units_original",
         "total_value",
+        "total_population",
+        "population_density",
         "median_value",
         "mean_limit_original",
         "median_distance",
@@ -44,8 +49,8 @@ kwargs = {
         "segregation_original",
         "white_original",
         "parcel_sqm",
-        "downtown_overlap",
-        "university_overlap",
+        'downtown_overlap', 
+        'university_overlap',
     },
     "outcome": "housing_units",
 }
@@ -65,6 +70,25 @@ print(f"Data loaded in {load_end - load_start} seconds")
 #############################
 
 # interaction terms
+# ins = [
+#     ("university_overlap", "limit"),
+#     ("downtown_overlap", "limit"),
+#     ("distance", "downtown_overlap"),
+#     ("distance", "university_overlap"),
+#     ("distance", "limit"),
+#     ("median_value", "segregation"),
+#     ("distance", "segregation"),
+#     ("limit", "sqm"),
+#     ("segregation", "sqm"),
+#     ("distance", "white"),
+#     ("income", "limit"),
+#     ("downtown_overlap", "median_value"),
+#     ("downtown_overlap", "segregation"),
+#     ("median_value", "white"),
+#     ("distance", "income"),
+# ]
+
+
 ins = [
     ("university_overlap", "limit"),
     ("downtown_overlap", "limit"),
@@ -81,7 +105,13 @@ ins = [
     ("downtown_overlap", "segregation"),
     ("median_value", "white"),
     ("distance", "income"),
+    ('population', 'sqm'), 
+    ('density', 'income'), ('density', 'white'), 
+    ('density', 'segregation'), ('density', 'sqm'), 
+    ('density', 'downtown_overlap'), ('density', 'university_overlap'), 
+    ('population', 'density')
 ]
+
 
 # model
 tracts_model = TractsModel(
