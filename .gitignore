@@ -43,3 +43,7 @@ cities/deployment/tracts_minneapolis/tracts_model_guide.pkl
 cities/deployment/tracts_minneapolis/tracts_model_params.pth
 /build/
 docs/experimental_notebooks/zoning/interactions_preds.dill
+docs/experimental_notebooks/zoning/population_preds.dill
+docs/experimental_notebooks/zoning/waic_dict_7.pkl
+docs/experimental_notebooks/zoning/waic_dict_13.pkl
+docs/experimental_notebooks/zoning/waic_dict_14.pkl
