@@ -11,14 +11,11 @@ from chirho.interventional.handlers import do
 from dotenv import load_dotenv
 from pyro.infer import Predictive
 
-
 from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
     TractsModelContinuousInteractions as TractsModel,
-    )
-
+)
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_data, select_from_sql
-
 
 load_dotenv()
 
@@ -104,10 +101,10 @@ class TractsModelPredictor:
         self.data["continuous"]["mean_limit_original"] = self.obs_limits(conn)
 
         # R: fix this assertion make sure its satisfied
-        # assert (self.data["continuous"]["university_overlap"] > 2).logical_not().all() | (self.data["continuous"]["mean_limit_original"] == 0).all(), \
+        # assert (self.data["continuous"]["university_overlap"] > 2).logical_not().all()
+        # | (self.data["continuous"]["mean_limit_original"] == 0).all(), \
         # "Mean limit original should be zero wherever university overlap exceeds 2."
 
-        
         # set to zero whenever the university overlap is above 1
         # # TODO check, this should now be handled at the data processing stage
         # self.data["continuous"]["mean_limit_original"] = torch.where(
@@ -133,8 +130,6 @@ class TractsModelPredictor:
             "housing_units_original"
         ].mean()
 
-
-
         ins = [
             ("university_overlap", "limit"),
             ("downtown_overlap", "limit"),
@@ -158,7 +153,6 @@ class TractsModelPredictor:
             categorical_levels=categorical_levels,
             housing_units_continuous_interaction_pairs=ins,
         )
-
 
         with open(self.guide_path, "rb") as file:
             self.guide = dill.load(file)
@@ -207,7 +201,7 @@ class TractsModelPredictor:
             TractsModelPredictor.tracts_intervention_sql, conn, params=params
         )
         return torch.tensor(df["intervention"].values, dtype=torch.float32)
-    
+
     def obs_limits(self, conn):
         """Return the observed (factual) parking limits at the tracts level."""
         return self._tracts_intervention(conn, 106.7, 0, 402.3, 804.7, 0.5, 2015)
@@ -223,11 +217,11 @@ class TractsModelPredictor:
 
         limit_intervention = self._tracts_intervention(conn, **intervention)
 
-        #R: fix this assertion make sure its satisfied
-        #assert (self.data["continuous"]["downtown_overlap"] <= 2).all() | (limit_intervention == 0).all(), \
-        #"Limit intervention should be zero wherever downtown overlap exceeds 1."
+        # R: fix this assertion make sure its satisfied
+        # assert (self.data["continuous"]["downtown_overlap"] <= 2).all() | (limit_intervention == 0).all(), \
+        # "Limit intervention should be zero wherever downtown overlap exceeds 1."
 
-        # R: this shouldn't be required now, remove when confirmed 
+        # R: this shouldn't be required now, remove when confirmed
         # limit_intervention = torch.where(
         #     self.data["continuous"]["university_overlap"] > 2,
         #     torch.zeros_like(limit_intervention),
@@ -295,7 +289,7 @@ class TractsModelPredictor:
             f_cumsums[key] = f_cumsum
             cf_cumsums[key] = cf_cumsum
 
-        #_____________________________________________
+        # _____________________________________________
         # R: this is the old code, remove when we reshape the output
         # from above into Michi's desired format
         # presumably outdated
@@ -359,8 +353,8 @@ class TractsModelPredictor:
         #     [cf_data[year][tract] for tract in unique_tracts] for year in unique_years
         # ]
 
-        #___________________________________________________________
-        #TODO remove output not used in debugging, evaluation or on the fronend side
+        # ___________________________________________________________
+        # TODO remove output not used in debugging, evaluation or on the fronend side
         return {
             "obs_cumsums": obs_cumsums,
             "f_cumsums": f_cumsums,
@@ -376,7 +370,7 @@ class TractsModelPredictor:
             # "census_tracts": unique_tracts,
             # "housing_units_factual": housing_units_factual,
             # "housing_units_counterfactual": housing_units_counterfactual,
-         }
+        }
 
         # return {
         #     "census_tracts": census_tracts,
