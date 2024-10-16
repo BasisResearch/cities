@@ -8,7 +8,6 @@ import torch
 from cities.modeling.model_components import (
     add_linear_component,
     add_linear_component_continuous_interactions,
-    add_ratio_component_continuous_interactions,
     add_ratio_component,
     check_categorical_is_subset_of_levels,
     get_categorical_levels,
@@ -140,8 +139,6 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
             "year": year,
         }
 
-   
-
         limit = add_ratio_component(
             child_name="limit",
             child_continuous_parents=limit_continuous_parents,
@@ -151,7 +148,6 @@ class TractsModelContinuousInteractions(pyro.nn.PyroModule):
             observations=continuous["mean_limit_original"],
             categorical_levels=self.categorical_levels,
         )
-
 
         # limit = add_ratio_component(
         #     child_name="limit",

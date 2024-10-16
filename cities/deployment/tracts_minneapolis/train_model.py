@@ -7,8 +7,9 @@ import torch
 from dotenv import load_dotenv
 
 from cities.modeling.svi_inference import run_svi_inference
-
-from cities.modeling.zoning_models.zoning_tracts_population import TractsModelPopulation as TractsModel
+from cities.modeling.zoning_models.zoning_tracts_population import (
+    TractsModelPopulation as TractsModel,
+)
 
 # from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
 #    # TractsModelContinuousInteractions as TractsModel,
@@ -35,7 +36,10 @@ if local_user == "rafal":
 #####################
 
 kwargs = {
-    "categorical": ["year", "census_tract",],
+    "categorical": [
+        "year",
+        "census_tract",
+    ],
     "continuous": {
         "housing_units",
         "housing_units_original",
@@ -49,8 +53,8 @@ kwargs = {
         "segregation_original",
         "white_original",
         "parcel_sqm",
-        'downtown_overlap', 
-        'university_overlap',
+        "downtown_overlap",
+        "university_overlap",
     },
     "outcome": "housing_units",
 }
@@ -105,11 +109,14 @@ ins = [
     ("downtown_overlap", "segregation"),
     ("median_value", "white"),
     ("distance", "income"),
-    ('population', 'sqm'), 
-    ('density', 'income'), ('density', 'white'), 
-    ('density', 'segregation'), ('density', 'sqm'), 
-    ('density', 'downtown_overlap'), ('density', 'university_overlap'), 
-    ('population', 'density')
+    ("population", "sqm"),
+    ("density", "income"),
+    ("density", "white"),
+    ("density", "segregation"),
+    ("density", "sqm"),
+    ("density", "downtown_overlap"),
+    ("density", "university_overlap"),
+    ("population", "density"),
 ]
 
 
