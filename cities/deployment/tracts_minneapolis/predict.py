@@ -23,6 +23,7 @@ local_user = os.getenv("USER")
 if local_user == "rafal":
     load_dotenv(os.path.expanduser("~/.env_pw"))
 
+num_samples = 100
 
 class TractsModelPredictor:
     kwargs = {
@@ -31,6 +32,9 @@ class TractsModelPredictor:
             "housing_units",
             "housing_units_original",
             "total_value",
+            "total_value_original",
+            "total_population",
+            "population_density",
             "median_value",
             "mean_limit_original",
             "median_distance",
@@ -39,7 +43,9 @@ class TractsModelPredictor:
             "white_original",
             "parcel_sqm",
             "downtown_overlap",
+            'downtown_overlap_original',
             "university_overlap",
+            'university_overlap_original'
         },
         "outcome": "housing_units",
     }
@@ -100,18 +106,6 @@ class TractsModelPredictor:
         # R: I assume this this is Jack's workaround to ensure the limits align, correct?
         self.data["continuous"]["mean_limit_original"] = self.obs_limits(conn)
 
-        # R: fix this assertion make sure its satisfied
-        # assert (self.data["continuous"]["university_overlap"] > 2).logical_not().all()
-        # | (self.data["continuous"]["mean_limit_original"] == 0).all(), \
-        # "Mean limit original should be zero wherever university overlap exceeds 2."
-
-        # set to zero whenever the university overlap is above 1
-        # # TODO check, this should now be handled at the data processing stage
-        # self.data["continuous"]["mean_limit_original"] = torch.where(
-        #     self.data["continuous"]["university_overlap"] > 1,
-        #     torch.zeros_like(self.data["continuous"]["mean_limit_original"]),
-        #     self.data["continuous"]["mean_limit_original"],
-        # )
 
         self.subset = select_from_data(self.data, TractsModelPredictor.kwargs)
 
@@ -160,7 +154,8 @@ class TractsModelPredictor:
         pyro.clear_param_store()
         pyro.get_param_store().load(self.param_path)
 
-        self.predictive = Predictive(model=model, guide=self.guide, num_samples=100)
+        self.predictive = Predictive(model=model, guide=self.guide,
+         num_samples=num_samples)
 
         self.subset_for_preds = copy.deepcopy(self.subset)
         self.subset_for_preds["continuous"]["housing_units"] = None
@@ -217,23 +212,6 @@ class TractsModelPredictor:
 
         limit_intervention = self._tracts_intervention(conn, **intervention)
 
-        # R: fix this assertion make sure its satisfied
-        # assert (self.data["continuous"]["downtown_overlap"] <= 2).all() | (limit_intervention == 0).all(), \
-        # "Limit intervention should be zero wherever downtown overlap exceeds 1."
-
-        # R: this shouldn't be required now, remove when confirmed
-        # limit_intervention = torch.where(
-        #     self.data["continuous"]["university_overlap"] > 2,
-        #     torch.zeros_like(limit_intervention),
-        #     limit_intervention,
-        # )
-
-        # limit_intervention = torch.where(
-        #     self.data["continuous"]["downtown_overlap"] > 1,
-        #     torch.zeros_like(limit_intervention),
-        #     limit_intervention,
-        # )
-
         with MultiWorldCounterfactual() as mwc:
             with do(actions={"limit": limit_intervention}):
                 result_all = self.predictive(**self.subset_for_preds)["housing_units"]
@@ -253,7 +231,6 @@ class TractsModelPredictor:
             result_cf * self.housing_units_std + self.housing_units_mean
         ).clamp(min=0)
 
-        # calculate cumulative housing units (factual)
         obs_limits = {}
         cf_limits = {}
         obs_cumsums = {}
@@ -279,83 +256,51 @@ class TractsModelPredictor:
                 f_units.append(f_housing_units_raw[:, mask])
                 cf_units.append(cf_housing_units_raw[:, mask])
 
+            key_str = str(key.item())
             obs_cumsum = torch.cumsum(torch.stack(obs_units), dim=0).flatten()
-            obs_limits[key] = torch.stack(obs_limits_list).flatten()
-            cf_limits[key] = torch.stack(cf_limits_list).flatten()
+            obs_limits[key_str] = torch.stack(obs_limits_list).flatten()
+            cf_limits[key_str] = torch.stack(cf_limits_list).flatten()
             f_cumsum = torch.cumsum(torch.stack(f_units), dim=0).squeeze()
             cf_cumsum = torch.cumsum(torch.stack(cf_units), dim=0).squeeze()
 
-            obs_cumsums[key] = obs_cumsum
-            f_cumsums[key] = f_cumsum
-            cf_cumsums[key] = cf_cumsum
+            obs_cumsums[key_str] = obs_cumsum
+            f_cumsums[key_str] = f_cumsum
+            cf_cumsums[key_str] = cf_cumsum
 
-        # _____________________________________________
-        # R: this is the old code, remove when we reshape the output
-        # from above into Michi's desired format
-        # presumably outdated
+        assert list(obs_cumsums.keys()) == [str(_) for _ in self.tracts.unique().tolist()]
 
-        # with mwc:
-        #     result = gather(
-        #         result_all, IndexSet(**{"limit": {1}}), event_dims=0
-        #     ).squeeze()
+        # R: I'd recommend keeping "cumsums", as well as "observed/factual/counterfactual"
+        # in variable names
+        # to make terminology clear and transparent
+        cumsums_observed = torch.stack( list(obs_cumsums.values())).T.tolist()
 
-        # years = self.data["categorical"]["year_original"]
-        # tracts = self.data["categorical"]["census_tract"]
-        # f_housing_units = self.data["continuous"]["housing_units_original"]
-        # cf_housing_units = result * self.housing_units_std + self.housing_units_mean
+        cumsums_factual = [
+            [_.tolist() for _ in __.unbind(dim=-2)]
+            for __ in torch.stack(list(f_cumsums.values())).unbind(dim=-2)
+            ]
 
-        # # Organize cumulative data by year and tract
-        # f_data = {}
-        # cf_data = {}
-        # unique_years = sorted(set(years.tolist()))
-        # unique_years = [
-        #     year for year in unique_years if year <= 2019
-        # ]  # Exclude years after 2019
-        # unique_tracts = sorted(set(tracts.tolist()))
+        cumsums_counterfactual = [
+            [_.tolist() for _ in __.unbind(dim=-2)]
+            for __ in torch.stack(list(cf_cumsums.values())).unbind(dim=-2)
+            ]
 
-        # for year in unique_years:
-        #     f_data[year] = {tract: 0 for tract in unique_tracts}
-        #     cf_data[year] = {tract: [0] * 100 for tract in unique_tracts}
+        assert len(cumsums_factual) == len(cumsums_observed) == len(cumsums_counterfactual) == 10 #  the number of years
+        assert len(cumsums_factual[0]) == len(cumsums_counterfactual[0]) == 113 # the number of unique tracts
+        assert len(cumsums_factual[0][0]) == len(cumsums_counterfactual[0][0])== num_samples 
 
-        # for i in range(tracts.shape[0]):
-        #     year = years[i].item()
-        #     if year > 2019:
-        #         continue  # Skip data for years after 2019
-        #     tract = tracts[i].item()
 
-        #     # Update factual data
-        #     for y in unique_years:
-        #         if y >= year:
-        #             f_data[y][tract] += f_housing_units[i].item()
-
-        #     # Update counterfactual data
-        #     if year < intervention["reform_year"]:
-        #         for y in unique_years:
-        #             if y >= year:
-        #                 cf_data[y][tract] = [
-        #                     x + f_housing_units[i].item() for x in cf_data[y][tract]
-        #                 ]
-        #     else:
-        #         for y in unique_years:
-        #             if y >= year:
-        #                 cf_data[y][tract] = [
-        #                     x + y
-        #                     for x, y in zip(
-        #                         cf_data[y][tract], cf_housing_units[:, i].tolist()
-        #                     )
-        #                 ]
-
-        # # Convert to lists for easier JSON serialization
-        # housing_units_factual = [
-        #     [f_data[year][tract] for tract in unique_tracts] for year in unique_years
-        # ]
-        # housing_units_counterfactual = [
-        #     [cf_data[year][tract] for tract in unique_tracts] for year in unique_years
-        # ]
-
-        # ___________________________________________________________
-        # TODO remove output not used in debugging, evaluation or on the fronend side
         return {
+            # these are lists whose structures are dictated
+            # by the frontend demands
+            "census_tracts": list(obs_cumsums.keys()),
+            "years": self.years.unique().tolist(),
+            "cumsums_observed": cumsums_observed,
+            "cumsums_factual": cumsums_factual,
+            "cumsums_counterfactual": cumsums_counterfactual,            
+
+            # more direct dictionaries used for notebooks and debugging
+            # if they slow anything down
+            # we can revisit and make an optional output
             "obs_cumsums": obs_cumsums,
             "f_cumsums": f_cumsums,
             "cf_cumsums": cf_cumsums,
@@ -365,19 +310,39 @@ class TractsModelPredictor:
             "raw_obs_housing_units": obs_housing_units_raw,
             "raw_f_housing_units": f_housing_units_raw,
             "raw_cf_housing_units": cf_housing_units_raw,
-            # presumably outdated
-            # "years": unique_years,
-            # "census_tracts": unique_tracts,
-            # "housing_units_factual": housing_units_factual,
-            # "housing_units_counterfactual": housing_units_counterfactual,
         }
 
-        # return {
-        #     "census_tracts": census_tracts,
-        #     "housing_units_factual": f_housing_units,
-        #     "housing_units_counterfactual": cf_housing_units,
-        #     "limit_intervention": limit_intervention,
-        # }
+
+
+# This the desired structure of the output
+# (except, we need to correct for the observed/factual distinction
+# (and make our terminology consistent with the concepts)
+#{
+#     "census_tracts": ["27053000100", "27053000200", ...],  # List of census tract IDs
+#     "years": [2011, 2012, 2013, ..., 2019],  # List of years
+
+#     "housing_units_factual": [
+#         [100, 150, ...],  # Cumulative counts for each tract in 2011
+#         [120, 180, ...],  # Cumulative counts for each tract in 2012
+#         ...
+#     ],
+
+#     "housing_units_counterfactual": [
+#         [  # Year 2011
+#             [101, 102, ..., 105],  # 100 samples for tract 27053000100
+#             [151, 153, ..., 158],  # 100 samples for tract 27053000200
+#             ...
+#         ],
+#         [  # Year 2012
+#             [122, 124, ..., 128],  # 100 samples for tract 27053000100
+#             [182, 185, ..., 190],  # 100 samples for tract 27053000200
+#             ...
+#         ],
+#         ...
+#     ]
+# }
+
+
 
 
 if __name__ == "__main__":
