@@ -65,7 +65,7 @@ class TractsModelPredictor:
         when downtown_yn or university_yn then 0
         when year_ < %(reform_year)s then 1
         when distance_to_transit <= %(radius_blue)s then %(limit_blue)s
-        when distance_to_transit_line <= %(radius_yellow_line)s 
+        when distance_to_transit_line <= %(radius_yellow_line)s
              or distance_to_transit_stop <= %(radius_yellow_stop)s
              then %(limit_yellow)s
         else 1

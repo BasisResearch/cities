@@ -202,7 +202,9 @@ def add_linear_component_continuous_interactions(
         assert interaction_pair[0] in child_continuous_parents.keys()
         assert interaction_pair[1] in child_continuous_parents.keys()
 
-        interaction_name = f"{interaction_pair[0]}_x_{interaction_pair[1]}_to_{child_name}"
+        interaction_name = (
+            f"{interaction_pair[0]}_x_{interaction_pair[1]}_to_{child_name}"
+        )
 
         with data_plate:
             child_continuous_parents[interaction_name] = pyro.deterministic(
@@ -328,7 +330,9 @@ def add_ratio_component_continuous_interactions(
         assert interaction_pair[0] in child_continuous_parents.keys()
         assert interaction_pair[1] in child_continuous_parents.keys()
 
-        interaction_name = f"{interaction_pair[0]}_x_{interaction_pair[1]}_to_{child_name}"
+        interaction_name = (
+            f"{interaction_pair[0]}_x_{interaction_pair[1]}_to_{child_name}"
+        )
 
         with data_plate:
             child_continuous_parents[interaction_name] = pyro.deterministic(
