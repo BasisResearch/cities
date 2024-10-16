@@ -29,7 +29,6 @@ num_samples = 100
 dev_mode = False
 
 
-
 class TractsModelPredictor:
     kwargs = {
         "categorical": ["year", "census_tract", "year_original"],
@@ -271,8 +270,6 @@ class TractsModelPredictor:
             obs_cumsums[key_str] = obs_cumsum
             f_cumsums[key_str] = f_cumsum
             cf_cumsums[key_str] = cf_cumsum
-
-       
 
         # R: I'd recommend keeping "cumsums", as well as "observed/factual/counterfactual"
         # in variable names
