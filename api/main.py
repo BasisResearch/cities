@@ -197,37 +197,34 @@ async def read_blue_zone(year: Year, radius: Radius, db=Depends(get_db)):
         ],
     }
 
-
 @app.get("/predict")
 async def read_predict(
-    blue_zone_radius: Radius,
-    yellow_zone_line_radius: Radius,
-    yellow_zone_stop_radius: Radius,
-    blue_zone_limit: Limit,
-    yellow_zone_limit: Limit,
-    year: Year,
-    db=Depends(get_db),
-    predictor=Depends(get_predictor),
-):
-    result = predictor.predict_cumulative(
+        blue_zone_radius: Radius,
+        yellow_zone_line_radius: Radius,
+        yellow_zone_stop_radius: Radius,
+        blue_zone_limit: Limit,
+        yellow_zone_limit: Limit,
+        year: Year,
+        db=Depends(get_db),
+        predictor=Depends(get_predictor),
+    ):
+
+    result = predictor.predict_cumulative_by_year(
         db,
-        intervention=(
-            {
-                "radius_blue": blue_zone_radius,
-                "limit_blue": blue_zone_limit,
-                "radius_yellow_line": yellow_zone_line_radius,
-                "radius_yellow_stop": yellow_zone_stop_radius,
-                "limit_yellow": yellow_zone_limit,
-                "reform_year": year,
-            }
-        ),
+        intervention={
+            "radius_blue": blue_zone_radius,
+            "limit_blue": blue_zone_limit,
+            "radius_yellow_line": yellow_zone_line_radius,
+            "radius_yellow_stop": yellow_zone_stop_radius,
+            "limit_yellow": yellow_zone_limit,
+            "reform_year": year,
+        },
     )
     return {
         "census_tracts": [str(t) for t in result["census_tracts"]],
-        "housing_units_factual": [t.item() for t in result["housing_units_factual"]],
-        "housing_units_counterfactual": [
-            t.tolist() for t in result["housing_units_counterfactual"]
-        ],
+        "years": result["years"],
+        "housing_units_factual": result["housing_units_factual"],
+        "housing_units_counterfactual": result["housing_units_counterfactual"],
     }
 
 

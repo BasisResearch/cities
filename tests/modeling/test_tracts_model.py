@@ -26,6 +26,7 @@ n_steps = 10
 num_samples = 10
 
 
+# data_path = os.path.join(root, "data/minneapolis/processed/pg_census_tracts_dataset.pt")
 data_path = os.path.join(root, "data/minneapolis/processed/pg_census_tracts_dataset.pt")
 
 dataset_read = torch.load(data_path, weights_only=False)
@@ -59,8 +60,6 @@ kwargs = {
 
 pg_subset = select_from_data(data, kwargs)
 pg_dataset_read = torch.load(data_path, weights_only=False)
-
-print("shape for pg", pg_subset["categorical"]["year"].shape)
 
 
 @pytest.mark.parametrize(

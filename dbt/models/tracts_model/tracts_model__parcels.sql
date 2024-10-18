@@ -17,7 +17,8 @@ select
   parcels_distance_to_transit.line_distance as distance_to_transit_line,
   parcels_distance_to_transit.stop_distance as distance_to_transit_stop,
   parcels_parking_limits.limit_numeric as limit_con,
-  parcels_parking_limits.is_downtown as downtown_yn
+  parcels_parking_limits.is_downtown as downtown_yn,
+  parcels_parking_limits.is_university as university_yn
 from
   parcels
   join census_tracts using (census_tract_id)
