@@ -7,11 +7,13 @@
   )
 }}
 
+with
+lines as (select * from {{ ref('high_frequency_transit_lines') }}),
+stops as (select * from {{ ref('high_frequency_transit_stops') }})
 select
-  high_frequency_transit_line_id,
-  valid,
-  st_transform(geom, 4269) as geom,
-  st_transform(blue_zone_geom, 4269) as blue_zone_geom,
-  st_transform(yellow_zone_geom, 4269) as yellow_zone_geom
-from
-  {{ ref('high_frequency_transit_lines') }}
+  lines.valid * stops.valid as valid,
+  lines.geom as line_geom,
+  st_asgeojson(st_transform(lines.geom, 4269))::json as line_geom_json,
+  stops.geom as stop_geom,
+  st_asgeojson(st_transform(stops.geom, 4269))::json as stop_geom_json
+from lines inner join stops on lines.valid && stops.valid
