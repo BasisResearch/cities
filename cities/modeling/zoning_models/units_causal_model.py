@@ -59,7 +59,7 @@ def continuous_contribution(continuous, child_name, leeway):
         )
 
         weight_continuous = pyro.sample(
-            f"weight_continuous_{key}_{child_name}_",
+            f"weight_continuous_{key}_{child_name}",
             dist.Normal(0.0, leeway),
         )
 
@@ -78,7 +78,6 @@ def add_linear_component(
     observations=None,
     categorical_levels=None,
 ):
-
 
     sigma_child = pyro.sample(
         f"sigma_{child_name}", dist.Exponential(1.0)
@@ -101,17 +100,15 @@ def add_linear_component(
             f"mean_outcome_prediction_{child_name}",
             categorical_contribution_to_child + continuous_contribution_to_child,
             event_dim=0,
-            )
-                
-       
+        )
+
         child_observed = pyro.sample(  # type: ignore
-                f"{child_name}",
-                dist.Normal(mean_prediction_child, sigma_child),
-                obs=observations,
-            )
-        
-       
-    #TODO consider a gamma-like distro here
+            f"{child_name}",
+            dist.Normal(mean_prediction_child, sigma_child),
+            obs=observations,
+        )
+
+    # TODO consider a gamma-like distro here
 
     return child_observed
 

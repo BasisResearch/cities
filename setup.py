@@ -1,28 +1,34 @@
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 VERSION = "0.1.0"
 
 TEST_REQUIRES = [
-            "pytest == 7.4.3",
-            "pytest-cov",
-            "pytest-xdist",
-            "mypy",
-            "black==24.2.0",
-            "flake8",
-            "isort==5.13.2",
-            "nbval",
-            "nbqa",
-            "autoflake",
-        ]
+    "pytest",
+    "pytest-cov",
+    "pytest-xdist",
+    "mypy",
+    "black",
+    "flake8",
+    "isort",
+    "nbval",
+    "nbqa",
+    "autoflake",
+    "xetcache",
+]
 
 DEV_REQUIRES = [
-    "pyro-ppl==1.8.6",
-    "torch",   "plotly.express", 
-    "scipy",  
-    "chirho @ git+https://github.com/BasisResearch/chirho.git@master", 
-    "graphviz", "seaborn"
+    "torch",
+    "plotly.express",
+    "scipy",
+    "graphviz",
+    "python-dotenv",
+    "google-cloud-storage",
+    "dbt-core",
+    "dbt-postgres",
+    "pip-tools",
 ]
+
+API_REQUIRES = ["psycopg2", "fastapi"]
 
 setup(
     name="cities",
@@ -32,14 +38,28 @@ setup(
     author="Basis",
     url="https://www.basis.ai/",
     project_urls={
-    #     "Documentation": "",
+        #     "Documentation": "",
         "Source": "https://github.com/BasisResearch/cities",
     },
-    install_requires=["jupyter","pandas", "numpy", "scikit-learn", "sqlalchemy", "dill",  "plotly", "matplotlib>=3.8.2"],
+    install_requires=[
+        "torch",
+        "pyro-ppl==1.8.6",
+        "chirho @ git+https://github.com/BasisResearch/chirho.git",
+        "pandas",
+        "numpy==1.24.1", # torch won't work reliably with newer versions
+        "scikit-learn",
+        "sqlalchemy",
+        "dill",
+        "plotly",
+        "matplotlib>=3.8.2",
+        "seaborn",  
+    ],
     extras_require={
         "test": TEST_REQUIRES,
-        "dev": DEV_REQUIRES + TEST_REQUIRES 
+        "dev": API_REQUIRES + DEV_REQUIRES + TEST_REQUIRES,
+        "api": API_REQUIRES,
     },
     python_requires=">=3.10",
     keywords="similarity, causal inference, policymaking, chirho",
-    license="Apache 2.0",)
+    license="Apache 2.0",
+)
