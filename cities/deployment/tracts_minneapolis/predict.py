@@ -47,7 +47,6 @@ num_samples = 100
 dev_mode = False
 
 
-
 class TractsModelPredictor:
     kwargs = {
         "categorical": ["year", "census_tract", "year_original"],
@@ -388,12 +387,12 @@ class TractsModelPredictor:
 #     ]
 # }
 
-        # return {
-        #     "census_tracts": census_tracts,
-        #     "housing_units_factual": f_housing_units,
-        #     "housing_units_counterfactual": cf_housing_units,
-        #     "limit_intervention": limit_intervention,
-        # }
+# return {
+#     "census_tracts": census_tracts,
+#     "housing_units_factual": f_housing_units,
+#     "housing_units_counterfactual": cf_housing_units,
+#     "limit_intervention": limit_intervention,
+# }
 
 
 if __name__ == "__main__":
