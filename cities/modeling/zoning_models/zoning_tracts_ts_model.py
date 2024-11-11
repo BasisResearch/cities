@@ -115,9 +115,9 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
             #     "median_value", dist.Normal(0, 1), obs=continuous["median_value"]
             # )
             
-            income = pyro.sample( 
-                "income", dist.Normal(0, 1), obs=continuous["income"]
-            )
+            # income = pyro.sample( 
+            #     "income", dist.Normal(0, 1), obs=continuous["income"]
+            # )
 
             white = pyro.sample(
                 "white", dist.Normal(0, 1), obs=continuous["white_original"]
@@ -147,9 +147,35 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 obs=continuous["university_overlap"],
             )
 
-            #  _____________________________
-            # regression for median value
-            # _____________________________
+        # ______________________
+        # regression for income
+        # ______________________
+
+        income_continuous_parents = {
+            "distance": distance,
+            "white": white,
+            "segregation": segregation,
+            "sqm": sqm,
+            "limit": limit,
+        }
+
+        income_categorical_parents = {
+            "year": year,
+        }
+
+        income = add_linear_component(
+            child_name="income",
+            child_continuous_parents=income_continuous_parents,
+            child_categorical_parents=income_categorical_parents,
+            leeway=0.5,
+            data_plate=data_plate,
+            observations=continuous["income"],
+            categorical_levels=self.categorical_levels,
+        )
+
+        #  _____________________________
+        # regression for median value
+        # _____________________________
 
         value_continuous_parents = {
             "distance": distance,
