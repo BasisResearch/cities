@@ -11,6 +11,7 @@ from cities.modeling.model_components import (
     get_categorical_levels,
     check_categorical_is_subset_of_levels,
     add_linear_component,
+    add_ratio_component,
 )
 
 
@@ -127,9 +128,9 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 "limit", dist.Normal(0, 1), obs=continuous["mean_limit_original"]
             )
 
-            segregation = pyro.sample(
-                "segregation", dist.Normal(0, 1), obs=continuous["segregation_original"]
-            )
+            # segregation = pyro.sample(
+            #     "segregation", dist.Normal(0, 1), obs=continuous["segregation_original"]
+            # )
 
             sqm = pyro.sample(
                 "sqm", dist.Normal(0, 1), obs=continuous["parcel_sqm"]
@@ -146,6 +147,31 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 dist.Normal(0, 1),
                 obs=continuous["university_overlap"],
             )
+
+        # ___________________________
+        # regression for segregation
+        # ___________________________
+
+        segregation_continuous_parents = {
+            "distance": distance,
+            "white": white,
+            "sqm": sqm,
+            "limit": limit,
+        }
+
+        segregation_categorical_parents = {
+            "year": year,
+        }
+
+        segregation = add_ratio_component(
+            child_name="segregation",
+            child_continuous_parents=segregation_continuous_parents,
+            child_categorical_parents=segregation_categorical_parents,
+            leeway=8,  # 11.57,
+            data_plate=data_plate,
+            observations=continuous["segregation_original"],
+            categorical_levels=self.categorical_levels,
+        )
 
         # ______________________
         # regression for income
