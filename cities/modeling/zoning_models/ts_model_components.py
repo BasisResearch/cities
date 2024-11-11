@@ -229,27 +229,19 @@ def add_ar1_component_with_interactions(
     series_plate = pyro.plate("series", no_series, dim=-2)
     time_plate = pyro.plate("time", T, dim=-1)
 
-
-    # if self.continuous_parents_reshaped is not None:
-    #     if len(child_continuous_parents['limit'].shape) != len(self.continuous_parents_reshaped['limit'].shape):
     shape_change_flag = False 
     if self.continuous_parents_reshaped is not None:
-        print(len(child_continuous_parents['limit'].shape) >
-            len(self.continuous_parents_reshaped['limit'].shape)- 1)  
-
         shape_change_flag = (len(child_continuous_parents['limit'].shape) >
                 len(self.continuous_parents_reshaped['limit'].shape)- 1)
 
     if self.continuous_parents_reshaped is not None and not force_ts_reshape and not shape_change_flag:
-        print("using reshaped parents")
         continuous_parents_reshaped = self.continuous_parents_reshaped
     else:
         continuous_parents_reshaped = {}
         for key in child_continuous_parents.keys():
             continuous_parents_reshaped[key] = reshape_into_time_series(
                     child_continuous_parents[key], series_idx, time_idx
-                )["reshaped_variable"]
-        print("reshape parents")   
+                )["reshaped_variable"]     
         self.continuous_parents_reshaped = continuous_parents_reshaped
 
     if self.categorical_parents_reshaped is not None and not force_ts_reshape and not shape_change_flag:
@@ -267,25 +259,12 @@ def add_ar1_component_with_interactions(
         outcome_reshaped = self.outcome_reshaped
     else:        
         if observations is not None:
-            print("reshaping_outcome")
             outcome_reshaped = reshape_into_time_series(
                 observations, series_idx, time_idx
             )["reshaped_variable"]
             self.outcome_reshaped = outcome_reshaped
             
         
-
-    # if self.outcome_reshaped is not None:
-    #     outcome_reshaped = self.outcome_reshaped
-    # else:
-    #     if observations is not None:
-    #         outcome_reshaped = reshape_into_time_series(
-    #             observations, series_idx, time_idx
-    #         )["reshaped_variable"]
-    #         self.outcome_reshaped = outcome_reshaped
-
-    
-
    
     # ----------------------------
     # contributions of parents
