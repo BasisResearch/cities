@@ -10,6 +10,7 @@ from cities.modeling.model_components import (
     get_n,
     get_categorical_levels,
     check_categorical_is_subset_of_levels,
+    add_linear_component,
 )
 
 
@@ -110,9 +111,9 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
 
             ## temporary plug in of predictors meant to come from a causal model
 
-            median_value = pyro.sample(
-                "median_value", dist.Normal(0, 1), obs=continuous["median_value"]
-            )
+            # median_value = pyro.sample(
+            #     "median_value", dist.Normal(0, 1), obs=continuous["median_value"]
+            # )
             
             income = pyro.sample( 
                 "income", dist.Normal(0, 1), obs=continuous["income"]
@@ -145,6 +146,33 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 dist.Normal(0, 1),
                 obs=continuous["university_overlap"],
             )
+
+            #  _____________________________
+            # regression for median value
+            # _____________________________
+
+        value_continuous_parents = {
+            "distance": distance,
+            "income": income,
+            "white": white,
+            "segregation": segregation,
+            "sqm": sqm,
+            "limit": limit,
+        }
+
+        value_categorical_parents = {
+            "year": year,
+        }
+
+        median_value = add_linear_component(
+            child_name="median_value",
+            child_continuous_parents=value_continuous_parents,
+            child_categorical_parents=value_categorical_parents,
+            leeway=0.5,
+            data_plate=data_plate,
+            observations=continuous["median_value"],
+            categorical_levels=self.categorical_levels,
+        )
 
 
         ## now applying the ar1 component
