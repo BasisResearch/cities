@@ -168,6 +168,9 @@ def prepare_zoning_data_for_ts(data):
     data_nonified["reshaped"]["continuous"]["housing_units_cumulative_original"] = None
     data_nonified["reshaped"]["continuous"]["housing_units_cumulative"] = None
 
+    data['n_series'] = data["reshaped"]["categorical"]["census_tract"].shape[-2]
+    data['T'] = data["reshaped"]["categorical"]["year"].shape[-1]
+
     return data, data_nonified
 
 
@@ -249,7 +252,6 @@ def add_ar1_component_with_interactions(
     else:
         categorical_parents_reshaped = {}
         for key in child_categorical_parents.keys():
-            print("reshape categoricals")
             categorical_parents_reshaped[key] = reshape_into_time_series(
                     child_categorical_parents[key], series_idx, time_idx
                 )["reshaped_variable"]
