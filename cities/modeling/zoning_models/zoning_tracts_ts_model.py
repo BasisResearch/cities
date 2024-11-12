@@ -93,7 +93,7 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
         data_plate = pyro.plate("data", size=n, dim=-1)
 
         # _________
-        # register
+        # register root sites
         # _________
 
         with data_plate:
@@ -108,33 +108,6 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
             )
 
-    
-
-            ## temporary plug in of predictors meant to come from a causal model
-
-            # median_value = pyro.sample(
-            #     "median_value", dist.Normal(0, 1), obs=continuous["median_value"]
-            # )
-            
-            # income = pyro.sample( 
-            #     "income", dist.Normal(0, 1), obs=continuous["income"]
-            # )
-
-            white = pyro.sample(
-                "white", dist.Normal(0, 1), obs=continuous["white_original"]
-            )
-
-            limit = pyro.sample(
-                "limit", dist.Normal(0, 1), obs=continuous["mean_limit_original"]
-            )
-
-            # segregation = pyro.sample(
-            #     "segregation", dist.Normal(0, 1), obs=continuous["segregation_original"]
-            # )
-
-            sqm = pyro.sample(
-                "sqm", dist.Normal(0, 1), obs=continuous["parcel_sqm"]
-            )
 
             downtown_overlap = pyro.sample(
                 "downtown_overlap",
@@ -147,6 +120,78 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 dist.Normal(0, 1),
                 obs=continuous["university_overlap"],
             )
+
+
+        # ______________________
+        # regression for sqm
+        # ______________________
+
+        sqm_continuous_parents = {
+            "distance": distance,
+        }
+
+        sqm_categorical_parents = {
+            "year": year,
+        }
+
+        sqm = add_linear_component(
+            child_name="sqm",
+            child_continuous_parents=sqm_continuous_parents,
+            child_categorical_parents=sqm_categorical_parents,
+            leeway=0.5,
+            data_plate=data_plate,
+            observations=continuous["parcel_sqm"],
+            categorical_levels=self.categorical_levels,
+        )
+
+        # _______________________
+        # regression for limit
+        # _______________________
+
+        limit_continuous_parents = {
+            "distance": distance,
+            "downtown_overlap": downtown_overlap,
+            "university_overlap": university_overlap,
+        }
+
+        limit_categorical_parents = {
+            "year": year,
+        }
+
+        limit = add_ratio_component(
+            child_name="limit",
+            child_continuous_parents=limit_continuous_parents,
+            child_categorical_parents=limit_categorical_parents,
+            leeway=8,  # ,
+            data_plate=data_plate,
+            observations=continuous["mean_limit_original"],
+            categorical_levels=self.categorical_levels,
+        )
+
+
+        # _____________________
+        # regression for white
+        # _____________________
+
+        white_continuous_parents = {
+            "distance": distance,
+            "sqm": sqm,
+            "limit": limit,
+        }
+
+        white_categorical_parents = {
+            "year": year,
+        }
+
+        white = add_ratio_component(
+            child_name="white",
+            child_continuous_parents=white_continuous_parents,
+            child_categorical_parents=white_categorical_parents,
+            leeway=8,  # 11.57,
+            data_plate=data_plate,
+            observations=continuous["white_original"],
+            categorical_levels=self.categorical_levels,
+        )
 
         # ___________________________
         # regression for segregation
