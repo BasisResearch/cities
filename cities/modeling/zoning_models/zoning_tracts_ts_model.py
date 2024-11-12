@@ -1,24 +1,20 @@
+import warnings
+from typing import Any, Dict, Optional
+
 import pyro
 import torch
-
 from pyro import distributions as dist
-from typing import Dict, Any, Optional
-
-
 
 from cities.modeling.model_components import (
-    get_n,
-    get_categorical_levels,
-    check_categorical_is_subset_of_levels,
     add_linear_component,
     add_ratio_component,
+    check_categorical_is_subset_of_levels,
+    get_categorical_levels,
+    get_n,
 )
-
-
-from cities.modeling.zoning_models.ts_model_components import (add_ar1_component_with_interactions, reshape_into_time_series)
-import warnings
-
-
+from cities.modeling.zoning_models.ts_model_components import (
+    add_ar1_component_with_interactions,
+)
 
 
 class TractsModelCumulativeAR1(pyro.nn.PyroModule):
@@ -27,14 +23,15 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
         data: Dict,
         categorical_levels: Optional[Dict[str, Any]] = None,
         leeway=0.9,
-        housing_units_continuous_parents_names = [],
-        housing_units_continuous_interaction_pairs=[],    
+        housing_units_continuous_parents_names=[],
+        housing_units_continuous_interaction_pairs=[],
     ):
-      
 
         super().__init__()
 
-        self.housing_units_continuous_parents_names = housing_units_continuous_parents_names
+        self.housing_units_continuous_parents_names = (
+            housing_units_continuous_parents_names
+        )
 
         categorical = data["categorical"]
         continuous = data["continuous"]
@@ -43,7 +40,6 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
         self.housing_units_continuous_interaction_pairs = (
             housing_units_continuous_interaction_pairs
         )
-        
 
         self.N_categorical, self.N_continuous, n = get_n(categorical, continuous)
 
@@ -59,21 +55,20 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
     def forward(
         self,
         data: Dict,
-        leeway= 0.9,
+        leeway=0.9,
         categorical_levels=None,
         n=None,
-        force_ts_reshape = False,
-        intervention_year = 4,
+        force_ts_reshape=False,
+        intervention_year=4,
     ):
-        
+
         categorical = data["categorical"]
         continuous = data["continuous"]
-        if 'init_cumulative_state' in data:
-            init_state = data['init_cumulative_state']
+        if "init_cumulative_state" in data:
+            init_state = data["init_cumulative_state"]
         else:
             init_state = None
 
-        
         if categorical_levels is not None:
             warnings.warn(
                 "Passed categorical_levels will no longer override the levels passed to or computed during"
@@ -82,16 +77,18 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
 
         categorical_levels = self.categorical_levels
 
-        categorical_levels['intervention_year'] = torch.tensor([0, 1])
+        categorical_levels["intervention_year"] = torch.tensor([0, 1])
         assert check_categorical_is_subset_of_levels(categorical, categorical_levels)
 
         if n is None:
             _, _, n = get_n(categorical, continuous)
 
         # get init state from data if data available but no specific init state passed
-        if init_state is None and continuous['housing_units_cumulative'] is not None:
+        if init_state is None and continuous["housing_units_cumulative"] is not None:
 
-            init_state = continuous['housing_units_cumulative'][categorical['year'] == 0].unsqueeze(-1)
+            init_state = continuous["housing_units_cumulative"][
+                categorical["year"] == 0
+            ].unsqueeze(-1)
 
         data_plate = pyro.plate("data", size=n, dim=-1)
 
@@ -110,13 +107,12 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
             intervention_year = pyro.sample(
                 "intervention_year",
                 dist.Categorical(torch.ones(len(categorical_levels["year"]))),
-                obs=categorical['year'] >= intervention_year,
+                obs=categorical["year"] >= intervention_year,
             ).to(torch.int64)
 
             distance = pyro.sample(
                 "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
             )
-
 
             downtown_overlap = pyro.sample(
                 "downtown_overlap",
@@ -129,7 +125,6 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 dist.Normal(0, 1),
                 obs=continuous["university_overlap"],
             )
-
 
         # ______________________
         # regression for sqm
@@ -176,7 +171,6 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
             observations=continuous["mean_limit_original"],
             categorical_levels=self.categorical_levels,
         )
-
 
         # _____________________
         # regression for white
@@ -280,8 +274,7 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
             categorical_levels=self.categorical_levels,
         )
 
-
-        ## now applying the ar1 component
+        # now applying the ar1 component
         all_possible_housing_units_continuous_parents = {
             "median_value": median_value,
             "distance": distance,
@@ -291,7 +284,7 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
             "segregation": segregation,
             "sqm": sqm,
             "downtown_overlap": downtown_overlap,
-            "university_overlap": university_overlap
+            "university_overlap": university_overlap,
         }
 
         housing_units_continuous_parents = {
@@ -300,26 +293,22 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
         }
 
         housing_units_categorical_parents = {
-            #"year": year,
+            # "year": year,
             "intervention_year": intervention_year
         }
 
-        housing_units_cumulative = add_ar1_component_with_interactions(self,
-            series_idx = categorical["census_tract"],
-            time_idx = categorical["year"],
+        housing_units_cumulative = add_ar1_component_with_interactions(  # noqa E266
+            self,
+            series_idx=categorical["census_tract"],
+            time_idx=categorical["year"],
             child_name="housing_units_cumulative",
             child_continuous_parents=housing_units_continuous_parents,
             child_categorical_parents=housing_units_categorical_parents,
             continous_interaction_pairs=self.housing_units_continuous_interaction_pairs,
             leeway=leeway,
             data_plate=data_plate,
-            initial_observations = init_state,
-            observations = continuous['housing_units_cumulative'],
+            initial_observations=init_state,
+            observations=continuous["housing_units_cumulative"],
             categorical_levels=self.categorical_levels,
-            force_ts_reshape = force_ts_reshape
+            force_ts_reshape=force_ts_reshape,
         )
-
-
-
-
-

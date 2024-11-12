@@ -1,16 +1,24 @@
-import matplotlib.pyplot as plt
-import numpy as np
-import torch
-from typing import Dict
-import seaborn as sns
 import math
 import textwrap
+from typing import Dict
+
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+import torch
 
 
-def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, clamp_at_zero=False, compute_metrics = True):
+def summarize_time_series(
+    samples,
+    y_true,
+    y_site="y_stacked",
+    sample_dim=0,
+    clamp_at_zero=False,
+    compute_metrics=True,
+):
 
     n_series = y_true.shape[-2] if len(y_true.shape) > 1 else 0
-    T = y_true.shape[-1]
+    # T = y_true.shape[-1]
     summary = {}
 
     # summarize samples
@@ -35,7 +43,9 @@ def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, cla
         # single-number metrics: global
         total_rmse = total_model_squared_errors.mean().sqrt()
         total_null_rmse = total_null_squared_errors.mean().sqrt()
-        total_r2 = 1 - (total_model_squared_errors.sum() / total_null_squared_errors.sum())
+        total_r2 = 1 - (
+            total_model_squared_errors.sum() / total_null_squared_errors.sum()
+        )
 
     # summarize series
     series_mean_pred = {}
@@ -60,7 +70,7 @@ def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, cla
         series_high_pred[series] = mean_high[..., series, :]
 
         if compute_metrics:
-        # pointwise metrics
+            # pointwise metrics
             series_model_squared_errors[series] = (
                 y_true[series, :] - series_mean_pred[series]
             ) ** 2
@@ -100,12 +110,12 @@ def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, cla
             "series_null_rmse": series_null_rmse,
             "series_rmse": series_rmse,
             "series_r2": series_r2,
-            }
+        }
 
     return summary
 
 
-def plot_model_summary(summary, y_true, waic=None, title=None, bins = 40, path = None):
+def plot_model_summary(summary, y_true, waic=None, title=None, bins=40, path=None):
 
     yt = y_true.flatten()
     yt_sorted, indices = torch.sort(yt)
@@ -119,7 +129,8 @@ def plot_model_summary(summary, y_true, waic=None, title=None, bins = 40, path =
     total_r2 = summary["total_r2"]
     total_rmse = summary["total_rmse"]
     main_title = (
-        f"Model performance - global R²: {total_r2:.2f}, global RMSE: {total_rmse:.2f} (vs. {summary['total_null_rmse']:.2f} for null model)"
+        f"Model performance - global R²: {total_r2:.2f}, global RMSE: {total_rmse:.2f} "
+        f"(vs. {summary['total_null_rmse']:.2f} for null model)"
     )
     if waic is not None:
         main_title += f", WAIC: {waic:.2f}"
@@ -129,8 +140,10 @@ def plot_model_summary(summary, y_true, waic=None, title=None, bins = 40, path =
     plt.suptitle(main_title, fontsize=16)
 
     # Plot 1: Predictive Mman vs. true Y
-    axs[0, 0].scatter(range(len(yt)), mean_pred_sorted, label="Predictive Mean", s=2, alpha = .5)
-    axs[0, 0].scatter(range(len(yt)), yt_sorted, label="True Y", s=2, alpha = 0.5)
+    axs[0, 0].scatter(
+        range(len(yt)), mean_pred_sorted, label="Predictive Mean", s=2, alpha=0.5
+    )
+    axs[0, 0].scatter(range(len(yt)), yt_sorted, label="True Y", s=2, alpha=0.5)
     axs[0, 0].fill_between(
         range(len(yt)), low_pred_sorted, high_pred_sorted, color="blue", alpha=0.3
     )
@@ -153,8 +166,10 @@ def plot_model_summary(summary, y_true, waic=None, title=None, bins = 40, path =
 
     # Plot 3: R2 across series
     axs[1, 0].hist(
-        list(summary["series_r2"].values()), bins=bins, alpha=0.5, color="blue", 
-
+        list(summary["series_r2"].values()),
+        bins=bins,
+        alpha=0.5,
+        color="blue",
     )
     axs[1, 0].axvline(
         total_r2, color="blue", linestyle="dashed", linewidth=1, label="Dataset R²"
@@ -165,7 +180,10 @@ def plot_model_summary(summary, y_true, waic=None, title=None, bins = 40, path =
 
     # Plot 4: RMSE across series
     axs[1, 1].hist(
-        list(summary["series_rmse"].values()), bins=bins, alpha=0.5, color="green", 
+        list(summary["series_rmse"].values()),
+        bins=bins,
+        alpha=0.5,
+        color="green",
     )
     axs[1, 1].axvline(
         total_rmse, color="green", linestyle="dashed", linewidth=1, label="Dataset RMSE"
@@ -192,14 +210,14 @@ def plot_coefs(
     samples,
     param_sites,
     # list of random colors of length of param sites
-    colors = None,
+    colors=None,
     true_params=None,
     title=None,
-    path = None,
+    path=None,
 ):
-    
+
     if colors is None:
-        colors = np.random.rand(len(param_sites), 3) 
+        colors = np.random.rand(len(param_sites), 3)
 
     n_sites = len(param_sites)
     n_cols = 2
@@ -240,16 +258,16 @@ def plot_coefs(
 
 def plot_selected_series(
     summary,
-    intervened_summary = None,
+    intervened_summary=None,
     y_true=None,
     selected_series=None,
     n_series=None,
     series_names=None,
     title=None,
-    ylim = None,
-    plot_null = False,
-    path = None,
-    add_metrics = True,
+    ylim=None,
+    plot_null=False,
+    path=None,
+    add_metrics=True,
 ):
 
     # raise value error if both selected series and n series are passed
@@ -276,11 +294,10 @@ def plot_selected_series(
         low_pred = summary["series_low_pred"][series]
         high_pred = summary["series_high_pred"][series]
 
-
         if intervened_summary is not None:
             mean_pred_intervened = intervened_summary["series_mean_pred"][series]
-            low_pred_intervened = intervened_summary["series_low_pred"][series]
-            high_pred_intervened = intervened_summary["series_high_pred"][series]
+            # low_pred_intervened = intervened_summary["series_low_pred"][series]
+            # high_pred_intervened = intervened_summary["series_high_pred"][series]
 
         ax = axs[i // 2, i % 2] if n_rows > 1 else axs[i % 2]
         if y_true is not None:
@@ -288,25 +305,32 @@ def plot_selected_series(
         ax.plot(mean_pred.detach().numpy(), label="mean prediction")
 
         if intervened_summary is not None:
-            ax.plot(mean_pred_intervened.detach().numpy(), c = "red", label="mean prediction intervened", linestyle="--")
-            # ax.fill_between(
-            #     range(T), low_pred_intervened.detach().numpy(), high_pred_intervened.detach().numpy(), alpha=0.5, label="90% credible interval intervened"
-            # )
+            ax.plot(
+                mean_pred_intervened.detach().numpy(),
+                c="red",
+                label="mean prediction intervened",
+                linestyle="--",
+            )
 
         ax.fill_between(
             range(T), low_pred, high_pred, alpha=0.5, label="90% credible interval"
         )
 
         if plot_null:
-            ax.axhline(y_true.mean(), color="gray", linestyle="--", label="null model prediction")
-
-        if add_metrics:
-            ax.set_title(
-                f"{series_names[series] if series_names is not None else series}, $r^2$ = {summary['series_r2'][series]:.2f}, rmse = {summary['series_rmse'][series]:.2f} (vs. {summary['series_null_rmse'][series]:.2f} for null model)"
+            ax.axhline(
+                y_true.mean(),
+                color="gray",
+                linestyle="--",
+                label="null model prediction",
             )
 
-        else:
-            ax.set_title(f"{series_names[series] if series_names is not None else series}")
+        title = f"{series_names[series] if series_names else series}"
+        if add_metrics:
+            title += (
+                f", $r^2$ = {summary['series_r2'][series]:.2f}, rmse = {summary['series_rmse'][series]:.2f} "
+                f"(vs. {summary['series_null_rmse'][series]:.2f} for null model)"
+            )
+        ax.set_title(title)
 
         if i == 0:
             ax.legend()
@@ -332,7 +356,7 @@ def plot_ts(
     other_ts: Dict = {},
     plot_uncertainty: bool = False,
     ax=None,
-    legend = True,
+    legend=True,
 ):
 
     if ax is None:

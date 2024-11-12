@@ -1,25 +1,20 @@
 import os
 
-import pandas as pd
-import torch
-import pyro
-from dotenv import load_dotenv
 import dill
-
-
-from chirho.counterfactual.handlers import MultiWorldCounterfactual
-from chirho.indexed.ops import IndexSet, gather
+import pandas as pd
+import pyro
+import torch
 from chirho.interventional.handlers import do
+from dotenv import load_dotenv
 
 from cities.modeling.svi_inference import run_svi_inference
-from cities.modeling.zoning_models.zoning_tracts_ts_model  import TractsModelCumulativeAR1 as TractsModel
-from cities.utils.data_grabber import find_repo_root
-from cities.utils.plot_ts import summarize_time_series
 from cities.modeling.zoning_models.ts_model_components import prepare_zoning_data_for_ts
-
-
-
+from cities.modeling.zoning_models.zoning_tracts_ts_model import (
+    TractsModelCumulativeAR1 as TractsModel,
+)
+from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_sql
+from cities.utils.plot_ts import summarize_time_series
 
 # TODO load the right model
 # from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
@@ -127,9 +122,9 @@ class TractsModelPredictor:
         }
 
         self.census_tracts = self.data["init_idx"].squeeze().numpy().tolist()
-        self.years = self.data["categorical"]["year_original"].squeeze().numpy().tolist()
-
-
+        self.years = (
+            self.data["categorical"]["year_original"].squeeze().numpy().tolist()
+        )
 
         # TODO model will be revised
         # --------------------------
@@ -156,19 +151,29 @@ class TractsModelPredictor:
         ]
 
         self.model = TractsModel(
-        self.data,
-        housing_units_continuous_parents_names= ["median_value", "distance",
-         "income", "white", "limit", "segregation", "sqm", "downtown_overlap", "university_overlap"],
-        housing_units_continuous_interaction_pairs = self.ins,
-        leeway= 0.9
+            self.data,
+            housing_units_continuous_parents_names=[
+                "median_value",
+                "distance",
+                "income",
+                "white",
+                "limit",
+                "segregation",
+                "sqm",
+                "downtown_overlap",
+                "university_overlap",
+            ],
+            housing_units_continuous_interaction_pairs=self.ins,
+            leeway=0.9,
         )
 
         self.root = find_repo_root()
 
-        self.deploy_path = os.path.join(self.root, "cities/deployment/tracts_minneapolis")
+        self.deploy_path = os.path.join(
+            self.root, "cities/deployment/tracts_minneapolis"
+        )
         self.guide_path = os.path.join(self.deploy_path, "tracts_model_guide.pkl")
         self.param_path = os.path.join(self.deploy_path, "tracts_model_params.pth")
-
 
         need_to_train_flag = False
         if not os.path.isfile(self.guide_path):
@@ -179,7 +184,9 @@ class TractsModelPredictor:
             print(f"Warning: '{self.param_path}' does not exist.")
 
         if need_to_train_flag:
-            print("The model has no access to training results. Please run the 'train_model()' to generate the required files.)")
+            print(
+                "The model has no access to training results. Please run the 'train_model()' to generate the required files.)"
+            )
 
         else:
             pyro.clear_param_store()
@@ -189,57 +196,76 @@ class TractsModelPredictor:
 
             pyro.get_param_store().load(self.param_path)
 
-            self.predictive = pyro.infer.Predictive(self.model, guide=self.guide, num_samples=self.num_samples)
-            
+            self.predictive = pyro.infer.Predictive(
+                self.model, guide=self.guide, num_samples=self.num_samples
+            )
 
         # add observed values, transform into list for output
-        self.observed_housing_cumulative = self.data['reshaped']['continuous']['housing_units_cumulative_original']
-    
+        self.observed_housing_cumulative = self.data["reshaped"]["continuous"][
+            "housing_units_cumulative_original"
+        ]
+
         observed_tensor = self.observed_housing_cumulative
 
-        self.observed_housing_cumulative_list = [observed_tensor[:, year].tolist() for year in range(10)]
+        self.observed_housing_cumulative_list = [
+            observed_tensor[:, year].tolist() for year in range(10)
+        ]
 
         for year in range(10):
-                for series in range(113):
-                        assert self.observed_housing_cumulative_list[year][series] == observed_tensor[series, year].item()
-
+            for series in range(113):
+                assert (
+                    self.observed_housing_cumulative_list[year][series]
+                    == observed_tensor[series, year].item()
+                )
 
         # factual predictions don't depend on the intervention
         # no need to compute them multiple times
         self.clear_reshaped_model_data
-        self.factual_samples = self.predictive(data = self.nonified_data)
+        self.factual_samples = self.predictive(data=self.nonified_data)
 
-        self.factual_samples['destandardized_housing_units_cumulative'] = (self.factual_samples['predicted_housing_units_cumulative'] *
-                                                self.data['housing_units_cumulative_std'] +
-                                                self.data['housing_units_cumulative_mean'])
-        
-        self.factual_summary = summarize_time_series(self.factual_samples,
-                                self.observed_housing_cumulative, y_site="destandardized_housing_units_cumulative",
-                                clamp_at_zero=True, compute_metrics=False)
-     
-        
+        self.factual_samples["destandardized_housing_units_cumulative"] = (
+            self.factual_samples["predicted_housing_units_cumulative"]
+            * self.data["housing_units_cumulative_std"]
+            + self.data["housing_units_cumulative_mean"]
+        )
 
-        self.factual_means_list = self.convert_dict_to_list(self.factual_summary['series_mean_pred'])
-        self.factual_low_list = self.convert_dict_to_list(self.factual_summary['series_low_pred'])
-        self.factual_high_list = self.convert_dict_to_list(self.factual_summary['series_high_pred'])
-        self.factual_samples_list = self.generate_samples_list(self.factual_samples['destandardized_housing_units_cumulative'])
-   
+        self.factual_summary = summarize_time_series(
+            self.factual_samples,
+            self.observed_housing_cumulative,
+            y_site="destandardized_housing_units_cumulative",
+            clamp_at_zero=True,
+            compute_metrics=False,
+        )
+
+        self.factual_means_list = self.convert_dict_to_list(
+            self.factual_summary["series_mean_pred"]
+        )
+        self.factual_low_list = self.convert_dict_to_list(
+            self.factual_summary["series_low_pred"]
+        )
+        self.factual_high_list = self.convert_dict_to_list(
+            self.factual_summary["series_high_pred"]
+        )
+        self.factual_samples_list = self.generate_samples_list(
+            self.factual_samples["destandardized_housing_units_cumulative"]
+        )
+
     @staticmethod
     def convert_dict_to_list(data_dict):
-            result = []
-            for year in range(10):
-                year_list = [data_dict[series][year].item() for series in data_dict.keys()]
-                result.append(year_list)
+        result = []
+        for year in range(10):
+            year_list = [data_dict[series][year].item() for series in data_dict.keys()]
+            result.append(year_list)
 
-            for year in range(10):
-                for series in data_dict.keys():
-                    assert data_dict[series][year].item() == result[year][series]
-                    
-            return result
-    
+        for year in range(10):
+            for series in data_dict.keys():
+                assert data_dict[series][year].item() == result[year][series]
+
+        return result
+
     @staticmethod
     def generate_samples_list(factual_samples, num_years=10, num_series=113):
-    
+
         samples_list = []
         for year in range(num_years):
             samples_year_list = []
@@ -252,14 +278,16 @@ class TractsModelPredictor:
         for year in range(num_years):
             for series in range(num_series):
                 for sample in [0, 15, 60, 120, 190]:
-                    assert factual_samples.clamp(min=0)[sample, 0, 0, series, year].item() == samples_list[year][series][sample], (
+                    assert (
+                        factual_samples.clamp(min=0)[sample, 0, 0, series, year].item()
+                        == samples_list[year][series][sample]
+                    ), (
                         f"Assertion failed for year={year}, series={series}, sample={sample}. "
                         f"Expected {factual_samples.clamp(min=0)[sample, 0, 0, series, year].item()}, "
                         f"got {samples_list[year][series][sample]}"
                     )
 
-        return samples_list 
-
+        return samples_list
 
         # --------------------------
         # intervention helpers
@@ -274,7 +302,7 @@ class TractsModelPredictor:
         radius_yellow_stop,
         limit_yellow,
         reform_year,
-        ):
+    ):
         """Return the mean parking limits at the tracts level that result from the given intervention.
 
         Parameters:
@@ -289,22 +317,22 @@ class TractsModelPredictor:
         Returns: Tensor of parking limits sorted by tract and year
         """
         params = {
-        "reform_year": reform_year,
-        "radius_blue": radius_blue,
-        "limit_blue": limit_blue,
-        "radius_yellow_line": radius_yellow_line,
-        "radius_yellow_stop": radius_yellow_stop,
-        "limit_yellow": limit_yellow,
+            "reform_year": reform_year,
+            "radius_blue": radius_blue,
+            "limit_blue": limit_blue,
+            "radius_yellow_line": radius_yellow_line,
+            "radius_yellow_stop": radius_yellow_stop,
+            "limit_yellow": limit_yellow,
         }
         df = pd.read_sql(
-        TractsModelPredictor.tracts_intervention_sql, conn, params=params
+            TractsModelPredictor.tracts_intervention_sql, conn, params=params
         )
         return torch.tensor(df["intervention"].values, dtype=torch.float32)
 
     def obs_limits(self, conn):
         """Return the observed (factual) parking limits at the tracts level."""
         return self._tracts_intervention(conn, 106.7, 0, 402.3, 804.7, 0.5, 2015)
-    
+
     # for speedup, ts-reshaped predictors are chached in inference
     # but they should be cleared before prediction tasks under interventions
     def clear_reshaped_model_data(self):
@@ -316,15 +344,16 @@ class TractsModelPredictor:
         self.predictive.categorical_parents_reshaped = None
         self.predictive.continuous_parents_reshaped = None
         self.predictive.outcome_reshaped = None
-    
-    def train_model(self, num_steps = None, override = False):
+
+    def train_model(self, num_steps=None, override=False):
 
         if not override:
             if os.path.isfile(self.guide_path) and os.path.isfile(self.param_path):
-                print("The model has already been trained. Set 'override' to True to retrain the model.")
+                print(
+                    "The model has already been trained. Set 'override' to True to retrain the model."
+                )
                 return
 
-                
         if num_steps is None:
             num_steps = self.num_steps
 
@@ -332,7 +361,9 @@ class TractsModelPredictor:
 
         self.clear_reshaped_model_data()
 
-        guide = run_svi_inference(self.model, n_steps=num_steps, lr=0.03, plot=False, data = self.data)
+        guide = run_svi_inference(
+            self.model, n_steps=num_steps, lr=0.03, plot=False, data=self.data
+        )
 
         serialized_guide = dill.dumps(guide)
         with open(self.guide_path, "wb") as file:
@@ -341,32 +372,35 @@ class TractsModelPredictor:
         with open(self.param_path, "wb") as file:
             pyro.get_param_store().save(self.param_path)
 
-
     def predict_cumulative(self, conn, intervention):
-        
 
         limit_intervention = self._tracts_intervention(conn, **intervention)
         intervention_year = intervention["reform_year"] - 2011
 
         self.clear_reshaped_model_data()
 
-        with do(actions = {"limit": limit_intervention}):
-            intervened_samples =  self.predictive(self.nonified_data,
-            intervention_year = intervention_year)
+        with do(actions={"limit": limit_intervention}):
+            intervened_samples = self.predictive(
+                self.nonified_data, intervention_year=intervention_year
+            )
 
-        intervened_samples['destandardized_housing_units_cumulative'] = (intervened_samples['predicted_housing_units_cumulative'] *
-                                                self.data['housing_units_cumulative_std'] +
-                                                self.data['housing_units_cumulative_mean'])
+        intervened_samples["destandardized_housing_units_cumulative"] = (
+            intervened_samples["predicted_housing_units_cumulative"]
+            * self.data["housing_units_cumulative_std"]
+            + self.data["housing_units_cumulative_mean"]
+        )
 
-        intervened_summary = summarize_time_series(intervened_samples,
-                                self.observed_housing_cumulative, 
-                                y_site="destandardized_housing_units_cumulative", 
-                                clamp_at_zero=True, compute_metrics=False)
+        intervened_summary = summarize_time_series(
+            intervened_samples,
+            self.observed_housing_cumulative,
+            y_site="destandardized_housing_units_cumulative",
+            clamp_at_zero=True,
+            compute_metrics=False,
+        )
 
+        self.intervened_summary = intervened_summary
 
-        self.intervened_summary = intervened_summary                               
-
-        return{
+        return {
             "census_tracts": self.census_tracts,
             "years": self.years,
             "housing_units_observed": self.observed_housing_cumulative_list,
@@ -374,17 +408,19 @@ class TractsModelPredictor:
             "housing_units_factual_low": self.factual_low_list,
             "housing_units_factual_high": self.factual_high_list,
             "housing_units_factual_samples": self.factual_samples_list,
-
-            "housing_units_intervened_means": self.convert_dict_to_list(intervened_summary['series_mean_pred']),
-            "housing_units_intervened_low": self.convert_dict_to_list(intervened_summary['series_low_pred']),
-            "housing_units_intervened_high": self.convert_dict_to_list(intervened_summary['series_high_pred']),
-            "housing_units_intervened_samples": self.generate_samples_list(intervened_samples['destandardized_housing_units_cumulative']),
+            "housing_units_intervened_means": self.convert_dict_to_list(
+                intervened_summary["series_mean_pred"]
+            ),
+            "housing_units_intervened_low": self.convert_dict_to_list(
+                intervened_summary["series_low_pred"]
+            ),
+            "housing_units_intervened_high": self.convert_dict_to_list(
+                intervened_summary["series_high_pred"]
+            ),
+            "housing_units_intervened_samples": self.generate_samples_list(
+                intervened_samples["destandardized_housing_units_cumulative"]
+            ),
         }
-
-
-
-
-
 
 
 # DON'T DELETE THIS INFORMATION:

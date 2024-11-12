@@ -28,7 +28,6 @@ def reshape_into_time_series(variable, series_idx, time_idx):
 
     new_shape = (*variable.shape[:-1], num_series, time_steps)
 
-
     reshaped_variable = torch.empty(new_shape, dtype=variable.dtype)
     reshaped_variable[..., :] = -1042  # placeholder value for nan, to use with indices
 
@@ -37,14 +36,14 @@ def reshape_into_time_series(variable, series_idx, time_idx):
             mask = (series_idx == series) & (time_idx == time)
             index = torch.where(mask)[0]
             if index.numel() > 0:
-                reshaped_variable[..., i, j] = variable[...,index].squeeze(-1)
+                reshaped_variable[..., i, j] = variable[..., index].squeeze(-1)
 
     for i, series_id in enumerate(unique_series):
         _, sorted_indices = torch.sort(time_idx[series_idx == series_id])
-        sorted_outcomes = variable[...,series_idx == series_id][...,sorted_indices]
-        assert torch.all(reshaped_variable[...,i, :] == sorted_outcomes)
+        sorted_outcomes = variable[..., series_idx == series_id][..., sorted_indices]
+        assert torch.all(reshaped_variable[..., i, :] == sorted_outcomes)
 
-        assert torch.all(reshaped_variable[...,i, :] != -1042)
+        assert torch.all(reshaped_variable[..., i, :] != -1042)
 
     return {
         "reshaped_variable": reshaped_variable,
@@ -69,7 +68,7 @@ def revert_to_original_shape(reshaped_output, series_idx, time_idx):
             mask = (series_idx == series) & (time_idx == time)
             index = torch.where(mask)[0]
             if index.numel() > 0:
-                original_variable[...,index] = reshaped_output[...,i, j]
+                original_variable[..., index] = reshaped_output[..., i, j]
 
     return original_variable
 
@@ -168,8 +167,8 @@ def prepare_zoning_data_for_ts(data):
     data_nonified["reshaped"]["continuous"]["housing_units_cumulative_original"] = None
     data_nonified["reshaped"]["continuous"]["housing_units_cumulative"] = None
 
-    data['n_series'] = data["reshaped"]["categorical"]["census_tract"].shape[-2]
-    data['T'] = data["reshaped"]["categorical"]["year"].shape[-1]
+    data["n_series"] = data["reshaped"]["categorical"]["census_tract"].shape[-2]
+    data["T"] = data["reshaped"]["categorical"]["year"].shape[-1]
 
     return data, data_nonified
 
@@ -232,42 +231,54 @@ def add_ar1_component_with_interactions(
     series_plate = pyro.plate("series", no_series, dim=-2)
     time_plate = pyro.plate("time", T, dim=-1)
 
-    shape_change_flag = False 
+    shape_change_flag = False
     if self.continuous_parents_reshaped is not None:
-        shape_change_flag = (len(child_continuous_parents['limit'].shape) >
-                len(self.continuous_parents_reshaped['limit'].shape)- 1)
+        shape_change_flag = (
+            len(child_continuous_parents["limit"].shape)
+            > len(self.continuous_parents_reshaped["limit"].shape) - 1
+        )
 
-    if self.continuous_parents_reshaped is not None and not force_ts_reshape and not shape_change_flag:
+    if (
+        self.continuous_parents_reshaped is not None
+        and not force_ts_reshape
+        and not shape_change_flag
+    ):
         continuous_parents_reshaped = self.continuous_parents_reshaped
     else:
         continuous_parents_reshaped = {}
         for key in child_continuous_parents.keys():
             continuous_parents_reshaped[key] = reshape_into_time_series(
-                    child_continuous_parents[key], series_idx, time_idx
-                )["reshaped_variable"]     
+                child_continuous_parents[key], series_idx, time_idx
+            )["reshaped_variable"]
         self.continuous_parents_reshaped = continuous_parents_reshaped
 
-    if self.categorical_parents_reshaped is not None and not force_ts_reshape and not shape_change_flag:
+    if (
+        self.categorical_parents_reshaped is not None
+        and not force_ts_reshape
+        and not shape_change_flag
+    ):
         categorical_parents_reshaped = self.categorical_parents_reshaped
     else:
         categorical_parents_reshaped = {}
         for key in child_categorical_parents.keys():
             categorical_parents_reshaped[key] = reshape_into_time_series(
-                    child_categorical_parents[key], series_idx, time_idx
-                )["reshaped_variable"]
+                child_categorical_parents[key], series_idx, time_idx
+            )["reshaped_variable"]
         self.categorical_parents_reshaped = categorical_parents_reshaped
 
-    if self.outcome_reshaped is not None and not force_ts_reshape and not shape_change_flag:
+    if (
+        self.outcome_reshaped is not None
+        and not force_ts_reshape
+        and not shape_change_flag
+    ):
         outcome_reshaped = self.outcome_reshaped
-    else:        
+    else:
         if observations is not None:
             outcome_reshaped = reshape_into_time_series(
                 observations, series_idx, time_idx
             )["reshaped_variable"]
             self.outcome_reshaped = outcome_reshaped
-            
-        
-   
+
     # ----------------------------
     # contributions of parents
     # ----------------------------
