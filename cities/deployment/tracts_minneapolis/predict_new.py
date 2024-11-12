@@ -14,8 +14,11 @@ from chirho.interventional.handlers import do
 from cities.modeling.svi_inference import run_svi_inference
 from cities.modeling.zoning_models.zoning_tracts_ts_model  import TractsModelCumulativeAR1 as TractsModel
 from cities.utils.data_grabber import find_repo_root
+from cities.utils.plot_ts import summarize_time_series
 from cities.modeling.zoning_models.ts_model_components import prepare_zoning_data_for_ts
-from cities.utils.data_grabber import find_repo_root
+
+
+
 from cities.utils.data_loader import select_from_sql
 
 # TODO load the right model
@@ -31,8 +34,8 @@ if local_user == "rafal":
     load_dotenv(os.path.expanduser("~/.env_pw"))
 
 
-num_samples = 100
-num_steps = 300  # 1500
+num_samples = 200
+num_steps = 3000
 
 # this disables assertions for speed
 dev_mode = False
@@ -123,6 +126,9 @@ class TractsModelPredictor:
             "census_tract": torch.unique(self.data["categorical"]["census_tract"]),
         }
 
+        self.census_tracts = self.data["init_idx"].squeeze().numpy().tolist()
+        self.years = self.data["categorical"]["year_original"].squeeze().numpy().tolist()
+
 
 
         # TODO model will be revised
@@ -186,8 +192,74 @@ class TractsModelPredictor:
             self.predictive = pyro.infer.Predictive(self.model, guide=self.guide, num_samples=self.num_samples)
             
 
+        # add observed values, transform into list for output
+        self.observed_housing_cumulative = self.data['reshaped']['continuous']['housing_units_cumulative_original']
+    
+        observed_tensor = self.observed_housing_cumulative
 
+        self.observed_housing_cumulative_list = [observed_tensor[:, year].tolist() for year in range(10)]
+
+        for year in range(10):
+                for series in range(113):
+                        assert self.observed_housing_cumulative_list[year][series] == observed_tensor[series, year].item()
+
+
+        # factual predictions don't depend on the intervention
+        # no need to compute them multiple times
+        self.clear_reshaped_model_data
+        self.factual_samples = self.predictive(data = self.nonified_data)
+
+        self.factual_samples['destandardized_housing_units_cumulative'] = (self.factual_samples['predicted_housing_units_cumulative'] *
+                                                self.data['housing_units_cumulative_std'] +
+                                                self.data['housing_units_cumulative_mean'])
+        
+        self.factual_summary = summarize_time_series(self.factual_samples,
+                                self.observed_housing_cumulative, y_site="destandardized_housing_units_cumulative",
+                                clamp_at_zero=True, compute_metrics=False)
      
+        
+
+        self.factual_means_list = self.convert_dict_to_list(self.factual_summary['series_mean_pred'])
+        self.factual_low_list = self.convert_dict_to_list(self.factual_summary['series_low_pred'])
+        self.factual_high_list = self.convert_dict_to_list(self.factual_summary['series_high_pred'])
+        self.factual_samples_list = self.generate_samples_list(self.factual_samples['destandardized_housing_units_cumulative'])
+   
+    @staticmethod
+    def convert_dict_to_list(data_dict):
+            result = []
+            for year in range(10):
+                year_list = [data_dict[series][year].item() for series in data_dict.keys()]
+                result.append(year_list)
+
+            for year in range(10):
+                for series in data_dict.keys():
+                    assert data_dict[series][year].item() == result[year][series]
+                    
+            return result
+    
+    @staticmethod
+    def generate_samples_list(factual_samples, num_years=10, num_series=113):
+    
+        samples_list = []
+        for year in range(num_years):
+            samples_year_list = []
+            samples_year = factual_samples[..., year].clamp(min=0)
+            for series in range(num_series):
+                samples_series = samples_year[..., series].flatten().tolist()
+                samples_year_list.append(samples_series)
+            samples_list.append(samples_year_list)
+
+        for year in range(num_years):
+            for series in range(num_series):
+                for sample in [0, 15, 60, 120, 190]:
+                    assert factual_samples.clamp(min=0)[sample, 0, 0, series, year].item() == samples_list[year][series][sample], (
+                        f"Assertion failed for year={year}, series={series}, sample={sample}. "
+                        f"Expected {factual_samples.clamp(min=0)[sample, 0, 0, series, year].item()}, "
+                        f"got {samples_list[year][series][sample]}"
+                    )
+
+        return samples_list 
+
 
         # --------------------------
         # intervention helpers
@@ -270,25 +342,76 @@ class TractsModelPredictor:
             pyro.get_param_store().save(self.param_path)
 
 
-
     def predict_cumulative(self, conn, intervention):
-        """Predict the total number of housing units built from 2011-2020 under intervention.
-
-        Returns a dictionary with keys:
-        - 'census_tracts': the tracts considered
-        - 'housing_units_factual': total housing units built according to real housing data
-        - 'housing_units_counterfactual': samples from prediction of total housing units built
-        """
+        
 
         limit_intervention = self._tracts_intervention(conn, **intervention)
+        intervention_year = intervention["reform_year"] - 2011
 
-        with MultiWorldCounterfactual() as mwc:
-            with do(actions={"limit": limit_intervention}):
-                result_all = self.predictive(data = self.nonified_data)#["housing_units"]
+        self.clear_reshaped_model_data()
 
-        return {
-            "all_samples": result_all, "mwc": mwc
+        with do(actions = {"limit": limit_intervention}):
+            intervened_samples =  self.predictive(self.nonified_data,
+            intervention_year = intervention_year)
+
+        intervened_samples['destandardized_housing_units_cumulative'] = (intervened_samples['predicted_housing_units_cumulative'] *
+                                                self.data['housing_units_cumulative_std'] +
+                                                self.data['housing_units_cumulative_mean'])
+
+        intervened_summary = summarize_time_series(intervened_samples,
+                                self.observed_housing_cumulative, 
+                                y_site="destandardized_housing_units_cumulative", 
+                                clamp_at_zero=True, compute_metrics=False)
+
+
+        self.intervened_summary = intervened_summary                               
+
+        return{
+            "census_tracts": self.census_tracts,
+            "years": self.years,
+            "housing_units_observed": self.observed_housing_cumulative_list,
+            "housing_units_factual_means": self.factual_means_list,
+            "housing_units_factual_low": self.factual_low_list,
+            "housing_units_factual_high": self.factual_high_list,
+            "housing_units_factual_samples": self.factual_samples_list,
+
+            "housing_units_intervened_means": self.convert_dict_to_list(intervened_summary['series_mean_pred']),
+            "housing_units_intervened_low": self.convert_dict_to_list(intervened_summary['series_low_pred']),
+            "housing_units_intervened_high": self.convert_dict_to_list(intervened_summary['series_high_pred']),
+            "housing_units_intervened_samples": self.generate_samples_list(intervened_samples['destandardized_housing_units_cumulative']),
         }
 
 
 
+
+
+
+
+# DON'T DELETE THIS INFORMATION:
+# This the desired structure of the output on the front-end side
+# (except, we need to correct for the observed/factual distinction
+# (and make our terminology consistent with the concepts)
+# {
+#     "census_tracts": ["27053000100", "27053000200", ...],  # List of census tract IDs
+#     "years": [2011, 2012, 2013, ..., 2019],  # List of years
+
+#     "housing_units_factual": [
+#         [100, 150, ...],  # Cumulative counts for each tract in 2011
+#         [120, 180, ...],  # Cumulative counts for each tract in 2012
+#         ...
+#     ],
+
+#     "housing_units_counterfactual": [
+#         [  # Year 2011
+#             [101, 102, ..., 105],  # 100 samples for tract 27053000100
+#             [151, 153, ..., 158],  # 100 samples for tract 27053000200
+#             ...
+#         ],
+#         [  # Year 2012
+#             [122, 124, ..., 128],  # 100 samples for tract 27053000100
+#             [182, 185, ..., 190],  # 100 samples for tract 27053000200
+#             ...
+#         ],
+#         ...
+#     ]
+# }

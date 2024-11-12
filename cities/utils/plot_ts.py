@@ -7,7 +7,7 @@ import math
 import textwrap
 
 
-def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, clamp_at_zero=False):
+def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, clamp_at_zero=False, compute_metrics = True):
 
     n_series = y_true.shape[-2] if len(y_true.shape) > 1 else 0
     T = y_true.shape[-1]
@@ -27,28 +27,30 @@ def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, cla
     assert mean_pred.shape == y_true.shape
     assert mean_low.shape == y_true.shape
 
-    # pointwise metrics: global
-    total_model_squared_errors = (y_true - mean_pred) ** 2
-    total_null_squared_errors = (y_true - y_true.mean()) ** 2
+    if compute_metrics:
+        # pointwise metrics: global
+        total_model_squared_errors = (y_true - mean_pred) ** 2
+        total_null_squared_errors = (y_true - y_true.mean()) ** 2
 
-    # single-number metrics: global
-    total_rmse = total_model_squared_errors.mean().sqrt()
-    total_null_rmse = total_null_squared_errors.mean().sqrt()
-    total_r2 = 1 - (total_model_squared_errors.sum() / total_null_squared_errors.sum())
+        # single-number metrics: global
+        total_rmse = total_model_squared_errors.mean().sqrt()
+        total_null_rmse = total_null_squared_errors.mean().sqrt()
+        total_r2 = 1 - (total_model_squared_errors.sum() / total_null_squared_errors.sum())
 
     # summarize series
     series_mean_pred = {}
     series_low_pred = {}
     series_high_pred = {}
 
-    # pointwise metrics: series
-    series_model_squared_errors = {}
-    series_null_squared_errors = {}
+    if compute_metrics:
+        # pointwise metrics: series
+        series_model_squared_errors = {}
+        series_null_squared_errors = {}
 
-    # single-number metrics: series
-    series_rmse = {}
-    series_null_rmse = {}
-    series_r2 = {}
+        # single-number metrics: series
+        series_rmse = {}
+        series_null_rmse = {}
+        series_r2 = {}
 
     for series in range(n_series):
 
@@ -56,44 +58,49 @@ def summarize_time_series(samples, y_true, y_site="y_stacked", sample_dim=0, cla
         series_mean_pred[series] = mean_pred[..., series, :]
         series_low_pred[series] = mean_low[..., series, :]
         series_high_pred[series] = mean_high[..., series, :]
-        #        series_low_pred[series] = samples[y_site][..., series, :].quantile(0.05, dim=-4).squeeze()
-        #        series_high_pred[series] = samples[y_site][..., series, :].quantile(0.95, dim=-4).squeeze()
 
+        if compute_metrics:
         # pointwise metrics
-        series_model_squared_errors[series] = (
-            y_true[series, :] - series_mean_pred[series]
-        ) ** 2
-        series_null_squared_errors[series] = (
-            y_true[series, :] - y_true.mean()
-        ) ** 2
-        series_r2[series] = 1 - (
-            series_model_squared_errors[series].sum()
-            / series_null_squared_errors[series].sum()
-        )
-        series_rmse[series] = series_model_squared_errors[series].mean().sqrt()
-        series_null_rmse[series] = series_null_squared_errors[series].mean().sqrt()
+            series_model_squared_errors[series] = (
+                y_true[series, :] - series_mean_pred[series]
+            ) ** 2
+            series_null_squared_errors[series] = (
+                y_true[series, :] - y_true.mean()
+            ) ** 2
+            series_r2[series] = 1 - (
+                series_model_squared_errors[series].sum()
+                / series_null_squared_errors[series].sum()
+            )
+            series_rmse[series] = series_model_squared_errors[series].mean().sqrt()
+            series_null_rmse[series] = series_null_squared_errors[series].mean().sqrt()
 
     summary = {
         "mean_pred": mean_pred,
         "mean_low": mean_low,
         "mean_high": mean_high,
-        "total_null_se": total_null_squared_errors,
-        "total_model_se": total_model_squared_errors,
         "series_mean_pred": series_mean_pred,
         "series_low_pred": series_low_pred,
         "series_high_pred": series_high_pred,
-        "total_r2": total_r2,
-        "total_rmse": total_rmse,
-        "total_null_rmse": total_null_rmse,
-        "series_omean_pred": series_mean_pred,
+        "series_mean_pred": series_mean_pred,
         "series_low_pred": series_low_pred,
         "series_high_pred": series_high_pred,
-        "series_null_squared_errors": series_null_squared_errors,
-        "series_model_squared_errors": series_model_squared_errors,
-        "series_null_rmse": series_null_rmse,
-        "series_rmse": series_rmse,
-        "series_r2": series_r2,
     }
+
+    if compute_metrics:
+
+        summary = {
+            **summary,
+            "total_null_se": total_null_squared_errors,
+            "total_model_se": total_model_squared_errors,
+            "total_r2": total_r2,
+            "total_rmse": total_rmse,
+            "total_null_rmse": total_null_rmse,
+            "series_null_squared_errors": series_null_squared_errors,
+            "series_model_squared_errors": series_model_squared_errors,
+            "series_null_rmse": series_null_rmse,
+            "series_rmse": series_rmse,
+            "series_r2": series_r2,
+            }
 
     return summary
 
@@ -242,6 +249,7 @@ def plot_selected_series(
     ylim = None,
     plot_null = False,
     path = None,
+    add_metrics = True,
 ):
 
     # raise value error if both selected series and n series are passed
@@ -292,9 +300,13 @@ def plot_selected_series(
         if plot_null:
             ax.axhline(y_true.mean(), color="gray", linestyle="--", label="null model prediction")
 
-        ax.set_title(
-            f"{series_names[series] if series_names is not None else series}, $r^2$ = {summary['series_r2'][series]:.2f}, rmse = {summary['series_rmse'][series]:.2f} (vs. {summary['series_null_rmse'][series]:.2f} for null model)"
-        )
+        if add_metrics:
+            ax.set_title(
+                f"{series_names[series] if series_names is not None else series}, $r^2$ = {summary['series_r2'][series]:.2f}, rmse = {summary['series_rmse'][series]:.2f} (vs. {summary['series_null_rmse'][series]:.2f} for null model)"
+            )
+
+        else:
+            ax.set_title(f"{series_names[series] if series_names is not None else series}")
 
         if i == 0:
             ax.legend()
