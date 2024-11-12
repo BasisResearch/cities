@@ -233,6 +233,7 @@ def plot_coefs(
 
 def plot_selected_series(
     summary,
+    intervened_summary = None,
     y_true=None,
     selected_series=None,
     n_series=None,
@@ -267,10 +268,22 @@ def plot_selected_series(
         low_pred = summary["series_low_pred"][series]
         high_pred = summary["series_high_pred"][series]
 
+
+        if intervened_summary is not None:
+            mean_pred_intervened = intervened_summary["series_mean_pred"][series]
+            low_pred_intervened = intervened_summary["series_low_pred"][series]
+            high_pred_intervened = intervened_summary["series_high_pred"][series]
+
         ax = axs[i // 2, i % 2] if n_rows > 1 else axs[i % 2]
         if y_true is not None:
             ax.plot(y_true[series, :].detach().numpy(), label="true y")
         ax.plot(mean_pred.detach().numpy(), label="mean prediction")
+
+        if intervened_summary is not None:
+            ax.plot(mean_pred_intervened.detach().numpy(), c = "red", label="mean prediction intervened", linestyle="--")
+            # ax.fill_between(
+            #     range(T), low_pred_intervened.detach().numpy(), high_pred_intervened.detach().numpy(), alpha=0.5, label="90% credible interval intervened"
+            # )
 
         ax.fill_between(
             range(T), low_pred, high_pred, alpha=0.5, label="90% credible interval"

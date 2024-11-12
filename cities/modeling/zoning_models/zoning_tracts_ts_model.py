@@ -63,6 +63,7 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
         categorical_levels=None,
         n=None,
         force_ts_reshape = False,
+        intervention_year = 4,
     ):
         
         categorical = data["categorical"]
@@ -80,6 +81,8 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
             )
 
         categorical_levels = self.categorical_levels
+
+        categorical_levels['intervention_year'] = torch.tensor([0, 1])
         assert check_categorical_is_subset_of_levels(categorical, categorical_levels)
 
         if n is None:
@@ -103,6 +106,12 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
                 dist.Categorical(torch.ones(len(categorical_levels["year"]))),
                 obs=categorical["year"],
             )
+
+            intervention_year = pyro.sample(
+                "intervention_year",
+                dist.Categorical(torch.ones(len(categorical_levels["year"]))),
+                obs=categorical['year'] >= intervention_year,
+            ).to(torch.int64)
 
             distance = pyro.sample(
                 "distance", dist.Normal(0, 1), obs=continuous["median_distance"]
@@ -291,7 +300,8 @@ class TractsModelCumulativeAR1(pyro.nn.PyroModule):
         }
 
         housing_units_categorical_parents = {
-            "year": year,
+            #"year": year,
+            "intervention_year": intervention_year
         }
 
         housing_units_cumulative = add_ar1_component_with_interactions(self,
