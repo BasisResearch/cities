@@ -404,7 +404,7 @@ class TractsModelPredictor:
             "census_tracts": self.census_tracts,
             "years": self.years,
             "housing_units_observed": self.observed_housing_cumulative_list,
-            "housing_units_factual_means": self.factual_means_list,
+            "housing_units_factuobsal_means": self.factual_means_list,
             "housing_units_factual_low": self.factual_low_list,
             "housing_units_factual_high": self.factual_high_list,
             "housing_units_factual_samples": self.factual_samples_list,
