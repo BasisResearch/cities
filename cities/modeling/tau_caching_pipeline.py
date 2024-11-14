@@ -42,8 +42,8 @@ files = [f for f in os.listdir(log_dir) if os.path.isfile(os.path.join(log_dir, 
 num_files = len(files)
 
 logging.info(
-    f"{(num_files-2)} sample dictionaries already exist. "
-    f"Starting to obtain {N_combinations_samples - (num_files -2)}"
+    f"{(num_files - 2)} sample dictionaries already exist. "
+    f"Starting to obtain {N_combinations_samples - (num_files - 2)}"
     f" out of {N_combinations_samples} sample dictionaries needed."
 )
 remaining = N_combinations_samples - (num_files - 2)
@@ -84,5 +84,5 @@ session_ends = time.time()
 
 logging.info(
     f"All samples are now available."
-    f"Sampling took {session_ends - session_start:.2f} seconds, or {(session_ends - session_start)/60:.2f} minutes."
+    f"Sampling took {session_ends - session_start:.2f} seconds, or {(session_ends - session_start) / 60:.2f} minutes."
 )
