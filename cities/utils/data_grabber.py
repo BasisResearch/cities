@@ -2,13 +2,17 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import List
+from typing import Dict, List
 
 import pandas as pd
+from sqlalchemy import create_engine
 
 
 def find_repo_root() -> Path:
     return Path(__file__).parent.parent.parent
+
+
+root = find_repo_root()
 
 
 def check_if_tensed(df):
@@ -17,37 +21,46 @@ def check_if_tensed(df):
     return check
 
 
-class DataGrabber:
+class DataGrabberCSV:
     def __init__(self):
         self.repo_root = find_repo_root()
         self.data_path = os.path.join(self.repo_root, "data/processed")
-        self.wide = {}
-        self.std_wide = {}
-        self.long = {}
-        self.std_long = {}
+        self.wide: Dict[str, pd.DataFrame] = {}
+        self.std_wide: Dict[str, pd.DataFrame] = {}
+        self.long: Dict[str, pd.DataFrame] = {}
+        self.std_long: Dict[str, pd.DataFrame] = {}
+
+    def _get_features(self, features: List[str], table_suffix: str) -> None:
+        for feature in features:
+            file_path = os.path.join(self.data_path, f"{feature}_{table_suffix}.csv")
+            df = pd.read_csv(file_path)
+            if table_suffix == "wide":
+                self.wide[feature] = df
+            elif table_suffix == "std_wide":
+                self.std_wide[feature] = df
+            elif table_suffix == "long":
+                self.long[feature] = df
+            elif table_suffix == "std_long":
+                self.std_long[feature] = df
+            else:
+                raise ValueError(
+                    "Invalid table suffix. Please choose 'wide', 'std_wide', 'long', or 'std_long'."
+                )
 
     def get_features_wide(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_wide.csv")
-            self.wide[feature] = pd.read_csv(file_path)
+        self._get_features(features, "wide")
 
     def get_features_std_wide(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_std_wide.csv")
-            self.std_wide[feature] = pd.read_csv(file_path)
+        self._get_features(features, "std_wide")
 
     def get_features_long(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_long.csv")
-            self.long[feature] = pd.read_csv(file_path)
+        self._get_features(features, "long")
 
     def get_features_std_long(self, features: List[str]) -> None:
-        for feature in features:
-            file_path = os.path.join(self.data_path, f"{feature}_std_long.csv")
-            self.std_long[feature] = pd.read_csv(file_path)
+        self._get_features(features, "std_long")
 
 
-class MSADataGrabber(DataGrabber):
+class MSADataGrabberCSV(DataGrabberCSV):
     def __init__(self):
         super().__init__()
         self.repo_root = find_repo_root()
@@ -55,31 +68,104 @@ class MSADataGrabber(DataGrabber):
         sys.path.insert(0, self.data_path)
 
 
-def list_available_features(level="county"):
+class CTDataGrabberCSV(DataGrabberCSV):
+    def __init__(
+        self, ct_time_period: str = "pre_2020"
+    ):  # new argument pre_2020 and post_2020
+        super().__init__()
+        self.data_path = os.path.join(self.repo_root, "data/Census_tract_level")
+        self.ct_time_period = ct_time_period
+        sys.path.insert(0, self.data_path)
+
+    def _get_features(
+        self, features: List[str], table_suffix: str
+    ) -> None:  # redefining data grabbing to depend on `ct_time_period` argument
+        for feature in features:
+            if self.ct_time_period == "pre_2020":
+                file_path = os.path.join(
+                    self.data_path, f"{feature}_pre2020_CT_{table_suffix}.csv"
+                )
+            elif self.ct_time_period == "post_2020":
+                file_path = os.path.join(
+                    self.data_path, f"{feature}_post2020_CT_{table_suffix}.csv"
+                )
+            else:
+                raise ValueError(
+                    "Invalid ct_time_period. Please choose 'pre_2020' or 'post_2020'."
+                )
+
+            if os.path.exists(file_path):
+                df = pd.read_csv(file_path)
+                if table_suffix == "wide":
+                    self.wide[feature] = df
+                elif table_suffix == "std_wide":
+                    self.std_wide[feature] = df
+                elif table_suffix == "long":
+                    self.long[feature] = df
+                elif table_suffix == "std_long":
+                    self.std_long[feature] = df
+                else:
+                    raise ValueError(
+                        "Invalid table suffix. Please choose 'wide', 'std_wide', 'long', or 'std_long'."
+                    )
+            else:
+                print(f"File not found: {file_path}")
+
+    def get_features_wide(self, features: List[str]) -> None:
+        self._get_features(features, "wide")
+
+    def get_features_std_wide(self, features: List[str]) -> None:
+        self._get_features(features, "std_wide")
+
+    def get_features_long(self, features: List[str]) -> None:
+        self._get_features(features, "long")
+
+    def get_features_std_long(self, features: List[str]) -> None:
+        self._get_features(features, "std_long")
+
+
+def list_available_features(level="county", ct_time_period="pre_2020"):
     root = find_repo_root()
 
     if level == "county":
         folder_path = f"{root}/data/processed"
     elif level == "msa":
         folder_path = f"{root}/data/MSA_level"
+    elif level == "census_tract":
+        folder_path = f"{root}/data/Census_tract_level"
     else:
-        raise ValueError("Invalid level. Please choose 'county' or 'msa'.")
+        raise ValueError(
+            "Invalid level. Please choose 'county', 'census_tract' or 'msa'."
+        )
 
     file_names = [f for f in os.listdir(folder_path) if f != ".gitkeep"]
     processed_file_names = []
 
     for file_name in file_names:
-        # Use regular expressions to find the patterns and split accordingly
-        matches = re.split(r"_wide|_long|_std", file_name)
-        if matches:
-            processed_file_names.append(matches[0])
+        if level == "census_tract":
+            if ct_time_period == "pre_2020" and "pre2020" in file_name:
+                matches = re.split(r"_wide|_long|_std|_pre2020", file_name)
+            elif ct_time_period == "post_2020" and "pre2020" not in file_name:
+                matches = re.split(r"_wide|_long|_std|_post2020", file_name)
+            else:
+                continue
+        else:
+            matches = re.split(r"_wide|_long|_std", file_name)
 
+        if matches:
+            base_name = matches[0]
+            processed_file_names.append(base_name)
+
+    # Remove any remaining suffixes from the base names
     feature_names = list(set(processed_file_names))
+    feature_names = [
+        re.sub(r"(_pre2020|_post2020)$", "", name) for name in feature_names
+    ]
 
     return sorted(feature_names)
 
 
-def list_tensed_features(level="county"):
+def list_tensed_features(level="county", ct_time_period="pre_2020"):
     if level == "county":
         data = DataGrabber()
         all_features = list_available_features(level="county")
@@ -88,8 +174,18 @@ def list_tensed_features(level="county"):
         data = MSADataGrabber()
         all_features = list_available_features(level="msa")
 
+    elif level == "census_tract":
+        data = CTDataGrabberCSV(
+            ct_time_period=ct_time_period
+        )  # TODO: Change to CTDataGrabber() in the future
+        all_features = list_available_features(
+            level="census_tract", ct_time_period=ct_time_period
+        )
+
     else:
-        raise ValueError("Invalid level. Please choose 'county' or 'msa'.")
+        raise ValueError(
+            "Invalid level. Please choose 'county', 'census_tract' or 'msa'."
+        )
 
     data.get_features_wide(all_features)
 
@@ -117,3 +213,96 @@ def list_outcomes():
         if feature not in list_interventions()
     ]
     return sorted(outcomes)
+
+
+def list_csvs(csv_dir):
+    csv_names = []
+    for filename in os.listdir(csv_dir):
+        if filename.endswith(".csv"):
+            csv_names.append(filename)
+
+    assert (
+        len(csv_names) > 10
+    ), f"Expected to find more than 10 csv files in {csv_dir}, but found {len(csv_names)}"
+
+    return csv_names
+
+
+# these paths will need to be updated in deployment
+# as is, this assumes you've run `csv_to_db_pipeline.py`
+DB_PATHS = {
+    "counties": os.path.join(root, "data/sql/counties_database.db"),
+    "msa": os.path.join(root, "data/sql/msa_database.db"),
+}
+
+if not os.path.exists(DB_PATHS["counties"]):
+    raise FileNotFoundError(
+        f"No db at {DB_PATHS['counties']}, run `csv_to_db_pipeline.py` first."
+    )
+if not os.path.exists(DB_PATHS["msa"]):
+    raise FileNotFoundError(
+        f"No db at {DB_PATHS['msa']}, run `csv_to_db_pipeline.py` first."
+    )
+
+
+# this check might need to be revised in deployment
+if "COUNTIES_ENGINE" not in locals():
+    counties_engine = create_engine(f'sqlite:///{DB_PATHS["counties"]}')
+
+if "MSA_ENGINE" not in locals():
+    msa_engine = create_engine(f'sqlite:///{DB_PATHS["msa"]}')
+
+engines = {"counties": counties_engine, "msa": msa_engine}
+
+
+class DataGrabberDB:
+    def __init__(self, level: str = "counties"):
+        self.engine = engines[level]
+        self.repo_root = find_repo_root()
+        self.wide: Dict[str, pd.DataFrame] = {}
+        self.std_wide: Dict[str, pd.DataFrame] = {}
+        self.long: Dict[str, pd.DataFrame] = {}
+        self.std_long: Dict[str, pd.DataFrame] = {}
+
+    def _get_features(self, features: List[str], table_suffix: str) -> None:
+        for feature in features:
+            table_name = f"{feature}_{table_suffix}"
+            df = pd.read_sql_table(table_name, con=self.engine)
+            if table_suffix == "wide":
+                self.wide[feature] = df
+            elif table_suffix == "std_wide":
+                self.std_wide[feature] = df
+            elif table_suffix == "long":
+                self.long[feature] = df
+            elif table_suffix == "std_long":
+                self.std_long[feature] = df
+            else:
+                raise ValueError(
+                    "Invalid table suffix. Please choose 'wide', 'std_wide', 'long', or 'std_long'."
+                )
+
+    def get_features_wide(self, features: List[str]) -> None:
+        self._get_features(features, "wide")
+
+    def get_features_std_wide(self, features: List[str]) -> None:
+        self._get_features(features, "std_wide")
+
+    def get_features_long(self, features: List[str]) -> None:
+        self._get_features(features, "long")
+
+    def get_features_std_long(self, features: List[str]) -> None:
+        self._get_features(features, "std_long")
+
+
+DataGrabber = DataGrabberDB
+
+
+def MSADataGrabberFactory():
+    return DataGrabberDB(level="msa")
+
+
+MSADataGrabber = MSADataGrabberFactory
+
+# this reverts to csvs
+# DataGrabber = DataGrabberCSV
+# MSADataGrabber = MSADataGrabberCSV

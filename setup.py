@@ -14,13 +14,14 @@ TEST_REQUIRES = [
             "nbval",
             "nbqa",
             "autoflake",
+            "types-requests",
         ]
 
 DEV_REQUIRES = [
     "pyro-ppl==1.8.5",
     "torch",   "plotly.express", 
     "scipy",  
-    "chirho", "graphviz", "seaborn"
+    "chirho", "graphviz", "seaborn",
 ]
 
 setup(
@@ -34,7 +35,8 @@ setup(
     #     "Documentation": "",
         "Source": "https://github.com/BasisResearch/cities",
     },
-    install_requires=["jupyter","pandas", "numpy", "scikit-learn", "sqlalchemy", "dill",  "plotly", "matplotlib>=3.8.2"],
+    install_requires=["jupyter","pandas", "numpy", "scikit-learn", "sqlalchemy", "dill",  "plotly", "matplotlib>=3.8.2",
+                      'types-requests'],
     extras_require={
         "test": TEST_REQUIRES,
         "dev": DEV_REQUIRES + TEST_REQUIRES 

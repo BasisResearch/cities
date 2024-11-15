@@ -1,6 +1,6 @@
 import pytest
 
-from cities.queries.fips_query import FipsQuery, MSAFipsQuery
+from cities.queries.fips_query import CTFipsQuery, FipsQuery, MSAFipsQuery
 from cities.utils.data_grabber import DataGrabber
 
 data = DataGrabber()
@@ -66,6 +66,9 @@ def test_euclidean_kins_dont_die(query):
     f.find_euclidean_kins()
 
 
+# MSA level
+
+
 def test_fips_query_MSA_init():
     f1007 = MSAFipsQuery(
         fips=10780,
@@ -122,5 +125,77 @@ queries_msa = [
 
 @pytest.mark.parametrize("query", queries_msa)
 def test_euclidean_kins_dont_die_msa(query):
+    f = query
+    f.find_euclidean_kins()
+
+
+# census tract level
+
+
+def test_fips_query_CT_init():
+    f34031124401 = CTFipsQuery(
+        fips=34031124401,
+        outcome_var="population",
+        feature_groups_with_weights={"population": 4, "urbanicity": 4},
+        lag=0,
+        top=8,
+    )
+
+    assert f34031124401.outcome_var == "population"
+    assert f34031124401.feature_groups == ["population", "urbanicity"]
+    assert list(f34031124401.data.std_wide.keys()) == ["population", "urbanicity"]
+
+    assert f34031124401.data.std_wide["population"].shape[0] > 100
+    assert f34031124401.data.std_wide["urbanicity"].shape[0] > 100
+
+
+queries_ct = [
+    CTFipsQuery(45051050303, "population", lag=0, top=5, time_decay=1.06),
+    CTFipsQuery(
+        56033000600,
+        outcome_var="population",
+        feature_groups_with_weights={"population": 4, "urbanicity": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+    ),
+    CTFipsQuery(
+        6019003808,
+        feature_groups_with_weights={"population": 4, "urbanicity": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+        ct_time_period="post_2020",
+    ),
+    CTFipsQuery(
+        21089040100,
+        outcome_var="population",
+        feature_groups_with_weights={"population": 0, "urbanicity": 4},
+        lag=0,
+        top=5,
+        time_decay=1.03,
+    ),
+    CTFipsQuery(
+        53061051000,
+        "population",
+        lag=2,
+        top=5,
+        time_decay=1.03,
+        ct_time_period="post_2020",
+    ),
+    CTFipsQuery(
+        31047968300,
+        outcome_var="population",
+        feature_groups_with_weights={"population": 4, "urbanicity": 4},
+        lag=2,
+        top=5,
+        time_decay=1.03,
+        ct_time_period="post_2020",
+    ),
+]
+
+
+@pytest.mark.parametrize("query", queries_ct)
+def test_euclidean_kins_dont_die_ct(query):
     f = query
     f.find_euclidean_kins()
