@@ -16,7 +16,9 @@ from cities.utils.data_grabber import (
 smoke_test = "CI" in os.environ
 
 if smoke_test:
-    pytest.skip("Skipping all tests in this file during smoke tests", allow_module_level=True)
+    pytest.skip(
+        "Skipping all tests in this file during smoke tests", allow_module_level=True
+    )
 
 
 root = find_repo_root()
