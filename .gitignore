@@ -23,3 +23,8 @@ tests/.coverage
 .vscode/launch.json
 data/sql/counties_database.db
 data/sql/msa_database.db
+docs/experimental_notebooks/zoning/interactions_preds.dill
+docs/experimental_notebooks/zoning/population_preds.dill
+docs/experimental_notebooks/zoning/waic_dict_7.pkl
+docs/experimental_notebooks/zoning/waic_dict_13.pkl
+docs/experimental_notebooks/zoning/waic_dict_14.pkl

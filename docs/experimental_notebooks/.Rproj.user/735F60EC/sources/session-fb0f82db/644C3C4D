@@ -1,0 +1,27 @@
+{
+    "id": "644C3C4D",
+    "path": "~/s78projects/cities/docs/experimental_notebooks/zoning/tracts_population_dag.R",
+    "project_path": "zoning/tracts_population_dag.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1727800740083.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "33,40",
+        "scrollLine": "18"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1728657199,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1728657199368,
+    "read_only": false,
+    "read_only_alternatives": []
+}
