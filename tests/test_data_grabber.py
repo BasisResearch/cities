@@ -187,11 +187,11 @@ def general_data_format_testing(data, features, level="county_msa"):
             )
 
 
-def check_years(df):
-    current_year = pd.Timestamp.now().year
-    for year in df["Year"].unique():
-        assert year > 1945, f"Year {year} in is not greater than 1945."
-        assert year <= current_year, f"Year {year} exceeds the current year."
+# def check_years(df):
+#     current_year = pd.Timestamp.now().year
+#     for year in df["Year"].unique():
+#         assert year > 1945, f"Year {year} in is not greater than 1945."
+#         assert year <= current_year, f"Year {year} exceeds the current year."
 
 
 def test_missing_years():
