@@ -1,0 +1,26 @@
+{
+    "id": "FFB1EEE4",
+    "path": "~/s78projects/cities/docs/experimental_notebooks/zoning/zoning_dags.R",
+    "project_path": "zoning/zoning_dags.R",
+    "type": "r_source",
+    "hash": "150867923",
+    "contents": "",
+    "dirty": false,
+    "created": 1724161317981.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "2,2",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1724161086,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1724161086,
+    "read_only": false,
+    "read_only_alternatives": []
+}

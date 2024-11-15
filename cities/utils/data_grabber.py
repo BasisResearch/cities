@@ -294,15 +294,15 @@ class DataGrabberDB:
         self._get_features(features, "std_long")
 
 
-DataGrabber = DataGrabberDB
+# DataGrabber = DataGrabberDB
+# DataGrabber = DataGrabberCSV
+
+# def MSADataGrabberFactory():
+#     return DataGrabberDB(level="msa")
 
 
-def MSADataGrabberFactory():
-    return DataGrabberDB(level="msa")
-
-
-MSADataGrabber = MSADataGrabberFactory
+# MSADataGrabber = MSADataGrabberFactory
 
 # this reverts to csvs
-# DataGrabber = DataGrabberCSV
-# MSADataGrabber = MSADataGrabberCSV
+DataGrabber = DataGrabberCSV
+MSADataGrabber = MSADataGrabberCSV
