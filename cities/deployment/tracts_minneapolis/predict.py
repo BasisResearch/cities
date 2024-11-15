@@ -28,7 +28,7 @@ num_steps = 3000
 
 # this disables assertions for speed
 # running as main in dev mode will enforce model re-training
-dev_mode = False
+dev_mode = True
 
 
 class TractsModelPredictor:
@@ -84,6 +84,9 @@ class TractsModelPredictor:
     """
 
     def __init__(self, conn):
+
+        
+        
         self.conn = conn
 
         self.num_steps = num_steps
@@ -179,9 +182,15 @@ class TractsModelPredictor:
             print(f"Warning: '{self.param_path}' does not exist.")
 
         if need_to_train_flag:
-            print(
-                "The model has no access to training results. Please run the 'train_model()' to generate the required files.)"
-            )
+
+            if dev_mode:
+                print("Running in dev mode. Training the model.")
+                self.train_model(override=True)
+
+            else:
+                raise Exception(
+                    "Please run the 'train_model()' method or instantiate the predictor in dev mode to train the model."
+                )
 
         else:
             pyro.clear_param_store()
@@ -212,38 +221,39 @@ class TractsModelPredictor:
                     self.observed_housing_cumulative_list[year][series]
                     == observed_tensor[series, year].item()
                 )
-
+       
         # factual predictions don't depend on the intervention
         # no need to compute them multiple times
-        self.clear_reshaped_model_data
-        self.factual_samples = self.predictive(data=self.nonified_data)
+        if self.predictive is not None:
+            self.clear_reshaped_model_data
+            self.factual_samples = self.predictive(data=self.nonified_data)
 
-        self.factual_samples["destandardized_housing_units_cumulative"] = (
-            self.factual_samples["predicted_housing_units_cumulative"]
-            * self.data["housing_units_cumulative_std"]
-            + self.data["housing_units_cumulative_mean"]
-        )
+            self.factual_samples["destandardized_housing_units_cumulative"] = (
+                self.factual_samples["predicted_housing_units_cumulative"]
+                * self.data["housing_units_cumulative_std"]
+                + self.data["housing_units_cumulative_mean"]
+            )
 
-        self.factual_summary = summarize_time_series(
-            self.factual_samples,
-            self.observed_housing_cumulative,
-            y_site="destandardized_housing_units_cumulative",
-            clamp_at_zero=True,
-            compute_metrics=False,
-        )
+            self.factual_summary = summarize_time_series(
+                self.factual_samples,
+                self.observed_housing_cumulative,
+                y_site="destandardized_housing_units_cumulative",
+                clamp_at_zero=True,
+                compute_metrics=False,
+            )
 
-        self.factual_means_list = self.convert_dict_to_list(
-            self.factual_summary["series_mean_pred"]
-        )
-        self.factual_low_list = self.convert_dict_to_list(
-            self.factual_summary["series_low_pred"]
-        )
-        self.factual_high_list = self.convert_dict_to_list(
-            self.factual_summary["series_high_pred"]
-        )
-        self.factual_samples_list = self.generate_samples_list(
-            self.factual_samples["destandardized_housing_units_cumulative"]
-        )
+            self.factual_means_list = self.convert_dict_to_list(
+                self.factual_summary["series_mean_pred"]
+            )
+            self.factual_low_list = self.convert_dict_to_list(
+                self.factual_summary["series_low_pred"]
+            )
+            self.factual_high_list = self.convert_dict_to_list(
+                self.factual_summary["series_high_pred"]
+            )
+            self.factual_samples_list = self.generate_samples_list(
+                self.factual_samples["destandardized_housing_units_cumulative"]
+            )
 
     @staticmethod
     def convert_dict_to_list(data_dict):
@@ -336,9 +346,10 @@ class TractsModelPredictor:
         self.model.continuous_parents_reshaped = None
         self.model.outcome_reshaped = None
 
-        self.predictive.categorical_parents_reshaped = None
-        self.predictive.continuous_parents_reshaped = None
-        self.predictive.outcome_reshaped = None
+        if hasattr(self, "predictive"):
+            self.predictive.categorical_parents_reshaped = None
+            self.predictive.continuous_parents_reshaped = None
+            self.predictive.outcome_reshaped = None
 
     def train_model(self, num_steps=None, override=False):
 
@@ -399,7 +410,7 @@ class TractsModelPredictor:
             "census_tracts": self.census_tracts,
             "years": self.years,
             "housing_units_observed": self.observed_housing_cumulative_list,
-            "housing_units_factuobsal_means": self.factual_means_list,
+            "housing_units_factual_means": self.factual_means_list,
             "housing_units_factual_low": self.factual_low_list,
             "housing_units_factual_high": self.factual_high_list,
             "housing_units_factual_samples": self.factual_samples_list,
@@ -454,10 +465,12 @@ if __name__ == "__main__":
     from cities.utils.data_loader import db_connection
 
     with db_connection() as conn:
+        instantiation_start = time.time()
         predictor = TractsModelPredictor(conn)
-        start = time.time()
+        instantiation_end = time.time()
 
-        for iter in range(5):  # added for time testing
+        start = time.time()
+        for iter in range(2):  # added for time testing
             result = predictor.predict_cumulative(
                 conn,
                 intervention={
@@ -470,7 +483,7 @@ if __name__ == "__main__":
                 },
             )
         end = time.time()
-        print(f"Counterfactual in {end - start} seconds")
+        print(f"Instantiation in {instantiation_end - instantiation_start} seconds")
+        print(f"2 predictions in {end - start} seconds")
 
-        if dev_mode:
-            predictor.train_model(override=True)
+  
