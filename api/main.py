@@ -209,7 +209,7 @@ async def read_predict(
         predictor=Depends(get_predictor),
     ):
 
-    result = predictor.predict_cumulative_by_year(
+    result = predictor.predict_cumulative(
         db,
         intervention={
             "radius_blue": blue_zone_radius,
@@ -220,12 +220,15 @@ async def read_predict(
             "reform_year": year,
         },
     )
-    return {
-        "census_tracts": [str(t) for t in result["census_tracts"]],
-        "years": result["years"],
-        "housing_units_factual": result["housing_units_factual"],
-        "housing_units_counterfactual": result["housing_units_counterfactual"],
-    }
+
+    return result
+
+    # return {
+    #     "census_tracts": [str(t) for t in result["census_tracts"]],
+    #     "years": result["years"],
+    #     "housing_units_factual": result["housing_units_factual"],
+    #     "housing_units_counterfactual": result["housing_units_counterfactual"],
+    # }
 
 
 if __name__ == "__main__":
