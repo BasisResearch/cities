@@ -194,7 +194,6 @@ def general_data_format_testing(data, features, level="county_msa"):
 #         assert year <= current_year, f"Year {year} exceeds the current year."
 
 
-
 def test_missing_years():
     levels = ["county", "msa"]
     for level in levels:
