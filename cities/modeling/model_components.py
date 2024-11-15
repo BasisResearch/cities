@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, List, Optional, Tuple
 
 import pyro
 import pyro.distributions as dist
@@ -117,19 +117,22 @@ def continuous_contribution(
 
     contributions = torch.zeros(1)
 
+    bias_continuous = pyro.sample(
+        f"bias_continuous_{child_name}",
+        dist.Normal(0.0, leeway),
+    )
+
     for key, value in continuous.items():
-        bias_continuous = pyro.sample(
-            f"bias_continuous_{key}_{child_name}",
-            dist.Normal(0.0, leeway),
-        )
 
         weight_continuous = pyro.sample(
-            f"weight_continuous_{key}_{child_name}",
+            f"weight_continuous_{key}_to_{child_name}",
             dist.Normal(0.0, leeway),
         )
 
-        contribution = bias_continuous + weight_continuous * value
+        contribution = weight_continuous * value
         contributions = contribution + contributions
+
+    contributions = bias_continuous + contributions
 
     return contributions
 
@@ -149,7 +152,7 @@ def add_linear_component(
     )  # type: ignore
 
     continuous_contribution_to_child = continuous_contribution(
-        child_continuous_parents, child_name, leeway
+        child_continuous_parents, child_name, leeway=leeway
     )
 
     categorical_contribution_to_child = categorical_contribution(
@@ -172,6 +175,54 @@ def add_linear_component(
             dist.Normal(mean_prediction_child, sigma_child),
             obs=observations,
         )
+
+    return child_observed
+
+
+def add_linear_component_continuous_interactions(
+    child_name: str,
+    child_continuous_parents: Dict[str, torch.Tensor],
+    child_categorical_parents: Dict[str, torch.Tensor],
+    continous_interaction_pairs: List[Tuple[str, str]],
+    leeway: float,
+    data_plate,
+    categorical_levels: Dict[str, torch.Tensor],
+    observations: Optional[torch.Tensor] = None,
+) -> torch.Tensor:
+
+    if continous_interaction_pairs == [("all", "all")]:
+        continous_interaction_pairs = [
+            (key1, key2)
+            for key1 in child_continuous_parents.keys()
+            for key2 in child_continuous_parents.keys()
+            if key1 != key2
+        ]
+
+    for interaction_pair in continous_interaction_pairs:
+        assert interaction_pair[0] in child_continuous_parents.keys()
+        assert interaction_pair[1] in child_continuous_parents.keys()
+
+        interaction_name = (
+            f"{interaction_pair[0]}_x_{interaction_pair[1]}_to_{child_name}"
+        )
+
+        with data_plate:
+            child_continuous_parents[interaction_name] = pyro.deterministic(
+                interaction_name,
+                child_continuous_parents[interaction_pair[0]]
+                * child_continuous_parents[interaction_pair[1]],
+                event_dim=0,
+            )
+
+    child_observed = add_linear_component(
+        child_name=child_name,
+        child_continuous_parents=child_continuous_parents,
+        child_categorical_parents=child_categorical_parents,
+        leeway=leeway,
+        data_plate=data_plate,
+        categorical_levels=categorical_levels,
+        observations=observations,
+    )
 
     return child_observed
 
@@ -206,7 +257,7 @@ def add_logistic_component(
         )
 
         child_probs = pyro.deterministic(
-            f"child_probs_{child_name}_{child_name}",
+            f"child_probs_{child_name}",
             torch.sigmoid(mean_prediction_child),
             event_dim=0,
         )
@@ -252,7 +303,7 @@ def add_ratio_component(
         )
 
         child_probs = pyro.deterministic(
-            f"child_probs_{child_name}_{child_name}",
+            f"child_probs_{child_name}",
             torch.sigmoid(mean_prediction_child),
             event_dim=0,
         )
@@ -260,5 +311,45 @@ def add_ratio_component(
         child_observed = pyro.sample(
             child_name, dist.Normal(child_probs, sigma_child), obs=observations
         )
+
+    return child_observed
+
+
+def add_ratio_component_continuous_interactions(
+    child_name: str,
+    child_continuous_parents: Dict[str, torch.Tensor],
+    child_categorical_parents: Dict[str, torch.Tensor],
+    continous_interaction_pairs: List[Tuple[str, str]],
+    leeway: float,
+    data_plate,
+    categorical_levels: Dict[str, torch.Tensor],
+    observations: Optional[torch.Tensor] = None,
+) -> torch.Tensor:
+
+    for interaction_pair in continous_interaction_pairs:
+        assert interaction_pair[0] in child_continuous_parents.keys()
+        assert interaction_pair[1] in child_continuous_parents.keys()
+
+        interaction_name = (
+            f"{interaction_pair[0]}_x_{interaction_pair[1]}_to_{child_name}"
+        )
+
+        with data_plate:
+            child_continuous_parents[interaction_name] = pyro.deterministic(
+                interaction_name,
+                child_continuous_parents[interaction_pair[0]]
+                * child_continuous_parents[interaction_pair[1]],
+                event_dim=0,
+            )
+
+    child_observed = add_ratio_component(
+        child_name=child_name,
+        child_continuous_parents=child_continuous_parents,
+        child_categorical_parents=child_categorical_parents,
+        leeway=leeway,
+        data_plate=data_plate,
+        categorical_levels=categorical_levels,
+        observations=observations,
+    )
 
     return child_observed
