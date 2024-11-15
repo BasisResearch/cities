@@ -31,6 +31,10 @@ tests/.coverage
 data/sql/counties_database.db
 data/sql/msa_database.db
 
+.Rproj.user
+**/*.RData
+**/*.Rhistory
+
 # data
 data/minneapolis/processed/values_long.csv
 data/minneapolis/processed/values_with_parking.csv

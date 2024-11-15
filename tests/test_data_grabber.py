@@ -187,6 +187,29 @@ def general_data_format_testing(data, features, level="county_msa"):
             )
 
 
+def check_years(df):
+    current_year = pd.Timestamp.now().year
+    for year in df["Year"].unique():
+        assert year > 1945, f"Year {year} in is not greater than 1945."
+        assert year <= current_year, f"Year {year} exceeds the current year."
+
+
+def test_missing_years():
+    levels = ["county", "msa"]
+    for level in levels:
+        tensed_features = list_tensed_features(level=level)
+
+        if level == "msa":
+            data = MSADataGrabber()
+        else:
+            data = DataGrabber()
+
+        data.get_features_long(tensed_features)
+
+        for feature in tensed_features:
+            check_years(data.long[feature])
+
+
 def test_DataGrabber_data_types():
     data = DataGrabber()
 
