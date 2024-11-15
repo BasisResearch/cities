@@ -34,6 +34,8 @@ kwargs = {
         "housing_units",
         "housing_units_original",
         "total_value",
+        "total_population",
+        "population_density",
         "median_value",
         "mean_limit_original",
         "median_distance",
