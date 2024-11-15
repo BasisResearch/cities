@@ -16,8 +16,6 @@ from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_sql
 from cities.utils.plot_ts import summarize_time_series
 
-
-
 load_dotenv()
 
 local_user = os.getenv("USER")
