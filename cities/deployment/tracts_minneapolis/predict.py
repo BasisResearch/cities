@@ -30,7 +30,7 @@ num_steps = 3000
 
 # this disables assertions for speed
 # running as main in dev mode will enforce model re-training
-dev_mode = True
+dev_mode = False
 
 
 class TractsModelPredictor:
