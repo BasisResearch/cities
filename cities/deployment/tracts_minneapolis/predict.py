@@ -85,8 +85,6 @@ class TractsModelPredictor:
 
     def __init__(self, conn):
 
-        
-        
         self.conn = conn
 
         self.num_steps = num_steps
@@ -221,7 +219,7 @@ class TractsModelPredictor:
                     self.observed_housing_cumulative_list[year][series]
                     == observed_tensor[series, year].item()
                 )
-       
+
         # factual predictions don't depend on the intervention
         # no need to compute them multiple times
         if self.predictive is not None:
@@ -485,5 +483,3 @@ if __name__ == "__main__":
         end = time.time()
         print(f"Instantiation in {instantiation_end - instantiation_start} seconds")
         print(f"2 predictions in {end - start} seconds")
-
-  
