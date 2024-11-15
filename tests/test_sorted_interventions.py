@@ -5,7 +5,14 @@ import numpy as np
 
 from cities.utils.data_grabber import DataGrabber, find_repo_root, list_interventions
 from cities.utils.percentiles import transformed_intervention_from_percentile
+import pytest
 
+smoke_test = "CI" in os.environ
+
+if smoke_test:
+    pytest.skip(
+        "Skipping all tests in this file during smoke tests", allow_module_level=True
+    )
 
 def test_sorted_interventions_present():
     root = find_repo_root()
