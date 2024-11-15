@@ -11,11 +11,11 @@ class VariableCleaner:
         self,
         variable_name: str,
         path_to_raw_csv: str,
-        year_or_category: str = "Year",  # Year or Category
+        year_or_category_column_label: str = "Year",  # Column name to store years or categories in the long format
     ):
         self.variable_name = variable_name
         self.path_to_raw_csv = path_to_raw_csv
-        self.year_or_category = year_or_category
+        self.year_or_category_column_label = year_or_category_column_label
         self.root = find_repo_root()
         self.data_grabber = DataGrabber()
         self.folder = "processed"
@@ -31,8 +31,10 @@ class VariableCleaner:
         self.save_csv_files(self.folder)
 
     def load_raw_csv(self):
-        self.variable_df = pd.read_csv(self.path_to_raw_csv)
-        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(int)
+        self.variable_df = pd.read_csv(
+            self.path_to_raw_csv
+        )  # changed from int to np.int64
+        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)
 
     def drop_nans(self):
         self.variable_df = self.variable_df.dropna()
@@ -98,14 +100,14 @@ class VariableCleaner:
         variable_db_long = pd.melt(
             self.variable_df,
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.year_or_category,
+            var_name=self.year_or_category_column_label,
             value_name="Value",
         )
         variable_db_std_wide = standardize_and_scale(self.variable_df)
         variable_db_std_long = pd.melt(
             variable_db_std_wide.copy(),
             id_vars=["GeoFIPS", "GeoName"],
-            var_name=self.year_or_category,
+            var_name=self.year_or_category_column_label,
             value_name="Value",
         )
 
@@ -131,9 +133,12 @@ class VariableCleanerMSA(
     VariableCleaner
 ):  # this class inherits functionalites of VariableCleaner, but works at the MSA level
     def __init__(
-        self, variable_name: str, path_to_raw_csv: str, year_or_category: str = "Year"
+        self,
+        variable_name: str,
+        path_to_raw_csv: str,
+        year_or_category_column_label: str = "Year",
     ):
-        super().__init__(variable_name, path_to_raw_csv, year_or_category)
+        super().__init__(variable_name, path_to_raw_csv, year_or_category_column_label)
         self.folder = "MSA_level"
         self.metro_areas = None
 
@@ -206,3 +211,124 @@ def communities_tracts_to_counties(
             all_results = pd.merge(all_results, result_df, on="GeoFIPS", how="left")
 
     return all_results
+
+
+class VariableCleanerCT(
+    VariableCleanerMSA
+):  # this class inherits functionalites of two previous classes, but works at the Census Tract level
+    def __init__(
+        self,
+        variable_name: str,
+        path_to_raw_csv: str,
+        time_interval: str,  # pre2020 or post2020
+        year_or_category_column_label: str = "Year",
+    ):
+        super().__init__(variable_name, path_to_raw_csv, year_or_category_column_label)
+        self.time_interval = time_interval
+        self.folder = "Census_tract_level"
+        self.census_tracts = None
+        self.ct_list_file = None
+        self.exclusions_file = None
+
+    def clean_variable(self):
+        self.load_raw_csv()
+        self.drop_nans()
+        self.load_census_tracts()
+        self.check_exclusions()
+        self.process_data()
+        # TODO self.check_exclusions('CT') functionality might be usefull in the future
+        self.save_csv_files(self.folder)
+
+    def load_census_tracts(self):
+        if self.time_interval == "pre2020":
+            self.ct_list_file = f"{self.root}/data/raw/CT_list_pre2020.csv"
+            self.census_tracts = pd.read_csv(self.ct_list_file)
+
+            self.exclusions_file = f"{self.root}/data/raw/exclusions_ct_pre2020.csv"
+
+        elif self.time_interval == "post2020":
+            self.ct_list_file = f"{self.root}/data/raw/CT_list_post2020.csv"
+            self.census_tracts = pd.read_csv(self.ct_list_file)
+
+            self.exclusions_file = f"{self.root}/data/raw/exclusions_ct_post2020.csv"
+
+    def add_new_exclusions(self, common_fips):
+        new_exclusions = np.setdiff1d(
+            self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
+        )
+
+        print(f"Adding new exclusions to {self.time_interval}: " + str(new_exclusions))
+
+        # Append to exclusions file if it exists, otherwise create a new file
+        try:
+            existing_exclusions = pd.read_csv(self.exclusions_file)
+            new_exclusions_df = pd.DataFrame(
+                {
+                    "dataset": [self.variable_name] * len(new_exclusions),
+                    "exclusions": new_exclusions,
+                }
+            )
+            updated_exclusions = (
+                pd.concat([existing_exclusions, new_exclusions_df])
+                .drop_duplicates()
+                .reset_index(drop=True)
+            )
+        except FileNotFoundError:
+            new_exclusions_df = pd.DataFrame(
+                {
+                    "dataset": [self.variable_name] * len(new_exclusions),
+                    "exclusions": new_exclusions,
+                }
+            )
+            updated_exclusions = new_exclusions_df
+
+        updated_exclusions.to_csv(self.exclusions_file, index=False)
+
+        self.census_tracts = self.census_tracts[
+            ~self.census_tracts["GeoFIPS"].isin(new_exclusions)
+        ]
+        self.census_tracts.to_csv(self.ct_list_file, index=False)
+        print("Updated CT list saved.")
+
+        self.variable_df = self.variable_df[
+            self.variable_df["GeoFIPS"].isin(self.census_tracts["GeoFIPS"])
+        ]
+        print(f"{self.variable_name} data updated.")
+
+    def check_exclusions(self):
+
+        assert (
+            self.variable_df["GeoFIPS"].dtype == "int64"
+        ), f"Expected 'int64', but got {self.variable_df['GeoFIPS'].dtype}"
+
+        common_fips = np.intersect1d(
+            self.census_tracts["GeoFIPS"].unique(), self.variable_df["GeoFIPS"].unique()
+        )
+        if (
+            len(
+                np.setdiff1d(
+                    self.census_tracts["GeoFIPS"].unique(),
+                    self.variable_df["GeoFIPS"].unique(),
+                )
+            )
+            > 0
+        ):
+            self.add_new_exclusions(common_fips)
+        else:
+            print("No new exclusions needed.")
+            pre_size = self.variable_df.shape[0]
+            self.variable_df = self.variable_df[
+                self.variable_df["GeoFIPS"].isin(self.census_tracts["GeoFIPS"])
+            ]
+            print(
+                f" Initial size of {pre_size} of {self.variable_name} reduced to {self.variable_df.shape[0]}"
+            )
+
+    def process_data(self):
+        self.load_census_tracts()
+
+        self.variable_df["GeoFIPS"] = self.variable_df["GeoFIPS"].astype(np.int64)
+        assert (
+            self.census_tracts["GeoFIPS"].nunique()
+            == self.variable_df["GeoFIPS"].nunique()
+        ), f'FIPS mismatch! {self.census_tracts["GeoFIPS"].nunique()} vs {self.variable_df["GeoFIPS"].nunique()}'

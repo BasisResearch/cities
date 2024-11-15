@@ -1,9 +1,11 @@
 import os
+import random
 
 import numpy as np
 import pandas as pd
 
-from cities.utils.data_grabber import (
+from cities.utils.data_grabber import (  # TODO: Change to CTDataGrabber() in the future
+    CTDataGrabberCSV,
     DataGrabber,
     MSADataGrabber,
     list_available_features,
@@ -14,6 +16,7 @@ from cities.utils.data_grabber import (
 
 features = list_available_features()
 features_msa = list_available_features("msa")
+features_ct = list_available_features("census_tract")
 
 
 def test_non_emptiness_DataGrabber():
@@ -57,7 +60,23 @@ def test_non_emptiness_MSADataGrabber():
         assert data_msa.std_long[feature].shape[1] == 4
 
 
-def general_data_format_testing(data, features):
+def test_non_emptiness_CTDataGrabber():
+    os.chdir(os.path.dirname(os.getcwd()))
+    data_ct = CTDataGrabberCSV()  # TODO: Change to CTDataGrabber() in the future
+
+    data_ct.get_features_wide(features_ct)
+    data_ct.get_features_std_wide(features_ct)
+    data_ct.get_features_long(features_ct)
+    data_ct.get_features_std_long(features_ct)
+
+    for feature in features_ct:
+        assert data_ct.wide[feature].shape[0] > 100
+        assert data_ct.std_wide[feature].shape[1] < 100
+        assert data_ct.long[feature].shape[0] > 100
+        assert data_ct.std_long[feature].shape[1] == 4
+
+
+def general_data_format_testing(data, features, level="county_msa"):
     assert features is not None
 
     data.get_features_wide(features)
@@ -66,34 +85,65 @@ def general_data_format_testing(data, features):
     data.get_features_std_long(features)
 
     for feature in features:
-        dataTypeError = "Wrong data type!"
-        assert data.wide[feature].iloc[:, 0].dtype == np.int64, dataTypeError
-        assert data.wide[feature].iloc[:, 1].dtype == object, dataTypeError
-        assert data.std_wide[feature].iloc[:, 0].dtype == np.int64, dataTypeError
-        assert data.std_wide[feature].iloc[:, 1].dtype == object, dataTypeError
-        assert data.long[feature].iloc[:, 0].dtype == np.int64, dataTypeError
-        assert data.long[feature].iloc[:, 1].dtype == object, dataTypeError
-        assert data.std_long[feature].iloc[:, 0].dtype == np.int64, dataTypeError
-        assert data.std_long[feature].iloc[:, 1].dtype == object, dataTypeError
+
+        assert data.wide[feature].iloc[:, 0].dtype == np.int64, (
+            f"Wrong data type for '{feature}' in 'data.wide' at {level} level: "
+            f"Expected np.int64, got {data.wide[feature].iloc[:, 0].dtype}"
+        )
+        assert data.wide[feature].iloc[:, 1].dtype == object, (
+            f"Wrong data type for '{feature}' in 'data.wide' at {level} level: "
+            f"Expected object, got {data.wide[feature].iloc[:, 1].dtype}"
+        )
+
+        assert data.std_wide[feature].iloc[:, 0].dtype == np.int64, (
+            f"Wrong data type for '{feature}' in 'data.std_wide' at {level} level: "
+            f"Expected np.int64, got {data.std_wide[feature].iloc[:, 0].dtype}"
+        )
+        assert data.std_wide[feature].iloc[:, 1].dtype == object, (
+            f"Wrong data type for '{feature}' in 'data.std_wide' at {level} level: "
+            f"Expected object, got {data.std_wide[feature].iloc[:, 1].dtype}"
+        )
+
+        assert data.long[feature].iloc[:, 0].dtype == np.int64, (
+            f"Wrong data type for '{feature}' in 'data.long' at {level} level: "
+            f"Expected np.int64, got {data.long[feature].iloc[:, 0].dtype}"
+        )
+        assert data.long[feature].iloc[:, 1].dtype == object, (
+            f"Wrong data type for '{feature}' in 'data.long' at {level} level: "
+            f"Expected object, got {data.long[feature].iloc[:, 1].dtype}"
+        )
+
+        assert data.std_long[feature].iloc[:, 0].dtype == np.int64, (
+            f"Wrong data type for '{feature}' in 'data.std_long' at {level} level: "
+            f"Expected np.int64, got {data.std_long[feature].iloc[:, 0].dtype}"
+        )
+        assert data.std_long[feature].iloc[:, 1].dtype == object, (
+            f"Wrong data type for '{feature}' in 'data.std_long' at {level} level: "
+            f"Expected object, got {data.std_long[feature].iloc[:, 1].dtype}"
+        )
 
     for feature in features:
-        namesFipsError = "FIPS codes and GeoNames don't match!"
-        assert (
-            data.wide[feature]["GeoFIPS"].nunique()
-            == data.wide[feature]["GeoName"].nunique()
-        ), namesFipsError
-        assert (
-            data.long[feature]["GeoFIPS"].nunique()
-            == data.long[feature]["GeoName"].nunique()
-        ), namesFipsError
-        assert (
-            data.std_wide[feature]["GeoFIPS"].nunique()
-            == data.std_wide[feature]["GeoName"].nunique()
-        ), namesFipsError
-        assert (
-            data.std_long[feature]["GeoFIPS"].nunique()
-            == data.std_long[feature]["GeoName"].nunique()
-        ), namesFipsError
+        if level == "county_msa":
+            namesFipsError = "FIPS codes and GeoNames don't match!"
+            assert (
+                data.wide[feature]["GeoFIPS"].nunique()
+                == data.wide[feature]["GeoName"].nunique()
+            ), namesFipsError
+            assert (
+                data.long[feature]["GeoFIPS"].nunique()
+                == data.long[feature]["GeoName"].nunique()
+            ), namesFipsError
+            assert (
+                data.std_wide[feature]["GeoFIPS"].nunique()
+                == data.std_wide[feature]["GeoName"].nunique()
+            ), namesFipsError
+            assert (
+                data.std_long[feature]["GeoFIPS"].nunique()
+                == data.std_long[feature]["GeoName"].nunique()
+            ), namesFipsError
+
+        elif level == "census_tract":
+            pass  # TODO: check whether the county number is correct as indicated by the CT number
 
     for feature in features:
         for column in data.wide[feature].columns[2:]:
@@ -137,11 +187,12 @@ def general_data_format_testing(data, features):
             )
 
 
-def check_years(df):
-    current_year = pd.Timestamp.now().year
-    for year in df["Year"].unique():
-        assert year > 1945, f"Year {year} in is not greater than 1945."
-        assert year <= current_year, f"Year {year} exceeds the current year."
+# def check_years(df):
+#     current_year = pd.Timestamp.now().year
+#     for year in df["Year"].unique():
+#         assert year > 1945, f"Year {year} in is not greater than 1945."
+#         assert year <= current_year, f"Year {year} exceeds the current year."
+
 
 
 def test_missing_years():
@@ -170,6 +221,12 @@ def test_MSADataGrabber_data_types():
     data_msa = MSADataGrabber()
 
     general_data_format_testing(data_msa, features_msa)
+
+
+def test_CTDataGrabber_data_types():
+    data_ct = CTDataGrabberCSV()  # TODO: Change to CTDataGrabber() in the future
+
+    general_data_format_testing(data_ct, features_ct, level="census_tract")
 
 
 def test_feature_listing_runtime():
@@ -204,3 +261,65 @@ def test_GeoFIPS_ma_column_values():
         column_values = data_msa.long[feature]["GeoFIPS"]
 
         assert all(value > 9999 and str(value)[-1] == "0" for value in column_values)
+
+
+data_ct = CTDataGrabberCSV()  # TODO: Change to CTDataGrabber() in the future
+data_ct.get_features_wide(features_ct)
+
+
+def test_GeoFIPS_ct_column_values():
+    for feature in features_ct:
+        data_ct.wide[feature]["GeoFIPS"]
+        column_values = data_ct.wide[feature]["GeoFIPS"]
+
+        assert all(value > 999999999 for value in column_values)
+
+
+def test_ct_data_grabber_fips_consistency():
+    time_periods = ["pre_2020", "post_2020"]
+    variables = list_available_features(level="census_tract")
+
+    data_by_period = {}
+
+    for ct_time_period in time_periods:
+        data = CTDataGrabberCSV(ct_time_period=ct_time_period)
+        data.get_features_wide(variables)
+        data_by_period[ct_time_period] = {var: data.wide[var] for var in variables}
+
+    compare_variable = random.choice(variables)
+
+    for ct_time_period in time_periods:
+        var_compare = data_by_period[ct_time_period][compare_variable]
+        fips_compare = var_compare["GeoFIPS"].nunique()
+
+        for variable in variables:
+            var = data_by_period[ct_time_period][variable]
+            fips_standard = var["GeoFIPS"].nunique()
+
+            assert fips_compare == fips_standard, (
+                f"The CT variables differ in the number of FIPS codes: {compare_variable} and {variable},"
+                f"with {fips_compare} and {fips_standard} respectively!"
+            )
+
+
+current_year = pd.Timestamp.now().year
+
+
+def check_years(df):
+    for year in df["Year"].unique():
+        assert year > 1945, f"Year {year} is not greater than 1945."
+        assert year <= current_year, f"Year {year} exceeds the current year."
+
+
+tensed_features_ct = list_tensed_features(level="census_tract")
+
+
+def test_missing_years_census_tract():
+    time_periods = ["pre_2020", "post_2020"]
+
+    for time_period in time_periods:
+        data = CTDataGrabberCSV(ct_time_period=time_period)
+        data.get_features_long(tensed_features_ct)
+
+        for feature in tensed_features_ct:
+            check_years(data.long[feature])
