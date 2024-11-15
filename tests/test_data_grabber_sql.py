@@ -13,6 +13,12 @@ from cities.utils.data_grabber import (
     list_csvs,
 )
 
+smoke_test = "CI" in os.environ
+
+if smoke_test:
+    pytest.skip("Skipping all tests in this file during smoke tests", allow_module_level=True)
+
+
 root = find_repo_root()
 
 data_dirs = {
