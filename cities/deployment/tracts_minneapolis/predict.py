@@ -16,10 +16,6 @@ from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_sql
 from cities.utils.plot_ts import summarize_time_series
 
-# TODO load the right model
-# from cities.modeling.zoning_models.zoning_tracts_continuous_interactions_model import (
-#    TractsModelContinuousInteractions as TractsModel,
-# )
 
 
 load_dotenv()
@@ -33,7 +29,8 @@ num_samples = 200
 num_steps = 3000
 
 # this disables assertions for speed
-dev_mode = False
+# running as main in dev mode will enforce model re-training
+dev_mode = True
 
 
 class TractsModelPredictor:
@@ -451,3 +448,31 @@ class TractsModelPredictor:
 #         ...
 #     ]
 # }
+
+
+if __name__ == "__main__":
+    import time
+
+    from cities.utils.data_loader import db_connection
+
+    with db_connection() as conn:
+        predictor = TractsModelPredictor(conn)
+        start = time.time()
+
+        for iter in range(5):  # added for time testing
+            result = predictor.predict_cumulative(
+                conn,
+                intervention={
+                    "radius_blue": 106.7,
+                    "limit_blue": 0,
+                    "radius_yellow_line": 402.3,
+                    "radius_yellow_stop": 804.7,
+                    "limit_yellow": 0.5,
+                    "reform_year": 2015,
+                },
+            )
+        end = time.time()
+        print(f"Counterfactual in {end - start} seconds")
+
+        if dev_mode:
+            predictor.train_model(override=True)
