@@ -14,7 +14,7 @@ from cities.modeling.zoning_models.zoning_tracts_ts_model import (
 )
 from cities.utils.data_grabber import find_repo_root
 from cities.utils.data_loader import select_from_sql
-from cities.utils.plot_ts import summarize_time_series
+from cities.utils.time_series import summarize_time_series
 
 load_dotenv()
 
@@ -29,7 +29,6 @@ num_steps = 3000
 # this disables assertions for speed
 # running as main in dev mode will enforce model re-training
 dev_mode = True
-
 
 class TractsModelPredictor:
     kwargs = {
@@ -406,7 +405,7 @@ class TractsModelPredictor:
 
         return {
             "census_tracts": self.census_tracts,
-            "years": self.years,
+            "years": sorted(list(set(self.years))),
             "housing_units_observed": self.observed_housing_cumulative_list,
             "housing_units_factual_means": self.factual_means_list,
             "housing_units_factual_low": self.factual_low_list,
